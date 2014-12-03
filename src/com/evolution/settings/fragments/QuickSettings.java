@@ -72,10 +72,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
+    private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
     private static final String QS_HIDE_BATTERY = "qs_hide_battery";
     private static final String QS_BATTERY_MODE = "qs_battery_mode";
 
     private ListPreference mQuickPulldown;
+    private ListPreference mSmartPulldown;
     private SystemSettingEditTextPreference mFooterString;
     private CustomSeekBarPreference mQsColumnsPortrait;
     private CustomSeekBarPreference mQsColumnsLandscape;
@@ -100,6 +102,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
+
+        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+        mSmartPulldown.setOnPreferenceChangeListener(this);
+        int smartPulldown = Settings.System.getInt(resolver,
+                Settings.System.QS_SMART_PULLDOWN, 0);
+        mSmartPulldown.setValue(String.valueOf(smartPulldown));
+        updateSmartPulldownSummary(smartPulldown);
 
         mFooterString = (SystemSettingEditTextPreference) findPreference(FOOTER_TEXT_STRING);
         mFooterString.setOnPreferenceChangeListener(this);
@@ -199,6 +208,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     Settings.System.QS_HIDE_BATTERY, value ? 1 : 0);
             mQsBatteryMode.setEnabled(!value);
             return true;
+        } else if (preference == mSmartPulldown) {
+            int smartPulldown = Integer.valueOf((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, smartPulldown);
+            updateSmartPulldownSummary(smartPulldown);
+            return true;
         }
         return false;
     }
@@ -216,6 +230,22 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     ? R.string.quick_pulldown_left
                     : R.string.quick_pulldown_right);
             mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
+        }
+    }
+
+    private void updateSmartPulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // Smart pulldown deactivated
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
+        } else if (value == 3) {
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_none_summary));
+        } else {
+            String type = res.getString(value == 1
+                    ? R.string.smart_pulldown_dismissable
+                    : R.string.smart_pulldown_ongoing);
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
         }
     }
 
