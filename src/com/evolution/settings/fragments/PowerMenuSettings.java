@@ -42,6 +42,8 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.evolution.settings.preferences.Utils;
+import com.evolution.settings.preferences.CustomSeekBarPreference;
 
 public class PowerMenuSettings extends SettingsPreferenceFragment
                 implements Preference.OnPreferenceChangeListener {
@@ -49,11 +51,13 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
     private static final String KEY_POWERMENU_LOGOUT = "powermenu_logout";
     private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
     private static final String KEY_POWERMENU_USERS = "powermenu_users";
+    private static final String PREF_ON_THE_GO_ALPHA = "on_the_go_alpha";
     private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
 
     private SwitchPreference mPowermenuLogout;
     private SwitchPreference mPowermenuTorch;
     private SwitchPreference mPowermenuUsers;
+    private CustomSeekBarPreference mOnTheGoAlphaPref;
     private ListPreference mScreenOffAnimation;
 
     private UserManager mUserManager;
@@ -95,6 +99,13 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
         mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
+
+        mOnTheGoAlphaPref = (CustomSeekBarPreference) findPreference(PREF_ON_THE_GO_ALPHA);
+        float otgAlpha = Settings.System.getFloat(getContentResolver(),
+                Settings.System.ON_THE_GO_ALPHA, 0.5f);
+        final int alpha = ((int) (otgAlpha * 100));
+        mOnTheGoAlphaPref.setValue(alpha);
+        mOnTheGoAlphaPref.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -120,6 +131,11 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
             int index = mScreenOffAnimation.findIndexOfValue((String) newValue);
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
             Settings.Global.putInt(getContentResolver(), Settings.Global.SCREEN_OFF_ANIMATION, value);
+            return true;
+        } else if (preference == mOnTheGoAlphaPref) {
+            float val = (Integer) newValue;
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.ON_THE_GO_ALPHA, val / 100);
             return true;
         }
         return false;

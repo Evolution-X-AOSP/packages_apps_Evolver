@@ -85,4 +85,25 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="onthego_category"
+        android:title="@string/onthego_title">
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="global_actions_onthego"
+            android:title="@string/global_actions_onthego_title"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preferences.CustomSeekBarPreference
+            android:key="on_the_go_alpha"
+            android:title="@string/onthego_alpha_title"
+            android:summary="@string/onthego_alpha_summary"
+            android:dependency="global_actions_onthego"
+            android:defaultValue="50"
+            android:max="100"
+            settings:min="0"
+            settings:units="" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
