@@ -48,12 +48,14 @@ import java.util.List;
 public class LockscreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String FINGERPRINT_ERROR_VIB = "fingerprint_error_vib";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FOD_ANIMATION_CATEGORY = "fod_animations";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
+    private SwitchPreference mFingerprintErrorVib;
     private SwitchPreference mFingerprintVib;
 
     @Override
@@ -78,6 +80,21 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mFingerprintVib);
         }
 
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintErrorVib = (SwitchPreference) findPreference(FINGERPRINT_ERROR_VIB);
+        if (mPm.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT) &&
+                 mFingerprintManager != null) {
+            if (!mFingerprintManager.isHardwareDetected()){
+                prefScreen.removePreference(mFingerprintErrorVib);
+            } else {
+                mFingerprintErrorVib.setChecked((Settings.System.getInt(getContentResolver(),
+                        Settings.System.FINGERPRINT_ERROR_VIB, 1) == 1));
+                mFingerprintErrorVib.setOnPreferenceChangeListener(this);
+            }
+        } else {
+            prefScreen.removePreference(mFingerprintErrorVib);
+        }
+
         mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
             prefScreen.removePreference(mFODIconPickerCategory);
@@ -99,6 +116,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
+            return true;
+        } else if (preference == mFingerprintErrorVib) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.FINGERPRINT_ERROR_VIB, value ? 1 : 0);
             return true;
         }
         return false;
