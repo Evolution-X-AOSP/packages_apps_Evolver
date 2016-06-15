@@ -155,6 +155,16 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         return MetricsEvent.EVOLVER;
     }
 
+    @Override
+    protected boolean usesExtendedActionsList() {
+        return true;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
     /**
      * For Search.
      */
