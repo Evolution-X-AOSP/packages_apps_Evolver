@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2019-2020 The Evolution X Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/battery_bar_title">
+
+    <ListPreference
+        android:key="statusbar_battery_bar_list"
+        android:title="@string/battery_bar"
+        android:entries="@array/battery_bar_entries"
+        android:entryValues="@array/battery_bar_values" />
+
+    <ListPreference
+        android:key="statusbar_battery_bar_no_navbar_list"
+        android:title="@string/battery_bar_no_navbar"
+        android:entries="@array/battery_bar_no_navbar_entries"
+        android:entryValues="@array/battery_bar_no_navbar_values" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="statusbar_battery_bar_color"
+        android:title="@string/battery_bar_color"
+        android:defaultValue="0xffffff" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="statusbar_battery_bar_battery_low_color"
+        android:title="@string/battery_bar_battery_low_color"
+        android:defaultValue="0xffffff" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="statusbar_battery_bar_enable_charging_color"
+        android:title="@string/battery_bar_use_charging_color"
+        android:defaultValue="true" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="statusbar_battery_bar_charging_color"
+        android:title="@string/battery_bar_charging_color"
+        android:defaultValue="0xffffff"
+        android:dependency="statusbar_battery_bar_enable_charging_color" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="statusbar_battery_bar_blend_color"
+        android:title="@string/battery_bar_blend_color_title"
+        android:summary="@string/battery_bar_blend_color_summary"
+        android:defaultValue="false" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="statusbar_battery_bar_blend_color_reverse"
+        android:title="@string/battery_bar_blend_color_reverse_title"
+        android:summaryOn="@string/battery_bar_blend_color_reverse_summary_on"
+        android:summaryOff="@string/battery_bar_blend_color_reverse_summary_off"
+        android:dependency="statusbar_battery_bar_blend_color"
+        android:defaultValue="false" />
+
+    <ListPreference
+        android:key="statusbar_battery_bar_style"
+        android:title="@string/battery_bar_style_title"
+        android:entries="@array/battery_bar_style_entries"
+        android:entryValues="@array/battery_bar_style_values" />
+
+    <com.evolution.settings.preference.CustomSeekBarPreference
+        android:key="statusbar_battery_bar_thickness"
+        android:title="@string/battery_bar_thickness_title"
+        android:max="4"
+        settings:min="1"
+        settings:units="dp"
+        android:persistent="false" />
+
+    <SwitchPreference
+        android:key="statusbar_battery_bar_animate"
+        android:title="@string/battery_bar_animate_title" />
+
+</PreferenceScreen>
