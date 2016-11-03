@@ -25,6 +25,13 @@
         android:summaryOff="@string/heads_up_summary_disabled"
         android:defaultValue="true" />
 
+    <ListPreference
+        android:key="heads_up_time_out"
+        android:title="@string/heads_up_time_out_title"
+        android:entries="@array/heads_up_time_out_entries"
+        android:entryValues="@array/heads_up_time_out_values"
+        android:persistent="false" />
+
     <PreferenceCategory
         android:key="notifications_category"
         android:title="@string/notifications_category_title">
