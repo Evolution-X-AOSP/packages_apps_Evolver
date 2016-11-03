@@ -16,6 +16,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/heads_up_notifications">
 
+    <ListPreference
+        android:key="heads_up_time_out"
+        android:title="@string/heads_up_time_out_title"
+        android:entries="@array/heads_up_time_out_entries"
+        android:entryValues="@array/heads_up_time_out_values"
+        android:persistent="false" />
+
     <PreferenceCategory
             android:title="@string/heads_up_stoplist_title"
             android:key="stoplist_applications" >
