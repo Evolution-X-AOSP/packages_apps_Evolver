@@ -149,6 +149,12 @@
             android:fragment="com.evolution.settings.fragments.SensorBlockSettings"/>
 
         <Preference
+            android:key="wakelock_blocker"
+            android:title="@string/wakelock_blocker_title"
+            android:summary="@string/wakelock_blocker_summary"
+            android:fragment="com.evolution.settings.fragments.WakeLockBlocker" />
+
+        <Preference
             android:key="default_usb_configuration"
             android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
             android:title="@string/usb_default_config_title"
