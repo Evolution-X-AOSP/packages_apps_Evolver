@@ -18,6 +18,11 @@
 	android:title="@string/misc_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="wakelock_blocker"
+        android:fragment="com.evolution.settings.fragments.WakeLockBlocker"
+        android:title="@string/wakelock_blocker_title" />
+
     <com.evolution.settings.preferences.SystemSettingSwitchPreference
         android:key="wake_when_plugged_or_unplugged"
         android:title="@string/wake_when_plugged_or_unplugged_title"
