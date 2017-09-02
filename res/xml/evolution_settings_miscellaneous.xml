@@ -31,4 +31,17 @@
         android:summary="@string/wakeup_when_plugged_unplugged_summary"
         android:defaultValue="true" />
 
+    <!-- Wakelock blocker -->
+    <PreferenceCategory
+        android:key="wakelock_blocker_category"
+        android:title="@string/wakelock_blocker_title" >
+
+    <Preference
+        android:key="wakelock_blocker"
+        android:title="@string/wakelock_blocker_title"
+        android:summary="@string/wakelock_blocker_summary"
+        android:fragment="com.evolution.settings.fragments.WakeLockBlocker"/>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
