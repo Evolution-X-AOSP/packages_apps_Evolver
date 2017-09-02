@@ -31,16 +31,22 @@
         android:summary="@string/wakeup_when_plugged_unplugged_summary"
         android:defaultValue="true" />
 
-    <!-- Wakelock blocker -->
+    <!-- Alarm & Wakelock blocker -->
     <PreferenceCategory
         android:key="wakelock_blocker_category"
-        android:title="@string/wakelock_blocker_title" >
+        android:title="@string/wakelock_blocker_title">
+
+    <Preference
+        android:key="alarm_blocker"
+        android:title="@string/alarm_blocker_title"
+        android:summary="@string/alarm_blocker_summary"
+        android:fragment="com.evolution.settings.fragments.AlarmBlocker" />
 
     <Preference
         android:key="wakelock_blocker"
         android:title="@string/wakelock_blocker_title"
         android:summary="@string/wakelock_blocker_summary"
-        android:fragment="com.evolution.settings.fragments.WakeLockBlocker"/>
+        android:fragment="com.evolution.settings.fragments.WakeLockBlocker" />
 
     </PreferenceCategory>
 
