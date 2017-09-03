@@ -20,7 +20,7 @@
 
     <PreferenceCategory
         android:key="navigation_keys"
-        android:title="@string/navigation_title" />
+        android:title="@string/navigation_title">
 
         <Preference
             android:key="gesture_system_navigation_input_summary"
@@ -28,5 +28,18 @@
             android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
             settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController"
             settings:keywords="@string/keywords_system_navigation" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/gestures_title">
+
+        <ListPreference
+            android:key="torch_power_button_gesture"
+            android:title="@string/torch_power_button_gesture_title"
+            android:entries="@array/torch_power_button_gesture_entries"
+            android:entryValues="@array/torch_power_button_gesture_values" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
