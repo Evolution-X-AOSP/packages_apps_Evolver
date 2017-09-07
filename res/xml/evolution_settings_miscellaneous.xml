@@ -60,6 +60,19 @@
         android:defaultValue="0" />
 
     <PreferenceCategory
+        android:key="dashboard_category"
+        android:title="@string/dashboard_category_title">
+
+        <SwitchPreference
+            android:key="enable_conditions"
+            android:title="@string/dashboard_conditions_title"
+            android:summaryOn="@string/summary_dashboard_conditions_enabled"
+            android:summaryOff="@string/summary_dashboard_conditions_disabled"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/doze_brightness_category">
 
         <com.evolution.settings.preference.CustomSeekBarPreference

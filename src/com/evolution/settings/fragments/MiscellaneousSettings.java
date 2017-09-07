@@ -48,6 +48,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.AppMultiSelectListPreference;
 import com.evolution.settings.preference.CustomSeekBarPreference;
+import com.evolution.settings.preference.CustomSettingsPreferenceFragment;
 import com.evolution.settings.preference.ScrollAppsViewPreference;
 import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
 
@@ -58,9 +59,10 @@ import java.util.HashSet;
 import java.util.List;
 
 @SearchIndexable
-public class MiscellaneousSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener, Indexable {
+public class MiscellaneousSettings extends CustomSettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String DASHBOARD_CONDITIONS = "enable_conditions";
     private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
     private static final String KEY_ASPECT_RATIO_APPS_ENABLED = "aspect_ratio_apps_enabled";
     private static final String KEY_ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
@@ -82,6 +84,8 @@ public class MiscellaneousSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         addPreferencesFromResource(R.xml.evolution_settings_miscellaneous);
+        addCustomPreference(findPreference(DASHBOARD_CONDITIONS), SYSTEM_TWO_STATE, STATE_ON);
+        addCustomPreference(findPreference(KEY_ASPECT_RATIO_APPS_ENABLED), SYSTEM_TWO_STATE, STATE_OFF);
         updateSmartPixelsPreference();
 
         final PreferenceCategory aspectRatioCategory = getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
