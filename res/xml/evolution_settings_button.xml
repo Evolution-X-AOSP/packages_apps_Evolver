@@ -90,6 +90,12 @@
         android:key="home_key"
         android:title="@string/hardware_keys_home_key_title">
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="allow_incall_home"
+            android:title="@string/allow_incall_home_title"
+            android:summary="@string/allow_incall_home_summary"
+            android:defaultValue="true" />
+
         <com.evolution.settings.preference.ActionPreference
             android:key="hwkeys_button_home_single_tap"
             android:summary="@string/hardware_keys_single_tap_summary"
