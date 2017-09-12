@@ -24,6 +24,12 @@
         android:title="@string/statusbar_icons_title">
 
         <Preference
+            android:key="traffic"
+            android:title="@string/traffic_title"
+            android:summary="@string/traffic_summary"
+            android:fragment="com.evolution.settings.fragments.NetworkTrafficSettings" />
+
+        <Preference
             android:title="@string/statusbar_items_title"
             android:summary="@string/systemui_tuner_summary">
             <intent android:action="android.intent.action.MAIN"
