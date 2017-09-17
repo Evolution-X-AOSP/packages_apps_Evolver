@@ -18,6 +18,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/notifications_title">
 
+    <Preference
+        android:key="charging_light"
+        android:fragment="com.evolution.settings.fragments.BatteryLightSettings"
+        android:title="@string/battery_light_settings" />
+
     <PreferenceCategory
         android:key="headsup_notifications_category"
         android:title="@string/headsup_category">
