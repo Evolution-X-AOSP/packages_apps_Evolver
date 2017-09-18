@@ -162,6 +162,7 @@ public class ColorPickerPreference extends Preference implements
                 try {
                     getOnPreferenceChangeListener().onPreferenceChange(ColorPickerPreference.this,
                             Integer.valueOf(mDefValue));
+                    onColorChanged(mDefValue);
                 } catch (NullPointerException e) {
                 }
             }
