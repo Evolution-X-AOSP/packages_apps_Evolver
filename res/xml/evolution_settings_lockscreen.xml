@@ -33,6 +33,24 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="lockscreen_ui_finterprint_category"
+        android:title="@string/fingerprint_category">
+
+        <SwitchPreference
+            android:key="fingerprint_success_vib"
+            android:title="@string/fprint_success_vib_title"
+            android:summary="@string/fprint_success_vib_summary"
+            android:persistent="true" />
+
+        <SwitchPreference
+            android:key="fingerprint_error_vib"
+            android:title="@string/fprint_error_vib_title"
+            android:summary="@string/fprint_error_vib_summary"
+            android:persistent="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_media_art_options"
         android:title="@string/lockscreen_media_art_options_title" >
 
