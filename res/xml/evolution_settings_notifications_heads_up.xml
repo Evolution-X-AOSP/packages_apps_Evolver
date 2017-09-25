@@ -20,30 +20,23 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/notifications_title">
 
-    <!-- Heads up -->
-    <Preference
-        android:key="heads_up_notifications"
+    <com.evolution.settings.preference.GlobalSettingSwitchPreference
+        android:key="heads_up_notifications_enabled"
         android:title="@string/heads_up_notifications"
-        android:fragment="com.evolution.settings.fragments.HeadsUpSettings" />
+        android:summaryOn="@string/summary_heads_up_enabled"
+        android:summaryOff="@string/summary_heads_up_disabled"
+        android:defaultValue="true" />
 
     <PreferenceCategory
-        android:key="led"
-        android:title="@string/light_settings_header">
+        android:title="@string/heads_up_stoplist_title"
+        android:key="stoplist_applications"
+        android:dependency="heads_up_notifications_enabled">
 
         <Preference
-            android:key="notification_light"
-            android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
-            android:title="@string/notification_light_settings">
-            <extra
-                android:name="classname"
-                android:value="com.android.settings.Settings$NotificationAppListActivity" />
-        </Preference>
-
-        <Preference
-            android:key="charging_light"
-            android:title="@string/battery_light_settings"
-            android:summary="@string/battery_light_summary"
-            android:fragment="com.evolution.settings.fragments.BatteryLightSettings" />
+            android:key="add_stoplist_packages"
+            android:icon="@drawable/ic_menu_add"
+            android:title="@string/add_heads_up_package"
+            android:summary="@string/add_heads_up_stoplist_summary" />
 
     </PreferenceCategory>
 
