@@ -39,6 +39,8 @@ import androidx.preference.PreferenceViewHolder;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -51,10 +53,20 @@ import java.util.List;
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.evolution_settings_notifications);
+
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefSet = getPreferenceScreen();
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!EvolutionUtils.isVoiceCapable(getActivity())) {
+                prefSet.removePreference(incallVibCategory);
+        }
     }
 
     @Override
