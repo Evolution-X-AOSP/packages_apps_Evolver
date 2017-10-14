@@ -31,6 +31,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceViewHolder;
@@ -58,6 +59,7 @@ import java.util.Map;
 
 import com.evolution.settings.preferences.PackageListAdapter.PackageItem;
 import com.evolution.settings.preferences.PackageListAdapter;
+import com.evolution.settings.preferences.Utils;
 
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Preference.OnPreferenceClickListener, Indexable {
@@ -65,6 +67,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
     private static final String PREF_HEADS_UP_SNOOZE_TIME = "heads_up_snooze_time";
     private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
     private static final int DIALOG_STOPLIST_APPS = 0;
     private static final int DIALOG_BLACKLIST_APPS = 1;
@@ -140,6 +143,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
 	mForceExpanded = (SwitchPreference) findPreference(FORCE_EXPANDED_NOTIFICATIONS);
         mForceExpanded.setChecked((Settings.System.getInt(getContentResolver(),
 	        Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0) == 1));
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!Utils.isVoiceCapable(getActivity())) {
+                prefSet.removePreference(incallVibCategory);
+        }
     }
 
     @Override
