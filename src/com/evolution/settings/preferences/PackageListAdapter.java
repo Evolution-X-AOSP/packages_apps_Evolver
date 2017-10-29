@@ -42,7 +42,7 @@ import com.android.settings.R;
 public class PackageListAdapter extends BaseAdapter implements Runnable {
     private PackageManager mPm;
     private LayoutInflater mInflater;
-    private List<PackageItem> mInstalledPackages = new LinkedList<PackageItem>();
+    private final List<PackageItem> mInstalledPackages = new LinkedList<PackageItem>();
 
     private final Handler mHandler = new Handler() {
         @Override
