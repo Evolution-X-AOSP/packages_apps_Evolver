@@ -18,6 +18,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/status_bar_title">
 
+    <PreferenceCategory
+        android:key="misc_icons_category"
+        android:title="@string/icons_category">
+
+         <com.evolution.settings.preference.SystemSettingSwitchPreference
+             android:key="show_fourg_icon"
+             android:title="@string/show_fourg_icon_title"
+             android:summary="@string/show_fourg_icon_summary"
+             android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
     <Preference
         android:key="systemui_tuner_statusbar"
         android:title="@string/statusbar_items_category">
