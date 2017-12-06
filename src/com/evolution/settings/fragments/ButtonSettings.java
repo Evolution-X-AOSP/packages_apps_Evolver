@@ -55,7 +55,10 @@ import com.evolution.settings.preference.CustomSeekBarPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
+    private static final String HWKEY_DISABLE = "hardware_keys_disable";
+
     // category keys
+    private static final String CATEGORY_HWKEY = "hardware_keys";
     private static final String CATEGORY_BACK = "back_key";
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_MENU = "menu_key";
@@ -80,6 +83,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
 
     private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
 
+    private SwitchPreference mHwKeyDisable;
     private ListPreference mTorchPowerButton;
     private CustomSeekBarPreference mButtonTimoutBar;
     private CustomSeekBarPreference mManualButtonBrightness;
@@ -92,6 +96,22 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
+        final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
+                .findPreference(CATEGORY_HWKEY);
+        int keysDisabled = 0;
+        if (!needsNavbar) {
+            mHwKeyDisable = (SwitchPreference) findPreference(HWKEY_DISABLE);
+            keysDisabled = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.HARDWARE_KEYS_DISABLE, 0,
+                    UserHandle.USER_CURRENT);
+            mHwKeyDisable.setChecked(keysDisabled != 0);
+            mHwKeyDisable.setOnPreferenceChangeListener(this);
+        } else {
+            prefScreen.removePreference(hwkeyCat);
+        }
+
          // bits for hardware keys present on device
         final int deviceKeys = getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
@@ -135,6 +155,9 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         }
          // let super know we can load ActionPreferences
         onPreferenceScreenLoaded(ActionConstants.getDefaults(ActionConstants.HWKEYS));
+
+        // load preferences first
+        setActionPreferencesEnabled(keysDisabled == 0);
 
         // screen off torch
         mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
@@ -182,6 +205,11 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             Settings.System.putInt(resolver, Settings.System.TORCH_POWER_BUTTON_GESTURE,
                     mTorchPowerButtonValue);
             return true;
+        } else if (preference == mHwKeyDisable) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), Settings.System.HARDWARE_KEYS_DISABLE,
+                    value ? 1 : 0);
+            setActionPreferencesEnabled(!value);
         } else if (preference == mButtonTimoutBar) {
             int buttonTimeout = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
