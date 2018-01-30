@@ -33,11 +33,20 @@ import com.android.settings.SettingsPreferenceFragment;
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private ListPreference mAnnoyingNotification;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.evolution_settings_notifications);
+
+        mAnnoyingNotification = (ListPreference) findPreference("less_notification_sounds");
+        mAnnoyingNotification.setOnPreferenceChangeListener(this);
+        int threshold = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
+                30000, UserHandle.USER_CURRENT);
+        mAnnoyingNotification.setValue(String.valueOf(threshold));
     }
 
     @Override
@@ -47,6 +56,12 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        if (preference.equals(mAnnoyingNotification)) {
+            int mode = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, mode, UserHandle.USER_CURRENT);
+            return true;
+        }
 
         return false;
     }
