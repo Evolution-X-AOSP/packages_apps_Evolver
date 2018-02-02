@@ -69,7 +69,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                     Settings.System.BATTERY_LIGHT_LOW_COLOR, 0xFFFF0000,
                             UserHandle.USER_CURRENT);
             mLowColor = (ColorPickerPreference) findPreference("battery_light_low_color");
-            mLowColor.setAlphaSliderEnabled(true);
+            mLowColor.setAlphaSliderEnabled(false);
             mLowColor.setNewPreviewColor(color);
             mLowColor.setOnPreferenceChangeListener(this);
 
@@ -77,7 +77,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                     Settings.System.BATTERY_LIGHT_MEDIUM_COLOR, 0xFFFFFF00,
                             UserHandle.USER_CURRENT);
             mMediumColor = (ColorPickerPreference) findPreference("battery_light_medium_color");
-            mMediumColor.setAlphaSliderEnabled(true);
+            mMediumColor.setAlphaSliderEnabled(false);
             mMediumColor.setNewPreviewColor(color);
             mMediumColor.setOnPreferenceChangeListener(this);
 
@@ -85,7 +85,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                     Settings.System.BATTERY_LIGHT_FULL_COLOR, 0xFFFFFF00,
                             UserHandle.USER_CURRENT);
             mFullColor = (ColorPickerPreference) findPreference("battery_light_full_color");
-            mFullColor.setAlphaSliderEnabled(true);
+            mFullColor.setAlphaSliderEnabled(false);
             mFullColor.setNewPreviewColor(color);
             mFullColor.setOnPreferenceChangeListener(this);
 
@@ -93,7 +93,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                     Settings.System.BATTERY_LIGHT_REALLYFULL_COLOR, 0xFF00FF00,
                             UserHandle.USER_CURRENT);
             mReallyFullColor = (ColorPickerPreference) findPreference("battery_light_reallyfull_color");
-            mReallyFullColor.setAlphaSliderEnabled(true);
+            mReallyFullColor.setAlphaSliderEnabled(false);
             mReallyFullColor.setNewPreviewColor(color);
             mReallyFullColor.setOnPreferenceChangeListener(this);
         } else {
