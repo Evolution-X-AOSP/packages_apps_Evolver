@@ -19,6 +19,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <Preference
+        android:key="clock_settings"
+        android:title="@string/status_bar_clock"
+        android:summary="@string/status_bar_clock_summary"
+        android:fragment="com.evolution.settings.fragments.ClockDateSettings" />
+
+    <Preference
         android:key="battery_settings"
         android:title="@string/battery_style_category_title"
         android:summary="@string/battery_style_category_summary"
