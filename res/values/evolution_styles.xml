@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  Copyright (C) 2017 The ABC rom
+<!--  Copyright (C) 2018 AICP
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -16,11 +16,17 @@
  -->
 
 <resources>
-    <dimen name="picker_circle_preview_size">26dp</dimen>
-    <dimen name="alert_dialog_padding_material">20dp</dimen>
-	
-    <!-- SeekBarPreferenceCham: offset of the value popup -->
-    <dimen name="seek_bar_preference_cham_value_x_offset">0dp</dimen>
-    <dimen name="seek_bar_preference_cham_value_y_offset">-16dp</dimen>
-	
+
+    <style name="SeekBarPreferenceChamValueTextAppearance" parent="@*android:style/TextAppearance.Toast" />
+
+    <!-- SeekBarPreferenceCham value popup -->
+    <style name="SeekBarPreferenceChamValueView">
+        <item name="android:textColor">?attr/value_popup_view_fg</item>
+        <item name="android:textAppearance">@style/SeekBarPreferenceChamValueTextAppearance</item>
+        <item name="android:background">@drawable/seekbar_popup_bg</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="android:paddingVertical">15dp</item>
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+
 </resources>
