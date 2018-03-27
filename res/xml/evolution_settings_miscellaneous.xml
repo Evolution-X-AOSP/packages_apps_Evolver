@@ -38,6 +38,18 @@
         android:summary="@string/wakeup_when_plugged_unplugged_summary"
         android:defaultValue="true" />
 
+    <Preference
+         android:key="time_in_state"
+         android:title="@string/time_in_state_title"
+         android:summary="@string/time_in_state_summary"
+         android:fragment="com.evolution.settings.fragments.TimeInState" />
+
+    <Preference
+         android:key="doze_settings"
+         android:title="@string/doze_settings_title"
+         android:summary="@string/doze_settings_summary"
+         android:fragment="com.evolution.settings.fragments.DozeSettings" />
+
     <PreferenceCategory
         android:key="aspect_ratio_category"
         android:title="@string/aspect_ratio_category_title">
