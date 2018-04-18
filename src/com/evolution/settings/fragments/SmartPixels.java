@@ -46,6 +46,7 @@ public class SmartPixels extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "SmartPixels";
     private static final String ENABLE = "smart_pixels_enable";
+    private static final String FOOTER = "smart_pixels_footer";
     private static final String ON_POWER_SAVE = "smart_pixels_on_power_save";
 
     private Handler mHandler = new Handler();
@@ -63,6 +64,8 @@ public class SmartPixels extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.evolution_settings_smart_pixels);
+
+        findPreference(FOOTER).setTitle(R.string.smart_pixels_warning_text);
 
         resolver = getActivity().getContentResolver();
 
