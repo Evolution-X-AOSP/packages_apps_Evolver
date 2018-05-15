@@ -28,6 +28,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.database.ContentObserver;
+import android.graphics.Color;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -46,6 +47,8 @@ import android.view.View;
 import java.util.List;
 import java.util.ArrayList;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 import com.evolution.settings.preferences.CustomSeekBarPreference;
 
 public class QuickSettings extends SettingsPreferenceFragment implements
@@ -55,9 +58,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
     private static final String QS_PANEL_BG_ALPHA = "qs_panel_bg_alpha";
+    private static final String QS_PANEL_COLOR = "qs_panel_color";
     private static final String QS_TILE_STYLE = "qs_tile_style";
 
     private CustomSeekBarPreference mQsPanelAlpha;
+    private ColorPickerPreference mQsPanelColor;
 
     private ListPreference mQsTileStyle;
     private ListPreference mTileAnimationStyle;
@@ -100,6 +105,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsPanelAlpha.setValue(qsPanelAlpha);
         mQsPanelAlpha.setOnPreferenceChangeListener(this);
 
+        mQsPanelColor = (ColorPickerPreference) findPreference(QS_PANEL_COLOR);
+        int QsColor = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.QS_PANEL_BG_COLOR, Color.WHITE, UserHandle.USER_CURRENT);
+        mQsPanelColor.setNewPreviewColor(QsColor);
+        mQsPanelColor.setOnPreferenceChangeListener(this);
+
         mQsTileStyle = (ListPreference) findPreference(QS_TILE_STYLE);
         int qsTileStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_TILE_STYLE, 0,
@@ -137,6 +148,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
                     UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mQsPanelColor) {
+            int bgColor = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_PANEL_BG_COLOR, bgColor,
+                    UserHandle.USER_CURRENT);
         } else if (preference == mQsTileStyle) {
             int qsTileStyleValue = Integer.valueOf((String) newValue);
             Settings.System.putIntForUser(resolver, Settings.System.QS_TILE_STYLE,
