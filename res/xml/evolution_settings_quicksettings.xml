@@ -59,13 +59,15 @@
             android:key="qs_panel_color"
             android:title="@string/qs_panel_color_title"
             android:defaultValue="0xffffff"
-            android:persistent="false" />
+            android:persistent="false"
+            android:dependency="qs_panel_bg_use_wall" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_panel_bg_use_wall"
             android:title="@string/qs_bg_wall_title"
             android:summary="@string/qs_bg_wall_summary"
-            android:defaultValue="false"/>
+            android:defaultValue="false"
+            android:disableDependentsState="true" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_running_services_toggle"
