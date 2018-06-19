@@ -78,6 +78,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/flashlight_category">
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="flashlight_on_call"
+            android:title="@string/flashlight_on_call_title"
+            android:entries="@array/flashlight_on_call_entries"
+            android:entryValues="@array/flashlight_on_call_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
 
