@@ -47,27 +47,35 @@
             android:entries="@array/qs_selector_entries"
             android:entryValues="@array/qs_selector_values" />
 
-        <com.evolution.settings.preferences.CustomSeekBarPreference
-            android:key="qs_panel_bg_alpha"
-            android:title="@string/qs_panel_alpha_title"
-            android:max="255"
-            settings:min="0"
-            settings:units=""
-            android:persistent="false" />
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_panel_bg_use_fw"
+            android:title="@string/qs_bg_use_fw"
+            android:summary="@string/qs_bg_use_fw_summary"
+            android:defaultValue="true"
+            android:disableDependentsState="true" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="qs_panel_color"
             android:title="@string/qs_panel_color_title"
             android:defaultValue="0xffffff"
             android:persistent="false"
-            android:dependency="qs_panel_bg_use_wall" />
+            android:dependency="qs_panel_bg_use_fw" />
+
+        <com.evolution.settings.preferences.CustomSeekBarPreference
+            android:key="qs_panel_bg_alpha"
+            android:title="@string/qs_panel_alpha_title"
+            android:max="255"
+            settings:min="0"
+            settings:units=""
+            android:persistent="false"
+            android:dependency="qs_panel_bg_use_fw" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_panel_bg_use_wall"
             android:title="@string/qs_bg_wall_title"
             android:summary="@string/qs_bg_wall_summary"
             android:defaultValue="false"
-            android:disableDependentsState="true" />
+            android:dependency="qs_panel_bg_use_fw" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_running_services_toggle"
