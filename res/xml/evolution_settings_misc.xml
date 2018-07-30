@@ -55,4 +55,22 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="battery_actions"
+        android:title="@string/advanced_doze_settings">
+
+        <Preference
+            android:key="time_in_state"
+            android:title="@string/time_in_state_title"
+            android:summary="@string/time_in_state_summary"
+            android:fragment="com.evolution.settings.fragments.TimeInState" />
+
+        <Preference
+            android:key="doze_settings"
+            android:title="@string/doze_settings_title"
+            android:summary="@string/doze_settings_summary"
+            android:fragment="com.evolution.settings.fragments.DozeSettings" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
