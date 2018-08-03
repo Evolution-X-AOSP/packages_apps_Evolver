@@ -48,6 +48,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR = "lock_screen_visualizer_custom_color";
+    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+
+    ListPreference mLockClockFonts;
 
     private ColorPickerPreference mVisualizerColor;
 
@@ -59,6 +62,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
+
+        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
+        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 0)));
+        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+        mLockClockFonts.setOnPreferenceChangeListener(this);
 
         // Visualizer custom color
         mVisualizerColor = (ColorPickerPreference) findPreference(LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR);
@@ -80,6 +89,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 	    Settings.System.putInt(resolver,
 		    Settings.System.LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR, intHex);
 	    preference.setSummary(hex);
+            return true;
+        } else if (preference == mLockClockFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONTS,
+                    Integer.valueOf((String) newValue));
+            mLockClockFonts.setValue(String.valueOf(newValue));
+            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
             return true;
         }
         return false;
