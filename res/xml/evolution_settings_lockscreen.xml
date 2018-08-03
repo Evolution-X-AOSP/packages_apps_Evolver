@@ -69,7 +69,14 @@
             android:entries="@array/lock_clock_fonts_entries"
             android:entryValues="@array/lock_clock_fonts_values"
             android:summary="@string/lock_clock_font_summary"
+            android:dependency="lockscreen_clock"
             android:persistent="false" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_info"
+            android:title="@string/lockscreen_info_title"
+            android:summary="@string/lockscreen_info_summary"
+            android:defaultValue="true" />
 
         <ListPreference
             android:key="lock_date_fonts"
@@ -78,13 +85,18 @@
             android:entries="@array/lock_date_fonts_entries"
             android:entryValues="@array/lock_date_fonts_values"
             android:summary="@string/lock_date_font_summary"
+            android:dependency="lockscreen_info"
             android:persistent="false" />
 
-        <com.evolution.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_info"
-            android:title="@string/lockscreen_info_title"
-            android:summary="@string/lockscreen_info_summary"
-            android:defaultValue="true" />
+        <ListPreference
+            android:key="lock_owner_fonts"
+            android:title="@string/lock_owner_font_title"
+            android:dialogTitle="@string/lock_owner_font_dialog_title"
+            android:entries="@array/lock_owner_fonts_entries"
+            android:entryValues="@array/lock_owner_fonts_values"
+            android:summary="@string/lock_owner_font_summary"
+            android:dependency="lockscreen_info"
+            android:persistent="false" />
 
     </PreferenceCategory>
 
