@@ -42,6 +42,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.fragments.SmartPixels;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,11 +54,12 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     private static final String KEY_GAMES_SPOOF = "use_games_spoof";
     private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
     private static final String KEY_STREAM_SPOOF = "use_stream_spoof";
-
+    private static final String SMART_PIXELS = "smart_pixels";
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
     private static final String SYS_STREAM_SPOOF = "persist.sys.pixelprops.streaming";
 
+    private Preference mSmartPixels;
     private SwitchPreference mGamesSpoof;
     private SwitchPreference mPhotosSpoof;
     private SwitchPreference mStreamSpoof;
@@ -80,6 +83,12 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         mStreamSpoof = (SwitchPreference) findPreference(KEY_STREAM_SPOOF);
         mStreamSpoof.setChecked(SystemProperties.getBoolean(SYS_STREAM_SPOOF, true));
         mStreamSpoof.setOnPreferenceChangeListener(this);
+
+        mSmartPixels = (Preference) findPreference(SMART_PIXELS);
+        boolean mSmartPixelsSupported = getResources().getBoolean(
+                com.android.internal.R.bool.config_supportSmartPixels);
+        if (!mSmartPixelsSupported)
+            prefSet.removePreference(mSmartPixels);
     }
 
     @Override
@@ -109,5 +118,17 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
      * For Search.
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_miscellaneous);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_miscellaneous) {
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    boolean mSmartPixelsSupported = context.getResources().getBoolean(
+                            com.android.internal.R.bool.config_supportSmartPixels);
+                    if (!mSmartPixelsSupported)
+                        keys.add(SMART_PIXELS);
+
+                    return keys;
+                }
+            };
 }
