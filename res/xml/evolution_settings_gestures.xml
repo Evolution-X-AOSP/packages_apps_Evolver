@@ -23,6 +23,12 @@
         android:title="@string/aosp_gesture_title"
         android:fragment="com.android.settings.gestures.GestureSettings" />
 
+    <com.evolution.settings.preferences.SystemSettingSwitchPreference
+        android:key="use_bottom_gesture_navigation"
+        android:title="@string/use_bottom_gesture_title"
+        android:summary="@string/use_bottom_gesture_summary"
+        android:defaultValue="false" />
+
     <!-- Double tap to sleep -->
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_gesture"
