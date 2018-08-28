@@ -64,6 +64,20 @@
         android:defaultValue="true" />
 
     <PreferenceCategory
+        android:key="quick_settings_category"
+        android:title="@string/qs_panel_alpha_title">
+
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="qs_panel_alpha"
+            android:title="@string/qs_panel_alpha_title"
+            android:summary="@string/qs_panel_alpha_summary"
+            android:max="100"
+            settings:min="0"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/qs_tile_animation_category">
 
         <ListPreference
