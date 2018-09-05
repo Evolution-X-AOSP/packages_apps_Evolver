@@ -32,6 +32,25 @@
         android:defaultValue="0" />
 
     <PreferenceCategory
+        android:title="@string/qs_tile_animation_title">
+
+        <ListPreference
+            android:key="qs_tile_animation_style"
+            android:title="@string/qs_tile_animation_style_title"
+            android:entries="@array/qs_tile_animation_style_entries"
+            android:entryValues="@array/qs_tile_animation_style_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="qs_tile_animation_duration"
+            android:title="@string/qs_tile_animation_duration_title"
+            android:entries="@array/qs_tile_animation_duration_entries"
+            android:entryValues="@array/qs_tile_animation_duration_values"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/brightness_slider_title">
 
         <com.evolution.settings.preferences.SecureSettingSwitchPreference
