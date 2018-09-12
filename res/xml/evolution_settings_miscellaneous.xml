@@ -20,6 +20,18 @@
     android:title="@string/misc_title">
 
     <PreferenceCategory
+        android:key="misc_general_category"
+        android:title="@string/general_category">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="toast_icon"
+            android:title="@string/toast_icon_title"
+            android:summary="@string/toast_icon_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/dev_options_title" />
 
         <Preference
