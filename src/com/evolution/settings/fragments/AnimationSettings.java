@@ -22,6 +22,7 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.view.View;
@@ -69,12 +70,19 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
+    private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+    private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+    private static final String SCROLLINGCACHE_DEFAULT = "2";
 
     private CustomSeekBarPreference mAnimDuration;
+    private ListPreference mListViewAnimation;
+    private ListPreference mListViewInterpolator;
     private ListPreference mScreenOffAnimation;
+    private ListPreference mScrollingCachePref;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
     private ListPreference mTileAnimationStyle;
+
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
     ListPreference mTaskOpenPref;
@@ -86,9 +94,6 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
     ListPreference mWallpaperClose;
     ListPreference mWallpaperIntraOpen;
     ListPreference mWallpaperIntraClose;
-
-    private ListPreference mListViewAnimation;
-    private ListPreference mListViewInterpolator;
 
     private int[] mAnimations;
     private String[] mAnimationsStrings;
@@ -152,6 +157,11 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
                 Settings.Global.ANIMATION_CONTROLS_DURATION, 0);
         mAnimDuration.setValue(animdef);
         mAnimDuration.setOnPreferenceChangeListener(this);
+
+        mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
+        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+                SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
 
         mAnimations = AwesomeAnimationHelper.getAnimationsList();
         int animqty = mAnimations.length;
@@ -271,6 +281,11 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.Global.putInt(resolver,
                     Settings.Global.ANIMATION_CONTROLS_DURATION, value);
+            return true;
+        } else if (preference == mScrollingCachePref) {
+            if (newValue != null) {
+                SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String) newValue);
+            }
             return true;
         } else if (preference == mActivityOpenPref) {
             int val = Integer.parseInt((String) newValue);
