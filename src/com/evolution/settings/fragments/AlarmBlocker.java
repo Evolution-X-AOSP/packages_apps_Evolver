@@ -17,13 +17,12 @@
 
 package com.evolution.settings.fragments;
 
+import android.app.AlarmManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.app.AlarmManager;
-import android.util.Log;
+import android.preference.PreferenceFragment;
 import android.view.View;
 import android.view.ViewGroup;
-import android.preference.PreferenceFragment;
 import android.view.LayoutInflater;
 import android.widget.Switch;
 import android.widget.ListView;
@@ -33,11 +32,12 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.AdapterView;
 import android.provider.Settings;
+import android.support.v4.content.ContextCompat;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.util.Log;
 
 import java.util.List;
 import java.util.Iterator;
@@ -46,10 +46,10 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
+import com.android.internal.logging.nano.MetricsProto;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-
-import com.android.internal.logging.nano.MetricsProto;
 
 public class AlarmBlocker extends SettingsPreferenceFragment {
 
@@ -63,9 +63,11 @@ public class AlarmBlocker extends SettingsPreferenceFragment {
     private Map<String, Boolean> mAlarmState;
     private AlarmListAdapter mListAdapter;
     private boolean mEnabled;
-    private AlertDialog mAlertDialog;
-    private boolean mAlertShown = false;
     private TextView mAlarmListHeader;
+    private TextView mTextView;
+    private View switchBar;
+    private int mBackgroundActivatedColor;
+    private int mBackgroundColor;
 
     private static final int MENU_RELOAD = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
@@ -109,7 +111,7 @@ public class AlarmBlocker extends SettingsPreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("maxwen", "running");
+        getActivity().setTitle(R.string.alarm_blocker_title);
     }
 
     @Override
@@ -121,15 +123,48 @@ public class AlarmBlocker extends SettingsPreferenceFragment {
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        mBackgroundActivatedColor = ContextCompat.getColor(getActivity(), R.color.switchBarBackgroundActivatedColor);
+        mBackgroundColor = ContextCompat.getColor(getActivity(), R.color.switch_bar_background);
+
+        mTextView = (TextView) view.findViewById(R.id.nos_switch_text);
+        mTextView.setText(getString(isEnabled() ?
+                R.string.switch_bar_on : R.string.switch_bar_off));
+
+        switchBar = view.findViewById(R.id.nos_switch_bar);
+        switchBar.setBackgroundColor(isEnabled() ? mBackgroundActivatedColor : mBackgroundColor);
+
+        mBlockerEnabled  = (Switch) switchBar.findViewById(android.R.id.switch_widget);
+        mBlockerEnabled.setChecked(isEnabled());
+
+        mBlockerEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+
+                mTextView.setText(getString(checked ? R.string.switch_bar_on : R.string.switch_bar_off));
+                switchBar.setBackgroundColor(checked ? mBackgroundActivatedColor : mBackgroundColor);
+
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.ALARM_BLOCKING_ENABLED,
+                        checked ? 1 : 0 );
+
+                updateSwitches();
+            }
+        });
+
+        switchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBlockerEnabled.setChecked(!mBlockerEnabled.isChecked());
+            }
+        });
 
         mAlarmState = new HashMap<String, Boolean>();
         updateSeenAlarmsList();
         updateBlockedAlarmsList();
 
-        mBlockerEnabled = (Switch) getActivity().findViewById(
-                R.id.alarm_blocker_switch);
         mAlarmList = (ListView) getActivity().findViewById(
                 R.id.alarm_list);
         mAlarmListHeader = (TextView) getActivity().findViewById(
@@ -141,23 +176,6 @@ public class AlarmBlocker extends SettingsPreferenceFragment {
 
         updateSwitches();
 
-        // after updateSwitches!!!
-        mBlockerEnabled
-                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton v, boolean checked) {
-                        if (checked && isFirstEnable() && !mAlertShown){
-                            showAlert();
-                            mAlertShown = true;
-                        }
-
-                        Settings.System.putInt(getActivity().getContentResolver(),
-                                Settings.System.ALARM_BLOCKING_ENABLED,
-                                checked?1:0);
-
-                        updateSwitches();
-                    }
-                });
     }
 
     @Override
@@ -178,25 +196,22 @@ public class AlarmBlocker extends SettingsPreferenceFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        getActivity().setTitle(R.string.misc_title);
     }
 
-    private boolean isFirstEnable() {
-        return Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.ALARM_BLOCKING_ENABLED) == null;
+    private boolean isEnabled() {
+        return Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.ALARM_BLOCKING_ENABLED, 0) != 0;
     }
 
     private void updateSwitches() {
-        mBlockerEnabled.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.ALARM_BLOCKING_ENABLED, 0)==1?true:false);
-
         mEnabled = mBlockerEnabled.isChecked();
-        mAlarmList.setVisibility(mEnabled ?View.VISIBLE : View.INVISIBLE);
-        mAlarmListHeader.setVisibility(mEnabled ?View.VISIBLE : View.INVISIBLE);
+        mAlarmList.setVisibility(mEnabled ? View.VISIBLE : View.INVISIBLE);
+        mAlarmListHeader.setVisibility(mEnabled ? View.VISIBLE : View.INVISIBLE);
     }
 
     private void updateSeenAlarmsList() {
         AlarmManager pm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
-        Log.d("AlarmBlocker", pm.getSeenAlarms());
 
         String seenAlarms =  pm.getSeenAlarms();
         mSeenAlarms = new ArrayList<String>();
@@ -287,20 +302,5 @@ public class AlarmBlocker extends SettingsPreferenceFragment {
             default:
                 return false;
         }
-    }
-
-    private void showAlert() {
-        /* Display the warning dialog */
-        mAlertDialog = new AlertDialog.Builder(getActivity()).create();
-        mAlertDialog.setTitle(R.string.alarm_blocker_warning_title);
-        mAlertDialog.setMessage(getResources().getString(R.string.alarm_blocker_warning));
-        mAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
-                getResources().getString(com.android.internal.R.string.ok),
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        return;
-                    }
-                });
-        mAlertDialog.show();
     }
 }

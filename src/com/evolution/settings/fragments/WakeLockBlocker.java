@@ -19,10 +19,11 @@ package com.evolution.settings.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.provider.Settings;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.preference.PreferenceFragment;
 import android.view.LayoutInflater;
 import android.widget.Switch;
 import android.widget.ListView;
@@ -31,12 +32,10 @@ import android.widget.TextView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.AdapterView;
-import android.provider.Settings;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 
 import java.util.List;
 import java.util.Iterator;
@@ -62,9 +61,11 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
     private Map<String, Boolean> mWakeLockState;
     private WakeLockListAdapter mListAdapter;
     private boolean mEnabled;
-    private AlertDialog mAlertDialog;
-    private boolean mAlertShown = false;
     private TextView mWakeLockListHeader;
+    private TextView mTextView;
+    private View switchBar;
+    private int mBackgroundActivatedColor;
+    private int mBackgroundColor;
 
     private static final int MENU_RELOAD = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
@@ -106,14 +107,9 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
     }
 
     @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVO_SETTINGS;
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("maxwen", "running");
+        getActivity().setTitle(R.string.wakelock_blocker_title);
     }
 
     @Override
@@ -125,15 +121,48 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        mBackgroundActivatedColor = ContextCompat.getColor(getActivity(), R.color.switchBarBackgroundActivatedColor);
+        mBackgroundColor = ContextCompat.getColor(getActivity(), R.color.switch_bar_background);
+
+        mTextView = (TextView) view.findViewById(R.id.nos_switch_text);
+        mTextView.setText(getString(isEnabled() ?
+                R.string.switch_bar_on : R.string.switch_bar_off));
+
+        switchBar = view.findViewById(R.id.nos_switch_bar);
+        switchBar.setBackgroundColor(isEnabled() ? mBackgroundActivatedColor : mBackgroundColor);
+
+        mBlockerEnabled  = (Switch) switchBar.findViewById(android.R.id.switch_widget);
+        mBlockerEnabled.setChecked(isEnabled());
+
+        mBlockerEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton v, boolean checked) {
+
+                mTextView.setText(getString(checked ? R.string.switch_bar_on : R.string.switch_bar_off));
+                switchBar.setBackgroundColor(checked ? mBackgroundActivatedColor : mBackgroundColor);
+
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.WAKELOCK_BLOCKING_ENABLED,
+                        checked ? 1 : 0 );
+
+                updateSwitches();
+            }
+        });
+
+        switchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBlockerEnabled.setChecked(!mBlockerEnabled.isChecked());
+            }
+        });
 
         mWakeLockState = new HashMap<String, Boolean>();
         updateSeenWakeLocksList();
         updateBlockedWakeLocksList();
 
-        mBlockerEnabled = (Switch) getActivity().findViewById(
-                R.id.wakelock_blocker_switch);
         mWakeLockList = (ListView) getActivity().findViewById(
                 R.id.wakelock_list);
         mWakeLockListHeader = (TextView) getActivity().findViewById(
@@ -144,24 +173,11 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
         mWakeLockList.setAdapter(mListAdapter);
 
         updateSwitches();
+    }
 
-        // after updateSwitches!!!
-        mBlockerEnabled
-                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton v, boolean checked) {
-                        if (checked && isFirstEnable() && !mAlertShown){
-                            showAlert();
-                            mAlertShown = true;
-                        }
-
-                        Settings.System.putInt(getActivity().getContentResolver(),
-                                Settings.System.WAKELOCK_BLOCKING_ENABLED,
-                                checked?1:0);
-
-                        updateSwitches();
-                    }
-                });
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.EVO_SETTINGS;
     }
 
     @Override
@@ -177,26 +193,22 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        getActivity().setTitle(R.string.misc_title);
     }
 
-    private boolean isFirstEnable() {
-        return Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.WAKELOCK_BLOCKING_ENABLED) == null;
-    }
+    private boolean isEnabled() {
+        return Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.WAKELOCK_BLOCKING_ENABLED, 0) != 0;
+     }
 
     private void updateSwitches() {
-        mBlockerEnabled.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.WAKELOCK_BLOCKING_ENABLED, 0)==1?true:false);
-
         mEnabled = mBlockerEnabled.isChecked();
-        //mWakeLockList.setEnabled(mEnabled);
-        mWakeLockList.setVisibility(mEnabled ?View.VISIBLE : View.INVISIBLE);
-        mWakeLockListHeader.setVisibility(mEnabled ?View.VISIBLE : View.INVISIBLE);
+        mWakeLockList.setVisibility(mEnabled ? View.VISIBLE : View.INVISIBLE);
+        mWakeLockListHeader.setVisibility(mEnabled ? View.VISIBLE : View.INVISIBLE);
     }
 
     private void updateSeenWakeLocksList() {
         PowerManager pm = (PowerManager) getActivity().getSystemService(Context.POWER_SERVICE);
-        Log.d("maxwen", pm.getSeenWakeLocks());
 
         String seenWakeLocks =  pm.getSeenWakeLocks();
         mSeenWakeLocks = new ArrayList<String>();
@@ -245,7 +257,6 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
         if(buffer.length()>0){
             buffer.deleteCharAt(buffer.length() - 1);
         }
-        Log.d("maxwen", buffer.toString());
         Settings.System.putString(getActivity().getContentResolver(),
                 Settings.System.WAKELOCK_BLOCKING_LIST, buffer.toString());
     }
@@ -290,18 +301,4 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
         }
     }
 
-    private void showAlert() {
-        /* Display the warning dialog */
-        mAlertDialog = new AlertDialog.Builder(getActivity()).create();
-        mAlertDialog.setTitle(R.string.wakelock_blocker_warning_title);
-        mAlertDialog.setMessage(getResources().getString(R.string.wakelock_blocker_warning));
-        mAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
-                getResources().getString(com.android.internal.R.string.ok),
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        return;
-                    }
-                });
-        mAlertDialog.show();
-    }
 }
