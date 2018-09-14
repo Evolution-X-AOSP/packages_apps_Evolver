@@ -33,6 +33,12 @@
         android:fragment="com.evolution.settings.fragments.AlarmBlocker"
         android:title="@string/alarm_blocker_title" />
 
+    <com.evolution.settings.preferences.SystemSettingListPreference
+        android:key="screenshot_type"
+        android:entries="@array/screenshot_type_entries"
+        android:entryValues="@array/screenshot_type_values"
+        android:title="@string/screenshot_type_title" />
+
     <com.evolution.settings.preferences.SystemSettingSwitchPreference
         android:key="wake_when_plugged_or_unplugged"
         android:title="@string/wake_when_plugged_or_unplugged_title"
