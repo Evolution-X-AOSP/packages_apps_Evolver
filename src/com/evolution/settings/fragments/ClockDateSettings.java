@@ -19,22 +19,30 @@ package com.evolution.settings.fragments;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.preference.EditTextPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -42,6 +50,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.evolution.settings.preferences.SystemSettingSwitchPreference;
+import com.evolution.settings.preferences.SystemSettingSeekBarPreference;
 import java.util.Date;
 
 public class ClockDateSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
@@ -54,6 +64,8 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
     private static final String PREF_STATUS_BAR_CLOCK = "status_bar_show_clock";
     private static final String PREF_CLOCK_SHOW_SECONDS = "status_bar_clock_seconds";
     private static final String STATUS_BAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
+    private static final String STATUS_BAR_CLOCK_SIZE  = "status_bar_clock_size";
+    private static final String STATUS_BAR_CLOCK_FONT_STYLE  = "status_bar_clock_font_style";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -61,18 +73,23 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
 
     private ListPreference mClockStyle;
     private ListPreference mClockAmPmStyle;
+    private ListPreference mClockFontStyle;
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateFormat;
     private ListPreference mClockDatePosition;
     private ListPreference mClockDateStyle;
     private SwitchPreference mStatusBarClock;
     private SwitchPreference mShowSeconds;
+    private SystemSettingSeekBarPreference mClockSize;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.evolution_settings_statusbar_clock_date);
+
+        PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
         mClockStyle = (ListPreference) findPreference(PREF_CLOCK_STYLE);
         mClockStyle.setOnPreferenceChangeListener(this);
@@ -137,6 +154,17 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
                 Settings.System.STATUS_BAR_CLOCK_SECONDS, 0) == 1));
         mShowSeconds.setOnPreferenceChangeListener(this);
 
+        mClockSize = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
+        int clockSize = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK_SIZE, 14);
+        mClockSize.setValue(clockSize / 1);
+        mClockSize.setOnPreferenceChangeListener(this);
+        mClockFontStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_FONT_STYLE);
+        int showClockFont = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK_FONT_STYLE, 0);
+        mClockFontStyle.setValue(String.valueOf(showClockFont));
+        mClockFontStyle.setOnPreferenceChangeListener(this);
+
         boolean mClockDateToggle = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0) != 0;
         if (!mClockDateToggle) {
@@ -160,7 +188,7 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         AlertDialog dialog;
-
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mClockAmPmStyle) {
             int val = Integer.parseInt((String) newValue);
             int index = mClockAmPmStyle.findIndexOfValue((String) newValue);
@@ -174,6 +202,18 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_STYLE, val);
             mClockStyle.setSummary(mClockStyle.getEntries()[index]);
+            return true;
+        }  else if (preference == mClockSize) {
+            int width = ((Integer)newValue).intValue();
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_CLOCK_SIZE, width);
+            return true;
+        }  else if (preference == mClockFontStyle) {
+            int showClockFont = Integer.valueOf((String) newValue);
+            int index = mClockFontStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.
+                STATUS_BAR_CLOCK_FONT_STYLE, showClockFont);
+            mClockFontStyle.setSummary(mClockFontStyle.getEntries()[index]);
             return true;
         } else if (preference == mClockDateDisplay) {
             int val = Integer.parseInt((String) newValue);
