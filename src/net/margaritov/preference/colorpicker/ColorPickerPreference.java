@@ -54,7 +54,6 @@ public class ColorPickerPreference extends Preference implements
     private int mValue = Color.BLACK;
     private float mDensity = 0;
     private boolean mAlphaSliderEnabled = false;
-    private boolean mEnabled = true;
 
     // if we return -6, button is not enabled
     static final String SETTINGS_NS = "http://schemas.android.com/apk/res/com.android.settings";
@@ -211,22 +210,6 @@ public class ColorPickerPreference extends Preference implements
                 (mValue - 0x101010) : mValue;
         iView.setImageDrawable(createOvalShape(size, 0xFF000000 + imageColor));
         iView.setTag("preview");
-        iView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mEnabled) {
-                    showDialog(null);
-                }
-            }
-        });
-    }
-
-    @Override
-    public void setEnabled(boolean enabled) {
-        super.setEnabled(enabled);
-        if (mEnabled != enabled) {
-            mEnabled = enabled;
-        }
     }
 
     @Override
