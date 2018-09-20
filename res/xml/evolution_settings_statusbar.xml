@@ -49,6 +49,13 @@
                     android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
         </Preference>
 
+        <!-- Status Bar Logo Style -->
+        <Preference
+            android:key="status_bar_logo"
+            android:title="@string/status_bar_logo_category_title"
+            android:summary="@string/status_bar_logo_category_summary"
+            android:fragment="com.evolution.settings.fragments.StatusBarLogo" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="use_old_mobiletype"
             android:title="@string/use_old_mobiletype_title"
