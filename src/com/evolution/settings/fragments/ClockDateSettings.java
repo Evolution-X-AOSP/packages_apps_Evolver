@@ -52,6 +52,8 @@ import com.android.settings.Utils;
 
 import com.evolution.settings.preferences.SystemSettingSwitchPreference;
 import com.evolution.settings.preferences.SystemSettingSeekBarPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 import java.util.Date;
 
 public class ClockDateSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
@@ -66,10 +68,13 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
     private static final String STATUS_BAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
     private static final String STATUS_BAR_CLOCK_SIZE  = "status_bar_clock_size";
     private static final String STATUS_BAR_CLOCK_FONT_STYLE  = "status_bar_clock_font_style";
+    private static final String STATUS_BAR_CLOCK_COLOR = "status_bar_clock_color";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
+
+    static final int DEFAULT_STATUS_CLOCK_COLOR = 0xffffffff;
 
     private ListPreference mClockStyle;
     private ListPreference mClockAmPmStyle;
@@ -81,6 +86,7 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
     private SwitchPreference mStatusBarClock;
     private SwitchPreference mShowSeconds;
     private SystemSettingSeekBarPreference mClockSize;
+    private ColorPickerPreference mClockColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,6 +96,9 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        int intColor;
+        String hexColor;
 
         mClockStyle = (ListPreference) findPreference(PREF_CLOCK_STYLE);
         mClockStyle.setOnPreferenceChangeListener(this);
@@ -148,6 +157,14 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
         mStatusBarClock.setOnPreferenceChangeListener(this);
 
+        mClockColor = (ColorPickerPreference) findPreference(STATUS_BAR_CLOCK_COLOR);
+        mClockColor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK_COLOR, DEFAULT_STATUS_CLOCK_COLOR);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mClockColor.setSummary(hexColor);
+        mClockColor.setNewPreviewColor(intColor);
+
         mShowSeconds = (SwitchPreference) findPreference(PREF_CLOCK_SHOW_SECONDS);
         mShowSeconds.setChecked((Settings.System.getInt(
                 getActivity().getApplicationContext().getContentResolver(),
@@ -202,6 +219,14 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_STYLE, val);
             mClockStyle.setSummary(mClockStyle.getEntries()[index]);
+            return true;
+        } else if (preference == mClockColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_CLOCK_COLOR, intHex);
             return true;
         }  else if (preference == mClockSize) {
             int width = ((Integer)newValue).intValue();

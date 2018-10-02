@@ -41,6 +41,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -48,6 +49,7 @@ import com.android.settings.Utils;
 
 import com.evolution.settings.preferences.SystemSettingSwitchPreference;
 import com.evolution.settings.preferences.SystemSettingSeekBarPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -59,11 +61,15 @@ public class CarrierSettings extends SettingsPreferenceFragment implements
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String STATUS_BAR_CARRIER_FONT_SIZE  = "status_bar_carrier_font_size";
     private static final String CARRIER_FONT_STYLE  = "status_bar_carrier_font_style";
+    private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
+
+    static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;
 
     private PreferenceScreen mCustomCarrierLabel;
     private String mCustomCarrierLabelText;
     private SystemSettingSeekBarPreference mStatusBarCarrierSize;
     private ListPreference mCarrierFontStyle;
+    private ColorPickerPreference mCarrierColorPicker;
 
     @Override
     public int getMetricsCategory() {
@@ -79,9 +85,20 @@ public class CarrierSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
+        int intColor;
+        String hexColor;
+
         // custom carrier label
         mCustomCarrierLabel = (PreferenceScreen) findPreference(CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
+
+        mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
+        mCarrierColorPicker.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mCarrierColorPicker.setSummary(hexColor);
+        mCarrierColorPicker.setNewPreviewColor(intColor);
 
         mStatusBarCarrierSize = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
         int StatusBarCarrierSize = Settings.System.getInt(resolver,
@@ -110,12 +127,19 @@ public class CarrierSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                     Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, width);
             return true;
+        } else if (preference == mCarrierColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(
+            Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
+            return true;
         }  else if (preference == mCarrierFontStyle) {
             int showCarrierFont = Integer.valueOf((String) newValue);
             int index = mCarrierFontStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver, Settings.System.
                 STATUS_BAR_CARRIER_FONT_STYLE, showCarrierFont);
-            mCarrierFontStyle.setSummary(mCarrierFontStyle.getEntries()[index]);
             return true;
         }
         return false;
