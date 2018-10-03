@@ -53,6 +53,8 @@ import java.util.Collections;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String KEY_HIDE_NOTCH = "statusbar_hide_notch";
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -60,6 +62,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.evolution_settings_statusbar);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        final String displayCutout = getResources().getString(
+                com.android.internal.R.string.config_mainBuiltInDisplayCutout);
+        if(displayCutout.isEmpty()) {
+            final Preference hideNotchPref =
+                (Preference) getPreferenceScreen().findPreference(KEY_HIDE_NOTCH);
+            getPreferenceScreen().removePreference(hideNotchPref);
+        }
 
     }
 
