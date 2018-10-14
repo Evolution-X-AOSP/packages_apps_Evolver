@@ -63,6 +63,7 @@ public class StatusBar extends DashboardFragment implements
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
     private static final String STATUS_BAR_SIGNAL_CATEGORY = "status_bar_signal_category";
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
+    private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -72,6 +73,7 @@ public class StatusBar extends DashboardFragment implements
     private SwitchPreference mBatteryTextCharging;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
+    private SystemSettingListPreference mChargingSymbol;
     private SystemSettingListPreference mStatusBarClock;
 
     @Override
@@ -125,6 +127,9 @@ public class StatusBar extends DashboardFragment implements
         if (EvolutionUtils.isWifiOnly(mContext)) {
             prefScreen.removePreference(mSignalCategory);
         }
+
+        mChargingSymbol = (SystemSettingListPreference) findPreference(TEXT_CHARGING_SYMBOL);
+        mChargingSymbol.setEnabled(batterystyle == BATTERY_STYLE_TEXT);
     }
 
     @Override
@@ -138,6 +143,7 @@ public class StatusBar extends DashboardFragment implements
                     value != BATTERY_STYLE_TEXT && value != BATTERY_STYLE_HIDDEN);
             mBatteryTextCharging.setEnabled(value == BATTERY_STYLE_HIDDEN ||
                     (value != BATTERY_STYLE_TEXT && batterypercent != 2));
+            mChargingSymbol.setEnabled(value == BATTERY_STYLE_TEXT);
             return true;
         } else if (preference == mBatteryPercent) {
             int value = Integer.parseInt((String) newValue);
