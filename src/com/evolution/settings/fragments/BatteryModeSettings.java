@@ -50,6 +50,7 @@ public class BatteryModeSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
     private static final String BATTERY_PERCENTAGE_HIDDEN = "0";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String BATTERY_TEXT_CHARGING_SYMBOL = "text_charging_symbol";
 
     public static final int BATTERY_STYLE_PORTRAIT = 0;
     public static final int BATTERY_STYLE_CIRCLE = 1;
@@ -59,6 +60,7 @@ public class BatteryModeSettings extends SettingsPreferenceFragment implements
 
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
+    private ListPreference mBatteryText;
     private SwitchPreference mBatteryCharging;
 
     @Override
@@ -74,6 +76,7 @@ public class BatteryModeSettings extends SettingsPreferenceFragment implements
         mBatteryCharging = (SwitchPreference) findPreference(STATUS_BAR_BATTERY_TEXT_CHARGING);
 
         mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+        mBatteryText = (ListPreference) findPreference(BATTERY_TEXT_CHARGING_SYMBOL);
         int batterystyle = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT);
         mBatteryStyle.setOnPreferenceChangeListener(this);
@@ -102,6 +105,7 @@ public class BatteryModeSettings extends SettingsPreferenceFragment implements
         }
         mBatteryCharging.setEnabled(enabledx);
         mBatteryPercent.setEnabled(enabled);
+        mBatteryText.setEnabled(!enabled);
     }
 
     @Override
