@@ -40,7 +40,14 @@
     <PreferenceCategory
         android:title="@string/qs_panel_tuner_category_title">
 
-    <com.evolution.settings.preferences.CustomSeekBarPreference
+        <ListPreference
+            android:key="qs_tile_style"
+            android:title="@string/qs_tile_style_title"
+            android:persistent="false"
+            android:entries="@array/qs_selector_entries"
+            android:entryValues="@array/qs_selector_values" />
+
+        <com.evolution.settings.preferences.CustomSeekBarPreference
             android:key="qs_panel_bg_alpha"
             android:title="@string/qs_panel_alpha_title"
             android:max="255"
