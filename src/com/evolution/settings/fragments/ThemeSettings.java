@@ -42,6 +42,7 @@ import com.evolution.settings.display.QsBlurIntensityPreferenceController;
 import com.evolution.settings.display.QsbgColorPreferenceController;
 import com.evolution.settings.display.QsColorPreferenceController;
 import com.evolution.settings.display.QsCustomHeaderPreferenceController;
+import com.evolution.settings.display.QsTileStylePreferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,6 +91,7 @@ public class ThemeSettings extends DashboardFragment implements Indexable  {
         controllers.add(new QsbgColorPreferenceController(context));
         controllers.add(new QsColorPreferenceController(context));
         controllers.add(new QsCustomHeaderPreferenceController(context));
+        controllers.add(new QsTileStylePreferenceController(context));
         return controllers;
     }
 

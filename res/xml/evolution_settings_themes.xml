@@ -57,6 +57,13 @@
         android:key="quick_settings_category"
         android:title="@string/qs_themes_category_title">
 
+        <ListPreference
+            android:key="qs_tile_style"
+            android:title="@string/qs_tile_style_title"
+            android:persistent="false"
+            android:entries="@array/qs_selector_entries"
+            android:entryValues="@array/qs_selector_values" />
+
         <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
             android:key="status_bar_custom_header"
             android:fragment="com.evolution.settings.fragments.QSHeaderSettings"
