@@ -43,7 +43,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import com.evolution.settings.preference.Utils;
+import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.SecureSettingMasterSwitchPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 import com.evolution.settings.preference.SystemSettingListPreference;
@@ -58,6 +58,8 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
+    private static final String DATE_FONT_SIZE  = "lockdate_font_size";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
@@ -65,6 +67,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
 
+    private CustomSeekBarPreference mClockFontSize;
+    private CustomSeekBarPreference mDateFontSize;
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
     private SwitchPreference mFingerprintVib;
@@ -107,12 +111,24 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mLockClockFonts.setSummary(mLockClockFonts.getEntry());
         mLockClockFonts.setOnPreferenceChangeListener(this);
 
+        // Lock Clock Size
+        mClockFontSize = (CustomSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
+        mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKCLOCK_FONT_SIZE, 54));
+        mClockFontSize.setOnPreferenceChangeListener(this);
+
         // Lockscren Date Fonts
         mLockDateFonts = (ListPreference) findPreference(LOCK_DATE_FONTS);
         mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
                 getContentResolver(), Settings.System.LOCK_DATE_FONTS, 28)));
         mLockDateFonts.setSummary(mLockDateFonts.getEntry());
         mLockDateFonts.setOnPreferenceChangeListener(this);
+
+        // Lock Date Size
+        mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
+        mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKDATE_FONT_SIZE, 18));
+        mDateFontSize.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -140,11 +156,21 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             mLockClockFonts.setValue(String.valueOf(newValue));
             mLockClockFonts.setSummary(mLockClockFonts.getEntry());
             return true;
+        } else if (preference == mClockFontSize) {
+            int top = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKCLOCK_FONT_SIZE, top*1);
+            return true;
         } else if (preference == mLockDateFonts) {
             Settings.System.putInt(getContentResolver(), Settings.System.LOCK_DATE_FONTS,
                     Integer.valueOf((String) newValue));
             mLockDateFonts.setValue(String.valueOf(newValue));
             mLockDateFonts.setSummary(mLockDateFonts.getEntry());
+            return true;
+        } else if (preference == mDateFontSize) {
+            int top = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKDATE_FONT_SIZE, top*1);
             return true;
         }
         return false;
