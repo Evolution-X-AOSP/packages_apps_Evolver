@@ -100,6 +100,25 @@
             android:defaultValue="18"
             android:persistent="false" />
 
+        <ListPreference
+            android:key="lock_ownerinfo_fonts"
+            android:title="@string/lock_ownerinfo_font_title"
+            android:dialogTitle="@string/lock_ownerinfo_font_dialog_title"
+            android:entries="@array/lock_clock_fonts_entries"
+            android:entryValues="@array/lock_clock_fonts_values"
+            android:summary="%s"
+            android:defaultValue="28"
+            android:persistent="false" />
+
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="lockowner_font_size"
+            android:title="@string/lockowner_font_size_title"
+            android:max="25"
+            settings:min="10"
+            settings:units="sp"
+            android:defaultValue="18"
+            android:persistent="false" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:title="@string/lockscreen_battery_info_title"

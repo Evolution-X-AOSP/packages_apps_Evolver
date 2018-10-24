@@ -64,13 +64,17 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
+    private static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts";
+    private static final String LOCKOWNER_FONT_SIZE = "lockowner_font_size";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
 
     private CustomSeekBarPreference mClockFontSize;
     private CustomSeekBarPreference mDateFontSize;
+    private CustomSeekBarPreference mOwnerInfoFontSize;
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
+    private ListPreference mLockOwnerInfoFonts;
     private SwitchPreference mFingerprintVib;
     private SystemSettingListPreference mArtFilter;
     private SystemSettingSeekBarPreference mBlurSeekbar;
@@ -104,31 +108,44 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
         mFpKeystore.setOnPreferenceChangeListener(this);
 
-        // Lockscren Clock Fonts
+        // Lockscreen Clock Fonts
         mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
         mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
                 getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 28)));
         mLockClockFonts.setSummary(mLockClockFonts.getEntry());
         mLockClockFonts.setOnPreferenceChangeListener(this);
 
-        // Lock Clock Size
+        // Lockscreen Clock Size
         mClockFontSize = (CustomSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
         mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKCLOCK_FONT_SIZE, 54));
         mClockFontSize.setOnPreferenceChangeListener(this);
 
-        // Lockscren Date Fonts
+        // Lockscreen Date Fonts
         mLockDateFonts = (ListPreference) findPreference(LOCK_DATE_FONTS);
         mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
                 getContentResolver(), Settings.System.LOCK_DATE_FONTS, 28)));
         mLockDateFonts.setSummary(mLockDateFonts.getEntry());
         mLockDateFonts.setOnPreferenceChangeListener(this);
 
-        // Lock Date Size
+        // Lockscreen Date Size
         mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
         mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKDATE_FONT_SIZE, 18));
         mDateFontSize.setOnPreferenceChangeListener(this);
+
+        // Lockscreen Owner Info Fonts
+        mLockOwnerInfoFonts = (ListPreference) findPreference(LOCK_OWNERINFO_FONTS);
+        mLockOwnerInfoFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS, 28)));
+        mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry());
+        mLockOwnerInfoFonts.setOnPreferenceChangeListener(this);
+
+        // Lockscreen Owner Info Size
+        mOwnerInfoFontSize = (CustomSeekBarPreference) findPreference(LOCKOWNER_FONT_SIZE);
+        mOwnerInfoFontSize.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKOWNER_FONT_SIZE, 18));
+        mOwnerInfoFontSize.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -171,6 +188,17 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             int top = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKDATE_FONT_SIZE, top*1);
+            return true;
+       } else if (preference == mLockOwnerInfoFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS,
+                    Integer.valueOf((String) newValue));
+            mLockOwnerInfoFonts.setValue(String.valueOf(newValue));
+            mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry());
+            return true;
+        } else if (preference == mOwnerInfoFontSize) {
+            int top = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKOWNER_FONT_SIZE, top*1);
             return true;
         }
         return false;
