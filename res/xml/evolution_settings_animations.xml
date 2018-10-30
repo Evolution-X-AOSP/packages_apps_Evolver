@@ -20,6 +20,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/animation_title">
 
+    <com.evolution.settings.preference.GlobalSettingSwitchPreference
+        android:key="disable_transition_animations"
+        android:title="@string/disable_transition_animations_title"
+        android:summary="@string/disable_transition_animations_summary"
+        android:defaultValue="false" />
+
     <com.evolution.settings.preference.SystemSettingListPreference
         android:key="screen_off_animation"
         android:title="@string/screen_off_animation_title"
