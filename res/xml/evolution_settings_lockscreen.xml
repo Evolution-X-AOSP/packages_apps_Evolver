@@ -72,6 +72,15 @@
             android:dependency="lockscreen_clock"
             android:persistent="false" />
 
+        <com.evolution.settings.preferences.SystemSettingSeekBarPreference
+            android:key="lockclock_font_size"
+            android:title="@string/lockclock_font_size_title"
+            android:max="120"
+            android:min="50"
+            android:persistent="false"
+            android:dependency="lockscreen_clock"
+            android:defaultValue="64" />
+
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_info"
             android:title="@string/lockscreen_info_title"
@@ -93,6 +102,15 @@
             android:entries="@array/lock_date_fonts_entries"
             android:entryValues="@array/lock_date_fonts_values"
             android:summary="@string/lock_date_font_summary"
+            android:dependency="lockscreen_info"
+            android:persistent="false" />
+
+        <com.evolution.settings.preferences.SystemSettingSeekBarPreference
+            android:key="lockdate_font_size"
+            android:title="@string/lockdate_font_size_title"
+            android:max="40"
+            android:min="10"
+            android:defaultValue="16"
             android:dependency="lockscreen_info"
             android:persistent="false" />
 
