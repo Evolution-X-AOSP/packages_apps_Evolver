@@ -70,6 +70,7 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
+    private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
@@ -80,6 +81,7 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mAnimDuration;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
+    private ListPreference mPowerMenuAnimations;
     private ListPreference mScrollingCachePref;
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
@@ -242,6 +244,12 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
         mListViewInterpolator.setEnabled(listviewanimation > 0);
         mListViewInterpolator.setOnPreferenceChangeListener(this);
+
+        mPowerMenuAnimations = (ListPreference) findPreference(POWER_MENU_ANIMATIONS);
+        mPowerMenuAnimations.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS, 0)));
+        mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
+        mPowerMenuAnimations.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -367,6 +375,12 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
             Settings.Global.putInt(resolver,
                     Settings.Global.LISTVIEW_INTERPOLATOR, value);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
+            return true;
+        } else if (preference == mPowerMenuAnimations) {
+            Settings.System.putInt(getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS,
+                    Integer.valueOf((String) newValue));
+            mPowerMenuAnimations.setValue(String.valueOf(newValue));
+            mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
             return true;
         }
         return false;
