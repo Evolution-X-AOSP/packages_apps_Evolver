@@ -51,6 +51,14 @@
         android:key="volume_keys"
         android:title="@string/hardware_keys_volume_keys_title">
 
+        <!-- Safe Headset Volume Switch -->
+        <SwitchPreference
+            android:key="safe_headset_volume"
+            android:title="@string/safe_headset_volume_title"
+            android:summary="@string/safe_headset_volume_summary"
+            android:persistent="false"
+            android:defaultValue="true" />
+
         <!-- Audio Panel view  -->
         <PreferenceScreen
             android:key="volume_panel"
