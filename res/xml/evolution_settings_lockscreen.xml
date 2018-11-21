@@ -18,4 +18,11 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Ambient music ticker -->
+    <Preference
+        android:key="force_ambient_for_media_pref"
+        android:fragment="com.evolution.settings.fragments.AmbientTicker"
+        android:title="@string/force_ambient_for_media_pref_title"
+        android:summary="@string/force_ambient_for_media_pref_summary" />
+
 </PreferenceScreen>
