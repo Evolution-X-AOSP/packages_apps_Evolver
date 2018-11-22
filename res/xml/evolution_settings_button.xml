@@ -18,6 +18,11 @@
         android:title="@string/button_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="hardware_keys"
+        android:title="@string/hardware_keys_category"
+        android:fragment="com.evolution.settings.fragments.NavigationCategory" />
+
     <PreferenceCategory
             android:key="navigationbar_category"
             android:title="@string/navbar_title">
