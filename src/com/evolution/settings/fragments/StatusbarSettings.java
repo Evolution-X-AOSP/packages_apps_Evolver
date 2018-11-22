@@ -54,7 +54,7 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_statusbar);
+        addPreferencesFromResource(R.xml.evolution_settings_status_bar);
     }
 
     @Override
@@ -72,5 +72,5 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
      */
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_statusbar);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_status_bar);
 }
