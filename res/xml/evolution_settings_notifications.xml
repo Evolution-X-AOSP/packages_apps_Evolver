@@ -18,11 +18,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/notifications_title">
 
-    <Preference
-        android:key="charging_light"
-        android:fragment="com.evolution.settings.fragments.BatteryLightSettings"
-        android:title="@string/battery_light_settings" />
-
     <PreferenceCategory
         android:key="headsup_notifications_category"
         android:title="@string/headsup_category">
@@ -32,6 +27,39 @@
             android:summary="@string/heads_up_notifications_summary"
             android:title="@string/heads_up_notifications"
             android:fragment="com.evolution.settings.fragments.HeadsUpSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notifications_general_category"
+        android:title="@string/general_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+           android:key="notification_guts_kill_app_button"
+           android:title="@string/notification_guts_kill_app_button_title"
+           android:summary="@string/notification_guts_kill_app_button_summary"
+           android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="led"
+        android:title="@string/light_settings_header">
+
+        <Preference
+            android:key="notification_light"
+            android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
+            android:title="@string/notification_light_settings">
+            <extra
+                android:name="classname"
+                android:value="com.android.settings.Settings$NotificationAppListActivity" />
+        </Preference>
+
+        <Preference
+            android:key="charging_light"
+            android:title="@string/battery_light_settings"
+            android:summary="@string/battery_light_summary"
+            android:fragment="com.evolution.settings.fragments.BatteryLightSettings" />
 
     </PreferenceCategory>
 
