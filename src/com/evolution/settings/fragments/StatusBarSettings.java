@@ -25,6 +25,7 @@ import android.content.pm.ResolveInfo;
 import android.os.UserHandle;
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
@@ -33,7 +34,8 @@ import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.PreferenceFragment;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
+
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 
 import java.util.Locale;
@@ -54,6 +56,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String KEY_HIDE_NOTCH = "statusbar_hide_notch";
+    private static final String KEY_STATUS_BAR_LOGO = "status_bar_logo";
+
+    private SwitchPreference mShowEvolutionLogo;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -72,11 +77,21 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(hideNotchPref);
         }
 
+        mShowEvolutionLogo = (SwitchPreference) findPreference(KEY_STATUS_BAR_LOGO);
+        mShowEvolutionLogo.setChecked((Settings.System.getInt(getContentResolver(),
+             Settings.System.STATUS_BAR_LOGO, 0) == 1));
+        mShowEvolutionLogo.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-
+        if  (preference == mShowEvolutionLogo) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_LOGO, value ? 1 : 0);
+            return true;
+        }
         return false;
     }
 
