@@ -38,6 +38,23 @@
         android:defaultValue="false" />
 
     <PreferenceCategory
+        android:title="@string/qs_panel_tuner_category_title">
+
+        <com.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_info_header"
+            android:title="@string/show_info_header_title"
+            android:summary="@string/show_info_header_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_secure"
+            android:title="@string/show_secure_title"
+            android:summary="@string/show_secure_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/qs_tile_animation_title">
 
         <ListPreference
