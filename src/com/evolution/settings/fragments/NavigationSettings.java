@@ -70,6 +70,7 @@ public class NavigationSettings extends ActionFragment implements
     private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
+    private static final String KEY_NAVIGATION_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
     private static final String KEY_NAVIGATION_HOME_LONG_PRESS = "navigation_home_long_press";
     private static final String KEY_NAVIGATION_HOME_DOUBLE_TAP = "navigation_home_double_tap";
     private static final String KEY_NAVIGATION_APP_SWITCH_LONG_PRESS =
@@ -83,7 +84,6 @@ public class NavigationSettings extends ActionFragment implements
     private static final String ANBI_ENABLED_OPTION = "anbi_enabled_option";
     private static final String ENABLE_NAV_BAR = "enable_nav_bar";
     private static final String PREF_HW_BUTTONS = "hw_buttons";
-
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -125,6 +125,7 @@ public class NavigationSettings extends ActionFragment implements
     private SwitchPreference mHwKeyDisable;
     private SwitchPreference mDisableNavigationKeys;
     private SystemSettingSwitchPreference mAnbiEnable;
+    private SystemSettingSwitchPreference mNavigationArrowKeys;
     private SwitchPreference mEnableNavigationBar;
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
@@ -270,6 +271,9 @@ public class NavigationSettings extends ActionFragment implements
         Action edgeLongSwipeAction = Action.fromSettings(resolver,
                 Settings.System.KEY_EDGE_LONG_SWIPE_ACTION,
                 Action.NOTHING);
+
+        // Navigation bar arrow keys while typing
+        mNavigationArrowKeys = findPreference(KEY_NAVIGATION_ARROW_KEYS);
 
         // Navigation bar home long press
         Action defaultHomeLongPressActionNavbar = Action.fromIntSafe(res.getInteger(
