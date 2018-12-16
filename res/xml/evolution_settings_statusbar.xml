@@ -49,6 +49,37 @@
         android:fragment="com.evolution.settings.fragments.CarrierSettings" />
 
     <PreferenceCategory
+        android:key="corners_category"
+        android:title="@string/corners_category" >
+
+        <com.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="sysui_rounded_fwvals"
+            android:title="@string/corner_fwvals"
+            android:summary="@string/corner_fwvals_summary"
+            android:defaultValue="true"
+            android:disableDependentsState="true" />
+
+        <com.evolution.settings.preferences.CustomSeekBarPreference
+            android:key="sysui_rounded_size"
+            android:title="@string/corner_radius"
+            android:max="60"
+            settings:min="0"
+            settings:units=""
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" />
+
+        <com.evolution.settings.preferences.CustomSeekBarPreference
+            android:key="sysui_rounded_content_padding"
+            android:title="@string/content_padding"
+            android:max="10"
+            settings:min="0"
+            settings:units=""
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/status_bar_icons_title">
 
         <PreferenceScreen
