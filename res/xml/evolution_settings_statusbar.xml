@@ -71,6 +71,14 @@
             android:summary="@string/evolution_logo_summary"
             android:defaultValue="false" />
 
+        <ListPreference
+            android:key="status_bar_logo_style"
+            android:entries="@array/status_bar_logo_style_entries"
+            android:entryValues="@array/status_bar_logo_style_values"
+            android:summary="%s"
+            android:dependency="status_bar_logo"
+            android:title="@string/status_bar_logo_style_title" />
+
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="use_old_mobiletype"
             android:title="@string/use_old_mobiletype_title"
