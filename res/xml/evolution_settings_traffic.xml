@@ -19,6 +19,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+     <ListPreference
+        android:key="network_traffic_location"
+        android:title="@string/network_traffic_location"
+        android:summary="%s"
+        android:entries="@array/network_traffic_location_entries"
+        android:entryValues="@array/network_traffic_location_values"
+        android:persistent="false" />
+
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="network_traffic_state"
         android:title="@string/network_traffic_state_title"
@@ -33,8 +41,8 @@
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="network_traffic_hidearrow"
-        android:title="@string/network_traffic_hidearrow"
-        android:summary="@string/network_traffic_hidearrow_summary"
+        android:title="@string/network_traffic_arrow"
+        android:summary="@string/network_traffic_arrow_summary"
         android:dependency="network_traffic_state"
         android:defaultValue="false" />
 
