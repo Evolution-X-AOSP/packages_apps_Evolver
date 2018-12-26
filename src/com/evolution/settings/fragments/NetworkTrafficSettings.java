@@ -46,7 +46,6 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.CustomSystemSeekBarPreference;
-import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -62,7 +61,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment implement
     private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
 
     private CustomSystemSeekBarPreference mThreshold;
-    private SystemSettingSwitchPreference mNetMonitor;
+    private ListPreference mNetTrafficLocation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,18 +70,28 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment implement
         PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
-        mNetMonitor = findPreference(NETWORK_TRAFFIC_STATE);
-        mNetMonitor.setChecked(isNetMonitorEnabled);
-        mNetMonitor.setOnPreferenceChangeListener(this);
+        // Network traffic location
+        mNetTrafficLocation = (ListPreference) findPreference("network_traffic_location");
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 0, UserHandle.USER_CURRENT);
+        mNetTrafficLocation.setOnPreferenceChangeListener(this);
 
         int trafvalue = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
         mThreshold = findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
         mThreshold.setValue(trafvalue);
         mThreshold.setOnPreferenceChangeListener(this);
-        mThreshold.setEnabled(isNetMonitorEnabled);
+
+        int netMonitorEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
+        if (netMonitorEnabled == 1) {
+            mNetTrafficLocation.setValue(String.valueOf(location+1));
+            updateTrafficLocation(location+1);
+        } else {
+            mNetTrafficLocation.setValue("0");
+            updateTrafficLocation(0);
+        }
+        mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
     }
 
     @Override
@@ -97,22 +106,46 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment implement
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mNetMonitor) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
-            mNetMonitor.setChecked(value);
-            mThreshold.setEnabled(value);
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mNetTrafficLocation) {
+            int location = Integer.valueOf((String) objValue);
+            int index = mNetTrafficLocation.findIndexOfValue((String) objValue);
+            mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntries()[index]);
+            if (location > 0) {
+                // Convert the selected location mode from our list {0,1,2} and store it to "view location" setting: 0=sb; 1=expanded sb
+                Settings.System.putIntForUser(resolver,
+                        Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, location-1, UserHandle.USER_CURRENT);
+                // And also enable the net monitor
+                Settings.System.putIntForUser(resolver,
+                        Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT);
+            } else { // Disable net monitor completely
+                Settings.System.putIntForUser(resolver,
+                        Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
+            }
+            updateTrafficLocation(location);
             return true;
         } else if (preference == mThreshold) {
             int val = (Integer) objValue;
-            Settings.System.putIntForUser(getContentResolver(),
+            Settings.System.putIntForUser(resolver,
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
                     UserHandle.USER_CURRENT);
             return true;
         }
         return false;
+    }
+
+    public void updateTrafficLocation(int location) {
+        switch(location){
+            case 0:
+                mThreshold.setEnabled(false);
+                break;
+            case 1:
+            case 2:
+                mThreshold.setEnabled(true);
+                break;
+            default:
+                break;
+        }
     }
 
     /**

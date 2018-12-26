@@ -20,10 +20,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/network_traffic_title">
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="network_traffic_state"
-        android:title="@string/network_traffic_state_title"
-        android:defaultValue="false" />
+    <ListPreference
+        android:key="network_traffic_location"
+        android:title="@string/network_traffic_location"
+        android:summary="%s"
+        android:entries="@array/network_traffic_location_entries"
+        android:entryValues="@array/network_traffic_location_values"
+        android:persistent="false" />
 
     <com.evolution.settings.preference.CustomSystemSeekBarPreference
         android:key="network_traffic_autohide_threshold"
