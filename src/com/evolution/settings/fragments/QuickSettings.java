@@ -69,8 +69,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String QS_TILE_STYLE = "qs_tile_style";
     private static final String BATTERY_ESTIMATE_POSITION_TYPE = "battery_estimate_position";
 
+    private Handler mHandler;
+
     private CustomSeekBarPreference mQsPanelAlpha;
     private ColorPickerPreference mQsPanelColor;
+    private int mQsPanelAlphaValue;
+    private boolean mChangeQsPanelAlpha = true;
 
     private ListPreference mQsTileStyle;
     private ListPreference mTileAnimationStyle;
@@ -85,6 +89,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.evolution_settings_quicksettings);
+
+        mHandler = new Handler();
 
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
@@ -162,10 +168,19 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
             return true;
         } else if (preference == mQsPanelAlpha) {
-            int bgAlpha = (Integer) newValue;
+            mQsPanelAlphaValue = (Integer) newValue;
+            if (!mChangeQsPanelAlpha)
+                return true;
+            mChangeQsPanelAlpha = false;
             Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
+                    Settings.System.QS_PANEL_BG_ALPHA, mQsPanelAlphaValue,
                     UserHandle.USER_CURRENT);
+            mHandler.postDelayed(() -> {
+                    Settings.System.putIntForUser(getContentResolver(),
+                            Settings.System.QS_PANEL_BG_ALPHA, mQsPanelAlphaValue,
+                            UserHandle.USER_CURRENT);
+                    mChangeQsPanelAlpha = true;
+                }, 1000);
             return true;
         } else if (preference == mQsPanelColor) {
             int bgColor = (Integer) newValue;
