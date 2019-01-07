@@ -88,6 +88,13 @@
             android:dependency="volume_wake_screen"
             android:defaultValue="false" />
 
+        <ListPreference
+            android:dialogTitle="@string/volume_key_cursor_control_title"
+            android:entries="@array/volume_key_cursor_control_entries"
+            android:entryValues="@array/volume_key_cursor_control_values"
+            android:key="volume_key_cursor_control"
+            android:title="@string/volume_key_cursor_control_title" />
+
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="call_volume_answer"
             android:title="@string/volume_answer_call_title"
