@@ -22,12 +22,34 @@
         android:key="gesture_settings"
         android:title="@string/aosp_gesture_title"
         android:fragment="com.android.settings.gestures.GestureSettings" />
+    <PreferenceCategory
+        android:key="category_gesture_interface"
+        android:title="@string/gesture_interface_title" >
 
-    <com.evolution.settings.preferences.SystemSettingSwitchPreference
-        android:key="use_bottom_gesture_navigation"
-        android:title="@string/use_bottom_gesture_title"
-        android:summary="@string/use_bottom_gesture_summary"
-        android:defaultValue="false" />
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="use_bottom_gesture_navigation"
+            android:title="@string/use_bottom_gesture_title"
+            android:summary="@string/use_bottom_gesture_summary"
+            android:defaultValue="false" />
+
+       <com.evolution.settings.preferences.CustomSeekBarPreference
+            android:key="gesture_swipe_length"
+            android:title="@string/gesture_swipe_length_title"
+            android:summary="@string/gesture_swipe_length_summary"
+            android:persistent="false"
+            settings:units="px"
+            android:dependency="use_bottom_gesture_navigation" />
+
+       <com.evolution.settings.preferences.CustomSeekBarPreference
+            android:key="gesture_swipe_timeout"
+            android:title="@string/gesture_action_timeout_title"
+            android:summary="@string/gesture_action_timeout_summary"
+            android:max="500"
+            settings:min="100"
+            android:persistent="false"
+            settings:units="ms"
+            android:dependency="use_bottom_gesture_navigation" />
+    </PreferenceCategory>
 
     <!-- Double tap to sleep -->
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
