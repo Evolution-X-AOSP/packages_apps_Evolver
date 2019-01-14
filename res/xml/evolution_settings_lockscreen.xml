@@ -18,12 +18,6 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.evolution.settings.preferences.SystemSettingSwitchPreference
-        android:key="hide_lockscreen_status_bar"
-        android:title="@string/hide_lockscreen_status_bar_title"
-        android:summary="@string/hide_lockscreen_status_bar_summary"
-        android:defaultValue="false" />
-
     <!-- Ambient music ticker -->
     <Preference
         android:key="force_ambient_for_media_pref"
@@ -44,6 +38,29 @@
         android:entryValues="@array/lockscreen_cover_filter_values"
         android:dependency="lockscreen_media_metadata"
         android:defaultValue="0" />
+
+    <PreferenceCategory
+        android:title="@string/lockscreen_hide_items_category">
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_status_bar"
+            android:title="@string/hide_lockscreen_status_bar_title"
+            android:summary="@string/hide_lockscreen_status_bar_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_clock"
+            android:title="@string/lockscreen_clock_title"
+            android:summary="@string/lockscreen_clock_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_info"
+            android:title="@string/lockscreen_info_title"
+            android:summary="@string/lockscreen_info_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/lockscreen_visualizer_category">
