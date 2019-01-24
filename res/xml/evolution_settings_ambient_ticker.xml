@@ -17,6 +17,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Illustration for Ambient Ticker -->
+    <Preference android:key="ambient_ticker_illustration"
+        android:enabled="false"
+        android:layout="@layout/ambient_ticker_illustration" />
+
     <com.evolution.settings.preferences.SystemSettingSwitchPreference
         android:key="force_ambient_for_media"
         android:title="@string/force_ambient_for_media_title"
