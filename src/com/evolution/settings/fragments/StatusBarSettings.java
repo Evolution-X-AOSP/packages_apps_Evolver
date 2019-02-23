@@ -48,6 +48,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -59,6 +61,7 @@ import java.util.Map;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
+    private static final String BATTERY_BAR = "battery_bar_settings";
     private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
@@ -73,6 +76,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
+    private SystemSettingMasterSwitchPreference mBatteryBar;
     private SwitchPreference mBatteryCharging;
     private SwitchPreference mShowLteFourGee;
 
@@ -97,6 +101,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mBatteryStyle.setOnPreferenceChangeListener(this);
 
         updateBatteryOptions(batterystyle);
+
+        mBatteryBar = findPreference(BATTERY_BAR);
+        mBatteryBar.setOnPreferenceChangeListener(this);
+        boolean enabled = Settings.System.getInt(resolver,
+                Settings.System.BATTERY_BAR_LOCATION, 0) != 0;
+        mBatteryBar.setChecked(enabled);
     }
 
     @Override
@@ -109,6 +119,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         } else if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
             updateBatteryOptions(value);
+            return true;
+        } else if (preference == mBatteryBar) {
+            boolean enabled = (boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.BATTERY_BAR_LOCATION, enabled ? 1 : 0);
             return true;
         }
         return false;
