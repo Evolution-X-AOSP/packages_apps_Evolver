@@ -18,6 +18,12 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.evolution.settings.preferences.SystemSettingSwitchPreference
+        android:key="hide_lockscreen_status_bar"
+        android:title="@string/hide_lockscreen_status_bar_title"
+        android:summary="@string/hide_lockscreen_status_bar_summary"
+        android:defaultValue="false" />
+
     <!-- Ambient music ticker -->
     <Preference
         android:key="force_ambient_for_media_pref"
