@@ -78,6 +78,14 @@
             android:summary="@string/lockscreen_info_summary"
             android:defaultValue="true" />
 
+        <com.evolution.settings.preferences.SystemSettingListPreference
+            android:key="lockscreen_date_selection"
+            android:title="@string/lockscreen_date_selection_title"
+            android:entries="@array/lockscreen_date_selection_entries"
+            android:entryValues="@array/lockscreen_date_selection_values"
+            android:dependency="lockscreen_info"
+            android:defaultValue="0" />
+
         <ListPreference
             android:key="lock_date_fonts"
             android:title="@string/lock_date_font_title"
