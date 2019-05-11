@@ -25,6 +25,13 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="pocket_judge_allow_fp"
+        android:title="@string/pocket_judge_fp_title"
+        android:summary="@string/pocket_judge_fp_summary"
+        android:defaultValue="false"
+        android:dependency="pocket_judge" />
+
     <SwitchPreference
         android:key="fingerprint_success_vib"
         android:title="@string/fprint_sucess_vib_title"
