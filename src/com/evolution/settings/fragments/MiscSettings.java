@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 TeamEos
+ * Copyright (C) 2019 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,46 +14,53 @@
  * limitations under the License.
  */
 
-package com.nitrogen.settings.fragments;
+package com.evolution.settings.fragments;
 
-import java.util.ArrayList;
+import com.android.internal.logging.nano.MetricsProto;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.Context;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
-import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
-
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.MetricsLogger;
-import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 
-public class NavbarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+import java.util.Arrays;
+import java.util.HashSet;
+
+import com.android.settings.SettingsPreferenceFragment;
+
+public class MiscSettings extends SettingsPreferenceFragment implements
+        OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.nitrogen_settings_navigation);
+
+        addPreferencesFromResource(R.xml.evolution_settings_misc);
 
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
 
         return false;
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.NITROGEN_SETTINGS;
+        return MetricsProto.MetricsEvent.EVO_SETTINGS;
     }
 }
