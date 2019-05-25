@@ -18,4 +18,16 @@
     android:title="@string/gestures_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="gesture_settings"
+        android:title="@string/aosp_gesture_title"
+        android:fragment="com.android.settings.gestures.GestureSettings" />
+
+    <!-- Double tap to sleep -->
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_gesture"
+        android:title="@string/status_bar_double_tap_to_sleep_title"
+        android:summary="@string/status_bar_double_tap_to_sleep_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

@@ -18,22 +18,41 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="status_bar_locked_on_secure_keyguard"
+        android:title="@string/lockscreen_qs_disabled_title"
+        android:summary="@string/lockscreen_qs_disabled_summary"
+        android:defaultValue="false" />
+
     <Preference
         android:key="clock_settings"
         android:title="@string/status_bar_clock"
         android:summary="@string/status_bar_clock_summary"
         android:fragment="com.evolution.settings.fragments.ClockDateSettings" />
 
-    <Preference
-        android:key="battery_settings"
-        android:title="@string/battery_style_category_title"
-        android:summary="@string/battery_style_category_summary"
-        android:fragment="com.evolution.settings.fragments.BatteryCategory" />
+    <PreferenceCategory
+        android:title="@string/status_bar_icons_title">
+
+        <PreferenceScreen
+            android:key="status_bar_icons"
+            android:title="@string/status_bar_system_icons_title"
+            android:summary="@string/status_bar_system_icons_summary">
+            <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
+
+        </PreferenceScreen>
+
+        <Preference
+            android:key="battery_settings"
+            android:title="@string/battery_style_category_title"
+            android:summary="@string/battery_style_category_summary"
+            android:fragment="com.evolution.settings.fragments.BatteryCategory" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="bluetooth_show_battery"
             android:title="@string/bluetooth_battery_title"
             android:summary="@string/bluetooth_battery_summary"
             android:defaultValue="true"/>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
