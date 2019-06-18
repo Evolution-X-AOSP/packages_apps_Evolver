@@ -52,19 +52,21 @@
         android:defaultValue="0"
         android:summary="%s" />
 
-    <!-- Max media volume -->
-    <com.evolution.settings.preferences.SystemSettingSwitchPreference
-        android:key="gaming_mode_maximize_media_toggle"
-        android:title="@string/gaming_mode_max_media_title"
-        android:summary="@string/gaming_mode_max_media_summary"
-        android:defaultValue="false" />
+    <com.evolution.settings.preferences.SystemSettingListPreference
+        android:key="gaming_mode_notifications"
+        android:title="@string/gaming_mode_notifications_title"
+        android:dialogTitle="@string/gaming_mode_notifications_title"
+        android:entries="@array/gaming_mode_notifications_entries"
+        android:entryValues="@array/gaming_mode_notifications_values"
+        android:defaultValue="3"
+        android:summary="%s" />
 
     <!-- Dynamic gaming mode -->
-    <Preference
-        android:key="dynamic_mode"
-        android:fragment="com.evolution.settings.fragments.DynamicMode"
+    <com.evolution.settings.preferences.SystemSettingSwitchPreference
+        android:key="gaming_mode_dynamic_state"
         android:title="@string/gaming_mode_dynamic_title"
-        android:summary="@string/gaming_mode_dynamic_summary" />
+        android:summary="@string/gaming_mode_dynamic_summary"
+        android:defaultValue="false" />
 
     <!-- App picker activity for gaming mode -->
     <PreferenceCategory
