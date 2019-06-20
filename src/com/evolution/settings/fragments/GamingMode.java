@@ -79,8 +79,6 @@ public class GamingMode extends SettingsPreferenceFragment
 
         mAddGamingPref.setOnPreferenceClickListener(this);
 
-        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.dynamic_mode_footer_dialer);
-
         Resources systemUiResources;
         try {
             systemUiResources = getPackageManager().getResourcesForApplication("com.android.systemui");
