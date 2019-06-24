@@ -36,9 +36,12 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
@@ -48,7 +51,7 @@ import com.evolution.settings.preferences.Utils;
 import com.evolution.settings.preferences.SystemSettingSeekBarPreference;
 
 public class LockScreenSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR = "lock_screen_visualizer_custom_color";
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
@@ -165,4 +168,21 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.EVO_SETTINGS;
     }
 
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                 @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
+                     final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.evolution_settings_lockscreen;
+                    result.add(sir);
+                    return result;
+                }
+                 @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    final List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }
