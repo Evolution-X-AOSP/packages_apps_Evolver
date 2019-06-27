@@ -16,6 +16,7 @@
 
 package com.evolution.settings.fragments;
 
+import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
@@ -37,13 +38,17 @@ import com.android.settings.smartnav.ActionFragment;
 import com.android.internal.utils.ActionConstants;
 import com.android.internal.utils.ActionUtils;
 
+import com.evolution.settings.preferences.*;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class NavigationCategory extends ActionFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -52,6 +57,7 @@ public class NavigationCategory extends ActionFragment implements
     private static final String CATEGORY_MENU = "menu_key";
     private static final String CATEGORY_ASSIST = "assist_key";
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
+    private static final String CATEGORY_BACKLIGHT = "key_backlight";
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -130,6 +136,11 @@ public class NavigationCategory extends ActionFragment implements
         onPreferenceScreenLoaded(ActionConstants.getDefaults(ActionConstants.HWKEYS));
          // load preferences first
         setActionPreferencesEnabled(keysDisabled == 0);
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported()) {
+            prefScreen.removePreference(backlight);
+        }
     }
      @Override
     protected boolean usesExtendedActionsList() {
@@ -151,6 +162,25 @@ public class NavigationCategory extends ActionFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVO_SETTINGS;
+    }
+
+    @Override
+    public void onDisplayPreferenceDialog(Preference preference) {
+        if (preference.getKey() == null) {
+            // Auto-key preferences that don't have a key, so the dialog can find them.
+            preference.setKey(UUID.randomUUID().toString());
+        }
+        DialogFragment f = null;
+        if (preference instanceof CustomDialogPreference) {
+            f = CustomDialogPreference.CustomPreferenceDialogFragment
+                    .newInstance(preference.getKey());
+        } else {
+            super.onDisplayPreferenceDialog(preference);
+            return;
+        }
+        f.setTargetFragment(this, 0);
+        f.show(getFragmentManager(), "dialog_preference");
+        onDialogShowing();
     }
 
     /**

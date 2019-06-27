@@ -21,25 +21,8 @@
     <PreferenceScreen
         android:key="hardware_keys"
         android:title="@string/hardware_keys_category"
+        android:summary="@string/hardware_keys_summary"
         android:fragment="com.evolution.settings.fragments.NavigationCategory" />
-
-    <PreferenceCategory
-            android:key="navigationbar_category"
-            android:title="@string/navbar_title">
-
-        <com.android.settings.custom.preference.SystemSettingSwitchPreference
-            android:key="navbar_inverse"
-            android:title="@string/nav_bar_layout_inverse_title"
-            android:summary="@string/nav_bar_layout_inverse_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preferences.SystemSettingSwitchPreference
-            android:key="one_hand_mode_enabled"
-            android:title="@string/one_hand_mode_title"
-            android:summary="@string/one_hand_mode_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="power_key"
