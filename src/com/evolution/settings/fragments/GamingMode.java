@@ -18,6 +18,7 @@ package com.evolution.settings.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -29,6 +30,7 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceViewHolder;
+import android.support.v14.preference.SwitchPreference;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +55,8 @@ public class GamingMode extends SettingsPreferenceFragment
         implements Preference.OnPreferenceClickListener {
 
     private static final int DIALOG_GAMING_APPS = 1;
+    private static final String GAMING_MODE_HW_KEYS = "gaming_mode_hw_keys_toggle";
+    private SwitchPreference mHardwareKeysDisable;
 
     private PackageListAdapter mPackageAdapter;
     private PackageManager mPackageManager;
@@ -62,11 +66,24 @@ public class GamingMode extends SettingsPreferenceFragment
     private String mGamingPackageList;
     private Map<String, Package> mGamingPackages;
 
+    private static final int KEY_MASK_HOME = 0x01;
+    private static final int KEY_MASK_BACK = 0x02;
+    private static final int KEY_MASK_MENU = 0x04;
+    private static final int KEY_MASK_APP_SWITCH = 0x10;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get launch-able applications
         addPreferencesFromResource(R.xml.evolution_settings_gaming_mode);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        mHardwareKeysDisable = (SwitchPreference) findPreference(GAMING_MODE_HW_KEYS);
+
+        if (!haveHWkeys()) {
+            prefScreen.removePreference(mHardwareKeysDisable);
+        }
+
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
 
@@ -169,6 +186,19 @@ public class GamingMode extends SettingsPreferenceFragment
         }
 
     };
+
+    private boolean haveHWkeys() {
+        final int deviceKeys = getContext().getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+
+        // read bits for present hardware keys
+        final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
+        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
+        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
+        final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+
+        return (hasHomeKey || hasBackKey || hasMenuKey || hasAppSwitchKey);
+    }
 
     private void refreshCustomApplicationPrefs() {
         if (!parsePackageList()) {
