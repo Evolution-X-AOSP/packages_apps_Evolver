@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2016 Nitrogen Project
+     Copyright (C) 2019 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -30,27 +31,99 @@
         android:summary="@string/lockscreen_qs_disabled_summary"
         android:defaultValue="false" />
 
-    <Preference
-        android:key="clock_settings"
-        android:title="@string/status_bar_clock"
-        android:summary="@string/status_bar_clock_summary"
-        android:fragment="com.evolution.settings.fragments.ClockDateSettings" />
+    <PreferenceCategory
+        android:title="@string/status_bar_icons_title">
 
-    <Preference
-        android:key="traffic_settings"
-        android:title="@string/traffic_title"
-	android:summary="@string/traffic_summary"
-        android:fragment="com.evolution.settings.fragments.TrafficSettings" />
+        <PreferenceScreen
+            android:key="status_bar_icons"
+            android:title="@string/status_bar_system_icons_title"
+            android:summary="@string/status_bar_system_icons_summary">
+            <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
 
-    <Preference
-        android:key="carrierlabel_settings"
-        android:title="@string/carrier_category"
-	android:summary="@string/carrier_label_settings_summary"
-        android:fragment="com.evolution.settings.fragments.CarrierSettings" />
+        </PreferenceScreen>
+
+        <Preference
+            android:key="carrierlabel_settings"
+            android:title="@string/carrier_category"
+            android:summary="@string/carrier_label_settings_summary"
+            android:fragment="com.evolution.settings.fragments.CarrierSettings" />
+
+        <Preference
+            android:key="traffic_settings"
+            android:title="@string/traffic_title"
+            android:summary="@string/traffic_summary"
+            android:fragment="com.evolution.settings.fragments.TrafficSettings" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="roaming_indicator_icon"
+            android:title="@string/roaming_indicator_icon_title"
+            android:summary="@string/roaming_indicator_icon_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="data_disabled_icon"
+            android:title="@string/data_disabled_icon_title"
+            android:summary="@string/data_disabled_icon_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="use_old_mobiletype"
+            android:title="@string/use_old_mobiletype_title"
+            android:summary="@string/use_old_mobiletype_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/status_bar_clock">
+
+        <Preference
+            android:key="clock_settings"
+            android:title="@string/status_bar_clock"
+            android:summary="@string/status_bar_clock_summary"
+            android:fragment="com.evolution.settings.fragments.ClockDateSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/battery_category">
+
+        <Preference
+            android:key="battery_settings"
+            android:title="@string/battery_style_category_title"
+            android:summary="@string/battery_style_category_summary"
+            android:fragment="com.evolution.settings.fragments.BatteryCategory" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/logo_category">
+
+        <SwitchPreference
+            android:key="status_bar_logo"
+            android:title="@string/evolution_logo_title"
+            android:summary="@string/evolution_logo_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="status_bar_logo_style"
+            android:entries="@array/status_bar_logo_style_entries"
+            android:entryValues="@array/status_bar_logo_style_values"
+            android:summary="%s"
+            android:dependency="status_bar_logo"
+            android:title="@string/status_bar_logo_style_title" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="corners_category"
-        android:title="@string/corners_category" >
+        android:title="@string/corners_category">
 
         <com.evolution.settings.preferences.SecureSettingSwitchPreference
             android:key="sysui_rounded_fwvals"
@@ -76,63 +149,6 @@
             settings:units=""
             android:persistent="false"
             android:dependency="sysui_rounded_fwvals" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/status_bar_icons_title">
-
-        <PreferenceScreen
-            android:key="status_bar_icons"
-            android:title="@string/status_bar_system_icons_title"
-            android:summary="@string/status_bar_system_icons_summary">
-            <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
-
-        </PreferenceScreen>
-
-        <com.evolution.settings.preferences.SystemSettingSwitchPreference
-            android:key="roaming_indicator_icon"
-            android:title="@string/roaming_indicator_icon_title"
-            android:summary="@string/roaming_indicator_icon_summary"
-            android:defaultValue="false"/>
-
-        <com.evolution.settings.preferences.SystemSettingSwitchPreference
-            android:key="data_disabled_icon"
-            android:title="@string/data_disabled_icon_title"
-            android:summary="@string/data_disabled_icon_summary"
-            android:defaultValue="true"/>
-
-        <SwitchPreference
-            android:key="status_bar_logo"
-            android:title="@string/evolution_logo_title"
-            android:summary="@string/evolution_logo_summary"
-            android:defaultValue="false" />
-
-        <ListPreference
-            android:key="status_bar_logo_style"
-            android:entries="@array/status_bar_logo_style_entries"
-            android:entryValues="@array/status_bar_logo_style_values"
-            android:summary="%s"
-            android:dependency="status_bar_logo"
-            android:title="@string/status_bar_logo_style_title" />
-
-        <com.evolution.settings.preferences.SystemSettingSwitchPreference
-            android:key="use_old_mobiletype"
-            android:title="@string/use_old_mobiletype_title"
-            android:summary="@string/use_old_mobiletype_summary"
-            android:defaultValue="false" />
-
-        <Preference
-            android:key="battery_settings"
-            android:title="@string/battery_style_category_title"
-            android:summary="@string/battery_style_category_summary"
-            android:fragment="com.evolution.settings.fragments.BatteryCategory" />
-
-        <com.evolution.settings.preferences.SystemSettingSwitchPreference
-            android:key="bluetooth_show_battery"
-            android:title="@string/bluetooth_battery_title"
-            android:summary="@string/bluetooth_battery_summary"
-            android:defaultValue="true"/>
 
     </PreferenceCategory>
 

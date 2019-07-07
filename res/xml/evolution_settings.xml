@@ -14,39 +14,38 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/evolution_settings_title" >
+    android:title="@string/evolution_settings_title">
 
         <!-- Status Bar -->
         <Preference
             android:key="statusbar_category"
             android:title="@string/statusbar_title"
             android:fragment="com.evolution.settings.fragments.StatusBarSettings" 
-            android:icon="@drawable/ic_settings_statusbar"/>
+            android:icon="@drawable/ic_settings_statusbar" />
+
+        <!-- Notifications -->
+        <Preference
+            android:key="notifications_category"
+            android:title="@string/notifications_title"
+            android:fragment="com.evolution.settings.fragments.NotificationSettings"
+            android:icon="@drawable/ic_settings_notifications" />
 
         <!-- Quick Settings panel -->
         <Preference
             android:key="quicksettings_category"
             android:title="@string/quicksettings_title"
             android:fragment="com.evolution.settings.fragments.QuickSettings"
-            android:icon="@drawable/ic_settings_quicksettings"/>
+            android:icon="@drawable/ic_settings_quicksettings" />
 
-        <!-- Buttons -->
+        <!-- Power Menu -->
         <Preference
-            android:key="buttonsettings_category"
-            android:title="@string/buttons_title"
-            android:summary="@string/buttons_summary"
-            android:fragment="com.evolution.settings.fragments.ButtonSettings"
-            android:icon="@drawable/ic_settings_buttons"/>
-
-        <!-- Navigation -->
-        <Preference
-            android:key="navigation_category"
-            android:title="@string/navigation_category"
-            android:summary="@string/navigation_summary"
-            android:fragment="com.android.settings.smartnav.NavigationBarSettings"
-            android:icon="@drawable/ic_settings_navigation"/>
+            android:key="powermenu_category"
+            android:title="@string/powermenu_title" 
+            android:fragment="com.evolution.settings.fragments.PowerMenuSettings"
+            android:icon="@drawable/ic_settings_powermenu" />
 
         <!-- Gestures -->
         <Preference
@@ -54,28 +53,30 @@
             android:title="@string/gestures_title"
             android:summary="@string/gestures_summary"
             android:fragment="com.evolution.settings.fragments.CustomGestureSettings"
-            android:icon="@drawable/ic_settings_gestures"/>
+            android:icon="@drawable/ic_settings_gestures2" />
 
         <!-- Lock Screen -->
         <Preference
             android:key="lockscreen_category"
             android:title="@string/lockscreen_title" 
             android:fragment="com.evolution.settings.fragments.LockScreenSettings"
-            android:icon="@drawable/ic_settings_lockscreen"/>
+            android:icon="@drawable/ic_settings_lockscreen" />
 
-        <!-- Power Menu -->
+        <!-- Navigation -->
         <Preference
-            android:key="powermenu_category"
-            android:title="@string/powermenu_title" 
-            android:fragment="com.evolution.settings.fragments.PowerMenuSettings"
-            android:icon="@drawable/ic_settings_powermenu"/>
+            android:key="navigation_category"
+            android:title="@string/navigation_category"
+            android:summary="@string/navigation_summary"
+            android:fragment="com.android.settings.smartnav.NavigationBarSettings"
+            android:icon="@drawable/ic_settings_navigation" />
 
-        <!-- Notifications -->
+        <!-- Buttons -->
         <Preference
-            android:key="notifications_category"
-            android:title="@string/notifications_title"
-            android:fragment="com.evolution.settings.fragments.NotificationSettings"
-            android:icon="@drawable/ic_settings_notifications"/>
+            android:key="buttonsettings_category"
+            android:title="@string/buttons_title"
+            android:summary="@string/buttons_summary"
+            android:fragment="com.evolution.settings.fragments.ButtonSettings"
+            android:icon="@drawable/ic_settings_buttons" />
 
         <!-- Misc -->
         <Preference
@@ -83,6 +84,6 @@
             android:title="@string/misc_title"
             android:summary="@string/misc_summary"
             android:fragment="com.evolution.settings.fragments.MiscSettings"
-            android:icon="@drawable/ic_settings_miscs"/>
+            android:icon="@drawable/ic_settings_miscs" />
 
 </PreferenceScreen>

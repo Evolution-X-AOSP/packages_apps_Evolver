@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2016 Nitrogen Project
+     Copyright (C) 2019 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,36 +19,41 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-            android:title="@string/lockscreen_tuner_title" >
+    <PreferenceCategory
+        android:title="@string/lockscreen_shortcuts_category">
+
+        <Preference
+            android:title="@string/lockscreen_tuner_title">
             <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
-    </Preference>
+                    android:targetPackage="com.android.systemui"
+                    android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
+        </Preference>
 
-    <!-- Ambient music ticker -->
-    <Preference
-        android:key="force_ambient_for_media_pref"
-        android:fragment="com.evolution.settings.fragments.AmbientTicker"
-        android:title="@string/force_ambient_for_media_pref_title"
-        android:summary="@string/force_ambient_for_media_pref_summary" />
-
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_media_metadata"
-        android:title="@string/media_art_title"
-        android:summary="@string/media_art_summary"
-        android:defaultValue="true" />
-
-    <com.evolution.settings.preferences.SystemSettingListPreference
-        android:key="lockscreen_album_art_filter"
-        android:title="@string/lockscreen_cover_filter_title"
-        android:entries="@array/lockscreen_cover_filter_entries"
-        android:entryValues="@array/lockscreen_cover_filter_values"
-        android:dependency="lockscreen_media_metadata"
-        android:defaultValue="3" />
+    </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/lockscreen_hide_items_category">
+        android:title="@string/interface_category">
+
+        <!-- Ambient music ticker -->
+        <Preference
+            android:key="force_ambient_for_media_pref"
+            android:fragment="com.evolution.settings.fragments.AmbientTicker"
+            android:title="@string/force_ambient_for_media_pref_title"
+            android:summary="@string/force_ambient_for_media_pref_summary" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_media_metadata"
+            android:title="@string/media_art_title"
+            android:summary="@string/media_art_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preferences.SystemSettingListPreference
+            android:key="lockscreen_album_art_filter"
+            android:title="@string/lockscreen_cover_filter_title"
+            android:entries="@array/lockscreen_cover_filter_entries"
+            android:entryValues="@array/lockscreen_cover_filter_values"
+            android:dependency="lockscreen_media_metadata"
+            android:defaultValue="3" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="hide_lockscreen_status_bar"
@@ -146,7 +152,7 @@
              android:key="lockscreen_visualizer"
              android:title="@string/lockscreen_visualizer_title"
              android:summary="@string/lockscreen_visualizer_summary"
-             android:defaultValue="false"/>
+             android:defaultValue="false" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
              android:key="lock_screen_visualizer_use_custom_color"
@@ -167,7 +173,7 @@
              android:title="@string/ambient_visualizer_title"
              android:summary="@string/ambient_visualizer_summary"
              android:dependency="lockscreen_visualizer"
-             android:defaultValue="false"/>
+             android:defaultValue="false" />
 
     </PreferenceCategory>
 

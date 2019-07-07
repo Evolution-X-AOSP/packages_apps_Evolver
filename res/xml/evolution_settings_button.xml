@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2016 Nitrogen Project
+     Copyright (C) 2019 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,9 +15,9 @@
      limitations under the License.
 -->
 <PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/buttons_title"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/buttons_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
         android:key="hardware_keys"
@@ -28,19 +29,19 @@
         android:key="power_key"
         android:title="@string/hardware_keys_power_key_title">
 
-        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_disable_power_menu"
             android:title="@string/lockscreen_power_menu_disabled_title"
             android:summary="@string/lockscreen_power_menu_disabled_summary"
             android:defaultValue="false" />
 
-        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="torch_long_press_power_gesture"
             android:title="@string/torch_long_press_power_gesture_title"
             android:summary="@string/torch_long_press_power_gesture_desc"
             android:defaultValue="false" />
 
-        <com.android.settings.custom.preference.SystemSettingListPreference
+        <com.evolution.settings.preferences.SystemSettingListPreference
             android:key="torch_long_press_power_timeout"
             android:dialogTitle="@string/torch_long_press_power_timeout_title"
             android:title="@string/torch_long_press_power_timeout_title"
@@ -56,24 +57,31 @@
         android:key="volume_keys"
         android:title="@string/hardware_keys_volume_keys_title" >
 
-        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="volume_wake_screen"
             android:title="@string/button_wake_title"
+            android:summary="@string/button_wake_summary"
             android:defaultValue="false"
             android:disableDependentsState="true" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="call_volume_answer"
+            android:title="@string/volume_answer_call_title"
+            android:summary="@string/volume_answer_call_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="volbtn_music_controls"
+            android:title="@string/volbtn_music_controls_title"
+            android:summary="@string/volbtn_music_controls_summary"
+            android:dependency="volume_wake_screen"
+            android:defaultValue="false" />
 
         <!-- Volume keys control media stream -->
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="volume_keys_control_ring_tone"
             android:title="@string/volume_keys_control_ring_tone_title"
             android:summary="@string/volume_keys_control_ring_tone_summary"
-            android:defaultValue="false" />
-
-        <com.android.settings.custom.preference.SystemSettingSwitchPreference
-            android:key="volbtn_music_controls"
-            android:title="@string/volbtn_music_controls_title"
-            android:summary="@string/volbtn_music_controls_summary"
-            android:dependency="volume_wake_screen"
             android:defaultValue="false" />
 
         <ListPreference
@@ -84,22 +92,10 @@
             android:title="@string/volume_key_cursor_control_title" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
-            android:key="call_volume_answer"
-            android:title="@string/volume_answer_call_title"
-            android:summary="@string/volume_answer_call_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="swap_volume_buttons"
             android:title="@string/swap_volume_buttons"
             android:summary="@string/volume_keys_swap_summary"
             android:defaultValue="false" />
-
-        <!-- Volume Steps -->
-        <PreferenceScreen
-            android:key="volume_steps"
-            android:title="@string/volume_steps_title"
-            android:fragment="com.evolution.settings.fragments.VolumeSteps" />
 
         <!-- Audio Panel view  -->
         <PreferenceScreen
@@ -107,6 +103,13 @@
             android:title="@string/audio_panel_view_title"
             android:summary="@string/audio_panel_view_summary"
             android:fragment="com.evolution.settings.fragments.VolumePanel" />
+
+        <!-- Volume Steps -->
+        <PreferenceScreen
+            android:key="volume_steps"
+            android:title="@string/volume_steps_title"
+            android:summary="@string/volume_steps_summary"
+            android:fragment="com.evolution.settings.fragments.VolumeSteps" />
 
     </PreferenceCategory>
 

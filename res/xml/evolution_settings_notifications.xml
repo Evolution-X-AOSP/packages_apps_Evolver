@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     Copyright (C) 2016 Nitrogen Project
+    Copyright (C) 2019 The Evolution X Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -14,30 +15,36 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-	android:title="@string/notifications_title"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.evolution.settings.preferences.GlobalSettingSwitchPreference
-        android:key="heads_up_notifications_enabled"
-        android:title="@string/heads_up_title"
-        android:summaryOn="@string/heads_up_summary_enabled"
-        android:summaryOff="@string/heads_up_summary_disabled"
-        android:defaultValue="true" />
+    <PreferenceCategory
+        android:title="@string/heads_up_category">
 
-    <ListPreference
-        android:key="heads_up_time_out"
-        android:title="@string/heads_up_time_out_title"
-        android:entries="@array/heads_up_time_out_entries"
-        android:entryValues="@array/heads_up_time_out_values"
-        android:persistent="false" />
+        <com.evolution.settings.preferences.GlobalSettingSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:title="@string/heads_up_title"
+            android:summaryOn="@string/heads_up_summary_enabled"
+            android:summaryOff="@string/heads_up_summary_disabled"
+            android:defaultValue="true" />
 
-    <ListPreference
-        android:key="heads_up_snooze_time"
-        android:title="@string/heads_up_snooze_title"
-        android:entries="@array/heads_up_snooze_entries"
-        android:entryValues="@array/heads_up_snooze_values"
-        android:persistent="false" />
+        <ListPreference
+            android:key="heads_up_time_out"
+            android:title="@string/heads_up_time_out_title"
+            android:entries="@array/heads_up_time_out_entries"
+            android:entryValues="@array/heads_up_time_out_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="heads_up_snooze_time"
+            android:title="@string/heads_up_snooze_title"
+            android:entries="@array/heads_up_snooze_entries"
+            android:entryValues="@array/heads_up_snooze_values"
+            android:persistent="false" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/heads_up_stoplist_title"

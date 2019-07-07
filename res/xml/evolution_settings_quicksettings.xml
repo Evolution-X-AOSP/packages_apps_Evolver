@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2016 Nitrogen Project
+     Copyright (C) 2019 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,27 +19,8 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.evolution.settings.preferences.SystemSettingSwitchPreference
-        android:key="bluetooth_qs_show_battery"
-        android:title="@string/bluetooth_battery_title"
-        android:summary="@string/bluetooth_battery_summary"
-        android:defaultValue="true" />
-
-    <com.android.settings.custom.preference.SystemSettingListPreference
-        android:key="status_bar_quick_qs_pulldown"
-        android:title="@string/status_bar_quick_qs_pulldown_title"
-        android:entries="@array/status_bar_quick_qs_pulldown_entries"
-        android:entryValues="@array/status_bar_quick_qs_pulldown_values"
-        android:defaultValue="0" />
-
-    <com.evolution.settings.preferences.SecureSettingSwitchPreference
-        android:key="quick_settings_vibrate"
-        android:title="@string/quick_settings_vibrate_title"
-        android:summary="@string/quick_settings_vibrate_summary"
-        android:defaultValue="false" />
-
     <PreferenceCategory
-        android:title="@string/qs_panel_tuner_category_title">
+        android:title="@string/qs_style_category">
 
         <ListPreference
             android:key="qs_tile_style"
@@ -74,6 +56,11 @@
             android:summary="@string/qs_bg_wall_summary"
             android:defaultValue="false"
             android:dependency="qs_panel_bg_use_fw" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/qs_panel_tuner_category_title">
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_edit_toggle"
@@ -163,6 +150,30 @@
             android:summary="@string/qs_show_brightness_buttons_summary"
             android:defaultValue="false"
             android:dependency="qs_show_brightness" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/misc_title">
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="bluetooth_qs_show_battery"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="quick_settings_vibrate"
+            android:title="@string/quick_settings_vibrate_title"
+            android:summary="@string/quick_settings_vibrate_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preferences.SystemSettingListPreference
+            android:key="status_bar_quick_qs_pulldown"
+            android:title="@string/status_bar_quick_qs_pulldown_title"
+            android:entries="@array/status_bar_quick_qs_pulldown_entries"
+            android:entryValues="@array/status_bar_quick_qs_pulldown_values"
+            android:defaultValue="0" />
 
     </PreferenceCategory>
 
