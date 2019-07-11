@@ -118,6 +118,8 @@ public class GamingMode extends SettingsPreferenceFragment
 
         SettingsObserver observer = new SettingsObserver(new Handler(Looper.getMainLooper()));
         observer.observe();
+
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.add_gaming_mode_package_summary);
     }
 
     @Override
