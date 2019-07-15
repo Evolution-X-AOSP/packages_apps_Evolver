@@ -183,7 +183,7 @@ public class ClockDateSettings extends SettingsPreferenceFragment implements OnP
         mClockSize.setOnPreferenceChangeListener(this);
         mClockFontStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_FONT_STYLE);
         int showClockFont = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_CLOCK_FONT_STYLE, 0);
+                Settings.System.STATUS_BAR_CLOCK_FONT_STYLE, 23);
         mClockFontStyle.setValue(String.valueOf(showClockFont));
         mClockFontStyle.setOnPreferenceChangeListener(this);
 
