@@ -23,6 +23,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Handler;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -44,8 +47,12 @@ import java.util.Locale;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.android.internal.statusbar.IStatusBarService;
+
 import java.util.List;
+import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -60,6 +67,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String QS_PANEL_BG_ALPHA = "qs_panel_bg_alpha";
     private static final String QS_PANEL_COLOR = "qs_panel_color";
     private static final String QS_TILE_STYLE = "qs_tile_style";
+    private static final String BATTERY_ESTIMATE_POSITION_TYPE = "battery_estimate_position";
 
     private CustomSeekBarPreference mQsPanelAlpha;
     private ColorPickerPreference mQsPanelColor;
@@ -68,6 +76,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private ListPreference mEstimatePositionType;
+
+    private IStatusBarService mStatusBarService;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -119,6 +130,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsTileStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
         mQsTileStyle.setSummary(mQsTileStyle.getEntry());
         mQsTileStyle.setOnPreferenceChangeListener(this);
+
+        // battery estimate position
+        mEstimatePositionType = (ListPreference) findPreference(BATTERY_ESTIMATE_POSITION_TYPE);
+        int type = Settings.System.getInt(resolver,
+                Settings.System.BATTERY_ESTIMATE_POSITION, 0);
+        mEstimatePositionType.setValue(String.valueOf(type));
+        mEstimatePositionType.setSummary(mEstimatePositionType.getEntry());
+        mEstimatePositionType.setOnPreferenceChangeListener(this);
         }
 
     @Override
@@ -158,6 +177,21 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(resolver, Settings.System.QS_TILE_STYLE,
                     qsTileStyleValue, UserHandle.USER_CURRENT);
             mQsTileStyle.setSummary(mQsTileStyle.getEntries()[qsTileStyleValue]);
+            return true;
+        } else if (preference == mEstimatePositionType) {
+            int type = Integer.valueOf((String) newValue);
+            int index = mEstimatePositionType.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.BATTERY_ESTIMATE_POSITION, type);
+            mEstimatePositionType.setSummary(mEstimatePositionType.getEntries()[index]);
+            IStatusBarService statusBarService = IStatusBarService.Stub.asInterface(ServiceManager.checkService(Context.STATUS_BAR_SERVICE));
+            if (statusBarService != null) {
+                try {
+                    statusBarService.restartUI();
+                } catch (RemoteException e) {
+                    // do nothing.
+                }
+            }
             return true;
         }
         return false;

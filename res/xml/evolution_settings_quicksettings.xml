@@ -63,6 +63,19 @@
         android:title="@string/qs_panel_tuner_category_title">
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="show_battery_estimate"
+            android:title="@string/show_battery_estimate_title"
+            android:summary="@string/show_battery_estimate_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="battery_estimate_position"
+            android:title="@string/battery_estimate_position_title"
+            android:entries="@array/battery_estimate_position_entries"
+            android:entryValues="@array/battery_estimate_position_values"
+            android:defaultValue="0" />
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_edit_toggle"
             android:title="@string/qs_edit_title"
             android:summary="@string/qs_edit_summary"
