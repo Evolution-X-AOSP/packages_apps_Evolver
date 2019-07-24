@@ -25,11 +25,42 @@
         android:summary="@string/hide_notch_summary"
         android:defaultValue="false" />
 
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+    <com.evolution.settings.preferences.SystemSettingSwitchPreference
         android:key="status_bar_locked_on_secure_keyguard"
         android:title="@string/lockscreen_qs_disabled_title"
         android:summary="@string/lockscreen_qs_disabled_summary"
         android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="corners_category"
+        android:title="@string/corners_category">
+
+        <com.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="sysui_rounded_fwvals"
+            android:title="@string/corner_fwvals"
+            android:summary="@string/corner_fwvals_summary"
+            android:defaultValue="true"
+            android:disableDependentsState="true" />
+
+        <com.evolution.settings.preferences.CustomSeekBarPreference
+            android:key="sysui_rounded_size"
+            android:title="@string/corner_radius"
+            android:max="60"
+            settings:min="0"
+            settings:units=""
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" />
+
+        <com.evolution.settings.preferences.CustomSeekBarPreference
+            android:key="sysui_rounded_content_padding"
+            android:title="@string/content_padding"
+            android:max="10"
+            settings:min="0"
+            settings:units=""
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/status_bar_icons_title">
@@ -39,20 +70,21 @@
             android:title="@string/status_bar_system_icons_title"
             android:summary="@string/status_bar_system_icons_summary">
             <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
-
         </PreferenceScreen>
 
-        <Preference
-            android:key="carrierlabel_settings"
-            android:title="@string/carrier_category"
-            android:summary="@string/carrier_label_settings_summary"
-            android:fragment="com.evolution.settings.fragments.CarrierSettings" />
+        <SwitchPreference
+            android:key="status_bar_logo"
+            android:title="@string/status_bar_logo_title"
+            android:summary="@string/status_bar_logo_summary"
+            android:defaultValue="false" />
 
-        <Preference
-            android:key="traffic_settings"
-            android:title="@string/traffic_title"
-            android:summary="@string/traffic_summary"
-            android:fragment="com.evolution.settings.fragments.TrafficSettings" />
+        <ListPreference
+            android:key="status_bar_logo_style"
+            android:entries="@array/status_bar_logo_style_entries"
+            android:entryValues="@array/status_bar_logo_style_values"
+            android:summary="%s"
+            android:dependency="status_bar_logo"
+            android:title="@string/status_bar_logo_style_title" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="roaming_indicator_icon"
@@ -77,6 +109,23 @@
             android:title="@string/use_old_mobiletype_title"
             android:summary="@string/use_old_mobiletype_summary"
             android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/status_bar_items">
+
+        <Preference
+            android:key="carrierlabel_settings"
+            android:title="@string/carrier_category"
+            android:summary="@string/carrier_label_settings_summary"
+            android:fragment="com.evolution.settings.fragments.CarrierSettings" />
+
+        <Preference
+            android:key="traffic_settings"
+            android:title="@string/traffic_title"
+            android:summary="@string/traffic_summary"
+            android:fragment="com.evolution.settings.fragments.TrafficSettings" />
 
     </PreferenceCategory>
 
@@ -109,56 +158,6 @@
             android:dialogTitle="@string/status_bar_battery_percentage_title"
             android:entries="@array/status_bar_battery_percentage_entries"
             android:entryValues="@array/status_bar_battery_percentage_values" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/logo_category">
-
-        <SwitchPreference
-            android:key="status_bar_logo"
-            android:title="@string/evolution_logo_title"
-            android:summary="@string/evolution_logo_summary"
-            android:defaultValue="false" />
-
-        <ListPreference
-            android:key="status_bar_logo_style"
-            android:entries="@array/status_bar_logo_style_entries"
-            android:entryValues="@array/status_bar_logo_style_values"
-            android:summary="%s"
-            android:dependency="status_bar_logo"
-            android:title="@string/status_bar_logo_style_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="corners_category"
-        android:title="@string/corners_category">
-
-        <com.evolution.settings.preferences.SecureSettingSwitchPreference
-            android:key="sysui_rounded_fwvals"
-            android:title="@string/corner_fwvals"
-            android:summary="@string/corner_fwvals_summary"
-            android:defaultValue="true"
-            android:disableDependentsState="true" />
-
-        <com.evolution.settings.preferences.CustomSeekBarPreference
-            android:key="sysui_rounded_size"
-            android:title="@string/corner_radius"
-            android:max="60"
-            settings:min="0"
-            settings:units=""
-            android:persistent="false"
-            android:dependency="sysui_rounded_fwvals" />
-
-        <com.evolution.settings.preferences.CustomSeekBarPreference
-            android:key="sysui_rounded_content_padding"
-            android:title="@string/content_padding"
-            android:max="10"
-            settings:min="0"
-            settings:units=""
-            android:persistent="false"
-            android:dependency="sysui_rounded_fwvals" />
 
     </PreferenceCategory>
 

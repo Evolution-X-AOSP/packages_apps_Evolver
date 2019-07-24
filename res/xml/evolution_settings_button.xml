@@ -30,12 +30,6 @@
         android:title="@string/hardware_keys_power_key_title">
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_disable_power_menu"
-            android:title="@string/lockscreen_power_menu_disabled_title"
-            android:summary="@string/lockscreen_power_menu_disabled_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="torch_long_press_power_gesture"
             android:title="@string/torch_long_press_power_gesture_title"
             android:summary="@string/torch_long_press_power_gesture_desc"
@@ -55,7 +49,21 @@
 
     <PreferenceCategory
         android:key="volume_keys"
-        android:title="@string/hardware_keys_volume_keys_title" >
+        android:title="@string/hardware_keys_volume_keys_title">
+
+        <!-- Audio Panel view  -->
+        <PreferenceScreen
+            android:key="volume_panel"
+            android:title="@string/audio_panel_view_title"
+            android:summary="@string/audio_panel_view_summary"
+            android:fragment="com.evolution.settings.fragments.VolumePanel" />
+
+        <!-- Volume Steps -->
+        <PreferenceScreen
+            android:key="volume_steps"
+            android:title="@string/volume_steps_title"
+            android:summary="@string/volume_steps_summary"
+            android:fragment="com.evolution.settings.fragments.VolumeSteps" />
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="volume_wake_screen"
@@ -96,20 +104,6 @@
             android:title="@string/swap_volume_buttons"
             android:summary="@string/volume_keys_swap_summary"
             android:defaultValue="false" />
-
-        <!-- Audio Panel view  -->
-        <PreferenceScreen
-            android:key="volume_panel"
-            android:title="@string/audio_panel_view_title"
-            android:summary="@string/audio_panel_view_summary"
-            android:fragment="com.evolution.settings.fragments.VolumePanel" />
-
-        <!-- Volume Steps -->
-        <PreferenceScreen
-            android:key="volume_steps"
-            android:title="@string/volume_steps_title"
-            android:summary="@string/volume_steps_summary"
-            android:fragment="com.evolution.settings.fragments.VolumeSteps" />
 
     </PreferenceCategory>
 

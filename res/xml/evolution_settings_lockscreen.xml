@@ -32,7 +32,26 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/interface_category">
+        android:title="@string/fingerprint_category">
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="fp_unlock_keystore"
+            android:title="@string/fp_unlock_keystore_title"
+            android:summary="@string/fp_unlock_keystore_summary"
+            android:defaultValue="false" />
+
+        <!-- Fingerprint authentication vibration -->
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="fp_success_auth_vib"
+            android:title="@string/fp_success_auth_vib_title"
+            android:summary="@string/fp_success_auth_vib_summary"
+            android:defaultValue="true"
+            settings:controller="com.android.settings.sound.FpSuccessAuthVibPreferenceController" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/music_category">
 
         <!-- Ambient music ticker -->
         <Preference
@@ -54,6 +73,11 @@
             android:entryValues="@array/lockscreen_cover_filter_values"
             android:dependency="lockscreen_media_metadata"
             android:defaultValue="3" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/interface_category">
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="hide_lockscreen_status_bar"
@@ -136,6 +160,11 @@
             android:summary="@string/lock_owner_font_summary"
             android:dependency="lockscreen_info"
             android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/hide_icons_category">
 
         <com.evolution.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_charging_animation"
