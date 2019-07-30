@@ -63,7 +63,6 @@ import java.util.List;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
-    private static final String KEY_HIDE_NOTCH = "statusbar_hide_notch";
     private static final String KEY_STATUS_BAR_LOGO = "status_bar_logo";
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
@@ -123,14 +122,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         // Rounded use Framework Values
         mRoundedFwvals = (SecureSettingSwitchPreference) findPreference(SYSUI_ROUNDED_FWVALS);
         mRoundedFwvals.setOnPreferenceChangeListener(this);
-
-        final String displayCutout = getResources().getString(
-                com.android.internal.R.string.config_mainBuiltInDisplayCutout);
-        if(displayCutout.isEmpty()) {
-            final Preference hideNotchPref =
-                (Preference) getPreferenceScreen().findPreference(KEY_HIDE_NOTCH);
-            getPreferenceScreen().removePreference(hideNotchPref);
-        }
 
         mShowEvolutionLogo = (SwitchPreference) findPreference(KEY_STATUS_BAR_LOGO);
         mShowEvolutionLogo.setChecked((Settings.System.getInt(getContentResolver(),
