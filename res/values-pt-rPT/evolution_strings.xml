@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="evolution_settings_title">Evolution X</string>
+    <string name="evolution_settings_title">Evolução X</string>
     <!-- Categories -->
     <string name="aosp_gesture_title">Gestos AOSP</string>
     <string name="buttons_title">Botões físicos</string>
@@ -51,6 +51,7 @@
     <string name="save">Guardar</string>
     <string name="action_save">Guardar</string>
     <string name="action_cancel">Cancelar</string>
+    <string name="attention">Atenção</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Ligado</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -137,7 +138,7 @@
     <string name="force_ambient_for_media_pref_summary">Configure the Ambient music ticker</string>
     <string name="ambient_ticker_footer">Ambient Music Ticker shows playing music track info within Ambient display screen.\n\nIt\'s triggered also if Ambient Display is disabled when a new track is started, forcing a clean ambient screen with track info in the middle of the screen.\n\nYou can also double tap on track info to skip track.</string>
     <string name="force_ambient_for_media_title">Enable</string>
-    <string name="ambient_title">Ambient Music</string>
+    <string name="ambient_title">Música Ambiente</string>
     <!-- Status bar clock options -->
     <string name="clock_category">Relógio</string>
     <string name="status_bar_clock">Relógio e data</string>
@@ -299,7 +300,7 @@
     <string name="audio_panel_view_title">Painel de volume</string>
     <string name="audio_panel_view_summary">Personalizar a caixa do painel de volume</string>
     <string name="audio_panel_view_info">O fluxo de volume ativo será exibido no ecrã mesmo se desativado aqui. Fluxos de volume habilitados aqui seriam exibidos sempre.</string>
-    <string name="audio_panel_view_media_title">Media</string>
+    <string name="audio_panel_view_media_title">Mídia</string>
     <string name="audio_panel_view_ringer_title">Toque</string>
     <string name="audio_panel_view_notification_title">Notificação</string>
     <string name="audio_panel_view_notification_disabled">Os volumes de notificação e toque &amp; estão ligados</string>
@@ -583,7 +584,7 @@
     <string name="deep_sleep_time">Sono Profundo</string>
     <string name="no_kernel_wakelock_file_found">Nenhum estado do kernel wakelock foi encontrado em /proc/wakelocks ou /sys/kernel/debug/wakeup_sources.</string>
     <string name="more_line_text">mais\u2026</string>
-    <string name="state_core_mode">Cores</string>
+    <string name="state_core_mode">Núcleos</string>
     <string name="kernel_wakelock_time">Wakelocks do Kernel</string>
     <string name="user_wakelock_time">Wakelocks parciais</string>
     <string name="battery_change">Mudança de Bateria</string>
@@ -649,34 +650,6 @@
     <string name="alarm_blocker_save">Guardar</string>
     <string name="alarm_list_header">Alarmes disponíveis</string>
     <string name="alarm_blocker_reload">Recarregar</string>
-    <!-- Gaming mode -->
-    <string name="gaming_mode_title">Modo de jogo</string>
-    <string name="gaming_mode_summary">Personalizar as definições do modo de jogo</string>
-    <string name="gaming_mode_master_title">Ativar recursos do modo de jogo</string>
-    <string name="gaming_mode_master_summary">Permitir a personalização das opções do modo de jogo</string>
-    <string name="gaming_mode_app_picker_title">Ativar automaticamente para estas aplicações</string>
-    <string name="add_gaming_mode_package_title">Adicionar aplicações para o modo de jogo</string>
-    <string name="add_gaming_mode_package_summary">O modo de jogo será automaticamente ativado para as aplicações selecionadas.</string>
-    <string name="gaming_mode_headsup_title">Bloquear notificações</string>
-    <string name="gaming_mode_headsup_summary">Bloquear todas as notificações flutuantes, exceto chamadas.</string>
-    <string name="gaming_mode_hardware_keys_title">Bloquear botões</string>
-    <string name="gaming_mode_hardware_keys_summary">Desativar botões físicos quando o modo de jogo estiver ativado.</string>
-    <string name="gaming_mode_gestures_title">Desativar gestos</string>
-    <string name="gaming_mode_gestures_summary">Desative a navegação por gestos quando o modo de jogo estiver ativado.</string>
-    <string name="gaming_mode_brightness_title">Desativar o brilho automático</string>
-    <string name="gaming_mode_brightness_summary">Bloquear o brilho do ecrã de bloqueio quando o modo de jogo estiver ativado.</string>
-    <string name="gaming_mode_ringer_title">Toque no modo de jogo</string>
-    <string name="gaming_mode_ringer_off_title">Não alterar</string>
-    <string name="gaming_mode_ringer_vibrate_title">Vibrar</string>
-    <string name="gaming_mode_ringer_dnd_title">Não incomodar</string>
-    <string name="gaming_mode_ringer_silent_title">Silêncio</string>
-    <string name="gaming_mode_notifications_title">Notificações</string>
-    <string name="gaming_mode_notifications_off_title">Desativado</string>
-    <string name="gaming_mode_notifications_notif_title">Mostrar notificação</string>
-    <string name="gaming_mode_notifications_toast_title">Mostrar alertas</string>
-    <string name="gaming_mode_notifications_all_title">Mostrar alertas e notificações</string>
-    <string name="gaming_mode_dynamic_title">Modo de jogo dinâmico</string>
-    <string name="gaming_mode_dynamic_summary">Sempre que abrir qualquer aplicação e o sistema achar que é um jogo, ele será adicionado automaticamente na lista de jogos. Por favor, note que isso não funciona para cada jogo.</string>
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Forçar as notificações expandidas</string>
     <string name="force_expanded_notifications_summary">Forçar as aplicações para que ofereçam suporte às notificações expandidas</string>
@@ -695,13 +668,32 @@
     <string name="battery_estimate_position_qspanel">Painel QS</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call vibration</string>
-    <string name="incall_vibrate_connect_title">Vibrate on connect</string>
-    <string name="incall_vibrate_connect_summary">Enable to vibrate after call connect</string>
-    <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
-    <string name="incall_vibrate_call_wait_summary">Enable to vibrate while call is on waiting</string>
-    <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
-    <string name="incall_vibrate_disconnect_summary">Enable to vibrate after call disconnect</string>
+    <string name="incall_vibrate_connect_title">Vibrar ao conectar</string>
+    <string name="incall_vibrate_connect_summary">Ativar vibração após a coneção de chamadas</string>
+    <string name="incall_vibrate_call_wait_title">Vibrar ao esperar por uma chamada</string>
+    <string name="incall_vibrate_call_wait_summary">Ativar vibração enquanto a chamada está em espera</string>
+    <string name="incall_vibrate_disconnect_title">Vibrar ao desconectar</string>
+    <string name="incall_vibrate_disconnect_summary">Ativar vibração após desconectar a chamada</string>
     <!-- Double tap to sleep on status bar or lockscreen -->
-    <string name="status_bar_double_tap_to_sleep_title">Double tap to sleep</string>
-    <string name="status_bar_double_tap_to_sleep_summary">Double tap on the status bar or lockscreen to turn off the display</string>
+    <string name="status_bar_double_tap_to_sleep_title">Toque duplo para desligar ecrã</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Toque duas vezes na barra de status ou tela de bloqueio para desativar a tela</string>
+    <!-- Safe headset volume restore checkbox -->
+    <string name="safe_headset_volume_title">Proteção de volume nos auriculares</string>
+    <string name="safe_headset_volume_summary">Evitar altos níveis de volume quando os auriculares são inseridos pela primeira vez</string>
+    <string name="safe_headset_volume_warning_dialog_text">Ouvir com o volume alto por longos períodos pode prejudicar a sua audição. Desative-o com cuidado.</string>
+    <!-- Statusbar ticker -->
+    <string name="statusbar_notifi_cat">Ativador de notificação</string>
+    <string name="status_bar_ticker_title">Alerta de notificação</string>
+    <string name="status_bar_show_ticker_title">Alerta de notificação</string>
+    <string name="status_bar_show_ticker_summary">Pré-visualização de notificações na barra de estado</string>
+    <string name="ticker_animation_mode_title">Animação</string>
+    <string name="ticker_animation_mode_alpha_fade">Desvanescer</string>
+    <string name="ticker_animation_mode_scroll">Navegar</string>
+    <string name="ticker_tick_duration_title">Estilo da animação</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Piscar lanterna durante chamada</string>
+    <string name="flashlight_on_call_disabled">Desativado</string>
+    <string name="flashlight_on_call_not_dnd">Piscar apenas a lanterna no modo de toque</string>
+    <string name="flashlight_on_call_dnd">Piscar a lanterna apenas no modo não incomodar</string>
+    <string name="flashlight_on_call_always">Piscar sempre a lanterna</string>
 </resources>
