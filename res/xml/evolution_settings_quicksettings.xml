@@ -45,9 +45,9 @@
         android:defaultValue="#KeepEvolving" />
 
     <ListPreference
-        android:key="quick_pulldown" 
-        android:title="@string/quick_pulldown_title" 
-        android:entries="@array/quick_pulldown_entries" 
+        android:key="quick_pulldown"
+        android:title="@string/quick_pulldown_title"
+        android:entries="@array/quick_pulldown_entries"
         android:entryValues="@array/quick_pulldown_values"
         android:persistent="false" />
 
@@ -80,6 +80,14 @@
             android:summary="@string/brightness_icon_summary"
             android:dependency="qs_show_brightness"
             android:defaultValue="true"/>
+
+        <!-- Battery mode -->
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="qs_battery_mode"
+            android:title="@string/battery_percentage_title"
+            android:entries="@array/qs_battery_mode_entries"
+            android:entryValues="@array/qs_battery_mode_values"
+            android:defaultValue="1" />
 
     </PreferenceCategory>
 
