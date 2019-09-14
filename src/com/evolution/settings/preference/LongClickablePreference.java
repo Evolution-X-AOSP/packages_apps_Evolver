@@ -17,8 +17,8 @@
 package com.evolution.settings.preference;
 
 import android.content.Context;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceViewHolder;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceViewHolder;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
