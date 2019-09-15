@@ -35,6 +35,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.R;
 import com.evolution.settings.display.AccentColorPreferenceController;
+import com.evolution.settings.display.CustomOverlayPreferenceController;
 import com.evolution.settings.display.QsAlphaPreferenceController;
 import com.evolution.settings.display.QsBlurAlphaPreferenceController;
 import com.evolution.settings.display.QsBlurIntensityPreferenceController;
@@ -73,6 +74,8 @@ public class ThemeSettings extends DashboardFragment implements Indexable  {
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new AccentColorPreferenceController(context));
+        controllers.add(new CustomOverlayPreferenceController(context,
+                "android.theme.customization.custom_overlays"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.font"));
         controllers.add(new OverlayCategoryPreferenceController(context,
