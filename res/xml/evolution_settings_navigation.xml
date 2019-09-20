@@ -40,6 +40,11 @@
                 android:targetClass="com.android.systemui.tuner.NavBarActivity" />
         </Preference>
 
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="sysui_nav_bar_inverse"
+            android:title="@string/navbar_invert_layout_title"
+            android:defaultValue="false" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="pixel_nav_animation"
             android:title="@string/pixel_navbar_anim_title"
