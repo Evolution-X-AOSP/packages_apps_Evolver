@@ -61,7 +61,10 @@ import java.util.Map;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
+    private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
+
     private CustomSeekBarPreference mThreshold;
+    private SwitchPreference mShowLteFourGee;
     private SystemSettingSwitchPreference mNetMonitor;
 
     @Override
@@ -84,6 +87,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mThreshold.setValue(value);
         mThreshold.setOnPreferenceChangeListener(this);
         mThreshold.setEnabled(isNetMonitorEnabled);
+
+        mShowLteFourGee = (SwitchPreference) findPreference(SHOW_LTE_FOURGEE);
+        mShowLteFourGee.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.SHOW_LTE_FOURGEE, 0) == 1));
+        mShowLteFourGee.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -101,6 +109,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
                     UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mShowLteFourGee) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SHOW_LTE_FOURGEE, value ? 1 : 0);
             return true;
         }
         return false;
