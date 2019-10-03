@@ -47,10 +47,6 @@ import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import com.evolution.settings.preference.CustomSeekBarPreference;
-import com.evolution.settings.preference.SecureSettingSwitchPreference;
-import com.evolution.settings.preference.SystemSettingSwitchPreference;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -75,11 +71,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
-    private ListPreference mNetTrafficLocation;
-    private CustomSeekBarPreference mThreshold;
     private SwitchPreference mBatteryCharging;
     private SwitchPreference mShowLteFourGee;
-    private SystemSettingSwitchPreference mNetMonitor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,19 +81,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.evolution_settings_statusbar);
         PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
-
-        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
-        mNetMonitor = (SystemSettingSwitchPreference) findPreference("network_traffic_state");
-        mNetMonitor.setChecked(isNetMonitorEnabled);
-        mNetMonitor.setOnPreferenceChangeListener(this);
-
-        int value = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
-        mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
-        mThreshold.setValue(value);
-        mThreshold.setOnPreferenceChangeListener(this);
-        mThreshold.setEnabled(isNetMonitorEnabled);
 
         mShowLteFourGee = (SwitchPreference) findPreference(SHOW_LTE_FOURGEE);
         mShowLteFourGee.setChecked((Settings.System.getInt(getContentResolver(),
@@ -119,21 +99,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mNetMonitor) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
-            mNetMonitor.setChecked(value);
-            mThreshold.setEnabled(value);
-            return true;
-        } else if (preference == mThreshold) {
-            int val = (Integer) newValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
-                    UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mShowLteFourGee) {
+        if (preference == mShowLteFourGee) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SHOW_LTE_FOURGEE, value ? 1 : 0);
