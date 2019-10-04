@@ -54,6 +54,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
+import com.evolution.settings.preference.GlobalSettingMasterSwitchPreference;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
 import com.evolution.settings.preference.PackageListAdapter;
 import com.evolution.settings.preference.Utils;
@@ -66,8 +67,10 @@ import java.util.Map;
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
+    private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private Preference mChargingLeds;
 
     @Override
@@ -90,10 +93,22 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mChargingLeds);
         }
 
+        mHeadsUpEnabled = (GlobalSettingMasterSwitchPreference) findPreference(HEADS_UP_NOTIFICATIONS_ENABLED);
+        mHeadsUpEnabled.setOnPreferenceChangeListener(this);
+        int headsUpEnabled = Settings.Global.getInt(getContentResolver(),
+                HEADS_UP_NOTIFICATIONS_ENABLED, 1);
+        mHeadsUpEnabled.setChecked(headsUpEnabled != 0);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mHeadsUpEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.Global.putInt(getContentResolver(),
+		            HEADS_UP_NOTIFICATIONS_ENABLED, value ? 1 : 0);
+            return true;
+        }
         return false;
     }
 

@@ -19,6 +19,13 @@
     android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.evolution.settings.preference.GlobalSettingMasterSwitchPreference 
+        android:key="heads_up_notifications_enabled"
+        android:fragment="com.evolution.settings.fragments.HeadsUpSettings"
+        android:title="@string/heads_up_notifications"
+        android:summary="@string/heads_up_notifications_summary"
+        android:defaultValue="true" />
+
     <Preference
         android:key="notification_light"
         android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
