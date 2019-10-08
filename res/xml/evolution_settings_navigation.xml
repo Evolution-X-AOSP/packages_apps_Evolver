@@ -40,8 +40,16 @@
                 android:targetClass="com.android.systemui.tuner.NavBarActivity" />
         </Preference-->
 
+        <com.evolution.settings.preference.SecureSettingListPreference
+            android:key="navbar_layout_views"
+            android:title="@string/navbar_layout_title"
+            android:summary="%s"
+            android:entries="@array/navbar_layout_entries"
+            android:entryValues="@array/navbar_layout_values"
+            android:defaultValue="default" />
+
         <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="sysui_nav_bar_inverse"
+            android:key="navbar_inverse_layout"
             android:title="@string/navbar_invert_layout_title"
             android:defaultValue="false" />
 
