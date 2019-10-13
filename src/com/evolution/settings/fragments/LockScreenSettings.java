@@ -18,12 +18,10 @@
 
 package com.evolution.settings.fragments;
 
-import com.android.internal.logging.nano.MetricsProto;
-
 import android.app.Activity;
-import android.content.Context;
-import android.content.ContentResolver;
 import android.app.WallpaperManager;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
@@ -35,131 +33,36 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
-
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+
+import com.android.internal.logging.nano.MetricsProto;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
+import com.evolution.settings.preference.Utils;
+import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.evolution.settings.preferences.Utils;
-import com.evolution.settings.preferences.SystemSettingSeekBarPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR = "lock_screen_visualizer_custom_color";
-    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
-    private static final String LOCK_DATE_FONTS = "lock_date_fonts";
-    private static final String LOCK_OWNER_FONTS = "lock_owner_fonts";
-    private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
-    private static final String DATE_FONT_SIZE  = "lockdate_font_size";
-
-    ListPreference mLockClockFonts;
-    ListPreference mLockDateFonts;
-    ListPreference mLockOwnerFonts;
-
-    private ColorPickerPreference mVisualizerColor;
-    private SystemSettingSeekBarPreference mClockFontSize;
-    private SystemSettingSeekBarPreference mDateFontSize;
-
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
         addPreferencesFromResource(R.xml.evolution_settings_lockscreen);
-
-        ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        Resources resources = getResources();
-
-        // Lockscren Clock Fonts
-        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
-        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 22)));
-        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-        mLockClockFonts.setOnPreferenceChangeListener(this);
-
-        // Lockscren Date Fonts
-        mLockDateFonts = (ListPreference) findPreference(LOCK_DATE_FONTS);
-        mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_DATE_FONTS, 23)));
-        mLockDateFonts.setSummary(mLockDateFonts.getEntry());
-        mLockDateFonts.setOnPreferenceChangeListener(this);
-
-        // Lock Clock Size
-        mClockFontSize = (SystemSettingSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
-        mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKCLOCK_FONT_SIZE, 64));
-        mClockFontSize.setOnPreferenceChangeListener(this);
-
-        // Lock Date Size
-        mDateFontSize = (SystemSettingSeekBarPreference) findPreference(DATE_FONT_SIZE);
-        mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKDATE_FONT_SIZE,16));
-        mDateFontSize.setOnPreferenceChangeListener(this);
-
-        // Lock Owner Fonts
-        mLockOwnerFonts = (ListPreference) findPreference(LOCK_OWNER_FONTS);
-        mLockOwnerFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_OWNER_FONTS, 26)));
-        mLockOwnerFonts.setSummary(mLockOwnerFonts.getEntry());
-        mLockOwnerFonts.setOnPreferenceChangeListener(this);
-
-        // Visualizer custom color
-        mVisualizerColor = (ColorPickerPreference) findPreference(LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR);
-        int visColor = Settings.System.getInt(resolver,
-                Settings.System.LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR, 0xff1976D2);
-        String visColorHex = String.format("#%08x", (0xff1976D2 & visColor));
-        mVisualizerColor.setSummary(visColorHex);
-        mVisualizerColor.setNewPreviewColor(visColor);
-        mVisualizerColor.setAlphaSliderEnabled(true);
-        mVisualizerColor.setOnPreferenceChangeListener(this);
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mVisualizerColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-	    Integer.valueOf(String.valueOf(newValue)));
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-	    Settings.System.putInt(resolver,
-		    Settings.System.LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR, intHex);
-	    preference.setSummary(hex);
-            return true;
-        } else if (preference == mLockClockFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockClockFonts.setValue(String.valueOf(newValue));
-            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-            return true;
-        } else if (preference == mLockDateFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_DATE_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockDateFonts.setValue(String.valueOf(newValue));
-            mLockDateFonts.setSummary(mLockDateFonts.getEntry());
-            return true;
-        } else if (preference == mClockFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKCLOCK_FONT_SIZE, top*1);
-            return true;
-        } else if (preference == mDateFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKDATE_FONT_SIZE, top*1);
-            return true;
-        } else if (preference == mLockOwnerFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_OWNER_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockOwnerFonts.setValue(String.valueOf(newValue));
-            mLockOwnerFonts.setSummary(mLockOwnerFonts.getEntry());
-            return true;
-        }
         return false;
     }
 
@@ -170,16 +73,18 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
-                 @Override
+
+                @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
                         boolean enabled) {
                     final ArrayList<SearchIndexableResource> result = new ArrayList<>();
-                     final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
                     sir.xmlResId = R.xml.evolution_settings_lockscreen;
                     result.add(sir);
                     return result;
                 }
-                 @Override
+
+                @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     final List<String> keys = super.getNonIndexableKeys(context);
                     return keys;

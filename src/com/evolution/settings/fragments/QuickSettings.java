@@ -16,8 +16,6 @@
 
 package com.evolution.settings.fragments;
 
-import com.android.internal.logging.nano.MetricsProto;
-
 import android.os.Bundle;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -38,209 +36,40 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.text.TextUtils;
+import android.view.View;
+
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.statusbar.IStatusBarService;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
-import java.util.Locale;
-import android.text.TextUtils;
-import android.view.View;
 
-import com.android.internal.statusbar.IStatusBarService;
+import com.evolution.settings.preference.CustomSeekBarPreference;
 
-import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
-import com.evolution.settings.preferences.CustomSeekBarPreference;
 
 public class QuickSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
-    private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
-    private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
-    private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
-    private static final String QS_PANEL_BG_ALPHA = "qs_panel_bg_alpha";
-    private static final String QS_PANEL_COLOR = "qs_panel_color";
-    private static final String QS_TILE_STYLE = "qs_tile_style";
-    private static final String BATTERY_ESTIMATE_POSITION_TYPE = "battery_estimate_position";
-
-    private Handler mHandler;
-
-    private CustomSeekBarPreference mQsPanelAlpha;
-    private ColorPickerPreference mQsPanelColor;
-    private int mQsPanelAlphaValue;
-    private boolean mChangeQsPanelAlpha = true;
-
-    private ListPreference mQsTileStyle;
-    private ListPreference mTileAnimationStyle;
-    private ListPreference mTileAnimationDuration;
-    private ListPreference mTileAnimationInterpolator;
-    private ListPreference mEstimatePositionType;
-
-    private IStatusBarService mStatusBarService;
-
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.evolution_settings_quicksettings);
-
-        mHandler = new Handler();
-
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
-
-        // QS animation
-        mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
-        int tileAnimationStyle = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.ANIM_TILE_STYLE, 0, UserHandle.USER_CURRENT);
-        mTileAnimationStyle.setValue(String.valueOf(tileAnimationStyle));
-        updateTileAnimationStyleSummary(tileAnimationStyle);
-        updateAnimTileStyle(tileAnimationStyle);
-        mTileAnimationStyle.setOnPreferenceChangeListener(this);
-
-        mTileAnimationDuration = (ListPreference) findPreference(PREF_TILE_ANIM_DURATION);
-        int tileAnimationDuration = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
-        mTileAnimationDuration.setValue(String.valueOf(tileAnimationDuration));
-        updateTileAnimationDurationSummary(tileAnimationDuration);
-        mTileAnimationDuration.setOnPreferenceChangeListener(this);
-
-        mTileAnimationInterpolator = (ListPreference) findPreference(PREF_TILE_ANIM_INTERPOLATOR);
-        int tileAnimationInterpolator = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
-        mTileAnimationInterpolator.setValue(String.valueOf(tileAnimationInterpolator));
-        updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
-        mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
-
-        mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_BG_ALPHA);
-        int qsPanelAlpha = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
-        mQsPanelAlpha.setValue(qsPanelAlpha);
-        mQsPanelAlpha.setOnPreferenceChangeListener(this);
-
-        mQsPanelColor = (ColorPickerPreference) findPreference(QS_PANEL_COLOR);
-        int QsColor = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.QS_PANEL_BG_COLOR, Color.WHITE, UserHandle.USER_CURRENT);
-        mQsPanelColor.setNewPreviewColor(QsColor);
-        mQsPanelColor.setOnPreferenceChangeListener(this);
-
-        mQsTileStyle = (ListPreference) findPreference(QS_TILE_STYLE);
-        int qsTileStyle = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_TILE_STYLE, 0,
-                UserHandle.USER_CURRENT);
-        int valueIndex = mQsTileStyle.findIndexOfValue(String.valueOf(qsTileStyle));
-        mQsTileStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
-        mQsTileStyle.setSummary(mQsTileStyle.getEntry());
-        mQsTileStyle.setOnPreferenceChangeListener(this);
-
-        // battery estimate position
-        mEstimatePositionType = (ListPreference) findPreference(BATTERY_ESTIMATE_POSITION_TYPE);
-        int type = Settings.System.getInt(resolver,
-                Settings.System.BATTERY_ESTIMATE_POSITION, 0);
-        mEstimatePositionType.setValue(String.valueOf(type));
-        mEstimatePositionType.setSummary(mEstimatePositionType.getEntry());
-        mEstimatePositionType.setOnPreferenceChangeListener(this);
-        }
+    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mTileAnimationStyle) {
-            int tileAnimationStyle = Integer.valueOf((String) newValue);
-            Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_STYLE,
-                    tileAnimationStyle, UserHandle.USER_CURRENT);
-            updateTileAnimationStyleSummary(tileAnimationStyle);
-            updateAnimTileStyle(tileAnimationStyle);
-            return true;
-        } else if (preference == mTileAnimationDuration) {
-            int tileAnimationDuration = Integer.valueOf((String) newValue);
-            Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_DURATION,
-                    tileAnimationDuration, UserHandle.USER_CURRENT);
-            updateTileAnimationDurationSummary(tileAnimationDuration);
-        } else if (preference == mTileAnimationInterpolator) {
-            int tileAnimationInterpolator = Integer.valueOf((String) newValue);
-            Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_INTERPOLATOR,
-                    tileAnimationInterpolator, UserHandle.USER_CURRENT);
-            updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
-            return true;
-        } else if (preference == mQsPanelAlpha) {
-            mQsPanelAlphaValue = (Integer) newValue;
-            if (!mChangeQsPanelAlpha)
-                return true;
-            mChangeQsPanelAlpha = false;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_PANEL_BG_ALPHA, mQsPanelAlphaValue,
-                    UserHandle.USER_CURRENT);
-            mHandler.postDelayed(() -> {
-                    Settings.System.putIntForUser(getContentResolver(),
-                            Settings.System.QS_PANEL_BG_ALPHA, mQsPanelAlphaValue,
-                            UserHandle.USER_CURRENT);
-                    mChangeQsPanelAlpha = true;
-                }, 1000);
-            return true;
-        } else if (preference == mQsPanelColor) {
-            int bgColor = (Integer) newValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_PANEL_BG_COLOR, bgColor,
-                    UserHandle.USER_CURRENT);
-        } else if (preference == mQsTileStyle) {
-            int qsTileStyleValue = Integer.valueOf((String) newValue);
-            Settings.System.putIntForUser(resolver, Settings.System.QS_TILE_STYLE,
-                    qsTileStyleValue, UserHandle.USER_CURRENT);
-            mQsTileStyle.setSummary(mQsTileStyle.getEntries()[qsTileStyleValue]);
-            return true;
-        } else if (preference == mEstimatePositionType) {
-            int type = Integer.valueOf((String) newValue);
-            int index = mEstimatePositionType.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.BATTERY_ESTIMATE_POSITION, type);
-            mEstimatePositionType.setSummary(mEstimatePositionType.getEntries()[index]);
-            IStatusBarService statusBarService = IStatusBarService.Stub.asInterface(ServiceManager.checkService(Context.STATUS_BAR_SERVICE));
-            if (statusBarService != null) {
-                try {
-                    statusBarService.restartUI();
-                } catch (RemoteException e) {
-                    // do nothing.
-                }
-            }
-            return true;
-        }
         return false;
-    }
-
-    private void updateTileAnimationStyleSummary(int tileAnimationStyle) {
-        String prefix = (String) mTileAnimationStyle.getEntries()[mTileAnimationStyle.findIndexOfValue(String
-                .valueOf(tileAnimationStyle))];
-        mTileAnimationStyle.setSummary(getResources().getString(R.string.qs_set_animation_style, prefix));
-    }
-
-    private void updateTileAnimationDurationSummary(int tileAnimationDuration) {
-        String prefix = (String) mTileAnimationDuration.getEntries()[mTileAnimationDuration.findIndexOfValue(String
-                .valueOf(tileAnimationDuration))];
-        mTileAnimationDuration.setSummary(getResources().getString(R.string.qs_set_animation_duration, prefix));
-    }
-
-    private void updateTileAnimationInterpolatorSummary(int tileAnimationInterpolator) {
-        String prefix = (String) mTileAnimationInterpolator.getEntries()[mTileAnimationInterpolator.findIndexOfValue(String
-                .valueOf(tileAnimationInterpolator))];
-        mTileAnimationInterpolator.setSummary(getResources().getString(R.string.qs_set_animation_interpolator, prefix));
-    }
-
-    private void updateAnimTileStyle(int tileAnimationStyle) {
-        if (mTileAnimationDuration != null) {
-            if (tileAnimationStyle == 0) {
-                mTileAnimationDuration.setSelectable(false);
-                mTileAnimationInterpolator.setSelectable(false);
-            } else {
-                mTileAnimationDuration.setSelectable(true);
-                mTileAnimationInterpolator.setSelectable(true);
-            }
-        }
     }
 
     @Override
@@ -250,16 +79,18 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
-                 @Override
+
+                @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
                         boolean enabled) {
                     final ArrayList<SearchIndexableResource> result = new ArrayList<>();
-                     final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
                     sir.xmlResId = R.xml.evolution_settings_quicksettings;
                     result.add(sir);
                     return result;
                 }
-                 @Override
+
+                @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     final List<String> keys = super.getNonIndexableKeys(context);
                     return keys;

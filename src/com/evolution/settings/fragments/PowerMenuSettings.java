@@ -23,6 +23,7 @@ import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.support.annotation.NonNull;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
@@ -31,116 +32,33 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import com.android.settings.R;
-import android.support.annotation.NonNull;
 
 import com.android.internal.logging.nano.MetricsProto;
+
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import com.evolution.settings.preferences.Utils;
+import com.evolution.settings.preference.CustomSeekBarPreference;
+import com.evolution.settings.preference.Utils;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.evolution.settings.preferences.Utils;
-import com.evolution.settings.preferences.CustomSeekBarPreference;
-
 public class PowerMenuSettings extends SettingsPreferenceFragment
                 implements Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String KEY_POWERMENU_LOGOUT = "powermenu_logout";
-    private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
-    private static final String KEY_POWERMENU_USERS = "powermenu_users";
-    private static final String PREF_ON_THE_GO_ALPHA = "on_the_go_alpha";
-    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
-
-    private SwitchPreference mPowermenuLogout;
-    private SwitchPreference mPowermenuTorch;
-    private SwitchPreference mPowermenuUsers;
-    private CustomSeekBarPreference mOnTheGoAlphaPref;
-    private ListPreference mScreenOffAnimation;
-
-    private UserManager mUserManager;
-
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.evolution_settings_power);
-
-        final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
-        mPowermenuTorch.setOnPreferenceChangeListener(this);
-        if (!Utils.deviceSupportsFlashLight(getActivity())) {
-            prefScreen.removePreference(mPowermenuTorch);
-        } else {
-        mPowermenuTorch.setChecked((Settings.System.getInt(resolver,
-                Settings.System.POWERMENU_TORCH, 0) == 1));
-        }
-        mPowermenuLogout = (SwitchPreference) findPreference(KEY_POWERMENU_LOGOUT);
-        mPowermenuLogout.setOnPreferenceChangeListener(this);
-        mPowermenuUsers = (SwitchPreference) findPreference(KEY_POWERMENU_USERS);
-        mPowermenuUsers.setOnPreferenceChangeListener(this);
-        if (!mUserManager.supportsMultipleUsers()) {
-            prefScreen.removePreference(mPowermenuLogout);
-            prefScreen.removePreference(mPowermenuUsers);
-        } else {
-            mPowermenuLogout.setChecked((Settings.System.getInt(resolver,
-                    Settings.System.POWERMENU_LOGOUT, 0) == 1));
-            mPowermenuUsers.setChecked((Settings.System.getInt(resolver,
-                    Settings.System.POWERMENU_USERS, 0) == 1));
-        }
-
-        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
-        int screenOffAnimation = Settings.Global.getInt(getContentResolver(),
-                Settings.Global.SCREEN_OFF_ANIMATION, 0);
-        mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
-        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
-        mScreenOffAnimation.setOnPreferenceChangeListener(this);
-
-        mOnTheGoAlphaPref = (CustomSeekBarPreference) findPreference(PREF_ON_THE_GO_ALPHA);
-        float otgAlpha = Settings.System.getFloat(getContentResolver(),
-                Settings.System.ON_THE_GO_ALPHA, 0.5f);
-        final int alpha = ((int) (otgAlpha * 100));
-        mOnTheGoAlphaPref.setValue(alpha);
-        mOnTheGoAlphaPref.setOnPreferenceChangeListener(this);
+        addPreferencesFromResource(R.xml.evolution_settings_power_menu);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mPowermenuLogout) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWERMENU_LOGOUT, value ? 1 : 0);
-            return true;
-        } else if (preference == mPowermenuTorch) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWERMENU_TORCH, value ? 1 : 0);
-            return true;
-        } else if (preference == mPowermenuUsers) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWERMENU_USERS, value ? 1 : 0);
-            return true;
-        } else if (preference == mScreenOffAnimation) {
-            int value = Integer.valueOf((String) newValue);
-            int index = mScreenOffAnimation.findIndexOfValue((String) newValue);
-            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
-            Settings.Global.putInt(getContentResolver(), Settings.Global.SCREEN_OFF_ANIMATION, value);
-            return true;
-        } else if (preference == mOnTheGoAlphaPref) {
-            float val = (Integer) newValue;
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.ON_THE_GO_ALPHA, val / 100);
-            return true;
-        }
         return false;
     }
 
@@ -151,16 +69,18 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
-                 @Override
+
+                @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
                         boolean enabled) {
                     final ArrayList<SearchIndexableResource> result = new ArrayList<>();
-                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.evolution_settings_power;
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.evolution_settings_power_menu;
                     result.add(sir);
                     return result;
                 }
-                 @Override
+
+                @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     final List<String> keys = super.getNonIndexableKeys(context);
                     return keys;
