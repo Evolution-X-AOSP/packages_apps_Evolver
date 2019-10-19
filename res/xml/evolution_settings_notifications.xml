@@ -29,6 +29,18 @@
     </Preference>
 
     <PreferenceCategory
+        android:key="notification_messages"
+        android:title="@string/notification_messages">
+        
+        <com.evolution.settings.preference.SystemSettingSwitchPreference  
+            android:key="enable_fc_notifications" 
+            android:title="@string/enable_fc_notifications_title" 
+            android:summary="@string/enable_fc_notifications_summary" 
+            android:defaultValue="true" /> 
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
 
