@@ -20,6 +20,7 @@ import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -32,6 +33,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.hwkeys.ActionUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -47,16 +49,74 @@ import java.util.UUID;
 public class NavigationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String ENABLE_NAV_BAR = "enable_nav_bar";
+    private static final String PREF_HW_BUTTONS = "hw_buttons";
+
+    private SwitchPreference mEnableNavigationBar;
+    private boolean mIsNavSwitchingMode = false;
+    private Handler mHandler;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.evolution_settings_navigation);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
+        // bits for hardware keys present on device
+        final int deviceKeys = getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+        if (needsNavbar && deviceKeys == 0) {
+            getPreferenceScreen().removePreference(findPreference(PREF_HW_BUTTONS));
+        }
+
+        // Navigation bar related options
+        mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAV_BAR);
+
+        // Only visible on devices that have a navigation bar already
+        if (ActionUtils.hasNavbarByDefault(getActivity())) {
+            mEnableNavigationBar.setOnPreferenceChangeListener(this);
+            mHandler = new Handler();
+            updateNavBarOption();
+        } else {
+            prefScreen.removePreference(mEnableNavigationBar);
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mEnableNavigationBar) {
+            if (mIsNavSwitchingMode) {
+                return false;
+            }
+            mIsNavSwitchingMode = true;
+            boolean isNavBarChecked = ((Boolean) newValue);
+            mEnableNavigationBar.setEnabled(false);
+            writeNavBarOption(isNavBarChecked);
+            updateNavBarOption();
+            mEnableNavigationBar.setEnabled(true);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mIsNavSwitchingMode = false;
+                }
+            }, 1000);
+            return true;
+        }
         return false;
+    }
+
+    private void writeNavBarOption(boolean enabled) {
+        Settings.System.putIntForUser(getActivity().getContentResolver(),
+                Settings.System.FORCE_SHOW_NAVBAR, enabled ? 1 : 0, UserHandle.USER_CURRENT);
+    }
+
+    private void updateNavBarOption() {
+        boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.FORCE_SHOW_NAVBAR, 1, UserHandle.USER_CURRENT) != 0;
+        mEnableNavigationBar.setChecked(enabled);
     }
 
     @Override
