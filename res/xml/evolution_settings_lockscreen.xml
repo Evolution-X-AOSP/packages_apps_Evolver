@@ -62,6 +62,16 @@
             android:summary="@string/lockscreen_show_status_bar_summary"
             android:defaultValue="true" />
 
+        <ListPreference
+            android:key="lock_clock_fonts"
+            android:title="@string/lock_clock_font_title"
+            android:dialogTitle="@string/lock_clock_font_dialog_title"
+            android:entries="@array/lock_clock_fonts_entries"
+            android:entryValues="@array/lock_clock_fonts_values"
+            android:summary="%s"
+            android:defaultValue="28"
+            android:persistent="false" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:title="@string/lockscreen_battery_info_title"
