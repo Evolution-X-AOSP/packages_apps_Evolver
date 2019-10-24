@@ -45,6 +45,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.evolution.settings.preference.Utils;
+import com.evolution.settings.preference.SecureSettingMasterSwitchPreference;
 import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
@@ -56,9 +57,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
 
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
+    private SecureSettingMasterSwitchPreference mVisualizerEnabled;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
         mFingerprintVib.setOnPreferenceChangeListener(this);
         }
+
+        mVisualizerEnabled = (SecureSettingMasterSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
+        mVisualizerEnabled.setOnPreferenceChangeListener(this);
+        int visualizerEnabled = Settings.Secure.getInt(resolver,
+                LOCKSCREEN_VISUALIZER_ENABLED, 0);
+        mVisualizerEnabled.setChecked(visualizerEnabled != 0);
     }
 
     @Override
@@ -88,6 +97,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
+            return true;
+        } else if (preference == mVisualizerEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(getContentResolver(),
+                    LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
             return true;
         }
         return false;
