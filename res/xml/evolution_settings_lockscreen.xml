@@ -123,6 +123,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="lockscreen_visualizer_options"
+        android:title="@string/lockscreen_visualizer_title" >
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_visualizer_enabled"
+            android:title="@string/lockscreen_visualizer_enable"
+            android:summary="@string/lockscreen_visualizer_enable_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_media_category"
         android:title="@string/lockscreen_media_category">
 
