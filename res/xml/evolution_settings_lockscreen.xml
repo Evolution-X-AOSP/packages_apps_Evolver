@@ -74,11 +74,11 @@
         android:key="lockscreen_visualizer_options"
         android:title="@string/lockscreen_visualizer_title" >
 
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="lockscreen_visualizer_enabled"
+        <Preference
+            android:key="lockscreen_visualizer"
+            android:fragment="com.evolution.settings.fragments.Visualizer"
             android:title="@string/lockscreen_visualizer_enable"
-            android:summary="@string/lockscreen_visualizer_enable_summary"
-            android:defaultValue="false" />
+            android:summary="@string/lockscreen_visualizer_enable_summary" />
 
     </PreferenceCategory>
 
