@@ -83,6 +83,27 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/doze_brightness_category">
+
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="ambient_doze_brightness"
+            android:title="@string/ambient_doze_brightness_title"
+            android:summary="@string/ambient_doze_brightness_summary"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false" />
+
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="ambient_pulse_brightness"
+            android:title="@string/ambient_pulse_brightness_title"
+            android:summary="@string/ambient_pulse_brightness_summary"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
 
