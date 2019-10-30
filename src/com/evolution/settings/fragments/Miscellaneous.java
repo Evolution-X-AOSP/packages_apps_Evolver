@@ -51,8 +51,11 @@ public class Miscellaneous extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "Miscellaneous";
+
+    private static final String POCKET_JUDGE = "pocket_judge";
     private static final String SMART_PIXELS = "smart_pixels";
 
+    private Preference mPocketJudge;
     private Preference mSmartPixels;
 
     @Override
@@ -66,9 +69,16 @@ public class Miscellaneous extends DashboardFragment implements
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
+
+        mPocketJudge = (Preference) findPreference(POCKET_JUDGE);
+        boolean mPocketJudgeSupported = res.getBoolean(
+                com.android.internal.R.bool.config_pocketModeSupported);
+        if (!mPocketJudgeSupported)
+            prefScreen.removePreference(mPocketJudge);
 
         mSmartPixels = (Preference) findPreference(SMART_PIXELS);
-        boolean mSmartPixelsSupported = getResources().getBoolean(
+        boolean mSmartPixelsSupported = res.getBoolean(
                 com.android.internal.R.bool.config_supportSmartPixels);
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
@@ -94,8 +104,14 @@ public class Miscellaneous extends DashboardFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
 
-                    boolean mSmartPixelsSupported = context.getResources().getBoolean(
+                    boolean mPocketJudgeSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_pocketModeSupported);
+                    if (!mPocketJudgeSupported)
+                        keys.add(POCKET_JUDGE);
+
+                    boolean mSmartPixelsSupported = res.getBoolean(
                             com.android.internal.R.bool.config_supportSmartPixels);
                     if (!mSmartPixelsSupported)
                         keys.add(SMART_PIXELS);
