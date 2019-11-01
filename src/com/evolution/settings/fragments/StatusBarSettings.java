@@ -89,7 +89,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mThreshold.setValue(value);
         mThreshold.setOnPreferenceChangeListener(this);
 
-        mHideArrows = (SystemSettingSwitchPreference) findPreference("network_traffic_hidearrow");
+        mHideArrows = (SystemSettingSwitchPreference) findPreference("network_traffic_arrow");
 
         updateTrafficLocation(location);
 
