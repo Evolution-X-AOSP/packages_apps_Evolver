@@ -60,6 +60,7 @@ import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.GlobalSettingMasterSwitchPreference;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
 import com.evolution.settings.preference.PackageListAdapter;
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
 import com.evolution.settings.preference.Utils;
 
 import java.util.ArrayList;
@@ -77,6 +78,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
+    private static final String PULSE_AMBIENT_LIGHT_PREF = "pulse_ambient_light";
 
     private CustomSeekBarPreference mDozeBrightness;
     private CustomSeekBarPreference mPulseBrightness;
@@ -85,6 +87,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private Preference mAlertSlider;
     private Preference mChargingLeds;
     private SwitchPreference mForceExpanded;
+    private SystemSettingSwitchPreference mPulseEdgeLights;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,6 +98,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+
+        mPulseEdgeLights = (SystemSettingSwitchPreference) findPreference(PULSE_AMBIENT_LIGHT_PREF);
+        boolean mPulseNotificationEnabled = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.DOZE_ENABLED, 0) != 0;
+        mPulseEdgeLights.setEnabled(mPulseNotificationEnabled);
 
         mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
