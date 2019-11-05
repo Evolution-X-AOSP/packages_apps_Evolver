@@ -51,6 +51,7 @@ import com.android.settings.search.Indexable;
 
 import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingEditTextPreference;
+import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -71,6 +72,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
+    private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
 
     private ListPreference mQuickPulldown;
     private SystemSettingEditTextPreference mFooterString;
@@ -80,6 +82,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mQsColumnsQuickbar;
     private CustomSeekBarPreference mQsRowsPortrait;
     private CustomSeekBarPreference mQsRowsLandscape;
+    private SystemSettingMasterSwitchPreference mCustomHeader;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -144,6 +147,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_COLUMNS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
         mQsRowsLandscape.setValue(rowsLandscape);
         mQsRowsLandscape.setOnPreferenceChangeListener(this);
+
+        mCustomHeader = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
+        int qsHeader = Settings.System.getInt(resolver,
+                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0);
+        mCustomHeader.setChecked(qsHeader != 0);
+        mCustomHeader.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -196,6 +205,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_ROWS_LANDSCAPE, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mCustomHeader) {
+            boolean header = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, header ? 1 : 0);
             return true;
         }
         return false;
