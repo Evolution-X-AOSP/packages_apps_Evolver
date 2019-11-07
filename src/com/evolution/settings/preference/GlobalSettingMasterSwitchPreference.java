@@ -19,20 +19,23 @@ package com.evolution.settings.preference;
 import android.content.Context;
 import android.util.AttributeSet;
 
-public class SystemSettingSeekBarPreference extends CustomSeekBarPreference {
+import com.evolution.settings.preference.GlobalSettingsStore;
 
-    public SystemSettingSeekBarPreference(Context context, AttributeSet attrs, int defStyle) {
+public class GlobalSettingMasterSwitchPreference extends MasterSwitchPreference {
+
+    public GlobalSettingMasterSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new GlobalSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingSeekBarPreference(Context context, AttributeSet attrs) {
+    public GlobalSettingMasterSwitchPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+        setPreferenceDataStore(new GlobalSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingSeekBarPreference(Context context) {
-        super(context, null);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
+    public GlobalSettingMasterSwitchPreference(Context context) {
+        super(context);
+        setPreferenceDataStore(new GlobalSettingsStore(context.getContentResolver()));
     }
+
 }
