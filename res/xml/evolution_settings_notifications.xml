@@ -29,14 +29,25 @@
     </Preference>
 
     <PreferenceCategory
+        android:title="@string/light_settings_header" >
+
+        <Preference
+            android:key="charging_light"
+            android:title="@string/battery_light_settings"
+            android:summary="@string/battery_light_summary"
+            android:fragment="com.evolution.settings.fragments.BatteryLightSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="notification_messages"
         android:title="@string/notification_messages">
-        
-        <com.evolution.settings.preference.SystemSettingSwitchPreference  
-            android:key="enable_fc_notifications" 
-            android:title="@string/enable_fc_notifications_title" 
-            android:summary="@string/enable_fc_notifications_summary" 
-            android:defaultValue="true" /> 
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="enable_fc_notifications"
+            android:title="@string/enable_fc_notifications_title"
+            android:summary="@string/enable_fc_notifications_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 

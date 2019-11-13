@@ -68,6 +68,8 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
+    private Preference mChargingLeds;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +82,14 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         if (!Utils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
         }
+
+        mChargingLeds = (Preference) findPreference("charging_light");
+        if (mChargingLeds != null
+                && !getResources().getBoolean(
+                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            prefScreen.removePreference(mChargingLeds);
+        }
+
     }
 
     @Override
