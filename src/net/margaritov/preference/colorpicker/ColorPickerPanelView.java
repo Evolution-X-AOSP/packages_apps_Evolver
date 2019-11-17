@@ -39,7 +39,7 @@ public class ColorPickerPanelView extends View {
      */
     private final static float    BORDER_WIDTH_PX = 1;
 
-    private float mDensity = 1f;
+    private static float mDensity = 1f;
 
     private int         mBorderColor = 0xff6E6E6E;
     private int         mColor = 0xff000000;
