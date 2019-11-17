@@ -20,6 +20,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
+    <Preference
+        android:key="gaming_mode"
+        android:fragment="com.evolution.settings.fragments.GamingMode"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary" />
+
     <!-- Launch music player when headset is connected -->
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="headset_connect_player"
