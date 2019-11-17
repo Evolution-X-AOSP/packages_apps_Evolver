@@ -19,6 +19,13 @@
     android:title="@string/misc_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
+        android:key="gaming_mode_enabled"
+        android:fragment="com.evolution.settings.fragments.GamingMode"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary"
+        android:defaultValue="false" />
+
     <Preference
         android:key="default_usb_configuration"
         android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
