@@ -45,6 +45,13 @@
         android:summary="@string/bluetooth_battery_summary"
         android:defaultValue="true"/>
 
+    <!-- Rounded Corners -->
+    <PreferenceScreen
+         android:key="rounded_corners"
+         android:title="@string/corners_title"
+         android:summary="@string/corners_summary"
+         android:fragment="com.evolution.settings.fragments.RoundedCornersSettings" />
+
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="status_bar_brightness_control"
         android:title="@string/status_bar_toggle_brightness"
