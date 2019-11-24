@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.text.InputFilter;
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
@@ -156,7 +157,9 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
             alert.setMessage(R.string.custom_carrier_label_explain);
             // Set an EditText view to get user input
             final EditText input = new EditText(getActivity());
+            int maxLength = 25;
             input.setText(TextUtils.isEmpty(mCustomCarrierLabelText) ? "" : mCustomCarrierLabelText);
+            input.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
             input.setSelection(input.getText().length());
             alert.setView(input);
             alert.setPositiveButton(getString(android.R.string.ok),
