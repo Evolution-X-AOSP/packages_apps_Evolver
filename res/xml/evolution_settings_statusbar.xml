@@ -19,44 +19,12 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-     <Preference
-            android:title="@string/statusbar_items_title"
-            android:summary="@string/systemui_tuner_summary">
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
-    </Preference>
-
-    <SwitchPreference
-        android:key="show_lte_fourgee"
-        android:title="@string/show_lte_fourgee_title"
-        android:summary="@string/show_lte_fourgee_summary"
-        android:defaultValue="false" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="volte_icon"
-        android:title="@string/volte_icon_title"
-        android:summary="@string/volte_icon_summary"
-        android:defaultValue="false" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="bluetooth_show_battery"
-        android:title="@string/bluetooth_battery_title"
-        android:summary="@string/bluetooth_battery_summary"
-        android:defaultValue="true"/>
-
     <!-- Rounded Corners -->
     <PreferenceScreen
          android:key="rounded_corners"
          android:title="@string/corners_title"
          android:summary="@string/corners_summary"
          android:fragment="com.evolution.settings.fragments.RoundedCornersSettings" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="status_bar_brightness_control"
-        android:title="@string/status_bar_toggle_brightness"
-        android:summary="@string/status_bar_toggle_brightness_summary"
-        android:defaultValue="false" />
 
     <Preference
         android:fragment="com.evolution.settings.fragments.ClockSettings"
@@ -69,6 +37,37 @@
          android:title="@string/carrier_label_category_title"
          android:summary="@string/carrier_label_category_summary"
          android:fragment="com.evolution.settings.fragments.CarrierLabelSettings" />
+
+    <PreferenceCategory
+        android:title="@string/statusbar_items_title">
+
+        <Preference
+                android:title="@string/statusbar_items_title"
+                android:summary="@string/systemui_tuner_summary">
+                <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.systemui"
+                    android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
+        </Preference>
+
+        <SwitchPreference
+            android:key="show_lte_fourgee"
+            android:title="@string/show_lte_fourgee_title"
+            android:summary="@string/show_lte_fourgee_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="volte_icon"
+            android:title="@string/volte_icon_title"
+            android:summary="@string/volte_icon_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/network_traffic_state_title">
