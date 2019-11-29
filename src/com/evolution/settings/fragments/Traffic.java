@@ -67,9 +67,7 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
 
         mNetTrafficLocation = (ListPreference) findPreference("network_traffic_location");
         int location = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_LOCATION, 0, UserHandle.USER_CURRENT);
-        mNetTrafficLocation.setValue(String.valueOf(location));
-        mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
+                Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 0, UserHandle.USER_CURRENT);
         mNetTrafficLocation.setOnPreferenceChangeListener(this);
 
         int trafvalue = Settings.System.getIntForUser(resolver,
@@ -79,7 +77,16 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
         mThreshold.setOnPreferenceChangeListener(this);
         mShowArrows = (SystemSettingSwitchPreference) findPreference("network_traffic_arrow");
 
-        updateTrafficLocation(location);
+        int netMonitorEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
+        if (netMonitorEnabled == 1) {
+            mNetTrafficLocation.setValue(String.valueOf(location+1));
+            updateTrafficLocation(location+1);
+        } else {
+            mNetTrafficLocation.setValue("0");
+            updateTrafficLocation(0); 
+        }
+        mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
     }
 
     @Override
@@ -97,10 +104,20 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
         if (preference == mNetTrafficLocation) {
             int location = Integer.valueOf((String) objValue);
             int index = mNetTrafficLocation.findIndexOfValue((String) objValue);
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_LOCATION, location, UserHandle.USER_CURRENT);
             mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntries()[index]);
-            updateTrafficLocation(location);
+            if (location > 0) {
+                // Convert the selected location mode from our list {0,1,2} and store it to "view location" setting: 0=sb; 1=expanded sb
+                Settings.System.putIntForUser(getActivity().getContentResolver(),
+                        Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, location-1, UserHandle.USER_CURRENT);
+                // And also enable the net monitor
+                Settings.System.putIntForUser(getActivity().getContentResolver(),
+                        Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT);
+                updateTrafficLocation(location+1);
+            } else { // Disable net monitor completely
+                Settings.System.putIntForUser(getActivity().getContentResolver(),
+                        Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
+                updateTrafficLocation(location);
+            }
             return true;
         } else if (preference == mThreshold) {
             int val = (Integer) objValue;
@@ -117,26 +134,11 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
             case 0:
                 mThreshold.setEnabled(false);
                 mShowArrows.setEnabled(false);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_STATE, 0);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_EXPANDED_STATUS_BAR_STATE, 0);
                 break;
             case 1:
-                mThreshold.setEnabled(true);
-                mShowArrows.setEnabled(true);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_STATE, 1);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_EXPANDED_STATUS_BAR_STATE, 0);
-                break;
             case 2:
                 mThreshold.setEnabled(true);
                 mShowArrows.setEnabled(true);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_STATE, 0);
-                Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.NETWORK_TRAFFIC_EXPANDED_STATUS_BAR_STATE, 1);
                 break;
             default:
                 break;
