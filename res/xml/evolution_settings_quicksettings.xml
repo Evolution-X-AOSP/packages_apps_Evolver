@@ -37,6 +37,13 @@
         android:summary="@string/qs_footer_text_summary"
         android:defaultValue="false"/>
 
+    <com.evolution.settings.preference.SystemSettingEditTextPreference
+        android:key="footer_text_string"
+        android:title="@string/qs_footer_text_string_title"
+        android:summary="@string/qs_footer_text_string_summary"
+        android:dependency="footer_text_show"
+        android:defaultValue="#KeepEvolving" />
+
     <ListPreference
         android:key="quick_pulldown" 
         android:title="@string/quick_pulldown_title" 
