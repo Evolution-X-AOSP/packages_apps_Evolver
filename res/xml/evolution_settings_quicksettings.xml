@@ -245,6 +245,14 @@
             android:summary="@string/qs_footer_text_summary"
             android:defaultValue="false"/>
 
+        <!-- QS footer text string -->
+        <com.evolution.settings.preference.SystemSettingEditTextPreference
+            android:key="qs_footer_text_string"
+            android:title="@string/qs_footer_text_string_title"
+            android:summary="@string/qs_footer_text_string_summary"
+            android:dependency="qs_footer_text_show"
+            android:defaultValue="#KeepEvolving" />
+
         <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"

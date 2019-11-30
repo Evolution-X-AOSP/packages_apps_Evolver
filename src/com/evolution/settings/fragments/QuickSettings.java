@@ -42,6 +42,7 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.SystemSettingEditTextPreference;
 import com.evolution.settings.preference.SystemSettingListPreference;
 
 import java.util.List;
@@ -51,6 +52,7 @@ public class QuickSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "QuickSettings";
+    private static final String QS_FOOTER_TEXT_STRING = "qs_footer_text_string";
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
@@ -60,6 +62,7 @@ public class QuickSettings extends DashboardFragment implements
     private ListPreference mBrightnessSliderPosition;
     private ListPreference mQuickPulldown;
     private SwitchPreference mShowAutoBrightness;
+    private SystemSettingEditTextPreference mFooterString;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -97,6 +100,18 @@ public class QuickSettings extends DashboardFragment implements
         mQuickPulldown.setValue(String.valueOf(qpmode));
         mQuickPulldown.setSummary(mQuickPulldown.getEntry());
         mQuickPulldown.setOnPreferenceChangeListener(this);
+
+        mFooterString = (SystemSettingEditTextPreference) findPreference(QS_FOOTER_TEXT_STRING);
+        mFooterString.setOnPreferenceChangeListener(this);
+        String footerString = Settings.System.getString(resolver,
+                QS_FOOTER_TEXT_STRING);
+        if (footerString != null && !footerString.isEmpty())
+            mFooterString.setText(footerString);
+        else {
+            mFooterString.setText("#KeepEvolving");
+            Settings.System.putString(resolver,
+                    Settings.System.QS_FOOTER_TEXT_STRING, "#KeepEvolving");
+        }
     }
 
     @Override
@@ -116,6 +131,17 @@ public class QuickSettings extends DashboardFragment implements
             int index = mQuickPulldown.findIndexOfValue((String) newValue);
             mQuickPulldown.setSummary(
                     mQuickPulldown.getEntries()[index]);
+            return true;
+        } else if (preference == mFooterString) {
+            String value = (String) newValue;
+            if (value != null && !value.isEmpty())
+                Settings.System.putString(resolver,
+                        Settings.System.QS_FOOTER_TEXT_STRING, value);
+            else {
+                mFooterString.setText("#KeepEvolving");
+                Settings.System.putString(resolver,
+                        Settings.System.QS_FOOTER_TEXT_STRING, "#KeepEvolving");
+            }
             return true;
         }
         return false;
