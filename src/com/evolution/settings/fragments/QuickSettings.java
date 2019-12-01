@@ -50,6 +50,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.evolution.settings.preference.CustomSeekBarPreference;
+import com.evolution.settings.preference.SystemSettingEditTextPreference;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -63,12 +64,20 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
-
+    private static final String FOOTER_TEXT_STRING = "footer_text_string";
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
+    private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
+    private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
+    private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
+    private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
 
     private ListPreference mQuickPulldown;
-
+    private SystemSettingEditTextPreference mFooterString;
     private CustomSeekBarPreference mQsPanelAlpha;
+    private CustomSeekBarPreference mQsColumnsPortrait;
+    private CustomSeekBarPreference mQsColumnsLandscape;
+    private CustomSeekBarPreference mQsRowsPortrait;
+    private CustomSeekBarPreference mQsRowsLandscape;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +100,42 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_PANEL_BG_ALPHA, 221);
         mQsPanelAlpha.setValue((int)(((double) qsPanelAlpha / 255) * 100));
         mQsPanelAlpha.setOnPreferenceChangeListener(this);
+
+        mFooterString = (SystemSettingEditTextPreference) findPreference(FOOTER_TEXT_STRING);
+        mFooterString.setOnPreferenceChangeListener(this);
+        String footerString = Settings.System.getString(getContentResolver(),
+                FOOTER_TEXT_STRING);
+        if (footerString != null && footerString != "")
+            mFooterString.setText(footerString);
+        else {
+            mFooterString.setText("#KeepEvolving");
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.FOOTER_TEXT_STRING, "#KeepEvolving");
+        }
+
+        mQsColumnsPortrait = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_PORTRAIT);
+        int columnsPortrait = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_COLUMNS_PORTRAIT, 4, UserHandle.USER_CURRENT);
+        mQsColumnsPortrait.setValue(columnsPortrait);
+        mQsColumnsPortrait.setOnPreferenceChangeListener(this);
+
+        mQsColumnsLandscape = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_LANDSCAPE);
+        int columnsLandscape = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
+        mQsColumnsLandscape.setValue(columnsLandscape);
+        mQsColumnsLandscape.setOnPreferenceChangeListener(this);
+
+        mQsRowsPortrait = (CustomSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
+        int rowsPortrait = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_ROWS_PORTRAIT, 3, UserHandle.USER_CURRENT);
+        mQsRowsPortrait.setValue(rowsPortrait);
+        mQsRowsPortrait.setOnPreferenceChangeListener(this);
+
+        mQsRowsLandscape = (CustomSeekBarPreference) findPreference(PREF_ROWS_LANDSCAPE);
+        int rowsLandscape = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_COLUMNS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
+        mQsRowsLandscape.setValue(rowsLandscape);
+        mQsRowsLandscape.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -107,6 +152,37 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int trueValue = (int) (((double) bgAlpha / 100) * 255);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.QS_PANEL_BG_ALPHA, trueValue);
+            return true;
+        } else if (preference == mFooterString) {
+            String value = (String) newValue;
+            if (value != "" && value != null)
+                Settings.System.putString(getActivity().getContentResolver(),
+                        Settings.System.FOOTER_TEXT_STRING, value);
+            else {
+                mFooterString.setText("#KeepEvolving");
+                Settings.System.putString(getActivity().getContentResolver(),
+                        Settings.System.FOOTER_TEXT_STRING, "#KeepEvolving");
+            }
+            return true;
+        } else if (preference == mQsColumnsPortrait) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_COLUMNS_PORTRAIT, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsColumnsLandscape) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_COLUMNS_LANDSCAPE, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsRowsPortrait) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_ROWS_PORTRAIT, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsRowsLandscape) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_ROWS_LANDSCAPE, value, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
