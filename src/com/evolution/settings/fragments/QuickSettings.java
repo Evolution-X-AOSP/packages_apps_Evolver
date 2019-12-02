@@ -68,6 +68,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
+    private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
 
@@ -76,6 +77,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsColumnsPortrait;
     private CustomSeekBarPreference mQsColumnsLandscape;
+    private CustomSeekBarPreference mQsColumnsQuickbar;
     private CustomSeekBarPreference mQsRowsPortrait;
     private CustomSeekBarPreference mQsRowsLandscape;
 
@@ -125,6 +127,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsColumnsLandscape.setValue(columnsLandscape);
         mQsColumnsLandscape.setOnPreferenceChangeListener(this);
 
+        mQsColumnsQuickbar = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_QUICKBAR);
+        int columnsQuickbar = Settings.System.getInt(resolver,
+                Settings.System.QS_QUICKBAR_COLUMNS, 6);
+        mQsColumnsQuickbar.setValue(columnsQuickbar);
+        mQsColumnsQuickbar.setOnPreferenceChangeListener(this);
+
         mQsRowsPortrait = (CustomSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
         int rowsPortrait = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_ROWS_PORTRAIT, 3, UserHandle.USER_CURRENT);
@@ -163,6 +171,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.putString(getActivity().getContentResolver(),
                         Settings.System.FOOTER_TEXT_STRING, "#KeepEvolving");
             }
+            return true;
+        } else if (preference == mQsColumnsQuickbar) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_QUICKBAR_COLUMNS, value, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mQsColumnsPortrait) {
             int value = (Integer) newValue;
