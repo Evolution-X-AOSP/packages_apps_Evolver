@@ -57,31 +57,31 @@
         android:summary="@string/bluetooth_battery_summary"
         android:defaultValue="true" />
 
-    <com.evolution.settings.preference.SecureSettingSwitchPreference
-        android:key="qs_show_brightness"
-        android:title="@string/qs_show_brightness_title"
-        android:summary="@string/qs_show_brightness_summary"
-        android:defaultValue="true" />
+    <PreferenceCategory
+        android:key="string/qs_brightness_category"
+        android:title="@string/qs_brightness_category_title">
 
-    <com.evolution.settings.preference.SecureSettingSwitchPreference
-        android:key="qs_brightness_position_bottom"
-        android:title="@string/qs_brightness_position_bottom_title"
-        android:summary="@string/qs_brightness_position_bottom_summary"
-        android:defaultValue="false"
-        android:dependency="qs_show_brightness" />
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="qs_show_brightness"
+            android:title="@string/qs_show_brightness_title"
+            android:summary="@string/qs_show_brightness_summary"
+            android:defaultValue="true" />
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="qs_show_brightness_icon"
-        android:title="@string/brightness_icon_title"
-        android:summary="@string/brightness_icon_summary"
-        android:dependency="qs_show_brightness"
-        android:defaultValue="true"/>
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="qs_brightness_position_bottom"
+            android:title="@string/qs_brightness_position_bottom_title"
+            android:summary="@string/qs_brightness_position_bottom_summary"
+            android:defaultValue="false"
+            android:dependency="qs_show_brightness" />
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="qs_tile_title_visibility"
-        android:title="@string/qs_tile_title_visibility_title"
-        android:summary="@string/qs_tile_title_visibility_summary"
-        android:defaultValue="true" />
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_show_brightness_icon"
+            android:title="@string/brightness_icon_title"
+            android:summary="@string/brightness_icon_summary"
+            android:dependency="qs_show_brightness"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="quick_settings_category"
@@ -104,8 +104,8 @@
         <com.evolution.settings.preference.CustomSeekBarPreference
             android:key="qs_columns_quickbar"
             android:title="@string/sysui_qqs_count_title"
-            android:max="8"
-            settings:min="6"
+            android:max="7"
+            settings:min="5"
             android:defaultValue="6"
             android:persistent="false" />
 
@@ -140,6 +140,12 @@
             android:min="1"
             android:defaultValue="4"
             settings:units="" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_tile_title_visibility"
+            android:title="@string/qs_tile_title_visibility_title"
+            android:summary="@string/qs_tile_title_visibility_summary"
+            android:defaultValue="true" />
         </PreferenceCategory>
 
 </PreferenceScreen>
