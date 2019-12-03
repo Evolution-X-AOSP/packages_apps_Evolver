@@ -129,7 +129,7 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
 
         mCarrierFontStyle = (ListPreference) findPreference(CARRIER_FONT_STYLE);
         int showCarrierFont = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_CARRIER_FONT_STYLE, 0);
+                Settings.System.STATUS_BAR_CARRIER_FONT_STYLE, 28);
         mCarrierFontStyle.setValue(String.valueOf(showCarrierFont));
         mCarrierFontStyle.setOnPreferenceChangeListener(this);
     }
@@ -144,38 +144,38 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
         super.onResume();
     }
 
-     public boolean onPreferenceChange(Preference preference, Object newValue) {
- 		ContentResolver resolver = getActivity().getContentResolver();
-
-         if (preference == mCarrierColorPicker) {
-                String hex = ColorPickerPreference.convertToARGB(
-                        Integer.valueOf(String.valueOf(newValue)));
-                preference.setSummary(hex);
-                int intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(resolver,
-                        Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
-                return true;
-        }  else if (preference == mStatusBarCarrierSize) {
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mCarrierColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
+            return true;
+        } else if (preference == mStatusBarCarrierSize) {
             int width = ((Integer)newValue).intValue();
             Settings.System.putInt(resolver,
                     Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, width);
             return true;
-        }  else if (preference == mCarrierFontStyle) {
+        } else if (preference == mCarrierFontStyle) {
             int showCarrierFont = Integer.valueOf((String) newValue);
             int index = mCarrierFontStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver, Settings.System.
                 STATUS_BAR_CARRIER_FONT_STYLE, showCarrierFont);
             mCarrierFontStyle.setSummary(mCarrierFontStyle.getEntries()[index]);
             return true;
-        }  else if (preference == mShowCarrierLabel) {
+        } else if (preference == mShowCarrierLabel) {
             int value = Integer.parseInt((String) newValue);
             updateCarrierLabelSummary(value);
             return true;
-		     }
-         return false;
+        }
+        return false;
     }
 
-		private void updateCarrierLabelSummary(int value) {
+    private void updateCarrierLabelSummary(int value) {
         Resources res = getResources();
 
         if (value == 0) {
