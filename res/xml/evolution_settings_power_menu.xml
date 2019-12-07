@@ -30,8 +30,8 @@
             android:title="@string/powermenu_restart"
             android:defaultValue="true" />
 
-         <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="advanced_reboot"
+         <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="powermenu_restart_recovery"
             android:title="@string/powermenu_restart_recovery"
             android:defaultValue="true" />
 
@@ -84,5 +84,35 @@
                 android:title="@string/powermenu_lockscreen_title"
                 android:summary="@string/powermenu_lockscreen_summary"
                 android:defaultValue="true" />
+
+            <SwitchPreference
+                android:key="powermenu_ls_reboot"
+                android:title="@string/powermenu_restart"
+                android:summary="@string/powermenu_ls_reboot_summary"
+                android:dependency="powermenu_restart"
+                android:defaultValue="true" />
+
+            <SwitchPreference
+                android:key="powermenu_ls_advanced_reboot"
+                android:title="@string/powermenu_restart_recovery"
+                android:summary="@string/powermenu_ls_advanced_reboot_summary"
+                android:dependency="powermenu_restart_recovery"
+                android:defaultValue="false" />
+
+            <SwitchPreference
+                android:key="powermenu_ls_screenshot"
+                android:title="@string/powermenu_screenshot"
+                android:summary="@string/powermenu_ls_screenshot_summary"
+                android:dependency="powermenu_screenshot"
+                android:defaultValue="false" />
+
+            <SwitchPreference
+                android:key="powermenu_ls_torch"
+                android:title="@string/powermenu_torch"
+                android:summary="@string/powermenu_ls_torch_summary"
+                android:dependency="powermenu_torch"
+                android:defaultValue="false" />
+
          </PreferenceCategory>
+
 </PreferenceScreen>
