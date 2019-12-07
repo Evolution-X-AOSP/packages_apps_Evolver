@@ -62,6 +62,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
 
     private ListPreference mNetTrafficLocation;
     private ListPreference mNetTrafficType;
+    private ListPreference mNetTrafficLayout;
     private SystemSettingSeekBarPreference mNetTrafficRefreshInterval;
     private SystemSettingSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mNetMonitor;
@@ -88,6 +89,13 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
         mNetTrafficType.setValue(String.valueOf(nettype));
         mNetTrafficType.setSummary(mNetTrafficType.getEntry());
         mNetTrafficType.setOnPreferenceChangeListener(this);
+
+        int netlayout = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_LAYOUT, 0, UserHandle.USER_CURRENT);
+        mNetTrafficLayout = (ListPreference) findPreference("network_traffic_layout");
+        mNetTrafficLayout.setValue(String.valueOf(netlayout));
+        mNetTrafficLayout.setSummary(mNetTrafficLayout.getEntry());
+        mNetTrafficLayout.setOnPreferenceChangeListener(this);
 
         mNetTrafficLocation = (ListPreference) findPreference(NETWORK_TRAFFIC_LOCATION);
         int location = Settings.System.getInt(resolver,
@@ -126,6 +134,14 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
             int index = mNetTrafficType.findIndexOfValue((String) newValue);
             mNetTrafficType.setSummary(mNetTrafficType.getEntries()[index]);
             return true;
+        } else if (preference == mNetTrafficLayout) {
+            int val = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_LAYOUT, val,
+                    UserHandle.USER_CURRENT);
+            int index = mNetTrafficLayout.findIndexOfValue((String) newValue);
+            mNetTrafficLayout.setSummary(mNetTrafficLayout.getEntries()[index]);
+            return true;
         } else if (preference == mThreshold) {
             int val = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
@@ -145,6 +161,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
         switch(location){
             case 0:
                 mNetTrafficType.setEnabled(false);
+                mNetTrafficLayout.setEnabled(false);
                 mThreshold.setEnabled(false);
                 mHideArrows.setEnabled(false);
                 mNetTrafficRefreshInterval.setEnabled(false);
@@ -155,6 +172,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
                 break;
             case 1:
                 mNetTrafficType.setEnabled(true);
+                mNetTrafficLayout.setEnabled(true);
                 mThreshold.setEnabled(true);
                 mHideArrows.setEnabled(true);
                 mNetTrafficRefreshInterval.setEnabled(true);
@@ -165,6 +183,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment implements
                 break;
             case 2:
                 mNetTrafficType.setEnabled(true);
+                mNetTrafficLayout.setEnabled(true);
                 mThreshold.setEnabled(true);
                 mHideArrows.setEnabled(true);
                 mNetTrafficRefreshInterval.setEnabled(true);

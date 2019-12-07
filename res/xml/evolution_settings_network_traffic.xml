@@ -33,13 +33,20 @@
         android:entryValues="@array/show_network_traffic_type_values"
         android:persistent="false" />
 
+    <ListPreference
+        android:key="network_traffic_layout"
+        android:title="@string/network_traffic_layout"
+        android:entries="@array/network_traffic_layout_entries"
+        android:entryValues="@array/network_traffic_layout_values"
+        android:persistent="false" />
+
     <com.evolution.settings.preference.SystemSettingSeekBarPreference
         android:key="network_traffic_autohide_threshold"
         android:title="@string/network_traffic_autohide_threshold_title"
         android:max="10"
         android:min="0"
         android:defaultValue="1"
-        settings:units="KB/s" />
+        settings:units="KiB/s" />
 
     <com.evolution.settings.preference.SystemSettingSeekBarPreference
         android:key="network_traffic_refresh_interval"
