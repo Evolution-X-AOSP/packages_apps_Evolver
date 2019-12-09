@@ -45,6 +45,7 @@ import com.android.settings.search.Indexable;
 
 import com.evolution.settings.preference.Utils;
 import com.evolution.settings.preference.SecureSettingMasterSwitchPreference;
+import com.evolution.settings.preference.SystemSettingListPreference;
 import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
@@ -56,9 +57,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
 
     private SwitchPreference mFingerprintVib;
+    private SystemSettingListPreference mArtFilter;
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
 
     @Override
@@ -81,6 +84,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         int visualizerEnabled = Settings.Secure.getInt(resolver,
                 LOCKSCREEN_VISUALIZER_ENABLED, 0);
         mVisualizerEnabled.setChecked(visualizerEnabled != 0);
+
+        mArtFilter = (SystemSettingListPreference) findPreference(LOCKSCREEN_ALBUM_ART_FILTER);
+        mArtFilter.setOnPreferenceChangeListener(this);
+        int artFilter = Settings.System.getInt(resolver,
+                LOCKSCREEN_ALBUM_ART_FILTER, 0);
     }
 
     @Override
@@ -95,6 +103,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getContentResolver(),
                     LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
+            return true;
+        } else if (preference == mArtFilter) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, value);
             return true;
         }
         return false;
