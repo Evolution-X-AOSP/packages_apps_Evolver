@@ -58,11 +58,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
+    private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
 
     private SwitchPreference mFingerprintVib;
     private SystemSettingListPreference mArtFilter;
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
+    private SystemSettingSeekBarPreference mBlurSeekbar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,6 +91,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mArtFilter.setOnPreferenceChangeListener(this);
         int artFilter = Settings.System.getInt(resolver,
                 LOCKSCREEN_ALBUM_ART_FILTER, 0);
+
+        mBlurSeekbar = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MEDIA_BLUR);
+        mBlurSeekbar.setEnabled(artFilter > 2);
     }
 
     @Override
@@ -108,6 +113,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             int value = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, value);
+            mBlurSeekbar.setEnabled(value > 2);
             return true;
         }
         return false;
