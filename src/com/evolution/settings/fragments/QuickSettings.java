@@ -99,7 +99,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         mQsPanelAlpha = (CustomSeekBarPreference) findPreference(KEY_QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_PANEL_BG_ALPHA, 221);
+                Settings.System.QS_PANEL_BG_ALPHA, 255);
         mQsPanelAlpha.setValue((int)(((double) qsPanelAlpha / 255) * 100));
         mQsPanelAlpha.setOnPreferenceChangeListener(this);
 
