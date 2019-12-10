@@ -144,8 +144,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
         int edgeLightColor = Settings.System.getInt(getContentResolver(),
                 Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF);
-        String edgeLightColorHex = String.format("#%08x", (0xFF3980FF & edgeLightColor));
-        if (edgeLightColorHex.equals("#ff3980ff")) {
+
+        String edgeLightColorHex = ColorPickerPreference.convertToRGB(edgeLightColor);
+        if (edgeLightColorHex.equals("#3980ff")) {
             mEdgeLightColorPreference.setSummary(R.string.default_string);
         } else {
             mEdgeLightColorPreference.setSummary(edgeLightColorHex);
@@ -194,9 +195,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                     Settings.System.DOZE_BRIGHTNESS, value);
             return true;
         } else if (preference == mEdgeLightColorPreference) {
-            String hex = ColorPickerPreference.convertToARGB(
+            String hex = ColorPickerPreference.convertToRGB(
                     Integer.valueOf(String.valueOf(newValue)));
-            if (hex.equals("#ff3980ff")) {
+            if (hex.equals("#3980ff")) {
                 preference.setSummary(R.string.default_string);
             } else {
                 preference.setSummary(hex);
