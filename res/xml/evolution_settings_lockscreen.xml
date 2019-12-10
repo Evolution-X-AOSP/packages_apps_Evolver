@@ -104,19 +104,12 @@
             android:defaultValue="100"
             android:dependency="lockscreen_media_metadata" />
 
-        <com.evolution.settings.preference.SecureSettingMasterSwitchPreference
-            android:key="lockscreen_visualizer_enabled"
+        <PreferenceScreen
+            android:key="lockscreen_visualizer"
             android:fragment="com.evolution.settings.fragments.VisualizerSettings"
             android:title="@string/lockscreen_visualizer_enable"
-            android:summary="@string/lockscreen_visualizer_enable_summary"
-            android:defaultValue="false" />
+            android:summary="@string/lockscreen_visualizer_enable_summary" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="ambient_visualizer_enabled"
-            android:title="@string/ambient_visualizer_title"
-            android:summary="@string/ambient_visualizer_summary"
-            android:dependency="lockscreen_visualizer_enabled"
-            android:defaultValue="false" />
     </PreferenceCategory>
 
 </PreferenceScreen>
