@@ -53,6 +53,12 @@
         android:key="notification_screen"
         android:title="@string/notification_screen_title">
 
+        <!-- Preview -->
+        <com.evolution.settings.preference.AmbientLightSettingsPreview
+            android:key="ambient_light_preview"
+            android:layout="@layout/ambient_light"
+            android:selectable="false"/>
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="pulse_ambient_light"
             android:title="@string/pulse_ambient_light_title"

@@ -54,6 +54,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
+import com.evolution.settings.preference.AmbientLightSettingsPreview;
 import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.GlobalSettingMasterSwitchPreference;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
@@ -151,6 +152,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         } else {
             mEdgeLightColorPreference.setSummary(edgeLightColorHex);
         }
+        AmbientLightSettingsPreview.setAmbientLightPreviewColor(edgeLightColor);
         mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
 
         mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_DURATION);
@@ -202,6 +204,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             } else {
                 preference.setSummary(hex);
             }
+            AmbientLightSettingsPreview.setAmbientLightPreviewColor(Integer.valueOf(String.valueOf(newValue)));
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);
