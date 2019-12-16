@@ -126,6 +126,15 @@
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
 
+        <!-- Flashlight on incoming calls -->
+        <ListPreference
+            android:key="flashlight_on_call"
+            android:title="@string/flashlight_on_call_title"
+            android:entries="@array/flashlight_on_call_entries"
+            android:entryValues="@array/flashlight_on_call_values"
+            android:summary="%s"
+            android:defaultValue="0" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="vibrate_on_connect"
             android:title="@string/incall_vibrate_connect_title"
