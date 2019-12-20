@@ -26,30 +26,6 @@
         android:summary="@string/gaming_mode_summary"
         android:defaultValue="false" />
 
-    <Preference
-        android:key="default_usb_configuration"
-        android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
-        android:title="@string/usb_default_config_title"
-        android:summary="@string/usb_default_config_summary"/>
-
-    <com.evolution.settings.preference.SecureSettingSwitchPreference
-        android:key="adb_notify"
-        android:title="@string/adb_notify"
-        android:summary="@string/adb_notify_summary"
-        android:defaultValue="true" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="sensor_block"
-        android:title="@string/sensor_block_title"
-        android:summary="@string/sensor_block_summary"
-        android:defaultValue="false" />
-
-    <com.evolution.settings.preference.GlobalSettingSwitchPreference
-        android:key="allow_signature_fake"
-        android:title="@string/allow_signature_fake"
-        android:summary="@string/allow_signature_fake_summary"
-        android:defaultValue="false" />
-
     <com.evolution.settings.preference.GlobalSettingSwitchPreference
         android:key="wake_when_plugged_or_unplugged"
         android:title="@string/wakeup_when_plugged_unplugged_title"
@@ -63,31 +39,75 @@
         android:title="@string/screenshot_type_title"
         android:defaultValue="0" />
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="enable_conditions"
-        android:title="@string/dashboard_conditions_title"
-        android:summaryOn="@string/summary_dashboard_conditions_enabled"
-        android:summaryOff="@string/summary_dashboard_conditions_disabled"
-        android:defaultValue="true" />
+    <PreferenceCategory
+        android:title="@string/dev_options_title">
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="enable_suggestions"
-        android:title="@string/dashboard_suggestions_title"
-        android:summaryOn="@string/summary_dashboard_suggestions_enabled"
-        android:summaryOff="@string/summary_dashboard_suggestions_disabled"
-        android:defaultValue="true" />
+        <Preference
+            android:key="default_usb_configuration"
+            android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
+            android:title="@string/usb_default_config_title"
+            android:summary="@string/usb_default_config_summary"/>
 
-    <Preference
-         android:key="time_in_state"
-         android:title="@string/time_in_state_title"
-         android:summary="@string/time_in_state_summary"
-         android:fragment="com.evolution.settings.fragments.TimeInState" />
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="adb_notify"
+            android:title="@string/adb_notify"
+            android:summary="@string/adb_notify_summary"
+            android:defaultValue="true" />
 
-    <Preference
-         android:key="doze_settings"
-         android:title="@string/doze_settings_title"
-         android:summary="@string/doze_settings_summary"
-         android:fragment="com.evolution.settings.fragments.DozeSettings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/system_settings_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="sensor_block"
+            android:title="@string/sensor_block_title"
+            android:summary="@string/sensor_block_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.GlobalSettingSwitchPreference
+            android:key="allow_signature_fake"
+            android:title="@string/allow_signature_fake"
+            android:summary="@string/allow_signature_fake_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settings_dashboard_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="enable_conditions"
+            android:title="@string/dashboard_conditions_title"
+            android:summaryOn="@string/summary_dashboard_conditions_enabled"
+            android:summaryOff="@string/summary_dashboard_conditions_disabled"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="enable_suggestions"
+            android:title="@string/dashboard_suggestions_title"
+            android:summaryOn="@string/summary_dashboard_suggestions_enabled"
+            android:summaryOff="@string/summary_dashboard_suggestions_disabled"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/doze_settings_title">
+
+        <Preference
+            android:key="time_in_state"
+            android:title="@string/time_in_state_title"
+            android:summary="@string/time_in_state_summary"
+            android:fragment="com.evolution.settings.fragments.TimeInState" />
+
+        <Preference
+            android:key="doze_settings"
+            android:title="@string/doze_settings_title"
+            android:summary="@string/doze_settings_summary"
+            android:fragment="com.evolution.settings.fragments.DozeSettings" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="aspect_ratio_category"

@@ -19,13 +19,6 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
-        android:key="status_bar_custom_header"
-        android:fragment="com.evolution.settings.fragments.QsHeader"
-        android:title="@string/status_bar_custom_header_title"
-        android:summary="@string/status_bar_custom_header_summary"
-        android:defaultValue="false" />
-
     <com.evolution.settings.preference.SecureSettingSwitchPreference
         android:key="status_bar_locked_on_secure_keyguard"
         android:title="@string/lockscreen_qs_disabled_title"
@@ -38,33 +31,33 @@
         android:summary="@string/quick_settings_vibrate_summary"
         android:defaultValue="false"/>
 
-    <!-- Battery mode -->
-    <com.evolution.settings.preference.SystemSettingListPreference
-        android:key="qs_battery_mode"
-        android:title="@string/battery_percentage_title"
-        android:entries="@array/qs_battery_mode_entries"
-        android:entryValues="@array/qs_battery_mode_values"
-        android:defaultValue="1" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="footer_text_show"
-        android:title="@string/qs_footer_text_title"
-        android:summary="@string/qs_footer_text_summary"
-        android:defaultValue="false"/>
-
-    <com.evolution.settings.preference.SystemSettingEditTextPreference
-        android:key="footer_text_string"
-        android:title="@string/qs_footer_text_string_title"
-        android:summary="@string/qs_footer_text_string_summary"
-        android:dependency="footer_text_show"
-        android:defaultValue="#KeepEvolving" />
-
     <ListPreference
         android:key="quick_pulldown"
         android:title="@string/quick_pulldown_title"
         android:entries="@array/quick_pulldown_entries"
         android:entryValues="@array/quick_pulldown_values"
         android:persistent="false" />
+
+    <PreferenceCategory
+        android:key="qs_header_category"
+        android:title="@string/qs_header_title">
+
+        <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
+            android:key="status_bar_custom_header"
+            android:fragment="com.evolution.settings.fragments.QsHeader"
+            android:title="@string/status_bar_custom_header_title"
+            android:summary="@string/status_bar_custom_header_summary"
+            android:defaultValue="false" />
+
+        <!-- Battery mode -->
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="qs_battery_mode"
+            android:title="@string/battery_percentage_title"
+            android:entries="@array/qs_battery_mode_entries"
+            android:entryValues="@array/qs_battery_mode_values"
+            android:defaultValue="1" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="string/qs_brightness_category"
@@ -156,6 +149,26 @@
             android:title="@string/qs_tile_title_visibility_title"
             android:summary="@string/qs_tile_title_visibility_summary"
             android:defaultValue="true" />
-        </PreferenceCategory>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="qs_footer_category"
+        android:title="@string/qs_footer_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="footer_text_show"
+            android:title="@string/qs_footer_text_title"
+            android:summary="@string/qs_footer_text_summary"
+            android:defaultValue="false"/>
+
+        <com.evolution.settings.preference.SystemSettingEditTextPreference
+            android:key="footer_text_string"
+            android:title="@string/qs_footer_text_string_title"
+            android:summary="@string/qs_footer_text_string_summary"
+            android:dependency="footer_text_show"
+            android:defaultValue="#KeepEvolving" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
