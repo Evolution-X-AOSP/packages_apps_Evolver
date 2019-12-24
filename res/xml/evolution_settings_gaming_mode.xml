@@ -25,12 +25,14 @@
         android:summary="@string/gaming_mode_enable_summary"
         android:defaultValue="false" />
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
+    <com.evolution.settings.preference.SystemSettingListPreference
         android:key="gaming_mode_headsup_toggle"
         android:title="@string/gaming_mode_headsup_title"
-        android:summary="@string/gaming_mode_headsup_summary"
+        android:entries="@array/gaming_mode_headsup_toggle_entries"
+        android:entryValues="@array/gaming_mode_headsup_toggle_values"
+        android:summary="%s"
         android:dependency="gaming_mode_enabled"
-        android:defaultValue="true" />
+        android:defaultValue="1" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_hw_keys_toggle"
