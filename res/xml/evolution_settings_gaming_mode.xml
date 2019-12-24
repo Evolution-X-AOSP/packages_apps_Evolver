@@ -19,11 +19,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/gaming_mode_title">
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
+    <com.evolution.settings.preference.SystemSettingListPreference
+        android:entries="@array/gaming_mode_headsup_toggle_entries"
+        android:entryValues="@array/gaming_mode_headsup_toggle_values"
         android:key="gaming_mode_headsup_toggle"
         android:title="@string/gaming_mode_headsup_title"
-        android:summary="@string/gaming_mode_headsup_summary"
-        android:defaultValue="true" />
+        android:summary="%s"
+        android:defaultValue="1" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_hw_keys_toggle"
