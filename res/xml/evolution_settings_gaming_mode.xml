@@ -35,6 +35,13 @@
         android:defaultValue="1" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="gaming_mode_notifications_feedback"
+        android:title="@string/gaming_mode_notifications_feedback_title"
+        android:summary="@string/gaming_mode_notifications_feedback_summary"
+        android:dependency="gaming_mode_enabled"
+        android:defaultValue="true" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_hw_keys_toggle"
         android:title="@string/gaming_mode_hardware_keys_title"
         android:summary="@string/gaming_mode_hardware_keys_summary"
