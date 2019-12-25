@@ -112,6 +112,17 @@
             android:summary="@string/notification_guts_kill_app_button_summary"
             android:defaultValue="false" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/notifications_vib_category">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="vibrate_on_notifications"
+            android:title="@string/vibrate_on_notifications_title"
+            android:summary="@string/vibrate_on_notifications_summary"
+            android:defaultValue="true" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="notification_sound_vib_screen_on"
             android:title="@string/notification_sound_vib_screen_on_title"
