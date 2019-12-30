@@ -85,31 +85,25 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/network_traffic_state_title">
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="network_traffic_state"
+        android:title="@string/network_traffic_state_title"
+        android:summary="@string/network_traffic_state_summary"
+        android:defaultValue="true" />
 
-        <ListPreference
-            android:key="network_traffic_location"
-            android:title="@string/network_traffic_location"
-            android:summary="%s"
-            android:entries="@array/network_traffic_location_entries"
-            android:entryValues="@array/network_traffic_location_values"
-            android:persistent="false" />
+    <com.evolution.settings.preference.CustomSeekBarPreference
+        android:key="network_traffic_autohide_threshold"
+        android:title="@string/network_traffic_autohide_threshold_title"
+        android:max="10"
+        settings:min="0"
+        settings:units="" />
 
-        <com.evolution.settings.preference.CustomSeekBarPreference
-            android:key="network_traffic_autohide_threshold"
-            android:title="@string/network_traffic_autohide_threshold_title"
-            android:max="10"
-            settings:min="0"
-            settings:units="" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="network_traffic_arrow"
-            android:title="@string/network_traffic_arrow"
-            android:summary="@string/network_traffic_arrow_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="network_traffic_hidearrow"
+        android:title="@string/network_traffic_hidearrow"
+        android:summary="@string/network_traffic_hidearrow_summary"
+        android:dependency="network_traffic_state"
+        android:defaultValue="false" />
 
     <PreferenceCategory
         android:key="battery_style_category"
