@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The Evolution X Project
+ * Copyright (C) 2019-2020 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,21 +21,22 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
+
+import com.android.internal.logging.nano.MetricsProto;
+
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
 import com.evolution.settings.preference.SecureSettingSeekBarPreference;
 import com.evolution.settings.preference.SecureSettingSwitchPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
-import com.android.internal.logging.nano.MetricsProto;
-
-import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 
 public class VisualizerSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {

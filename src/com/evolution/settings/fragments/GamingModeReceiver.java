@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 crDroid Android Project
+ * Copyright (C) 2019-2020 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,9 @@ import android.provider.Settings;
 import android.util.Log;
 import android.text.TextUtils;
 
-import com.android.settings.R;
 import com.android.internal.util.gaming.GamingModeController;
+
+import com.android.settings.R;
 
 public class GamingModeReceiver extends BroadcastReceiver {
 

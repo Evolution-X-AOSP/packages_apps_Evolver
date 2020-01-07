@@ -1,7 +1,5 @@
 /*
- * Copyright (C) 2016 The Pure Nexus Project
- * used for Nitrogen OS
- * Copyright (C) 2019 The Evolution X Project
+ * Copyright (C) 2019-2020 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +11,21 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License.
+ * limitations under the License
  */
-
 package com.evolution.settings;
-
-import com.android.internal.logging.nano.MetricsProto;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.Surface;
 import android.preference.Preference;
-import com.android.settings.R;
+import android.view.Surface;
 
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
+import com.android.internal.logging.nano.MetricsProto;
 
 public class EvolutionSettings extends SettingsPreferenceFragment {
 

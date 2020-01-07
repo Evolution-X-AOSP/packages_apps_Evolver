@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2019 crDroid Android Project
+ * Copyright (C) 2019-2020 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.evolution.settings.fragments;
 
 import android.content.BroadcastReceiver;
@@ -134,16 +135,20 @@ public class RoundedCornersSettings extends SettingsPreferenceFragment implement
         if (preference == mCornerRadius) {
             Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
                     (int) newValue, UserHandle.USER_CURRENT);
+            return true;
         } else if (preference == mContentPadding) {
             Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
                     (int) newValue, UserHandle.USER_CURRENT);
+            return true;
         } else if (preference == mSBPadding) {
             Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_STATUS_BAR_PADDING,
                     (int) newValue, UserHandle.USER_CURRENT);
+            return true;
         } else if (preference == mRoundedFwvals) {
             restoreCorners();
+            return true;
         }
-        return true;
+        return false;
     }
 
     public static void reset(Context mContext) {

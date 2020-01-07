@@ -1,19 +1,17 @@
 /*
- *  Copyright (C) 2015 The OmniROM Project
+ * Copyright (C) 2019-2020 The Evolution X Project
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.evolution.settings.fragments;
@@ -44,11 +42,9 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
-import com.evolution.settings.preference.CustomSeekBarPreference;
-import com.evolution.settings.preference.SecureSettingMasterSwitchPreference;
-import com.evolution.settings.preference.SystemSettingSwitchPreference;
 import com.evolution.settings.preference.SystemSettingListPreference;
 import com.evolution.settings.preference.SystemSettingSeekBarPreference;
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
 import com.evolution.settings.preference.Utils;
 
 import java.util.ArrayList;
@@ -59,25 +55,13 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
-    private static final String DATE_FONT_SIZE  = "lockdate_font_size";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker_category";
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
-    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
-    private static final String LOCK_DATE_FONTS = "lock_date_fonts";
-    private static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts";
-    private static final String LOCKOWNER_FONT_SIZE = "lockowner_font_size";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
 
-    private CustomSeekBarPreference mClockFontSize;
-    private CustomSeekBarPreference mDateFontSize;
-    private CustomSeekBarPreference mOwnerInfoFontSize;
     private FingerprintManager mFingerprintManager;
-    private ListPreference mLockClockFonts;
-    private ListPreference mLockDateFonts;
-    private ListPreference mLockOwnerInfoFonts;
     private Preference mFODIconPicker;
     private SwitchPreference mFingerprintVib;
     private SystemSettingListPreference mArtFilter;
@@ -122,45 +106,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 && !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView)) {
             prefScreen.removePreference(mFODIconPicker);
         }
-
-        // Lockscreen Clock Fonts
-        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
-        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 28)));
-        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-        mLockClockFonts.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Clock Size
-        mClockFontSize = (CustomSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
-        mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKCLOCK_FONT_SIZE, 54));
-        mClockFontSize.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Date Fonts
-        mLockDateFonts = (ListPreference) findPreference(LOCK_DATE_FONTS);
-        mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_DATE_FONTS, 28)));
-        mLockDateFonts.setSummary(mLockDateFonts.getEntry());
-        mLockDateFonts.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Date Size
-        mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
-        mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKDATE_FONT_SIZE, 18));
-        mDateFontSize.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Owner Info Fonts
-        mLockOwnerInfoFonts = (ListPreference) findPreference(LOCK_OWNERINFO_FONTS);
-        mLockOwnerInfoFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS, 28)));
-        mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry());
-        mLockOwnerInfoFonts.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Owner Info Size
-        mOwnerInfoFontSize = (CustomSeekBarPreference) findPreference(LOCKOWNER_FONT_SIZE);
-        mOwnerInfoFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKOWNER_FONT_SIZE, 18));
-        mOwnerInfoFontSize.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -181,39 +126,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
-            return true;
-        } else if (preference == mLockClockFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockClockFonts.setValue(String.valueOf(newValue));
-            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-            return true;
-        } else if (preference == mClockFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKCLOCK_FONT_SIZE, top*1);
-            return true;
-        } else if (preference == mLockDateFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_DATE_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockDateFonts.setValue(String.valueOf(newValue));
-            mLockDateFonts.setSummary(mLockDateFonts.getEntry());
-            return true;
-        } else if (preference == mDateFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKDATE_FONT_SIZE, top*1);
-            return true;
-       } else if (preference == mLockOwnerInfoFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockOwnerInfoFonts.setValue(String.valueOf(newValue));
-            mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry());
-            return true;
-        } else if (preference == mOwnerInfoFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKOWNER_FONT_SIZE, top*1);
             return true;
         }
         return false;
