@@ -51,7 +51,9 @@ import com.android.settings.search.Indexable;
 
 import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingEditTextPreference;
+import com.evolution.settings.preference.SystemSettingListPreference;
 import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -73,6 +75,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
+    private static final String QS_HIDE_BATTERY = "qs_hide_battery";
+    private static final String QS_BATTERY_MODE = "qs_battery_mode";
 
     private ListPreference mQuickPulldown;
     private SystemSettingEditTextPreference mFooterString;
@@ -83,6 +87,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mQsRowsPortrait;
     private CustomSeekBarPreference mQsRowsLandscape;
     private SystemSettingMasterSwitchPreference mCustomHeader;
+    private SystemSettingSwitchPreference mHideBattery;
+    private SystemSettingListPreference mQsBatteryMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -153,6 +159,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0);
         mCustomHeader.setChecked(qsHeader != 0);
         mCustomHeader.setOnPreferenceChangeListener(this);
+
+        mQsBatteryMode = (SystemSettingListPreference) findPreference(QS_BATTERY_MODE);
+        mHideBattery = (SystemSettingSwitchPreference) findPreference(QS_HIDE_BATTERY);
+        mHideBattery.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -210,6 +220,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             boolean header = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, header ? 1 : 0);
+            return true;
+        } else if (preference == mHideBattery) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.QS_HIDE_BATTERY, value ? 1 : 0);
+            mQsBatteryMode.setEnabled(!value);
             return true;
         }
         return false;
