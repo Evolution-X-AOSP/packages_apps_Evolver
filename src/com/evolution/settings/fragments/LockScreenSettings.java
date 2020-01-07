@@ -23,7 +23,6 @@ import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
@@ -38,7 +37,6 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 
-import com.android.internal.custom.app.LineageContextConstants;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
@@ -61,8 +59,6 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private boolean mHasFod;
-
     private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
     private static final String DATE_FONT_SIZE  = "lockdate_font_size";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
@@ -73,7 +69,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts";
     private static final String LOCKOWNER_FONT_SIZE = "lockowner_font_size";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
-    private static final String LOCKSCREEN_CHARGING_ANIMATION = "lockscreen_charging_animation";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
 
     private CustomSeekBarPreference mClockFontSize;
@@ -87,7 +82,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mFingerprintVib;
     private SystemSettingListPreference mArtFilter;
     private SystemSettingSeekBarPreference mBlurSeekbar;
-    private SystemSettingSwitchPreference mChargingAnimation;
     private SystemSettingSwitchPreference mFpKeystore;
 
     @Override
@@ -117,17 +111,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
         mBlurSeekbar = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MEDIA_BLUR);
         mBlurSeekbar.setEnabled(artFilter > 2);
-
-        PackageManager packageManager = getPackageManager();
-        mHasFod = packageManager.hasSystemFeature(LineageContextConstants.Features.FOD);
-        mChargingAnimation = (SystemSettingSwitchPreference) findPreference(LOCKSCREEN_CHARGING_ANIMATION);
-        if (mHasFod) {
-            prefScreen.removePreference(mChargingAnimation);
-        } else {
-            mChargingAnimation.setChecked(Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.LOCKSCREEN_CHARGING_ANIMATION, 0, UserHandle.USER_CURRENT) == 1);
-            mChargingAnimation.setOnPreferenceChangeListener(this);
-        }
 
         mFpKeystore = (SystemSettingSwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
         mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
