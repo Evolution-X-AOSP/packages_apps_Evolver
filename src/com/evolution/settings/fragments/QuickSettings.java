@@ -126,7 +126,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         mQsColumnsPortrait = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_PORTRAIT);
         int columnsPortrait = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_COLUMNS_PORTRAIT, 4, UserHandle.USER_CURRENT);
+                Settings.System.QS_COLUMNS_PORTRAIT, 3, UserHandle.USER_CURRENT);
         mQsColumnsPortrait.setValue(columnsPortrait);
         mQsColumnsPortrait.setOnPreferenceChangeListener(this);
 
