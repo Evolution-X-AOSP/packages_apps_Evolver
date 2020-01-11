@@ -53,6 +53,7 @@ import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingEditTextPreference;
 import com.evolution.settings.preference.SystemSettingListPreference;
 import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
+import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.Arrays;
@@ -80,7 +81,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private ListPreference mQuickPulldown;
     private SystemSettingEditTextPreference mFooterString;
-    private CustomSeekBarPreference mQsPanelAlpha;
+    private SystemSettingSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsColumnsPortrait;
     private CustomSeekBarPreference mQsColumnsLandscape;
     private CustomSeekBarPreference mQsColumnsQuickbar;
@@ -106,7 +107,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
 
-        mQsPanelAlpha = (CustomSeekBarPreference) findPreference(KEY_QS_PANEL_ALPHA);
+        mQsPanelAlpha = (SystemSettingSeekBarPreference) findPreference(KEY_QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getInt(getContentResolver(),
                 Settings.System.QS_PANEL_BG_ALPHA, 255);
         mQsPanelAlpha.setValue((int)(((double) qsPanelAlpha / 255) * 100));

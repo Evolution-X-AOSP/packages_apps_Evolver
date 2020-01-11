@@ -97,13 +97,14 @@
         android:key="quick_settings_category"
         android:title="@string/qs_panel_alpha_title">
 
-        <com.evolution.settings.preference.CustomSeekBarPreference
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="qs_panel_alpha"
             android:title="@string/qs_panel_alpha_title"
             android:summary="@string/qs_panel_alpha_summary"
             android:max="100"
             settings:min="0"
             android:defaultValue="100"
+            settings:units="%"
             android:persistent="false" />
 
     </PreferenceCategory>
