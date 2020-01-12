@@ -46,14 +46,14 @@
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Stock gestures included with Android</string>
     <string name="animation_summary">Change the animation styles</string>
-    <string name="buttons_summary">Tweak the actions of your device\'s physical buttons</string>
+    <string name="buttons_summary">Tweak the actions of your physical buttons</string>
     <string name="gestures_summary">Gesture based options/actions</string>
     <string name="lockscreen_summary">Take control of your lockscreen items</string>
     <string name="misc_summary">Gaming mode and other system settings</string>
-    <string name="notifications_summary">Heads Up, Edge lighting, Call notif options</string>
+    <string name="notifications_summary">Heads up, notification ticker, edge lighting, call notification options</string>
     <string name="navigation_summary">Customize navigation bar style and behavior</string>
     <string name="powermenu_summary">Configure your shutdown options</string>
-    <string name="quicksettings_summary">Modify the QS panel header, layout, opacity, brightness slider visibility</string>
+    <string name="quicksettings_summary">Modify the QS panel header, layout, themes, brightness slider visibility</string>
     <string name="statusbar_summary">Personalize your status bar items</string>
 
     <!-- General strings -->
@@ -307,7 +307,7 @@
     <string name="enable_fc_notifications_summary">Show a dialog when an application crashes</string>
 
     <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Music Visualizer</string>
+    <string name="lockscreen_visualizer_enable">Music visualizer</string>
     <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>
     <string name="lockscreen_autocolor_title">Automatic color</string>
     <string name="lockscreen_autocolor_summary">Sync color with lockscreen background</string>
@@ -327,14 +327,14 @@
 
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">VoLTE icon</string>
-    <string name="volte_icon_summary">Display VoLTE icon (Needs a SystemUI restart to take effect)</string>
-    <string name="volte_icon_style_title">Select VoLTE Icon</string>
-    <string name="volte_icon_vo">Vo Only Icon</string>
-    <string name="volte_icon_volte">VoLTE Icon</string>
-    <string name="volte_icon_oos">VoLTE OOS Icon</string>
-    <string name="volte_icon_hd">HD Icon</string>
-    <string name="volte_icon_volit">VoLIT Icon</string>
-    <string name="volte_icon_asus">VoLTE Asus Icon</string>
+    <string name="volte_icon_summary">Display VoLTE icon</string>
+    <string name="volte_icon_style_title">VoLTE icon style</string>
+    <string name="volte_icon_vo">Vo only</string>
+    <string name="volte_icon_volte">VoLTE</string>
+    <string name="volte_icon_oos">OOS</string>
+    <string name="volte_icon_hd">HD</string>
+    <string name="volte_icon_volit">VoLIT</string>
+    <string name="volte_icon_asus">Asus</string>
 
     <!-- Notification guts kill app button -->
     <string name="notification_misc">Misc</string>
@@ -346,9 +346,9 @@
     <string name="lockscreen_show_status_bar_summary">Show statusbar on the lockscreen</string>
 
     <!-- Battery light -->
-    <string name="light_settings_header">Notif. Led Settings</string>
-    <string name="battery_light_settings">Battery Charging Light</string>
-    <string name="battery_light_summary">Customization for Battery Light</string>
+    <string name="light_settings_header">Notififcation LED settings</string>
+    <string name="battery_light_settings">Battery charging light</string>
+    <string name="battery_light_summary">Customization for battery light</string>
     <string name="battery_light_enable">Enable</string>
     <string name="battery_light_allow_on_dnd_title">Battery light in Do Not Disturb mode</string>
     <string name="battery_light_low_blinking_title">Blinking light on low battery</string>
@@ -378,7 +378,7 @@
 
     <!-- Heads up -->
     <string name="notification_stat">Statusbar</string>
-    <string name="heads_up_notifications">Heads Up</string>
+    <string name="heads_up_notifications">Heads up</string>
     <string name="heads_up_notifications_summary">Pop up statusbar notifications</string>
     <string name="add_heads_up_package">Add app</string>
     <string name="heads_up_stoplist_title">Stoplist</string>
@@ -573,7 +573,7 @@
     <string name="lockowner_font_size_title">Owner info font size</string>
 
     <!-- Custom carrier label and position -->
-    <string name="carrier_label_category_title">Carrier Label Settings</string>
+    <string name="carrier_label_category_title">Carrier label settings</string>
     <string name="carrier_label_category_summary">Customize statusbar carrier label</string>
     <string name="carrier_label_settings_title">Carrier Label</string>
     <string name="carrier_label_settings_summary">Customize the carrier label</string>
@@ -587,7 +587,7 @@
     <string name="show_carrier_enabled">Lockscreen &amp; statusbar</string>
     <string name="status_bar_carrier_color">Carrier label color</string>
     <string name="status_bar_carrier_size">Carrier label size</string>
-    <string name="status_bar_carrier_font_style_title">Carrier Label Font</string>
+    <string name="status_bar_carrier_font_style_title">Carrier label font</string>
 
     <!-- Rounded corners -->
     <string name="corners_title">Rounded corners</string>
@@ -674,7 +674,7 @@
     <string name="gaming_mode_dynamic_summary">Try detecting and adding gaming apps automatically</string>
 
     <!-- QuickSettings Panel Transparency -->
-    <string name="qs_panel_alpha_title">Quick Settings opacity</string>
+    <string name="qs_panel_alpha_title">Panel opacity</string>
     <string name="qs_panel_alpha_summary">Configure opacity of background</string>
 
     <!-- Screen Off animation -->
@@ -715,7 +715,7 @@
 
     <!-- Old Mobile Type Toggle -->
     <string name="use_old_mobiletype_title">Use old mobile type style</string>
-    <string name="use_old_mobiletype_summary">Merge signal and type icons</string>
+    <string name="use_old_mobiletype_summary">Merge signal and type icons (If glitchy, just restart SystemUI)</string>
 
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">QS footer text</string>
@@ -884,12 +884,12 @@
     <string name="lockscreen_media_blur_title">Media artwork blur level</string>
 
     <!-- Fingerprint unlock keystore -->
-   <string name="fp_unlock_keystore_title">Fingerprint unlock</string>
-   <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot without PIN/Password/Pattern\nNote: at your own risk!</string>
+    <string name="fp_unlock_keystore_title">Fingerprint unlock</string>
+    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot without PIN/Password/Pattern\nNote: at your own risk!</string>
 
-   <!-- Ambient visualizer -->
-   <string name="ambient_visualizer_title">Ambient visualizer</string>
-   <string name="ambient_visualizer_summary">Shows white visualization bars on ambient display unless custom color is selected</string>
+    <!-- Ambient visualizer -->
+    <string name="ambient_visualizer_title">Ambient visualizer</string>
+    <string name="ambient_visualizer_summary">Shows white visualization bars on ambient display unless custom color is selected</string>
 
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Volume keys answer</string>
@@ -916,9 +916,9 @@
     <string name="summary_dashboard_suggestions_disabled">Dashboard suggestions are disabled</string>
 
     <!-- Statusbar logo -->
-    <string name="status_bar_logo_category_title">Statusbar Logo</string>
+    <string name="status_bar_logo_category_title">Statusbar logo</string>
     <string name="status_bar_logo_category_summary">Enable to display logo in the status bar</string>
-    <string name="status_bar_logo_title">Enable Logo</string>
+    <string name="status_bar_logo_title">Location</string>
     <string name="status_bar_logo_right">Right</string>
     <string name="status_bar_logo_left">Left</string>
     <string name="status_bar_logo_disabled">Disabled</string>
