@@ -46,11 +46,29 @@
         android:defaultValue="false" />
 
     <!-- FOD icon picker -->
-    <Preference
-        android:key="fod_icon_picker_category"
-        android:title="@string/fod_icon_picker_title"
-        android:summary="@string/fod_icon_picker_summary"
-        android:fragment="com.evolution.settings.fragments.FODIconPickerFragment" />
+    <PreferenceCategory
+        android:key="fod_icon_picker"
+        android:title="@string/fod_icon_picker_title">
+
+        <Preference
+            android:key="fod_icon_picker_category"
+            android:title="@string/fod_icon_picker_title"
+            android:summary="@string/fod_icon_picker_summary"
+            android:fragment="com.evolution.settings.fragments.FODIconPickerFragment" />
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="fod_pressed_state"
+            android:dialogTitle="@string/fod_pressed_state_title"
+            android:title="@string/fod_pressed_state_title"
+            android:summary="@string/fod_pressed_state_summary"
+            android:entries="@array/fod_pressed_state_entries"
+            android:entryValues="@array/fod_pressed_state_values"
+            android:defaultValue="0" />
+
+        <Preference
+            android:summary="@string/fod_pressed_state_footer" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_info"
