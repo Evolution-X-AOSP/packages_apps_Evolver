@@ -50,7 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class LockScreenDateSettings extends SettingsPreferenceFragment implements
+public class LockScreenInfoSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String DATE_FONT_SIZE = "lockdate_font_size";
@@ -63,7 +63,7 @@ public class LockScreenDateSettings extends SettingsPreferenceFragment implement
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.evolution_settings_lockscreen_date);
+        addPreferencesFromResource(R.xml.evolution_settings_lockscreen_info);
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -114,7 +114,7 @@ public class LockScreenDateSettings extends SettingsPreferenceFragment implement
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.evolution_settings_lockscreen_date;
+                    sir.xmlResId = R.xml.evolution_settings_lockscreen_info;
                     result.add(sir);
                     return result;
                 }

@@ -65,8 +65,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="lockscreen_info"
-        android:title="@string/lockscreen_info_title">
+        android:key="lockscreen_info_category"
+        android:title="@string/lockscreen_info_category_title">
 
         <Preference
             android:title="@string/lockscreen_tuner_title"
@@ -88,17 +88,20 @@
             android:summary="@string/hide_lockicon_summary"
             android:defaultValue="false" />
 
-        <Preference
+        <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
             android:key="lockscreen_clock"
             android:title="@string/lockscreen_clock_options_title"
             android:summary="@string/lockscreen_clock_summary"
-            android:fragment="com.evolution.settings.fragments.LockScreenClockSettings" />
+            android:fragment="com.evolution.settings.fragments.LockScreenClockSettings"
+            android:defaultValue="true" />
 
-        <Preference
-            android:key="lockscreen_date"
-            android:title="@string/lockscreen_date_title"
-            android:summary="@string/lockscreen_date_summary"
-            android:fragment="com.evolution.settings.fragments.LockScreenDateSettings" />
+        <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
+            android:key="lockscreen_info"
+            android:title="@string/lockscreen_info_title"
+            android:summary="@string/lockscreen_info_summary"
+            android:fragment="com.evolution.settings.fragments.LockScreenInfoSettings"
+            android:dependency="lockscreen_clock"
+            android:defaultValue="true" />
 
         <Preference
             android:key="lockscreen_ownerinfo"

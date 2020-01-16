@@ -44,6 +44,7 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.SystemSettingListPreference;
+import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
 import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 import com.evolution.settings.preference.Utils;
 
@@ -59,12 +60,16 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
+    private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
+    private static final String LOCKSCREEN_INFO = "lockscreen_info";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
     private SwitchPreference mFingerprintVib;
     private SystemSettingListPreference mArtFilter;
+    private SystemSettingMasterSwitchPreference mClockEnabled;
+    private SystemSettingMasterSwitchPreference mInfoEnabled;
     private SystemSettingSeekBarPreference mBlurSeekbar;
 
     @Override
@@ -76,6 +81,19 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
+
+        mClockEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
+        mClockEnabled.setOnPreferenceChangeListener(this);
+        int clockEnabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_CLOCK, 1);
+        mClockEnabled.setChecked(clockEnabled != 0);
+
+        mInfoEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_INFO);
+        mInfoEnabled.setOnPreferenceChangeListener(this);
+        int infoEnabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_INFO, 1);
+        mInfoEnabled.setChecked(infoEnabled != 0);
+        mInfoEnabled.setEnabled(clockEnabled != 0);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -105,7 +123,18 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mFingerprintVib) {
+        if (preference == mClockEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            LOCKSCREEN_CLOCK, value ? 1 : 0);
+            mInfoEnabled.setEnabled(value);
+            return true;
+        } else if (preference == mInfoEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            LOCKSCREEN_INFO, value ? 1 : 0);
+            return true;
+        } else if (preference == mFingerprintVib) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
