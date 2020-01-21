@@ -47,6 +47,18 @@
         android:defaultValue="0" />
 
     <PreferenceCategory
+        android:key="theme_customization_category"
+        android:title="@string/theme_customization_category">
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="accent_color"
+            android:title="@string/theme_customization_accent_color_title"
+            settings:defaultColorValue="0xff0060ff"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/dev_options_title">
 
         <Preference
