@@ -44,12 +44,17 @@ import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.R;
 import com.evolution.settings.preference.CustomSeekBarPreference;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@SearchIndexable
 public class RoundedCornersSettings extends SettingsPreferenceFragment implements
-         OnPreferenceChangeListener {
+         OnPreferenceChangeListener, Indexable {
 
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
@@ -161,4 +166,25 @@ public class RoundedCornersSettings extends SettingsPreferenceFragment implement
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.EVO_SETTINGS;
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.evolution_settings_rounded_corners;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

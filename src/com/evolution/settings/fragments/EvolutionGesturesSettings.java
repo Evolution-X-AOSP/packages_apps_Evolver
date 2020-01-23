@@ -36,11 +36,14 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EvolutionGesturesSettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener, Indexable {
+@SearchIndexable
+public class EvolutionGesturesSettings extends SettingsPreferenceFragment
+        implements Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
             "torch_long_press_power_timeout";
@@ -95,8 +98,9 @@ public class EvolutionGesturesSettings extends SettingsPreferenceFragment implem
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
                         boolean enabled) {
-                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
-                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
                     sir.xmlResId = R.xml.evolution_settings_gestures;
                     result.add(sir);
                     return result;
@@ -104,7 +108,7 @@ public class EvolutionGesturesSettings extends SettingsPreferenceFragment implem
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
-                    final List<String> keys = super.getNonIndexableKeys(context);
+                    List<String> keys = super.getNonIndexableKeys(context);
                     return keys;
                 }
     };

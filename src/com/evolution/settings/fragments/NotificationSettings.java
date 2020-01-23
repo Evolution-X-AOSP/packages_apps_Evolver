@@ -53,6 +53,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.AmbientLightSettingsPreview;
 import com.evolution.settings.preference.CustomSeekBarPreference;
@@ -69,6 +70,7 @@ import java.util.Map;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
+@SearchIndexable
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
@@ -236,8 +238,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
                         boolean enabled) {
-                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
-                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
                     sir.xmlResId = R.xml.evolution_settings_notifications;
                     result.add(sir);
                     return result;
@@ -245,7 +248,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
-                    final List<String> keys = super.getNonIndexableKeys(context);
+                    List<String> keys = super.getNonIndexableKeys(context);
                     return keys;
                 }
     };
