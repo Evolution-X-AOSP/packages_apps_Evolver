@@ -124,18 +124,11 @@
         android:key="lockscreen_media_category"
         android:title="@string/lockscreen_media_category">
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="lockscreen_media_metadata"
-            android:title="@string/media_art_title"
-            android:summary="@string/media_art_summary"
-            android:defaultValue="true" />
-
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="lockscreen_album_art_filter"
             android:title="@string/lockscreen_cover_filter_title"
             android:entries="@array/lockscreen_cover_filter_entries"
             android:entryValues="@array/lockscreen_cover_filter_values"
-            android:dependency="lockscreen_media_metadata"
             android:defaultValue="5" />
 
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
@@ -145,8 +138,7 @@
             settings:min="5"
             settings:units="%"
             settings:interval="5"
-            android:defaultValue="100"
-            android:dependency="lockscreen_media_metadata" />
+            android:defaultValue="100" />
 
         <PreferenceScreen
             android:key="lockscreen_visualizer"
