@@ -20,6 +20,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/evolution_settings_title">
 
+    <!-- Themes -->
+    <Preference
+        android:key="themes_category"
+        android:title="@string/themes_title"
+        android:summary="@string/themes_summary"
+        android:fragment="com.evolution.settings.fragments.ThemeSettings" 
+        android:icon="@drawable/ic_settings_themes" />
+
     <!-- Status Bar -->
     <Preference
         android:key="statusbar_category"

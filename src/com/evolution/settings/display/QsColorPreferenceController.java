@@ -18,9 +18,12 @@ package com.evolution.settings.display;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.text.TextUtils;
 
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
@@ -29,21 +32,24 @@ import com.android.settingslib.core.AbstractPreferenceController;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class AccentColorPreferenceController extends AbstractPreferenceController implements
+import java.util.ArrayList;
+import java.util.List;
+
+public class QsColorPreferenceController extends AbstractPreferenceController implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String ACCENT_COLOR = "accent_color";
-    static final int DEFAULT_ACCENT_COLOR = 0xff0060ff;
+    private static final String QS_PANEL_COLOR = "qs_panel_color";
+    static final int DEFAULT_QS_PANEL_COLOR = 0xff000000;
 
-    private ColorPickerPreference mAccentColor;
+    private ColorPickerPreference mQsPanelColor;
 
-    public AccentColorPreferenceController(Context context) {
+    public QsColorPreferenceController(Context context) {
         super(context);
     }
 
     @Override
     public String getPreferenceKey() {
-        return ACCENT_COLOR;
+        return QS_PANEL_COLOR;
     }
 
     @Override
@@ -54,32 +60,24 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
-        mAccentColor = (ColorPickerPreference) screen.findPreference(ACCENT_COLOR);
-        mAccentColor.setOnPreferenceChangeListener(this);
+        mQsPanelColor = (ColorPickerPreference) screen.findPreference(QS_PANEL_COLOR);
+        mQsPanelColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.ACCENT_COLOR, DEFAULT_ACCENT_COLOR, UserHandle.USER_CURRENT);
-        String hexColor = String.format("#%08x", (0xff0060ff & intColor));
-        if (hexColor.equals("#ff0060ff")) {
-            mAccentColor.setSummary(R.string.default_string);
-        } else {
-            mAccentColor.setSummary(hexColor);
-        }
-        mAccentColor.setNewPreviewColor(intColor);
+                Settings.System.QS_PANEL_BG_COLOR, DEFAULT_QS_PANEL_COLOR, UserHandle.USER_CURRENT);
+        String hexColor = String.format("#%08x", (0xff000000 & intColor));
+        mQsPanelColor.setSummary(hexColor);
+        mQsPanelColor.setNewPreviewColor(intColor);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mAccentColor) {
+        if (preference == mQsPanelColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
-            if (hex.equals("#ff0060ff")) {
-                mAccentColor.setSummary(R.string.default_string);
-            } else {
-                mAccentColor.setSummary(hex);
-            }
+            preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(mContext.getContentResolver(),
-                    Settings.System.ACCENT_COLOR, intHex, UserHandle.USER_CURRENT);
+                    Settings.System.QS_PANEL_BG_COLOR, intHex, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

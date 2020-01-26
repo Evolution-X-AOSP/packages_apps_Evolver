@@ -43,13 +43,6 @@
         android:key="qs_header_category"
         android:title="@string/qs_header_title">
 
-        <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
-            android:key="status_bar_custom_header"
-            android:fragment="com.evolution.settings.fragments.QSHeaderSettings"
-            android:title="@string/status_bar_custom_header_title"
-            android:summary="@string/status_bar_custom_header_summary"
-            android:defaultValue="false" />
-
         <!-- Battery hide -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_hide_battery"
@@ -90,44 +83,6 @@
             android:summary="@string/brightness_icon_summary"
             android:dependency="qs_show_brightness"
             android:defaultValue="true"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="quick_settings_category"
-        android:title="@string/qs_themes_category_title">
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="qs_panel_alpha"
-            android:title="@string/qs_panel_alpha_title"
-            android:summary="@string/qs_panel_alpha_summary"
-            android:max="100"
-            settings:min="0"
-            android:defaultValue="100"
-            settings:units="%"
-            android:persistent="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_panel_bg_use_fw"
-            android:title="@string/qs_bg_use_fw"
-            android:summary="@string/qs_bg_use_fw_summary"
-            android:defaultValue="true"
-            android:disableDependentsState="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_panel_bg_use_wall"
-            android:title="@string/qs_bg_wall_title"
-            android:summary="@string/qs_bg_wall_summary"
-            android:defaultValue="false"
-            android:dependency="qs_panel_bg_use_fw"
-            android:disableDependentsState="true" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="qs_panel_color"
-            android:title="@string/qs_panel_color_title"
-            android:defaultValue="0xffffff"
-            android:persistent="false"
-            android:dependency="qs_panel_bg_use_wall" />
 
     </PreferenceCategory>
 

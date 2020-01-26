@@ -47,18 +47,6 @@
         android:defaultValue="0" />
 
     <PreferenceCategory
-        android:key="theme_customization_category"
-        android:title="@string/theme_customization_category">
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="accent_color"
-            android:title="@string/theme_customization_accent_color_title"
-            settings:defaultColorValue="0xff0060ff"
-            android:persistent="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/dev_options_title">
 
         <Preference
@@ -95,25 +83,6 @@
             android:key="allow_signature_fake"
             android:title="@string/allow_signature_fake"
             android:summary="@string/allow_signature_fake_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/settings_dashboard_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="enable_conditions"
-            android:title="@string/dashboard_conditions_title"
-            android:summaryOn="@string/summary_dashboard_conditions_enabled"
-            android:summaryOff="@string/summary_dashboard_conditions_disabled"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="enable_suggestions"
-            android:title="@string/dashboard_suggestions_title"
-            android:summaryOn="@string/summary_dashboard_suggestions_enabled"
-            android:summaryOff="@string/summary_dashboard_suggestions_disabled"
             android:defaultValue="false" />
 
     </PreferenceCategory>

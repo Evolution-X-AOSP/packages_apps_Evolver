@@ -53,8 +53,6 @@ import com.android.settingslib.search.SearchIndexable;
 import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingEditTextPreference;
 import com.evolution.settings.preference.SystemSettingListPreference;
-import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
-import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.Arrays;
@@ -63,36 +61,27 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 @SearchIndexable
 public class QuickSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String FOOTER_TEXT_STRING = "footer_text_string";
-    private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
     private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
-    private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String QS_HIDE_BATTERY = "qs_hide_battery";
     private static final String QS_BATTERY_MODE = "qs_battery_mode";
-    private static final String QS_PANEL_COLOR = "qs_panel_color";
-    static final int DEFAULT_QS_PANEL_COLOR = 0xffffffff;
 
-    private ColorPickerPreference mQsPanelColor;
     private ListPreference mQuickPulldown;
     private SystemSettingEditTextPreference mFooterString;
-    private SystemSettingSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsColumnsPortrait;
     private CustomSeekBarPreference mQsColumnsLandscape;
     private CustomSeekBarPreference mQsColumnsQuickbar;
     private CustomSeekBarPreference mQsRowsPortrait;
     private CustomSeekBarPreference mQsRowsLandscape;
-    private SystemSettingMasterSwitchPreference mCustomHeader;
     private SystemSettingSwitchPreference mHideBattery;
     private SystemSettingListPreference mQsBatteryMode;
 
@@ -111,20 +100,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
-
-        mQsPanelAlpha = (SystemSettingSeekBarPreference) findPreference(KEY_QS_PANEL_ALPHA);
-        int qsPanelAlpha = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_PANEL_BG_ALPHA, 255);
-        mQsPanelAlpha.setValue((int)(((double) qsPanelAlpha / 255) * 100));
-        mQsPanelAlpha.setOnPreferenceChangeListener(this);
-
-        mQsPanelColor = (ColorPickerPreference) findPreference(QS_PANEL_COLOR);
-        mQsPanelColor.setOnPreferenceChangeListener(this);
-        int intColor = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.QS_PANEL_BG_COLOR, DEFAULT_QS_PANEL_COLOR, UserHandle.USER_CURRENT);
-        String hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mQsPanelColor.setSummary(hexColor);
-        mQsPanelColor.setNewPreviewColor(intColor);
 
         mFooterString = (SystemSettingEditTextPreference) findPreference(FOOTER_TEXT_STRING);
         mFooterString.setOnPreferenceChangeListener(this);
@@ -168,12 +143,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsRowsLandscape.setValue(rowsLandscape);
         mQsRowsLandscape.setOnPreferenceChangeListener(this);
 
-        mCustomHeader = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
-        int qsHeader = Settings.System.getInt(resolver,
-                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0);
-        mCustomHeader.setChecked(qsHeader != 0);
-        mCustomHeader.setOnPreferenceChangeListener(this);
-
         mQsBatteryMode = (SystemSettingListPreference) findPreference(QS_BATTERY_MODE);
         mHideBattery = (SystemSettingSwitchPreference) findPreference(QS_HIDE_BATTERY);
         mHideBattery.setOnPreferenceChangeListener(this);
@@ -187,20 +156,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                     quickPulldownValue, UserHandle.USER_CURRENT);
             updatePulldownSummary(quickPulldownValue);
-            return true;
-        } else if (preference == mQsPanelAlpha) {
-            int bgAlpha = (Integer) newValue;
-            int trueValue = (int) (((double) bgAlpha / 100) * 255);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_PANEL_BG_ALPHA, trueValue);
-            return true;
-        } else if (preference == mQsPanelColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.QS_PANEL_BG_COLOR, intHex, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mFooterString) {
             String value = (String) newValue;
@@ -237,11 +192,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_ROWS_LANDSCAPE, value, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mCustomHeader) {
-            boolean header = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, header ? 1 : 0);
             return true;
         } else if (preference == mHideBattery) {
             boolean value = (Boolean) newValue;
