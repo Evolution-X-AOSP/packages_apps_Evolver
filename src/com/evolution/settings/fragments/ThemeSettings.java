@@ -37,6 +37,7 @@ import com.evolution.settings.R;
 import com.evolution.settings.display.AccentColorPreferenceController;
 import com.evolution.settings.display.QsAlphaPreferenceController;
 import com.evolution.settings.display.QsBlurAlphaPreferenceController;
+import com.evolution.settings.display.QsBlurIntensityPreferenceController;
 import com.evolution.settings.display.QsbgColorPreferenceController;
 import com.evolution.settings.display.QsColorPreferenceController;
 import com.evolution.settings.display.QsCustomHeaderPreferenceController;
@@ -78,6 +79,7 @@ public class ThemeSettings extends DashboardFragment implements Indexable  {
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new QsAlphaPreferenceController(context));
         controllers.add(new QsBlurAlphaPreferenceController(context));
+        controllers.add(new QsBlurIntensityPreferenceController(context));
         controllers.add(new QsbgColorPreferenceController(context));
         controllers.add(new QsColorPreferenceController(context));
         controllers.add(new QsCustomHeaderPreferenceController(context));

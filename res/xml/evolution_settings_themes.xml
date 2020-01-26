@@ -106,6 +106,16 @@
             android:persistent="false"
             android:dependency="qs_blur" />
 
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_blur_intensity"
+            android:title="@string/qs_blur_intensity_title"
+            android:summary="@string/qs_blur_intensity_summary"
+            android:max="100"
+            settings:min="1"
+            settings:units="%"
+            android:persistent="false"
+            android:dependency="qs_blur" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
