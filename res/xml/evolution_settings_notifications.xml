@@ -34,17 +34,40 @@
         android:summary="@string/alert_slider_notifications_summary"
         android:defaultValue="true" />
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="pulse_ambient_light"
-        android:title="@string/pulse_ambient_light_title"
-        android:summary="@string/pulse_ambient_light_summary"
-        android:defaultValue="false" />
+    <PreferenceCategory
+        android:title="@string/pulse_ambient_category_title">
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="ambient_notification_light_enabled"
-        android:title="@string/ambient_notification_light_enabled_title"
-        android:summary="@string/ambient_notification_light_enabled_summary"
-        android:defaultValue="false" />
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="pulse_ambient_light"
+            android:title="@string/pulse_ambient_light_title"
+            android:summary="@string/pulse_ambient_light_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="ambient_notification_light_enabled"
+            android:title="@string/ambient_notification_light_enabled_title"
+            android:summary="@string/ambient_notification_light_enabled_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="ambient_notification_light_hide_aod"
+            android:title="@string/ambient_notification_light_hide_aod_title"
+            android:summary="@string/ambient_notification_light_hide_aod_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="ambient_notification_light_accent"
+            android:title="@string/ambient_notification_light_accent_title"
+            android:summary="@string/ambient_notification_light_accent_summary"
+            android:defaultValue="false"
+            android:disableDependentsState="true" />
+
+        <Preference
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:persistent="false"
+            android:summary="@string/pulse_ambient_light_note" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/light_settings_header">
