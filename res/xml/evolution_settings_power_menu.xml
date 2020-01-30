@@ -40,6 +40,11 @@
             android:defaultValue="true" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="powermenu_screenrecord"
+            android:title="@string/powermenu_screenrecord"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="powermenu_screenshot"
             android:title="@string/powermenu_screenshot"
             android:defaultValue="false" />
@@ -98,6 +103,12 @@
             android:title="@string/powermenu_restart_recovery"
             android:summary="@string/powermenu_ls_advanced_reboot_summary"
             android:dependency="powermenu_restart_recovery"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="powermenu_ls_screenrecord"
+            android:title="@string/powermenu_screenrecord"
+            android:dependency="powermenu_screenrecord"
             android:defaultValue="false" />
 
         <SwitchPreference
