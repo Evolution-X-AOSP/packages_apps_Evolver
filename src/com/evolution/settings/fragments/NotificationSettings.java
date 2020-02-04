@@ -173,6 +173,10 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         if (!Utils.deviceSupportsFlashLight(getActivity())) {
             prefScreen.removePreference(FlashOnCall);
         }
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(findPreference(
+                    Settings.System.FLASHLIGHT_ON_CALL_WAITING));
+        }
     }
 
     @Override
