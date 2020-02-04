@@ -21,6 +21,7 @@ import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -40,18 +41,23 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.evolution.EvolutionUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
+import com.evolution.settings.preference.SystemSettingListPreference;
 
 public class CarrierLabel extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "CarrierLabel";
     private static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+    private static final String KEY_CARRIER_LABEL = "status_bar_show_carrier";
 
     private Preference mCarrierLabel;
     private String mCarrierLabelText;
+    private SystemSettingListPreference mShowCarrierLabel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,11 +69,49 @@ public class CarrierLabel extends SettingsPreferenceFragment
 
         mCarrierLabel = (Preference) findPreference(CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
+
+        mShowCarrierLabel = (SystemSettingListPreference) findPreference(KEY_CARRIER_LABEL);
+        int showCarrierLabel = Settings.System.getInt(resolver,
+        Settings.System.STATUS_BAR_SHOW_CARRIER, 1);
+        CharSequence[] NonNotchEntries = { getResources().getString(R.string.show_carrier_disabled),
+                getResources().getString(R.string.show_carrier_keyguard),
+                getResources().getString(R.string.show_carrier_statusbar), getResources().getString(
+                        R.string.show_carrier_enabled) };
+        CharSequence[] NotchEntries = { getResources().getString(R.string.show_carrier_disabled),
+                getResources().getString(R.string.show_carrier_keyguard) };
+        CharSequence[] NonNotchValues = {"0", "1" , "2", "3"};
+        CharSequence[] NotchValues = {"0", "1"};
+        mShowCarrierLabel.setEntries(EvolutionUtils.hasNotch(getActivity()) ? NotchEntries : NonNotchEntries);
+        mShowCarrierLabel.setEntryValues(EvolutionUtils.hasNotch(getActivity()) ? NotchValues : NonNotchValues);
+        mShowCarrierLabel.setValue(String.valueOf(showCarrierLabel));
+        mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntry());
+        mShowCarrierLabel.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+ 		ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mShowCarrierLabel) {
+            int value = Integer.parseInt((String) newValue);
+            updateCarrierLabelSummary(value);
+            return true;
+        }
         return false;
+    }
+
+    private void updateCarrierLabelSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // Carrier Label disabled
+            mShowCarrierLabel.setSummary(res.getString(R.string.show_carrier_disabled));
+        } else if (value == 1) {
+            mShowCarrierLabel.setSummary(res.getString(R.string.show_carrier_keyguard));
+        } else if (value == 2) {
+            mShowCarrierLabel.setSummary(res.getString(R.string.show_carrier_statusbar));
+        } else if (value == 3) {
+            mShowCarrierLabel.setSummary(res.getString(R.string.show_carrier_enabled));
+        }
     }
 
     public boolean onPreferenceTreeClick(Preference preference) {
