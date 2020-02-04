@@ -263,7 +263,7 @@ public class ButtonSettings extends ActionFragment implements
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
             mAnbiEnable.setEnabled(!value);
-            mAnbiEnable.setChecked(!value);
+            mAnbiEnable.setChecked(false);
             return true;
         } else if (preference == mAnbiEnable) {
             boolean value = (Boolean) newValue;
