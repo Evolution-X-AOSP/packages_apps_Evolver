@@ -47,4 +47,27 @@
         android:persistent="false"
         android:defaultValue="54" />
 
+    <PreferenceCategory
+        android:key="text_clock_customizations"
+        android:title="@string/text_clock_customizations" >
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="text_clock_alignment"
+            android:title="@string/text_clock_alignment"
+            android:dialogTitle="@string/text_clock_alignment"
+            android:entries="@array/text_clock_entries"
+            android:entryValues="@array/text_clock_values"
+            android:defaultValue="0" />
+
+       <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="text_clock_padding"
+            android:title="@string/text_clock_padding"
+            android:max="100"
+            android:min="0"
+            android:dependency="text_clock_alignment"
+            settings:units="dp"
+            android:defaultValue="55" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

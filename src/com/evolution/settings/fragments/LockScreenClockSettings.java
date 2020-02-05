@@ -54,10 +54,16 @@ public class LockScreenClockSettings extends SettingsPreferenceFragment implemen
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
+    private static final String LOCKSCREEN_CLOCK_SELECTION = "lockscreen_clock_selection";
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+    private static final String TEXT_CLOCK_ALIGNMENT = "text_clock_alignment";
+    private static final String TEXT_CLOCK_PADDING = "text_clock_padding";
 
     private ListPreference mLockClockFonts;
+    private ListPreference mLockClockSelection;
+    private ListPreference mTextClockAlign;
     private SystemSettingSeekBarPreference mClockFontSize;
+    private SystemSettingSeekBarPreference mTextClockPadding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +74,14 @@ public class LockScreenClockSettings extends SettingsPreferenceFragment implemen
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
+
+        // Lockscreen Clock
+        mLockClockSelection = (ListPreference) findPreference(LOCKSCREEN_CLOCK_SELECTION);
+        boolean mClockSelection = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT) == 9
+                || Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT) == 10;
+        mLockClockSelection.setOnPreferenceChangeListener(this);
 
         // Lockscreen Clock Fonts
         mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
@@ -81,6 +95,17 @@ public class LockScreenClockSettings extends SettingsPreferenceFragment implemen
         mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKCLOCK_FONT_SIZE, 54));
         mClockFontSize.setOnPreferenceChangeListener(this);
+
+        // Text Clock Alignment
+        mTextClockAlign = (ListPreference) findPreference(TEXT_CLOCK_ALIGNMENT);
+        mTextClockAlign.setEnabled(mClockSelection);
+        mTextClockAlign.setOnPreferenceChangeListener(this);
+
+        // Text Clock Padding
+        mTextClockPadding = (SystemSettingSeekBarPreference) findPreference(TEXT_CLOCK_PADDING);
+        boolean mTextClockAlignx = Settings.System.getIntForUser(resolver,
+                    Settings.System.TEXT_CLOCK_ALIGNMENT, 0, UserHandle.USER_CURRENT) == 1;
+        mTextClockPadding.setEnabled(!mTextClockAlignx);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -91,10 +116,19 @@ public class LockScreenClockSettings extends SettingsPreferenceFragment implemen
             mLockClockFonts.setValue(String.valueOf(newValue));
             mLockClockFonts.setSummary(mLockClockFonts.getEntry());
             return true;
+        } else if (preference == mLockClockSelection) {
+            boolean val = Integer.valueOf((String) newValue) == 9
+                    || Integer.valueOf((String) newValue) == 10;
+            mTextClockAlign.setEnabled(val);
+            return true;
         } else if (preference == mClockFontSize) {
             int top = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKCLOCK_FONT_SIZE, top*1);
+            return true;
+        } else if (preference == mTextClockAlign) {
+            boolean val = Integer.valueOf((String) newValue) == 1;
+            mTextClockPadding.setEnabled(!val);
             return true;
         }
         return false;
