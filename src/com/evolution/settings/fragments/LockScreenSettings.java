@@ -47,7 +47,6 @@ import com.android.settingslib.search.SearchIndexable;
 import com.evolution.settings.preference.SystemSettingListPreference;
 import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
 import com.evolution.settings.preference.SystemSettingSeekBarPreference;
-import com.evolution.settings.preference.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

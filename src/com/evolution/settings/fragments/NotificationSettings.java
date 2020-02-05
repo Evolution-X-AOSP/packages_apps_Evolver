@@ -25,12 +25,16 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -48,20 +52,22 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.Utils;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.AmbientLightSettingsPreview;
+import com.evolution.settings.preference.ColorSelectPreference;
 import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.GlobalSettingMasterSwitchPreference;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
 import com.evolution.settings.preference.PackageListAdapter;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
-import com.evolution.settings.preference.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -73,13 +79,16 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+    private static final String AMBIENT_NOTIFICATION_LIGHT_ACCENT_PREF = "ambient_notification_light_accent";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
     private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String PULSE_AMBIENT_LIGHT_PREF = "pulse_ambient_light";
+    private static final String PULSE_COLOR_PREF = "ambient_notification_light_color";
 
+    private ColorSelectPreference mPulseLightColorPref;
     private CustomSeekBarPreference mDozeBrightness;
     private CustomSeekBarPreference mPulseBrightness;
     private ListPreference mFlashlightOnCall;
@@ -88,6 +97,10 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private Preference mChargingLeds;
     private SwitchPreference mForceExpanded;
     private SystemSettingSwitchPreference mPulseEdgeLights;
+
+    private static final int MENU_RESET = Menu.FIRST;
+    private int mDefaultColor;
+    private int mColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -99,10 +112,20 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
 
+        mDefaultColor = getResources().getInteger(
+                com.android.internal.R.integer.config_ambientNotificationDefaultColor);
         mPulseEdgeLights = (SystemSettingSwitchPreference) findPreference(PULSE_AMBIENT_LIGHT_PREF);
         boolean mPulseNotificationEnabled = Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.DOZE_ENABLED, 0) != 0;
         mPulseEdgeLights.setEnabled(mPulseNotificationEnabled);
+
+        setHasOptionsMenu(true);
+
+        mPulseLightColorPref = (ColorSelectPreference) findPreference(PULSE_COLOR_PREF);
+        mColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.NOTIFICATION_PULSE_COLOR, mDefaultColor);
+        mPulseLightColorPref.setColor(mColor);
+        mPulseLightColorPref.setOnPreferenceChangeListener(this);
 
         mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
@@ -154,10 +177,10 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
         mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
         mFlashlightOnCall.setOnPreferenceChangeListener(this);
-        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+        if (!EvolutionUtils.deviceHasFlashlight(getActivity())) {
             prefScreen.removePreference(FlashOnCall);
         }
-        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+        if (!EvolutionUtils.deviceHasFlashlight(getActivity())) {
             prefScreen.removePreference(findPreference(
                     Settings.System.FLASHLIGHT_ON_CALL_WAITING));
         }
@@ -193,8 +216,43 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
             mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
             return true;
+        } else if (preference == mPulseLightColorPref) {
+            ColorSelectPreference lightPref = (ColorSelectPreference) preference;
+            Settings.System.putInt(getContentResolver(),
+                     Settings.System.NOTIFICATION_PULSE_COLOR, lightPref.getColor());
+            mColor = lightPref.getColor();
+            mPulseLightColorPref.setColor(mColor);
+            return true;
         }
         return false;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.add(0, MENU_RESET, 0, R.string.reset)
+                .setIcon(R.drawable.ic_settings_backup_restore)
+                .setAlphabeticShortcut('r')
+                .setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_RESET:
+                resetToDefaults();
+                return true;
+        }
+        return false;
+    }
+
+    protected void resetToDefaults() {
+        Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_PULSE_COLOR,
+                mDefaultColor);
+        mPulseLightColorPref.setColor(mDefaultColor);
+    }
+
+    private void refreshView() {
+        getFragmentManager().beginTransaction().detach(this).attach(this).commit();
     }
 
     @Override
@@ -202,6 +260,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.EVO_SETTINGS;
     }
 
+    /**
+     * For Search.
+     */
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
 

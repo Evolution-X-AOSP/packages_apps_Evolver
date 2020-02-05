@@ -35,6 +35,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.evolution.EvolutionUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -43,7 +44,6 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.CustomSeekBarPreference;
-import com.evolution.settings.preference.Utils;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -78,7 +78,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
 
         mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
         mPowermenuTorch.setOnPreferenceChangeListener(this);
-        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+        if (!EvolutionUtils.deviceHasFlashlight(getActivity())) {
             prefScreen.removePreference(mPowermenuTorch);
             prefScreen.removePreference(mPowerMenuLSTorch);
         } else {
