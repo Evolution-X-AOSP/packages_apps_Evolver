@@ -71,5 +71,13 @@
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="ambient_notification_light_color"
         android:title="@string/ambient_notification_light_color_title" />
+		
+    <com.evolution.settings.preference.SystemSettingListPreference
+        android:key="ambient_light_repeat_direction"
+        android:title="@string/pulse_ambient_light_repeat_direction_title"
+        android:entries="@array/pulse_ambient_light_repeat_direction_entries"
+        android:entryValues="@array/pulse_ambient_light_repeat_direction_values"
+        android:summary="%s"
+        android:defaultValue="0" />
 
 </PreferenceScreen>
