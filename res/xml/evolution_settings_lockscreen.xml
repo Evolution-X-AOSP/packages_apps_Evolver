@@ -39,10 +39,10 @@
         android:summary="@string/fprint_sucess_vib_summary"
         android:persistent="false" />
 
-    <!-- FOD icon picker -->
+    <!-- FOD customization options -->
     <PreferenceCategory
         android:key="fod_icon_picker"
-        android:title="@string/fod_icon_picker_title">
+        android:title="@string/fod_icon_picker_category_title">
 
         <Preference
             android:key="fod_icon_picker_category"
@@ -58,10 +58,19 @@
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="fod_anim"
+            android:title="@string/fod_recog_animation_effect_title"
+            android:summary="%s"
+            android:entries="@array/fod_recog_animation_entries"
+            android:entryValues="@array/fod_recog_animation_values"
+            android:defaultValue="0"
+            android:dependency="fod_recognizing_animation" />
+
+        <com.evolution.settings.preference.SystemSettingListPreference
             android:key="fod_pressed_state"
             android:dialogTitle="@string/fod_pressed_state_title"
             android:title="@string/fod_pressed_state_title"
-            android:summary="@string/fod_pressed_state_summary"
+            android:summary="%s"
             android:entries="@array/fod_pressed_state_entries"
             android:entryValues="@array/fod_pressed_state_values"
             android:defaultValue="0" />
