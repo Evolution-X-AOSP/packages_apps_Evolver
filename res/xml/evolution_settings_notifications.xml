@@ -53,7 +53,16 @@
             android:key="ambient_notification_light_hide_aod"
             android:title="@string/ambient_notification_light_hide_aod_title"
             android:summary="@string/ambient_notification_light_hide_aod_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            android:dependency="ambient_notification_light_enabled" />
+
+        <ListPreference
+            android:key="ambient_notification_light_timeout"
+            android:title="@string/ambient_notification_light_timeout_title"
+            android:persistent="false"
+            android:entries="@array/ambient_notification_light_timeout_entries"
+            android:entryValues="@array/ambient_notification_light_timeout_values"
+            android:dependency="ambient_notification_light_enabled" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="ambient_notification_light_accent"

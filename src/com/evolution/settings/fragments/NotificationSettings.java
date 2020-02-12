@@ -87,11 +87,13 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String PULSE_AMBIENT_LIGHT_PREF = "pulse_ambient_light";
     private static final String PULSE_COLOR_PREF = "ambient_notification_light_color";
+    private static final String PULSE_TIMEOUT_PREF = "ambient_notification_light_timeout";
 
     private ColorSelectPreference mPulseLightColorPref;
     private CustomSeekBarPreference mDozeBrightness;
     private CustomSeekBarPreference mPulseBrightness;
     private ListPreference mFlashlightOnCall;
+    private ListPreference mPulseTimeout;
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private Preference mAlertSlider;
     private Preference mChargingLeds;
@@ -126,6 +128,13 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 Settings.System.NOTIFICATION_PULSE_COLOR, mDefaultColor);
         mPulseLightColorPref.setColor(mColor);
         mPulseLightColorPref.setOnPreferenceChangeListener(this);
+
+        mPulseTimeout = (ListPreference) findPreference(PULSE_TIMEOUT_PREF);
+        int value = Settings.System.getInt(getContentResolver(),
+                Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT, 0);
+        mPulseTimeout.setValue(Integer.toString(value));
+        mPulseTimeout.setSummary(mPulseTimeout.getEntry());
+        mPulseTimeout.setOnPreferenceChangeListener(this);
 
         mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
@@ -222,6 +231,13 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                      Settings.System.NOTIFICATION_PULSE_COLOR, lightPref.getColor());
             mColor = lightPref.getColor();
             mPulseLightColorPref.setColor(mColor);
+            return true;
+        } else if (preference == mPulseTimeout) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mPulseTimeout.findIndexOfValue((String) newValue);
+            mPulseTimeout.setSummary(mPulseTimeout.getEntries()[index]);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT, value);
             return true;
         }
         return false;
