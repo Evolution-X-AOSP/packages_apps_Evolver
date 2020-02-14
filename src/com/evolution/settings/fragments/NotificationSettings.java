@@ -87,11 +87,13 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String PULSE_AMBIENT_LIGHT_PREF = "pulse_ambient_light";
     private static final String PULSE_COLOR_PREF = "ambient_notification_light_color";
+    private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
     private static final String PULSE_TIMEOUT_PREF = "ambient_notification_light_timeout";
 
     private ColorSelectPreference mPulseLightColorPref;
     private CustomSeekBarPreference mDozeBrightness;
     private CustomSeekBarPreference mPulseBrightness;
+    private ListPreference mColorMode;
     private ListPreference mFlashlightOnCall;
     private ListPreference mPulseTimeout;
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
@@ -135,6 +137,22 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         mPulseTimeout.setValue(Integer.toString(value));
         mPulseTimeout.setSummary(mPulseTimeout.getEntry());
         mPulseTimeout.setOnPreferenceChangeListener(this);
+
+        mColorMode = (ListPreference) findPreference(PULSE_COLOR_MODE_PREF);
+        boolean colorModeAutomatic = Settings.System.getInt(getContentResolver(),
+                Settings.System.NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0) != 0;
+        boolean colorModeAccent = Settings.System.getInt(getContentResolver(),
+                Settings.System.NOTIFICATION_PULSE_ACCENT, 0) != 0;
+        if (colorModeAutomatic) {
+            value = 0;
+        } else if (colorModeAccent) {
+            value = 1;
+        } else {
+            value = 2;
+        }
+        mColorMode.setValue(Integer.toString(value));
+        mColorMode.setSummary(mColorMode.getEntry());
+        mColorMode.setOnPreferenceChangeListener(this);
 
         mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
@@ -238,6 +256,27 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             mPulseTimeout.setSummary(mPulseTimeout.getEntries()[index]);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT, value);
+            return true;
+        } else if (preference == mColorMode) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mColorMode.findIndexOfValue((String) newValue);
+            mColorMode.setSummary(mColorMode.getEntries()[index]);
+            if (value == 0) {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.NOTIFICATION_PULSE_COLOR_AUTOMATIC, 1);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.NOTIFICATION_PULSE_ACCENT, 0);
+            } else if (value == 1) {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.NOTIFICATION_PULSE_ACCENT, 1);
+            } else {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.NOTIFICATION_PULSE_ACCENT, 0);
+            }
             return true;
         }
         return false;

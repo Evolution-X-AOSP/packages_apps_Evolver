@@ -64,19 +64,19 @@
             android:entryValues="@array/ambient_notification_light_timeout_values"
             android:dependency="ambient_notification_light_enabled" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="ambient_notification_light_accent"
-            android:title="@string/ambient_notification_light_accent_title"
-            android:summary="@string/ambient_notification_light_accent_summary"
-            android:defaultValue="false"
-            android:disableDependentsState="true" />
+        <ListPreference
+            android:key="ambient_notification_light_color_mode"
+            android:title="@string/ambient_notification_light_color_mode_title"
+            android:persistent="false"
+            android:entries="@array/ambient_notification_light_color_mode_entries"
+            android:entryValues="@array/ambient_notification_light_color_mode_values"
+            android:defaultValue="2" />
 
         <com.evolution.settings.preference.ColorSelectPreference
             android:key="ambient_notification_light_color"
             android:title="@string/ambient_notification_light_color_title"
             android:summary="@string/ambient_notification_light_color_summary"
-            android:persistent="false"
-            android:dependency="ambient_notification_light_accent" />
+            android:persistent="false" />
 
         <Preference
             android:icon="@drawable/ic_info_outline_24dp"
