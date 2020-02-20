@@ -56,6 +56,7 @@ import com.evolution.settings.preference.CustomSeekBarPreference;
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
+    private static final String KEY_NAVIGATION_BAR_ENABLED = "force_show_navbar";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -88,6 +89,8 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private CustomSeekBarPreference mButtonTimoutBar;
     private CustomSeekBarPreference mManualButtonBrightness;
     private PreferenceCategory mButtonBackLightCategory;
+
+    private SwitchPreference mNavigationBar;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -192,6 +195,18 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         if (!enableBacklightOptions) {
             prefScreen.removePreference(mButtonBackLightCategory);
         }
+
+        final boolean defaultToNavigationBar = getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+        final boolean navigationBarEnabled = Settings.System.getIntForUser(
+                resolver, Settings.System.FORCE_SHOW_NAVBAR,
+                defaultToNavigationBar ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+
+        mNavigationBar = (SwitchPreference) findPreference(KEY_NAVIGATION_BAR_ENABLED);
+        mNavigationBar.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.FORCE_SHOW_NAVBAR,
+                defaultToNavigationBar ? 1 : 0) == 1));
+        mNavigationBar.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -218,25 +233,18 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             int buttonBrightness = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.CUSTOM_BUTTON_BRIGHTNESS, buttonBrightness);
-        } else {
-            return false;
+        } else if (preference == mNavigationBar) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FORCE_SHOW_NAVBAR, value ? 1 : 0);
+            return true;
         }
-        return true;
+        return false;
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
-    }
-
-    @Override
-    protected boolean usesExtendedActionsList() {
-        return true;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
     }
 
     /**
