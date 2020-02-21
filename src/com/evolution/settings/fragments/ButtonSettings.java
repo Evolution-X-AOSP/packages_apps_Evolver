@@ -27,8 +27,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.os.RemoteException;
-import android.os.UserHandle;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
@@ -100,6 +100,10 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private Preference mLayoutSettings;
     private SwitchPreference mNavigationBar;
     private SystemSettingSwitchPreference mNavigationArrows;
+
+    private boolean mIsNavSwitchingMode = false;
+
+    private Handler mHandler;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -220,6 +224,9 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         mLayoutSettings = (Preference) findPreference(KEY_LAYOUT_SETTINGS);
 
         mNavigationArrows = (SystemSettingSwitchPreference) findPreference(KEY_NAVIGATION_BAR_ARROWS);
+
+        mHandler = new Handler();
+
     }
 
     @Override
@@ -248,8 +255,18 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                     Settings.System.CUSTOM_BUTTON_BRIGHTNESS, buttonBrightness);
         } else if (preference == mNavigationBar) {
             boolean value = (Boolean) newValue;
+            if (mIsNavSwitchingMode) {
+                return false;
+            }
+            mIsNavSwitchingMode = true;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FORCE_SHOW_NAVBAR, value ? 1 : 0);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mIsNavSwitchingMode = false;
+                }
+            }, 1500);
             return true;
         }
         return false;
