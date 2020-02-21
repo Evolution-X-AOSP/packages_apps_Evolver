@@ -40,6 +40,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -52,9 +53,11 @@ import java.util.List;
 public class NavigationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 
     private ListPreference mVolumeKeyCursorControl;
+    private Preference mGestureSystemNavigation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +72,15 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
             mVolumeKeyCursorControl.setValue(Integer.toString(volumeRockerCursorControl));
             mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
+        }
+
+        mGestureSystemNavigation = findPreference(GESTURE_SYSTEM_NAVIGATION);
+        if (EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
+        } else if (EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
+            mGestureSystemNavigation.setSummary(getString(R.string.swipe_up_to_switch_apps_title));
+        } else {
+            mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
         }
     }
 
