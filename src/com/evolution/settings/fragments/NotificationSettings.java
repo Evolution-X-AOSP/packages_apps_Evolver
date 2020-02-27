@@ -74,6 +74,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
@@ -88,6 +89,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mDozeBrightness;
     private ListPreference mFlashlightOnCall;
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
+    private Preference mAlertSlider;
     private Preference mChargingLeds;
     private SwitchPreference mForceExpanded;
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
@@ -98,8 +100,15 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.evolution_settings_notifications);
 
-        PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
+
+        mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
+        boolean mAlertSliderAvailable = res.getBoolean(
+                com.android.internal.R.bool.config_hasAlertSlider);
+        if (!mAlertSliderAvailable)
+            prefScreen.removePreference(mAlertSlider);
 
         PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
         if (!Utils.isVoiceCapable(getActivity())) {
@@ -253,6 +262,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+                    boolean mAlertSliderAvailable = res.getBoolean(
+                            com.android.internal.R.bool.config_hasAlertSlider);
+                    if (!mAlertSliderAvailable)
+                        keys.add(ALERT_SLIDER_PREF);
                     return keys;
                 }
     };
