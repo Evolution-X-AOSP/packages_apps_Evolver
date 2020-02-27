@@ -57,6 +57,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String KEY_AMBIENT = "ambient_notification_light_enabled";
     private static final String KEY_CHARGING_LIGHT = "charging_light";
@@ -71,6 +72,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mEdgeLightDurationPreference;
     private CustomSeekBarPreference mEdgeLightRepeatCountPreference;
     private ListPreference mColorMode;
+    private Preference mAlertSlider;
     private Preference mChargingLeds;
     private PreferenceCategory mLedCategory;
     private SystemSettingSwitchPreference mAmbientPref;
@@ -80,9 +82,16 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_notifications);
+
         ContentResolver resolver = getActivity().getContentResolver();
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        Resources res = getResources();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
+
+        mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
+        boolean mAlertSliderAvailable = res.getBoolean(
+                com.android.internal.R.bool.config_hasAlertSlider);
+        if (!mAlertSliderAvailable)
+            prefScreen.removePreference(mAlertSlider);
 
         boolean hasLED = res.getBoolean(
                 com.android.internal.R.bool.config_hasNotificationLed);
