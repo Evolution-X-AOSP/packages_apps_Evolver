@@ -77,7 +77,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
-    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
@@ -109,11 +108,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_hasAlertSlider);
         if (!mAlertSliderAvailable)
             prefScreen.removePreference(mAlertSlider);
-
-        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
-        if (!Utils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(incallVibCategory);
-        }
 
         mChargingLeds = (Preference) findPreference("charging_light");
         if (mChargingLeds != null
