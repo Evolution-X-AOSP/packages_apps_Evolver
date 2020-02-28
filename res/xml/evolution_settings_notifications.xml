@@ -84,8 +84,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="notification_screen"
-        android:title="@string/notification_screen_title">
+        android:key="horizon_light_screen"
+        android:title="@string/horizon_light_screen_title">
 
         <!-- Preview -->
         <com.evolution.settings.preference.AmbientLightSettingsPreview
@@ -95,14 +95,14 @@
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="pulse_ambient_light"
-            android:title="@string/pulse_ambient_light_title"
-            android:summary="@string/pulse_ambient_light_summary"
+            android:title="@string/horizon_light_title"
+            android:summary="@string/horizon_light_summary"
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="pulse_ambient_light_duration"
-            android:title="@string/pulse_ambient_light_duration_title"
-            android:summary="@string/pulse_ambient_light_duration_summary"
+            android:title="@string/horizon_light_duration_title"
+            android:summary="@string/horizon_light_duration_summary"
             android:persistent="false"
             android:defaultValue="2"
             android:max="10"
@@ -113,14 +113,14 @@
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="pulse_ambient_auto_color"
-            android:title="@string/pulse_ambient_auto_color_title"
-            android:summary="@string/pulse_ambient_auto_color_summary"
+            android:title="@string/horizon_light_auto_color_title"
+            android:summary="@string/horizon_light_auto_color_summary"
             android:dependency="pulse_ambient_light"
             android:defaultValue="false" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="pulse_ambient_light_color"
-            android:title="@string/pulse_ambient_light_color_title"
+            android:title="@string/horizon_light_color_title"
             android:persistent="false"
             android:dependency="pulse_ambient_light"
             settings:defaultColorValue="0xFF0060FF" />
