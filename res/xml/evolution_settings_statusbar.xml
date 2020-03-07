@@ -67,6 +67,12 @@
                 android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
         </Preference>
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="statusbar_privacy_indicators"
+            android:title="@string/statusbar_privacy_indicators_title"
+            android:summary="@string/statusbar_privacy_indicators_summary"
+            android:defaultValue="true" />
+
         <!-- Status Bar Logo Style -->
         <Preference
             android:key="status_bar_logo"
