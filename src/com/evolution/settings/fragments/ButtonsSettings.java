@@ -79,6 +79,7 @@ public class ButtonsSettings extends ActionFragment implements
     private static final String KEY_NAVIGATION_HOME_DOUBLE_TAP = "navigation_home_double_tap";
     private static final String KEY_NAVIGATION_APP_SWITCH_LONG_PRESS =
             "navigation_app_switch_long_press";
+    private static final String KEY_EDGE_LONG_SWIPE = "navigation_bar_edge_long_swipe";
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
     private static final String KEY_BUTTON_BRIGHTNESS_SW = "button_brightness_sw";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
@@ -116,6 +117,7 @@ public class ButtonsSettings extends ActionFragment implements
     private ListPreference mNavigationHomeLongPressAction;
     private ListPreference mNavigationHomeDoubleTapAction;
     private ListPreference mNavigationAppSwitchLongPressAction;
+    private ListPreference mEdgeLongSwipeAction;
     private ListPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
@@ -262,6 +264,9 @@ public class ButtonsSettings extends ActionFragment implements
         Action appSwitchLongPressAction = Action.fromSettings(resolver,
                 Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
                 defaultAppSwitchLongPressAction);
+        Action edgeLongSwipeAction = Action.fromSettings(resolver,
+                Settings.System.KEY_EDGE_LONG_SWIPE_ACTION,
+                Action.NOTHING);
 
         // Navigation bar home long press
         Action defaultHomeLongPressActionNavbar = Action.fromIntSafe(res.getInteger(
@@ -289,6 +294,9 @@ public class ButtonsSettings extends ActionFragment implements
                 defaultAppSwitchLongPressActionNavbar);
         mNavigationAppSwitchLongPressAction = initList(KEY_NAVIGATION_APP_SWITCH_LONG_PRESS,
                 appSwitchLongPressActionNavbar);
+
+        // Edge long swipe gesture
+        mEdgeLongSwipeAction = initList(KEY_EDGE_LONG_SWIPE, edgeLongSwipeAction);
 
         // home key
         if (hasHomeKey) {
@@ -439,6 +447,9 @@ public class ButtonsSettings extends ActionFragment implements
 
             mNavigationAppSwitchLongPressAction.setEntries(actionEntriesGo);
             mNavigationAppSwitchLongPressAction.setEntryValues(actionValuesGo);
+
+            mEdgeLongSwipeAction.setEntries(actionEntriesGo);
+            mEdgeLongSwipeAction.setEntryValues(actionValuesGo);
         }
 
         mAnbiEnable.setEnabled(keysDisabled == 0);
@@ -578,6 +589,10 @@ public class ButtonsSettings extends ActionFragment implements
         } else if (preference == mNavigationAppSwitchLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION_NAVBAR);
+            return true;
+        } else if (preference == mEdgeLongSwipeAction) {
+            handleListChange(mEdgeLongSwipeAction, newValue,
+                    Settings.System.KEY_EDGE_LONG_SWIPE_ACTION);
             return true;
         }
         return false;
