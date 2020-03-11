@@ -68,6 +68,7 @@ public class NavigationSettings extends ActionFragment implements
     private static final String ANBI_ENABLED_OPTION = "anbi_enabled_option";
     private static final String ENABLE_NAV_BAR = "enable_nav_bar";
     private static final String PREF_HW_BUTTONS = "hw_buttons";
+    private static final String KEY_GESTURE_BAR_SIZE = "navigation_handle_width";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -88,6 +89,7 @@ public class NavigationSettings extends ActionFragment implements
     public static final int KEY_MASK_VOLUME = 0x40;
 
     private ListPreference mBacklightTimeout;
+    private ListPreference mGestureBarSize;
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
@@ -106,6 +108,13 @@ public class NavigationSettings extends ActionFragment implements
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mGestureBarSize = (ListPreference) findPreference(KEY_GESTURE_BAR_SIZE);
+        int gesturebarsize = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.NAVIGATION_HANDLE_WIDTH, 0, UserHandle.USER_CURRENT);
+        mGestureBarSize.setValue(String.valueOf(gesturebarsize));
+        mGestureBarSize.setSummary(mGestureBarSize.getEntry());
+        mGestureBarSize.setOnPreferenceChangeListener(this);
 
         // Force Navigation bar related options
         mDisableNavigationKeys = (SwitchPreference) findPreference(DISABLE_NAV_KEYS);
@@ -324,6 +333,12 @@ public class NavigationSettings extends ActionFragment implements
                     mIsNavSwitchingMode = false;
                 }
             }, 1000);
+            return true;
+        } else if (preference == mGestureBarSize) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.NAVIGATION_HANDLE_WIDTH, value,
+                    UserHandle.USER_CURRENT);
             return true;
         }
         return false;

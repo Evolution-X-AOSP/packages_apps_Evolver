@@ -20,12 +20,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/navigation_title">
 
-    <Preference
-        android:key="gesture_system_navigation"
-        android:title="@string/system_navigation_title"
-        android:summary="@string/system_navigation_summary"
-        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings" />
-
     <SwitchPreference
         android:key="enable_nav_bar"
         android:title="@string/enable_navbar_title"
@@ -34,8 +28,23 @@
         android:persistent="false" />
 
     <Preference
+        android:key="gesture_system_navigation"
+        android:title="@string/system_navigation_title"
+        android:dependency="enable_nav_bar"
+        android:summary="@string/system_navigation_summary"
+        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings" />
+
+    <ListPreference
+        android:key="navigation_handle_width"
+        android:title="@string/gesture_navbar_handle_title"
+        android:entries="@array/gesture_navbar_handle_entries"
+        android:entryValues="@array/gesture_navbar_handle_values"
+        android:dependency="enable_nav_bar" />
+
+    <Preference
         android:key="nav_bar_tuner"
         android:title="@string/nav_bar_tuner_title"
+        android:dependency="enable_nav_bar"
         android:summary="@string/nav_bar_tuner_summary">
 
         <intent android:action="android.intent.action.MAIN"
@@ -47,6 +56,7 @@
     <com.evolution.settings.preference.SecureSettingSwitchPreference
         android:key="sysui_nav_bar_inverse"
         android:title="@string/nav_bar_invert_layout_title"
+        android:dependency="enable_nav_bar"
         android:defaultValue="false" />
 
     <com.evolution.settings.preference.SecureSettingSwitchPreference
