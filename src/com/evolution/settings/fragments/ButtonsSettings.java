@@ -56,7 +56,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class ButtonSettings extends ActionFragment implements
+public class ButtonsSettings extends ActionFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     //Keys
@@ -100,7 +100,7 @@ public class ButtonSettings extends ActionFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.evolution_settings_button);
+        addPreferencesFromResource(R.xml.evolution_settings_buttons);
 
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
@@ -326,7 +326,7 @@ public class ButtonSettings extends ActionFragment implements
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.evolution_settings_button;
+                    sir.xmlResId = R.xml.evolution_settings_buttons;
                     result.add(sir);
                     return result;
                 }
