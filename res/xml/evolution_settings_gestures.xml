@@ -49,14 +49,20 @@
         android:defaultValue="false" />
 
     <PreferenceCategory
-        android:key="dtts_category"
-        android:title="@string/dtts_category_title">
+        android:key="dtt_category"
+        android:title="@string/dtt_category_title">
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="double_tap_sleep_gesture"
             android:title="@string/doubletap_statusbar_title"
             android:summary="@string/doubletap_statusbar_summary"
             android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="doze_pulse_on_double_tap"
+            android:title="@string/double_tap_on_doze_to_wake_title"
+            android:summary="@string/double_tap_on_doze_to_wake_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
