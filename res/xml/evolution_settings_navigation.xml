@@ -20,18 +20,19 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/navigation_title">
 
-    <Preference
-        android:key="gesture_system_navigation"
-        android:title="@string/system_navigation_title"
-        android:summary="@string/system_navigation_summary"
-        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings" />
-
     <SwitchPreference
         android:key="enable_nav_bar"
         android:title="@string/enable_navbar_title"
         android:summary="@string/enable_navbar_summary"
         android:defaultValue="true"
         android:persistent="false" />
+
+    <Preference
+        android:key="gesture_system_navigation"
+        android:title="@string/system_navigation_title"
+        android:summary="@string/system_navigation_summary"
+        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
+        settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
 
     <Preference
         android:key="nav_bar_tuner"
