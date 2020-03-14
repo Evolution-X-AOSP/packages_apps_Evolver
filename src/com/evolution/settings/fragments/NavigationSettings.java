@@ -33,6 +33,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.internal.util.hwkeys.ActionUtils;
 
 import com.android.settings.R;
@@ -116,8 +117,9 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     }
 
     private void updateNavBarOption() {
+        boolean defaultToNavigationBar = EvolutionUtils.deviceSupportNavigationBar(getActivity());
         boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
-                Settings.System.FORCE_SHOW_NAVBAR, 1, UserHandle.USER_CURRENT) != 0;
+                Settings.System.FORCE_SHOW_NAVBAR, defaultToNavigationBar ? 1 : 0, UserHandle.USER_CURRENT) != 0;
         mEnableNavigationBar.setChecked(enabled);
     }
 
