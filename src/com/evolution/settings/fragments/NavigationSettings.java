@@ -46,6 +46,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,16 +57,19 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
     private static final String NAVBAR_TUNER = "navbar_tuner";
+    private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 
     private ListPreference mVolumeKeyCursorControl;
     private Preference mGestureSystemNavigation;
     private Preference mNavbarTuner;
+    private SystemSettingSwitchPreference mPixelNavAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_navigation);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         // volume key cursor control
         mVolumeKeyCursorControl = findPreference(VOLUME_KEY_CURSOR_CONTROL);
@@ -78,6 +83,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
         mGestureSystemNavigation = findPreference(GESTURE_SYSTEM_NAVIGATION);
         mNavbarTuner = findPreference(NAVBAR_TUNER);
+        mPixelNavAnimation = findPreference(PIXEL_NAV_ANIMATION);
         if (EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
         } else if (EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
@@ -85,6 +91,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         } else {
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
             prefScreen.removePreference(mNavbarTuner);
+            prefScreen.removePreference(mPixelNavAnimation);
         }
     }
 
