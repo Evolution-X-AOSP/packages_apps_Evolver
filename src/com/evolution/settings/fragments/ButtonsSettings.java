@@ -16,6 +16,7 @@
 
 package com.evolution.settings.fragments;
 
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -26,10 +27,12 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.RemoteException;
 import android.os.UserHandle;
 import android.os.Vibrator;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.util.Log;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -54,12 +57,24 @@ import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
+import static com.android.internal.util.evolution.hwkeys.DeviceKeysConstants.*;
 
 @SearchIndexable
 public class ButtonsSettings extends ActionFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
+    private static final String TAG = "ButtonSettings";
 
     //Keys
+    private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
+    private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
+    private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
+    private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
+    private static final String KEY_ASSIST_PRESS = "hardware_keys_assist_press";
+    private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
+    private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
+    private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
     private static final String KEY_BUTTON_BRIGHTNESS_SW = "button_brightness_sw";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
@@ -70,13 +85,12 @@ public class ButtonsSettings extends ActionFragment implements
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
     private static final String CATEGORY_HOME = "home_key";
-    private static final String CATEGORY_MENU = "menu_key";
     private static final String CATEGORY_BACK = "back_key";
+    private static final String CATEGORY_MENU = "menu_key";
     private static final String CATEGORY_ASSIST = "assist_key";
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
+    private static final String CATEGORY_CAMERA = "camera_key";
 
-    // Masks for checking presence of hardware keys.
-    // Must match values in frameworks/base/core/res/res/values/config.xml
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
     public static final int KEY_MASK_HOME = 0x01;
@@ -87,9 +101,20 @@ public class ButtonsSettings extends ActionFragment implements
     public static final int KEY_MASK_CAMERA = 0x20;
     public static final int KEY_MASK_VOLUME = 0x40;
 
+    private ListPreference mHomeLongPressAction;
+    private ListPreference mHomeDoubleTapAction;
+    private ListPreference mMenuPressAction;
+    private ListPreference mMenuLongPressAction;
+    private ListPreference mAssistPressAction;
+    private ListPreference mAssistLongPressAction;
+    private ListPreference mAppSwitchPressAction;
+    private ListPreference mAppSwitchLongPressAction;
     private ListPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
+    private SwitchPreference mCameraWakeScreen;
+    private SwitchPreference mCameraSleepOnRelease;
+    private SwitchPreference mCameraLaunch;
     private SwitchPreference mHwKeyDisable;
     private SwitchPreference mDisableNavigationKeys;
     private SystemSettingSwitchPreference mAnbiEnable;
@@ -177,8 +202,10 @@ public class ButtonsSettings extends ActionFragment implements
         }
 
         // bits for hardware keys present on device
-        final int deviceKeys = getResources().getInteger(
+        final int deviceKeys = res.getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
+        final int deviceWakeKeys = res.getInteger(
+                com.android.internal.R.integer.config_deviceHardwareWakeKeys);
 
         // read bits for present hardware keys
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
@@ -186,43 +213,185 @@ public class ButtonsSettings extends ActionFragment implements
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+        final boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
+
+        final boolean showHomeWake = (deviceWakeKeys & KEY_MASK_HOME) != 0;
+        final boolean showBackWake = (deviceWakeKeys & KEY_MASK_BACK) != 0;
+        final boolean showMenuWake = (deviceWakeKeys & KEY_MASK_MENU) != 0;
+        final boolean showAssistWake = (deviceWakeKeys & KEY_MASK_ASSIST) != 0;
+        final boolean showAppSwitchWake = (deviceWakeKeys & KEY_MASK_APP_SWITCH) != 0;
+        final boolean showCameraWake = (deviceWakeKeys & KEY_MASK_CAMERA) != 0;
 
         // load categories and init/remove preferences based on device
         // configuration
-        final PreferenceCategory backCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
+        boolean hasAnyBindableKey = false;
         final PreferenceCategory homeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_HOME);
+        final PreferenceCategory backCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
         final PreferenceCategory menuCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
         final PreferenceCategory assistCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
+        final PreferenceCategory cameraCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_CAMERA);
+
+        Action defaultHomeLongPressAction = Action.fromIntSafe(res.getInteger(
+                com.android.internal.R.integer.config_longPressOnHomeBehaviorHwKeys));
+        Action defaultHomeDoubleTapAction = Action.fromIntSafe(res.getInteger(
+                com.android.internal.R.integer.config_doubleTapOnHomeBehaviorHwKeys));
+        Action defaultAppSwitchLongPressAction = Action.fromIntSafe(res.getInteger(
+                com.android.internal.R.integer.config_longPressOnAppSwitchBehaviorHwKeys));
+        Action defaultAssistLongPressAction = Action.fromIntSafe(res.getInteger(
+                com.android.internal.R.integer.config_longPressOnAssistBehaviorHwKeys));
+        Action homeLongPressAction = Action.fromSettings(resolver,
+                Settings.System.KEY_HOME_LONG_PRESS_ACTION,
+                defaultHomeLongPressAction);
+        Action homeDoubleTapAction = Action.fromSettings(resolver,
+                Settings.System.KEY_HOME_DOUBLE_TAP_ACTION,
+                defaultHomeDoubleTapAction);
+        Action appSwitchLongPressAction = Action.fromSettings(resolver,
+                Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
+                defaultAppSwitchLongPressAction);
+
+        // home key
+        if (hasHomeKey) {
+            if (!showHomeWake) {
+                homeCategory.removePreference(findPreference(Settings.System.HOME_WAKE_SCREEN));
+            }
+
+            mHomeLongPressAction = initList(KEY_HOME_LONG_PRESS, homeLongPressAction);
+            mHomeDoubleTapAction = initList(KEY_HOME_DOUBLE_TAP, homeDoubleTapAction);
+
+            hasAnyBindableKey = true;
+        } else {
+            prefScreen.removePreference(homeCategory);
+        }
 
         // back key
         if (!hasBackKey) {
             prefScreen.removePreference(backCategory);
         }
 
-        // home key
-        if (!hasHomeKey) {
-            prefScreen.removePreference(homeCategory);
-        }
-
-        // App switch key (recents)
-        if (!hasAppSwitchKey) {
-            prefScreen.removePreference(appSwitchCategory);
-        }
-
         // menu key
-        if (!hasMenuKey) {
+        if (hasMenuKey) {
+            if (!showMenuWake) {
+                menuCategory.removePreference(findPreference(Settings.System.MENU_WAKE_SCREEN));
+            }
+
+            Action pressAction = Action.fromSettings(resolver,
+                    Settings.System.KEY_MENU_ACTION, Action.MENU);
+            mMenuPressAction = initList(KEY_MENU_PRESS, pressAction);
+
+            Action longPressAction = Action.fromSettings(resolver,
+                        Settings.System.KEY_MENU_LONG_PRESS_ACTION,
+                        hasAssistKey ? Action.NOTHING : Action.APP_SWITCH);
+            mMenuLongPressAction = initList(KEY_MENU_LONG_PRESS, longPressAction);
+
+            hasAnyBindableKey = true;
+        } else {
             prefScreen.removePreference(menuCategory);
         }
 
         // search/assist key
-        if (!hasAssistKey) {
+        if (hasAssistKey) {
+            if (!showAssistWake) {
+                assistCategory.removePreference(findPreference(Settings.System.ASSIST_WAKE_SCREEN));
+            }
+
+            Action pressAction = Action.fromSettings(resolver,
+                    Settings.System.KEY_ASSIST_ACTION, Action.SEARCH);
+            mAssistPressAction = initList(KEY_ASSIST_PRESS, pressAction);
+
+            Action longPressAction = Action.fromSettings(resolver,
+                    Settings.System.KEY_ASSIST_LONG_PRESS_ACTION, defaultAssistLongPressAction);
+            mAssistLongPressAction = initList(KEY_ASSIST_LONG_PRESS, longPressAction);
+
+            hasAnyBindableKey = true;
+        } else {
             prefScreen.removePreference(assistCategory);
+        }
+
+        // App switch key (recents)
+        if (hasAppSwitchKey) {
+            if (!showAppSwitchWake) {
+                appSwitchCategory.removePreference(findPreference(
+                        Settings.System.APP_SWITCH_WAKE_SCREEN));
+            }
+
+            Action pressAction = Action.fromSettings(resolver,
+                    Settings.System.KEY_APP_SWITCH_ACTION, Action.APP_SWITCH);
+            mAppSwitchPressAction = initList(KEY_APP_SWITCH_PRESS, pressAction);
+
+            mAppSwitchLongPressAction = initList(KEY_APP_SWITCH_LONG_PRESS, appSwitchLongPressAction);
+
+            hasAnyBindableKey = true;
+        } else {
+            prefScreen.removePreference(appSwitchCategory);
+        }
+
+        if (hasCameraKey) {
+            mCameraWakeScreen = (SwitchPreference) findPreference(Settings.System.CAMERA_WAKE_SCREEN);
+            mCameraSleepOnRelease =
+                    (SwitchPreference) findPreference(Settings.System.CAMERA_SLEEP_ON_RELEASE);
+            mCameraLaunch = (SwitchPreference) findPreference(Settings.System.CAMERA_LAUNCH);
+
+            if (!showCameraWake) {
+                prefScreen.removePreference(mCameraWakeScreen);
+            }
+            // Only show 'Camera sleep on release' if the device has a focus key
+            if (res.getBoolean(com.android.internal.R.bool.config_singleStageCameraKey)) {
+                prefScreen.removePreference(mCameraSleepOnRelease);
+            }
+        } else {
+            prefScreen.removePreference(cameraCategory);
+        }
+
+        if (mCameraWakeScreen != null) {
+            if (mCameraSleepOnRelease != null && !res.getBoolean(
+                    com.android.internal.R.bool.config_singleStageCameraKey)) {
+                mCameraSleepOnRelease.setDependency(Settings.System.CAMERA_WAKE_SCREEN);
+            }
+        }
+
+        // Override key actions on Go devices in order to hide any unsupported features
+        if (ActivityManager.isLowRamDeviceStatic()) {
+            String[] actionEntriesGo = res.getStringArray(R.array.hardware_keys_action_entries_go);
+            String[] actionValuesGo = res.getStringArray(R.array.hardware_keys_action_values_go);
+
+            if (hasHomeKey) {
+                mHomeLongPressAction.setEntries(actionEntriesGo);
+                mHomeLongPressAction.setEntryValues(actionValuesGo);
+
+                mHomeDoubleTapAction.setEntries(actionEntriesGo);
+                mHomeDoubleTapAction.setEntryValues(actionValuesGo);
+            }
+
+            if (hasMenuKey) {
+                mMenuPressAction.setEntries(actionEntriesGo);
+                mMenuPressAction.setEntryValues(actionValuesGo);
+
+                mMenuLongPressAction.setEntries(actionEntriesGo);
+                mMenuLongPressAction.setEntryValues(actionValuesGo);
+            }
+
+            if (hasAssistKey) {
+                mAssistPressAction.setEntries(actionEntriesGo);
+                mAssistPressAction.setEntryValues(actionValuesGo);
+
+                mAssistLongPressAction.setEntries(actionEntriesGo);
+                mAssistLongPressAction.setEntryValues(actionValuesGo);
+            }
+
+            if (hasAppSwitchKey) {
+                mAppSwitchPressAction.setEntries(actionEntriesGo);
+                mAppSwitchPressAction.setEntryValues(actionValuesGo);
+
+                mAppSwitchLongPressAction.setEntries(actionEntriesGo);
+                mAppSwitchLongPressAction.setEntryValues(actionValuesGo);
+            }
         }
 
         mAnbiEnable.setEnabled(keysDisabled == 0);
@@ -232,6 +401,33 @@ public class ButtonsSettings extends ActionFragment implements
 
         // load preferences first
         setActionPreferencesEnabled(keysDisabled == 0);
+    }
+
+    private ListPreference initList(String key, Action value) {
+        return initList(key, value.ordinal());
+    }
+
+    private ListPreference initList(String key, int value) {
+        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        if (list == null) return null;
+        list.setValue(Integer.toString(value));
+        list.setSummary(list.getEntry());
+        list.setOnPreferenceChangeListener(this);
+        return list;
+    }
+
+    private void handleListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+        pref.setSummary(pref.getEntries()[index]);
+        Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
+    }
+
+    private void handleSystemListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+        pref.setSummary(pref.getEntries()[index]);
+        Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
     }
 
     @Override
@@ -291,6 +487,38 @@ public class ButtonsSettings extends ActionFragment implements
                     mIsNavSwitchingMode = false;
                 }
             }, 1000);
+            return true;
+        } else if (preference == mHomeLongPressAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    Settings.System.KEY_HOME_LONG_PRESS_ACTION);
+            return true;
+        } else if (preference == mHomeDoubleTapAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    Settings.System.KEY_HOME_DOUBLE_TAP_ACTION);
+            return true;
+        } else if (preference == mMenuPressAction) {
+            handleListChange(mMenuPressAction, newValue,
+                    Settings.System.KEY_MENU_ACTION);
+            return true;
+        } else if (preference == mMenuLongPressAction) {
+            handleListChange(mMenuLongPressAction, newValue,
+                    Settings.System.KEY_MENU_LONG_PRESS_ACTION);
+            return true;
+        } else if (preference == mAssistPressAction) {
+            handleListChange(mAssistPressAction, newValue,
+                    Settings.System.KEY_ASSIST_ACTION);
+            return true;
+        } else if (preference == mAssistLongPressAction) {
+            handleListChange(mAssistLongPressAction, newValue,
+                    Settings.System.KEY_ASSIST_LONG_PRESS_ACTION);
+            return true;
+        } else if (preference == mAppSwitchPressAction) {
+            handleListChange(mAppSwitchPressAction, newValue,
+                    Settings.System.KEY_APP_SWITCH_ACTION);
+            return true;
+        } else if (preference == mAppSwitchLongPressAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
             return true;
         }
         return false;
