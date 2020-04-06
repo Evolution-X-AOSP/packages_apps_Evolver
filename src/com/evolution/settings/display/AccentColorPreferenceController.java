@@ -33,9 +33,12 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
         Preference.OnPreferenceChangeListener {
 
     private static final String ACCENT_COLOR = "accent_color";
+    private static final String GRADIENT_COLOR = "gradient_color";
     static final int DEFAULT_ACCENT_COLOR = 0xff0060ff;
+    static final int DEFAULT_GRADIENT_COLOR = 0xff0060ff;
 
     private ColorPickerPreference mAccentColor;
+    private ColorPickerPreference mGradientColor;
 
     public AccentColorPreferenceController(Context context) {
         super(context);
@@ -54,9 +57,12 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
     @Override
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
+
+        final ContentResolver resolver = mContext.getContentResolver();
+
         mAccentColor = (ColorPickerPreference) screen.findPreference(ACCENT_COLOR);
         mAccentColor.setOnPreferenceChangeListener(this);
-        int intColor = Settings.System.getIntForUser(mContext.getContentResolver(),
+        int intColor = Settings.System.getIntForUser(resolver,
                 Settings.System.ACCENT_COLOR, DEFAULT_ACCENT_COLOR, UserHandle.USER_CURRENT);
         String hexColor = String.format("#%08x", (0xff0060ff & intColor));
         if (hexColor.equals("#ff0060ff")) {
@@ -65,11 +71,24 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
             mAccentColor.setSummary(hexColor);
         }
         mAccentColor.setNewPreviewColor(intColor);
+
+        mGradientColor = (ColorPickerPreference) screen.findPreference(GRADIENT_COLOR);
+        mGradientColor.setOnPreferenceChangeListener(this);
+        int color = Settings.System.getIntForUser(resolver,
+                Settings.System.GRADIENT_COLOR, DEFAULT_GRADIENT_COLOR, UserHandle.USER_CURRENT);
+        String gradientHex = String.format("#%08x", (0xff0060ff & color));
+        if (gradientHex.equals("#ff0060ff")) {
+            mGradientColor.setSummary(R.string.default_string);
+        } else {
+            mGradientColor.setSummary(gradientHex);
+        }
+        mGradientColor.setNewPreviewColor(color);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mAccentColor) {
+        final ContentResolver resolver = mContext.getContentResolver();
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             if (hex.equals("#ff0060ff")) {
@@ -78,8 +97,21 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
                 mAccentColor.setSummary(hex);
             }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putIntForUser(mContext.getContentResolver(),
+            Settings.System.putIntForUser(resolver,
                     Settings.System.ACCENT_COLOR, intHex, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mGradientColor) {
+        final ContentResolver resolver = mContext.getContentResolver();
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ff0060ff")) {
+                mGradientColor.setSummary(R.string.default_string);
+            } else {
+                mGradientColor.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.GRADIENT_COLOR, intHex, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
