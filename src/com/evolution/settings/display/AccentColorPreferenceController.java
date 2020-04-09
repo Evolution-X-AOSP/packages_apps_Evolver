@@ -34,7 +34,8 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
 
     private static final String ACCENT_COLOR = "accent_color";
     private static final String GRADIENT_COLOR = "gradient_color";
-    static final int DEFAULT_ACCENT_COLOR = 0xff0060ff;
+    static final int DEFAULT_ACCENT_COLOR = 0xff56ab2f
+    static final int DEFAULT_GRADIENT_COLOR = 0xffa8e063
 
     private ColorPickerPreference mAccentColor;
     private ColorPickerPreference mGradientColor;
@@ -63,8 +64,8 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
         mAccentColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getIntForUser(resolver,
                 Settings.System.ACCENT_COLOR, DEFAULT_ACCENT_COLOR, UserHandle.USER_CURRENT);
-        String hexColor = String.format("#%08x", (0xff0060ff & intColor));
-        if (hexColor.equals("#ff0060ff")) {
+        String hexColor = String.format("#%08x", (0xff56ab2f & intColor));
+        if (hexColor.equals("#ff56ab2f")) {
             mAccentColor.setSummary(R.string.default_string);
         } else {
             mAccentColor.setSummary(hexColor);
@@ -74,9 +75,9 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
         mGradientColor = (ColorPickerPreference) screen.findPreference(GRADIENT_COLOR);
         mGradientColor.setOnPreferenceChangeListener(this);
         int color = Settings.System.getIntForUser(resolver,
-                Settings.System.GRADIENT_COLOR, DEFAULT_ACCENT_COLOR, UserHandle.USER_CURRENT);
-        String gradientHex = String.format("#%08x", (0xff0060ff & color));
-        if (gradientHex.equals("#ff0060ff")) {
+                Settings.System.GRADIENT_COLOR, DEFAULT_GRADIENT_COLOR, UserHandle.USER_CURRENT);
+        String gradientHex = String.format("#%08x", (0xffa8e063 & color));
+        if (gradientHex.equals("#ffa8e063")) {
             mGradientColor.setSummary(R.string.default_string);
         } else {
             mGradientColor.setSummary(gradientHex);
@@ -90,7 +91,7 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
         final ContentResolver resolver = mContext.getContentResolver();
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
-            if (hex.equals("#ff0060ff")) {
+            if (hex.equals("#ff56ab2f")) {
                 mAccentColor.setSummary(R.string.default_string);
             } else {
                 mAccentColor.setSummary(hex);
@@ -103,7 +104,7 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
         final ContentResolver resolver = mContext.getContentResolver();
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
-            if (hex.equals("#ff0060ff")) {
+            if (hex.equals("#ffa8e063")) {
                 mGradientColor.setSummary(R.string.default_string);
             } else {
                 mGradientColor.setSummary(hex);
