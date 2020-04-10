@@ -78,9 +78,9 @@ public class LockScreenClockSettings extends SettingsPreferenceFragment implemen
         // Lockscreen Clock
         mLockClockSelection = (ListPreference) findPreference(LOCKSCREEN_CLOCK_SELECTION);
         boolean mClockSelection = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT) == 9
+                Settings.Secure.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT) == 10
                 || Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT) == 10;
+                Settings.Secure.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT) == 11;
         mLockClockSelection.setOnPreferenceChangeListener(this);
 
         // Lockscreen Clock Fonts
@@ -117,8 +117,8 @@ public class LockScreenClockSettings extends SettingsPreferenceFragment implemen
             mLockClockFonts.setSummary(mLockClockFonts.getEntry());
             return true;
         } else if (preference == mLockClockSelection) {
-            boolean val = Integer.valueOf((String) newValue) == 9
-                    || Integer.valueOf((String) newValue) == 10;
+            boolean val = Integer.valueOf((String) newValue) == 10
+                    || Integer.valueOf((String) newValue) == 11;
             mTextClockAlign.setEnabled(val);
             return true;
         } else if (preference == mClockFontSize) {
