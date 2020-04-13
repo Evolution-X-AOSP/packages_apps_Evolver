@@ -21,6 +21,7 @@ import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
@@ -35,6 +36,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 
+import com.android.internal.custom.app.LineageContextConstants;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
@@ -63,9 +65,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
     private static final String LOCKSCREEN_INFO = "lockscreen_info";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
+    private static final String UNLOCK_WITHOUT_BOUNCER = "unlock_without_bouncer";
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
+    private SecureSettingSwitchPreference mUnlockWithoutBouncer;
     private SwitchPreference mFingerprintVib;
     private SystemSettingListPreference mArtFilter;
     private SystemSettingMasterSwitchPreference mClockEnabled;
@@ -97,8 +101,10 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
+        mUnlockWithoutBouncer = (SecureSettingSwitchPreference) findPreference(UNLOCK_WITHOUT_BOUNCER);
         if (mFingerprintManager == null) {
             prefScreen.removePreference(mFingerprintVib);
+            prefScreen.removePreference(mUnlockWithoutBouncer);
         } else {
             mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
@@ -113,9 +119,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mBlurSeekbar = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MEDIA_BLUR);
         mBlurSeekbar.setEnabled(artFilter > 2);
 
+        PackageManager packageManager = mContext.getPackageManager();
+        boolean hasFod = packageManager.hasSystemFeature(LineageContextConstants.Features.FOD);
+
+        if (mUnlockWithoutBouncer != null && !hasFod) {
+            prefScreen.removePreference(mUnlockWithoutBouncer);
+        }
+
         mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
-        if (mFODIconPickerCategory != null
-                && !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView)) {
+        if (mFODIconPickerCategory != null && !hasFod) {
             prefScreen.removePreference(mFODIconPickerCategory);
         }
     }
