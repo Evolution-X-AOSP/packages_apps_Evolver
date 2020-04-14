@@ -36,6 +36,7 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.evolution.fod.FodUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -114,8 +115,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mBlurSeekbar.setEnabled(artFilter > 2);
 
         mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
-        if (mFODIconPickerCategory != null
-                && !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView)) {
+        if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
             prefScreen.removePreference(mFODIconPickerCategory);
         }
     }
