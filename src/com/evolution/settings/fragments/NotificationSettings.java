@@ -48,6 +48,7 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -82,6 +83,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
+    private static final String TICKER_SETTINGS = "ticker_settings";
 
     private ColorPickerPreference mEdgeLightColorPreference;
     private CustomSeekBarPreference mPulseBrightness;
@@ -90,6 +92,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private Preference mAlertSlider;
     private Preference mChargingLeds;
+    private Preference mTickerSettings;
     private SwitchPreference mForceExpanded;
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
 
@@ -99,6 +102,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.evolution_settings_notifications);
 
+        Context mContext = getActivity().getApplicationContext();
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
@@ -180,6 +184,10 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(findPreference(
                     Settings.System.FLASHLIGHT_ON_CALL_WAITING));
         }
+
+        mTickerSettings = (Preference) prefScreen.findPreference(TICKER_SETTINGS);
+        if (EvolutionUtils.hasNotch(mContext))
+            prefScreen.removePreference(mTickerSettings);
     }
 
     @Override
@@ -257,6 +265,8 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
+                    if (EvolutionUtils.hasNotch(context))
+                        keys.add(TICKER_SETTINGS);
                     boolean mAlertSliderAvailable = res.getBoolean(
                             com.android.internal.R.bool.config_hasAlertSlider);
                     if (!mAlertSliderAvailable)
