@@ -84,7 +84,7 @@ public class QSHeaderSettings extends SettingsPreferenceFragment
         mFileHeaderProvider = getResources().getString(R.string.file_header_provider);
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
 
-        mDaylightHeaderPack = (ListPreference) findPreference(DAYLIGHT_HEADER_PACK);
+        mDaylightHeaderPack = findPreference(DAYLIGHT_HEADER_PACK);
 
         List<String> entries = new ArrayList<String>();
         List<String> values = new ArrayList<String>();
@@ -97,13 +97,13 @@ public class QSHeaderSettings extends SettingsPreferenceFragment
         updateHeaderProviderSummary(headerEnabled);
         mDaylightHeaderPack.setOnPreferenceChangeListener(this);
 
-        mHeaderShadow = (CustomSeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+        mHeaderShadow = findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
         final int headerShadow = Settings.System.getInt(resolver,
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));
         mHeaderShadow.setOnPreferenceChangeListener(this);
 
-        mHeaderProvider = (ListPreference) findPreference(CUSTOM_HEADER_PROVIDER);
+        mHeaderProvider = findPreference(CUSTOM_HEADER_PROVIDER);
         mHeaderProvider.setOnPreferenceChangeListener(this);
 
         mFileHeader = findPreference(FILE_HEADER_SELECT);

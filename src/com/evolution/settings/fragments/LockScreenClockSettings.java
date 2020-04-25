@@ -76,7 +76,7 @@ public class LockScreenClockSettings extends SettingsPreferenceFragment implemen
         Resources resources = getResources();
 
         // Lockscreen Clock
-        mLockClockSelection = (ListPreference) findPreference(LOCKSCREEN_CLOCK_SELECTION);
+        mLockClockSelection = findPreference(LOCKSCREEN_CLOCK_SELECTION);
         boolean mClockSelection = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT) == 10
                 || Settings.Secure.getIntForUser(resolver,
@@ -84,25 +84,25 @@ public class LockScreenClockSettings extends SettingsPreferenceFragment implemen
         mLockClockSelection.setOnPreferenceChangeListener(this);
 
         // Lockscreen Clock Fonts
-        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
+        mLockClockFonts = findPreference(LOCK_CLOCK_FONTS);
         mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
                 getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 28)));
         mLockClockFonts.setSummary(mLockClockFonts.getEntry());
         mLockClockFonts.setOnPreferenceChangeListener(this);
 
         // Lockscreen Clock Size
-        mClockFontSize = (SystemSettingSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
+        mClockFontSize = findPreference(CLOCK_FONT_SIZE);
         mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKCLOCK_FONT_SIZE, 54));
         mClockFontSize.setOnPreferenceChangeListener(this);
 
         // Text Clock Alignment
-        mTextClockAlign = (ListPreference) findPreference(TEXT_CLOCK_ALIGNMENT);
+        mTextClockAlign = findPreference(TEXT_CLOCK_ALIGNMENT);
         mTextClockAlign.setEnabled(mClockSelection);
         mTextClockAlign.setOnPreferenceChangeListener(this);
 
         // Text Clock Padding
-        mTextClockPadding = (SystemSettingSeekBarPreference) findPreference(TEXT_CLOCK_PADDING);
+        mTextClockPadding = findPreference(TEXT_CLOCK_PADDING);
         boolean mTextClockAlignx = Settings.System.getIntForUser(resolver,
                     Settings.System.TEXT_CLOCK_ALIGNMENT, 0, UserHandle.USER_CURRENT) == 1;
         mTextClockPadding.setEnabled(!mTextClockAlignx);

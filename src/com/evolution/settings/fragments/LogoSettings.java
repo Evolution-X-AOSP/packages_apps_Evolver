@@ -55,7 +55,7 @@ public class LogoSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.evolution_settings_statusbar_logo);
 
-        mShowLogo = (ListPreference) findPreference("status_bar_logo");
+        mShowLogo = findPreference("status_bar_logo");
         mShowLogo.setOnPreferenceChangeListener(this);
         int showLogo = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_LOGO,
@@ -63,7 +63,7 @@ public class LogoSettings extends SettingsPreferenceFragment implements
         mShowLogo.setValue(String.valueOf(showLogo));
         mShowLogo.setSummary(mShowLogo.getEntry());
 
-        mLogoStyle = (ListPreference) findPreference("status_bar_logo_style");
+        mLogoStyle = findPreference("status_bar_logo_style");
         mLogoStyle.setOnPreferenceChangeListener(this);
         int logoStyle = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_LOGO_STYLE,

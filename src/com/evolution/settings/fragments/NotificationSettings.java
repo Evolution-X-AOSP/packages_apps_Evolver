@@ -113,27 +113,27 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
 
         mDefaultColor = getResources().getInteger(
                 com.android.internal.R.integer.config_ambientNotificationDefaultColor);
-        mPulseEdgeLights = (SystemSettingSwitchPreference) findPreference(PULSE_AMBIENT_LIGHT_PREF);
+        mPulseEdgeLights = findPreference(PULSE_AMBIENT_LIGHT_PREF);
         boolean mPulseNotificationEnabled = Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.DOZE_ENABLED, 0) != 0;
         mPulseEdgeLights.setEnabled(mPulseNotificationEnabled);
 
         setHasOptionsMenu(true);
 
-        mPulseLightColorPref = (ColorSelectPreference) findPreference(PULSE_COLOR_PREF);
+        mPulseLightColorPref = findPreference(PULSE_COLOR_PREF);
         mColor = Settings.System.getInt(getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_COLOR, mDefaultColor);
         mPulseLightColorPref.setColor(mColor);
         mPulseLightColorPref.setOnPreferenceChangeListener(this);
 
-        mPulseTimeout = (ListPreference) findPreference(PULSE_TIMEOUT_PREF);
+        mPulseTimeout = findPreference(PULSE_TIMEOUT_PREF);
         int value = Settings.System.getInt(getContentResolver(),
                 Settings.System.AOD_NOTIFICATION_PULSE_TIMEOUT, 0);
         mPulseTimeout.setValue(Integer.toString(value));
         mPulseTimeout.setSummary(mPulseTimeout.getEntry());
         mPulseTimeout.setOnPreferenceChangeListener(this);
 
-        mColorMode = (ListPreference) findPreference(PULSE_COLOR_MODE_PREF);
+        mColorMode = findPreference(PULSE_COLOR_MODE_PREF);
         boolean colorModeAutomatic = Settings.System.getInt(getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0) != 0;
         boolean colorModeAccent = Settings.System.getInt(getContentResolver(),
@@ -149,30 +149,30 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         mColorMode.setSummary(mColorMode.getEntry());
         mColorMode.setOnPreferenceChangeListener(this);
 
-        mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
+        mAlertSlider = prefScreen.findPreference(ALERT_SLIDER_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
                 com.android.internal.R.bool.config_hasAlertSlider);
         if (!mAlertSliderAvailable)
             prefScreen.removePreference(mAlertSlider);
 
-        mChargingLeds = (Preference) findPreference("charging_light");
+        mChargingLeds = findPreference("charging_light");
         if (mChargingLeds != null
                 && !getResources().getBoolean(
                         com.android.internal.R.bool.config_intrusiveBatteryLed)) {
             prefScreen.removePreference(mChargingLeds);
         }
 
-        mHeadsUpEnabled = (GlobalSettingMasterSwitchPreference) findPreference(HEADS_UP_NOTIFICATIONS_ENABLED);
+        mHeadsUpEnabled = findPreference(HEADS_UP_NOTIFICATIONS_ENABLED);
         mHeadsUpEnabled.setOnPreferenceChangeListener(this);
         int headsUpEnabled = Settings.Global.getInt(getContentResolver(),
                 HEADS_UP_NOTIFICATIONS_ENABLED, 1);
         mHeadsUpEnabled.setChecked(headsUpEnabled != 0);
 
-        mForceExpanded = (SwitchPreference) findPreference(FORCE_EXPANDED_NOTIFICATIONS);
+        mForceExpanded = findPreference(FORCE_EXPANDED_NOTIFICATIONS);
         mForceExpanded.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0) == 1));
 
-        mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
+        mFlashlightOnCall = findPreference(FLASHLIGHT_ON_CALL);
         Preference FlashOnCall = findPreference("flashlight_on_call");
         int flashlightValue = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.FLASHLIGHT_ON_CALL, 0, UserHandle.USER_CURRENT);

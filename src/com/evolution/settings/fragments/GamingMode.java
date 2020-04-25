@@ -96,7 +96,7 @@ public class GamingMode extends SettingsPreferenceFragment
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mHardwareKeysDisable = (SwitchPreference) findPreference(GAMING_MODE_HW_KEYS);
+        mHardwareKeysDisable = findPreference(GAMING_MODE_HW_KEYS);
 
         if (!haveHWkeys()) {
             prefScreen.removePreference(mHardwareKeysDisable);
@@ -105,7 +105,7 @@ public class GamingMode extends SettingsPreferenceFragment
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
 
-        mGamingPrefList = (PreferenceGroup) findPreference("gamingmode_applications");
+        mGamingPrefList = findPreference("gamingmode_applications");
         mGamingPrefList.setOrderingAsAdded(false);
 
         mGamingPackages = new HashMap<String, Package>();

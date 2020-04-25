@@ -89,10 +89,10 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
 
-        mStoplistPrefList = (PreferenceGroup) findPreference("stoplist_applications");
+        mStoplistPrefList = findPreference("stoplist_applications");
         mStoplistPrefList.setOrderingAsAdded(false);
 
-        mBlacklistPrefList = (PreferenceGroup) findPreference("blacklist_applications");
+        mBlacklistPrefList = findPreference("blacklist_applications");
         mBlacklistPrefList.setOrderingAsAdded(false);
 
         mStoplistPackages = new HashMap<String, Package>();
@@ -113,7 +113,7 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
 
         int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
                     "com.android.systemui:integer/heads_up_notification_decay", null, null));
-        mHeadsUpTimeOut = (ListPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
+        mHeadsUpTimeOut = findPreference(PREF_HEADS_UP_TIME_OUT);
         mHeadsUpTimeOut.setOnPreferenceChangeListener(this);
         int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
                 Settings.System.HEADS_UP_TIMEOUT, defaultTimeOut);
@@ -122,7 +122,7 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
 
         int defaultSnooze = systemUiResources.getInteger(systemUiResources.getIdentifier(
                     "com.android.systemui:integer/heads_up_default_snooze_length_ms", null, null));
-        mHeadsUpSnoozeTime = (ListPreference) findPreference(PREF_HEADS_UP_SNOOZE_TIME);
+        mHeadsUpSnoozeTime = findPreference(PREF_HEADS_UP_SNOOZE_TIME);
         mHeadsUpSnoozeTime.setOnPreferenceChangeListener(this);
         int headsUpSnooze = Settings.System.getInt(getContentResolver(),
                 Settings.System.HEADS_UP_NOTIFICATION_SNOOZE, defaultSnooze);

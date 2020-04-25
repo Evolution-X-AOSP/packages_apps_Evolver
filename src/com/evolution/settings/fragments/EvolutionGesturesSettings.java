@@ -60,8 +60,7 @@ public class EvolutionGesturesSettings extends SettingsPreferenceFragment
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
 
-        mTorchLongPressPowerTimeout =
-                    (ListPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+        mTorchLongPressPowerTimeout = findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
 
         mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
         int TorchTimeout = Settings.System.getInt(getContentResolver(),

@@ -102,13 +102,13 @@ public class ClockSettings extends SettingsPreferenceFragment
         String hexColor;
 
 	// clock settings
-        mStatusBarClockShow = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK);
-        mStatusBarSecondsShow = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK_SECONDS);
-        mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
-        mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
-        mClockDateDisplay = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_DISPLAY);
-        mClockDateStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_STYLE);
-        mClockDatePosition = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_POSITION);
+        mStatusBarClockShow = findPreference(STATUS_BAR_CLOCK);
+        mStatusBarSecondsShow = findPreference(STATUS_BAR_CLOCK_SECONDS);
+        mStatusBarClock = findPreference(STATUS_BAR_CLOCK_STYLE);
+        mStatusBarAmPm = findPreference(STATUS_BAR_AM_PM);
+        mClockDateDisplay = findPreference(STATUS_BAR_CLOCK_DATE_DISPLAY);
+        mClockDateStyle = findPreference(STATUS_BAR_CLOCK_DATE_STYLE);
+        mClockDatePosition = findPreference(STATUS_BAR_CLOCK_DATE_POSITION);
 
         mStatusBarClockShow.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
@@ -124,7 +124,7 @@ public class ClockSettings extends SettingsPreferenceFragment
         mStatusBarClock.setSummary(mStatusBarClock.getEntry());
         mStatusBarClock.setOnPreferenceChangeListener(this);
 
-        mClockColor = (ColorPickerPreference) findPreference(STATUS_BAR_CLOCK_COLOR);
+        mClockColor = findPreference(STATUS_BAR_CLOCK_COLOR);
             mClockColor.setOnPreferenceChangeListener(this);
             intColor = Settings.System.getInt(resolver,
                     Settings.System.STATUS_BAR_CLOCK_COLOR, DEFAULT_STATUS_CLOCK_COLOR);
@@ -132,13 +132,13 @@ public class ClockSettings extends SettingsPreferenceFragment
             mClockColor.setSummary(hexColor);
             mClockColor.setNewPreviewColor(intColor);
 
-        mClockSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
+        mClockSize = findPreference(STATUS_BAR_CLOCK_SIZE);
         int clockSize = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK_SIZE, 14);
         mClockSize.setValue(clockSize / 1);
         mClockSize.setOnPreferenceChangeListener(this);
 
-        mClockFontStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_FONT_STYLE);
+        mClockFontStyle = findPreference(STATUS_BAR_CLOCK_FONT_STYLE);
         int showClockFont = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK_FONT_STYLE, 28);
         mClockFontStyle.setValue(String.valueOf(showClockFont));
@@ -168,7 +168,7 @@ public class ClockSettings extends SettingsPreferenceFragment
         mClockDateStyle.setSummary(mClockDateStyle.getEntry());
         mClockDateStyle.setOnPreferenceChangeListener(this);
 
-        mClockDateFormat = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_FORMAT);
+        mClockDateFormat = findPreference(STATUS_BAR_CLOCK_DATE_FORMAT);
         mClockDateFormat.setSummary(mClockDateFormat.getEntry());
         mClockDateFormat.setOnPreferenceChangeListener(this);
         String value = Settings.System.getString(getActivity().getContentResolver(),

@@ -139,7 +139,7 @@ public class NavigationSettings extends ActionFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         // Force Navigation bar related options
-        mDisableNavigationKeys = (SwitchPreference) findPreference(DISABLE_NAV_KEYS);
+        mDisableNavigationKeys = findPreference(DISABLE_NAV_KEYS);
 
         // Only visible on devices that does not have a navigation bar already
         if (ActionUtils.isHWKeysSupported(getActivity())) {
@@ -152,15 +152,14 @@ public class NavigationSettings extends ActionFragment implements
             prefScreen.removePreference(mDisableNavigationKeys);
         }
 
-        mAnbiEnable = (SystemSettingSwitchPreference) findPreference(ANBI_ENABLED_OPTION);
+        mAnbiEnable = findPreference(ANBI_ENABLED_OPTION);
         mAnbiEnable.setOnPreferenceChangeListener(this);
 
         final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
-        final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
-                .findPreference(CATEGORY_HWKEY);
+        final PreferenceCategory hwkeyCat = prefScreen.findPreference(CATEGORY_HWKEY);
         int keysDisabled = 0;
         if (!needsNavbar) {
-            mHwKeyDisable = (SwitchPreference) findPreference(HWKEY_DISABLE);
+            mHwKeyDisable = findPreference(HWKEY_DISABLE);
             keysDisabled = Settings.Secure.getIntForUser(getContentResolver(),
                     Settings.Secure.HARDWARE_KEYS_DISABLE, 0,
                     UserHandle.USER_CURRENT);
@@ -170,14 +169,11 @@ public class NavigationSettings extends ActionFragment implements
             final boolean variableBrightness = getResources().getBoolean(
                     com.android.internal.R.bool.config_deviceHasVariableButtonBrightness);
 
-            mBacklightTimeout =
-                    (ListPreference) findPreference(KEY_BACKLIGHT_TIMEOUT);
+            mBacklightTimeout = findPreference(KEY_BACKLIGHT_TIMEOUT);
 
-            mButtonBrightness =
-                    (CustomSeekBarPreference) findPreference(KEY_BUTTON_BRIGHTNESS);
+            mButtonBrightness = findPreference(KEY_BUTTON_BRIGHTNESS);
 
-            mButtonBrightness_sw =
-                    (SwitchPreference) findPreference(KEY_BUTTON_BRIGHTNESS_SW);
+            mButtonBrightness_sw = findPreference(KEY_BUTTON_BRIGHTNESS_SW);
 
                 if (mBacklightTimeout != null) {
                     mBacklightTimeout.setOnPreferenceChangeListener(this);
@@ -218,7 +214,7 @@ public class NavigationSettings extends ActionFragment implements
         }
 
         // Navigation bar related options
-        mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAV_BAR);
+        mEnableNavigationBar = findPreference(ENABLE_NAV_BAR);
 
         // Only visible on devices that have a navigation bar already
         if (ActionUtils.hasNavbarByDefault(getActivity())) {
@@ -247,18 +243,12 @@ public class NavigationSettings extends ActionFragment implements
         // load categories and init/remove preferences based on device
         // configuration
         boolean hasAnyBindableKey = false;
-        final PreferenceCategory homeCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_HOME);
-        final PreferenceCategory backCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
-        final PreferenceCategory menuCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
-        final PreferenceCategory assistCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
-        final PreferenceCategory appSwitchCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
-        final PreferenceCategory cameraCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_CAMERA);
+        final PreferenceCategory homeCategory = prefScreen.findPreference(CATEGORY_HOME);
+        final PreferenceCategory backCategory = prefScreen.findPreference(CATEGORY_BACK);
+        final PreferenceCategory menuCategory = prefScreen.findPreference(CATEGORY_MENU);
+        final PreferenceCategory assistCategory = prefScreen.findPreference(CATEGORY_ASSIST);
+        final PreferenceCategory appSwitchCategory = prefScreen.findPreference(CATEGORY_APPSWITCH);
+        final PreferenceCategory cameraCategory = prefScreen.findPreference(CATEGORY_CAMERA);
 
         Action defaultHomeLongPressAction = Action.fromIntSafe(res.getInteger(
                 com.android.internal.R.integer.config_longPressOnHomeBehaviorHwKeys));
@@ -388,10 +378,9 @@ public class NavigationSettings extends ActionFragment implements
         }
 
         if (hasCameraKey) {
-            mCameraWakeScreen = (SwitchPreference) findPreference(Settings.System.CAMERA_WAKE_SCREEN);
-            mCameraSleepOnRelease =
-                    (SwitchPreference) findPreference(Settings.System.CAMERA_SLEEP_ON_RELEASE);
-            mCameraLaunch = (SwitchPreference) findPreference(Settings.System.CAMERA_LAUNCH);
+            mCameraWakeScreen = findPreference(Settings.System.CAMERA_WAKE_SCREEN);
+            mCameraSleepOnRelease = findPreference(Settings.System.CAMERA_SLEEP_ON_RELEASE);
+            mCameraLaunch = findPreference(Settings.System.CAMERA_LAUNCH);
 
             if (!showCameraWake) {
                 prefScreen.removePreference(mCameraWakeScreen);
@@ -475,7 +464,7 @@ public class NavigationSettings extends ActionFragment implements
     }
 
     private ListPreference initList(String key, int value) {
-        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        ListPreference list = getPreferenceScreen().findPreference(key);
         if (list == null) return null;
         list.setValue(Integer.toString(value));
         list.setSummary(list.getEntry());

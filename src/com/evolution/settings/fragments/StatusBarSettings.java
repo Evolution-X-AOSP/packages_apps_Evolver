@@ -84,14 +84,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mShowLteFourGee = (SwitchPreference) findPreference(SHOW_LTE_FOURGEE);
+        mShowLteFourGee = findPreference(SHOW_LTE_FOURGEE);
         mShowLteFourGee.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.SHOW_LTE_FOURGEE, 0) == 1));
         mShowLteFourGee.setOnPreferenceChangeListener(this);
 
-        mBatteryPercent = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
-        mBatteryCharging = (SwitchPreference) findPreference(STATUS_BAR_BATTERY_TEXT_CHARGING);
-        mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+        mBatteryPercent = findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+        mBatteryCharging = findPreference(STATUS_BAR_BATTERY_TEXT_CHARGING);
+        mBatteryStyle = findPreference(STATUS_BAR_BATTERY_STYLE);
         int batterystyle = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_Q);
         mBatteryStyle.setOnPreferenceChangeListener(this);

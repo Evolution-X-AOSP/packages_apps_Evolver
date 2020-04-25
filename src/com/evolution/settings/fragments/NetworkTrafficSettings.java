@@ -86,34 +86,34 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment implement
 
         int value = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
-        mThreshold = (SystemSettingSeekBarPreference) findPreference("network_traffic_autohide_threshold");
+        mThreshold = findPreference("network_traffic_autohide_threshold");
         mThreshold.setValue(value);
         mThreshold.setOnPreferenceChangeListener(this);
 
         int nettype = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_TYPE, 0, UserHandle.USER_CURRENT);
-        mNetTrafficType = (ListPreference) findPreference("network_traffic_type");
+        mNetTrafficType = findPreference("network_traffic_type");
         mNetTrafficType.setValue(String.valueOf(nettype));
         mNetTrafficType.setSummary(mNetTrafficType.getEntry());
         mNetTrafficType.setOnPreferenceChangeListener(this);
 
         int netlayout = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_LAYOUT, 0, UserHandle.USER_CURRENT);
-        mNetTrafficLayout = (ListPreference) findPreference("network_traffic_layout");
+        mNetTrafficLayout = findPreference("network_traffic_layout");
         mNetTrafficLayout.setValue(String.valueOf(netlayout));
         mNetTrafficLayout.setSummary(mNetTrafficLayout.getEntry());
         mNetTrafficLayout.setOnPreferenceChangeListener(this);
 
-        mNetTrafficLocation = (ListPreference) findPreference(NETWORK_TRAFFIC_LOCATION);
+        mNetTrafficLocation = findPreference(NETWORK_TRAFFIC_LOCATION);
         int location = Settings.System.getInt(resolver,
                 Settings.System.NETWORK_TRAFFIC_LOCATION, 0);
         mNetTrafficLocation.setValue(String.valueOf(location));
         mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
         mNetTrafficLocation.setOnPreferenceChangeListener(this);
 
-        mHideArrows = (SystemSettingSwitchPreference) findPreference(NETWORK_TRAFFIC_HIDEARROW);
+        mHideArrows = findPreference(NETWORK_TRAFFIC_HIDEARROW);
 
-        mNetTrafficRefreshInterval = (SystemSettingSeekBarPreference) findPreference(NETWORK_TRAFFIC_REFRESH_INTERVAL);
+        mNetTrafficRefreshInterval = findPreference(NETWORK_TRAFFIC_REFRESH_INTERVAL);
         int interval = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_REFRESH_INTERVAL, 2, UserHandle.USER_CURRENT);
         mNetTrafficRefreshInterval.setValue(interval);

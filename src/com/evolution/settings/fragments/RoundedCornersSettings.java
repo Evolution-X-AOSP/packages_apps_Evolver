@@ -82,7 +82,7 @@ public class RoundedCornersSettings extends SettingsPreferenceFragment implement
         }
 
         // Rounded Corner Radius
-        mCornerRadius = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
+        mCornerRadius = findPreference(SYSUI_ROUNDED_SIZE);
         int resourceIdRadius = (int) ctx.getResources().getDimension(com.android.internal.R.dimen.rounded_corner_radius);
         int cornerRadius = Settings.Secure.getIntForUser(ctx.getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
                 ((int) (resourceIdRadius / density)), UserHandle.USER_CURRENT);
@@ -90,7 +90,7 @@ public class RoundedCornersSettings extends SettingsPreferenceFragment implement
         mCornerRadius.setOnPreferenceChangeListener(this);
 
         // Rounded Content Padding
-        mContentPadding = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
+        mContentPadding = findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
         int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null,
                 null);
         int contentPadding = Settings.Secure.getIntForUser(ctx.getContentResolver(),
@@ -100,7 +100,7 @@ public class RoundedCornersSettings extends SettingsPreferenceFragment implement
         mContentPadding.setOnPreferenceChangeListener(this);
 
         // Status Bar Content Padding
-        mSBPadding = (CustomSeekBarPreference) findPreference(SYSUI_STATUS_BAR_PADDING);
+        mSBPadding = findPreference(SYSUI_STATUS_BAR_PADDING);
         int resourceIdSBPadding = res.getIdentifier("com.android.systemui:dimen/status_bar_extra_padding", null,
                 null);
         int sbPadding = Settings.Secure.getIntForUser(ctx.getContentResolver(),
@@ -110,7 +110,7 @@ public class RoundedCornersSettings extends SettingsPreferenceFragment implement
         mSBPadding.setOnPreferenceChangeListener(this);
 
         // Rounded use Framework Values
-        mRoundedFwvals = (SwitchPreference) findPreference(SYSUI_ROUNDED_FWVALS);
+        mRoundedFwvals = findPreference(SYSUI_ROUNDED_FWVALS);
         mRoundedFwvals.setOnPreferenceChangeListener(this);
     }
 

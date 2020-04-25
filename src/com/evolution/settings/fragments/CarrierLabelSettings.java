@@ -97,10 +97,10 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
         String hexColor;
 
         // custom carrier label
-        mCustomCarrierLabel = (PreferenceScreen) findPreference(CUSTOM_CARRIER_LABEL);
+        mCustomCarrierLabel = findPreference(CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
 
-	mShowCarrierLabel = (SystemSettingListPreference) findPreference(KEY_CARRIER_LABEL);
+	mShowCarrierLabel = findPreference(KEY_CARRIER_LABEL);
         int showCarrierLabel = Settings.System.getInt(resolver,
         Settings.System.STATUS_BAR_SHOW_CARRIER, 1);
         CharSequence[] NonNotchEntries = { getResources().getString(R.string.show_carrier_disabled),
@@ -117,7 +117,7 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
         mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntry());
         mShowCarrierLabel.setOnPreferenceChangeListener(this);
 
-        mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
+        mCarrierColorPicker = findPreference(STATUS_BAR_CARRIER_COLOR);
             mCarrierColorPicker.setOnPreferenceChangeListener(this);
             intColor = Settings.System.getInt(resolver,
                     Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
@@ -125,13 +125,13 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
             mCarrierColorPicker.setSummary(hexColor);
             mCarrierColorPicker.setNewPreviewColor(intColor);
 
-        mStatusBarCarrierSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
+        mStatusBarCarrierSize = findPreference(STATUS_BAR_CARRIER_FONT_SIZE);
         int StatusBarCarrierSize = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CARRIER_FONT_SIZE, 11);
         mStatusBarCarrierSize.setValue(StatusBarCarrierSize / 1);
         mStatusBarCarrierSize.setOnPreferenceChangeListener(this);
 
-        mCarrierFontStyle = (ListPreference) findPreference(CARRIER_FONT_STYLE);
+        mCarrierFontStyle = findPreference(CARRIER_FONT_STYLE);
         int showCarrierFont = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CARRIER_FONT_STYLE, 28);
         mCarrierFontStyle.setValue(String.valueOf(showCarrierFont));

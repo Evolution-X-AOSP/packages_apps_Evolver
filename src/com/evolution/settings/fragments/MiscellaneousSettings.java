@@ -82,17 +82,14 @@ public class MiscellaneousSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.evolution_settings_miscellaneous);
 
-        final PreferenceCategory aspectRatioCategory =
-                (PreferenceCategory) getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
+        final PreferenceCategory aspectRatioCategory = getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
         final boolean supportMaxAspectRatio =
                 getResources().getBoolean(com.android.internal.R.bool.config_haveHigherAspectRatioScreen);
         if (!supportMaxAspectRatio) {
                 getPreferenceScreen().removePreference(aspectRatioCategory);
         } else {
-        mAspectRatioAppsSelect =
-                (AppMultiSelectListPreference) findPreference(KEY_ASPECT_RATIO_APPS_LIST);
-        mAspectRatioApps =
-                (ScrollAppsViewPreference) findPreference(KEY_ASPECT_RATIO_APPS_LIST_SCROLLER);
+        mAspectRatioAppsSelect = findPreference(KEY_ASPECT_RATIO_APPS_LIST);
+        mAspectRatioApps = findPreference(KEY_ASPECT_RATIO_APPS_LIST_SCROLLER);
         final String valuesString = Settings.System.getString(getContentResolver(),
                 Settings.System.ASPECT_RATIO_APPS_LIST);
         List<String> valuesList = new ArrayList<String>();
@@ -107,7 +104,7 @@ public class MiscellaneousSettings extends SettingsPreferenceFragment implements
         mAspectRatioAppsSelect.setOnPreferenceChangeListener(this);
         }
 
-        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_ENABLED);
+        mGamingMode = findPreference(GAMING_MODE_ENABLED);
         mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.GAMING_MODE_ENABLED, 0) == 1));
         mGamingMode.setOnPreferenceChangeListener(this);
@@ -120,13 +117,13 @@ public class MiscellaneousSettings extends SettingsPreferenceFragment implements
             defaultPulse = defaultDoze;
         }
 
-        mPulseBrightness = (CustomSeekBarPreference) findPreference(KEY_PULSE_BRIGHTNESS);
+        mPulseBrightness = findPreference(KEY_PULSE_BRIGHTNESS);
         int value = Settings.System.getInt(getContentResolver(),
                 Settings.System.PULSE_BRIGHTNESS, defaultPulse);
         mPulseBrightness.setValue(value);
         mPulseBrightness.setOnPreferenceChangeListener(this);
 
-        mDozeBrightness = (CustomSeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
+        mDozeBrightness = findPreference(KEY_DOZE_BRIGHTNESS);
         value = Settings.System.getInt(getContentResolver(),
                 Settings.System.DOZE_BRIGHTNESS, defaultDoze);
         mDozeBrightness.setValue(value);

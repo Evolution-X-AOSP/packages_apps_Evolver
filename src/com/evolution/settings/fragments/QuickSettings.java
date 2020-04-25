@@ -96,21 +96,21 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
+        mQuickPulldown = findPreference(QUICK_PULLDOWN);
         mQuickPulldown.setOnPreferenceChangeListener(this);
         int quickPulldownValue = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
 
-        mSmartPulldown = (ListPreference) findPreference(PREF_SMART_PULLDOWN);
+        mSmartPulldown = findPreference(PREF_SMART_PULLDOWN);
         mSmartPulldown.setOnPreferenceChangeListener(this);
         int smartPulldown = Settings.System.getInt(resolver,
                 Settings.System.QS_SMART_PULLDOWN, 0);
         mSmartPulldown.setValue(String.valueOf(smartPulldown));
         updateSmartPulldownSummary(smartPulldown);
 
-        mFooterString = (SystemSettingEditTextPreference) findPreference(FOOTER_TEXT_STRING);
+        mFooterString = findPreference(FOOTER_TEXT_STRING);
         mFooterString.setOnPreferenceChangeListener(this);
         String footerString = Settings.System.getString(getContentResolver(),
                 FOOTER_TEXT_STRING);
@@ -122,38 +122,38 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     Settings.System.FOOTER_TEXT_STRING, "#KeepEvolving");
         }
 
-        mQsColumnsPortrait = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_PORTRAIT);
+        mQsColumnsPortrait = findPreference(PREF_COLUMNS_PORTRAIT);
         int columnsPortrait = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_COLUMNS_PORTRAIT, 3, UserHandle.USER_CURRENT);
         mQsColumnsPortrait.setValue(columnsPortrait);
         mQsColumnsPortrait.setOnPreferenceChangeListener(this);
 
-        mQsColumnsLandscape = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_LANDSCAPE);
+        mQsColumnsLandscape = findPreference(PREF_COLUMNS_LANDSCAPE);
         int columnsLandscape = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
         mQsColumnsLandscape.setValue(columnsLandscape);
         mQsColumnsLandscape.setOnPreferenceChangeListener(this);
 
-        mQsColumnsQuickbar = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_QUICKBAR);
+        mQsColumnsQuickbar = findPreference(PREF_COLUMNS_QUICKBAR);
         int columnsQuickbar = Settings.System.getInt(resolver,
                 Settings.System.QS_QUICKBAR_COLUMNS, 6);
         mQsColumnsQuickbar.setValue(columnsQuickbar);
         mQsColumnsQuickbar.setOnPreferenceChangeListener(this);
 
-        mQsRowsPortrait = (CustomSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
+        mQsRowsPortrait = findPreference(PREF_ROWS_PORTRAIT);
         int rowsPortrait = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_ROWS_PORTRAIT, 3, UserHandle.USER_CURRENT);
         mQsRowsPortrait.setValue(rowsPortrait);
         mQsRowsPortrait.setOnPreferenceChangeListener(this);
 
-        mQsRowsLandscape = (CustomSeekBarPreference) findPreference(PREF_ROWS_LANDSCAPE);
+        mQsRowsLandscape = findPreference(PREF_ROWS_LANDSCAPE);
         int rowsLandscape = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
         mQsRowsLandscape.setValue(rowsLandscape);
         mQsRowsLandscape.setOnPreferenceChangeListener(this);
 
-        mQsBatteryMode = (SystemSettingListPreference) findPreference(QS_BATTERY_MODE);
-        mHideBattery = (SystemSettingSwitchPreference) findPreference(QS_HIDE_BATTERY);
+        mQsBatteryMode = findPreference(QS_BATTERY_MODE);
+        mHideBattery = findPreference(QS_HIDE_BATTERY);
         mHideBattery.setOnPreferenceChangeListener(this);
     }
 

@@ -112,21 +112,21 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
+        mScreenOffAnimation = findPreference(SCREEN_OFF_ANIMATION);
         int screenOffStyle = Settings.System.getInt(resolver,
                 Settings.System.SCREEN_OFF_ANIMATION, 0);
         mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
 
-        mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
+        mListViewAnimation = findPreference(KEY_LISTVIEW_ANIMATION);
         int listviewanimation = Settings.Global.getInt(resolver,
                 Settings.Global.LISTVIEW_ANIMATION, 0);
         mListViewAnimation.setValue(String.valueOf(listviewanimation));
         mListViewAnimation.setSummary(mListViewAnimation.getEntry());
         mListViewAnimation.setOnPreferenceChangeListener(this);
 
-        mListViewInterpolator = (ListPreference) findPreference(KEY_LISTVIEW_INTERPOLATOR);
+        mListViewInterpolator = findPreference(KEY_LISTVIEW_INTERPOLATOR);
         int listviewinterpolator = Settings.Global.getInt(resolver,
                 Settings.Global.LISTVIEW_INTERPOLATOR, 0);
         mListViewInterpolator.setValue(String.valueOf(listviewinterpolator));
@@ -135,7 +135,7 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         mListViewInterpolator.setOnPreferenceChangeListener(this);
 
         // QS animation
-        mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
+        mTileAnimationStyle = findPreference(PREF_TILE_ANIM_STYLE);
         int tileAnimationStyle = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.ANIM_TILE_STYLE, 0, UserHandle.USER_CURRENT);
         mTileAnimationStyle.setValue(String.valueOf(tileAnimationStyle));
@@ -143,27 +143,27 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         updateAnimTileStyle(tileAnimationStyle);
 
         mTileAnimationStyle.setOnPreferenceChangeListener(this);
-        mTileAnimationDuration = (ListPreference) findPreference(PREF_TILE_ANIM_DURATION);
+        mTileAnimationDuration = findPreference(PREF_TILE_ANIM_DURATION);
         int tileAnimationDuration = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
         mTileAnimationDuration.setValue(String.valueOf(tileAnimationDuration));
         updateTileAnimationDurationSummary(tileAnimationDuration);
         mTileAnimationDuration.setOnPreferenceChangeListener(this);
 
-        mTileAnimationInterpolator = (ListPreference) findPreference(PREF_TILE_ANIM_INTERPOLATOR);
+        mTileAnimationInterpolator = findPreference(PREF_TILE_ANIM_INTERPOLATOR);
         int tileAnimationInterpolator = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
         mTileAnimationInterpolator.setValue(String.valueOf(tileAnimationInterpolator));
         updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
         mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
 
-        mAnimDuration = (CustomSeekBarPreference) findPreference(ANIMATION_DURATION);
+        mAnimDuration = findPreference(ANIMATION_DURATION);
         int animdef = Settings.Global.getInt(resolver,
                 Settings.Global.ANIMATION_CONTROLS_DURATION, 0);
         mAnimDuration.setValue(animdef);
         mAnimDuration.setOnPreferenceChangeListener(this);
 
-        mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
+        mScrollingCachePref = findPreference(SCROLLINGCACHE_PREF);
         mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
                 SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
         mScrollingCachePref.setOnPreferenceChangeListener(this);
@@ -177,67 +177,67 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
             mAnimationsNum[i] = String.valueOf(mAnimations[i]);
         }
 
-        mActivityOpenPref = (ListPreference) findPreference(ACTIVITY_OPEN);
+        mActivityOpenPref = findPreference(ACTIVITY_OPEN);
         mActivityOpenPref.setSummary(getProperSummary(mActivityOpenPref));
         mActivityOpenPref.setEntries(mAnimationsStrings);
         mActivityOpenPref.setEntryValues(mAnimationsNum);
         mActivityOpenPref.setOnPreferenceChangeListener(this);
 
-        mActivityClosePref = (ListPreference) findPreference(ACTIVITY_CLOSE);
+        mActivityClosePref = findPreference(ACTIVITY_CLOSE);
         mActivityClosePref.setSummary(getProperSummary(mActivityClosePref));
         mActivityClosePref.setEntries(mAnimationsStrings);
         mActivityClosePref.setEntryValues(mAnimationsNum);
         mActivityClosePref.setOnPreferenceChangeListener(this);
 
-        mTaskOpenPref = (ListPreference) findPreference(TASK_OPEN);
+        mTaskOpenPref = findPreference(TASK_OPEN);
         mTaskOpenPref.setSummary(getProperSummary(mTaskOpenPref));
         mTaskOpenPref.setEntries(mAnimationsStrings);
         mTaskOpenPref.setEntryValues(mAnimationsNum);
         mTaskOpenPref.setOnPreferenceChangeListener(this);
 
-        mTaskOpenBehind = (ListPreference) findPreference(TASK_OPEN_BEHIND);
+        mTaskOpenBehind = findPreference(TASK_OPEN_BEHIND);
         mTaskOpenBehind.setSummary(getProperSummary(mTaskOpenBehind));
         mTaskOpenBehind.setEntries(mAnimationsStrings);
         mTaskOpenBehind.setEntryValues(mAnimationsNum);
         mTaskOpenBehind.setOnPreferenceChangeListener(this);
 
-        mTaskClosePref = (ListPreference) findPreference(TASK_CLOSE);
+        mTaskClosePref = findPreference(TASK_CLOSE);
         mTaskClosePref.setSummary(getProperSummary(mTaskClosePref));
         mTaskClosePref.setEntries(mAnimationsStrings);
         mTaskClosePref.setEntryValues(mAnimationsNum);
         mTaskClosePref.setOnPreferenceChangeListener(this);
 
-        mTaskMoveToFrontPref = (ListPreference) findPreference(TASK_MOVE_TO_FRONT);
+        mTaskMoveToFrontPref = findPreference(TASK_MOVE_TO_FRONT);
         mTaskMoveToFrontPref.setSummary(getProperSummary(mTaskMoveToFrontPref));
         mTaskMoveToFrontPref.setEntries(mAnimationsStrings);
         mTaskMoveToFrontPref.setEntryValues(mAnimationsNum);
         mTaskMoveToFrontPref.setOnPreferenceChangeListener(this);
 
-        mTaskMoveToBackPref = (ListPreference) findPreference(TASK_MOVE_TO_BACK);
+        mTaskMoveToBackPref = findPreference(TASK_MOVE_TO_BACK);
         mTaskMoveToBackPref.setSummary(getProperSummary(mTaskMoveToBackPref));
         mTaskMoveToBackPref.setEntries(mAnimationsStrings);
         mTaskMoveToBackPref.setEntryValues(mAnimationsNum);
         mTaskMoveToBackPref.setOnPreferenceChangeListener(this);
 
-        mWallpaperOpen = (ListPreference) findPreference(WALLPAPER_OPEN);
+        mWallpaperOpen = findPreference(WALLPAPER_OPEN);
         mWallpaperOpen.setSummary(getProperSummary(mWallpaperOpen));
         mWallpaperOpen.setEntries(mAnimationsStrings);
         mWallpaperOpen.setEntryValues(mAnimationsNum);
         mWallpaperOpen.setOnPreferenceChangeListener(this);
 
-        mWallpaperClose = (ListPreference) findPreference(WALLPAPER_CLOSE);
+        mWallpaperClose = findPreference(WALLPAPER_CLOSE);
         mWallpaperClose.setSummary(getProperSummary(mWallpaperClose));
         mWallpaperClose.setEntries(mAnimationsStrings);
         mWallpaperClose.setEntryValues(mAnimationsNum);
         mWallpaperClose.setOnPreferenceChangeListener(this);
 
-        mWallpaperIntraOpen = (ListPreference) findPreference(WALLPAPER_INTRA_OPEN);
+        mWallpaperIntraOpen = findPreference(WALLPAPER_INTRA_OPEN);
         mWallpaperIntraOpen.setSummary(getProperSummary(mWallpaperIntraOpen));
         mWallpaperIntraOpen.setEntries(mAnimationsStrings);
         mWallpaperIntraOpen.setEntryValues(mAnimationsNum);
         mWallpaperIntraOpen.setOnPreferenceChangeListener(this);
 
-        mWallpaperIntraClose = (ListPreference) findPreference(WALLPAPER_INTRA_CLOSE);
+        mWallpaperIntraClose = findPreference(WALLPAPER_INTRA_CLOSE);
         mWallpaperIntraClose.setSummary(getProperSummary(mWallpaperIntraClose));
         mWallpaperIntraClose.setEntries(mAnimationsStrings);
         mWallpaperIntraClose.setEntryValues(mAnimationsNum);

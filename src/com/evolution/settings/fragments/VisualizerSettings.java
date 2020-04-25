@@ -83,7 +83,7 @@ public class VisualizerSettings extends SettingsPreferenceFragment implements
         boolean mAutoColorEnabled = Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_VISUALIZER_AUTOCOLOR, 1) != 0;
 
-        mAutoColor = (SecureSettingSwitchPreference) findPreference(KEY_AUTOCOLOR);
+        mAutoColor = findPreference(KEY_AUTOCOLOR);
         mAutoColor.setOnPreferenceChangeListener(this);
         mAutoColor.setChecked(mAutoColorEnabled);
 
@@ -95,25 +95,25 @@ public class VisualizerSettings extends SettingsPreferenceFragment implements
                     R.string.lockscreen_autocolor_summary));
         }
 
-        mLavaLamp = (SecureSettingSwitchPreference) findPreference(KEY_LAVALAMP);
+        mLavaLamp = findPreference(KEY_LAVALAMP);
         mLavaLamp.setOnPreferenceChangeListener(this);
 
-        mSolidUnits = (SecureSettingSeekBarPreference) findPreference(KEY_SOLID_UNITS);
+        mSolidUnits = findPreference(KEY_SOLID_UNITS);
         mSolidUnits.setOnPreferenceChangeListener(this);
         mSolidUnits.setValue(Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_SOLID_UNITS_COUNT, 32));
 
-        mFudgeFactor = (SecureSettingSeekBarPreference) findPreference(KEY_FUDGE_FACTOR);
+        mFudgeFactor = findPreference(KEY_FUDGE_FACTOR);
         mFudgeFactor.setOnPreferenceChangeListener(this);
         mFudgeFactor.setValue(Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_SOLID_FUDGE_FACTOR, 16));
 
-        mOpacity = (SecureSettingSeekBarPreference) findPreference(KEY_OPACITY);
+        mOpacity = findPreference(KEY_OPACITY);
         mOpacity.setOnPreferenceChangeListener(this);
         mOpacity.setValue(Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_SOLID_UNITS_OPACITY, 140));
 
-        mColor = (ColorPickerPreference) findPreference(KEY_COLOR);
+        mColor = findPreference(KEY_COLOR);
         mColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.LOCKSCREEN_VISUALIZER_COLOR, DEFAULT_COLOR);
@@ -121,7 +121,7 @@ public class VisualizerSettings extends SettingsPreferenceFragment implements
         mColor.setSummary(hexColor);
         mColor.setNewPreviewColor(intColor);
 
-        mVisualizerEnabled = (SecureSettingSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
+        mVisualizerEnabled = findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
         mVisualizerEnabled.setOnPreferenceChangeListener(this);
         int visualizerEnabled = Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 0);

@@ -76,7 +76,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
+        mPowermenuTorch = findPreference(KEY_POWERMENU_TORCH);
         mPowermenuTorch.setOnPreferenceChangeListener(this);
         if (!EvolutionUtils.deviceHasFlashlight(getActivity())) {
             prefScreen.removePreference(mPowermenuTorch);
@@ -86,27 +86,27 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
                 Settings.System.POWERMENU_TORCH, 0) == 1));
         }
 
-        mPowerMenuLockscreen = (SwitchPreference) findPreference(KEY_POWERMENU_LOCKSCREEN);
+        mPowerMenuLockscreen = findPreference(KEY_POWERMENU_LOCKSCREEN);
         mPowerMenuLockscreen.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWERMENU_LOCKSCREEN, 1) == 1));
         mPowerMenuLockscreen.setOnPreferenceChangeListener(this);
 
-        mPowerMenuReboot = (SwitchPreference) findPreference(KEY_POWERMENU_LS_REBOOT);
+        mPowerMenuReboot = findPreference(KEY_POWERMENU_LS_REBOOT);
         mPowerMenuReboot.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWERMENU_LS_REBOOT, 1) == 1));
         mPowerMenuReboot.setOnPreferenceChangeListener(this);
 
-        mPowerMenuAdvancedReboot = (SwitchPreference) findPreference(KEY_POWERMENU_LS_ADVANCED_REBOOT);
+        mPowerMenuAdvancedReboot = findPreference(KEY_POWERMENU_LS_ADVANCED_REBOOT);
         mPowerMenuAdvancedReboot.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWERMENU_LS_ADVANCED_REBOOT, 1) == 1));
         mPowerMenuAdvancedReboot.setOnPreferenceChangeListener(this);
 
-        mPowerMenuScreenshot = (SwitchPreference) findPreference(KEY_POWERMENU_LS_SCREENSHOT);
+        mPowerMenuScreenshot = findPreference(KEY_POWERMENU_LS_SCREENSHOT);
         mPowerMenuScreenshot.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWERMENU_LS_SCREENSHOT, 0) == 1));
         mPowerMenuScreenshot.setOnPreferenceChangeListener(this);
 
-        mPowerMenuLSTorch = (SwitchPreference) findPreference(KEY_POWERMENU_LS_TORCH);
+        mPowerMenuLSTorch = findPreference(KEY_POWERMENU_LS_TORCH);
         mPowerMenuLSTorch.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWERMENU_LS_TORCH, 0) == 1));
         mPowerMenuLSTorch.setOnPreferenceChangeListener(this);

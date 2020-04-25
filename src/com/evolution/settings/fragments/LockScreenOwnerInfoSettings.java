@@ -70,14 +70,14 @@ public class LockScreenOwnerInfoSettings extends SettingsPreferenceFragment impl
         Resources resources = getResources();
 
         // Lockscreen Owner Info Fonts
-        mLockOwnerInfoFonts = (ListPreference) findPreference(LOCK_OWNERINFO_FONTS);
+        mLockOwnerInfoFonts = findPreference(LOCK_OWNERINFO_FONTS);
         mLockOwnerInfoFonts.setValue(String.valueOf(Settings.System.getInt(
                 getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS, 28)));
         mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry());
         mLockOwnerInfoFonts.setOnPreferenceChangeListener(this);
 
         // Lockscreen Owner Info Size
-        mOwnerInfoFontSize = (SystemSettingSeekBarPreference) findPreference(LOCKOWNER_FONT_SIZE);
+        mOwnerInfoFontSize = findPreference(LOCKOWNER_FONT_SIZE);
         mOwnerInfoFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKOWNER_FONT_SIZE, 18));
         mOwnerInfoFontSize.setOnPreferenceChangeListener(this);

@@ -82,13 +82,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
 
-        mClockEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
+        mClockEnabled = findPreference(LOCKSCREEN_CLOCK);
         mClockEnabled.setOnPreferenceChangeListener(this);
         int clockEnabled = Settings.System.getInt(resolver,
                 LOCKSCREEN_CLOCK, 1);
         mClockEnabled.setChecked(clockEnabled != 0);
 
-        mInfoEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_INFO);
+        mInfoEnabled = findPreference(LOCKSCREEN_INFO);
         mInfoEnabled.setOnPreferenceChangeListener(this);
         int infoEnabled = Settings.System.getInt(resolver,
                 LOCKSCREEN_INFO, 1);
@@ -96,7 +96,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mInfoEnabled.setEnabled(clockEnabled != 0);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
+        mFingerprintVib = findPreference(FINGERPRINT_VIB);
         if (mFingerprintManager == null) {
             prefScreen.removePreference(mFingerprintVib);
         } else {
@@ -105,15 +105,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             mFingerprintVib.setOnPreferenceChangeListener(this);
         }
 
-        mArtFilter = (SystemSettingListPreference) findPreference(LOCKSCREEN_ALBUM_ART_FILTER);
+        mArtFilter = findPreference(LOCKSCREEN_ALBUM_ART_FILTER);
         mArtFilter.setOnPreferenceChangeListener(this);
         int artFilter = Settings.System.getInt(resolver,
                 LOCKSCREEN_ALBUM_ART_FILTER, 0);
 
-        mBlurSeekbar = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MEDIA_BLUR);
+        mBlurSeekbar = findPreference(LOCKSCREEN_MEDIA_BLUR);
         mBlurSeekbar.setEnabled(artFilter > 2);
 
-        mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
+        mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
             prefScreen.removePreference(mFODIconPickerCategory);
         }
