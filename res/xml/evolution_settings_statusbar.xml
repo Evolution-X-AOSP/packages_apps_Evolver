@@ -24,6 +24,12 @@
         android:title="@string/statusbar_icons_title">
 
         <Preference
+            android:key="statusbar_battery"
+            android:title="@string/battery_percent_title"
+            android:summary="@string/battery_percent_summary"
+            android:fragment="com.evolution.settings.fragments.StatusbarBatterySettings"/>
+
+        <Preference
             android:key="traffic"
             android:title="@string/traffic_title"
             android:summary="@string/traffic_summary"
