@@ -49,7 +49,6 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class BatteryBarSettings extends SettingsPreferenceFragment
             implements Preference.OnPreferenceChangeListener  {
 
-    private static final String PREF_BATT_BAR = "statusbar_battery_bar_list";
     private static final String PREF_BATT_BAR_NO_NAVBAR = "statusbar_battery_bar_no_navbar_list";
     private static final String PREF_BATT_BAR_STYLE = "statusbar_battery_bar_style";
     private static final String PREF_BATT_BAR_COLOR = "statusbar_battery_bar_color";
@@ -61,7 +60,6 @@ public class BatteryBarSettings extends SettingsPreferenceFragment
     private static final String PREF_BATT_BLEND_COLOR = "statusbar_battery_bar_blend_color";
     private static final String PREF_BATT_BLEND_COLOR_REVERSE = "statusbar_battery_bar_blend_color_reverse";
 
-    private ListPreference mBatteryBar;
     private ListPreference mBatteryBarNoNavbar;
     private ListPreference mBatteryBarStyle;
     private CustomSeekBarPreference mBatteryBarThickness;
@@ -84,11 +82,6 @@ public class BatteryBarSettings extends SettingsPreferenceFragment
 
         int intColor;
         String hexColor;
-
-        mBatteryBar = (ListPreference) prefSet.findPreference(PREF_BATT_BAR);
-        mBatteryBar.setValue((Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR, 0)) + "");
-        mBatteryBar.setSummary(mBatteryBar.getEntry());
-        mBatteryBar.setOnPreferenceChangeListener(this);
 
         mBatteryBarNoNavbar = (ListPreference) prefSet.findPreference(PREF_BATT_BAR_NO_NAVBAR);
         mBatteryBarNoNavbar.setValue((Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR, 0)) + "");
@@ -136,22 +129,6 @@ public class BatteryBarSettings extends SettingsPreferenceFragment
         mBatteryBarBlendColor = (SwitchPreference) findPreference(PREF_BATT_BLEND_COLOR);
         mBatteryBarBlendColorReverse = (SwitchPreference) findPreference(PREF_BATT_BLEND_COLOR_REVERSE);
 
-/*
-        boolean hasNavBarByDefault = getResources().getBoolean(
-            com.android.internal.R.bool.config_showNavigationBar);
-        boolean enableNavigationBar = Settings.Secure.getInt(resolver,
-            Settings.Secure.NAVIGATION_BAR_VISIBLE, hasNavBarByDefault ? 1 : 0) == 1;
-        boolean batteryBarSupported = Settings.Secure.getInt(resolver,
-            Settings.Secure.NAVIGATION_BAR_MODE, 0) == 0;
-        if (!enableNavigationBar || !batteryBarSupported) {
-*/
-            prefSet.removePreference(mBatteryBar);
-/*
-        } else {
-            prefSet.removePreference(mBatteryBarNoNavbar);
-        }
-*/
-
         updateBatteryBarOptions();
     }
 
@@ -182,13 +159,6 @@ public class BatteryBarSettings extends SettingsPreferenceFragment
             Settings.System.putInt(resolver,
                 Settings.System.STATUSBAR_BATTERY_BAR_BATTERY_LOW_COLOR, intHex);
             return true;
-        } else if (preference == mBatteryBar) {
-            int val = Integer.parseInt((String) newValue);
-            int index = mBatteryBar.findIndexOfValue((String) newValue);
-            Settings.System.putInt(resolver,
-                Settings.System.STATUSBAR_BATTERY_BAR, val);
-            mBatteryBar.setSummary(mBatteryBar.getEntries()[index]);
-            updateBatteryBarOptions();
         } else if (preference == mBatteryBarNoNavbar) {
             int val = Integer.parseInt((String) newValue);
             int index = mBatteryBarNoNavbar.findIndexOfValue((String) newValue);
