@@ -60,7 +60,6 @@ import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.GlobalSettingMasterSwitchPreference;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
 import com.evolution.settings.preference.PackageListAdapter;
-import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 import com.evolution.settings.preference.Utils;
 
 import java.util.ArrayList;
@@ -68,30 +67,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 @SearchIndexable
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
     private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
-    private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
-    private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
-    private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
-    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
+    private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
 
-    private ColorPickerPreference mEdgeLightColorPreference;
-    private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
+    private CustomSeekBarPreference mPulseBrightness;
     private ListPreference mFlashlightOnCall;
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private Preference mAlertSlider;
     private Preference mChargingLeds;
     private SwitchPreference mForceExpanded;
-    private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -146,26 +139,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         mDozeBrightness.setValue(value);
         mDozeBrightness.setOnPreferenceChangeListener(this);
 
-        mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
-        mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
-        int edgeLightColor = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF1A73E8);
-
-        String edgeLightColorHex = ColorPickerPreference.convertToRGB(edgeLightColor);
-        if (edgeLightColorHex.equals("#1a73e8")) {
-            mEdgeLightColorPreference.setSummary(R.string.default_string);
-        } else {
-            mEdgeLightColorPreference.setSummary(edgeLightColorHex);
-        }
-        AmbientLightSettingsPreview.setAmbientLightPreviewColor(edgeLightColor);
-        mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
-
-        mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_DURATION);
-        mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
-        int duration = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
-        mEdgeLightDurationPreference.setValue(duration);
-
         mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
         Preference FlashOnCall = findPreference("flashlight_on_call");
         int flashlightValue = Settings.System.getIntForUser(getContentResolver(),
@@ -204,24 +177,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.DOZE_BRIGHTNESS, value);
-            return true;
-        } else if (preference == mEdgeLightColorPreference) {
-            String hex = ColorPickerPreference.convertToRGB(
-                    Integer.valueOf(String.valueOf(newValue)));
-            if (hex.equals("#1a73e8")) {
-                preference.setSummary(R.string.default_string);
-            } else {
-                preference.setSummary(hex);
-            }
-            AmbientLightSettingsPreview.setAmbientLightPreviewColor(Integer.valueOf(String.valueOf(newValue)));
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);
-            return true;
-        } else if (preference == mEdgeLightDurationPreference) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.PULSE_AMBIENT_LIGHT_DURATION, value);
             return true;
         } else if (preference == mFlashlightOnCall) {
             int flashlightValue = Integer.parseInt(((String) newValue).toString());
