@@ -58,6 +58,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String FOD_ANIMATION = "fod_anim";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
     private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
@@ -65,6 +66,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
 
     private FingerprintManager mFingerprintManager;
+    private Preference mFODAnimation;
     private PreferenceCategory mFODIconPickerCategory;
     private SwitchPreference mFingerprintVib;
     private SystemSettingListPreference mArtFilter;
@@ -81,6 +83,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
+        Context mContext = getContext();
 
         mClockEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
         mClockEnabled.setOnPreferenceChangeListener(this);
@@ -116,6 +119,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
             prefScreen.removePreference(mFODIconPickerCategory);
+        }
+
+        boolean showFODAnimationPicker = mContext.getResources().getBoolean(R.bool.showFODAnimationPicker);
+        mFODAnimation = (Preference) findPreference(FOD_ANIMATION);
+        if ((mFODIconPickerCategory != null && mFODAnimation != null &&
+             !FodUtils.hasFodSupport(getContext())) ||
+                (mFODIconPickerCategory != null && mFODAnimation != null && !showFODAnimationPicker)) {
+            mFODIconPickerCategory.removePreference(mFODAnimation);
         }
     }
 
