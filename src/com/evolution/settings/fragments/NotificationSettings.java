@@ -63,7 +63,6 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.AmbientLightSettingsPreview;
 import com.evolution.settings.preference.ColorSelectPreference;
-import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.GlobalSettingMasterSwitchPreference;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
 import com.evolution.settings.preference.PackageListAdapter;
@@ -83,16 +82,12 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
     private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
-    private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
-    private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String PULSE_AMBIENT_LIGHT_PREF = "pulse_ambient_light";
     private static final String PULSE_COLOR_PREF = "ambient_notification_light_color";
     private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
     private static final String PULSE_TIMEOUT_PREF = "ambient_notification_light_timeout";
 
     private ColorSelectPreference mPulseLightColorPref;
-    private CustomSeekBarPreference mDozeBrightness;
-    private CustomSeekBarPreference mPulseBrightness;
     private ListPreference mColorMode;
     private ListPreference mFlashlightOnCall;
     private ListPreference mPulseTimeout;
@@ -177,26 +172,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         mForceExpanded.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0) == 1));
 
-        int defaultDoze = getResources().getInteger(
-                com.android.internal.R.integer.config_screenBrightnessDoze);
-        int defaultPulse = getResources().getInteger(
-                com.android.internal.R.integer.config_screenBrightnessPulse);
-        if (defaultPulse == -1) {
-            defaultPulse = defaultDoze;
-        }
-
-        mPulseBrightness = (CustomSeekBarPreference) findPreference(KEY_PULSE_BRIGHTNESS);
-        int value = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_BRIGHTNESS, defaultPulse);
-        mPulseBrightness.setValue(value);
-        mPulseBrightness.setOnPreferenceChangeListener(this);
-
-        mDozeBrightness = (CustomSeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
-        value = Settings.System.getInt(getContentResolver(),
-                Settings.System.DOZE_BRIGHTNESS, defaultDoze);
-        mDozeBrightness.setValue(value);
-        mDozeBrightness.setOnPreferenceChangeListener(this);
-
         mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
         Preference FlashOnCall = findPreference("flashlight_on_call");
         int flashlightValue = Settings.System.getIntForUser(getContentResolver(),
@@ -225,16 +200,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FORCE_EXPANDED_NOTIFICATIONS, checked ? 1 : 0);
-            return true;
-        } else if (preference == mPulseBrightness) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.PULSE_BRIGHTNESS, value);
-            return true;
-        } else if (preference == mDozeBrightness) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.DOZE_BRIGHTNESS, value);
             return true;
         } else if (preference == mFlashlightOnCall) {
             int flashlightValue = Integer.parseInt(((String) newValue).toString());
