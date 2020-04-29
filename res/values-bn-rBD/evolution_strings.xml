@@ -62,6 +62,8 @@
     <string name="action_cancel">বাতিল করুন</string>
     <string name="attention">দৃষ্টি আকর্ষণ</string>
     <string name="default_string">ডিফল্ট</string>
+    <string name="led_color_green">সবুজ</string>
+    <string name="led_color_red">লাল</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">চালু</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -660,15 +662,6 @@
     <string name="qs_footer_text_summary">কিউএস প্যানেলের নীচে টেক্সট প্রদর্শন করুন</string>
     <string name="qs_footer_text_string_title">ফুটার টেক্সট কাস্টমাইজ করুন</string>
     <string name="qs_footer_text_string_summary">ডিফল্ট এর জন্য খালি সেট করুন #KeepEvolving</string>
-    <!-- Pulse Ambient Light -->
-    <string name="notification_screen_title">স্ক্রিন</string>
-    <string name="pulse_ambient_light_title">পাল্স</string>
-    <string name="pulse_ambient_light_summary">নোটিফিকেশন পালসে স্ক্রিনের পাশের প্রান্তগুলি আলোকিত করুন</string>
-    <string name="pulse_ambient_light_color_title">প্রান্তদ্বয়ের লাইটের রং</string>
-    <string name="pulse_ambient_auto_color_title">স্বয়ংক্রিয় রং</string>
-    <string name="pulse_ambient_auto_color_summary">ওয়ালপেপারের প্রাথমিক রঙে প্রান্তদ্বয়ের লাইটের রং সেট করে</string>
-    <string name="pulse_ambient_light_duration_title">ব্যাপ্তিকাল</string>
-    <string name="pulse_ambient_light_duration_summary">অ্যাম্বিয়েন্ট লাইট অ্যানিমেশনের সময়কাল সেট করে</string>
     <!-- Battery Styles -->
     <string name="battery_style_category_title">ব্যাটারি লেভেল</string>
     <string name="battery_percent_title">ব্যাটারি পার্সেন্টেজ</string>
@@ -846,7 +839,6 @@
     <string name="screenshot_type_title">স্ক্রিনশট টাইপ</string>
     <string name="screenshot_type_fullscreen">পূর্ণস্ক্রিনের স্ক্রিনশট নিন</string>
     <string name="screenshot_type_partial">আপনি যে অংশুটুকু স্ক্রিনশট হিসাবে নিতে চান সেটি ড্র্যাগ করে নির্বাচন করুন</string>
-    <string name="screenshot_type_fullscreen_longshot">ফুলস্ক্রিনের বর্ধিত স্ক্রিনশট নিন</string>
     <!-- Custom headers -->
     <string name="custom_header_pick_summary">প্রি-ইনস্টল করা চিত্র সংগ্রহ থেকে একটি চিত্র নির্বাচন করুন</string>
     <string name="custom_header_pick_title">সংগ্রহ থেকে চিত্র চয়ন করুন</string>
@@ -917,6 +909,7 @@
     <string name="fod_recog_animation_miui_pulse_white">পালস্ (সাদা)</string>
     <string name="fod_recog_animation_miui_rhythm">ছন্দ (Rhythm)</string>
     <string name="fod_recog_animation_op_cosmos">কসমস</string>
+    <string name="fod_recog_animation_op_energy">এনার্জি</string>
     <string name="fod_recog_animation_op_mclaren">ম্যাক্ ল্যারেন</string>
     <string name="fod_recog_animation_op_ripple">রিপল</string>
     <string name="fod_recog_animation_op_stripe">ডোরাকাটা</string>
@@ -1019,4 +1012,29 @@
     <string name="kill_app_longpress_back_summary">ব্যাক বাটন দীর্ঘ সময় চেপে ধরে ফোরগ্রাউন্ড অ্যাপ নিস্ক্রিয় করুন</string>
     <string name="show_media_heads_up_title">মিডিয়া শিরোনাম দেখান</string>
     <string name="show_media_heads_up_summary">মিডিয়া মাথা সংক্ষিপ্তসার দেখান</string>
+    <!--Notification Pulse-->
+    <string name="pulse_ambient_light_title">পাল্স</string>
+    <string name="pulse_ambient_light_summary">নোটিফিকেশন পালসে স্ক্রিনের পাশের প্রান্তগুলি আলোকিত করুন</string>
+    <string name="ambient_notification_light_enabled_title">পালস্ সর্বদা চালু থাকবে</string>
+    <string name="ambient_notification_light_enabled_summary">অলয়েজ অন থাকালীন নতুন নোটিফিকেশনে পালসিং লাইট দেখাবে</string>
+    <string name="pulse_ambient_light_note">নতুন নোটিফিকেশুনগুলো পাওয়ার জন্য ওয়েক স্ক্রিনটি অবশ্যই চালু করতে হবে</string>
+    <string name="ambient_brigthness_category_title">স্ক্রিন ব্রাইটনেস্</string>
+    <string name="pulse_ambient_category_title">নোটিফিকেশন লাইট পালস্</string>
+    <string name="ambient_notification_light_hide_aod_title">শুধুমাত্র লাইট পালস্ দেখাবে</string>
+    <string name="ambient_notification_light_hide_aod_summary">অলওয়েজ অন ডিসপ্লে থেকে অন্য সকল ডিসপ্লে উপাদানগুলো লুকিয়ে রাখুন</string>
+    <string name="ambient_notification_light_accent_title">সিস্টেম অ্যাকসেন্ট এর রং ব্যবহার করুন</string>
+    <string name="ambient_notification_light_accent_summary">লাইট পালস্ এর জন্য বর্তমান সিস্টেম অ্যাকসেন্ট এর রং ব্যবহার করুন</string>
+    <string name="ambient_notification_light_color_title">কাস্টম রং নির্বাচন করুন</string>
+    <string name="ambient_notification_light_color_summary">লাইট পালস্ এর জন্যে ডিফল্ট রং</string>
+    <string name="ambient_notification_light_color_mode_title">লাইট পালস্ এর রং</string>
+    <string name="ambient_notification_light_color_mode_automatic">নোটিফিকেশনের রং</string>
+    <string name="ambient_notification_light_color_mode_accent">সিস্টেম অ্যাকসেন্ট কালার</string>
+    <string name="ambient_notification_light_color_mode_custom">কাস্টম রং</string>
+    <string name="ambient_notification_light_timeout_title">লাইট পালস্ এর সময়সীমা</string>
+    <string name="entry_infinite">অসীম</string>
+    <string name="entry_five_minute">৫ মিনিট</string>
+    <string name="entry_ten_minute">১০ মিনিট</string>
+    <string name="entry_thirty_minute">৩০ মিনিট</string>
+    <string name="entry_sixty_minute">৬০ মিনিট</string>
+    <string name="entry_fifteen_minute">১৫ মিনিট</string>
 </resources>
