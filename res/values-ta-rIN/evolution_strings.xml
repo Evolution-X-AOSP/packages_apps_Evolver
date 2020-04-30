@@ -16,6 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
+    <string name="evolution_settings_title">பரிணாமம்</string>
     <!-- Categories -->
     <string name="aosp_gesture_title">AOSP சைகைகள்</string>
     <string name="animation_title">அனிமேஷன்கள்</string>
@@ -42,6 +43,7 @@
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Stock சைகை included with Android</string>
     <string name="animation_summary">அனிமேஷன் பாணியை மாற்றவும்</string>
+    <string name="buttons_summary">பொத்தான்_ சுருக்கம்</string>
     <string name="gestures_summary">சைகை அடிப்படையிலான விருப்பங்கள் / செயல்கள்</string>
     <string name="lockscreen_summary">உங்கள் பூட்டு திரை உருப்படிகளைக் கட்டுப்படுத்தவும்</string>
     <string name="misc_summary">கேமிங் பயன்முறை மற்றும் பிற கணினி அமைப்புகள்</string>
@@ -60,6 +62,8 @@
     <string name="action_cancel">ரத்துசெய்</string>
     <string name="attention">கவனம்</string>
     <string name="default_string">இயல்புநிலை</string>
+    <string name="led_color_green">பச்சை</string>
+    <string name="led_color_red">சிவப்பு</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">On</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -115,6 +119,13 @@
     <!-- Navbar options -->
     <string name="nav_bar_tuner_title">வழிசெலுத்தல் பட்டி ட்யூனர்</string>
     <string name="nav_bar_tuner_summary">நவ்பார் தளவமைப்பை மாற்றவும்</string>
+    <string name="nav_bar_layout_inverse_title">தலைகீழ் தளவமைப்பு</string>
+    <string name="nav_bar_layout_inverse_summary">வழிசெலுத்தல் பட்டி பொத்தான்களின் தளவமைப்பைத் திருப்புக</string>
+    <string name="navigation_bar_title">வழிநடத்து பட்டை</string>
+    <string name="navigation_bar_home_long_press_title">முகப்பு நீண்ட பத்திரிகை நடவடிக்கை</string>
+    <string name="navigation_bar_home_double_tap_title">முகப்பு இரட்டை தட்டுதல் செயல்பாடு</string>
+    <string name="navigation_bar_app_switch_long_press_title">சமீபத்திய நீண்ட அழுத்த செயல்பாடு</string>
+    <string name="navigation_bar_edge_long_swipe_title">எட்ஜ் நீண்ட ஸ்வைப் செயல்</string>
     <string name="system_navigation_summary">எந்த கணினி வழிசெலுத்தல் பாணியைப் பயன்படுத்த வேண்டும் என்பதைத் தேர்வுசெய்க</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">பாக்கெட் கண்டறிதல்</string>
@@ -191,16 +202,37 @@
     <string name="action_entry_select_app">பயன்பாட்டைத் தேர்ந்தெடு</string>
     <string name="action_entry_custom_action">தனிப்பயன் செயலைத் தேர்ந்தெடு</string>
     <string name="hardware_keys_home_key_title">முகப்பு பொத்தான்</string>
+    <string name="hardware_keys_back_key_title">பின் பொத்தான்</string>
     <string name="hardware_keys_menu_key_title">மெனு பொத்தான்</string>
     <string name="hardware_keys_assist_key_title">தேடல் பொத்தான்</string>
     <string name="hardware_keys_appswitch_key_title">கண்ணோட்டம் பொத்தான்</string>
-    <string name="hardware_keys_back_key_title">பின் பொத்தான்</string>
     <string name="hardware_keys_double_tap_summary">இருமுறை தட்டல் செயல் அமை</string>
     <string name="hardware_keys_single_tap_summary">இருமுறை தட்டவும் செயல் அமை</string>
     <string name="hardware_keys_long_press_summary">நீண்ட பத்திரிகை நடவடிக்கைகளை அமைக்கவும்</string>
     <string name="hardware_keys_single_tap_title">ஒருமுறை தட்டல் செயல்</string>
+    <string name="hardware_keys_camera_key_title">கேமரா பட்டன்</string>
+    <string name="hardware_keys_short_press_title">சுருக்க அழுத்த செயல்பாடு</string>
     <string name="hardware_keys_long_press_title">நீண்ட அழுத்த செயல்பாடு</string>
     <string name="hardware_keys_double_tap_title">இரட்டை தட்டுதல் செயல்பாடு</string>
+    <string name="hardware_keys_action_nothing">செயல்பாடு இல்லை</string>
+    <string name="hardware_keys_action_menu">திற/மூடு மெனு</string>
+    <string name="hardware_keys_action_app_switch">சமீபத்திய பயன்பாடுகள் இடமாற்றி</string>
+    <string name="hardware_keys_action_search">தேடல் உதவி</string>
+    <string name="hardware_keys_action_voice_search">குரல் தேடல்</string>
+    <string name="hardware_keys_action_in_app_search">ஆப்-உள் தேடல்</string>
+    <string name="hardware_keys_action_launch_camera">கேமராவைத் தொடங்கு</string>
+    <string name="hardware_keys_action_sleep">திரையை அணை</string>
+    <string name="hardware_keys_action_split_screen">பிரி திரை</string>
+    <string name="hardware_keys_swipe_right_key_title">வலது பக்கம் தேய்க்கவும்</string>
+    <string name="hardware_keys_swipe_left_key_title">இடதுபுறம் ஸ்வைப் செய்யவும்</string>
+    <string name="hardware_keys_long_tap_key_title">நீண்டமுனற தட்டு</string>
+    <string name="hardware_keys_swipe_tap_title">ஸ்வைப் செயல்கள்</string>
+    <string name="hardware_keys_long_tap_title">நீண்ட அழுத்த செயல்பாடு</string>
+    <string name="button_wake_title">சாதனம் எழுப்ப</string>
+    <string name="camera_sleep_on_release_title">திரை பீக்</string>
+    <string name="camera_sleep_on_release_summary">அரை அழுத்தமானது அந்த விசை அழுத்தப்பட்டிருக்கும் போது மட்டும் திரையை இயக்கத்தில் வைத்திருக்கும்</string>
+    <string name="camera_launch_title">கேமராவைத் தொடங்கு</string>
+    <string name="camera_launch_summary">ஒரு நீண்ட அழுத்தம் மற்றும் விடுவிப்பு கேமராவை தொடங்கும்</string>
     <string name="hardware_keys_disable_title">விசைகளை முடக்கவும்</string>
     <!-- Haptic on action -->
     <string name="haptic_on_action_title">செயலில்</string>
@@ -633,15 +665,6 @@ qs_rows_columns_title
     <string name="qs_footer_text_summary">QS பேனலின் கீழே உரையைக் காண்பி</string>
     <string name="qs_footer_text_string_title">அடிக்குறிப்பு உரையைத் தனிப்பயனாக்கவும்</string>
     <string name="qs_footer_text_string_summary">இயல்புநிலைக்கு காலியாக அமைக்கவும் #KeepEvolve</string>
-    <!-- Pulse Ambient Light -->
-    <string name="notification_screen_title">திரை</string>
-    <string name="pulse_ambient_light_title">பல்ஸ்</string>
-    <string name="pulse_ambient_light_summary">அறிவிப்பு துடிப்பில் திரையின் பக்க விளிம்புகளை ஒளிரச் செய்யுங்கள்</string>
-    <string name="pulse_ambient_light_color_title">விளிம்பு ஒளி நிறம்</string>
-    <string name="pulse_ambient_auto_color_title">ஆட்டோ நிறம்</string>
-    <string name="pulse_ambient_auto_color_summary">வால்பேப்பரின் முதன்மை வண்ணத்திற்கு விளிம்பு ஒளி வண்ணத்தை அமைக்கிறது</string>
-    <string name="pulse_ambient_light_duration_title">நேர அளவு</string>
-    <string name="pulse_ambient_light_duration_summary">சுற்றுப்புற ஒளி அனிமேஷன் காலத்தை அமைக்கிறது</string>
     <!-- Battery Styles -->
     <string name="battery_style_category_title">பேட்டரி நிலை</string>
     <string name="battery_percent_title">மின்கல சதவீதம்</string>
@@ -822,7 +845,6 @@ qs_rows_columns_title
     <string name="screenshot_type_title">ஸ்கிரீன்ஷாட் வகை</string>
     <string name="screenshot_type_fullscreen">முழுத்திரை ஸ்கிரீன் ஷாட்களை எடுத்துக் கொள்ளுங்கள்</string>
     <string name="screenshot_type_partial">ஸ்கிரீன் ஷாட்டாக நீங்கள் எடுக்க விரும்பும் பகுதியில் தேர்வை இழுக்கவும்</string>
-    <string name="screenshot_type_fullscreen_longshot">நீட்டிக்கப்பட்ட ஸ்கிரீன் ஷாட்களுடன் முழுத்திரையை எடுத்துக் கொள்ளுங்கள்</string>
     <!-- Custom headers -->
     <string name="custom_header_pick_summary">முன்பே நிறுவப்பட்ட படத் தொகுப்பிலிருந்து ஒரு படத்தைத் தேர்ந்தெடுக்கவும்</string>
     <string name="custom_header_pick_title">தொகுப்பிலிருந்து படத்தைத் தேர்ந்தெடுங்கள்</string>
@@ -893,6 +915,7 @@ qs_rows_columns_title
     <string name="fod_recog_animation_miui_pulse_white">துடிப்பு (வெள்ளை)</string>
     <string name="fod_recog_animation_miui_rhythm">ரிதம்</string>
     <string name="fod_recog_animation_op_cosmos">காஸ்மோஸ்</string>
+    <string name="fod_recog_animation_op_energy">ஆற்றல்</string>
     <string name="fod_recog_animation_op_mclaren">மெக்லாரன்</string>
     <string name="fod_recog_animation_op_ripple">சிற்றலை</string>
     <string name="fod_recog_animation_op_stripe">கோடு</string>
@@ -993,4 +1016,31 @@ qs_rows_columns_title
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">பயன்பாட்டின் பின் பொத்தானைக் கொல்லவும்</string>
     <string name="kill_app_longpress_back_summary">பின் பொத்தானை நீண்ட நேரம் அழுத்துவதன் மூலம் முன்புற பயன்பாட்டைக் கொல்லுங்கள்</string>
+    <string name="show_media_heads_up_title">ஊடகத் தலையைக் காட்டு</string>
+    <string name="show_media_heads_up_summary">பிளேயர் ஏற்கனவே முன்னணியில் இல்லாவிட்டால், புதிய ட்ராக் இயக்கப்படும் போது மீடியா தலையைக் காட்டு</string>
+    <!--Notification Pulse-->
+    <string name="pulse_ambient_light_title">பல்ஸ்</string>
+    <string name="pulse_ambient_light_summary">அறிவிப்பு துடிப்பில் திரையின் பக்க விளிம்புகளை ஒளிரச் செய்யுங்கள்</string>
+    <string name="ambient_notification_light_enabled_title">எப்போதும் துடிப்பு</string>
+    <string name="ambient_notification_light_enabled_summary">எப்போதும் பயன்படுத்தி புதிய அறிவிப்பில் ஒளி துடிப்பைக் காட்டு</string>
+    <string name="pulse_ambient_light_note">புதிய அறிவிப்புகளைப் பெறுவதற்கான விழிப்புணர்வு திரையை இயக்க வேண்டும்</string>
+    <string name="ambient_brigthness_category_title">திரை பிரகாசம்</string>
+    <string name="pulse_ambient_category_title">அறிவிப்பு ஒளி</string>
+    <string name="ambient_notification_light_hide_aod_title">ஒளி துடிப்பு மட்டுமே காட்டு</string>
+    <string name="ambient_notification_light_hide_aod_summary">எல்லா காட்சி கூறுகளையும் எப்போதும் இருந்து மறைக்கவும்</string>
+    <string name="ambient_notification_light_accent_title">கணினி உச்சரிப்பு வண்ணத்தைப் பயன்படுத்தவும்</string>
+    <string name="ambient_notification_light_accent_summary">ஒளி துடிப்புக்கு தற்போதைய கணினி உச்சரிப்பு வண்ணத்தைப் பயன்படுத்தவும்</string>
+    <string name="ambient_notification_light_color_title">தனிப்பயன் நிறம்</string>
+    <string name="ambient_notification_light_color_summary">ஒளி துடிப்புக்கான இயல்புநிலை நிறம்</string>
+    <string name="ambient_notification_light_color_mode_title">ஒளி துடிப்பு நிறம்</string>
+    <string name="ambient_notification_light_color_mode_automatic">நோட்டிஃபிக்கேஷன் கலர்</string>
+    <string name="ambient_notification_light_color_mode_accent">கணினி உச்சரிப்பு வண்ணத்தைப் பயன்படுத்தவும்</string>
+    <string name="ambient_notification_light_color_mode_custom">தனிப்பயன் நிறம்</string>
+    <string name="ambient_notification_light_timeout_title">ஒளி துடிப்புக்கான நேரம் முடிந்தது</string>
+    <string name="entry_infinite">எண்ணிலடங்காத</string>
+    <string name="entry_five_minute">5 நிமிடம்</string>
+    <string name="entry_ten_minute">10 நிமிடம்</string>
+    <string name="entry_thirty_minute">30 நிமிடம்</string>
+    <string name="entry_sixty_minute">60 நிமிடங்கள்</string>
+    <string name="entry_fifteen_minute">15 நிமிடங்கள்</string>
 </resources>
