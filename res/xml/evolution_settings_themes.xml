@@ -25,9 +25,13 @@
         android:key="theme_customization_category"
         android:title="@string/theme_customization_category">
 
+        <ListPreference
+            android:key="android.theme.customization.accent_color"
+            android:title="@string/theme_customization_accent_color_title"/>
+
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="accent_color"
-            android:title="@string/theme_customization_accent_color_title"
+            android:title="@string/accent_color_title"
             settings:defaultColorValue="0xff1a73e8"
             android:persistent="false" />
 
