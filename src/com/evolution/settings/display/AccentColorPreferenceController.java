@@ -21,6 +21,7 @@ import android.content.Context;
 import android.os.UserHandle;
 import android.provider.Settings;
 
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
@@ -33,9 +34,11 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
         Preference.OnPreferenceChangeListener {
 
     private static final String ACCENT_COLOR = "accent_color";
+    private static final String ACCENT_OVERLAY = "android.theme.customization.accent_color";
     static final int DEFAULT_ACCENT_COLOR = 0xff1a73e8;
 
     private ColorPickerPreference mAccentColor;
+    private ListPreference mAccentOverlay;
 
     public AccentColorPreferenceController(Context context) {
         super(context);
@@ -55,14 +58,17 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
     public void displayPreference(PreferenceScreen screen) {
         super.displayPreference(screen);
         mAccentColor = (ColorPickerPreference) screen.findPreference(ACCENT_COLOR);
+        mAccentOverlay = (ListPreference) screen.findPreference(ACCENT_OVERLAY);
         mAccentColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.ACCENT_COLOR, DEFAULT_ACCENT_COLOR, UserHandle.USER_CURRENT);
         String hexColor = String.format("#%08x", (0xff1a73e8 & intColor));
         if (hexColor.equals("#ff1a73e8")) {
             mAccentColor.setSummary(R.string.default_string);
+            mAccentOverlay.setEnabled(true);
         } else {
             mAccentColor.setSummary(hexColor);
+            mAccentOverlay.setEnabled(false);
         }
         mAccentColor.setNewPreviewColor(intColor);
         if (hexColor.equals("#ff1a73e8"))
@@ -77,8 +83,10 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
                     Integer.valueOf(String.valueOf(newValue)));
             if (hex.equals("#ff1a73e8")) {
                 mAccentColor.setSummary(R.string.default_string);
+                mAccentOverlay.setEnabled(true);
             } else {
                 mAccentColor.setSummary(hex);
+                mAccentOverlay.setEnabled(false);
             }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(mContext.getContentResolver(),
