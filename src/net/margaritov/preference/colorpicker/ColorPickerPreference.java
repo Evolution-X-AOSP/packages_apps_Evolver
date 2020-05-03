@@ -2,6 +2,7 @@
  * Copyright (C) 2011 Sergey Margaritov
  * Copyright (C) 2013 Slimroms
  * Copyright (C) 2015 The TeamEos Project
+ * Copyright (C) 2020 ion-OS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -286,6 +287,16 @@ public class ColorPickerPreference extends Preference implements
 
     public void setDefaultColor(int color) {
         mDefValue = color;
+    }
+
+    /**
+     * For custom purposes. Not used by ColorPickerPreference
+     *
+     * set custom color preview from outside
+     * @author ankitgourav
+     */
+    public void setCustomColorPreview(int color) {
+        mValue = color;
     }
 
     /**
