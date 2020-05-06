@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2019-2020 The Evolution X Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/evolution_about_title" >
+
+    <!-- About Evolution X -->
+    <Preference
+        android:key="evolution_logo"
+        android:layout="@layout/evolution_logo" />
+
+    <PreferenceCategory
+        android:key="evolution_about_summary"
+        android:title="@string/evolution_about_summary">
+
+        <Preference
+            android:summary="@string/evolution_about_info_summary" />
+
+        <Preference
+            android:title="@string/evolution_website_title"
+            android:summary="@string/evolution_website_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://evolution-x.org" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_telegram_title"
+            android:summary="@string/evolution_telegram_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/EvolutionX" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_github_title"
+            android:summary="@string/evolution_github_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/Evolution-X" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <!-- Team Evolution X -->
+    <PreferenceCategory
+        android:key="about_team"
+        android:title="@string/evolution_about_team">
+
+        <Preference
+            android:title="@string/evolution_about_stallix"
+            android:summary="@string/evolution_about_stallix_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://twitter.com/Stallix_" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_about_akito"
+            android:summary="@string/evolution_about_akito_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://twitter.com/peaktogoo" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_about_anierin"
+            android:summary="@string/evolution_about_anierin_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://twitter.com/AnierinB" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_about_raph"
+            android:summary="@string/evolution_about_raph_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://twitter.com/raphielscape" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_about_vince"
+            android:summary="@string/evolution_about_vince_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://twitter.com/ecnivtwelve" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_about_marton"
+            android:summary="@string/evolution_about_marton_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://twitter.com/marton_dev" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <!-- Maintainer -->
+    <PreferenceCategory
+        android:key="about_maintainer"
+        android:title="@string/evolution_maintainer">
+
+        <Preference
+            android:title="@string/evolution_about_maintainer"
+            android:summary="@string/evolution_about_maintainer_summary">
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
