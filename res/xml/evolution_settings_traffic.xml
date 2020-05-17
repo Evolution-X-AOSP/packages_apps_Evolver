@@ -40,4 +40,13 @@
         settings:units="KB/s"
         android:defaultValue="0" />
 
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="network_traffic_refresh_interval"
+        android:title="@string/network_traffic_refresh_interval_title"
+        android:max="10"
+        settings:min="1"
+        settings:units="sec"
+        android:defaultValue="1"
+        android:dependency="network_traffic_state" />
+
 </PreferenceScreen>
