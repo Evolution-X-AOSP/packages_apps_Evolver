@@ -95,8 +95,20 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="extras_category"
+        android:title="@string/extras_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="click_partial_screenshot"
+            android:title="@string/click_partial_screenshot_title"
+            android:summary="@string/click_partial_screenshot_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory android:key="hardware_keys"
-	android:title="@string/hardware_keys_category">
+        android:title="@string/hardware_keys_category">
 
 	<SwitchPreference android:key="hardware_keys_disable"
             android:title="@string/hardware_keys_disable_title" />
