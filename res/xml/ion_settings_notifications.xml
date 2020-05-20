@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 ion-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/notifications_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    settings:initialExpandedChildrenCount="4" >
+
+    <!-- Heads up -->
+    <com.ion.ionizer.preferences.GlobalSettingMasterSwitchPreference
+        android:key="heads_up_notifications_enabled"
+        android:title="@string/heads_up_notifications"
+        android:summary="@string/heads_up_notifications_summary"
+        android:fragment="com.ion.ionizer.fragments.HeadsUpSettings"
+        android:defaultValue="true" />
+
+    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+        android:key="notification_sound_vib_screen_on"
+        android:title="@string/notification_sound_vib_screen_on_title"
+        android:summary="@string/notification_sound_vib_screen_on_summary"
+        android:defaultValue="true" />
+
+    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+        android:key="vibrate_on_notifications"
+        android:title="@string/vibrate_on_notifications_title"
+        android:summary="@string/vibrate_on_notifications_summary"
+        android:defaultValue="true" />
+
+    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+        android:key="notification_guts_kill_app_button"
+        android:title="@string/notification_guts_kill_app_button_title"
+        android:summary="@string/notification_guts_kill_app_button_summary"
+        android:defaultValue="false" />
+
+    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+        android:key="force_expanded_notifications"
+        android:title="@string/force_expanded_notifications_title"
+        android:summary="@string/force_expanded_notifications_summary"
+        android:defaultValue="false" />
+
+    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+        android:key="notification_headers"
+        android:title="@string/notification_headers_title"
+        android:summary="@string/notification_headers_summary"
+        android:defaultValue="true" />
+
+    <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_translucent_notifications_bg_enabled"
+        android:title="@string/translucent_lockscreen_notifications_bg_title"
+        android:summary="@string/translucent_lockscreen_notifications_bg_summary"
+        android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:title="@string/charging_noti_category" >
+
+        <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+            android:key="charging_animation"
+            android:title="@string/charging_animation_title"
+            android:summary="@string/charging_animation_summary"
+            android:defaultValue="true" />
+
+        <com.ion.ionizer.preferences.GlobalSettingSwitchPreference
+            android:key="wake_when_plugged_or_unplugged"
+            android:title="@string/wakeup_when_plugged_unplugged_title"
+            android:summary="@string/wakeup_when_plugged_unplugged_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notification_screen"
+        android:title="@string/notification_screen_title" >
+
+        <com.ion.ionizer.preferences.SystemSettingMasterSwitchPreference
+            android:key="pulse_ambient_light"
+            android:title="@string/pulse_ambient_light_title"
+            android:summary="@string/pulse_ambient_light_summary"
+            android:fragment="com.ion.ionizer.fragments.EdgePulse"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/doze_brightness_category">
+
+        <com.ion.ionizer.preferences.CustomSeekBarPreference
+            android:key="ambient_doze_brightness"
+            android:title="@string/ambient_doze_brightness_title"
+            android:summary="@string/ambient_doze_brightness_summary"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false" />
+
+        <com.ion.ionizer.preferences.CustomSeekBarPreference
+            android:key="ambient_pulse_brightness"
+            android:title="@string/ambient_pulse_brightness_title"
+            android:summary="@string/ambient_pulse_brightness_summary"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notification_flash"
+        android:title="@string/notification_flash_title" >
+
+        <com.ion.ionizer.preferences.SystemSettingListPreference
+            android:key="flashlight_on_call"
+            android:title="@string/flashlight_on_call_title"
+            android:entries="@array/flashlight_on_call_entries"
+            android:entryValues="@array/flashlight_on_call_values"
+            android:defaultValue="0" />
+
+        <com.ion.ionizer.preferences.SystemSettingSwitchPreference
+            android:key="flashlight_on_call_waiting"
+            android:title="@string/flashlight_on_call_wait_title"
+            android:summary="@string/flashlight_on_call_wait_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="battery_led_category"
+        android:title="@string/light_settings_header" >
+
+        <com.ion.ionizer.preferences.SystemSettingMasterSwitchPreference
+            android:key="battery_light_enabled"
+            android:title="@string/battery_light_settings"
+            android:summary="@string/battery_light_summary"
+            android:fragment="com.ion.ionizer.fragments.BatteryLightSettings"
+            android:defaultValue="true" />
+
+        <Preference
+            android:key="notification_light"
+            android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
+            android:title="@string/notification_light_settings"
+            android:summary="@string/notification_light_settings_summary" >
+            <extra
+                android:name="classname"
+                android:value="com.android.settings.Settings$NotificationAppListActivity" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>
