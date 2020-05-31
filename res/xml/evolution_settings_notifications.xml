@@ -41,6 +41,57 @@
         android:defaultValue="true" />
 
     <PreferenceCategory
+        android:title="@string/pulse_ambient_category_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="pulse_ambient_light"
+            android:title="@string/pulse_ambient_light_title"
+            android:summary="@string/pulse_ambient_light_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="ambient_notification_light_enabled"
+            android:title="@string/ambient_notification_light_enabled_title"
+            android:summary="@string/ambient_notification_light_enabled_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="ambient_notification_light_hide_aod"
+            android:title="@string/ambient_notification_light_hide_aod_title"
+            android:summary="@string/ambient_notification_light_hide_aod_summary"
+            android:defaultValue="false"
+            android:dependency="ambient_notification_light_enabled" />
+
+        <ListPreference
+            android:key="ambient_notification_light_timeout"
+            android:title="@string/ambient_notification_light_timeout_title"
+            android:persistent="false"
+            android:entries="@array/ambient_notification_light_timeout_entries"
+            android:entryValues="@array/ambient_notification_light_timeout_values"
+            android:dependency="ambient_notification_light_enabled" />
+
+        <ListPreference
+            android:key="ambient_notification_light_color_mode"
+            android:title="@string/ambient_notification_light_color_mode_title"
+            android:persistent="false"
+            android:entries="@array/ambient_notification_light_color_mode_entries"
+            android:entryValues="@array/ambient_notification_light_color_mode_values"
+            android:defaultValue="2" />
+
+        <com.evolution.settings.preference.ColorSelectPreference
+            android:key="ambient_notification_light_color"
+            android:title="@string/ambient_notification_light_color_title"
+            android:summary="@string/ambient_notification_light_color_summary"
+            android:persistent="false" />
+
+        <Preference
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:persistent="false"
+            android:summary="@string/pulse_ambient_light_note" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/light_settings_header">
 
         <Preference
@@ -57,50 +108,6 @@
             android:title="@string/battery_light_settings"
             android:summary="@string/battery_light_summary"
             android:fragment="com.evolution.settings.fragments.BatteryLightSettings" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="notification_screen"
-        android:title="@string/notification_screen_title">
-
-        <!-- Preview -->
-        <com.evolution.settings.preference.AmbientLightSettingsPreview
-            android:key="ambient_light_preview"
-            android:layout="@layout/ambient_light"
-            android:selectable="false"/>
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="pulse_ambient_light"
-            android:title="@string/pulse_ambient_light_title"
-            android:summary="@string/pulse_ambient_light_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="pulse_ambient_light_duration"
-            android:title="@string/pulse_ambient_light_duration_title"
-            android:summary="@string/pulse_ambient_light_duration_summary"
-            android:persistent="false"
-            android:defaultValue="2"
-            android:max="10"
-            settings:min="1"
-            settings:units="sec"
-            settings:interval="1"
-            android:dependency="pulse_ambient_light" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="pulse_ambient_auto_color"
-            android:title="@string/pulse_ambient_auto_color_title"
-            android:summary="@string/pulse_ambient_auto_color_summary"
-            android:dependency="pulse_ambient_light"
-            android:defaultValue="false" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="pulse_ambient_light_color"
-            android:title="@string/pulse_ambient_light_color_title"
-            android:persistent="false"
-            android:dependency="pulse_ambient_light"
-            settings:defaultColorValue="0xFF1A73E8" />
 
     </PreferenceCategory>
 
