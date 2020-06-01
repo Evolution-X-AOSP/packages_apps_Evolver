@@ -62,6 +62,7 @@
     <string name="action_cancel">Cancelar</string>
     <string name="attention">Atención</string>
     <string name="default_string">Por defecto</string>
+    <string name="enable_first">Por favor, activa primero</string>
     <string name="led_color_green">Verde</string>
     <string name="led_color_red">Rojo</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -989,6 +990,16 @@
     <string name="headset_connect_player_title">Abrir aplicación de música al conectar auriculares</string>
     <string name="headset_connect_player_summary">Iniciar el reproductor de música por defecto al conectar los auriculares</string>
     <!-- Themes customization -->
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Tema</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Color de acento</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Fuente de encabezado / cuerpo</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Forma de los iconos</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Label for the option that turns off customizations for a given category.-->
+    <string name="theme_customization_device_default">Dispositivo predeterminado</string>
     <string name="theme_customization_systemui_title">Estilos de tema oscuro</string>
     <string name="theme_customization_sysui_icon_title">Icono de barra de estado</string>
     <!-- Title for the new device identifier access restrictions -->
@@ -1037,10 +1048,6 @@
     <string name="entry_thirty_minute">30 minutos</string>
     <string name="entry_sixty_minute">60 minutos</string>
     <string name="entry_fifteen_minute">15 minutos</string>
-    <!-- Headset ringtone audio focus -->
-    <string name="ringtone_focus_mode_title">Enfoque del audio del tono</string>
-    <string name="ringtone_focus_mode_dynamic">Sólo audífonos si la música está activa</string>
-    <string name="ringtone_focus_mode_stock">Parlantes y audífonos</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Despliegue Inteligente</string>
     <string name="smart_pulldown_summary">Abrir ajustes rápidos cuando hay %1$s</string>
@@ -1051,4 +1058,62 @@
     <string name="smart_pulldown_ongoing">sin notificaciones en curso</string>
     <!-- Accent color picker -->
     <string name="accent_color_title">Selector de color de acento</string>
+    <!-- Translucent lockscreen notifications background -->
+    <string name="translucent_lockscreen_notifications_bg_title">Fondo de notificaciones translúcidas</string>
+    <string name="translucent_lockscreen_notifications_bg_summary">Mostrar fondo de notificaciones translúcidas en pantalla de bloqueo</string>
+    <!-- R Notification headers -->
+    <string name="notification_headers_title">Mostrar cabeceras de notificación</string>
+    <string name="notification_headers_summary">Mostrar las cabeceras de notificación al estilo R (Requiere un reinicio de SystemUI)</string>
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Información de carga</string>
+    <string name="lockscreen_battery_info_summary">Mostrar corriente, voltaje y temperatura de la batería mientras se la carga</string>
+    <!-- Battery bar -->
+    <string name="sb_battery_bar_title">Barra de batería</string>
+    <string name="sb_battery_bar_summary">Mostrar y personalizar la barra de batería junto a la barra de estado o barra de navegación</string>
+    <string name="sb_battery_bar_location">Ubicación de la barra de batería</string>
+    <string name="sb_battery_bar_color">Color de la barra de batería</string>
+    <string name="sb_battery_bar_style_title">Estilo de la barra de batería</string>
+    <string name="sb_battery_bar_thickness_title">Grosor de barra de batería</string>
+    <string name="sb_battery_bar_animate_title">Animación de carga</string>
+    <string name="sb_battery_bar_animate_summary">La animación de carga puede resultar en una mala experiencia de usuario. Habilitar a su propia discreción.</string>
+    <string name="sb_battery_bar_hide">Ocultar</string>
+    <string name="sb_battery_bar_statusbar">Barra de estado</string>
+    <string name="sb_battery_bar_topnav">Parte superior de la barra de navegación</string>
+    <string name="sb_battery_bar_bottomnav">Parte inferior de la barra de navegación</string>
+    <string name="sb_battery_bar_reg">Regular</string>
+    <string name="sb_battery_bar_center">Centro-reflejada</string>
+    <string name="sb_battery_bar_charging_color">Color de barra de bateria mientras carga</string>
+    <string name="sb_battery_bar_battery_low_color">Color de barra de bateria en bateria baja</string>
+    <string name="sb_battery_bar_reversed">Invertida</string>
+    <string name="sb_battery_bar_use_gradient_color">Usar degradado de color</string>
+    <string name="sb_battery_bar_gradient_color_summary">Utilizar color degradado como escala para el nivel de batería</string>
+    <string name="sb_battery_bar_high_color">Color de nivel alto</string>
+    <string name="sb_battery_bar_low_color">Color de nivel bajo\"</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_title">Píxeles Inteligentes</string>
+    <string name="smart_pixels_summary">Apaga los píxeles para reducir el consumo de energía</string>
+    <string name="smart_pixels_on_power_save_title">Activación automática en ahorro de batería</string>
+    <string name="smart_pixels_on_power_save_summary">Usa píxeles Inteligentes cuando el ahorro de batería esté habilitado</string>
+    <string name="smart_pixels_percent">Porcentaje de píxeles para deshabilitar</string>
+    <string name="smart_pixels_shift">Prevenga el quemado cambiando los píxeles cada</string>
+    <string name="smart_pixels_warning_text">Píxeles inteligentes es una función de ahorro de energía. Dependiendo de cuántos píxeles decidas desactivar, podrías ver una mejora significativa en la duración de la batería. Para una buena experiencia de usuario, recomendamos establecer la cantidad de píxeles deshabilitados en un 75 por ciento mientras cambia cada 10 minutos.</string>
+    <!-- Dashboard -->
+    <string name="dashboard_category_title">Tablero de instrumentos</string>
+    <string name="dashboard_conditions_title">Condiciones del tablero</string>
+    <string name="summary_dashboard_conditions_enabled">Las condiciones en el panel de ajustes están habilitadas</string>
+    <string name="summary_dashboard_conditions_disabled">Condiciones del panel de ajustes están deshabilitadas</string>
+    <!-- About Evolution X -->
+    <string name="evolution_about_title">Acerca de Evolution X</string>
+    <string name="evolution_about_summary">Información de la ROM</string>
+    <string name="evolution_website_title">Sitio web</string>
+    <string name="evolution_website_summary">¡Pulsa aquí para visitar nuestro sitio web impresionante!</string>
+    <string name="evolution_telegram_title">Grupo de Telegram</string>
+    <string name="evolution_telegram_summary">¡Pulsa aquí para visitar nuestra increíble comunidad!</string>
+    <string name="evolution_github_summary">¡Pulsa aquí para abrir nuestro Github!</string>
+    <string name="evolution_about_info_summary">Evolution X es una ROM personalizada flasheable para traer un verdadero Pixel a tu dispositivo Android a primera vista, con muchas configuraciones adicionales a su disposición. Nuestro objetivo es proporcionar frecuentes construcciones con parches de seguridad mensuales de las últimas fuentes aosp!</string>
+    <string name="evolution_about_team">Acerca de Evolution X</string>
+    <string name="evolution_maintainer">Mantenedor</string>
+    <!--Statusbar privacy indicators-->
+    <string name="statusbar_privacy_indicators_title">Indicadores de privacidad</string>
+    <string name="statusbar_privacy_indicators_summary">Mostrar indicadores de privacidad en la barra de estado</string>
 </resources>
