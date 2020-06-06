@@ -120,9 +120,11 @@
     <!-- Navbar options -->
     <string name="nav_bar_tuner_title">Налады панэлі навігацыі</string>
     <string name="nav_bar_tuner_summary">Змяніць размяшчэнне панэлі навігацыі</string>
-    <string name="nav_bar_layout_inverse_title">Інвертаваць парадак кнопак</string>
-    <string name="nav_bar_layout_inverse_summary">Памяняць месцамі кнопкі навігацыйнай панэлі</string>
+    <string name="navigation_bar_invert_layout_title">Інвертаваць парадак кнопак</string>
+    <string name="navigation_bar_invert_layout_summary">Інвертуйце размяшчэнне панэлі навігацыі і іншыя элементы, такія як перамыкач IME</string>
     <string name="navigation_bar_title">Панэль навігацыі</string>
+    <string name="navigation_bar_arrow_keys_title">Паказваць стрэлкі падчас друкавання тэксту</string>
+    <string name="navigation_bar_arrow_keys_summary">Паказваць кнопки левага і правага курсора падчас друкавання. Кнопка варыянту друкавання будзе схавана.</string>
     <string name="navigation_bar_home_long_press_title">Доўгае утрыманне кнопкі Дадому</string>
     <string name="navigation_bar_home_double_tap_title">Падвойны націск кнопкі Дадому</string>
     <string name="navigation_bar_app_switch_long_press_title">Доўгае утрыманне кнопкі Нядаўнія</string>
@@ -663,15 +665,6 @@
     <string name="qs_footer_text_summary">Адлюстроўваць тэкст унізе панэлі хуткіх налад</string>
     <string name="qs_footer_text_string_title">Карыстацкі тэкст ніжняга калантытула</string>
     <string name="qs_footer_text_string_summary">Выстаўце пустым для радкі па змаўчанні #KeepEvolving</string>
-    <!-- Pulse Ambient Light -->
-    <string name="notification_screen_title">Экран</string>
-    <string name="pulse_ambient_light_title">Пульс</string>
-    <string name="pulse_ambient_light_summary">Падсветка краёў экрана падчас пульсавання апавяшчэнняў</string>
-    <string name="pulse_ambient_light_color_title">Колер падсвятлення контуру</string>
-    <string name="pulse_ambient_auto_color_title">Аўтаматычны колер</string>
-    <string name="pulse_ambient_auto_color_summary">Вызначае колер святла ад асноўнага колеру шпалер</string>
-    <string name="pulse_ambient_light_duration_title">Працягласць</string>
-    <string name="pulse_ambient_light_duration_summary">Усталёўвае працягласць падсветкі анімацыі</string>
     <!-- Battery Styles -->
     <string name="battery_style_category_title">Узровень батарэі</string>
     <string name="battery_percent_title">Працэнт зарада батарэі</string>
@@ -851,6 +844,7 @@
     <string name="screenshot_type_title">Тып скрыншота</string>
     <string name="screenshot_type_fullscreen">Поўнаэкранны скрыншот экрана</string>
     <string name="screenshot_type_partial">Вылучыце вобласць якую вы хочаце захаваць як скрыншот</string>
+    <string name="screenshot_type_long">Зрабіце поўнаэкранны і пашыраны скрыншот</string>
     <!-- Custom headers -->
     <string name="custom_header_pick_summary">Выберыце выявы з загадзя ўсталяваных калекцый выяў</string>
     <string name="custom_header_pick_title">Выбраць выяву з калекцыі</string>
@@ -1001,6 +995,16 @@
     <string name="headset_connect_player_title">Запуск музычнага прайгравальніка пры падключэнні гарнітуры</string>
     <string name="headset_connect_player_summary">Запуск музычнага прайгравальніка па змаўчанні пры падключэнні гарнітуры</string>
     <!-- Themes customization -->
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Тэмы</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Колер акцэнту</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Загаловак / Асноўны шрыфт</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Форма значкоў</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Label for the option that turns off customizations for a given category.-->
+    <string name="theme_customization_device_default">Значэнне прылады па змаўчанні</string>
     <string name="theme_customization_systemui_title">Стыль цёмнай тэмы</string>
     <string name="theme_customization_sysui_icon_title">Значкі радку стану</string>
     <!-- Title for the new device identifier access restrictions -->
@@ -1024,6 +1028,31 @@
     <string name="kill_app_longpress_back_summary">Завяршаць работу бягучай праграмы ўтрымліваннем кнопкі \"Назад\"</string>
     <string name="show_media_heads_up_title">Паказаць апавяшчэнні медыя</string>
     <string name="show_media_heads_up_summary">Паказваць усплывальныя апавяшчэнні пры прайграванні новага трэка, калі прайгравальнік не адкрыты</string>
+    <!--Notification Pulse-->
+    <string name="pulse_ambient_light_title">Пульс</string>
+    <string name="pulse_ambient_light_summary">Падсветка краёў экрана падчас пульсавання апавяшчэнняў</string>
+    <string name="ambient_notification_light_enabled_title">Светлавы імпульс на актыўным дысплеі</string>
+    <string name="ambient_notification_light_enabled_summary">Паказвайце светлавы імпульс пры новых апавяшчэннях на актыўным дысплеі</string>
+    <string name="pulse_ambient_light_note">Уключэнне экрана пры атрыманні новых апавяшчэнняў павінна быць уключана</string>
+    <string name="ambient_brigthness_category_title">Яркасць экрана</string>
+    <string name="pulse_ambient_category_title">Светлавыя апавяшчэнні</string>
+    <string name="ambient_notification_light_hide_aod_title">Паказаць толькі светлавую пульсацыю</string>
+    <string name="ambient_notification_light_hide_aod_summary">Схаваць усе астатнія элементы экрана ў рэжыме актыўнага дысплея</string>
+    <string name="ambient_notification_light_accent_title">Выкарыстоўваць сістэмны колер</string>
+    <string name="ambient_notification_light_accent_summary">Выкарыстоўваць бягучы сістэмны колер для пульсацыі</string>
+    <string name="ambient_notification_light_color_title">Карыстацкі колер</string>
+    <string name="ambient_notification_light_color_summary">Колер па змаўчанні для светлавога імпульсу</string>
+    <string name="ambient_notification_light_color_mode_title">Колер пульсацыі</string>
+    <string name="ambient_notification_light_color_mode_automatic">Колер апавяшчэння</string>
+    <string name="ambient_notification_light_color_mode_accent">Сістэмны колер</string>
+    <string name="ambient_notification_light_color_mode_custom">Карыстацкі колер</string>
+    <string name="ambient_notification_light_timeout_title">Інтэрвал пульсацыі</string>
+    <string name="entry_infinite">Бясконца</string>
+    <string name="entry_five_minute">5 хвілін</string>
+    <string name="entry_ten_minute">10 хвілін</string>
+    <string name="entry_thirty_minute">30 хвілін</string>
+    <string name="entry_sixty_minute">60 хвілін</string>
+    <string name="entry_fifteen_minute">15 хвілін</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">\"Разумная\" панэль апавяшчэнняў</string>
     <string name="smart_pulldown_summary">Адкрыць панэль хуткіх налад, калі там ёсць %1$s апавяшчэнні</string>
@@ -1036,6 +1065,7 @@
     <string name="accent_color_title">Выбар колеру акцэнта</string>
     <!-- Translucent lockscreen notifications background -->
     <string name="translucent_lockscreen_notifications_bg_title">Напаўпразрысты фон апавяшчэнняў</string>
+    <string name="translucent_lockscreen_notifications_bg_summary">Паказваць напаўпразрысты фон апавяшчэнняў на экране блакавання</string>
     <!-- R Notification headers -->
     <string name="notification_headers_title">Паказаць загалоўкі апавяшчэнняў</string>
     <string name="notification_headers_summary">Паказваць загалоўкі апавяшчэнняў ў стылі Android R (патрабуецца перазапуск інтэрфейсу сістэмы)</string>
@@ -1088,4 +1118,7 @@
     <string name="evolution_about_info_summary">Evolution X - гэта карыстацкая прашыўка на базе AOSP, якая імкнецца даць вопыт выкарыстання, падобны з ​​Pixel, з мноствам дадатковых налад. З часоў Android Pie мы прыносім свой брэнд на вашы прылады. Мы працягнем прадастаўляць стабільныя і поўныя налад абнаўлення нашым адданым карыстальнікам.</string>
     <string name="evolution_about_team">Каманда Evolution X</string>
     <string name="evolution_maintainer">Суправаджальнік</string>
+    <!--Statusbar privacy indicators-->
+    <string name="statusbar_privacy_indicators_title">Індыкатары канфідэнцыяльнасці</string>
+    <string name="statusbar_privacy_indicators_summary">Паказваць індыкатары канфідэнцыяльнасці ў радку стану</string>
 </resources>
