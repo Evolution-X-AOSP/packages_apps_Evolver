@@ -62,6 +62,7 @@
     <string name="action_cancel">取消</string>
     <string name="attention">注意</string>
     <string name="default_string">默认</string>
+    <string name="enable_first">请先启用</string>
     <string name="led_color_green">强调色-绿色</string>
     <string name="led_color_red">强调色-红色</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -119,9 +120,11 @@
     <!-- Navbar options -->
     <string name="nav_bar_tuner_title">导航栏调节器</string>
     <string name="nav_bar_tuner_summary">更改导航栏布局</string>
-    <string name="nav_bar_layout_inverse_title">反转布局</string>
-    <string name="nav_bar_layout_inverse_summary">反转导航栏按键布局</string>
+    <string name="navigation_bar_invert_layout_title">反转布局</string>
+    <string name="navigation_bar_invert_layout_summary">反转导航栏和其他项目的布局，如输入法切换器</string>
     <string name="navigation_bar_title">导航栏</string>
+    <string name="navigation_bar_arrow_keys_title">键入时显示方向键</string>
+    <string name="navigation_bar_arrow_keys_summary">键入时显示左右光标按钮而不显示输入法选择器。</string>
     <string name="navigation_bar_home_long_press_title">Home键长按行为</string>
     <string name="navigation_bar_home_double_tap_title">Home键双击行为</string>
     <string name="navigation_bar_app_switch_long_press_title">最近应用键长按行为</string>
@@ -662,15 +665,6 @@
     <string name="qs_footer_text_summary">快速设置面板底部显示文本</string>
     <string name="qs_footer_text_string_title">自定义页脚文本</string>
     <string name="qs_footer_text_string_summary">留空则保持默认</string>
-    <!-- Pulse Ambient Light -->
-    <string name="notification_screen_title">屏幕</string>
-    <string name="pulse_ambient_light_title">新通知闪光</string>
-    <string name="pulse_ambient_light_summary">在通知脉冲上照亮屏幕的侧面边缘</string>
-    <string name="pulse_ambient_light_color_title">侧边亮屏颜色</string>
-    <string name="pulse_ambient_auto_color_title">自动颜色</string>
-    <string name="pulse_ambient_auto_color_summary">设定侧边光线颜色为壁纸的主颜色</string>
-    <string name="pulse_ambient_light_duration_title">持续时间</string>
-    <string name="pulse_ambient_light_duration_summary">设置环境光线动画持续时间</string>
     <!-- Battery Styles -->
     <string name="battery_style_category_title">电池电量</string>
     <string name="battery_percent_title">电量百分比</string>
@@ -848,6 +842,7 @@
     <string name="screenshot_type_title">屏幕截图类型</string>
     <string name="screenshot_type_fullscreen">全屏截图</string>
     <string name="screenshot_type_partial">拖动选择想要截取的区域</string>
+    <string name="screenshot_type_long">全屏 &amp; 扩展屏幕截图</string>
     <!-- Custom headers -->
     <string name="custom_header_pick_summary">从预安装的图像收藏中选择图像</string>
     <string name="custom_header_pick_title">从收藏中选择图像</string>
@@ -998,6 +993,16 @@
     <string name="headset_connect_player_title">耳机连接后打开音乐播放器</string>
     <string name="headset_connect_player_summary">当耳机连接时，启动默认的音乐应用程序</string>
     <!-- Themes customization -->
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">主题</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">色调</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">标题/正文字体</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">更改图标形状</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Label for the option that turns off customizations for a given category.-->
+    <string name="theme_customization_device_default">设备默认设置</string>
     <string name="theme_customization_systemui_title">暗色主题样式</string>
     <string name="theme_customization_sysui_icon_title">状态栏图标</string>
     <!-- Title for the new device identifier access restrictions -->
@@ -1021,10 +1026,31 @@
     <string name="kill_app_longpress_back_summary">长按返回键将终止前台应用程序</string>
     <string name="show_media_heads_up_title">显示媒体浮动通知</string>
     <string name="show_media_heads_up_summary">如果播放器未进入前台模式，当播放新曲目时显示媒体浮动通知。</string>
-    <!-- Headset ringtone audio focus -->
-    <string name="ringtone_focus_mode_title">铃声音频聚焦</string>
-    <string name="ringtone_focus_mode_dynamic">仅音乐活跃时使用耳机</string>
-    <string name="ringtone_focus_mode_stock">扬声器和耳机</string>
+    <!--Notification Pulse-->
+    <string name="pulse_ambient_light_title">新通知闪光</string>
+    <string name="pulse_ambient_light_summary">在通知脉冲上照亮屏幕的侧面边缘</string>
+    <string name="ambient_notification_light_enabled_title">始终显示闪光</string>
+    <string name="ambient_notification_light_enabled_summary">使用始终开启功能在新通知上显示光脉冲</string>
+    <string name="pulse_ambient_light_note">收到新通知时必须开启唤醒屏幕</string>
+    <string name="ambient_brigthness_category_title">屏幕亮度</string>
+    <string name="pulse_ambient_category_title">通知光脉冲</string>
+    <string name="ambient_notification_light_hide_aod_title">只显示光脉冲</string>
+    <string name="ambient_notification_light_hide_aod_summary">始终隐藏所有其他显示元素</string>
+    <string name="ambient_notification_light_accent_title">使用系统强调色</string>
+    <string name="ambient_notification_light_accent_summary">为光脉冲使用当前系统强调颜色</string>
+    <string name="ambient_notification_light_color_title">自定义颜色</string>
+    <string name="ambient_notification_light_color_summary">光脉冲默认颜色</string>
+    <string name="ambient_notification_light_color_mode_title">光脉冲颜色</string>
+    <string name="ambient_notification_light_color_mode_automatic">通知颜色</string>
+    <string name="ambient_notification_light_color_mode_accent">系统强调色</string>
+    <string name="ambient_notification_light_color_mode_custom">自定义颜色</string>
+    <string name="ambient_notification_light_timeout_title">光脉冲超时</string>
+    <string name="entry_infinite">无限</string>
+    <string name="entry_five_minute">5 分钟</string>
+    <string name="entry_ten_minute">10 分钟</string>
+    <string name="entry_thirty_minute">30 分钟</string>
+    <string name="entry_sixty_minute">60 分钟</string>
+    <string name="entry_fifteen_minute">15 分钟</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">智能下拉</string>
     <string name="smart_pulldown_summary">当 %1$s 通知时打开快速设置</string>
@@ -1037,4 +1063,60 @@
     <string name="accent_color_title">颜色选择器</string>
     <!-- Translucent lockscreen notifications background -->
     <string name="translucent_lockscreen_notifications_bg_title">半透明通知栏背景</string>
+    <string name="translucent_lockscreen_notifications_bg_summary">在锁屏界面显示半透明通知背景</string>
+    <!-- R Notification headers -->
+    <string name="notification_headers_title">显示通知标题</string>
+    <string name="notification_headers_summary">是否显示 R 样式通知标题 (需要重启系统界面)</string>
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">充电信息</string>
+    <string name="lockscreen_battery_info_summary">充电时显示充电器最大电流、电压和电池温度</string>
+    <!-- Battery bar -->
+    <string name="sb_battery_bar_title">电量条</string>
+    <string name="sb_battery_bar_summary">显示和自定义在状态栏或导航栏附近的电量条</string>
+    <string name="sb_battery_bar_location">电量条位置</string>
+    <string name="sb_battery_bar_color">电量条颜色</string>
+    <string name="sb_battery_bar_style_title">电量条样式</string>
+    <string name="sb_battery_bar_thickness_title">电量条厚度</string>
+    <string name="sb_battery_bar_animate_title">充电动画</string>
+    <string name="sb_battery_bar_animate_summary">充电动画可能会降低用户体验，请酌情使用。</string>
+    <string name="sb_battery_bar_hide">隐藏</string>
+    <string name="sb_battery_bar_statusbar">状态栏</string>
+    <string name="sb_battery_bar_topnav">导航栏顶部</string>
+    <string name="sb_battery_bar_bottomnav">导航栏底部</string>
+    <string name="sb_battery_bar_reg">常规</string>
+    <string name="sb_battery_bar_center">中心镜像</string>
+    <string name="sb_battery_bar_charging_color">电量条颜色 (充电时)</string>
+    <string name="sb_battery_bar_battery_low_color">电量条颜色 (低电量时)</string>
+    <string name="sb_battery_bar_reversed">反转</string>
+    <string name="sb_battery_bar_use_gradient_color">使用渐变颜色</string>
+    <string name="sb_battery_bar_gradient_color_summary">使用渐变颜色显示电池电量</string>
+    <string name="sb_battery_bar_high_color">高电量颜色</string>
+    <string name="sb_battery_bar_low_color">低电量颜色</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_title">智能像素</string>
+    <string name="smart_pixels_summary">关闭像素以降低功耗</string>
+    <string name="smart_pixels_on_power_save_title">省电模式时自动启用</string>
+    <string name="smart_pixels_on_power_save_summary">在省电模式启用时使用智能像素</string>
+    <string name="smart_pixels_percent">禁用的像素数量</string>
+    <string name="smart_pixels_shift">通过移动像素来防止烧屏</string>
+    <string name="smart_pixels_warning_text">智能像素是节能功能。 取决于您决定关闭多少像素，您可以看到电池寿命的明显改善。 为了方便用户体验，我们建议将禁用像素的数量设置为 75%，同时每隔 10 分钟进行调整。</string>
+    <!-- Dashboard -->
+    <string name="dashboard_category_title">仪表盘</string>
+    <string name="dashboard_conditions_title">面板状态</string>
+    <string name="summary_dashboard_conditions_enabled">面板状态摘要已启用</string>
+    <string name="summary_dashboard_conditions_disabled">面板状态摘要已停用</string>
+    <!-- About Evolution X -->
+    <string name="evolution_about_title">关于 Evolution X</string>
+    <string name="evolution_about_summary">团队信息</string>
+    <string name="evolution_website_title">网站</string>
+    <string name="evolution_website_summary">点击此处以访问我们最棒的网站！</string>
+    <string name="evolution_telegram_title">Telegram 群组</string>
+    <string name="evolution_telegram_summary">点击这里来访问我们惊人的社区！</string>
+    <string name="evolution_github_summary">点击这里打开我们的 GitHub！</string>
+    <string name="evolution_about_info_summary">Evolution X 是可闪存的自定义 ROM，乍看之下可为您的 Android 设备带来真正的 Pixel 感觉，并提供许多其他配置。 我们的目标是为频繁的构建提供来自最新 aosp 来源的每月安全补丁！</string>
+    <string name="evolution_about_team">Evolution X 团队</string>
+    <string name="evolution_maintainer">维护者</string>
+    <!--Statusbar privacy indicators-->
+    <string name="statusbar_privacy_indicators_title">隐私指示器</string>
+    <string name="statusbar_privacy_indicators_summary">在状态栏上显示隐私指示器</string>
 </resources>
