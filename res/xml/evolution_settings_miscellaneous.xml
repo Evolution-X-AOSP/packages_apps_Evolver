@@ -120,11 +120,12 @@
             android:summary="@string/proximity_wake_summary"
             android:defaultValue="false" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="sensor_block"
+        <!-- Sensor Block -->
+        <Preference
+            android:key="sensor_block_settings"
             android:title="@string/sensor_block_title"
             android:summary="@string/sensor_block_summary"
-            android:defaultValue="false" />
+            android:fragment="com.evolution.settings.fragments.SensorBlockSettings"/>
 
         <com.evolution.settings.preference.GlobalSettingSwitchPreference
             android:key="allow_signature_fake"
