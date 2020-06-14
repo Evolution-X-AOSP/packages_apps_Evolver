@@ -120,9 +120,11 @@
     <!-- Navbar options -->
     <string name="nav_bar_tuner_title">Изменение панели навигации</string>
     <string name="nav_bar_tuner_summary">Изменить расположение панели навигации</string>
-    <string name="nav_bar_layout_inverse_title">Инвертировать порядок кнопок</string>
-    <string name="nav_bar_layout_inverse_summary">Поменять местами кнопки панели навигации</string>
+    <string name="navigation_bar_invert_layout_title">Инвертировать порядок кнопок</string>
+    <string name="navigation_bar_invert_layout_summary">Инвертирует расположение панели навигации и другие элементы, такие как кнопка смены метода ввода</string>
     <string name="navigation_bar_title">Панель навигации</string>
+    <string name="navigation_bar_arrow_keys_title">Показывать клавиши стрелок при печати</string>
+    <string name="navigation_bar_arrow_keys_summary">Отображать кнопки перемещения курсора влево или вправо при вводе. Кнопка выбора метода ввода отображаться не будет.</string>
     <string name="navigation_bar_home_long_press_title">Действие длительного нажатия \"Домой\"</string>
     <string name="navigation_bar_home_double_tap_title">Действие двойного нажатия \"Домой\"</string>
     <string name="navigation_bar_app_switch_long_press_title">Действие длительного нажатия \"Недавних приложений\"</string>
@@ -663,15 +665,6 @@
     <string name="qs_footer_text_summary">Отображать текст внизу панели быстрых настроек</string>
     <string name="qs_footer_text_string_title">Пользовательский текст нижнего колонтитула</string>
     <string name="qs_footer_text_string_summary">Выставьте пустым для строки по умолчанию #KeepEvolving</string>
-    <!-- Pulse Ambient Light -->
-    <string name="notification_screen_title">Экран</string>
-    <string name="pulse_ambient_light_title">Пульсирующие уведомления</string>
-    <string name="pulse_ambient_light_summary">Подсвечивать края экрана при получении уведомления</string>
-    <string name="pulse_ambient_light_color_title">Цвет подсветки краёв</string>
-    <string name="pulse_ambient_auto_color_title">Автоматический цвет</string>
-    <string name="pulse_ambient_auto_color_summary">Устанавливает цвет подсветки краев экрана в соответствии с основным цветом обоев</string>
-    <string name="pulse_ambient_light_duration_title">Длительность</string>
-    <string name="pulse_ambient_light_duration_summary">Установить длительность подсветки</string>
     <!-- Battery Styles -->
     <string name="battery_style_category_title">Уровень заряда батареи</string>
     <string name="battery_percent_title">Процент заряда батареи</string>
@@ -849,6 +842,7 @@
     <string name="screenshot_type_title">Тип скриншотов</string>
     <string name="screenshot_type_fullscreen">Полноэкранный скриншот</string>
     <string name="screenshot_type_partial">Скриншот выбранной области</string>
+    <string name="screenshot_type_long">Полноэкранный режим с расширенным скриншотом&amp;</string>
     <!-- Custom headers -->
     <string name="custom_header_pick_summary">Выберите изображение из предустановленных коллекций изображений</string>
     <string name="custom_header_pick_title">Выбрать изображение из коллекции</string>
@@ -999,6 +993,16 @@
     <string name="headset_connect_player_title">Запускать музыкальный плеер при подключении гарнитуры</string>
     <string name="headset_connect_player_summary">Запускать музыкальный плеер при подключении наушников</string>
     <!-- Themes customization -->
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Темы</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Цвет акцента</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Заголовок / Основной шрифт</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Форма иконок</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Label for the option that turns off customizations for a given category.-->
+    <string name="theme_customization_device_default">По умолчанию</string>
     <string name="theme_customization_systemui_title">Стили тёмной темы</string>
     <string name="theme_customization_sysui_icon_title">Значки строки состояния</string>
     <!-- Title for the new device identifier access restrictions -->
@@ -1022,6 +1026,31 @@
     <string name="kill_app_longpress_back_summary">Завершать работу текущего приложения удерживанием кнопки «Назад»</string>
     <string name="show_media_heads_up_title">Показать уведомления медиа</string>
     <string name="show_media_heads_up_summary">Показывать всплывающие уведомления при воспроизведении нового трека, если проигрыватель не открыт</string>
+    <!--Notification Pulse-->
+    <string name="pulse_ambient_light_title">Пульсирующие уведомления</string>
+    <string name="pulse_ambient_light_summary">Подсвечивать края экрана при получении уведомления</string>
+    <string name="ambient_notification_light_enabled_title">Пульсировать в режиме Always On</string>
+    <string name="ambient_notification_light_enabled_summary">Пульсировать при новом уведомлении в режиме Always On</string>
+    <string name="pulse_ambient_light_note">Пробуждение при получении новых уведомлений должно быть включено</string>
+    <string name="ambient_brigthness_category_title">Яркость экрана</string>
+    <string name="pulse_ambient_category_title">Пульсирование при уведомлениях</string>
+    <string name="ambient_notification_light_hide_aod_title">Показывать только пульсирование</string>
+    <string name="ambient_notification_light_hide_aod_summary">Скрыть все остальные элементы в режиме Always On</string>
+    <string name="ambient_notification_light_accent_title">Использовать цвет акцента системы</string>
+    <string name="ambient_notification_light_accent_summary">Использовать текущий цвет акцента для пульсации</string>
+    <string name="ambient_notification_light_color_title">Пользовательский цвет</string>
+    <string name="ambient_notification_light_color_summary">По умолчанию</string>
+    <string name="ambient_notification_light_color_mode_title">Цвет пульсации</string>
+    <string name="ambient_notification_light_color_mode_automatic">Цвет уведомлений</string>
+    <string name="ambient_notification_light_color_mode_accent">Цвет акцента системы</string>
+    <string name="ambient_notification_light_color_mode_custom">Пользовательский цвет</string>
+    <string name="ambient_notification_light_timeout_title">Интервал пульсаций</string>
+    <string name="entry_infinite">Непрерывно</string>
+    <string name="entry_five_minute">5 минут</string>
+    <string name="entry_ten_minute">10 минут</string>
+    <string name="entry_thirty_minute">30 минут</string>
+    <string name="entry_sixty_minute">60 минут</string>
+    <string name="entry_fifteen_minute">15 минут</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Умное раскрытие</string>
     <string name="smart_pulldown_summary">Открыть панель настроек, если там %1$s уведомлений</string>
@@ -1034,6 +1063,7 @@
     <string name="accent_color_title">Выбор цвета акцента</string>
     <!-- Translucent lockscreen notifications background -->
     <string name="translucent_lockscreen_notifications_bg_title">Полупрозрачный фон уведомлений</string>
+    <string name="translucent_lockscreen_notifications_bg_summary">Показывать полупрозрачный фон уведомлений на экране блокировки</string>
     <!-- R Notification headers -->
     <string name="notification_headers_title">Показывать заголовки уведомлений</string>
     <string name="notification_headers_summary">Показывать заголовки уведомлений в стиле Android R (требуется перезапуск интерфейса системы)</string>
@@ -1064,7 +1094,7 @@
     <string name="sb_battery_bar_low_color">Цвет низкого уровня</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Умные пиксели</string>
-    <string name="smart_pixels_summary">Отключить пиксели, чтобы уменьшить потребление энергии</string>
+    <string name="smart_pixels_summary">Выключить пиксели для снижения энергопотребления</string>
     <string name="smart_pixels_on_power_save_title">Включать автоматически в режиме энергосбережения</string>
     <string name="smart_pixels_on_power_save_summary">Включить умные пиксели, когда включен режим энергосбережения</string>
     <string name="smart_pixels_percent">Процент выключаемых пикселей</string>
@@ -1080,6 +1110,8 @@
     <string name="evolution_about_summary">Информация о команде</string>
     <string name="evolution_website_title">Сайт</string>
     <string name="evolution_website_summary">Нажмите здесь, чтобы посетить наш великолепный сайт!</string>
+    <string name="evolution_twitter_title">Наш Twitter</string>
+    <string name="evolution_twitter_summary">Нажмите здесь, что бы посетить наш Twitter!</string>
     <string name="evolution_telegram_title">Группа в Telegram</string>
     <string name="evolution_telegram_summary">Нажмите здесь, чтобы посетить наше прекрасное сообщество!</string>
     <string name="evolution_github_summary">Нажмите здесь, чтобы открыть наш страницы GitHub!</string>
