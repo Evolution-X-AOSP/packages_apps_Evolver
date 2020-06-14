@@ -120,9 +120,11 @@
     <!-- Navbar options -->
     <string name="nav_bar_tuner_title">Trình chỉnh sửa thanh điều hướng</string>
     <string name="nav_bar_tuner_summary">Thay đổi cách bố trí thanh điều hướng</string>
-    <string name="nav_bar_layout_inverse_title">Đảo bố cục</string>
-    <string name="nav_bar_layout_inverse_summary">Đảo ngược bố cục các phím điều hướng</string>
+    <string name="navigation_bar_invert_layout_title">Đảo ngược bố cục</string>
+    <string name="navigation_bar_invert_layout_summary">Đảo ngược bố cục của thanh điều hướng và các mục khác, chẳng hạn như trình chuyển đổi IME</string>
     <string name="navigation_bar_title">Thanh điều hướng</string>
+    <string name="navigation_bar_arrow_keys_title">Hiển thị phím mũi tên trong khi nhập liệu</string>
+    <string name="navigation_bar_arrow_keys_summary">Hiển thị các nút con trỏ bên trái và bên phải khi nhập liệu. Ghi đè bộ chuyển IME.</string>
     <string name="navigation_bar_home_long_press_title">Hành động nhấn giữ phím Trang chính</string>
     <string name="navigation_bar_home_double_tap_title">Hành động chạm đúp phím Trang chính</string>
     <string name="navigation_bar_app_switch_long_press_title">Hành động nhấn giữ phím Đa nhiệm</string>
@@ -663,15 +665,6 @@
     <string name="qs_footer_text_summary">Hiển thị văn bản ở dưới cùng của bảng cài đặt nhanh</string>
     <string name="qs_footer_text_string_title">Tùy chỉnh văn bản footer</string>
     <string name="qs_footer_text_string_summary">Không đặt mặc định là #KeepEvolving</string>
-    <!-- Pulse Ambient Light -->
-    <string name="notification_screen_title">Màn hình</string>
-    <string name="pulse_ambient_light_title">Sóng nhạc</string>
-    <string name="pulse_ambient_light_summary">Làm sáng các cạnh bên của màn hình trên thông báo đẩy</string>
-    <string name="pulse_ambient_light_color_title">Màu sắc ánh sáng cạnh</string>
-    <string name="pulse_ambient_auto_color_title">Màu sắc tự động</string>
-    <string name="pulse_ambient_auto_color_summary">Đặt màu sắc ánh sáng cạnh cho màu chính của hình nền</string>
-    <string name="pulse_ambient_light_duration_title">Thời lượng</string>
-    <string name="pulse_ambient_light_duration_summary">Đặt thời lượng cho hiệu ứng màn hình cạnh</string>
     <!-- Battery Styles -->
     <string name="battery_style_category_title">Mức pin</string>
     <string name="battery_percent_title">Phần trăm pin</string>
@@ -852,6 +845,7 @@
     <string name="screenshot_type_title">Kiểu chụp màn hình</string>
     <string name="screenshot_type_fullscreen">Chụp ảnh toàn màn hình</string>
     <string name="screenshot_type_partial">Kéo lựa chọn khu vực bạn muốn để chụp màn hình</string>
+    <string name="screenshot_type_long">Chụp toàn màn hình với ảnh chụp màn hình mở rộng</string>
     <!-- Custom headers -->
     <string name="custom_header_pick_summary">Chọn một hình ảnh từ bộ sưu tập hình ảnh được cài đặt sẵn</string>
     <string name="custom_header_pick_title">Chọn hình ảnh từ bộ sưu tập</string>
@@ -1002,6 +996,16 @@
     <string name="headset_connect_player_title">Khởi chạy ứng dụng nghe nhạc khi kết nối tai nghe</string>
     <string name="headset_connect_player_summary">Mở ứng dụng nhạc mặc định khi tai nghe được kết nối</string>
     <!-- Themes customization -->
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Chủ đề</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Màu chủ đề</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Phông chữ tiêu đề/nội dung</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Hình dạng biểu tượng</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Label for the option that turns off customizations for a given category.-->
+    <string name="theme_customization_device_default">Cài đặt mặc định của thiết bị</string>
     <string name="theme_customization_systemui_title">Chế độ nền tối</string>
     <string name="theme_customization_sysui_icon_title">Biểu tượng thanh trạng thái</string>
     <!-- Title for the new device identifier access restrictions -->
@@ -1025,6 +1029,31 @@
     <string name="kill_app_longpress_back_summary">Nhấn giữ phím back để tắt ứng dụng chạy nổi</string>
     <string name="show_media_heads_up_title">Hiển thị phương tiện truyền thông nổi</string>
     <string name="show_media_heads_up_summary">Hiển thị phương tiện truyền thông nổi khi một bản nhạc mới được phát, nếu trình phát chưa ở phía trước</string>
+    <!--Notification Pulse-->
+    <string name="pulse_ambient_light_title">Sóng nhạc</string>
+    <string name="pulse_ambient_light_summary">Làm sáng các cạnh bên của màn hình trên thông báo đẩy</string>
+    <string name="ambient_notification_light_enabled_title">Luôn luôn bật</string>
+    <string name="ambient_notification_light_enabled_summary">Hiển thị xung ánh sáng trên thông báo mới bằng cách luôn bật</string>
+    <string name="pulse_ambient_light_note">Sáng màn hình khi có thông báo mới</string>
+    <string name="ambient_brigthness_category_title">Độ sáng màn hình</string>
+    <string name="pulse_ambient_category_title">Thông báo xung ánh sáng</string>
+    <string name="ambient_notification_light_hide_aod_title">Chỉ hiển thị xung ánh sáng</string>
+    <string name="ambient_notification_light_hide_aod_summary">Ẩn tất cả các thành phần hiển thị khác luôn luôn bật</string>
+    <string name="ambient_notification_light_accent_title">Sử dụng màu nhấn hệ thống</string>
+    <string name="ambient_notification_light_accent_summary">Sử dụng màu nhấn hệ thống hiện tại cho xung ánh sáng</string>
+    <string name="ambient_notification_light_color_title">Màu tùy chỉnh</string>
+    <string name="ambient_notification_light_color_summary">Màu mặc định cho xung ánh sáng</string>
+    <string name="ambient_notification_light_color_mode_title">Màu sắc xung thông báo</string>
+    <string name="ambient_notification_light_color_mode_automatic">Tường thuật thông báo</string>
+    <string name="ambient_notification_light_color_mode_accent">Dùng màu hệ thống</string>
+    <string name="ambient_notification_light_color_mode_custom">Màu tùy chỉnh</string>
+    <string name="ambient_notification_light_timeout_title">Thời gian chờ cho xung ánh sáng</string>
+    <string name="entry_infinite">Vô cực</string>
+    <string name="entry_five_minute">5 phút</string>
+    <string name="entry_ten_minute">10 phút</string>
+    <string name="entry_thirty_minute">30 phút</string>
+    <string name="entry_sixty_minute">60 phút</string>
+    <string name="entry_fifteen_minute">15 phút</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Mở cài đặt nhanh thông minh</string>
     <string name="smart_pulldown_summary">Mở cài đặt nhanh khi có %1$s thông báo</string>
@@ -1037,6 +1066,7 @@
     <string name="accent_color_title">Bộ chọn màu chủ đạo</string>
     <!-- Translucent lockscreen notifications background -->
     <string name="translucent_lockscreen_notifications_bg_title">Thông báo mờ nền</string>
+    <string name="translucent_lockscreen_notifications_bg_summary">Hiển thị nền thông báo mờ trên màn hình khóa</string>
     <!-- R Notification headers -->
     <string name="notification_headers_title">Hiển thị tiêu đề thông báo</string>
     <string name="notification_headers_summary">Có hiển thị tiêu đề thông báo kiểu Android R hay không (Yêu cầu khởi động lại SystemUI)</string>
@@ -1083,10 +1113,15 @@
     <string name="evolution_about_summary">Thông tin về Nhóm </string>
     <string name="evolution_website_title">Trang web</string>
     <string name="evolution_website_summary">Chạm để đến website</string>
+    <string name="evolution_twitter_title">Trang Twiiter</string>
+    <string name="evolution_twitter_summary">Nhấn để ghé thăm trang Twiiter!</string>
     <string name="evolution_telegram_title">Nhóm Telegram</string>
     <string name="evolution_telegram_summary">Chạm để ghé thăm cộng đồng của chúng tôi!</string>
     <string name="evolution_github_summary">Chạm để mở Github!</string>
     <string name="evolution_about_info_summary">Evolution X là ROM tùy chỉnh dựa trên AOSP, với mục tiêu cung cấp cảm giác giống Pixel với nhiều tính năng tùy chỉnh. Kể từ Android Pie, chúng tôi đã mang thương hiệu Android của riêng mình đến các thiết bị của bạn. Chúng tôi sẽ tiếp tục cung cấp các bản cập nhật ổn định và giàu tính năng cho người dùng trung thành của chúng tôi.</string>
     <string name="evolution_about_team">Nhóm Evolution X</string>
     <string name="evolution_maintainer">Người bảo trì</string>
+    <!--Statusbar privacy indicators-->
+    <string name="statusbar_privacy_indicators_title">Chỉ số riêng tư</string>
+    <string name="statusbar_privacy_indicators_summary">Hiển thị các chỉ số riêng tư trên thanh trạng thái</string>
 </resources>
