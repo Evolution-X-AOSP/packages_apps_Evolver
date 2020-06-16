@@ -64,8 +64,6 @@ public class NavigationSettings extends ActionFragment implements
 
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
     private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
-    private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
-    private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
     private static final String KEY_ASSIST_PRESS = "hardware_keys_assist_press";
     private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
@@ -89,7 +87,6 @@ public class NavigationSettings extends ActionFragment implements
     private static final String CATEGORY_HWKEY = "hardware_keys";
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_BACK = "back_key";
-    private static final String CATEGORY_MENU = "menu_key";
     private static final String CATEGORY_ASSIST = "assist_key";
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
     private static final String CATEGORY_CAMERA = "camera_key";
@@ -98,7 +95,6 @@ public class NavigationSettings extends ActionFragment implements
     // Must match values in frameworks/base/core/res/res/values/config.xml
     public static final int KEY_MASK_HOME = 0x01;
     public static final int KEY_MASK_BACK = 0x02;
-    public static final int KEY_MASK_MENU = 0x04;
     public static final int KEY_MASK_ASSIST = 0x08;
     public static final int KEY_MASK_APP_SWITCH = 0x10;
     public static final int KEY_MASK_CAMERA = 0x20;
@@ -106,8 +102,6 @@ public class NavigationSettings extends ActionFragment implements
 
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
-    private ListPreference mMenuPressAction;
-    private ListPreference mMenuLongPressAction;
     private ListPreference mAssistPressAction;
     private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
@@ -229,14 +223,12 @@ public class NavigationSettings extends ActionFragment implements
         // read bits for present hardware keys
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
         final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
-        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
         final boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
 
         final boolean showHomeWake = (deviceWakeKeys & KEY_MASK_HOME) != 0;
         final boolean showBackWake = (deviceWakeKeys & KEY_MASK_BACK) != 0;
-        final boolean showMenuWake = (deviceWakeKeys & KEY_MASK_MENU) != 0;
         final boolean showAssistWake = (deviceWakeKeys & KEY_MASK_ASSIST) != 0;
         final boolean showAppSwitchWake = (deviceWakeKeys & KEY_MASK_APP_SWITCH) != 0;
         final boolean showCameraWake = (deviceWakeKeys & KEY_MASK_CAMERA) != 0;
@@ -246,7 +238,6 @@ public class NavigationSettings extends ActionFragment implements
         boolean hasAnyBindableKey = false;
         final PreferenceCategory homeCategory = prefScreen.findPreference(CATEGORY_HOME);
         final PreferenceCategory backCategory = prefScreen.findPreference(CATEGORY_BACK);
-        final PreferenceCategory menuCategory = prefScreen.findPreference(CATEGORY_MENU);
         final PreferenceCategory assistCategory = prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory = prefScreen.findPreference(CATEGORY_APPSWITCH);
         final PreferenceCategory cameraCategory = prefScreen.findPreference(CATEGORY_CAMERA);
@@ -324,26 +315,6 @@ public class NavigationSettings extends ActionFragment implements
             prefScreen.removePreference(backCategory);
         }
 
-        // menu key
-        if (hasMenuKey) {
-            if (!showMenuWake) {
-                menuCategory.removePreference(findPreference(Settings.System.MENU_WAKE_SCREEN));
-            }
-
-            Action pressAction = Action.fromSettings(resolver,
-                    Settings.System.KEY_MENU_ACTION, Action.MENU);
-            mMenuPressAction = initList(KEY_MENU_PRESS, pressAction);
-
-            Action longPressAction = Action.fromSettings(resolver,
-                        Settings.System.KEY_MENU_LONG_PRESS_ACTION,
-                        hasAssistKey ? Action.NOTHING : Action.APP_SWITCH);
-            mMenuLongPressAction = initList(KEY_MENU_LONG_PRESS, longPressAction);
-
-            hasAnyBindableKey = true;
-        } else {
-            prefScreen.removePreference(menuCategory);
-        }
-
         // search/assist key
         if (hasAssistKey) {
             if (!showAssistWake) {
@@ -415,14 +386,6 @@ public class NavigationSettings extends ActionFragment implements
 
                 mHomeDoubleTapAction.setEntries(actionEntriesGo);
                 mHomeDoubleTapAction.setEntryValues(actionValuesGo);
-            }
-
-            if (hasMenuKey) {
-                mMenuPressAction.setEntries(actionEntriesGo);
-                mMenuPressAction.setEntryValues(actionValuesGo);
-
-                mMenuLongPressAction.setEntries(actionEntriesGo);
-                mMenuLongPressAction.setEntryValues(actionValuesGo);
             }
 
             if (hasAssistKey) {
@@ -580,14 +543,6 @@ public class NavigationSettings extends ActionFragment implements
         } else if (preference == mNavigationHomeDoubleTapAction) {
             handleListChange((ListPreference) preference, newValue,
                     Settings.System.KEY_HOME_DOUBLE_TAP_ACTION_NAVBAR);
-            return true;
-        } else if (preference == mMenuPressAction) {
-            handleListChange(mMenuPressAction, newValue,
-                    Settings.System.KEY_MENU_ACTION);
-            return true;
-        } else if (preference == mMenuLongPressAction) {
-            handleListChange(mMenuLongPressAction, newValue,
-                    Settings.System.KEY_MENU_LONG_PRESS_ACTION);
             return true;
         } else if (preference == mAssistPressAction) {
             handleListChange(mAssistPressAction, newValue,
