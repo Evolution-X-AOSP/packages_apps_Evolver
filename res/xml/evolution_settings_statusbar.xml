@@ -134,6 +134,15 @@
             android:summary="%s"
             android:defaultValue="0"/>
 
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="vowifi_icon_style"
+            android:title="@string/vowifi_icon_style_title"
+            android:entries="@array/vowifi_icon_style_entries"
+            android:entryValues="@array/vowifi_icon_style_values"
+            android:dependency="vowifi_icon"
+            android:summary="%s"
+            android:defaultValue="0"/>
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="volte_icon"
             android:title="@string/volte_icon_title"
