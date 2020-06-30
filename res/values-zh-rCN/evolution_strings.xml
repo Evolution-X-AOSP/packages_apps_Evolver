@@ -305,6 +305,18 @@
     <string name="volte_icon_volit">VoLIT</string>
     <string name="volte_icon_asus">华硕</string>
     <string name="volte_icon_miui">MIUI 11</string>
+    <string name="volte_icon_emui">EMUI</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWiFi 图标</string>
+    <string name="vowifi_icon_enabled">已启用</string>
+    <string name="vowifi_icon_disabled">屏幕旋转已关闭</string>
+    <string name="vowifi_icon_enabled_volte_disabled">VoWiFi 而不是 VoLTE</string>
+    <string name="vowifi_icon_style_title">VoWiFi 图标样式</string>
+    <string name="vowifi_icon_default">默认</string>
+    <string name="vowifi_icon_asus">华硕</string>
+    <string name="vowifi_icon_emui">EMUI</string>
+    <string name="vowifi_icon_moto">摩托罗拉</string>
+    <string name="vowifi_icon_oneplus">氧 OS</string>
     <!-- Notification guts kill app button -->
     <string name="notification_misc">杂项</string>
     <string name="notification_guts_kill_app_button_title">强制关闭应用按钮</string>
@@ -380,9 +392,6 @@
     <!-- QS rows and columns -->
     <string name="sysui_qqs_count_title">列 (快速设置栏)</string>
     <string name="qs_layout_category">布局</string>
-    <string name="qs_column_rows_settings_title">快速设置面板选项</string>
-    <string name="qs_columns_rows_category_title">快速设置列和行</string>
-    <string name="qs_rows_columns_title">快速设置行和列</string>
     <string name="qs_rows_portrait_title">行数（纵向）</string>
     <string name="qs_rows_landscape_title">列数（横向）</string>
     <string name="qs_columns_portrait_title">列数（纵向）</string>
@@ -565,13 +574,13 @@
     <string name="qs_tile_animation_category">快速设置磁贴</string>
     <string name="qs_tile_animation_style_title">快速设置磁贴动画</string>
     <string name="qs_tile_animation_duration_title">快速设置磁贴动画持续时间</string>
+    <string name="qs_tile_animation_interpolator_title">快速设置磁贴动画插值器</string>
     <string name="qs_tile_animation_style_off">屏幕旋转已关闭</string>
     <string name="qs_tile_animation_style_flip">翻转</string>
     <string name="qs_tile_animation_style_rotate">旋转</string>
     <string name="qs_tile_animation_duration_low">慢速</string>
     <string name="qs_tile_animation_duration_default">默认</string>
     <string name="qs_tile_animation_duration_fast">快速</string>
-    <string name="qs_tile_animation_interpolator_title">快速设置磁贴动画插值器</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">线性</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">加速</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">减速</string>
@@ -835,6 +844,9 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">阻止某些应用访问传感器</string>
     <string name="sensor_block_summary">阻止某些应用访问特定的传感器以节省电池电量。</string>
+    <string name="sensor_block_app_picker_title">屏蔽这些应用的传感器</string>
+    <string name="add_sensor_block_package_title">为传感器块添加应用</string>
+    <string name="add_sensor_block_package_summary">这些应用程序将阻止重大运动，加速计，线性加速度传感器</string>
     <!-- Allow fake signature -->
     <string name="allow_signature_fake">允许签名欺骗</string>
     <string name="allow_signature_fake_summary">允许应用程序通过伪装成不同的应用程序绕过安全系统。</string>
@@ -907,6 +919,7 @@
     <string name="fod_recog_animation_effect_title">屏幕指纹识别动画效果</string>
     <string name="fod_recog_animation_miui_normal">MIUI 默认</string>
     <string name="fod_recog_animation_miui_aod">息屏显示</string>
+    <string name="fod_recog_animation_miui_aurora">极光</string>
     <string name="fod_recog_animation_miui_light">弱</string>
     <string name="fod_recog_animation_miui_pop">流行</string>
     <string name="fod_recog_animation_miui_pulse">脉冲</string>
@@ -1046,6 +1059,9 @@
     <string name="ambient_notification_light_color_mode_custom">自定义颜色</string>
     <string name="ambient_notification_light_timeout_title">光脉冲超时</string>
     <string name="entry_infinite">无限</string>
+    <string name="entry_ten_second">10 秒</string>
+    <string name="entry_thirty_second">30 秒</string>
+    <string name="entry_one_minute">1 分钟</string>
     <string name="entry_five_minute">5 分钟</string>
     <string name="entry_ten_minute">10 分钟</string>
     <string name="entry_thirty_minute">30 分钟</string>
@@ -1110,6 +1126,8 @@
     <string name="evolution_about_summary">团队信息</string>
     <string name="evolution_website_title">网站</string>
     <string name="evolution_website_summary">点击此处以访问我们最棒的网站！</string>
+    <string name="evolution_twitter_title">Twitter 页面</string>
+    <string name="evolution_twitter_summary">点击这里访问我们的 Twitter！</string>
     <string name="evolution_telegram_title">Telegram 群组</string>
     <string name="evolution_telegram_summary">点击这里来访问我们惊人的社区！</string>
     <string name="evolution_github_summary">点击这里打开我们的 GitHub！</string>
@@ -1119,4 +1137,24 @@
     <!--Statusbar privacy indicators-->
     <string name="statusbar_privacy_indicators_title">隐私指示器</string>
     <string name="statusbar_privacy_indicators_summary">在状态栏上显示隐私指示器</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">快速设置磁贴风格</string>
+    <string name="qstile_default">默认​​​​​</string>
+    <string name="qstile_circle_trim">圆圈裁剪</string>
+    <string name="qstile_dual_tone_circle">同心圆环</string>
+    <string name="qstile_squircle_trim">修剪圆角</string>
+    <string name="qstile_wavey">波浪</string>
+    <string name="qstile_pokesign">Pokemon 风格</string>
+    <string name="qstile_ninja">忍者</string>
+    <string name="qstile_dottedcircle">环形虚线</string>
+    <string name="qstile_attemptmountain">山脉</string>
+    <string name="qstile_squaremedo">Squaremedo 风格</string>
+    <string name="qstile_inkdrop">油墨</string>
+    <string name="qstile_cookie">饼干</string>
+    <string name="qstile_circleoutline">圆形轮廓</string>
+    <string name="qstile_cosmos">Shishu 宇宙</string>
+    <string name="qstile_divided">分割圆</string>
+    <string name="qstile_neonlike">霓虹灯</string>
+    <string name="qstile_oos">氧气</string>
+    <string name="qstile_triangles">三角形</string>
 </resources>
