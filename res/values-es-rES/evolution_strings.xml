@@ -305,6 +305,18 @@
     <string name="volte_icon_volit">VoLIT</string>
     <string name="volte_icon_asus">Asus</string>
     <string name="volte_icon_miui">MIUI 11</string>
+    <string name="volte_icon_emui">EMUI</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">Icono VoWiFi</string>
+    <string name="vowifi_icon_enabled">Habilitado</string>
+    <string name="vowifi_icon_disabled">Desactivada</string>
+    <string name="vowifi_icon_enabled_volte_disabled">VoWiFi en lugar de VoLTE</string>
+    <string name="vowifi_icon_style_title">Estilo de icono de VoWiFi</string>
+    <string name="vowifi_icon_default">Por defecto</string>
+    <string name="vowifi_icon_asus">Asus</string>
+    <string name="vowifi_icon_emui">EMUI</string>
+    <string name="vowifi_icon_moto">Motorola</string>
+    <string name="vowifi_icon_oneplus">OOS</string>
     <!-- Notification guts kill app button -->
     <string name="notification_misc">Otros</string>
     <string name="notification_guts_kill_app_button_title">Botón para matar aplicación</string>
@@ -380,15 +392,12 @@
     <!-- QS rows and columns -->
     <string name="sysui_qqs_count_title">Columnas (Barra rápida)</string>
     <string name="qs_layout_category">Disposición</string>
-    <string name="qs_column_rows_settings_title">Configuraciones del panel de ajustes rápidos</string>
-    <string name="qs_columns_rows_category_title">Columnas y filas de los ajustes rápidos</string>
-    <string name="qs_rows_columns_title">Filas y columnas de ajustes rápidos</string>
-    <string name="qs_rows_portrait_title">Filas de iconos (modo vertical)</string>
-    <string name="qs_rows_landscape_title">Filas (Horizontal)</string>
-    <string name="qs_columns_portrait_title">Columnas (Vertical)</string>
-    <string name="qs_columns_landscape_title">Columnas (Horizontal)</string>
-    <string name="qs_tile_title_visibility_title">Títulos de ajustes rápidos</string>
-    <string name="qs_tile_title_visibility_summary">Mostrar titulo debajo de cada ajuste rápido</string>
+    <string name="qs_rows_portrait_title">Filas (Retrato)</string>
+    <string name="qs_rows_landscape_title">Filas (paisaje)</string>
+    <string name="qs_columns_portrait_title">Columnas (Retrato)</string>
+    <string name="qs_columns_landscape_title">Columnas (Paisaje)</string>
+    <string name="qs_tile_title_visibility_title">Visibilidad de título</string>
+    <string name="qs_tile_title_visibility_summary">Mostrar los títulos debajo de los mosaicos de ajustes rápidos.</string>
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Captura de pantalla</string>
     <string name="powermenu_power">Apagar</string>
@@ -563,15 +572,15 @@
     <string name="disable_transition_animations_summary">Fuerza a desactivar todas las animaciones de transición</string>
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_category">Estilo de Ajustes Rápidos</string>
-    <string name="qs_tile_animation_style_title">Estilo de animación de los Ajustes Rápidos</string>
-    <string name="qs_tile_animation_duration_title">Duración de la animación de los ajustes rápidos</string>
-    <string name="qs_tile_animation_style_off">Desactivada</string>
+    <string name="qs_tile_animation_style_title">Estilo</string>
+    <string name="qs_tile_animation_duration_title">Duración</string>
+    <string name="qs_tile_animation_interpolator_title">Interpolador</string>
+    <string name="qs_tile_animation_style_off">Ninguna</string>
     <string name="qs_tile_animation_style_flip">Girar</string>
     <string name="qs_tile_animation_style_rotate">Rotar</string>
     <string name="qs_tile_animation_duration_low">Corta</string>
     <string name="qs_tile_animation_duration_default">Por defecto</string>
     <string name="qs_tile_animation_duration_fast">Rápida</string>
-    <string name="qs_tile_animation_interpolator_title">Interpolador de la animación de los ajustes rápidos</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Lineal</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Acelerar</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Ralentizar</string>
@@ -835,6 +844,9 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Bloqueo de sensor por paquete</string>
     <string name="sensor_block_summary">Bloquear el acceso a ciertos sensores para algunas aplicaciones para ahorrar batería</string>
+    <string name="sensor_block_app_picker_title">Bloquear sensores para estas aplicaciones</string>
+    <string name="add_sensor_block_package_title">Añadir aplicaciones para el bloqueo de sensores</string>
+    <string name="add_sensor_block_package_summary">Movimiento significativo, acelerómetro, sensores de aceleración lineal serán bloqueados para estas aplicaciones</string>
     <!-- Allow fake signature -->
     <string name="allow_signature_fake">Permitir simulación de firma</string>
     <string name="allow_signature_fake_summary">Permitir que las aplicaciones eviten los sistemas de seguridad simulando ser una aplicación diferente.</string>
@@ -907,6 +919,7 @@
     <string name="fod_recog_animation_effect_title">Seleccionar efecto de animación de huella digital</string>
     <string name="fod_recog_animation_miui_normal">MIUI por defecto</string>
     <string name="fod_recog_animation_miui_aod">Pantalla ambiente</string>
+    <string name="fod_recog_animation_miui_aurora">Aurora</string>
     <string name="fod_recog_animation_miui_light">Ligera</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Pulso</string>
@@ -1046,6 +1059,9 @@
     <string name="ambient_notification_light_color_mode_custom">Color personalizado</string>
     <string name="ambient_notification_light_timeout_title">Tiempo de espera para la pulsación ligera</string>
     <string name="entry_infinite">Infinito</string>
+    <string name="entry_ten_second">10 segundos</string>
+    <string name="entry_thirty_second">30 segundos</string>
+    <string name="entry_one_minute">1 minuto</string>
     <string name="entry_five_minute">5 minutos</string>
     <string name="entry_ten_minute">10 minutos</string>
     <string name="entry_thirty_minute">30 minutos</string>
@@ -1110,6 +1126,8 @@
     <string name="evolution_about_summary">Información sobre el equipo</string>
     <string name="evolution_website_title">Sitio web</string>
     <string name="evolution_website_summary">¡Pulsa aquí para visitar nuestro impresionante sitio web!</string>
+    <string name="evolution_twitter_title">Azul Twitter</string>
+    <string name="evolution_twitter_summary">¡Pulsa aquí para visitar nuestro Twitter!</string>
     <string name="evolution_telegram_title">Grupo de Telegram</string>
     <string name="evolution_telegram_summary">¡Pulsa aquí para visitar nuestra increíble comunidad!</string>
     <string name="evolution_github_summary">¡Pulsa aquí para abrir nuestro Github!</string>
@@ -1119,4 +1137,24 @@
     <!--Statusbar privacy indicators-->
     <string name="statusbar_privacy_indicators_title">Indicadores de privacidad</string>
     <string name="statusbar_privacy_indicators_summary">Mostrar indicadores de privacidad en la barra de estado</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">Estilo de los Ajustes Rápidos</string>
+    <string name="qstile_default">Por defecto</string>
+    <string name="qstile_circle_trim">Circulo con recorte</string>
+    <string name="qstile_dual_tone_circle">Circulo doble tono</string>
+    <string name="qstile_squircle_trim">Cuadracirculo con recorte</string>
+    <string name="qstile_wavey">Ondulado</string>
+    <string name="qstile_pokesign">Diseño poke-ball</string>
+    <string name="qstile_ninja">Ninja</string>
+    <string name="qstile_dottedcircle">Circulo punteado</string>
+    <string name="qstile_attemptmountain">Un intento de montaña</string>
+    <string name="qstile_squaremedo">Cuadrados y rombos</string>
+    <string name="qstile_inkdrop">Tinta</string>
+    <string name="qstile_cookie">Galleta</string>
+    <string name="qstile_circleoutline">Linea del círculo</string>
+    <string name="qstile_cosmos">Shishu Cosmos</string>
+    <string name="qstile_divided">Círculo dividido</string>
+    <string name="qstile_neonlike">Luz de neón</string>
+    <string name="qstile_oos">Oxígeno</string>
+    <string name="qstile_triangles">Triángulo</string>
 </resources>
