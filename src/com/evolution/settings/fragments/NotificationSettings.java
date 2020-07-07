@@ -80,7 +80,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String AMBIENT_NOTIFICATION_LIGHT_ACCENT_PREF = "ambient_notification_light_accent";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
-    private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
     private static final String PULSE_AMBIENT_LIGHT_PREF = "pulse_ambient_light";
     private static final String PULSE_COLOR_PREF = "ambient_notification_light_color";
@@ -94,7 +93,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private Preference mAlertSlider;
     private Preference mChargingLeds;
-    private SwitchPreference mForceExpanded;
     private SystemSettingSwitchPreference mPulseEdgeLights;
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -168,10 +166,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 HEADS_UP_NOTIFICATIONS_ENABLED, 1);
         mHeadsUpEnabled.setChecked(headsUpEnabled != 0);
 
-        mForceExpanded = findPreference(FORCE_EXPANDED_NOTIFICATIONS);
-        mForceExpanded.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0) == 1));
-
         mFlashlightOnCall = findPreference(FLASHLIGHT_ON_CALL);
         Preference FlashOnCall = findPreference("flashlight_on_call");
         int flashlightValue = Settings.System.getIntForUser(getContentResolver(),
@@ -195,11 +189,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Global.putInt(getContentResolver(),
 		            HEADS_UP_NOTIFICATIONS_ENABLED, value ? 1 : 0);
-            return true;
-        } else if (preference == mForceExpanded) {
-            boolean checked = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.FORCE_EXPANDED_NOTIFICATIONS, checked ? 1 : 0);
             return true;
         } else if (preference == mFlashlightOnCall) {
             int flashlightValue = Integer.parseInt(((String) newValue).toString());
