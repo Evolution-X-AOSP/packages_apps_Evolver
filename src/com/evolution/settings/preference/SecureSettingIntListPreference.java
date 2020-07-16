@@ -6,7 +6,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,25 +20,27 @@ package com.evolution.settings.preference;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import com.evolution.settings.R;
+public class SecureSettingIntListPreference extends SecureSettingListPreference {
 
-import com.evolution.settings.preference.SystemSettingsStore;
-
-public class SystemSettingMasterSwitchPreference extends MasterSwitchPreference {
-
-    public SystemSettingMasterSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
+    public SecureSettingIntListPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingMasterSwitchPreference(Context context, AttributeSet attrs) {
+    public SecureSettingIntListPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingMasterSwitchPreference(Context context) {
+    public SecureSettingIntListPreference(Context context) {
         super(context);
-        setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
+    @Override
+    protected boolean persistString(String value) {
+        return persistInt(Integer.parseInt(value));
+    }
+
+    @Override
+    protected String getPersistedString(String defaultReturnValue) {
+        return String.valueOf(getPersistedInt(Integer.parseInt(defaultReturnValue)));
+    }
 }

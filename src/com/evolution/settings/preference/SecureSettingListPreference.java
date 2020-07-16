@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2017 AICP
  * Copyright (C) 2019-2020 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +18,12 @@
 package com.evolution.settings.preference;
 
 import android.content.Context;
+import androidx.preference.ListPreference;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
 public class SecureSettingListPreference extends ListPreference {
+    private boolean mAutoSummary = false;
 
     public SecureSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -35,6 +38,24 @@ public class SecureSettingListPreference extends ListPreference {
     public SecureSettingListPreference(Context context) {
         super(context);
         setPreferenceDataStore(new SecureSettingsStore(context.getContentResolver()));
+    }
+
+    @Override
+    public void setValue(String value) {
+        super.setValue(value);
+        if (mAutoSummary || TextUtils.isEmpty(getSummary())) {
+            setSummary(getEntry(), true);
+        }
+    }
+
+    @Override
+    public void setSummary(CharSequence summary) {
+        setSummary(summary, false);
+    }
+
+    private void setSummary(CharSequence summary, boolean autoSummary) {
+        mAutoSummary = autoSummary;
+        super.setSummary(summary);
     }
 
     @Override
