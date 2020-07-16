@@ -81,6 +81,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String AMBIENT_NOTIFICATION_LIGHT_ACCENT_PREF = "ambient_notification_light_accent";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
+    private static final String NOTIFICATION_HEADERS = "notification_headers";
     private static final String PULSE_AMBIENT_LIGHT_PREF = "pulse_ambient_light";
     private static final String PULSE_COLOR_PREF = "ambient_notification_light_color";
     private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
@@ -93,6 +94,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private Preference mAlertSlider;
     private Preference mChargingLeds;
+    private SystemSettingSwitchPreference mNotificationHeader;
     private SystemSettingSwitchPreference mPulseEdgeLights;
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -108,6 +110,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+
+        mNotificationHeader = findPreference(NOTIFICATION_HEADERS);
+        mNotificationHeader.setChecked((Settings.System.getInt(resolver,
+                Settings.System.NOTIFICATION_HEADERS, 0) == 1));
+        mNotificationHeader.setOnPreferenceChangeListener(this);
 
         mDefaultColor = getResources().getInteger(
                 com.android.internal.R.integer.config_ambientNotificationDefaultColor);
@@ -231,6 +238,12 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.NOTIFICATION_PULSE_ACCENT, 0);
             }
+            return true;
+        } else if (preference == mNotificationHeader) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.NOTIFICATION_HEADERS, value ? 1 : 0);
+            EvolutionUtils.showSystemUiRestartDialog(getContext());
             return true;
         }
         return false;
