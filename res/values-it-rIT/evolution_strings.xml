@@ -62,9 +62,11 @@
     <string name="action_cancel">Annulla</string>
     <string name="attention">Attenzione</string>
     <string name="default_string">Predefinito</string>
-    <string name="enable_first">Perfavore prima accoppia</string>
+    <string name="enable_first">Per favore, prima abilita</string>
     <string name="led_color_green">Verde</string>
     <string name="led_color_red">Rosso</string>
+    <string name="edit_hint">Valore</string>
+    <string name="seek_value_edit_label">Imposta valore</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">On</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -305,6 +307,18 @@
     <string name="volte_icon_volit">VoLIT</string>
     <string name="volte_icon_asus">Asus</string>
     <string name="volte_icon_miui">MIUI 11</string>
+    <string name="volte_icon_emui">EMUI</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">Icona VoWiFi</string>
+    <string name="vowifi_icon_enabled">Attivato</string>
+    <string name="vowifi_icon_disabled">Disabilitata</string>
+    <string name="vowifi_icon_enabled_volte_disabled">VoWiFi invece di VoLTE</string>
+    <string name="vowifi_icon_style_title">Stile dell\'icona VoWiFi</string>
+    <string name="vowifi_icon_default">Predefinito</string>
+    <string name="vowifi_icon_asus">Asus</string>
+    <string name="vowifi_icon_emui">EMUI</string>
+    <string name="vowifi_icon_moto">Motorola</string>
+    <string name="vowifi_icon_oneplus">OOS</string>
     <!-- Notification guts kill app button -->
     <string name="notification_misc">Varie</string>
     <string name="notification_guts_kill_app_button_title">Pulsante termina app</string>
@@ -374,9 +388,6 @@
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">Notifiche a comparsa meno insistenti</string>
     <string name="less_boring_heads_up_summary">Mostra le notifiche a comparsa solo per telefono, messaggi e sveglia</string>
-    <!-- Force expanded notifications -->
-    <string name="force_expanded_notifications_title">Forza notifiche estese</string>
-    <string name="force_expanded_notifications_summary">Forza le app che supportano le notifiche estese</string>
     <!-- QS rows and columns -->
     <string name="sysui_qqs_count_title">Colonne (Quickbar)</string>
     <string name="qs_layout_category">Disposizione</string>
@@ -899,6 +910,7 @@
     <string name="fod_pressed_state_title">Effetto icona alla pressione</string>
     <string name="fod_pressed_state_miui_cyan">Ciano MIUI</string>
     <string name="fod_pressed_state_miui_white">Bianco MIUI</string>
+    <string name="fod_pressed_state_realme_green_shadow">Verde Realme (Ombra)</string>
     <string name="fod_pressed_state_vivo_cyan">Ciano Vivo</string>
     <string name="fod_pressed_state_vivo_cyan_shadow">Ciano vivo (Ombra)</string>
     <string name="fod_pressed_state_vivo_cyan_shadow_et713">Ciano vivo (Ombra alt)</string>
@@ -910,6 +922,7 @@
     <string name="fod_recog_animation_effect_title">Effetto animazione</string>
     <string name="fod_recog_animation_miui_normal">Predefinito MIUI</string>
     <string name="fod_recog_animation_miui_aod">AOD</string>
+    <string name="fod_recog_animation_miui_aurora">Aurora</string>
     <string name="fod_recog_animation_miui_light">Leggera</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Impulso</string>
@@ -1049,6 +1062,9 @@
     <string name="ambient_notification_light_color_mode_custom">Colore personalizzato</string>
     <string name="ambient_notification_light_timeout_title">Timeout per l\'impulso luminoso</string>
     <string name="entry_infinite">Infinito</string>
+    <string name="entry_ten_second">10 secondi</string>
+    <string name="entry_thirty_second">30 secondi</string>
+    <string name="entry_one_minute">1 minuto</string>
     <string name="entry_five_minute">5 minuti</string>
     <string name="entry_ten_minute">10 minuti</string>
     <string name="entry_thirty_minute">30 minuti</string>
@@ -1124,4 +1140,54 @@
     <!--Statusbar privacy indicators-->
     <string name="statusbar_privacy_indicators_title">Indicatori privacy</string>
     <string name="statusbar_privacy_indicators_summary">Mostra gli indicatori di privacy sulla barra di stato</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">Stile dei tile</string>
+    <string name="qstile_default">Predefinito</string>
+    <string name="qstile_circle_trim">Cerchio con taglio</string>
+    <string name="qstile_dual_tone_circle">Cerchio bicolore</string>
+    <string name="qstile_squircle_trim">Supercerchio con taglio</string>
+    <string name="qstile_wavey">Ondulato</string>
+    <string name="qstile_pokesign">Pokésegno</string>
+    <string name="qstile_ninja">Ninja</string>
+    <string name="qstile_dottedcircle">Cerchio tratteggiato</string>
+    <string name="qstile_attemptmountain">Un tentativo di montagna</string>
+    <string name="qstile_squaremedo">The Squaremedo</string>
+    <string name="qstile_inkdrop">Inchiostro</string>
+    <string name="qstile_cookie">Biscotto</string>
+    <string name="qstile_circleoutline">Contorno cerchio</string>
+    <string name="qstile_cosmos">Shishu Cosmos</string>
+    <string name="qstile_divided">Cerchio diviso</string>
+    <string name="qstile_neonlike">Neon</string>
+    <string name="qstile_oos">Oxygen</string>
+    <string name="qstile_triangles">Triangolo</string>
+    <!-- Pulse -->
+    <string name="pulse_help_policy_notice_summary">Pulse non funziona con alcune sorgenti audio durante l\'ascolto sull\'altoparlante del dispositivo</string>
+    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings_summary">Equalizzatore grafico sulla barra di navigazione</string>
+    <string name="show_pulse_title">Mostra Pulse</string>
+    <string name="show_pulse_summary">Equalizzatore grafico sulla barra di navigazione</string>
+    <string name="pulse_render_mode_title">Visualizzazione</string>
+    <string name="pulse_render_mode_fading_bars">Blocchi in dissolvenza</string>
+    <string name="pulse_render_mode_solid_lines">Linee continue</string>
+    <string name="pulse_color">Colore</string>
+    <string name="pulse_color_mode">Modalità colore</string>
+    <string name="pulse_color_accent">Colore secondario</string>
+    <string name="pulse_color_custom">Personalizzata</string>
+    <string name="pulse_color_lava_lamp">Lampada di lava</string>
+    <string name="pulse_color_auto">Copertina album</string>
+    <string name="pulse_color_chooser">Scegli colore</string>
+    <string name="smoothing_enabled_title">Attiva lo scorrimento</string>
+    <string name="smoothing_enabled_summary">Ogni barra è animata in modo più fluido</string>
+    <string name="pulse_advanced_category">Avanzate</string>
+    <string name="pulse_legacy_mode_advanced_category">Impostazioni della modalità blocchi in dissolvenza</string>
+    <string name="pulse_custom_fudge_factor">Livello di sicurezza</string>
+    <string name="lavamp_speed_title">Velocità lampada di lava</string>
+    <string name="pulse_solid_units_count">Conteggio delle linee</string>
+    <string name="pulse_solid_lines_count">Conteggio delle linee</string>
+    <string name="pulse_solid_units_opacity">Opacità delle linee</string>
+    <string name="pulse_solid_dimen_category">Impostazioni della modalità linee continue</string>
+    <string name="pulse_custom_dimen">Larghezza barra</string>
+    <string name="pulse_custom_div">Spaziatura barra</string>
+    <string name="pulse_filled_block_size">Dimensione blocco</string>
+    <string name="pulse_empty_block_size">Spaziatura blocchi</string>
 </resources>
