@@ -62,7 +62,7 @@
             android:title="@string/lavamp_speed_title"
             android:max="30000"
             android:defaultValue="10000"
-            settings:min="200"
+            android:min="200"
             settings:interval="200"
             settings:units="ms"/>
     </PreferenceCategory>
@@ -77,7 +77,7 @@
             android:title="@string/pulse_custom_dimen"
             android:max="30"
             android:defaultValue="14"
-            settings:min="1"
+            android:min="1"
             settings:units="dp"/>
 
         <com.evolution.settings.preference.SimpleCustomSystemSeekBarPreference
@@ -85,7 +85,7 @@
             android:title="@string/pulse_custom_div"
             android:max="44"
             android:defaultValue="16"
-            settings:min="2"
+            android:min="2"
             settings:interval="2"
             settings:units="dp"/>
 
@@ -94,7 +94,7 @@
             android:title="@string/pulse_filled_block_size"
             android:max="8"
             android:defaultValue="4"
-            settings:min="4"
+            android:min="4"
             settings:units="dp"/>
 
         <com.evolution.settings.preference.SimpleCustomSystemSeekBarPreference
@@ -102,7 +102,7 @@
             android:title="@string/pulse_empty_block_size"
             android:max="4"
             android:defaultValue="1"
-            settings:min="0"
+            android:min="0"
             settings:units="dp"/>
 
         <com.evolution.settings.preference.SimpleCustomSystemSeekBarPreference
@@ -110,7 +110,7 @@
             android:title="@string/pulse_custom_fudge_factor"
             android:max="6"
             android:defaultValue="4"
-            settings:min="2"/>
+            android:min="2"/>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -123,7 +123,7 @@
             android:title="@string/pulse_solid_units_opacity"
             android:max="255"
             android:defaultValue="200"
-            settings:min="0"/>
+            android:min="0"/>
 
         <com.evolution.settings.preference.SimpleCustomSystemSeekBarPreference
             android:key="pulse_solid_units_count"
@@ -131,14 +131,14 @@
             android:max="128"
             android:defaultValue="64"
             settings:interval="16"
-            settings:min="32"/>
+            android:min="32"/>
 
         <com.evolution.settings.preference.SimpleCustomSystemSeekBarPreference
             android:key="pulse_solid_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
             android:max="7"
             android:defaultValue="5"
-            settings:min="2"/>
+            android:min="2"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
