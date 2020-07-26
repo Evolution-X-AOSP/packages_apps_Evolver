@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2018 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="power_button_torch_screen"
+    android:title="@string/power_button_torch_title">
+
+    <com.android.settings.widget.VideoPreference
+        android:key="gesture_power_button_torch_video"
+        app:animation="@raw/power_button_torch"
+        app:preview="@drawable/power_button_torch" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="torch_long_press_power_gesture"
+        android:title="@string/power_button_torch_title"
+        android:summary="@string/power_button_torch_summary"
+        android:defaultValue="false" />
+
+    <ListPreference
+        android:key="torch_long_press_power_timeout"
+        android:dialogTitle="@string/torch_long_press_power_timeout_title"
+        android:title="@string/torch_long_press_power_timeout_title"
+        android:summary="%s"
+        android:entries="@array/torch_long_press_power_timeout_entries"
+        android:entryValues="@array/torch_long_press_power_timeout_values"
+        android:persistent="false"
+        android:defaultValue="0" />
+
+</PreferenceScreen>

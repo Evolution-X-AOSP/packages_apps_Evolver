@@ -24,11 +24,8 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 
 import androidx.preference.ListPreference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -42,18 +39,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class EvolutionGesturesSettings extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener, Indexable {
+public class PowerButtonTorchSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener, Indexable {
+
+    private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
+            "torch_long_press_power_timeout";
+
+    private ListPreference mTorchLongPressPowerTimeout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.evolution_settings_power_button_torch);
 
-        addPreferencesFromResource(R.xml.evolution_settings_gestures);
+        getActivity().getActionBar().setTitle(R.string.power_button_torch_title);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        Resources resources = getResources();
+
+        mTorchLongPressPowerTimeout = findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+
+        mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
+        int TorchTimeout = Settings.System.getInt(getContentResolver(),
+                        Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
+        mTorchLongPressPowerTimeout.setValue(Integer.toString(TorchTimeout));
+        mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mTorchLongPressPowerTimeout) {
+            String TorchTimeout = (String) newValue;
+            int TorchTimeoutValue = Integer.parseInt(TorchTimeout);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, TorchTimeoutValue);
+            int TorchTimeoutIndex = mTorchLongPressPowerTimeout
+                    .findIndexOfValue(TorchTimeout);
+            mTorchLongPressPowerTimeout
+                    .setSummary(mTorchLongPressPowerTimeout.getEntries()[TorchTimeoutIndex]);
+            return true;
+        }
         return false;
     }
 
@@ -71,7 +98,7 @@ public class EvolutionGesturesSettings extends SettingsPreferenceFragment
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.evolution_settings_gestures;
+                    sir.xmlResId = R.xml.evolution_settings_power_button_torch;
                     result.add(sir);
                     return result;
                 }
