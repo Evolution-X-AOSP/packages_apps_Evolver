@@ -89,7 +89,7 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
 
-        mSensorBlockPrefList = (PreferenceGroup) findPreference("sensor_block_applications");
+        mSensorBlockPrefList = findPreference("sensor_block_applications");
         mSensorBlockPrefList.setOrderingAsAdded(false);
 
         mBlockedPackages = new HashMap<String, Package>();

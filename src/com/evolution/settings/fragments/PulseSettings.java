@@ -78,9 +78,9 @@ public class PulseSettings extends SettingsPreferenceFragment implements
         mFooterPreferenceMixin.createFooterPreference()
                 .setTitle(R.string.pulse_help_policy_notice_summary);
 
-        mColorModePref = (ListPreference) findPreference(PULSE_COLOR_MODE_KEY);
+        mColorModePref = findPreference(PULSE_COLOR_MODE_KEY);
         mLavaSpeedPref = findPreference(PULSE_COLOR_MODE_LAVA_SPEED_KEY);
-        mColorPickerPref = (ColorSelectPreference) findPreference(PULSE_COLOR_MODE_CHOOSER_KEY);
+        mColorPickerPref = findPreference(PULSE_COLOR_MODE_CHOOSER_KEY);
         mColorModePref.setOnPreferenceChangeListener(this);
         int colorMode = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.PULSE_COLOR_TYPE, COLOR_TYPE_ACCENT, UserHandle.USER_CURRENT);
@@ -142,10 +142,10 @@ public class PulseSettings extends SettingsPreferenceFragment implements
     }
 
     private void updateRenderCategories(int mode) {
-        PreferenceCategory fadingBarsCat = (PreferenceCategory) findPreference(
+        PreferenceCategory fadingBarsCat = findPreference(
                 PULSE_RENDER_CATEGORY_FADING);
         fadingBarsCat.setEnabled(mode == RENDER_STYLE_FADING_BARS);
-        PreferenceCategory solidBarsCat = (PreferenceCategory) findPreference(
+        PreferenceCategory solidBarsCat = findPreference(
                 PULSE_RENDER_CATEGORY_SOLID);
         solidBarsCat.setEnabled(mode == RENDER_STYLE_SOLID_LINES);
     }
