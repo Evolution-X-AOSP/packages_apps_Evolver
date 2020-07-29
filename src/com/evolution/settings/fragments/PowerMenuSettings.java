@@ -57,6 +57,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
     private static final String KEY_POWERMENU_LS_REBOOT = "powermenu_ls_reboot";
     private static final String KEY_POWERMENU_LS_ADVANCED_REBOOT = "powermenu_ls_advanced_reboot";
     private static final String KEY_POWERMENU_LS_SCREENSHOT = "powermenu_ls_screenshot";
+    private static final String KEY_POWERMENU_LS_SCREENRECORD = "powermenu_ls_screenrecord";
     private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
     private static final String KEY_POWERMENU_LS_TORCH = "powermenu_ls_torch";
 
@@ -65,6 +66,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
     private SwitchPreference mPowerMenuReboot;
     private SwitchPreference mPowerMenuAdvancedReboot;
     private SwitchPreference mPowerMenuScreenshot;
+    private SwitchPreference mPowerMenuScreenrecord;
     private SwitchPreference mPowerMenuLSTorch;
 
     @Override
@@ -106,6 +108,11 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
                 Settings.System.POWERMENU_LS_SCREENSHOT, 0) == 1));
         mPowerMenuScreenshot.setOnPreferenceChangeListener(this);
 
+        mPowerMenuScreenrecord = findPreference(KEY_POWERMENU_LS_SCREENRECORD);
+        mPowerMenuScreenrecord.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWERMENU_LS_SCREENRECORD, 0) == 1));
+        mPowerMenuScreenrecord.setOnPreferenceChangeListener(this);
+
         mPowerMenuLSTorch = findPreference(KEY_POWERMENU_LS_TORCH);
         mPowerMenuLSTorch.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.POWERMENU_LS_TORCH, 0) == 1));
@@ -142,6 +149,11 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWERMENU_LS_SCREENSHOT, value ? 1 : 0);
             return true;
+        } else if (preference == mPowerMenuScreenrecord) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWERMENU_LS_SCREENRECORD, value ? 1 : 0);
+            return true;
         } else if (preference == mPowerMenuLSTorch) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -164,11 +176,13 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
             mPowerMenuReboot.setEnabled(true);
             mPowerMenuAdvancedReboot.setEnabled(true);
             mPowerMenuScreenshot.setEnabled(true);
+            mPowerMenuScreenrecord.setEnabled(true);
             mPowerMenuLSTorch.setEnabled(true);
         } else {
             mPowerMenuReboot.setEnabled(false);
             mPowerMenuAdvancedReboot.setEnabled(false);
             mPowerMenuScreenshot.setEnabled(false);
+            mPowerMenuScreenrecord.setEnabled(false);
             mPowerMenuLSTorch.setEnabled(false);
         }
     }
