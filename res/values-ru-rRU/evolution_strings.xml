@@ -65,6 +65,8 @@
     <string name="enable_first">Пожалуйста, сначала включите</string>
     <string name="led_color_green">Зеленый</string>
     <string name="led_color_red">Красный</string>
+    <string name="edit_hint">Значение</string>
+    <string name="seek_value_edit_label">Установленное значение</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Вкл</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -104,9 +106,6 @@
     <!-- USB configuration -->
     <string name="usb_default_config_title">Настройки USB</string>
     <string name="usb_default_config_summary">Выберите конфигурацию USB по умолчанию при подключении к компьютеру</string>
-    <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Свайп для скриншота</string>
-    <string name="three_finger_gesture_summary">Проведите вниз по экрану тремя пальцами для создания скриншота</string>
     <!-- Lock screen cover art -->
     <string name="lockscreen_media_category">Музыка</string>
     <!-- Tuner items -->
@@ -258,6 +257,9 @@
     <string name="volume_key_cursor_control_off">Отключено</string>
     <string name="volume_key_cursor_control_on">Регулировка громкости вверх/вниз перемещает курсор влево/вправо соответственно</string>
     <string name="volume_key_cursor_control_on_reverse">Регулировка громкости вверх/вниз перемещает курсор вправо/влево соответственно</string>
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Быстрый фонарик</string>
+    <string name="power_button_torch_summary">Когда экран выключен, долгое нажатие кнопки питания включит фонарик</string>
     <string name="torch_long_press_power_gesture_title">Включение фонарика долгим нажатием кнопки питания</string>
     <string name="torch_long_press_power_gesture_desc">Удерживайте кнопку питания, когда устройство заблокировано, чтобы включить фонарик</string>
     <string name="torch_long_press_power_timeout_title">Автоматическое выключение фонарика</string>
@@ -306,17 +308,6 @@
     <string name="volte_icon_asus">Asus</string>
     <string name="volte_icon_miui">MIUI 11</string>
     <string name="volte_icon_emui">EMUI</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Значок VoWiFi</string>
-    <string name="vowifi_icon_enabled">Включено</string>
-    <string name="vowifi_icon_disabled">Отключено</string>
-    <string name="vowifi_icon_enabled_volte_disabled">VoWiFi вместо VoLTE</string>
-    <string name="vowifi_icon_style_title">Стиль VoWIFI иконки</string>
-    <string name="vowifi_icon_default">По умолчанию</string>
-    <string name="vowifi_icon_asus">Asus</string>
-    <string name="vowifi_icon_emui">EMUI</string>
-    <string name="vowifi_icon_moto">Motorola</string>
-    <string name="vowifi_icon_oneplus">OOS</string>
     <!-- Notification guts kill app button -->
     <string name="notification_misc">Прочее</string>
     <string name="notification_guts_kill_app_button_title">Кнопка закрытия приложения</string>
@@ -397,6 +388,7 @@
     <string name="qs_tile_title_visibility_summary">Отображать название под каждой плиткой</string>
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Скриншот</string>
+    <string name="powermenu_screenrecord">Запись экрана</string>
     <string name="powermenu_power">Выключить</string>
     <string name="powermenu_restart">Перезагрузка</string>
     <string name="powermenu_restart_recovery">Расширенная перезагрузка</string>
@@ -411,6 +403,7 @@
     <string name="powermenu_lockscreen_summary">Включить возможность показывать и использовать диалог меню питания на экране блокировки</string>
     <string name="powermenu_ls_reboot_summary">Показывать меню перезагрузки на экране блокировки</string>
     <string name="powermenu_ls_advanced_reboot_summary">Показывать расширенное меню перезагрузки на экране блокировки</string>
+    <string name="powermenu_ls_screenrecord_summary">Показывать опцию записи экрана на экране блокировки</string>
     <string name="powermenu_ls_screenshot_summary">Показывать опцию скриншота на экране блокировки</string>
     <string name="powermenu_ls_torch_summary">Показывать фонарик на экране блокировки</string>
     <!-- Statusbar Clock -->
@@ -1142,7 +1135,7 @@
     <string name="qstile_dual_tone_circle">Двухцветный круг</string>
     <string name="qstile_squircle_trim">Эллипс с окантовкой</string>
     <string name="qstile_wavey">Волнистый</string>
-    <string name="qstile_pokesign">Знак покемона</string>
+    <string name="qstile_pokesign">Покебол</string>
     <string name="qstile_ninja">Ниндзя</string>
     <string name="qstile_dottedcircle">Пунктирный круг</string>
     <string name="qstile_attemptmountain">Попытка горы</string>
@@ -1155,4 +1148,34 @@
     <string name="qstile_neonlike">Неоновый свет</string>
     <string name="qstile_oos">OxygenOS</string>
     <string name="qstile_triangles">Треугольник</string>
+    <!-- Pulse -->
+    <string name="pulse_help_policy_notice_summary">Pulse не работает с некоторыми источниками звука во время прослушивания через динамик устройства</string>
+    <string name="pulse_settings">Пульс</string>
+    <string name="pulse_settings_summary">Графический эквалайзер в панели навигации</string>
+    <string name="show_pulse_title">Пульсировать</string>
+    <string name="show_pulse_summary">Графический эквалайзер в панели навигации</string>
+    <string name="pulse_render_mode_title">Режим визуализации</string>
+    <string name="pulse_render_mode_fading_bars">Затухающие блоки</string>
+    <string name="pulse_render_mode_solid_lines">Сплошные линии</string>
+    <string name="pulse_color">Цвет</string>
+    <string name="pulse_color_mode">Цветовой режим</string>
+    <string name="pulse_color_accent">Цвет акцента</string>
+    <string name="pulse_color_custom">Другое</string>
+    <string name="pulse_color_lava_lamp">Лавовая лампа</string>
+    <string name="pulse_color_auto">Обложка альбома</string>
+    <string name="pulse_color_chooser">Выбрать цвет</string>
+    <string name="smoothing_enabled_title">Включить сглаживание</string>
+    <string name="smoothing_enabled_summary">Более плавная анимация столбцов</string>
+    <string name="pulse_advanced_category">Дополнительно</string>
+    <string name="pulse_legacy_mode_advanced_category">Настройки режима затухающих блоков</string>
+    <string name="pulse_custom_fudge_factor">Уровень чувствительности</string>
+    <string name="lavamp_speed_title">Скорость Лавовой лампы</string>
+    <string name="pulse_solid_units_count">Количество сплошных линий</string>
+    <string name="pulse_solid_lines_count">Количество сплошных линий</string>
+    <string name="pulse_solid_units_opacity">Непрозрачность сплошных линий</string>
+    <string name="pulse_solid_dimen_category">Настройки режима сплошных линий</string>
+    <string name="pulse_custom_dimen">Ширина линий</string>
+    <string name="pulse_custom_div">Расстояние между линиями</string>
+    <string name="pulse_filled_block_size">Размер блоков</string>
+    <string name="pulse_empty_block_size">Расстояние между блоками</string>
 </resources>
