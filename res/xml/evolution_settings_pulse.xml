@@ -20,6 +20,7 @@
     android:title="@string/pulse_settings" >
 
     <SwitchPreference
+        android:key="navbar_pulse_enabled"
         android:title="@string/show_navbar_pulse_title"
         android:summary="@string/show_navbar_pulse_summary"/>
 
@@ -27,6 +28,11 @@
         android:key="lockscreen_pulse_enabled"
         android:title="@string/show_lockscreen_pulse_title"
         android:summary="@string/show_lockscreen_pulse_summary"/>
+
+    <SwitchPreference
+        android:key="ambient_pulse_enabled"
+        android:title="@string/show_ambient_pulse_title"
+        android:summary="@string/show_ambient_pulse_summary"/>
 
     <com.evolution.settings.preference.SecureSettingListPreference
         android:key="pulse_render_style"
