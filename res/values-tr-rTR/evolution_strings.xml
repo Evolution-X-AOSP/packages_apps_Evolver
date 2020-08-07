@@ -120,7 +120,7 @@
     <string name="nav_bar_tuner_title">Gezinme çubuğu düzenleyicisi</string>
     <string name="nav_bar_tuner_summary">Gezinme çubuğu düzenini değiştir</string>
     <string name="navigation_bar_invert_layout_title">Düzeni tersine çevir</string>
-    <string name="navigation_bar_invert_layout_summary">Gezinme çubuğunun ve kalvye değiştirici gibi diğer öğelerin düzenini tersine çevirir</string>
+    <string name="navigation_bar_invert_layout_summary">Gezinme çubuğunun ve klavye değiştirici gibi diğer öğelerin düzenini tersine çevirir</string>
     <string name="navigation_bar_title">Gezinme çubuğu</string>
     <string name="navigation_bar_arrow_keys_title">Yazı yazarken ok tuşlarını göster</string>
     <string name="navigation_bar_arrow_keys_summary">Yazarken sol ve sağ imleç düğmelerini görüntüleyin. Klavye değiştiriciyi geçersiz kılar.</string>
@@ -225,6 +225,12 @@
     <string name="hardware_keys_action_launch_camera">Kamerayı başlat</string>
     <string name="hardware_keys_action_sleep">Ekranı kapat</string>
     <string name="hardware_keys_action_split_screen">Bölünmüş ekran</string>
+    <string name="hardware_keys_action_volume_panel">Ses paneli</string>
+    <string name="hardware_keys_action_notification_panel">Bildirimler</string>
+    <string name="hardware_keys_action_qs_panel">Hızlı ayarlar paneli</string>
+    <string name="hardware_keys_action_clear_notifications">Bildirimleri temizle</string>
+    <string name="hardware_keys_action_ringer_modes">Zil modları</string>
+    <string name="hardware_keys_action_kill_app">Ön plan uygulamasını sonlandır</string>
     <string name="hardware_keys_swipe_right_key_title">Sağa kaydır</string>
     <string name="hardware_keys_swipe_left_key_title">Sola kaydır</string>
     <string name="hardware_keys_long_tap_key_title">Uzun dokunma</string>
@@ -257,6 +263,9 @@
     <string name="volume_key_cursor_control_off">Devre dışı</string>
     <string name="volume_key_cursor_control_on">Ses arttırma/azaltma imleci sola/sağa kaydırır</string>
     <string name="volume_key_cursor_control_on_reverse">Ses arttırma/azaltma imleci sağa/sola kaydırır</string>
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Hızlı el feneri</string>
+    <string name="power_button_torch_summary">Ekran kapalıyken, uzun süreli güç tuşuna basıldığında el feneri etkinleştirilir</string>
     <string name="torch_long_press_power_gesture_title">Güç tuşu ile el fenerini aç</string>
     <string name="torch_long_press_power_gesture_desc">El fenerini açmak için ekran kapalıyken güç tuşuna uzun basın</string>
     <string name="torch_long_press_power_timeout_title">El fenerini otomatik kapat</string>
@@ -292,9 +301,12 @@
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">LTE yerine 4G simgesini göster</string>
     <string name="show_lte_fourgee_summary">Durum çubuğunda kullanılabilir olduğunda 4G veya LTE ağ simgesini görüntüle</string>
+    <!-- Show VoWiFi icon on statusbar -->
+    <string name="vowifi_icon_title">VoWiFi simgesi</string>
+    <string name="vowifi_icon_summary">VoWiFi simgesini görüntüle</string>
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">VoLTE simgesi</string>
-    <string name="volte_icon_summary">VoLTE simgesini görüntüle</string>
+    <string name="volte_icon_summary">VoLTE simgesini görüntüle (VoWiFi simgesi etkin olduğunda otomatik olarak gizlenir)</string>
     <string name="volte_icon_style_title">VoLTE simge stili</string>
     <string name="volte_icon_vo">Sadece Voice-over</string>
     <string name="volte_icon_volte">VoLTE</string>
@@ -385,6 +397,7 @@
     <string name="qs_tile_title_visibility_summary">Hızlı ayarlar karelerinin altında başlıkları göster</string>
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Ekran görüntüsü</string>
+    <string name="powermenu_screenrecord">Ekran kaydı</string>
     <string name="powermenu_power">Güç</string>
     <string name="powermenu_restart">Yeniden başlat</string>
     <string name="powermenu_restart_recovery">Gelişmiş yeniden başlatma</string>
@@ -399,6 +412,7 @@
     <string name="powermenu_lockscreen_summary">Kilit ekranındayken güç menüsünü gösterme ve kullanma durumunu etkinleştir</string>
     <string name="powermenu_ls_reboot_summary">Kilit ekranında yeniden başlatma seçeneğini göster</string>
     <string name="powermenu_ls_advanced_reboot_summary">Kilit ekranında gelişmiş yeniden başlatma seçeneğini göster</string>
+    <string name="powermenu_ls_screenrecord_summary">Kilit ekranında AOSP ekran kaydedici seçeneğini göster</string>
     <string name="powermenu_ls_screenshot_summary">Kilit ekranında ekran görüntüsü seçeneğini göster</string>
     <string name="powermenu_ls_torch_summary">Kilit ekranında el feneri seçeneğini göster</string>
     <!-- Statusbar Clock -->
@@ -509,6 +523,9 @@
     <string name="lock_clock_font_rosemary">Rosemary</string>
     <string name="lock_clock_font_sonysketch">SonySketch</string>
     <string name="lock_clock_font_surfer">Surfer</string>
+    <string name="lock_clock_font_linotte">Linotte</string>
+    <string name="lock_clock_font_anaheim">Anaheim</string>
+    <string name="lock_clock_font_tinkerbell">Tinkerbell</string>
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Tarih yazı tipi seçenekleri</string>
     <string name="lock_date_font_summary">Kilit ekranı tarih widget\'ının varsayılan yazı tipini değiştir</string>
@@ -1023,9 +1040,6 @@
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Uyarı kaydırma çubuğu bildirimleri</string>
     <string name="alert_slider_notifications_summary">Uyarı kaydırıcısının konumunu değiştirirken bildirimi görüntüle</string>
-    <!-- Kill app long-press back -->
-    <string name="kill_app_longpress_back">Geri tuşu ile uygulamayı sonlandır</string>
-    <string name="kill_app_longpress_back_summary">Geri tuşuna uzun basarak ön planda ki uygulamayı sonlandırın</string>
     <string name="show_media_heads_up_title">Medyayı bildirim penceresi olarak göster</string>
     <string name="show_media_heads_up_summary">Müzik çalar ön planda değilse, yeni bir parça çalınırken medyayı bildirim penceresi ile göster</string>
     <!--Notification Pulse-->
@@ -1071,7 +1085,7 @@
     <string name="translucent_lockscreen_notifications_bg_summary">Saydam bildirimlerin arka planını kilit ekranında göster</string>
     <!-- R Notification headers -->
     <string name="notification_headers_title">Bildirim başlıklarını göster</string>
-    <string name="notification_headers_summary">R stili bildirim başlıklarının gösterilip gösterilmeyeceğini seçin (Sistem arayüzünün yeniden başlatılmasını gerektirir)</string>
+    <string name="notification_headers_summary">R stili bildirim başlıklarının gösterilip gösterilmeyeceğini seçin</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Şarj bilgisi</string>
     <string name="lockscreen_battery_info_summary">Şarj sırasında şarj cihazının maksimum akımını, voltajını ve pil sıcaklığını gösterir</string>
