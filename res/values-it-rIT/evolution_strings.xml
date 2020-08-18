@@ -225,6 +225,12 @@
     <string name="hardware_keys_action_launch_camera">Avvia fotocamera</string>
     <string name="hardware_keys_action_sleep">Spegni lo schermo</string>
     <string name="hardware_keys_action_split_screen">Schermo diviso</string>
+    <string name="hardware_keys_action_volume_panel">Pannello volume</string>
+    <string name="hardware_keys_action_notification_panel">Notifiche</string>
+    <string name="hardware_keys_action_qs_panel">Pannello impostazioni rapide</string>
+    <string name="hardware_keys_action_clear_notifications">Cancella notifiche</string>
+    <string name="hardware_keys_action_ringer_modes">Modalità suoneria</string>
+    <string name="hardware_keys_action_kill_app">Termina app in primo piano</string>
     <string name="hardware_keys_swipe_right_key_title">Scorri a destra</string>
     <string name="hardware_keys_swipe_left_key_title">Scorri a sinistra</string>
     <string name="hardware_keys_long_tap_key_title">Tocco prolungato</string>
@@ -257,6 +263,9 @@
     <string name="volume_key_cursor_control_off">Disabilitata</string>
     <string name="volume_key_cursor_control_on">Volume su/giù muove il cursore a sinistra/destra</string>
     <string name="volume_key_cursor_control_on_reverse">Volume su/giu sposta il cursore a destra/sinistra</string>
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Torcia rapida</string>
+    <string name="power_button_torch_summary">Quando lo schermo è spento, la pressione prolungata del pulsante di accensione attiverà la torcia</string>
     <string name="torch_long_press_power_gesture_title">Torcia a schermo spento col pulsante d\'accensione</string>
     <string name="torch_long_press_power_gesture_desc">Attiva la torcia tenendo premuto a lungo il pulsante d\'accensione quando lo schermo è spento</string>
     <string name="torch_long_press_power_timeout_title">Spegni la torcia automaticamente</string>
@@ -292,9 +301,12 @@
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">Icona di rete 4G/LTE</string>
     <string name="show_lte_fourgee_summary">Visualizza l\'icona del 4G o LTE quando disponibile nella barra di stato</string>
+    <!-- Show VoWiFi icon on statusbar -->
+    <string name="vowifi_icon_title">Icona VoWiFi</string>
+    <string name="vowifi_icon_summary">Mostra l\'icona VoWiFi (disattiva Vecchio stile mobile per correggere eventuali sovrapposizioni)</string>
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">Icona VoLTE</string>
-    <string name="volte_icon_summary">Mostra icona VoLTE</string>
+    <string name="volte_icon_summary">Mostra icona VoLTE (Scompare automaticamente quando l\'icona VoWiFi è attiva)</string>
     <string name="volte_icon_style_title">Stile icona VoLTE</string>
     <string name="volte_icon_vo">Solo Vo</string>
     <string name="volte_icon_volte">VoLTE</string>
@@ -385,6 +397,7 @@
     <string name="qs_tile_title_visibility_summary">Mostra il titolo sotto ogni Tile</string>
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Screenshot</string>
+    <string name="powermenu_screenrecord">Registrazione schermo</string>
     <string name="powermenu_power">Spegni</string>
     <string name="powermenu_restart">Riavvia</string>
     <string name="powermenu_restart_recovery">Riavvio avanzato</string>
@@ -399,6 +412,7 @@
     <string name="powermenu_lockscreen_summary">Attiva la possibiltità di mostrare e usare il menù di spegnimento mentre si è nella schermata di blocco</string>
     <string name="powermenu_ls_reboot_summary">Visualizza l\'opzione di riavvio sulla schermata di blocco</string>
     <string name="powermenu_ls_advanced_reboot_summary">Visualizza l\'opzione di riavvio avanzato sulla schermata di blocco</string>
+    <string name="powermenu_ls_screenrecord_summary">Visualizza l\'opzione Registrazione schermo nella schermata di blocco</string>
     <string name="powermenu_ls_screenshot_summary">Visualizza l\'opzione screenshot sulla schermata di blocco</string>
     <string name="powermenu_ls_torch_summary">Visualizza l\'opzione torcia nella schermata di blocco</string>
     <!-- Statusbar Clock -->
@@ -509,6 +523,9 @@
     <string name="lock_clock_font_rosemary">Rosemary</string>
     <string name="lock_clock_font_sonysketch">SonySketch</string>
     <string name="lock_clock_font_surfer">Surfer</string>
+    <string name="lock_clock_font_linotte">Linotte</string>
+    <string name="lock_clock_font_anaheim">Anaheim</string>
+    <string name="lock_clock_font_tinkerbell">Tinkerbell</string>
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Opzioni del carattere della data</string>
     <string name="lock_date_font_summary">Cambia il carattere predefinito della data nella schermata di blocco</string>
@@ -1176,4 +1193,15 @@
     <string name="pulse_custom_div">Spaziatura barra</string>
     <string name="pulse_filled_block_size">Dimensione blocco</string>
     <string name="pulse_empty_block_size">Spaziatura blocchi</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Stile pannello volume</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compat">Compatto</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Tile</string>
+    <!-- Volume Panel Plugin Values -->
+    <string name="volume_panel_aosp_val">co.potatoproject.plugin.volume.aosp</string>
+    <string name="volume_panel_compat_val">co.potatoproject.plugin.volume.compact</string>
+    <string name="volume_panel_oreo_val">co.potatoproject.plugin.volume.oreo</string>
+    <string name="volume_panel_tiled_val">co.potatoproject.plugin.volume.tiled</string>
 </resources>
