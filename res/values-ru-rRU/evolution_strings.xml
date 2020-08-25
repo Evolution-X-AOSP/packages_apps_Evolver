@@ -66,7 +66,7 @@
     <string name="led_color_green">Зеленый</string>
     <string name="led_color_red">Красный</string>
     <string name="edit_hint">Значение</string>
-    <string name="seek_value_edit_label">Установленное значение</string>
+    <string name="seek_value_edit_label">Установка значения</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Вкл</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -225,6 +225,12 @@
     <string name="hardware_keys_action_launch_camera">Запуск камеры</string>
     <string name="hardware_keys_action_sleep">Выключить экран</string>
     <string name="hardware_keys_action_split_screen">Разделение экрана</string>
+    <string name="hardware_keys_action_volume_panel">Панель громкости</string>
+    <string name="hardware_keys_action_notification_panel">Уведомления</string>
+    <string name="hardware_keys_action_qs_panel">Панель быстрых настроек</string>
+    <string name="hardware_keys_action_clear_notifications">Очистить уведомления</string>
+    <string name="hardware_keys_action_ringer_modes">Режимы звонка</string>
+    <string name="hardware_keys_action_kill_app">Закрыть активное приложение</string>
     <string name="hardware_keys_swipe_right_key_title">Свайп вправо</string>
     <string name="hardware_keys_swipe_left_key_title">Свайп влево</string>
     <string name="hardware_keys_long_tap_key_title">Долгое нажатие</string>
@@ -295,9 +301,12 @@
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">Значок сети 4G/LTE</string>
     <string name="show_lte_fourgee_summary">Показывать 4G или LTE иконку в строке состояния</string>
+    <!-- Show VoWiFi icon on statusbar -->
+    <string name="vowifi_icon_title">Значок VoWiFi</string>
+    <string name="vowifi_icon_summary">Отображать значок VoWiFi (выключите старый стиль для исправления любых наложений)</string>
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">Иконка VoLTE</string>
-    <string name="volte_icon_summary">Показывать значок VoLTE</string>
+    <string name="volte_icon_summary">Показывать значок VoLTE (автоматически скрывается, когда активен значок VoWiFi)</string>
     <string name="volte_icon_style_title">Стиль VoLTE иконки</string>
     <string name="volte_icon_vo">Только Vo</string>
     <string name="volte_icon_volte">VoLTE</string>
@@ -514,6 +523,9 @@
     <string name="lock_clock_font_rosemary">Rosemary</string>
     <string name="lock_clock_font_sonysketch">SonySketch</string>
     <string name="lock_clock_font_surfer">Surfer</string>
+    <string name="lock_clock_font_linotte">Linotte</string>
+    <string name="lock_clock_font_anaheim">Анахайм</string>
+    <string name="lock_clock_font_tinkerbell">Tinkerbell</string>
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Шрифт даты</string>
     <string name="lock_date_font_summary">Изменить стандартный шрифт даты на экране блокировки</string>
@@ -910,12 +922,14 @@
     <string name="fod_recog_animation_effect_title">Эффект анимации распознавания отпечатка пальца</string>
     <string name="fod_recog_animation_miui_normal">MIUI по умолчанию</string>
     <string name="fod_recog_animation_miui_aod">Always On Display</string>
-    <string name="fod_recog_animation_miui_aurora">Аврора</string>
+    <string name="fod_recog_animation_miui_aurora">Аврора(K30 Pro)</string>
+    <string name="fod_recog_animation_miui_aurora_cas">Аврора (Mi 10 Ultra)</string>
     <string name="fod_recog_animation_miui_light">Легкое</string>
     <string name="fod_recog_animation_miui_pop">Поп</string>
     <string name="fod_recog_animation_miui_pulse">Пульс</string>
     <string name="fod_recog_animation_miui_pulse_white">Пульс (белый)</string>
     <string name="fod_recog_animation_miui_rhythm">Ритм</string>
+    <string name="fod_recog_animation_miui_star_cas">Звездный свет</string>
     <string name="fod_recog_animation_op_cosmos">Космос</string>
     <string name="fod_recog_animation_op_energy">Энергия</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
@@ -1026,7 +1040,7 @@
     <string name="alert_slider_notifications_title">Ползунок уведомлений</string>
     <string name="alert_slider_notifications_summary">Показывать уведомление при изменении положения слайдера предупреждений</string>
     <!-- Kill app long-press back -->
-    <string name="kill_app_longpress_back">Закрытие приложения кнопкой «Назад»</string>
+    <string name="kill_app_longpress_back">Закрытие приложения кнопкой \"Назад\" (Панель навигации без жестов)</string>
     <string name="kill_app_longpress_back_summary">Завершать работу текущего приложения удерживанием кнопки «Назад»</string>
     <string name="show_media_heads_up_title">Показать уведомления медиа</string>
     <string name="show_media_heads_up_summary">Показывать всплывающие уведомления при воспроизведении нового трека, если проигрыватель не открыт</string>
@@ -1121,7 +1135,7 @@
     <string name="evolution_twitter_summary">Нажмите здесь, что бы посетить наш Twitter!</string>
     <string name="evolution_telegram_title">Группа в Telegram</string>
     <string name="evolution_telegram_summary">Нажмите здесь, чтобы посетить наше прекрасное сообщество!</string>
-    <string name="evolution_github_summary">Нажмите здесь, чтобы открыть наш страницы GitHub!</string>
+    <string name="evolution_github_summary">Нажмите здесь, чтобы открыть наш GitHub!</string>
     <string name="evolution_about_info_summary">Evolution X - это пользовательская прошивка на базе AOSP, стремящаяся предоставить опыт использования схожий с Pixel, со множеством дополнительных настроек. Со времён Android Pie мы приносим свой бренд на ваши устройства. Мы продолжим предоставлять стабильные и полные настроек обновления нашим преданным пользователям.</string>
     <string name="evolution_about_team">Команда Evolution X</string>
     <string name="evolution_maintainer">Разработчик</string>
@@ -1178,4 +1192,11 @@
     <string name="pulse_custom_div">Расстояние между линиями</string>
     <string name="pulse_filled_block_size">Размер блоков</string>
     <string name="pulse_empty_block_size">Расстояние между блоками</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Стиль панели громкости</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Компактная</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Плиточная</string>
+    <!-- Volume Panel Plugin Values -->
 </resources>
