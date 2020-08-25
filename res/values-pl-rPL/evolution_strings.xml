@@ -225,6 +225,12 @@
     <string name="hardware_keys_action_launch_camera">Włącz aparat</string>
     <string name="hardware_keys_action_sleep">Wyłączenie ekranu</string>
     <string name="hardware_keys_action_split_screen">Podziel ekran</string>
+    <string name="hardware_keys_action_volume_panel">Panel głośności</string>
+    <string name="hardware_keys_action_notification_panel">Powiadomienia</string>
+    <string name="hardware_keys_action_qs_panel">Panel szybkich ustawień</string>
+    <string name="hardware_keys_action_clear_notifications">Wyczyść powiadomienia</string>
+    <string name="hardware_keys_action_ringer_modes">Tryby dzwonka</string>
+    <string name="hardware_keys_action_kill_app">Zamknij aktywne aplikacje</string>
     <string name="hardware_keys_swipe_right_key_title">Przesuń w prawo</string>
     <string name="hardware_keys_swipe_left_key_title">Przesuń w lewo</string>
     <string name="hardware_keys_long_tap_key_title">Długie naciśnięcie</string>
@@ -257,6 +263,9 @@
     <string name="volume_key_cursor_control_off">Wyłączone</string>
     <string name="volume_key_cursor_control_on">Głośność w górę/w dół przesuwa kursor w lewo/prawo</string>
     <string name="volume_key_cursor_control_on_reverse">Głośność w górę/w dół przesuwa kursor w prawo/lewo</string>
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Szybka latarka</string>
+    <string name="power_button_torch_summary">Gdy ekran jest wyłączony, długie naciśnięcie przycisku zasilania włączy latarkę</string>
     <string name="torch_long_press_power_gesture_title">Włączenie latarki przyciskiem zasilania przy wyłączonym ekranie</string>
     <string name="torch_long_press_power_gesture_desc">Przytrzymaj przycisk zasilania przy wyłączonym ekranie, aby włączyć latarkę</string>
     <string name="torch_long_press_power_timeout_title">Automatycznie wyłącz latarkę</string>
@@ -292,6 +301,9 @@
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">Ikona sieci 4G/LTE</string>
     <string name="show_lte_fourgee_summary">Wyświetl ikonę sieci 4G lub LTE, gdy jest ona dostępna na pasku stanu</string>
+    <!-- Show VoWiFi icon on statusbar -->
+    <string name="vowifi_icon_title">Ikona VoWiFi</string>
+    <string name="vowifi_icon_summary">Wyświetl ikonę VoWiFi (Wyłącz stary styl sieci, aby naprawić nakładanie się ikon)</string>
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">Ikona VoLTE</string>
     <string name="volte_icon_summary">Wyświetl ikonę VoLTE</string>
@@ -385,6 +397,7 @@
     <string name="qs_tile_title_visibility_summary">Wyświetl tytuł pod każdym kafelkiem</string>
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Zrzut ekranu</string>
+    <string name="powermenu_screenrecord">Nagrywanie ekranu</string>
     <string name="powermenu_power">Zasilanie</string>
     <string name="powermenu_restart">Zrestartuj</string>
     <string name="powermenu_restart_recovery">Zaawansowany restart</string>
@@ -399,6 +412,7 @@
     <string name="powermenu_lockscreen_summary">Włącz menu zasilania na ekranie blokady</string>
     <string name="powermenu_ls_reboot_summary">Pokaż opcję restartu na ekranie blokady</string>
     <string name="powermenu_ls_advanced_reboot_summary">Pokaż opcję zaawansowanego restartu na ekranie blokady</string>
+    <string name="powermenu_ls_screenrecord_summary">Pokaż opcję nagrywania ekranu na ekranie blokady</string>
     <string name="powermenu_ls_screenshot_summary">Pokaż opcję zrzutu ekranu na ekranie blokady</string>
     <string name="powermenu_ls_torch_summary">Pokaż opcję latarki na ekranie blokady</string>
     <!-- Statusbar Clock -->
@@ -509,6 +523,9 @@
     <string name="lock_clock_font_rosemary">Rosemary</string>
     <string name="lock_clock_font_sonysketch">SonySketch</string>
     <string name="lock_clock_font_surfer">Surfer</string>
+    <string name="lock_clock_font_linotte">Linotte</string>
+    <string name="lock_clock_font_anaheim">Anaheim</string>
+    <string name="lock_clock_font_tinkerbell">Tinkerbell</string>
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Opcje czcionki daty</string>
     <string name="lock_date_font_summary">Zmień domyślną czcionkę widżetu daty blokady ekranu</string>
@@ -906,11 +923,13 @@
     <string name="fod_recog_animation_miui_normal">Domyślna MIUI</string>
     <string name="fod_recog_animation_miui_aod">Tryb Always-On-Display</string>
     <string name="fod_recog_animation_miui_aurora">Aurora</string>
+    <string name="fod_recog_animation_miui_aurora_cas">Aurora (Mi 10 Ultra)</string>
     <string name="fod_recog_animation_miui_light">Lekka</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Puls</string>
     <string name="fod_recog_animation_miui_pulse_white">Puls (Biały)</string>
     <string name="fod_recog_animation_miui_rhythm">Rytm</string>
+    <string name="fod_recog_animation_miui_star_cas">Gwiezdny</string>
     <string name="fod_recog_animation_op_cosmos">Kosmos</string>
     <string name="fod_recog_animation_op_energy">Energia</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
@@ -1173,4 +1192,11 @@
     <string name="pulse_custom_div">Odstęp</string>
     <string name="pulse_filled_block_size">Rozmiar bloku</string>
     <string name="pulse_empty_block_size">Odstępy między blokami</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Styl panelu głośności</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Kompaktowy</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Kafelkowy</string>
+    <!-- Volume Panel Plugin Values -->
 </resources>
