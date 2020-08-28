@@ -82,6 +82,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String CENTER_NOTIFICATION_HEADERS = "center_notification_headers";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
+    private static final String LED_CATEGORY = "led";
     private static final String NOTIFICATION_HEADERS = "notification_headers";
     private static final String PULSE_AMBIENT_LIGHT_PREF = "pulse_ambient_light";
     private static final String PULSE_COLOR_PREF = "ambient_notification_light_color";
@@ -93,6 +94,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private ListPreference mFlashlightOnCall;
     private ListPreference mPulseTimeout;
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
+    private PreferenceCategory mLedCategory;
     private Preference mAlertSlider;
     private Preference mChargingLeds;
     private SystemSettingSwitchPreference mCenterNotificationHeader;
@@ -167,11 +169,18 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         if (!mAlertSliderAvailable)
             prefScreen.removePreference(mAlertSlider);
 
-        mChargingLeds = findPreference("charging_light");
-        if (mChargingLeds != null
-                && !getResources().getBoolean(
-                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-            prefScreen.removePreference(mChargingLeds);
+        boolean hasLED = res.getBoolean(
+                com.android.internal.R.bool.config_hasNotificationLed);
+        if (hasLED) {
+            mChargingLeds = findPreference("charging_light");
+            if (mChargingLeds != null
+                    && !res.getBoolean(
+                            com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+                prefScreen.removePreference(mChargingLeds);
+            }
+        } else {
+            mLedCategory = findPreference(LED_CATEGORY);
+            mLedCategory.setVisible(false);
         }
 
         mHeadsUpEnabled = findPreference(HEADS_UP_NOTIFICATIONS_ENABLED);
