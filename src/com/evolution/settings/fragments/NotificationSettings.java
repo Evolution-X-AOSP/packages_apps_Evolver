@@ -53,20 +53,30 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String KEY_CHARGING_LIGHT = "charging_light";
+    private static final String LED_CATEGORY = "led";
 
     private Preference mChargingLeds;
+    private PreferenceCategory mLedCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_notifications);
         PreferenceScreen prefScreen = getPreferenceScreen();
+        Resources res = getResources();
 
-        mChargingLeds = findPreference(KEY_CHARGING_LIGHT);
-        if (mChargingLeds != null
-                && !getResources().getBoolean(
-                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-            prefScreen.removePreference(mChargingLeds);
+        boolean hasLED = res.getBoolean(
+                com.android.internal.R.bool.config_hasNotificationLed);
+        if (hasLED) {
+            mChargingLeds = findPreference(KEY_CHARGING_LIGHT);
+            if (mChargingLeds != null
+                    && !res.getBoolean(
+                            com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+                prefScreen.removePreference(mChargingLeds);
+            }
+        } else {
+            mLedCategory = findPreference(LED_CATEGORY);
+            mLedCategory.setVisible(false);
         }
     }
 
