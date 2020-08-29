@@ -79,6 +79,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
 
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String AMBIENT_NOTIFICATION_LIGHT_ACCENT_PREF = "ambient_notification_light_accent";
+    private static final String CENTER_NOTIFICATION_HEADERS = "center_notification_headers";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
     private static final String HEADS_UP_NOTIFICATIONS_ENABLED = "heads_up_notifications_enabled";
     private static final String NOTIFICATION_HEADERS = "notification_headers";
@@ -94,6 +95,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private GlobalSettingMasterSwitchPreference mHeadsUpEnabled;
     private Preference mAlertSlider;
     private Preference mChargingLeds;
+    private SystemSettingSwitchPreference mCenterNotificationHeader;
     private SystemSettingSwitchPreference mNotificationHeader;
     private SystemSettingSwitchPreference mPulseEdgeLights;
 
@@ -110,6 +112,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+
+        mCenterNotificationHeader = findPreference(CENTER_NOTIFICATION_HEADERS);
+        mCenterNotificationHeader.setChecked((Settings.System.getInt(resolver,
+                Settings.System.CENTER_NOTIFICATION_HEADERS, 0) == 1));
+        mCenterNotificationHeader.setOnPreferenceChangeListener(this);
 
         mNotificationHeader = findPreference(NOTIFICATION_HEADERS);
         mNotificationHeader.setChecked((Settings.System.getInt(resolver,
@@ -238,6 +245,12 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.NOTIFICATION_PULSE_ACCENT, 0);
             }
+            return true;
+        } else if (preference == mCenterNotificationHeader) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.CENTER_NOTIFICATION_HEADERS, value ? 1 : 0);
+            EvolutionUtils.showSystemUiRestartDialog(getContext());
             return true;
         } else if (preference == mNotificationHeader) {
             boolean value = (Boolean) newValue;
