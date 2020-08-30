@@ -39,7 +39,6 @@ import com.evolution.settings.display.CustomOverlayPreferenceController;
 import com.evolution.settings.display.QsAlphaPreferenceController;
 import com.evolution.settings.display.QsBlurAlphaPreferenceController;
 import com.evolution.settings.display.QsBlurIntensityPreferenceController;
-import com.evolution.settings.display.QsbgColorPreferenceController;
 import com.evolution.settings.display.QsColorPreferenceController;
 import com.evolution.settings.display.QsCustomHeaderPreferenceController;
 import com.evolution.settings.display.QsTileStylePreferenceController;
@@ -88,7 +87,6 @@ public class ThemeSettings extends DashboardFragment implements Indexable  {
         controllers.add(new QsAlphaPreferenceController(context));
         controllers.add(new QsBlurAlphaPreferenceController(context));
         controllers.add(new QsBlurIntensityPreferenceController(context));
-        controllers.add(new QsbgColorPreferenceController(context));
         controllers.add(new QsColorPreferenceController(context));
         controllers.add(new QsCustomHeaderPreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
