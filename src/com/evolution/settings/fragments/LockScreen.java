@@ -29,6 +29,8 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.View;
 
+import com.android.internal.widget.LockPatternUtils;
+
 import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -45,6 +47,8 @@ import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,10 +58,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
     private static final String FINGERPRINT_CATEGORY = "lockscreen_fingerprint_category";
     private static final String UDFPS_CATEGORY = "udfps_category";
+    private static final String FP_KEYSTORE = "fp_unlock_keystore";
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFingerprintCategory;
     private PreferenceCategory mUdfpsCategory;
+    private SystemSettingSwitchPreference mFingerprintUnlock;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -80,6 +86,18 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mUdfpsCategory = findPreference(UDFPS_CATEGORY);
         if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
             prefScreen.removePreference(mUdfpsCategory);
+        }
+
+        mFingerprintUnlock = (SystemSettingSwitchPreference) findPreference(FP_KEYSTORE);
+
+        if (mFingerprintUnlock != null) {
+           if (LockPatternUtils.isDeviceEncryptionEnabled()) {
+               mFingerprintUnlock.setEnabled(false);
+               mFingerprintUnlock.setSummary(R.string.fp_encrypt_warning);
+            } else {
+               mFingerprintUnlock.setEnabled(true);
+               mFingerprintUnlock.setSummary(R.string.fp_unlock_keystore_summary);
+            }
         }
     }
 
