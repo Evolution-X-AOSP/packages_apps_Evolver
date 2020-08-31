@@ -284,20 +284,6 @@
     <string name="notification_messages">System</string>
     <string name="enable_fc_notifications_title">Powiadomienia o wymuszonych zamknięciach aplikacji</string>
     <string name="enable_fc_notifications_summary">Pokaż okno dialogowe po awarii aplikacji</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Wizualizator muzyki</string>
-    <string name="lockscreen_visualizer_enable_summary">Pokaż paski wizualizacji podczas odtwarzania muzyki</string>
-    <string name="lockscreen_autocolor_title">Automatyczny kolor</string>
-    <string name="lockscreen_autocolor_summary">Synchronizuj kolor z tłem ekranu blokady</string>
-    <string name="lockscreen_autocolor_lavalamp">Wymaga wyłączonej lampy lawowej</string>
-    <string name="lockscreen_lavalamp_title">Lampa lawowa</string>
-    <string name="lockscreen_lavalamp_summary">Użyj płynnej animacji mieszania kolorów w stylu lampy lawowej</string>
-    <string name="lockscreen_lavalamp_speed_title">Interwał mieszania kolorów</string>
-    <string name="lockscreen_solid_lines_category">Linie ciągłe</string>
-    <string name="lockscreen_solid_units_count_title">Liczba linii</string>
-    <string name="lockscreen_solid_fudge_factor_title">Poziom czułości</string>
-    <string name="lockscreen_solid_units_opacity_title">Krycie lini</string>
-    <string name="lockscreen_visualizer_color_title">Kolor domyślny</string>
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">Ikona sieci 4G/LTE</string>
     <string name="show_lte_fourgee_summary">Wyświetl ikonę sieci 4G lub LTE, gdy jest ona dostępna na pasku stanu</string>
@@ -311,6 +297,7 @@
     <string name="volte_icon_vo">Tylko Vo</string>
     <string name="volte_icon_volte">VoLTE</string>
     <string name="volte_icon_oos">OOS</string>
+    <string name="volte_icon_oos10">OOS 10</string>
     <string name="volte_icon_hd">HD</string>
     <string name="volte_icon_hd2">HD CAF</string>
     <string name="volte_icon_volit">VoLIT</string>
@@ -668,6 +655,8 @@
     <string name="ambient_pulse_brightness_summary">Ustaw jasność do użycia, gdy powiadomienia są wyświetlane</string>
     <string name="ambient_doze_brightness_title">Jasność Ambient Display</string>
     <string name="ambient_doze_brightness_summary">Ustaw jasność do użycia podczas wyświetlania Ambient Display</string>
+    <string name="doze_brightness_force_title">Wymuś wartość jasności</string>
+    <string name="doze_brightness_force_summary">Użyj niestandardowych wartości jasności zamiast jasności ekranu</string>
     <!-- Old Mobile Type Toggle -->
     <string name="use_old_mobiletype_title">Użyj starego stylu sieci</string>
     <string name="use_old_mobiletype_summary">Scal ikony sygnału i typu (Jeśli glitchuje, po prostu zrestartuj SystemUI)</string>
@@ -820,9 +809,6 @@
     <string name="lockscreen_cover_filter_gradientblur">Rozmycie gradientu</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Poziom rozmycia grafiki multimediów</string>
-    <!-- Ambient visualizer -->
-    <string name="ambient_visualizer_title">Wizualizer na ekranie zgodnym z otoczeniem</string>
-    <string name="ambient_visualizer_summary">Pokazuje białe paski wizualizacji na ekranie otoczenia chyba że wybrany jest kolor niestandardowy</string>
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Odbierz klawiszami głośności</string>
     <string name="volume_answer_call_summary">Odbierz, gdy zostaną naciśnięte klawisze głośności</string>
@@ -951,7 +937,6 @@
     <string name="hide_lockicon_summary">Ukryj ikonę kłódki na ekranie blokady</string>
     <!-- QS themes -->
     <string name="qs_themes_category_title">Motywy szybkich ustawień</string>
-    <string name="qs_bg_color_title">Kolor nagłówka szybkich ustawień</string>
     <string name="qs_panel_color_title">Kolor panelu szybkich ustawień</string>
     <string name="qs_bg_wall_title">Użyj kolorów tapety</string>
     <string name="qs_bg_wall_summary">Ustaw kolor tła szybkich ustawień z tapety</string>
@@ -1088,6 +1073,8 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">Pokaż nagłówki powiadomień</string>
     <string name="notification_headers_summary">Czy pokazywać nagłówki powiadomień w stylu Androida R (wymaga ponownego uruchomienia SystemUI)</string>
+    <string name="center_notification_headers_title">Wyśrodkuj nagłówki powiadomień</string>
+    <string name="center_notification_headers_summary">Czy ustawić nagłówki powiadomień w stylu wyśrodkowanym z Androida R</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Informacje o ładowaniu</string>
     <string name="lockscreen_battery_info_summary">Wyświetlaj maksymalne natężenie, napięcie i temperaturę baterii podczas ładowania</string>
@@ -1166,8 +1153,12 @@
     <string name="pulse_help_policy_notice_summary">Pulse nie działa z niektórymi źródłami dźwięku, kiedy głośnik urządenia jest w użyciu</string>
     <string name="pulse_settings">Pulse</string>
     <string name="pulse_settings_summary">Wizualizacja audio na pasku nawigacji</string>
-    <string name="show_pulse_title">Pokaż Pulse</string>
-    <string name="show_pulse_summary">Wizualizacja korektora graficznego dźwięku na pasku nawigacji</string>
+    <string name="show_navbar_pulse_title">Puls paska nawigacji</string>
+    <string name="show_navbar_pulse_summary">Korektor graficzny dźwięku na obszarze paska nawigacji, również jeśli pasek jest ukryty</string>
+    <string name="show_lockscreen_pulse_title">Pulse na ekranie blokady</string>
+    <string name="show_lockscreen_pulse_summary">Korektor graficzny dźwięku na ekranie blokady</string>
+    <string name="show_ambient_pulse_title">Pulse na ekranie ambient</string>
+    <string name="show_ambient_pulse_summary">Korektor graficzny dźwięku na ekranie ambient</string>
     <string name="pulse_render_mode_title">Tryb renderowania</string>
     <string name="pulse_render_mode_fading_bars">Zanikanie bloków</string>
     <string name="pulse_render_mode_solid_lines">Linie ciągłe</string>
@@ -1199,4 +1190,11 @@
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Kafelkowy</string>
     <!-- Volume Panel Plugin Values -->
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">Styl nagłówka szybkich ustawień</string>
+    <string name="qs_header_black">Czarny</string>
+    <string name="qs_header_gray">Szary</string>
+    <string name="qs_header_lightgray">Jasnoszary</string>
+    <string name="qs_header_accent">Kolor akcentu</string>
+    <string name="qs_header_transparent">Przeźroczysty</string>
 </resources>
