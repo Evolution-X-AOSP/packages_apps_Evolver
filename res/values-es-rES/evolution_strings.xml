@@ -65,6 +65,8 @@
     <string name="enable_first">Por favor, activa primero</string>
     <string name="led_color_green">Verde</string>
     <string name="led_color_red">Rojo</string>
+    <string name="edit_hint">Valor</string>
+    <string name="seek_value_edit_label">Establecer valor</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Activado</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -104,9 +106,6 @@
     <!-- USB configuration -->
     <string name="usb_default_config_title">Configuración de USB</string>
     <string name="usb_default_config_summary">Elegir el comportamiento predeterminado cuando esté conectado a un dispositivo a través de USB</string>
-    <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Deslizar para capturar pantalla</string>
-    <string name="three_finger_gesture_summary">Deslice hacia abajo con tres dedos para tomar una captura de pantalla</string>
     <!-- Lock screen cover art -->
     <string name="lockscreen_media_category">Música</string>
     <!-- Tuner items -->
@@ -226,6 +225,12 @@
     <string name="hardware_keys_action_launch_camera">Iniciar cámara</string>
     <string name="hardware_keys_action_sleep">Apagar la pantalla</string>
     <string name="hardware_keys_action_split_screen">Pantalla dividida</string>
+    <string name="hardware_keys_action_volume_panel">Panel de volumen</string>
+    <string name="hardware_keys_action_notification_panel">Notificaciones</string>
+    <string name="hardware_keys_action_qs_panel">Panel de ajustes rápidos (QS)</string>
+    <string name="hardware_keys_action_clear_notifications">Limpiar las notificaciones</string>
+    <string name="hardware_keys_action_ringer_modes">Modos de timbre</string>
+    <string name="hardware_keys_action_kill_app">Matar la aplicación en primer plano</string>
     <string name="hardware_keys_swipe_right_key_title">Deslizar hacia la derecha</string>
     <string name="hardware_keys_swipe_left_key_title">Deslizar hacia la izquierda</string>
     <string name="hardware_keys_long_tap_key_title">Pulsación larga</string>
@@ -258,6 +263,9 @@
     <string name="volume_key_cursor_control_off">Desactivada</string>
     <string name="volume_key_cursor_control_on">Volumen arriba/abajo mueve el cursor hacia la izquierda/derecha</string>
     <string name="volume_key_cursor_control_on_reverse">Los botones subir/bajar volumen moverán el cursor a la derecha/izquierda</string>
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Linterna rápida</string>
+    <string name="power_button_torch_summary">Cuando la pantalla está apagada, al presionar el botón de encendido por un rato se activa la linterna</string>
     <string name="torch_long_press_power_gesture_title">Con la pantalla apagada el botón de encendido enciende la linterna</string>
     <string name="torch_long_press_power_gesture_desc">Activar la linterna con una larga pulsación en el botón de encendido mientras la pantalla está apagada</string>
     <string name="torch_long_press_power_timeout_title">Apagar automáticamente la linterna</string>
@@ -276,23 +284,12 @@
     <string name="notification_messages">Sistema</string>
     <string name="enable_fc_notifications_title">Forzar cierre de notificaciones</string>
     <string name="enable_fc_notifications_summary">Mostrar un diálogo cuando una aplicación falla</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Visualizador de música</string>
-    <string name="lockscreen_visualizer_enable_summary">Mostrar barras de visualizador mientras se reproduce música</string>
-    <string name="lockscreen_autocolor_title">Color automático</string>
-    <string name="lockscreen_autocolor_summary">Sincronizar color con el fondo de la pantalla de bloqueo</string>
-    <string name="lockscreen_autocolor_lavalamp">Requiere desactivar la lámpara de lava</string>
-    <string name="lockscreen_lavalamp_title">Lámpara de lava</string>
-    <string name="lockscreen_lavalamp_summary">Usa una suave animación de mezcla de color de lámpara de lava</string>
-    <string name="lockscreen_lavalamp_speed_title">Intervalo de mezcla de color</string>
-    <string name="lockscreen_solid_lines_category">Líneas sólidas</string>
-    <string name="lockscreen_solid_units_count_title">Conteo de líneas</string>
-    <string name="lockscreen_solid_fudge_factor_title">Nivel de sensibilidad</string>
-    <string name="lockscreen_solid_units_opacity_title">Opacidad de líneas</string>
-    <string name="lockscreen_visualizer_color_title">Color predeterminado</string>
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">Icono de red 4G/LTE</string>
     <string name="show_lte_fourgee_summary">Mostrar el icono de red 4G o LTE cuando esté disponible en la barra de estado</string>
+    <!-- Show VoWiFi icon on statusbar -->
+    <string name="vowifi_icon_title">Icono VoWiFi</string>
+    <string name="vowifi_icon_summary">Mostrar el icono de VoWiFi (elimina el viejo estilo de móvil para arreglar cualquier superposición)</string>
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">Icono VoLTE</string>
     <string name="volte_icon_summary">Mostrar el icono VoLTE</string>
@@ -300,23 +297,13 @@
     <string name="volte_icon_vo">Solo Vo</string>
     <string name="volte_icon_volte">VoLTE</string>
     <string name="volte_icon_oos">OOS</string>
+    <string name="volte_icon_oos10">OOS 10</string>
     <string name="volte_icon_hd">HD</string>
     <string name="volte_icon_hd2">HD CAF</string>
     <string name="volte_icon_volit">VoLIT</string>
     <string name="volte_icon_asus">Asus</string>
     <string name="volte_icon_miui">MIUI 11</string>
     <string name="volte_icon_emui">EMUI</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Icono VoWiFi</string>
-    <string name="vowifi_icon_enabled">Habilitado</string>
-    <string name="vowifi_icon_disabled">Desactivada</string>
-    <string name="vowifi_icon_enabled_volte_disabled">VoWiFi en lugar de VoLTE</string>
-    <string name="vowifi_icon_style_title">Estilo de icono de VoWiFi</string>
-    <string name="vowifi_icon_default">Por defecto</string>
-    <string name="vowifi_icon_asus">Asus</string>
-    <string name="vowifi_icon_emui">EMUI</string>
-    <string name="vowifi_icon_moto">Motorola</string>
-    <string name="vowifi_icon_oneplus">OOS</string>
     <!-- Notification guts kill app button -->
     <string name="notification_misc">Otros</string>
     <string name="notification_guts_kill_app_button_title">Botón para matar aplicación</string>
@@ -397,6 +384,7 @@
     <string name="qs_tile_title_visibility_summary">Mostrar los títulos debajo de los mosaicos de ajustes rápidos.</string>
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Captura de pantalla</string>
+    <string name="powermenu_screenrecord">Grabación de pantalla</string>
     <string name="powermenu_power">Apagar</string>
     <string name="powermenu_restart">Reiniciar</string>
     <string name="powermenu_restart_recovery">Reinicio avanzado</string>
@@ -411,6 +399,7 @@
     <string name="powermenu_lockscreen_summary">Activa la posibilidad de usar el menu de apagado desde la pantalla de bloqueo</string>
     <string name="powermenu_ls_reboot_summary">Mostrar la opción de reinicio en la pantalla de bloqueo</string>
     <string name="powermenu_ls_advanced_reboot_summary">Mostrar la opción de reinicio avanzado en la pantalla de bloqueo</string>
+    <string name="powermenu_ls_screenrecord_summary">Mostrar la opción de grabación de la pantalla AOSP en la pantalla de bloqueo</string>
     <string name="powermenu_ls_screenshot_summary">Mostrar la opción de captura de pantalla en la pantalla de bloqueo</string>
     <string name="powermenu_ls_torch_summary">Mostrar la opción de linterna en la pantalla de bloqueo</string>
     <!-- Statusbar Clock -->
@@ -521,6 +510,9 @@
     <string name="lock_clock_font_rosemary">Rosemary</string>
     <string name="lock_clock_font_sonysketch">SonySketch</string>
     <string name="lock_clock_font_surfer">Surfer</string>
+    <string name="lock_clock_font_linotte">Linotte</string>
+    <string name="lock_clock_font_anaheim">Anaheim</string>
+    <string name="lock_clock_font_tinkerbell">Campanilla</string>
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Opciones de fuente en la fecha</string>
     <string name="lock_date_font_summary">Cambia la fuente por defecto de la fecha en la pantalla de bloqueo</string>
@@ -663,6 +655,8 @@
     <string name="ambient_pulse_brightness_summary">Establecer brillo a usar cuando se muestran las notificaciones</string>
     <string name="ambient_doze_brightness_title">Brillo en pantalla ambiente</string>
     <string name="ambient_doze_brightness_summary">Establecer brillo a usar durante la pantalla ambiente encendida</string>
+    <string name="doze_brightness_force_title">Forzar los valores de brillo</string>
+    <string name="doze_brightness_force_summary">Usar valores de brillo personalizados en lugar del brillo de la pantalla</string>
     <!-- Old Mobile Type Toggle -->
     <string name="use_old_mobiletype_title">Utilizar antiguo estilo de tipo móvil</string>
     <string name="use_old_mobiletype_summary">Fusionar iconos de señal y tipo (Si se presenta errores, simplemente reinicie la interfaz de usuario)</string>
@@ -815,9 +809,6 @@
     <string name="lockscreen_cover_filter_gradientblur">Desenfoque degradado</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Nivel de desenfoque de la imagen</string>
-    <!-- Ambient visualizer -->
-    <string name="ambient_visualizer_title">Visualización en pantalla ambiente</string>
-    <string name="ambient_visualizer_summary">Muestra barras de visualización blancas en la pantalla ambiente a menos que se seleccione un color personalizado</string>
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Responder con teclas de volumen</string>
     <string name="volume_answer_call_summary">Responder la llamada al presionar las teclas del volumen</string>
@@ -918,11 +909,13 @@
     <string name="fod_recog_animation_miui_normal">MIUI por defecto</string>
     <string name="fod_recog_animation_miui_aod">Pantalla ambiente</string>
     <string name="fod_recog_animation_miui_aurora">Aurora</string>
+    <string name="fod_recog_animation_miui_aurora_cas">Aurora (Mi 10 Ultra)</string>
     <string name="fod_recog_animation_miui_light">Ligera</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Pulso</string>
     <string name="fod_recog_animation_miui_pulse_white">Pulso (Blanco)</string>
     <string name="fod_recog_animation_miui_rhythm">Ritmo</string>
+    <string name="fod_recog_animation_miui_star_cas">Luz estelar</string>
     <string name="fod_recog_animation_op_cosmos">Cosmos</string>
     <string name="fod_recog_animation_op_energy">Energía</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
@@ -944,7 +937,6 @@
     <string name="hide_lockicon_summary">Ocultar el icono de bloqueo en la pantalla de bloqueo</string>
     <!-- QS themes -->
     <string name="qs_themes_category_title">Temas de ajustes rápidos</string>
-    <string name="qs_bg_color_title">Color de la cabecera de los ajustes rápidos</string>
     <string name="qs_panel_color_title">Color del panel de los ajustes rápidos</string>
     <string name="qs_bg_wall_title">Usar color del fondo de pantalla</string>
     <string name="qs_bg_wall_summary">Usar color del fondo de pantalla para fondo de los ajustes rápidos</string>
@@ -1081,6 +1073,8 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">Mostrar cabeceras de notificación</string>
     <string name="notification_headers_summary">Mostrar las cabeceras de notificación al estilo R (Requiere un reinicio de SystemUI)</string>
+    <string name="center_notification_headers_title">Cabeceras del centro de notificación</string>
+    <string name="center_notification_headers_summary">Posicionar los encabezados de notificación al estilo R en el centro</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Información de carga</string>
     <string name="lockscreen_battery_info_summary">Mostrar corriente, voltaje y temperatura de la batería mientras se la carga</string>
@@ -1155,4 +1149,52 @@
     <string name="qstile_neonlike">Luz de neón</string>
     <string name="qstile_oos">Oxígeno</string>
     <string name="qstile_triangles">Triángulo</string>
+    <!-- Pulse -->
+    <string name="pulse_help_policy_notice_summary">El pulso no funciona con algunas fuentes de audio cuando se escucha en el altavoz del dispositivo</string>
+    <string name="pulse_settings">Pulso</string>
+    <string name="pulse_settings_summary">Barra de navegación, ecualizador audio gráfico</string>
+    <string name="show_navbar_pulse_title">Pulso de la barra de navegación</string>
+    <string name="show_navbar_pulse_summary">Ecualizador audio gráfico en el área de la barra de navegación, incluso si la barra está oculta</string>
+    <string name="show_lockscreen_pulse_title">Pulso en la pantalla de bloqueo</string>
+    <string name="show_lockscreen_pulse_summary">El ecualizador gráfico de audio en la pantalla de bloqueo</string>
+    <string name="show_ambient_pulse_title">Pulso ambiental</string>
+    <string name="show_ambient_pulse_summary">El ecualizador gráfico de audio en la pantalla ambiental</string>
+    <string name="pulse_render_mode_title">Modo de renderizado</string>
+    <string name="pulse_render_mode_fading_bars">Bloques que se desvanecen</string>
+    <string name="pulse_render_mode_solid_lines">Líneas sólidas</string>
+    <string name="pulse_color">Color</string>
+    <string name="pulse_color_mode">Modo de color</string>
+    <string name="pulse_color_accent">Acento</string>
+    <string name="pulse_color_custom">Personalizado</string>
+    <string name="pulse_color_lava_lamp">Lámpara de lava</string>
+    <string name="pulse_color_auto">Carátula del álbum</string>
+    <string name="pulse_color_chooser">Elija el color</string>
+    <string name="smoothing_enabled_title">Activar el suavizado</string>
+    <string name="smoothing_enabled_summary">Cada barra es animada más suavemente</string>
+    <string name="pulse_advanced_category">Avanzado</string>
+    <string name="pulse_legacy_mode_advanced_category">Ajustes del modo de bloques de desvanecimiento</string>
+    <string name="pulse_custom_fudge_factor">Nivel de distorsión</string>
+    <string name="lavamp_speed_title">La velocidad de la lámpara de lava</string>
+    <string name="pulse_solid_units_count">Conteo de líneas sólidas</string>
+    <string name="pulse_solid_lines_count">Conteo de líneas sólidas</string>
+    <string name="pulse_solid_units_opacity">Opacidad de las líneas sólidas</string>
+    <string name="pulse_solid_dimen_category">Ajustes del modo de líneas sólidas</string>
+    <string name="pulse_custom_dimen">Ancho de la barra</string>
+    <string name="pulse_custom_div">El espacio entre las barras</string>
+    <string name="pulse_filled_block_size">Tamaño del bloque</string>
+    <string name="pulse_empty_block_size">El espacio entre los bloques</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Estilo de panel de volumen</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Compacto</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Mosaico</string>
+    <!-- Volume Panel Plugin Values -->
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">Estilo de cabecera de los ajustes rápidos (QS)</string>
+    <string name="qs_header_black">Negro</string>
+    <string name="qs_header_gray">Gris</string>
+    <string name="qs_header_lightgray">Gris claro</string>
+    <string name="qs_header_accent">Basado en el acento</string>
+    <string name="qs_header_transparent">Transparente</string>
 </resources>
