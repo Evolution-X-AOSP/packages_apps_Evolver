@@ -83,11 +83,17 @@ public class RoundedCornersSettings extends SettingsPreferenceFragment implement
 
         // Rounded Corner Radius
         mCornerRadius = findPreference(SYSUI_ROUNDED_SIZE);
-        int resourceIdRadius = (int) ctx.getResources().getDimension(com.android.internal.R.dimen.rounded_corner_radius);
-        int cornerRadius = Settings.Secure.getIntForUser(ctx.getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
-                ((int) (resourceIdRadius / density)), UserHandle.USER_CURRENT);
-        mCornerRadius.setValue(cornerRadius);
-        mCornerRadius.setOnPreferenceChangeListener(this);
+        boolean hasCustomCutout = res.getBoolean(res.getIdentifier(
+                "config_customCutout", "bool", "com.android.systemui"));
+        if (!hasCustomCutout) {
+            int resourceIdRadius = (int) ctx.getResources().getDimension(com.android.internal.R.dimen.rounded_corner_radius);
+            int cornerRadius = Settings.Secure.getIntForUser(ctx.getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
+                    ((int) (resourceIdRadius / density)), UserHandle.USER_CURRENT);
+            mCornerRadius.setValue(cornerRadius);
+            mCornerRadius.setOnPreferenceChangeListener(this);
+        } else {
+            mCornerRadius.setVisible(false);
+        }
 
         // Rounded Content Padding
         mContentPadding = findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
