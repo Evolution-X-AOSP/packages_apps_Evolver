@@ -284,20 +284,6 @@
     <string name="notification_messages">システム</string>
     <string name="enable_fc_notifications_title">強制終了の通知</string>
     <string name="enable_fc_notifications_summary">アプリクラッシュ時にダイアログを表示する</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">音楽ビジュアライザー</string>
-    <string name="lockscreen_visualizer_enable_summary">音楽再生中はビジュアライザーのバーを表示する</string>
-    <string name="lockscreen_autocolor_title">自動設定の色</string>
-    <string name="lockscreen_autocolor_summary">背景と色を同期させる</string>
-    <string name="lockscreen_autocolor_lavalamp">ラーヴァランプモードを無効化して下さい</string>
-    <string name="lockscreen_lavalamp_title">ラーヴァランプ</string>
-    <string name="lockscreen_lavalamp_summary">滑らかなラーヴァランプのスタイルカラーが混ざったアニメーションを使う</string>
-    <string name="lockscreen_lavalamp_speed_title">色を混ぜる時間の間隔</string>
-    <string name="lockscreen_solid_lines_category">ソリッドライン</string>
-    <string name="lockscreen_solid_units_count_title">ラインの数</string>
-    <string name="lockscreen_solid_fudge_factor_title">感度レベル</string>
-    <string name="lockscreen_solid_units_opacity_title">ラインの不透明度</string>
-    <string name="lockscreen_visualizer_color_title">既定の色</string>
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">4G/LTE アイコン</string>
     <string name="show_lte_fourgee_summary">4G 又は LTE アイコンをステータスバーに表示する</string>
@@ -311,6 +297,7 @@
     <string name="volte_icon_vo">Vo のみ</string>
     <string name="volte_icon_volte">VoLTE</string>
     <string name="volte_icon_oos">OOS</string>
+    <string name="volte_icon_oos10">OOS 10</string>
     <string name="volte_icon_hd">HD</string>
     <string name="volte_icon_hd2">HD CAF</string>
     <string name="volte_icon_volit">VoLIT</string>
@@ -668,6 +655,8 @@
     <string name="ambient_pulse_brightness_summary">通知表示時の明るさを設定する</string>
     <string name="ambient_doze_brightness_title">アンビエント表示の明るさ</string>
     <string name="ambient_doze_brightness_summary">アンビエント表示有効時の明るさを設定する</string>
+    <string name="doze_brightness_force_title">強制的な明るさの値</string>
+    <string name="doze_brightness_force_summary">画面の明るさの代わりに明るさのカスタム値を使用する</string>
     <!-- Old Mobile Type Toggle -->
     <string name="use_old_mobiletype_title">古い電波アイコンを使用</string>
     <string name="use_old_mobiletype_summary">電波と種別のアイコンを統合する (不具合があったら再起動して下さい)</string>
@@ -820,9 +809,6 @@
     <string name="lockscreen_cover_filter_gradientblur">グラデーションぼかし</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">メディアアートのぼかしレベル</string>
-    <!-- Ambient visualizer -->
-    <string name="ambient_visualizer_title">アンビエントビジュアライザー</string>
-    <string name="ambient_visualizer_summary">カスタムカラー未選択時にアンビエント画面にビジュアライザーを表示する</string>
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">着信応答</string>
     <string name="volume_answer_call_summary">電話着信時に音量ボタンを押して応答する</string>
@@ -951,7 +937,6 @@
     <string name="hide_lockicon_summary">ロック画面からロックアイコンを隠す</string>
     <!-- QS themes -->
     <string name="qs_themes_category_title">クイック設定のテーマ</string>
-    <string name="qs_bg_color_title">クイック設定ヘッダーの色</string>
     <string name="qs_panel_color_title">クイック設定パネルの色</string>
     <string name="qs_bg_wall_title">壁紙の色を使用</string>
     <string name="qs_bg_wall_summary">壁紙からクイック設定の背景色を設定する</string>
@@ -1088,6 +1073,8 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">通知ヘッダーを表示</string>
     <string name="notification_headers_summary">R スタイルの通知ヘッダーの表示に切り替える (システム UI の再起動が必要)</string>
+    <string name="center_notification_headers_title">中央配置の通知ヘッダー</string>
+    <string name="center_notification_headers_summary">Rスタイルの通知ヘッダーを中央に配置するかどうか決定する</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">充電情報</string>
     <string name="lockscreen_battery_info_summary">充電器の最大電流/最大電圧/バッテリー温度を表示する</string>
@@ -1166,8 +1153,12 @@
     <string name="pulse_help_policy_notice_summary">端末のスピーカーで聴く時に一部のオーディオソースで Pulse が機能しません</string>
     <string name="pulse_settings">パルス</string>
     <string name="pulse_settings_summary">ナビゲーションバーのグラフィックイコライザー</string>
-    <string name="show_pulse_title">パルスを表示</string>
-    <string name="show_pulse_summary">ナビゲーションバー上のグラフィックイコライザー</string>
+    <string name="show_navbar_pulse_title">ナビゲーションバーの Pulse</string>
+    <string name="show_navbar_pulse_summary">ナビゲーションバーが隠されていても、バー上にオーディオグラフィックイコライザーを表示します。</string>
+    <string name="show_lockscreen_pulse_title">ロック画面のみ</string>
+    <string name="show_lockscreen_pulse_summary">ロック画面のグラフィックイコライザー</string>
+    <string name="show_ambient_pulse_title">アンビエント Pulse</string>
+    <string name="show_ambient_pulse_summary">アンビエント画面のグラフィックイコライザー</string>
     <string name="pulse_render_mode_title">レンダリングモード</string>
     <string name="pulse_render_mode_fading_bars">フェーディングブロック</string>
     <string name="pulse_render_mode_solid_lines">ソリッドライン</string>
@@ -1199,4 +1190,11 @@
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">タイル</string>
     <!-- Volume Panel Plugin Values -->
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">クイック設定ヘッダーのスタイル</string>
+    <string name="qs_header_black">ブラック</string>
+    <string name="qs_header_gray">グレー</string>
+    <string name="qs_header_lightgray">ライトグレー</string>
+    <string name="qs_header_accent">アクセント基調</string>
+    <string name="qs_header_transparent">透明</string>
 </resources>
