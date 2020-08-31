@@ -284,20 +284,6 @@
     <string name="notification_messages">Sistem</string>
     <string name="enable_fc_notifications_title">Zorla kapatma bildirimleri</string>
     <string name="enable_fc_notifications_summary">Bir uygulama çöktüğünde iletişim kutusu göster</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Müzik görselleştirici</string>
-    <string name="lockscreen_visualizer_enable_summary">Müzik çalarken görselleştirici çubukları göster</string>
-    <string name="lockscreen_autocolor_title">Otomatik renk</string>
-    <string name="lockscreen_autocolor_summary">Kilit ekranı arka planıyla rengi eşitle</string>
-    <string name="lockscreen_autocolor_lavalamp">Lav lambasının devre dışı olması gerekir</string>
-    <string name="lockscreen_lavalamp_title">Lav lambası</string>
-    <string name="lockscreen_lavalamp_summary">Pürüzsüz bir lav lambası tarzı renk karışımı animasyonu kullan</string>
-    <string name="lockscreen_lavalamp_speed_title">Renk değişim aralığı</string>
-    <string name="lockscreen_solid_lines_category">Düz çizgiler</string>
-    <string name="lockscreen_solid_units_count_title">Çizgi sayısı</string>
-    <string name="lockscreen_solid_fudge_factor_title">Davranış seviyesi</string>
-    <string name="lockscreen_solid_units_opacity_title">Çizgi saydamlığı</string>
-    <string name="lockscreen_visualizer_color_title">Varsayılan renk</string>
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">LTE yerine 4G simgesini göster</string>
     <string name="show_lte_fourgee_summary">Durum çubuğunda kullanılabilir olduğunda 4G veya LTE ağ simgesini görüntüle</string>
@@ -311,6 +297,7 @@
     <string name="volte_icon_vo">Sadece Voice-over</string>
     <string name="volte_icon_volte">VoLTE</string>
     <string name="volte_icon_oos">OOS</string>
+    <string name="volte_icon_oos10">OOS 10</string>
     <string name="volte_icon_hd">HD</string>
     <string name="volte_icon_hd2">CAF HD</string>
     <string name="volte_icon_volit">VoLIT</string>
@@ -668,6 +655,8 @@
     <string name="ambient_pulse_brightness_summary">Bildirimler gösterilirken kullanılacak parlaklığı ayarla</string>
     <string name="ambient_doze_brightness_title">Ortam ekranı parlaklığı</string>
     <string name="ambient_doze_brightness_summary">Ortam ekranı açıkken kullanılacak parlaklığı ayarla</string>
+    <string name="doze_brightness_force_title">Parlaklık değerlerini zorla</string>
+    <string name="doze_brightness_force_summary">Ekran parlaklığı yerine özel parlaklık değerleri kullanın</string>
     <!-- Old Mobile Type Toggle -->
     <string name="use_old_mobiletype_title">Eski mobil ağ tipi stili kullan</string>
     <string name="use_old_mobiletype_summary">Sinyal ve yazı simgelerini birleştir (hatalıysa, sistem arayüzünü yeniden başlatın)</string>
@@ -823,9 +812,6 @@
     <string name="lockscreen_cover_filter_gradientblur">Eğimli bulanıklık</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Medya resmi bulanıklık seviyesi</string>
-    <!-- Ambient visualizer -->
-    <string name="ambient_visualizer_title">Ortam ekranı görselleştiricisi</string>
-    <string name="ambient_visualizer_summary">Özel renk seçilmedikçe, ortam ekranında beyaz görselleştirme çubuklarını gösterir</string>
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Ses tuşlarıyla cevapla</string>
     <string name="volume_answer_call_summary">Ses tuşlarına basıldığında aramaya cevap ver</string>
@@ -954,7 +940,6 @@
     <string name="hide_lockicon_summary">Kilit ekranında kilit simgesini gizle</string>
     <!-- QS themes -->
     <string name="qs_themes_category_title">Hızlı ayarlar temaları</string>
-    <string name="qs_bg_color_title">Hızlı ayarlar başlık rengi</string>
     <string name="qs_panel_color_title">Hızlı ayarlar panel rengi</string>
     <string name="qs_bg_wall_title">Duvar kağıdı renklerini kullan</string>
     <string name="qs_bg_wall_summary">Hızlı ayarlar arka plan rengini duvar kağıdından ayarla</string>
@@ -1091,6 +1076,8 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">Bildirim başlıklarını göster</string>
     <string name="notification_headers_summary">R stili bildirim başlıklarının gösterilip gösterilmeyeceğini seçin</string>
+    <string name="center_notification_headers_title">Bildirim başlıklarını ortala</string>
+    <string name="center_notification_headers_summary">Android 11 stili bildirim başlıklarının ortada konumlandırılıp konumlandırılmayacağı</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Şarj bilgisi</string>
     <string name="lockscreen_battery_info_summary">Şarj sırasında şarj cihazının maksimum akımını, voltajını ve pil sıcaklığını gösterir</string>
@@ -1169,8 +1156,12 @@
     <string name="pulse_help_policy_notice_summary">Pulse cihaz hoparlörünü dinlerken bazı ses kaynakları ile çalışmayabilir</string>
     <string name="pulse_settings">Pulse</string>
     <string name="pulse_settings_summary">Gezinme çubuğunda ses görselleştirme</string>
-    <string name="show_pulse_title">Pulse\'u göster</string>
-    <string name="show_pulse_summary">Gezinme çubuğunda ses görselleştirmesini gösterir</string>
+    <string name="show_navbar_pulse_title">Gezinme Çubuğunda Pulse</string>
+    <string name="show_navbar_pulse_summary">Gezinme çubuğu alanında ses grafiği ekolayzırı, çubuk gizlensede görünür</string>
+    <string name="show_lockscreen_pulse_title">Kilit Ekranında Pulse</string>
+    <string name="show_lockscreen_pulse_summary">Kilit ekranında ses grafiği ekolayzırı</string>
+    <string name="show_ambient_pulse_title">Ortam Ekranında Pulse</string>
+    <string name="show_ambient_pulse_summary">Ortam ekranında ses grafiği ekolayzırı</string>
     <string name="pulse_render_mode_title">İşleme modu</string>
     <string name="pulse_render_mode_fading_bars">Solan bloklar</string>
     <string name="pulse_render_mode_solid_lines">Düz çizgiler</string>
@@ -1202,4 +1193,11 @@
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Kareler</string>
     <!-- Volume Panel Plugin Values -->
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">Hızlı ayarlar başlık stili</string>
+    <string name="qs_header_black">Siyah</string>
+    <string name="qs_header_gray">Gri</string>
+    <string name="qs_header_lightgray">Açık Gri</string>
+    <string name="qs_header_accent">Vurgu Tabanlı</string>
+    <string name="qs_header_transparent">Şeffaf</string>
 </resources>
