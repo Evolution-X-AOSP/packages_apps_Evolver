@@ -77,6 +77,12 @@
             android:entries="@array/qs_selector_entries"
             android:entryValues="@array/qs_selector_values" />
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_tiles_bg_disco"
+            android:title="@string/qs_bg_use_disco"
+            android:summary="@string/qs_bg_use_disco_summary"
+            android:defaultValue="false" />
+
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="qs_header_style"
             android:title="@string/qs_header_style_title"
@@ -123,6 +129,13 @@
             android:defaultValue="false"
             android:dependency="qs_panel_bg_use_fw"
             android:disableDependentsState="true" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_panel_bg_rgb"
+            android:title="@string/qs_bg_use_rgb"
+            android:summary="@string/qs_bg_use_rgb_summary"
+            android:defaultValue="false"
+            android:dependency="qs_panel_bg_use_wall" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="qs_panel_color"
