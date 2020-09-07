@@ -65,6 +65,8 @@
     <string name="enable_first">দয়া করে প্রথমে চালু করুন</string>
     <string name="led_color_green">সবুজ</string>
     <string name="led_color_red">লাল</string>
+    <string name="edit_hint">মান</string>
+    <string name="seek_value_edit_label">মান নির্ধারণ করুন</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">চালু</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -104,9 +106,6 @@
     <!-- USB configuration -->
     <string name="usb_default_config_title">ইউএসবি কনফিগারেশান বেছে নিন</string>
     <string name="usb_default_config_summary">USB\'র মাধ্যমে কোনও ডিভাইসে সংযুক্ত থাকাকালীন ডিফল্ট আচরণটি বাছাই করুন</string>
-    <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">সোয়াইপ টু স্ক্রিনশট</string>
-    <string name="three_finger_gesture_summary">স্ক্রিনশট নিতে তিনটি ফিংগার দিয়ে নিচে সোয়াইপ করুন</string>
     <!-- Lock screen cover art -->
     <string name="lockscreen_media_category">মিউজিক</string>
     <!-- Tuner items -->
@@ -120,9 +119,11 @@
     <!-- Navbar options -->
     <string name="nav_bar_tuner_title">নেভিগেশন বার টিউনার</string>
     <string name="nav_bar_tuner_summary">নেভবার লেআউট পরিবর্তন করুন</string>
-    <string name="nav_bar_layout_inverse_title">লেআউট উল্টান</string>
-    <string name="nav_bar_layout_inverse_summary">নেভিগেশন বার বোতামগুলির লেআউট উল্টান</string>
+    <string name="navigation_bar_invert_layout_title">লেআউট উল্টান</string>
+    <string name="navigation_bar_invert_layout_summary">নেভিগেশন বার এবং অন্যান্য আইটেম যেমন IME সুইচারের লেআউট উল্টান</string>
     <string name="navigation_bar_title">নেভিগেশন বার</string>
+    <string name="navigation_bar_arrow_keys_title">লিখার সময় এরো-কী প্রদর্শন করুন</string>
+    <string name="navigation_bar_arrow_keys_summary">টাইপ করার সময় বাম এবং ডান কার্সর বোতাম প্রদর্শন করুন। আইএমই স্যুইচারকে ওভাররাইড করে।</string>
     <string name="navigation_bar_home_long_press_title">দীর্ঘ চাপের হোম অ্যাকশন</string>
     <string name="navigation_bar_home_double_tap_title">ডাবল ট্যাপের হোম অ্যাকশন</string>
     <string name="navigation_bar_app_switch_long_press_title">দীর্ঘ চাপের রিসেন্ট অ্যাকশন</string>
@@ -224,6 +225,12 @@
     <string name="hardware_keys_action_launch_camera">ক্যামেরা খুলুন</string>
     <string name="hardware_keys_action_sleep">স্ক্রীন বন্ধ করুন</string>
     <string name="hardware_keys_action_split_screen">স্প্লিট স্ক্রিন</string>
+    <string name="hardware_keys_action_volume_panel">ভলিউম প্যানেল</string>
+    <string name="hardware_keys_action_notification_panel">নোটিফিকেশন</string>
+    <string name="hardware_keys_action_qs_panel">কিউএস প্যানেল</string>
+    <string name="hardware_keys_action_clear_notifications">নোটিফিকেশন পরিষ্কার করুন</string>
+    <string name="hardware_keys_action_ringer_modes">রিঙ্গার মোড</string>
+    <string name="hardware_keys_action_kill_app">ফোরগ্রাউন্ড অ্যাপ্লিকেশনটি বন্ধ করুন</string>
     <string name="hardware_keys_swipe_right_key_title">ডানে সোয়াইপ করুন</string>
     <string name="hardware_keys_swipe_left_key_title">বামে সোয়াইপ করুন</string>
     <string name="hardware_keys_long_tap_key_title">দীর্ঘায়িত ট্যাপ</string>
@@ -256,6 +263,9 @@
     <string name="volume_key_cursor_control_off">নিষ্ক্রিয়</string>
     <string name="volume_key_cursor_control_on">ভলিউম উপর/নিচ করিয়ে কার্সর যথাক্রমে বামে/ডানে সরানো</string>
     <string name="volume_key_cursor_control_on_reverse">ভলিউম উপর/নিচ করিয়ে কার্সর যথাক্রমে ডানে/বামে সরানো</string>
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">দ্রুত টর্চ জালুন</string>
+    <string name="power_button_torch_summary">যখন স্ক্রিনটি বন্ধ থাকবে, পাওয়ার বোতামটি দীর্ঘ-টিপলে টর্চকে সক্ষম করবে</string>
     <string name="torch_long_press_power_gesture_title">স্ক্রীন বন্ধ অবস্থায় পাওয়ার বাটনে টর্চ</string>
     <string name="torch_long_press_power_gesture_desc">স্ক্রিন বন্ধ থাকা অবস্থায় পাওয়ার বাটনে দীর্ঘ টিপ দিলে টর্চ চালু হবে</string>
     <string name="torch_long_press_power_timeout_title">স্বয়ংক্রিয়ভাবে টর্চ বন্ধ করুন</string>
@@ -274,23 +284,12 @@
     <string name="notification_messages">সিস্টেম</string>
     <string name="enable_fc_notifications_title">জোরপূর্বক নোটিফিকেশন বন্ধ করুন</string>
     <string name="enable_fc_notifications_summary">কোনও অ্যাপ্লিকেশন ক্র্যাশ করলে একটি ডায়ালগ দেখান</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">মিউজিক ভিজ্যুয়ালাইজার</string>
-    <string name="lockscreen_visualizer_enable_summary">মিউজিক বাজানোর সময় ভিজ্যুয়ালাইজার বারগুলি দেখান</string>
-    <string name="lockscreen_autocolor_title">সয়ংক্রিয় রং</string>
-    <string name="lockscreen_autocolor_summary">লকস্ক্রিন ব্যাকগ্রাউন্ডের সাথে রং সিঙ্ক করুন</string>
-    <string name="lockscreen_autocolor_lavalamp">লাভা প্রদীপ অক্ষম করা দরকার</string>
-    <string name="lockscreen_lavalamp_title">লাভা বাতি</string>
-    <string name="lockscreen_lavalamp_summary">মসৃণ লাভা ল্যাম্প স্টাইলের রঙ মিশ্রণ অ্যানিমেশন ব্যবহার করুন</string>
-    <string name="lockscreen_lavalamp_speed_title">রং মিশ্রন বিরতি</string>
-    <string name="lockscreen_solid_lines_category">নিরেট রেখা</string>
-    <string name="lockscreen_solid_units_count_title">লাইনের সংখ্যা</string>
-    <string name="lockscreen_solid_fudge_factor_title">স্যানিটি লেভেল</string>
-    <string name="lockscreen_solid_units_opacity_title">লাইনের অস্বচ্ছতা</string>
-    <string name="lockscreen_visualizer_color_title">ডিফল্ট রং</string>
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">4জি/এলটিই নেটওয়ার্ক আইকন</string>
     <string name="show_lte_fourgee_summary">4জি বা এলটিই নেটওয়ার্ক থাকলে আইকনটি স্ট্যাটাসবারে প্রদর্শন করুন</string>
+    <!-- Show VoWiFi icon on statusbar -->
+    <string name="vowifi_icon_title">VoWiFi আইকন</string>
+    <string name="vowifi_icon_summary">VoWiFi আইকন প্রদর্শন করুন (কোনও ওভারল্যাপ ঠিক করতে পুরানো মোবাইল স্টাইলটি বন্ধ করুন)</string>
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">VoLTE আইকন</string>
     <string name="volte_icon_summary">VoLTE আইকন প্রদর্শন করুন</string>
@@ -298,11 +297,13 @@
     <string name="volte_icon_vo">শুধুমাত্র Vo</string>
     <string name="volte_icon_volte">VoLTE</string>
     <string name="volte_icon_oos">OOS এর স্টাইল</string>
+    <string name="volte_icon_oos10">OOS 10</string>
     <string name="volte_icon_hd">এইচ ডি (HD)</string>
     <string name="volte_icon_hd2">CAF এর HD</string>
     <string name="volte_icon_volit">VoLIT দেখান</string>
     <string name="volte_icon_asus">আসুস</string>
     <string name="volte_icon_miui">MIUI ১১</string>
+    <string name="volte_icon_emui">ইএমইউআই (EMUI)</string>
     <!-- Notification guts kill app button -->
     <string name="notification_misc">বিবিধ</string>
     <string name="notification_guts_kill_app_button_title">কিল অ্যাপ বাটন</string>
@@ -372,15 +373,9 @@
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">কম বিরক্তিকর হেডস আপ</string>
     <string name="less_boring_heads_up_summary">কেবল ডায়ালার, মেসেজিং এবং অ্যালার্ম অ্যাপের জন্য হেডস আপ দেখান</string>
-    <!-- Force expanded notifications -->
-    <string name="force_expanded_notifications_title">জোরপূর্বক এক্সপ্যান্ডেড নোটিফিকেশন বন্ধ করুন</string>
-    <string name="force_expanded_notifications_summary">জোরপূর্বক সেসব অ্যাপ বন্ধ করুন যেগুলো এক্সপ্যান্ডেড নোটিফিকেশন সাপোর্ট করে</string>
     <!-- QS rows and columns -->
     <string name="sysui_qqs_count_title">কলাম (কুইকবার)</string>
     <string name="qs_layout_category">লে-আউট</string>
-    <string name="qs_column_rows_settings_title">কিউএস প্যানেল সেটিংস</string>
-    <string name="qs_columns_rows_category_title">কিউএস কলাম এবং সারি</string>
-    <string name="qs_rows_columns_title">কিউএস সারি এবং কলাম</string>
     <string name="qs_rows_portrait_title">সারি (পোর্ট্রেট)</string>
     <string name="qs_rows_landscape_title">সারি (ল্যান্ডস্কেপ)</string>
     <string name="qs_columns_portrait_title">কলাম (পোর্ট্রেট)</string>
@@ -389,6 +384,7 @@
     <string name="qs_tile_title_visibility_summary">প্রতিটি টাইলের নীচে শিরোনাম প্রদর্শন করুন</string>
     <!-- Power Menu -->
     <string name="powermenu_screenshot">স্ক্রিনশট</string>
+    <string name="powermenu_screenrecord">স্ক্রিনরেকর্ড</string>
     <string name="powermenu_power">পাওয়ার</string>
     <string name="powermenu_restart">রিস্টার্ট</string>
     <string name="powermenu_restart_recovery">অ্যাডভান্সড রিস্টার্ট</string>
@@ -403,6 +399,7 @@
     <string name="powermenu_lockscreen_summary">লকস্কিনের সময় পাওয়ার মেনু ডায়ালগ প্রদর্শন এবং ব্যবহার করার ক্ষমতা সক্ষম করুন</string>
     <string name="powermenu_ls_reboot_summary">লকস্ক্রিনে রিবুট অপশন দেখান</string>
     <string name="powermenu_ls_advanced_reboot_summary">লকস্ক্রিনে অ্যাডভান্স রিবুট অপশন দেখান</string>
+    <string name="powermenu_ls_screenrecord_summary">লকস্ক্রিনে AOSP স্ক্রিন রেকর্ডার অপশন দেখান</string>
     <string name="powermenu_ls_screenshot_summary">লকস্ক্রিনে স্ক্রিনশট অপশন দেখান</string>
     <string name="powermenu_ls_torch_summary">লকস্ক্রিনে টর্চ অপশন দেখান</string>
     <!-- Statusbar Clock -->
@@ -513,6 +510,9 @@
     <string name="lock_clock_font_rosemary">রোজম্যারি</string>
     <string name="lock_clock_font_sonysketch">সনিস্কেচ</string>
     <string name="lock_clock_font_surfer">সার্ফার</string>
+    <string name="lock_clock_font_linotte">লিনোট</string>
+    <string name="lock_clock_font_anaheim">আনাহিম</string>
+    <string name="lock_clock_font_tinkerbell">টিঙ্কারবেল</string>
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">তারিখের ফন্ট অপশন</string>
     <string name="lock_date_font_summary">লকস্ক্রিন ডেইট উইজেটের ডিফল্ট ফন্টটি পরিবর্তন করুন</string>
@@ -563,13 +563,13 @@
     <string name="qs_tile_animation_category">কিউএস টাইল</string>
     <string name="qs_tile_animation_style_title">কিউএস টাইল অ্যানিমেশন</string>
     <string name="qs_tile_animation_duration_title">কিউএস টাইল অ্যানিমেশনের সময়কাল</string>
+    <string name="qs_tile_animation_interpolator_title">কিউএস টাইল অ্যানিমেশন ইন্টারপোলেটর</string>
     <string name="qs_tile_animation_style_off">নিষ্ক্রিয়</string>
     <string name="qs_tile_animation_style_flip">ফ্লিপ</string>
     <string name="qs_tile_animation_style_rotate">রোটেট</string>
     <string name="qs_tile_animation_duration_low">নিম্ন</string>
     <string name="qs_tile_animation_duration_default">ডিফল্ট</string>
     <string name="qs_tile_animation_duration_fast">দ্রুত</string>
-    <string name="qs_tile_animation_interpolator_title">কিউএস টাইল অ্যানিমেশন ইন্টারপোলেটর</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">লিনিয়ার</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">দ্রুততর করা</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">গতি হ্রাস করা</string>
@@ -655,6 +655,8 @@
     <string name="ambient_pulse_brightness_summary">নোটিফিকেশন প্রদর্শনের সময় ব্যবহার করার জন্য ব্রাইটনেস সেট করুন</string>
     <string name="ambient_doze_brightness_title">অ্যাম্বিয়েন্ট ডিসপ্লে ব্রাইটনেস</string>
     <string name="ambient_doze_brightness_summary">অ্যাম্বিয়েন্ট ডিসপ্লে সচল থাকলে ব্যবহারের জন্য ব্রাইটনেস সেট করুন</string>
+    <string name="doze_brightness_force_title">জোরপূর্বক উজ্জ্বলতার মানগুলিকে ব্যবহার করুন</string>
+    <string name="doze_brightness_force_summary">স্ক্রিনের উজ্জ্বলতার পরিবর্তে কাস্টম উজ্জ্বলতার মানগুলি ব্যবহার করুন</string>
     <!-- Old Mobile Type Toggle -->
     <string name="use_old_mobiletype_title">পুরানো মোবাইল টাইপের স্টাইল ব্যবহার করুন</string>
     <string name="use_old_mobiletype_summary">সিগনাল এবং টাইপ আইকনগুলি মার্জ করুন (যদি গ্লিচি হয়, তবে কেবল SystemUI পুনরায় চালু করুন)</string>
@@ -807,9 +809,6 @@
     <string name="lockscreen_cover_filter_gradientblur">গ্রেডিয়েন্ট ব্লার</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">মিডিয়া আর্টওয়ার্কের ব্লার লেভেল</string>
-    <!-- Ambient visualizer -->
-    <string name="ambient_visualizer_title">অ্যাম্বিয়েন্ট ভিজ্যুয়ালাইজার</string>
-    <string name="ambient_visualizer_summary">কাস্টম রঙ নির্বাচন না করা হলে অ্যাম্বিয়েন্ট ডিসপ্লেতে সাদা ভিজ্যুয়ালাইজেশন বারগুলি দেখান</string>
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">ভলিউম বাটন দিয়ে উত্তর</string>
     <string name="volume_answer_call_summary">ভলিউম বাটন চাপলে কল অ্যানসার করা হবে</string>
@@ -833,6 +832,9 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">প্রতি প্যাকেজে সেন্সর ব্লক</string>
     <string name="sensor_block_summary">ব্যাটারি সংরক্ষণের জন্য কিছু অ্যাপ্লিকেশনের নির্দিষ্ট সেন্সরগুলিতে অ্যাক্সেস ব্লক করুন</string>
+    <string name="sensor_block_app_picker_title">এই অ্যাপ্লিকেশনগুলির জন্য সেন্সরগুলি অবরুদ্ধ করুন</string>
+    <string name="add_sensor_block_package_title">সেন্সর ব্লকের জন্য অ্যাপ্লিকেশন যুক্ত করুন</string>
+    <string name="add_sensor_block_package_summary">এই অ্যাপগুলির জন্য উল্লেখযোগ্য গতি, অ্যাক্সিলোমিটার, লিনিয়ার ত্বরণ সেন্সরগুলি অবরুদ্ধ করা হবে</string>
     <!-- Allow fake signature -->
     <string name="allow_signature_fake">স্যিগনেচার স্পুফিং এর অনুমতি দিন</string>
     <string name="allow_signature_fake_summary">অ্যাপ্লিকেশনগুলিকে ভিন্ন একটি আলাদা অ্যাপ্লিকেশন হওয়ার ভান করে সুরক্ষা ব্যবস্থা বাইপাস করার অনুমতি দিন।</string>
@@ -840,6 +842,7 @@
     <string name="screenshot_type_title">স্ক্রিনশট টাইপ</string>
     <string name="screenshot_type_fullscreen">পূর্ণস্ক্রিনের স্ক্রিনশট নিন</string>
     <string name="screenshot_type_partial">আপনি যে অংশুটুকু স্ক্রিনশট হিসাবে নিতে চান সেটি ড্র্যাগ করে নির্বাচন করুন</string>
+    <string name="screenshot_type_long">পূর্ণস্ক্রিনের &amp; বর্ধিত স্ক্রিনের স্ক্রিনশট নিন</string>
     <!-- Custom headers -->
     <string name="custom_header_pick_summary">প্রি-ইনস্টল করা চিত্র সংগ্রহ থেকে একটি চিত্র নির্বাচন করুন</string>
     <string name="custom_header_pick_title">সংগ্রহ থেকে চিত্র চয়ন করুন</string>
@@ -893,6 +896,7 @@
     <string name="fod_pressed_state_title">আইকন প্রেস করার পরের ইফেক্ট</string>
     <string name="fod_pressed_state_miui_cyan">MIUI নীলচে সবুজ</string>
     <string name="fod_pressed_state_miui_white">MIUI সাদা</string>
+    <string name="fod_pressed_state_realme_green_shadow">রিয়েলমি সবুজ (শ্যাডো)</string>
     <string name="fod_pressed_state_vivo_cyan">Vivo নীলচে সবুজ</string>
     <string name="fod_pressed_state_vivo_cyan_shadow">Vivo নীলচে সবুজ (আবছা)</string>
     <string name="fod_pressed_state_vivo_cyan_shadow_et713">Vivo নীলচে সবুজ (আবছার বিকল্প)</string>
@@ -904,11 +908,14 @@
     <string name="fod_recog_animation_effect_title">অ্যানিমেশনের প্রভাব শনাক্তকরণ</string>
     <string name="fod_recog_animation_miui_normal">MIUI ডিফল্ট</string>
     <string name="fod_recog_animation_miui_aod">সবসময় চালু থাকা ডিস্প্লে (AOD)</string>
+    <string name="fod_recog_animation_miui_aurora">অরোরা (K30 প্রো)</string>
+    <string name="fod_recog_animation_miui_aurora_cas">অরোরা (Mi 10 আল্ট্রা)</string>
     <string name="fod_recog_animation_miui_light">হালকা</string>
     <string name="fod_recog_animation_miui_pop">পপ</string>
     <string name="fod_recog_animation_miui_pulse">পালস্</string>
     <string name="fod_recog_animation_miui_pulse_white">পালস্ (সাদা)</string>
     <string name="fod_recog_animation_miui_rhythm">ছন্দ (Rhythm)</string>
+    <string name="fod_recog_animation_miui_star_cas">স্টারলাইট</string>
     <string name="fod_recog_animation_op_cosmos">কসমস</string>
     <string name="fod_recog_animation_op_energy">এনার্জি</string>
     <string name="fod_recog_animation_op_mclaren">ম্যাক্ ল্যারেন</string>
@@ -930,7 +937,6 @@
     <string name="hide_lockicon_summary">লকস্ক্রিনে লক আইকনটি লুকান</string>
     <!-- QS themes -->
     <string name="qs_themes_category_title">কিউএস থিমস</string>
-    <string name="qs_bg_color_title">কিউএস হেডারের রং</string>
     <string name="qs_panel_color_title">কিউএস প্যানেলের রং</string>
     <string name="qs_bg_wall_title">ওয়ালপেপারের রং ব্যবহার করুন</string>
     <string name="qs_bg_wall_summary">ওয়ালপেপার থেকে কিউএস ব্যাকগ্রাউন্ডের রং সেট করুন</string>
@@ -938,6 +944,10 @@
     <string name="qs_bg_use_fw_summary">এক্সটারনাল থিম ইঞ্জিনের জন্য কাস্টম কিউএস স্টাইলগুলি অক্ষম করুন</string>
     <string name="qs_bg_use_new_tint">নতুন টিন্ট স্টাইল</string>
     <string name="qs_bg_use_new_tint_summary">নতুন কিউএস টিন্ট স্টাইল সক্ষম করুন</string>
+    <string name="qs_bg_use_rgb">আরজিবি রঙ ব্যবহার করুন</string>
+    <string name="qs_bg_use_rgb_summary">বিভিন্ন আরজিবি রঙ দেখানোর জন্য কিউএস পটভূমিতে ডিস্কো মোড সক্ষম করুন</string>
+    <string name="qs_bg_use_disco">কিউএস টাইল ডিস্কো</string>
+    <string name="qs_bg_use_disco_summary">আপনার কিউএস টাইলস রঙিন করুন!</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">স্ক্রোলিং ক্যাশ</string>
     <string name="pref_scrollingcache_summary">স্ক্রোলিং ক্যাশ মেমরির বিনিময়ে স্ক্রোলিং কার্যকারিতা ইম্প্রুভ করতে পারে</string>
@@ -1043,6 +1053,9 @@
     <string name="ambient_notification_light_color_mode_custom">কাস্টম রং</string>
     <string name="ambient_notification_light_timeout_title">লাইট পালস্ এর সময়সীমা</string>
     <string name="entry_infinite">অসীম</string>
+    <string name="entry_ten_second">১০ সেকেন্ড</string>
+    <string name="entry_thirty_second">৩০ সেকেন্ড</string>
+    <string name="entry_one_minute">১ মিনিট</string>
     <string name="entry_five_minute">৫ মিনিট</string>
     <string name="entry_ten_minute">১০ মিনিট</string>
     <string name="entry_thirty_minute">৩০ মিনিট</string>
@@ -1064,6 +1077,8 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">নোটিফিকেশন হেডার প্রদর্শন করুন</string>
     <string name="notification_headers_summary">R স্টাইলের নোটিফিকেশন হেডার প্রদর্শিত হবে কিনা (SystemUI রিস্টার্ট করা লাগবে)</string>
+    <string name="center_notification_headers_title">কেন্দ্রে নোটিফিকেশন হেডার</string>
+    <string name="center_notification_headers_summary">কেন্দ্রে আর স্টাইল নোটিফিকেশন হেডার স্থাপন করা হবে কি না</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">চার্জিং ইনফো</string>
     <string name="lockscreen_battery_info_summary">চার্জ করার সময় চার্জারের সর্বাধিক কারেন্ট, ভোল্টেজ এবং ব্যাটারির তাপমাত্রা প্রদর্শন করুন</string>
@@ -1107,6 +1122,8 @@
     <string name="evolution_about_summary">টিম সম্পর্কে তথ্য</string>
     <string name="evolution_website_title">ওয়েবসাইট</string>
     <string name="evolution_website_summary">আমাদের দুর্দান্ত ওয়েবসাইটটি দেখার জন্য এখানে চাপুন!</string>
+    <string name="evolution_twitter_title">টুইটার পেইজ</string>
+    <string name="evolution_twitter_summary">আমাদের টুইটার দেখার জন্য এখানে ট্যাপ করুন!</string>
     <string name="evolution_telegram_title">টেলিগ্রাম গ্রুপ</string>
     <string name="evolution_telegram_summary">আমাদের আমাজিং কমিউনিটি দেখতে এখানে চাপুন!</string>
     <string name="evolution_github_summary">আমাদের গিটহাবটি খুলতে এখানে ট্যাপ করুন!</string>
@@ -1116,4 +1133,72 @@
     <!--Statusbar privacy indicators-->
     <string name="statusbar_privacy_indicators_title">প্রাইভেসির সুচকসমুহ</string>
     <string name="statusbar_privacy_indicators_summary">স্ট্যাটাসবারে প্রাইভেসি সূচকগুলি দেখান</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">কিউএস টাইল স্টাইল</string>
+    <string name="qstile_default">ডিফল্ট</string>
+    <string name="qstile_circle_trim">ছাঁটা সহ বৃত্ত</string>
+    <string name="qstile_dual_tone_circle">দ্বৈত টোন বৃত্ত</string>
+    <string name="qstile_squircle_trim">চক্রাকৃতির ট্রিম</string>
+    <string name="qstile_wavey">ওয়েভি (Wavey)</string>
+    <string name="qstile_pokesign">পোকসাইন (Pokesign)</string>
+    <string name="qstile_ninja">নিঞ্জা</string>
+    <string name="qstile_dottedcircle">ডটেড সার্কেল</string>
+    <string name="qstile_attemptmountain">একটি পর্বতের প্রচেষ্টা</string>
+    <string name="qstile_squaremedo">স্কয়ারমিডো</string>
+    <string name="qstile_inkdrop">কালি</string>
+    <string name="qstile_cookie">কুকি</string>
+    <string name="qstile_circleoutline">সার্কেল আউটলাইন</string>
+    <string name="qstile_cosmos">শিশু কসমস</string>
+    <string name="qstile_divided">বিভক্ত সার্কেল</string>
+    <string name="qstile_neonlike">নিয়ন আলো</string>
+    <string name="qstile_oos">অক্সিজেন</string>
+    <string name="qstile_triangles">ত্রিভুজ</string>
+    <!-- Pulse -->
+    <string name="pulse_help_policy_notice_summary">পালস কিছু অডিও উৎসের সাথে কাজ করে না যখন ডিভাইসের স্পিকারে শোনা হয়</string>
+    <string name="pulse_settings">পালস্</string>
+    <string name="pulse_settings_summary">ন্যাভিগেশন বার অডিও গ্রাফিক ইকুলাইজার</string>
+    <string name="show_navbar_pulse_title">নেভিগেশনবার পালস্</string>
+    <string name="show_navbar_pulse_summary">নেভিগেশন বারে অডিও গ্রাফিক ইকুলাইজার, এমনকি বারটি লুকানো থাকলেও</string>
+    <string name="show_lockscreen_pulse_title">লকস্ক্রিনে পালস্</string>
+    <string name="show_lockscreen_pulse_summary">লকস্ক্রিনে অডিও গ্রাফিক ইকুলাইজার</string>
+    <string name="show_ambient_pulse_title">অ্যাম্বিয়েন্ট পালস্</string>
+    <string name="show_ambient_pulse_summary">অ্যাম্বিয়েন্ট স্ক্রিনে অডিও গ্রাফিক ইকুলাইজার</string>
+    <string name="pulse_render_mode_title">রেন্ডার মোড</string>
+    <string name="pulse_render_mode_fading_bars">ফেইডিং ব্লক</string>
+    <string name="pulse_render_mode_solid_lines">নিরেট রেখা</string>
+    <string name="pulse_color">রং</string>
+    <string name="pulse_color_mode">রঙের ধরন</string>
+    <string name="pulse_color_accent">এক্সেন্ট</string>
+    <string name="pulse_color_custom">পছন্দসই</string>
+    <string name="pulse_color_lava_lamp">লাভা বাতি</string>
+    <string name="pulse_color_auto">অ্যালবাম আর্ট</string>
+    <string name="pulse_color_chooser">রং নির্বাচন করুন</string>
+    <string name="smoothing_enabled_title">স্মুথিং চালু করুন</string>
+    <string name="smoothing_enabled_summary">প্রতিটি বার আরও মসৃণভাবে অ্যানিমেটেড হয়</string>
+    <string name="pulse_advanced_category">অ্যাডভান্সড</string>
+    <string name="pulse_legacy_mode_advanced_category">ফেইডিং ব্লক মোডের সেটিংস</string>
+    <string name="pulse_custom_fudge_factor">স্যানিটি লেভেল</string>
+    <string name="lavamp_speed_title">লাভা ল্যাম্পের গতি</string>
+    <string name="pulse_solid_units_count">সলিড লাইনের গননা</string>
+    <string name="pulse_solid_lines_count">সলিড লাইনের গননা</string>
+    <string name="pulse_solid_units_opacity">সলিড লাইনের অস্বচ্ছতা</string>
+    <string name="pulse_solid_dimen_category">সলিড লাইন মোড সেটিংস</string>
+    <string name="pulse_custom_dimen">বারের প্রস্থ</string>
+    <string name="pulse_custom_div">বার স্পেস</string>
+    <string name="pulse_filled_block_size">ব্লক সাইজ</string>
+    <string name="pulse_empty_block_size">ব্লক স্পেস</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">ভলিউম প্যানেল স্টাইল</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">কমপ্যাক্ট</string>
+    <string name="volume_panel_oreo">ওরিও</string>
+    <string name="volume_panel_tiled">টিল্ড</string>
+    <!-- Volume Panel Plugin Values -->
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">কিউএস হেডার স্টাইল</string>
+    <string name="qs_header_black">কালো</string>
+    <string name="qs_header_gray">ধূসর</string>
+    <string name="qs_header_lightgray">হাল্কা ধূসর</string>
+    <string name="qs_header_accent">অ্যাকসেন্ট ভিত্তিক</string>
+    <string name="qs_header_transparent">স্বচ্ছ</string>
 </resources>
