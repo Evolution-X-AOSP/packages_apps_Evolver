@@ -225,6 +225,12 @@
     <string name="hardware_keys_action_launch_camera">Membuka kamera</string>
     <string name="hardware_keys_action_sleep">Matikan layar</string>
     <string name="hardware_keys_action_split_screen">Layar terpisah</string>
+    <string name="hardware_keys_action_volume_panel">Panel Volume</string>
+    <string name="hardware_keys_action_notification_panel">Notifikasi</string>
+    <string name="hardware_keys_action_qs_panel">Panel Setelan Cepat</string>
+    <string name="hardware_keys_action_clear_notifications">Bersihkan notifikasi</string>
+    <string name="hardware_keys_action_ringer_modes">Mode dering</string>
+    <string name="hardware_keys_action_kill_app">Tutup paksa aplikasi saat ini</string>
     <string name="hardware_keys_swipe_right_key_title">Geser ke kanan</string>
     <string name="hardware_keys_swipe_left_key_title">Geser ke kiri</string>
     <string name="hardware_keys_long_tap_key_title">Tekan yang lama</string>
@@ -257,6 +263,9 @@
     <string name="volume_key_cursor_control_off">Nonaktifkan</string>
     <string name="volume_key_cursor_control_on">Volume atas/bawah memindahkan kursor ke kiri/kanan</string>
     <string name="volume_key_cursor_control_on_reverse">Volume atas/bawah bergerak kursor kanan/kiri</string>
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Senter cepat</string>
+    <string name="power_button_torch_summary">Saat layar mati, tombol daya yang menekan lama akan mengaktifkan senter</string>
     <string name="torch_long_press_power_gesture_title">Layar mati tombol power untuk senter</string>
     <string name="torch_long_press_power_gesture_desc">Tekan lama tombol power ketika layar mati untuk menyalakan senter</string>
     <string name="torch_long_press_power_timeout_title">Matikan senter secara otomatis</string>
@@ -275,23 +284,12 @@
     <string name="notification_messages">Sistem</string>
     <string name="enable_fc_notifications_title">Tutup paksa pemberitahuan</string>
     <string name="enable_fc_notifications_summary">Tampilkan dialog saat aplikasi terhenti</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Visualizer musik</string>
-    <string name="lockscreen_visualizer_enable_summary">Tampilkan bilah visualizer saat musik berputar</string>
-    <string name="lockscreen_autocolor_title">Warna otomatis</string>
-    <string name="lockscreen_autocolor_summary">Sinkronkan warna dengan latar belakang di layar kunci</string>
-    <string name="lockscreen_autocolor_lavalamp">Menonaktifkan lampu lava yang diperlukan</string>
-    <string name="lockscreen_lavalamp_title">Lampu lava</string>
-    <string name="lockscreen_lavalamp_summary">Gunakan animasi perpaduan gaya warna lampu lava yang halus</string>
-    <string name="lockscreen_lavalamp_speed_title">Selang perpaduan warna</string>
-    <string name="lockscreen_solid_lines_category">Garis padat</string>
-    <string name="lockscreen_solid_units_count_title">Jumlah garisan</string>
-    <string name="lockscreen_solid_fudge_factor_title">Tingkat kewajaran</string>
-    <string name="lockscreen_solid_units_opacity_title">Keburaman garis</string>
-    <string name="lockscreen_visualizer_color_title">Warna bawaan</string>
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">Ikon jaringan 4G/LTE</string>
     <string name="show_lte_fourgee_summary">Tampilkan ikon jaringan 4G atau LTE jika tersedia di bilah status</string>
+    <!-- Show VoWiFi icon on statusbar -->
+    <string name="vowifi_icon_title">Ikon VoWiFi</string>
+    <string name="vowifi_icon_summary">Tampilkan ikon VoWiFi (Matikan gaya ponsel lama untuk memperbaiki tumpang tindih)</string>
     <!-- Show VoLTE icon on statusbar -->
     <string name="volte_icon_title">Ikon VoLTE</string>
     <string name="volte_icon_summary">Tampilkan ikon VoLTE</string>
@@ -299,6 +297,7 @@
     <string name="volte_icon_vo">Hanya Vo</string>
     <string name="volte_icon_volte">VoLTE</string>
     <string name="volte_icon_oos">OOS</string>
+    <string name="volte_icon_oos10">OOS 10</string>
     <string name="volte_icon_hd">HD</string>
     <string name="volte_icon_hd2">HD CAF</string>
     <string name="volte_icon_volit">VoLIT</string>
@@ -385,6 +384,7 @@
     <string name="qs_tile_title_visibility_summary">Tampilkan judul di bawah ubin QS</string>
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Tangkapan layar</string>
+    <string name="powermenu_screenrecord">Rekam Layar</string>
     <string name="powermenu_power">Matikan perangkat</string>
     <string name="powermenu_restart">Mulai ulang</string>
     <string name="powermenu_restart_recovery">Mulai ulang lanjutan</string>
@@ -399,6 +399,7 @@
     <string name="powermenu_lockscreen_summary">Aktifkan kemampuan untuk menampilkan dan menggunakan dialog menu daya saat berada di layar kunci</string>
     <string name="powermenu_ls_reboot_summary">Tampilkan opsi nyalakan ulang di layar kunci</string>
     <string name="powermenu_ls_advanced_reboot_summary">Tampilkan opsi mulai ulang lanjutan di layar kunci</string>
+    <string name="powermenu_ls_screenrecord_summary">Tampilkan opsi perekam layar AOSP di layar kunci</string>
     <string name="powermenu_ls_screenshot_summary">Tampilkan pilihan tangkapan layar di layar kunci</string>
     <string name="powermenu_ls_torch_summary">Tampilkan opsi senter di layar kunci</string>
     <!-- Statusbar Clock -->
@@ -509,6 +510,9 @@
     <string name="lock_clock_font_rosemary">Rosemary</string>
     <string name="lock_clock_font_sonysketch">SonySketch</string>
     <string name="lock_clock_font_surfer">Surfer</string>
+    <string name="lock_clock_font_linotte">Linotte</string>
+    <string name="lock_clock_font_anaheim">Anaheim</string>
+    <string name="lock_clock_font_tinkerbell">Tinkerbell</string>
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Opsi font tanggal</string>
     <string name="lock_date_font_summary">Ubah font bawaan pada widget tanggal di layar kunci</string>
@@ -651,6 +655,8 @@
     <string name="ambient_pulse_brightness_summary">Setel kecerahan saat pemberitahuan ditampilkan</string>
     <string name="ambient_doze_brightness_title">Tampilan kecarahan ambien</string>
     <string name="ambient_doze_brightness_summary">Setel kecerahan saat tampilan ambien aktif</string>
+    <string name="doze_brightness_force_title">Paksa nilai kecerahan</string>
+    <string name="doze_brightness_force_summary">Gunakan nilai kecerahan kustom dibandingkan kecerahan layar</string>
     <!-- Old Mobile Type Toggle -->
     <string name="use_old_mobiletype_title">Gunakan gaya jenis ponsel lama</string>
     <string name="use_old_mobiletype_summary">Gabungkan sinyal dan tipe ikon (Jika terjadi kesalahan, mulai ulang SystemUI)</string>
@@ -803,9 +809,6 @@
     <string name="lockscreen_cover_filter_gradientblur">Gradient Kabur</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Level blur media artwork</string>
-    <!-- Ambient visualizer -->
-    <string name="ambient_visualizer_title">Visualizer ambient</string>
-    <string name="ambient_visualizer_summary">Tampilkan bar visualisasi putih pada layar ambient kecuali kalau custom warna dipilih</string>
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Tombol volume menjawab</string>
     <string name="volume_answer_call_summary">Menjawab panggilan saat menekan tombol volume</string>
@@ -906,11 +909,13 @@
     <string name="fod_recog_animation_miui_normal">MIUI default</string>
     <string name="fod_recog_animation_miui_aod">AOD</string>
     <string name="fod_recog_animation_miui_aurora">Aurora</string>
+    <string name="fod_recog_animation_miui_aurora_cas">Aurora (Mi 10 Ultra)</string>
     <string name="fod_recog_animation_miui_light">Tipis</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Pulse</string>
     <string name="fod_recog_animation_miui_pulse_white">Pulse (Putih)</string>
     <string name="fod_recog_animation_miui_rhythm">Rhythm</string>
+    <string name="fod_recog_animation_miui_star_cas">Starlight</string>
     <string name="fod_recog_animation_op_cosmos">Cosmos</string>
     <string name="fod_recog_animation_op_energy">Energi</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
@@ -932,7 +937,6 @@
     <string name="hide_lockicon_summary">Sembunyikan ikon kunci pada kunci layar</string>
     <!-- QS themes -->
     <string name="qs_themes_category_title">Tema QS</string>
-    <string name="qs_bg_color_title">Warna header QS</string>
     <string name="qs_panel_color_title">Warna panel QS</string>
     <string name="qs_bg_wall_title">Gunakan warna wallpaper</string>
     <string name="qs_bg_wall_summary">Atur warna latar belakang QS dari wallpaper</string>
@@ -940,6 +944,10 @@
     <string name="qs_bg_use_fw_summary">Nonaktifkan gaya QS khusus untuk tema eksternal</string>
     <string name="qs_bg_use_new_tint">Warna gaya baru</string>
     <string name="qs_bg_use_new_tint_summary">Aktifkan gaya baru QS tint</string>
+    <string name="qs_bg_use_rgb">Gunakan warna RGB</string>
+    <string name="qs_bg_use_rgb_summary">Aktifkan mode disko di latar belakang QS untuk menampilkan warna RGB yang berbeda</string>
+    <string name="qs_bg_use_disco">Ubin disko QS</string>
+    <string name="qs_bg_use_disco_summary">Jadikan QS Tiles Anda penuh warna!</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Menggulir cache</string>
     <string name="pref_scrollingcache_summary">Menggulir cache dapat meningkatkan kinerja pengguliran pada memori</string>
@@ -1069,6 +1077,8 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">Tampilkan tajuk pemberitahuan</string>
     <string name="notification_headers_summary">Apakah akan menampilkan tajuk pemberitahuan gaya R (Memerlukan memulai ulang SistemUI)</string>
+    <string name="center_notification_headers_title">Header pemberitahuan pusat</string>
+    <string name="center_notification_headers_summary">Apakah akan memposisikan header notifikasi gaya R di tengah</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Info pengisian daya</string>
     <string name="lockscreen_battery_info_summary">Tampilkan pengisian arus maksimal, tegangan dan suhu baterai saat pengisian</string>
@@ -1147,8 +1157,12 @@
     <string name="pulse_help_policy_notice_summary">Visual Audio tidak bekerja dengan beberapa sumber audio saat mendengarkan di speaker perangkat</string>
     <string name="pulse_settings">Visual Audio</string>
     <string name="pulse_settings_summary">Grafis equalizer audio bar navigasi</string>
-    <string name="show_pulse_title">Tampilkan Visual Audio</string>
-    <string name="show_pulse_summary">Grafis equalizer audio pada bar navigasi</string>
+    <string name="show_navbar_pulse_title">Pulse Navbar</string>
+    <string name="show_navbar_pulse_summary">Equalizer grafis audio di area bilah navigasi, juga jika bilah disembunyikan</string>
+    <string name="show_lockscreen_pulse_title">Grafis Audio Layar Kunci</string>
+    <string name="show_lockscreen_pulse_summary">Grafis Equalizer Audio pada Kunci Layar</string>
+    <string name="show_ambient_pulse_title">Grafis Audio Layar Ambient</string>
+    <string name="show_ambient_pulse_summary">Grafis Equalizer Audio pada Layar Ambient</string>
     <string name="pulse_render_mode_title">Mode Render</string>
     <string name="pulse_render_mode_fading_bars">Blok memudar</string>
     <string name="pulse_render_mode_solid_lines">Garis-garis padat</string>
@@ -1173,4 +1187,18 @@
     <string name="pulse_custom_div">Jarak bar</string>
     <string name="pulse_filled_block_size">Ukuran blok</string>
     <string name="pulse_empty_block_size">Jarak blok</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Gaya Panel Volume</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Rapat</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Ubin</string>
+    <!-- Volume Panel Plugin Values -->
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">Gaya QS Header</string>
+    <string name="qs_header_black">Hitam</string>
+    <string name="qs_header_gray">Abu-abu</string>
+    <string name="qs_header_lightgray">Abu-abu Muda</string>
+    <string name="qs_header_accent">Berdasarkan Aksen</string>
+    <string name="qs_header_transparent">Transparan</string>
 </resources>
