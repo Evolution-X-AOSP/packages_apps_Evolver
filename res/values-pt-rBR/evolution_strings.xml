@@ -284,20 +284,6 @@
     <string name="notification_messages">Sistema</string>
     <string name="enable_fc_notifications_title">Forçar o fechamento das notificações</string>
     <string name="enable_fc_notifications_summary">Mostrar uma caixa de diálogo quando um aplicativo parar de funcionar</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Visualizador de música</string>
-    <string name="lockscreen_visualizer_enable_summary">Mostrar barras do visualizador durante a reprodução de música</string>
-    <string name="lockscreen_autocolor_title">Cor automática</string>
-    <string name="lockscreen_autocolor_summary">Sincronizar cor com fundo da tela de bloqueio</string>
-    <string name="lockscreen_autocolor_lavalamp">Requer lâmpada de lava desativada</string>
-    <string name="lockscreen_lavalamp_title">Lâmpada de lava</string>
-    <string name="lockscreen_lavalamp_summary">Use uma animação de mistura de cores do estilo de lâmpada de lava suave</string>
-    <string name="lockscreen_lavalamp_speed_title">Intervalo de mistura de cores</string>
-    <string name="lockscreen_solid_lines_category">Linhas sólidas</string>
-    <string name="lockscreen_solid_units_count_title">Contagem de linhas</string>
-    <string name="lockscreen_solid_fudge_factor_title">Nível de sanidade</string>
-    <string name="lockscreen_solid_units_opacity_title">Opacidade das linhas</string>
-    <string name="lockscreen_visualizer_color_title">Cor padrão</string>
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">Ícone de rede 4G/LTE</string>
     <string name="show_lte_fourgee_summary">Exibe o ícone de rede 4G ou LTE quando disponível na barra de status</string>
@@ -311,6 +297,7 @@
     <string name="volte_icon_vo">Apenas Vo</string>
     <string name="volte_icon_volte">VoLTE</string>
     <string name="volte_icon_oos">OOS</string>
+    <string name="volte_icon_oos10">OOS 10</string>
     <string name="volte_icon_hd">HD</string>
     <string name="volte_icon_hd2">HD CAF</string>
     <string name="volte_icon_volit">VoLIT</string>
@@ -668,6 +655,8 @@
     <string name="ambient_pulse_brightness_summary">Definir o nível de brilho que será utilizado quando as notificações forem exibidas na tela ambiente</string>
     <string name="ambient_doze_brightness_title">Nível de brilho da tela ambiente</string>
     <string name="ambient_doze_brightness_summary">Definir o nível de brilho utilizado quando a tela ambiente está ativa</string>
+    <string name="doze_brightness_force_title">Forçar valores de brilho</string>
+    <string name="doze_brightness_force_summary">Usar valores de brilho personalizado ao invés do brilho da tela</string>
     <!-- Old Mobile Type Toggle -->
     <string name="use_old_mobiletype_title">Usar estilo antigo do ícone de redes móveis</string>
     <string name="use_old_mobiletype_summary">Mesclar ícones de sinal e tipo (Se apresentar erro, apenas reinicie a interface do sistema)</string>
@@ -820,9 +809,6 @@
     <string name="lockscreen_cover_filter_gradientblur">Desfoque em gradiente</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Nível de desfoque da capa do álbum</string>
-    <!-- Ambient visualizer -->
-    <string name="ambient_visualizer_title">Visualizador de música na tela ambiente</string>
-    <string name="ambient_visualizer_summary">Mostra barras de visualização brancas na tela ambiente exceto se uma cor personalizada for selecionada</string>
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Atender com os botões de volume</string>
     <string name="volume_answer_call_summary">Atender ligação quando a teclas de volume forem pressionadas</string>
@@ -951,7 +937,6 @@
     <string name="hide_lockicon_summary">Oculta o ícone de cadeado na tela de bloqueio</string>
     <!-- QS themes -->
     <string name="qs_themes_category_title">Temas das configurações rápidas</string>
-    <string name="qs_bg_color_title">Cor do cabeçalho das configurações rápidas</string>
     <string name="qs_panel_color_title">Cor do painel das configurações rápidas</string>
     <string name="qs_bg_wall_title">Usar cores do papel de parede atual</string>
     <string name="qs_bg_wall_summary">Define a cor de fundo das configurações rápidas a partir do papel de parede atual</string>
@@ -959,6 +944,10 @@
     <string name="qs_bg_use_fw_summary">Desativar estilos das configurações rápidas personalizadas para motores de temas externos</string>
     <string name="qs_bg_use_new_tint">Novo estilo de cores</string>
     <string name="qs_bg_use_new_tint_summary">Ativa o novo estilo de cores dos botões das configurações rápidas</string>
+    <string name="qs_bg_use_rgb">Usar cores RGB</string>
+    <string name="qs_bg_use_rgb_summary">Ativar o modo disco no fundo das configurações rápidas para mostrar diferentes cores RGB</string>
+    <string name="qs_bg_use_disco">Disco nas Configurações Rápidas</string>
+    <string name="qs_bg_use_disco_summary">Deixe suas configurações rápidas coloridas!</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Cache de rolagem</string>
     <string name="pref_scrollingcache_summary">O cache de rolagem pode melhorar a performance de rolagem ao custo de memória</string>
@@ -1088,6 +1077,8 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">Mostrar cabeçalhos de notificação</string>
     <string name="notification_headers_summary">Mostrar cabeçalhos de notificação de estilo R (Necessita reinicialização da SystemUI)</string>
+    <string name="center_notification_headers_title">Centralizar cabeçalhos de notificação</string>
+    <string name="center_notification_headers_summary">Posicionar os cabeçalhos de notificação do estilo R no centro</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Informação de carregamento</string>
     <string name="lockscreen_battery_info_summary">Exibir corrente máxima do carregador, tensão e temperatura da bateria durante o carregamento</string>
@@ -1166,8 +1157,12 @@
     <string name="pulse_help_policy_notice_summary">O Pulse não funciona com algumas fontes de áudio ao ouvir no alto-falante do dispositivo</string>
     <string name="pulse_settings">Pulse</string>
     <string name="pulse_settings_summary">Equalizador gráfico de áudio na barra de navegação</string>
-    <string name="show_pulse_title">Mostrar Pulse</string>
-    <string name="show_pulse_summary">Equalizador gráfico de áudio na barra de navegação</string>
+    <string name="show_navbar_pulse_title">Pulse na Barra de navegação</string>
+    <string name="show_navbar_pulse_summary">Equalizador gráfico de áudio na área da barra de navegação, também se a barra estiver escondida</string>
+    <string name="show_lockscreen_pulse_title">Pulse na Tela de Bloqueio</string>
+    <string name="show_lockscreen_pulse_summary">Equalizador gráfico de áudio na tela de bloqueio</string>
+    <string name="show_ambient_pulse_title">Pulse Ambiente</string>
+    <string name="show_ambient_pulse_summary">Equalizador gráfico de áudio na tela ambiente</string>
     <string name="pulse_render_mode_title">Modo de renderização</string>
     <string name="pulse_render_mode_fading_bars">Blocos de desvanecimento</string>
     <string name="pulse_render_mode_solid_lines">Linhas sólidas</string>
@@ -1199,4 +1194,11 @@
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Blocos</string>
     <!-- Volume Panel Plugin Values -->
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">Estilo do cabeçalho das configurações rápidas</string>
+    <string name="qs_header_black">Preto</string>
+    <string name="qs_header_gray">Cinza</string>
+    <string name="qs_header_lightgray">Cinza Claro</string>
+    <string name="qs_header_accent">Baseado no Tom</string>
+    <string name="qs_header_transparent">Transparente</string>
 </resources>
