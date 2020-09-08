@@ -118,7 +118,8 @@
             android:key="use_old_mobiletype"
             android:title="@string/use_old_mobiletype_title"
             android:summary="@string/use_old_mobiletype_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            android:disableDependentsState="true" />
 
         <SwitchPreference
             android:key="show_lte_fourgee"
@@ -130,13 +131,16 @@
             android:key="vowifi_icon"
             android:title="@string/vowifi_icon_title"
             android:summary="@string/vowifi_icon_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true"
+            android:dependency="use_old_mobiletype"
+            android:disableDependentsState="true" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="volte_icon"
             android:title="@string/volte_icon_title"
             android:summary="@string/volte_icon_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true"
+            android:dependency="vowifi_icon" />
 
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="volte_icon_style"
