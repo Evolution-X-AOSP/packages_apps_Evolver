@@ -29,7 +29,6 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.text.TextUtils;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -46,15 +45,12 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.preference.AppMultiSelectListPreference;
 import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.CustomSettingsPreferenceFragment;
-import com.evolution.settings.preference.ScrollAppsViewPreference;
 import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 
@@ -64,18 +60,12 @@ public class MiscellaneousSettings extends CustomSettingsPreferenceFragment impl
 
     private static final String DASHBOARD_CONDITIONS = "enable_conditions";
     private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
-    private static final String KEY_ASPECT_RATIO_APPS_ENABLED = "aspect_ratio_apps_enabled";
-    private static final String KEY_ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
-    private static final String KEY_ASPECT_RATIO_CATEGORY = "aspect_ratio_category";
-    private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String SMART_PIXELS = "smart_pixels";
 
-    private AppMultiSelectListPreference mAspectRatioAppsSelect;
     private CustomSeekBarPreference mDozeBrightness;
     private CustomSeekBarPreference mPulseBrightness;
-    private ScrollAppsViewPreference mAspectRatioApps;
     private SystemSettingMasterSwitchPreference mGamingMode;
 
     @Override
@@ -85,30 +75,7 @@ public class MiscellaneousSettings extends CustomSettingsPreferenceFragment impl
 
         addPreferencesFromResource(R.xml.evolution_settings_miscellaneous);
         addCustomPreference(findPreference(DASHBOARD_CONDITIONS), SYSTEM_TWO_STATE, STATE_ON);
-        addCustomPreference(findPreference(KEY_ASPECT_RATIO_APPS_ENABLED), SYSTEM_TWO_STATE, STATE_OFF);
         updateSmartPixelsPreference();
-
-        final PreferenceCategory aspectRatioCategory = getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
-        final boolean supportMaxAspectRatio =
-                getResources().getBoolean(com.android.internal.R.bool.config_haveHigherAspectRatioScreen);
-        if (!supportMaxAspectRatio) {
-                getPreferenceScreen().removePreference(aspectRatioCategory);
-        } else {
-        mAspectRatioAppsSelect = findPreference(KEY_ASPECT_RATIO_APPS_LIST);
-        mAspectRatioApps = findPreference(KEY_ASPECT_RATIO_APPS_LIST_SCROLLER);
-        final String valuesString = Settings.System.getString(getContentResolver(),
-                Settings.System.ASPECT_RATIO_APPS_LIST);
-        List<String> valuesList = new ArrayList<String>();
-        if (!TextUtils.isEmpty(valuesString)) {
-            valuesList.addAll(Arrays.asList(valuesString.split(":")));
-            mAspectRatioApps.setVisible(true);
-            mAspectRatioApps.setValues(valuesList);
-        } else {
-            mAspectRatioApps.setVisible(false);
-        }
-        mAspectRatioAppsSelect.setValues(valuesList);
-        mAspectRatioAppsSelect.setOnPreferenceChangeListener(this);
-        }
 
         mGamingMode = findPreference(GAMING_MODE_ENABLED);
         mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
@@ -150,20 +117,7 @@ public class MiscellaneousSettings extends CustomSettingsPreferenceFragment impl
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mAspectRatioAppsSelect) {
-            Collection<String> valueList = (Collection<String>) newValue;
-            mAspectRatioApps.setVisible(false);
-            if (valueList != null) {
-                Settings.System.putString(getContentResolver(),
-                        Settings.System.ASPECT_RATIO_APPS_LIST, TextUtils.join(":", valueList));
-                mAspectRatioApps.setVisible(true);
-                mAspectRatioApps.setValues(valueList);
-            } else {
-                Settings.System.putString(getContentResolver(),
-                Settings.System.ASPECT_RATIO_APPS_LIST, "");
-            }
-            return true;
-        } else if (preference == mGamingMode) {
+        if (preference == mGamingMode) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.GAMING_MODE_ENABLED, value ? 1 : 0);
