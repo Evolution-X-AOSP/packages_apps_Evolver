@@ -284,20 +284,6 @@
     <string name="notification_messages">Система</string>
     <string name="enable_fc_notifications_title">Уведомления о принудительном закрытии</string>
     <string name="enable_fc_notifications_summary">Показывать диалоговое окно при сбое приложения</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Визуализация музыки</string>
-    <string name="lockscreen_visualizer_enable_summary">Показывать визуализацию музыки на экране блокировки во время воспроизведения</string>
-    <string name="lockscreen_autocolor_title">Автоматические цвета</string>
-    <string name="lockscreen_autocolor_summary">Синхронизировать цвет с фоном экрана блокировки</string>
-    <string name="lockscreen_autocolor_lavalamp">Требуется отключить лавовую лампу</string>
-    <string name="lockscreen_lavalamp_title">Лавовая лампа</string>
-    <string name="lockscreen_lavalamp_summary">Использовать плавную анимацию смешивания цветов в стиле лавовой лампы</string>
-    <string name="lockscreen_lavalamp_speed_title">Интервал смешивания цветов</string>
-    <string name="lockscreen_solid_lines_category">Сплошные линии</string>
-    <string name="lockscreen_solid_units_count_title">Количество линий</string>
-    <string name="lockscreen_solid_fudge_factor_title">Уровень чувствительности</string>
-    <string name="lockscreen_solid_units_opacity_title">Непрозрачность линий</string>
-    <string name="lockscreen_visualizer_color_title">Цвет по умолчанию</string>
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">Значок сети 4G/LTE</string>
     <string name="show_lte_fourgee_summary">Показывать 4G или LTE иконку в строке состояния</string>
@@ -311,6 +297,7 @@
     <string name="volte_icon_vo">Только Vo</string>
     <string name="volte_icon_volte">VoLTE</string>
     <string name="volte_icon_oos">OOS</string>
+    <string name="volte_icon_oos10">OOS 10</string>
     <string name="volte_icon_hd">HD</string>
     <string name="volte_icon_hd2">HD CAF</string>
     <string name="volte_icon_volit">VoLIT</string>
@@ -503,7 +490,6 @@
     <string name="lock_clock_font_gobold">GoBold (Легкий)</string>
     <string name="lock_clock_font_roadrage">Road Rage</string>
     <string name="lock_clock_font_snowstorm">Snowstorm</string>
-    <string name="lock_clock_font_googlesans">Google Sans</string>
     <string name="lock_clock_font_neoneon">Neoneon</string>
     <string name="lock_clock_font_themeable">Тематический (или VCR OSD Mono)</string>
     <string name="lock_clock_font_samsung">Shamshung</string>
@@ -597,12 +583,6 @@
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Вибрация при нажатии</string>
     <string name="quick_settings_vibrate_summary">Вибрировать при нажатии плиток быстрых настроек</string>
-    <!-- Per App aspect Ratio -->
-    <string name="aspect_ratio_apps_enabled_title">Включить масштабирование</string>
-    <string name="aspect_ratio_apps_enabled_summary">Разрешить старым приложениям использовать весь экран</string>
-    <string name="aspect_ratio_apps_list_title">Приложения с разрешением использования масштабирования</string>
-    <string name="aspect_ratio_category_title">Масштабирование старых приложений</string>
-    <string name="aspect_ratio_apps_info">Приложения должны быть перезапущены после изменений</string>
     <!-- Gaming mode -->
     <string name="gaming_mode_title">Игровой режим</string>
     <string name="gaming_mode_summary">Настроить параметры игрового режима</string>
@@ -668,6 +648,8 @@
     <string name="ambient_pulse_brightness_summary">Установить яркость при отображении уведомлений</string>
     <string name="ambient_doze_brightness_title">Яркость Ambient Display</string>
     <string name="ambient_doze_brightness_summary">Установить яркость для использования во время включенного Ambient Display</string>
+    <string name="doze_brightness_force_title">Принудительные значения яркости</string>
+    <string name="doze_brightness_force_summary">Использовать пользовательские значения яркости вместо яркости экрана</string>
     <!-- Old Mobile Type Toggle -->
     <string name="use_old_mobiletype_title">Использовать старый стиль индикатора мобильной связи</string>
     <string name="use_old_mobiletype_summary">Объединить значки сигнала и типа сети (Если глючит, перезапустите SystemUI)</string>
@@ -820,9 +802,6 @@
     <string name="lockscreen_cover_filter_gradientblur">Размытие градиента</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Уровень размытия обложки</string>
-    <!-- Ambient visualizer -->
-    <string name="ambient_visualizer_title">Визуализация музыки на Активном экране</string>
-    <string name="ambient_visualizer_summary">Показывает белые полосы визуализации на Ambient дисплее, если не выбран пользовательский цвет</string>
     <!-- The volume key answer -->
     <string name="volume_answer_call_title">Ответ клавишами громкости</string>
     <string name="volume_answer_call_summary">Отвечать на вызов нажатием клавиш громкости</string>
@@ -871,9 +850,6 @@
     <string name="status_bar_custom_header_height_title">Смещение высоты изображения</string>
     <string name="status_bar_custom_header_summary">Использовать пользовательское изображение для обложки быстрых настроек</string>
     <string name="status_bar_custom_header_title">Изображение обложки</string>
-    <!-- Proximity wake -->
-    <string name="proximity_wake_title">Предотвращать случайное пробуждение</string>
-    <string name="proximity_wake_summary">Проверять датчик приближения при выходе из режима сна</string>
     <!-- Notification Vibration -->
     <string name="notifications_vib_category">Настройки уведомлений</string>
     <string name="vibrate_on_notifications_title">Вибрация при уведомлениях</string>
@@ -951,7 +927,6 @@
     <string name="hide_lockicon_summary">Скрыть значок блокировки на экране блокировки</string>
     <!-- QS themes -->
     <string name="qs_themes_category_title">Темы быстрых настроек</string>
-    <string name="qs_bg_color_title">Цвет обложки быстрых настроек</string>
     <string name="qs_panel_color_title">Цвет панели быстрых настроек</string>
     <string name="qs_bg_wall_title">Использовать цвета обоев</string>
     <string name="qs_bg_wall_summary">Установить цвет фона быстрых настроек из обоев</string>
@@ -959,6 +934,10 @@
     <string name="qs_bg_use_fw_summary">Отключить пользовательские стили быстрых настроек для внешних движков тем</string>
     <string name="qs_bg_use_new_tint">Новый стиль плиток быстрых настроек</string>
     <string name="qs_bg_use_new_tint_summary">Включить новый стиль плиток быстрых настроек</string>
+    <string name="qs_bg_use_rgb">Использовать цвета RGB</string>
+    <string name="qs_bg_use_rgb_summary">Включить режим дискотеки на фоне быстрых настроек для отображения различных цветов RGB</string>
+    <string name="qs_bg_use_disco">Диско-режим плиток быстрых настроек</string>
+    <string name="qs_bg_use_disco_summary">Сделайте ваши плитки быстрых настроек цветными!</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Кеш прокрутки</string>
     <string name="pref_scrollingcache_summary">Кэш прокрутки может повысить производительность прокрутки за счет использования памяти</string>
@@ -1088,6 +1067,8 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">Показывать заголовки уведомлений</string>
     <string name="notification_headers_summary">Показывать заголовки уведомлений в стиле Android R (требуется перезапуск интерфейса системы)</string>
+    <string name="center_notification_headers_title">Центрировать заголовки уведомлений</string>
+    <string name="center_notification_headers_summary">Располагать заголовки уведомлений по центру в стиле Android 11</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Информация о зарядке</string>
     <string name="lockscreen_battery_info_summary">Показывать максимальный ток зарядки, напряжение и температуру батареи во время зарядки</string>
@@ -1166,8 +1147,12 @@
     <string name="pulse_help_policy_notice_summary">Pulse не работает с некоторыми источниками звука во время прослушивания через динамик устройства</string>
     <string name="pulse_settings">Пульс</string>
     <string name="pulse_settings_summary">Графический эквалайзер в панели навигации</string>
-    <string name="show_pulse_title">Пульсировать</string>
-    <string name="show_pulse_summary">Графический эквалайзер в панели навигации</string>
+    <string name="show_navbar_pulse_title">Пульс панели навигации</string>
+    <string name="show_navbar_pulse_summary">Включить аудио эквалайзер на панели навигации (даже если панель скрыта)</string>
+    <string name="show_lockscreen_pulse_title">Пульс на экране блокировки</string>
+    <string name="show_lockscreen_pulse_summary">Включить графический эквалайзер на экране блокировки</string>
+    <string name="show_ambient_pulse_title">Ambient Pulse</string>
+    <string name="show_ambient_pulse_summary">Включить графический эквалайзер на всегда включённом экране</string>
     <string name="pulse_render_mode_title">Режим визуализации</string>
     <string name="pulse_render_mode_fading_bars">Затухающие блоки</string>
     <string name="pulse_render_mode_solid_lines">Сплошные линии</string>
@@ -1199,4 +1184,11 @@
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Плиточная</string>
     <!-- Volume Panel Plugin Values -->
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">Стиль шапки панели быстрых настроек</string>
+    <string name="qs_header_black">Чёрный</string>
+    <string name="qs_header_gray">Серый</string>
+    <string name="qs_header_lightgray">Светло-серый</string>
+    <string name="qs_header_accent">На основе акцента системы</string>
+    <string name="qs_header_transparent">Прозрачный</string>
 </resources>
