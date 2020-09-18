@@ -129,7 +129,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 com.android.internal.R.integer.config_ambientNotificationDefaultColor);
         mPulseEdgeLights = findPreference(PULSE_AMBIENT_LIGHT_PREF);
         boolean mPulseNotificationEnabled = Settings.Secure.getInt(getContentResolver(),
-                Settings.Secure.DOZE_ENABLED, 0) != 0;
+                Settings.Secure.DOZE_ENABLED, 1) != 0;
         mPulseEdgeLights.setEnabled(mPulseNotificationEnabled);
 
         setHasOptionsMenu(true);
