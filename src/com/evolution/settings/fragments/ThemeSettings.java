@@ -17,13 +17,17 @@
 package com.evolution.settings.fragments;
 
 import static android.os.UserHandle.USER_CURRENT;
+import static android.os.UserHandle.USER_SYSTEM;
 
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.om.IOverlayManager;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
 
@@ -33,6 +37,8 @@ import androidx.preference.*;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
+import com.android.internal.util.evolution.ThemesUtils;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
@@ -61,12 +67,17 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
     private static final String CUSTOM_CLOCK_FACE = Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE;
     private static final String DEFAULT_CLOCK = "com.android.keyguard.clock.DefaultClockController";
     private static final String PREF_KEY_CUTOUT = "cutout_category";
+    private static final String PREF_NAVBAR_STYLE = "theme_navbar_style";
+
+    private static FontPickerPreferenceController mFontPickerPreference;
+
+    private Context mContext;
+    private IOverlayManager mOverlayManager;
+    private IOverlayManager mOverlayService;
+    private IntentFilter mIntentFilter;
 
     private ListPreference mLockClockStyles;
-    private Context mContext;
-
-    private IntentFilter mIntentFilter;
-    private static FontPickerPreferenceController mFontPickerPreference;
+    private ListPreference mNavbarPicker;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
@@ -85,6 +96,9 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
         PreferenceScreen prefScreen = getPreferenceScreen();
         mContext = getActivity();
 
+        mOverlayService = IOverlayManager.Stub
+                .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+
         mIntentFilter = new IntentFilter();
         mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED");
 
@@ -94,6 +108,16 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
         mLockClockStyles.setSummary(mLockClockStyles.getEntry());
         mLockClockStyles.setOnPreferenceChangeListener(this);
 
+        mNavbarPicker = (ListPreference) findPreference(PREF_NAVBAR_STYLE);
+        int navbarStyleValues = getOverlayPosition(ThemesUtils.NAVBAR_STYLES);
+        if (navbarStyleValues != -1) {
+            mNavbarPicker.setValue(String.valueOf(navbarStyleValues + 2));
+        } else {
+            mNavbarPicker.setValue("1");
+        }
+        mNavbarPicker.setSummary(mNavbarPicker.getEntry());
+        mNavbarPicker.setOnPreferenceChangeListener(this);
+
         PreferenceCategory mCutoutPref = (PreferenceCategory) prefScreen
                 .findPreference(PREF_KEY_CUTOUT);
         String hasDisplayCutout = getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
@@ -102,11 +126,55 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
         }
     }
 
+    private int getOverlayPosition(String[] overlays) {
+        int position = -1;
+        for (int i = 0; i < overlays.length; i++) {
+            String overlay = overlays[i];
+            if (EvolutionUtils.isThemeEnabled(overlay)) {
+                position = i;
+            }
+        }
+        return position;
+    }
+
+    private String getOverlayName(String[] overlays) {
+        String overlayName = null;
+        for (int i = 0; i < overlays.length; i++) {
+            String overlay = overlays[i];
+            if (EvolutionUtils.isThemeEnabled(overlay)) {
+                overlayName = overlay;
+            }
+        }
+        return overlayName;
+    }
+
+    public void handleOverlays(String packagename, Boolean state, IOverlayManager mOverlayManager) {
+        try {
+            mOverlayService.setEnabled(packagename, state, USER_SYSTEM);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mLockClockStyles) {
             setLockScreenCustomClockFace((String) newValue);
             int index = mLockClockStyles.findIndexOfValue((String) newValue);
             mLockClockStyles.setSummary(mLockClockStyles.getEntries()[index]);
+            return true;
+        } else if (preference == mNavbarPicker) {
+            String navbarStyle = (String) newValue;
+            int navbarStyleValue = Integer.parseInt(navbarStyle);
+            mNavbarPicker.setValue(String.valueOf(navbarStyleValue));
+            String overlayName = getOverlayName(ThemesUtils.NAVBAR_STYLES);
+                if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                }
+                if (navbarStyleValue > 1) {
+                    handleOverlays(ThemesUtils.NAVBAR_STYLES[navbarStyleValue - 2],
+                            true, mOverlayManager);
+            }
+            mNavbarPicker.setSummary(mNavbarPicker.getEntry());
             return true;
         }
         return false;
