@@ -20,6 +20,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_title">
 
+    <com.evolution.settings.preference.SecureSettingSwitchPreference
+        android:key="lock_screen_transparent_notifications_enabled"
+        android:title="@string/transparent_lockscreen_notification_title"
+        android:summary="@string/transparent_lockscreen_notification_summary"
+        android:defaultValue="false" />
+
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="fp_unlock_keystore"
         android:title="@string/fp_unlock_keystore_title"
