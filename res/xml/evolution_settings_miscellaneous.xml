@@ -55,6 +55,15 @@
         android:defaultValue="0"
         app:allowDividerAbove="true" />
 
+    <!-- Display Cutout -->
+    <Preference
+        android:key="display_cutout_force_fullscreen_settings"
+        android:title="@string/display_cutout_force_fullscreen_title"
+        android:summary="@string/display_cutout_force_fullscreen_summary"
+        android:fragment="com.evolution.settings.fragments.DisplayCutoutForceFullscreenSettings"
+        settings:controller="com.evolution.settings.fragments.DisplayCutoutForceFullscreenPreferenceController"
+        app:allowDividerAbove="true" />
+
     <PreferenceCategory
         android:key="pulse_category"
         android:title="@string/pulse_category">
