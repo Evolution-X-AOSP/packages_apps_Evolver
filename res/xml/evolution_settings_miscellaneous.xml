@@ -48,6 +48,14 @@
             android:entries="@array/ringtone_focus_mode_entries"
             android:entryValues="@array/ringtone_focus_mode_values" />
 
+        <Preference
+            android:title="@string/radio_info_title"
+            android:key="radio_info_settings">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.phone"
+                android:targetClass="com.android.phone.settings.RadioInfo" />
+        </Preference>
+
     </PreferenceCategory>
 
 </PreferenceScreen>
