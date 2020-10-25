@@ -22,88 +22,51 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 
+import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto;
-
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
-
-import com.evolution.settings.preference.SecureSettingMasterSwitchPreference;
-import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@SearchIndexable
-public class LockScreenInfoSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, Indexable {
-
-    private static final String DATE_FONT_SIZE = "lockdate_font_size";
-    private static final String LOCK_DATE_FONTS = "lock_date_fonts";
-
-    private ListPreference mLockDateFonts;
-    private SystemSettingSeekBarPreference mDateFontSize;
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+public class LockscreenSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.evolution_settings_lockscreen_info);
-
-        ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        Resources resources = getResources();
-
-        // Lockscreen Date Fonts
-        mLockDateFonts = findPreference(LOCK_DATE_FONTS);
-        mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_DATE_FONTS, 28)));
-        mLockDateFonts.setSummary(mLockDateFonts.getEntry());
-        mLockDateFonts.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Date Size
-        mDateFontSize = findPreference(DATE_FONT_SIZE);
-        mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKDATE_FONT_SIZE, 18));
-        mDateFontSize.setOnPreferenceChangeListener(this);
+        addPreferencesFromResource(R.xml.evolution_settings_lockscreen);
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mLockDateFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_DATE_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockDateFonts.setValue(String.valueOf(newValue));
-            mLockDateFonts.setSummary(mLockDateFonts.getEntry());
-            return true;
-        } else if (preference == mDateFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKDATE_FONT_SIZE, top*1);
-            return true;
-        }
         return false;
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVO_SETTINGS;
+        return MetricsEvent.EVOLVER;
     }
+
+    /**
+     * For Search.
+     */
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
@@ -114,7 +77,7 @@ public class LockScreenInfoSettings extends SettingsPreferenceFragment implement
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.evolution_settings_lockscreen_info;
+                    sir.xmlResId = R.xml.evolution_settings_lockscreen;
                     result.add(sir);
                     return result;
                 }

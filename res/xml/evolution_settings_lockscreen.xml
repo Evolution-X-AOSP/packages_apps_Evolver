@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2019-2020 The Evolution X Project
+     Copyright (C) 2019-2020 The Evolution X Project
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
 
-         http://www.apache.org/licenses/LICENSE-2.0
+          http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
 -->
 
 <PreferenceScreen
@@ -20,72 +20,9 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_title">
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="pocket_judge"
-        android:title="@string/pocket_judge_title"
-        android:summary="@string/pocket_judge_summary"
-        android:defaultValue="false" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="pocket_judge_allow_fp"
-        android:title="@string/pocket_judge_fp_title"
-        android:summary="@string/pocket_judge_fp_summary"
-        android:defaultValue="false"
-        android:dependency="pocket_judge" />
-
-    <SwitchPreference
-        android:key="fingerprint_success_vib"
-        android:title="@string/fprint_sucess_vib_title"
-        android:summary="@string/fprint_sucess_vib_summary"
-        android:persistent="false" />
-
-    <!-- FOD customization options -->
-    <PreferenceCategory
-        android:key="fod_icon_picker"
-        android:title="@string/fod_icon_picker_category_title">
-
-        <Preference
-            android:key="fod_icon_picker_category"
-            android:title="@string/fod_icon_picker_title"
-            android:summary="@string/fod_icon_picker_summary"
-            android:fragment="com.evolution.settings.fragments.FODIconPickerFragment" />
-
-        <!-- FOD recognizing animation -->
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="fod_recognizing_animation"
-            android:title="@string/fod_recog_animation"
-            android:summary="@string/fod_recog_animation_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="fod_anim"
-            android:title="@string/fod_recog_animation_effect_title"
-            android:summary="%s"
-            android:entries="@array/fod_recog_animation_entries"
-            android:entryValues="@array/fod_recog_animation_values"
-            android:defaultValue="0"
-            android:dependency="fod_recognizing_animation" />
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="fod_pressed_state"
-            android:dialogTitle="@string/fod_pressed_state_title"
-            android:title="@string/fod_pressed_state_title"
-            android:summary="%s"
-            android:entries="@array/fod_pressed_state_entries"
-            android:entryValues="@array/fod_pressed_state_values"
-            android:defaultValue="@*android:integer/config_pressed_fod_icon" />
-
-    </PreferenceCategory>
-
     <PreferenceCategory
         android:key="lockscreen_info_category"
         android:title="@string/lockscreen_info_category_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="lockscreen_battery_info"
-            android:title="@string/lockscreen_battery_info_title"
-            android:summary="@string/lockscreen_battery_info_summary"
-            android:defaultValue="false" />
 
         <Preference
             android:title="@string/lockscreen_tuner_title"
@@ -94,83 +31,6 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
         </Preference>
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="lockscreen_show_status_bar"
-            android:title="@string/lockscreen_show_status_bar_title"
-            android:summary="@string/lockscreen_show_status_bar_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="hide_lockicon"
-            android:title="@string/hide_lockicon_title"
-            android:summary="@string/hide_lockicon_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
-            android:key="lockscreen_clock"
-            android:title="@string/lockscreen_clock_options_title"
-            android:summary="@string/lockscreen_clock_summary"
-            android:fragment="com.evolution.settings.fragments.LockScreenClockSettings"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
-            android:key="lockscreen_info"
-            android:title="@string/lockscreen_info_title"
-            android:summary="@string/lockscreen_info_summary"
-            android:fragment="com.evolution.settings.fragments.LockScreenInfoSettings"
-            android:dependency="lockscreen_clock"
-            android:defaultValue="true" />
-
-        <Preference
-            android:key="lockscreen_ownerinfo"
-            android:title="@string/lockscreen_ownerinfo_title"
-            android:summary="@string/lockscreen_ownerinfo_summary"
-            android:fragment="com.evolution.settings.fragments.LockScreenOwnerInfoSettings" />
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="lockscreen_charging_animation"
-            android:dialogTitle="@string/lockscreen_charging_animation_title"
-            android:title="@string/lockscreen_charging_animation_title"
-            android:summary="%s"
-            android:entries="@array/lockscreen_charging_animation_entries"
-            android:entryValues="@array/lockscreen_charging_animation_values"
-            android:defaultValue="0" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="lockscreen_media_category"
-        android:title="@string/lockscreen_media_category">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="lockscreen_translucent_notifications_bg_enabled"
-            android:title="@string/translucent_lockscreen_notifications_bg_title"
-            android:summary="@string/translucent_lockscreen_notifications_bg_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="lockscreen_media_metadata"
-            android:title="@string/media_art_title"
-            android:summary="@string/media_art_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="lockscreen_album_art_filter"
-            android:title="@string/lockscreen_cover_filter_title"
-            android:entries="@array/lockscreen_cover_filter_entries"
-            android:entryValues="@array/lockscreen_cover_filter_values"
-            android:defaultValue="5" />
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="lockscreen_media_blur"
-            android:title="@string/lockscreen_media_blur_title"
-            android:max="100"
-            android:min="5"
-            settings:units="%"
-            settings:interval="5"
-            android:defaultValue="100"
-            android:dependency="lockscreen_media_metadata" />
 
     </PreferenceCategory>
 

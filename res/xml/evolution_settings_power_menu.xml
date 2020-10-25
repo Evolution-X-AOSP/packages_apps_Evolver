@@ -1,131 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2019-2020 The Evolution X Project
+     Copyright (C) 2019-2020 The Evolution X Project
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
 
-         http://www.apache.org/licenses/LICENSE-2.0
+          http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
 -->
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/powermenu_title">
-
-    <PreferenceCategory
-        android:title="@string/powermenu_items_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_power"
-            android:title="@string/powermenu_power"
-            android:enabled="false"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_restart"
-            android:title="@string/powermenu_restart"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_restart_recovery"
-            android:title="@string/powermenu_restart_recovery"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_screenshot"
-            android:title="@string/powermenu_screenshot"
-            android:defaultValue="false" />
-
-         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_screenrecord"
-            android:title="@string/powermenu_screenrecord"
-            android:defaultValue="false" />
-
-        <SwitchPreference
-            android:key="powermenu_torch"
-            android:title="@string/powermenu_torch"
-            android:persistent="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_airplane"
-            android:title="@string/powermenu_airplane"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_settings"
-            android:title="@string/powermenu_settings"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_lockdown"
-            android:title="@string/powermenu_lockdown"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_users"
-            android:title="@string/powermenu_users"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_logout"
-            android:title="@string/powermenu_logout"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="powermenu_category_visibility"
-        android:title="@string/powermenu_category_visibility">
-
-        <SwitchPreference
-            android:key="powermenu_lockscreen"
-            android:title="@string/powermenu_lockscreen_title"
-            android:summary="@string/powermenu_lockscreen_summary"
-            android:defaultValue="true" />
-
-        <SwitchPreference
-            android:key="powermenu_ls_reboot"
-            android:title="@string/powermenu_restart"
-            android:summary="@string/powermenu_ls_reboot_summary"
-            android:dependency="powermenu_restart"
-            android:defaultValue="true" />
-
-        <SwitchPreference
-            android:key="powermenu_ls_advanced_reboot"
-            android:title="@string/powermenu_restart_recovery"
-            android:summary="@string/powermenu_ls_advanced_reboot_summary"
-            android:dependency="powermenu_restart_recovery"
-            android:defaultValue="false" />
-
-        <SwitchPreference
-            android:key="powermenu_ls_screenshot"
-            android:title="@string/powermenu_screenshot"
-            android:summary="@string/powermenu_ls_screenshot_summary"
-            android:dependency="powermenu_screenshot"
-            android:defaultValue="false" />
-
-        <SwitchPreference
-            android:key="powermenu_ls_screenrecord"
-            android:title="@string/powermenu_screenrecord"
-            android:summary="@string/powermenu_ls_screenrecord_summary"
-            android:dependency="powermenu_screenrecord"
-            android:defaultValue="false" />
-
-        <SwitchPreference
-            android:key="powermenu_ls_torch"
-            android:title="@string/powermenu_torch"
-            android:summary="@string/powermenu_ls_torch_summary"
-            android:dependency="powermenu_torch"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>

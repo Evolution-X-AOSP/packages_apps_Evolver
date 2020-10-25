@@ -1,60 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2019-2020 The Evolution X Project
+     Copyright (C) 2019-2020 The Evolution X Project
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
 
-         http://www.apache.org/licenses/LICENSE-2.0
+          http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
 -->
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/statusbar_title">
-
-    <PreferenceCategory
-        android:title="@string/statusbar_items_categories_title">
-
-        <Preference
-            android:key="clock_options_category"
-            android:title="@string/clock_options_title"
-            android:summary="@string/clock_options_summary"
-            android:fragment="com.evolution.settings.fragments.ClockSettings" />
-
-        <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
-            android:key="battery_bar_settings"
-            android:title="@string/sb_battery_bar_title"
-            android:summary="@string/sb_battery_bar_summary"
-            android:fragment="com.evolution.settings.fragments.BatteryBarSettings" />
-
-        <Preference
-            android:key="carrier_label_settings"
-            android:title="@string/carrier_label_category_title"
-            android:summary="@string/carrier_label_category_summary"
-            android:fragment="com.evolution.settings.fragments.CarrierLabelSettings" />
-
-        <Preference
-            android:key="traffic_category"
-            android:title="@string/traffic_category"
-            android:summary="@string/traffic_category_summary"
-            android:fragment="com.evolution.settings.fragments.NetworkTrafficSettings" />
-
-        <!-- Rounded Corners -->
-        <PreferenceScreen
-            android:key="rounded_corners"
-            android:title="@string/corners_title"
-            android:summary="@string/corners_summary"
-            android:fragment="com.evolution.settings.fragments.RoundedCornersSettings" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/statusbar_icons_title">
@@ -66,90 +30,6 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
         </Preference>
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="statusbar_privacy_indicators"
-            android:title="@string/statusbar_privacy_indicators_title"
-            android:summary="@string/statusbar_privacy_indicators_summary"
-            android:defaultValue="true" />
-
-        <!-- Status Bar Logo Style -->
-        <Preference
-            android:key="status_bar_logo"
-            android:title="@string/status_bar_logo_category_title"
-            android:summary="@string/status_bar_logo_category_summary"
-            android:fragment="com.evolution.settings.fragments.LogoSettings" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="battery_style_category"
-        android:title="@string/battery_style_category_title" >
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="status_bar_battery_style"
-            android:title="@string/status_bar_battery_style_title"
-            android:summary="%s"
-            android:dialogTitle="@string/status_bar_battery_style_title"
-            android:entries="@array/status_bar_battery_style_entries"
-            android:entryValues="@array/status_bar_battery_style_values"
-            android:defaultValue="0" />
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="status_bar_show_battery_percent"
-            android:title="@string/battery_percent_title"
-            android:dialogTitle="@string/battery_percent_title"
-            android:entries="@array/battery_percent_entries"
-            android:entryValues="@array/battery_percent_values"
-            android:defaultValue="0" />
-
-       <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="status_bar_battery_text_charging"
-            android:title="@string/status_bar_battery_text_charging_title"
-            android:summary="@string/status_bar_battery_text_charging_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/statusbar_network_icons_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="use_old_mobiletype"
-            android:title="@string/use_old_mobiletype_title"
-            android:summary="@string/use_old_mobiletype_summary"
-            android:defaultValue="false"
-            android:disableDependentsState="true" />
-
-        <SwitchPreference
-            android:key="show_lte_fourgee"
-            android:title="@string/show_lte_fourgee_title"
-            android:summary="@string/show_lte_fourgee_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="vowifi_icon"
-            android:title="@string/vowifi_icon_title"
-            android:summary="@string/vowifi_icon_summary"
-            android:defaultValue="true"
-            android:dependency="use_old_mobiletype"
-            android:disableDependentsState="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="volte_icon"
-            android:title="@string/volte_icon_title"
-            android:summary="@string/volte_icon_summary"
-            android:defaultValue="true"
-            android:dependency="vowifi_icon" />
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="volte_icon_style"
-            android:title="@string/volte_icon_style_title"
-            android:entries="@array/volte_icon_type_entries"
-            android:entryValues="@array/volte_icon_type_values"
-            android:dependency="volte_icon"
-            android:summary="%s"
-            android:defaultValue="0"/>
 
     </PreferenceCategory>
 

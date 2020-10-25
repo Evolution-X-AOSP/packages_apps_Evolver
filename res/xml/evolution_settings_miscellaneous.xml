@@ -1,102 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2019-2020 The Evolution X Project
+     Copyright (C) 2019-2020 The Evolution X Project
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
 
-         http://www.apache.org/licenses/LICENSE-2.0
+          http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
 -->
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
-
-    <Preference
-        android:key="pulse"
-        android:title="@string/pulse_settings"
-        android:summary="@string/pulse_settings_summary"
-        android:fragment="com.evolution.settings.fragments.PulseSettings" />
-
-    <Preference
-        android:key="smart_pixels"
-        android:title="@string/smart_pixels_title"
-        android:summary="@string/smart_pixels_summary"
-        android:fragment="com.evolution.settings.fragments.SmartPixels" />
-
-    <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
-        android:key="gaming_mode_enabled"
-        android:fragment="com.evolution.settings.fragments.GamingMode"
-        android:title="@string/gaming_mode_title"
-        android:summary="@string/gaming_mode_summary"
-        android:defaultValue="false" />
-
-    <!-- Launch music player when headset is connected -->
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="headset_connect_player"
-        android:title="@string/headset_connect_player_title"
-        android:summary="@string/headset_connect_player_summary"
-        android:defaultValue="false" />
-
-    <com.evolution.settings.preference.GlobalSettingSwitchPreference
-        android:key="wake_when_plugged_or_unplugged"
-        android:title="@string/wakeup_when_plugged_unplugged_title"
-        android:summary="@string/wakeup_when_plugged_unplugged_summary"
-        android:defaultValue="true" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="charging_animation"
-        android:title="@string/charging_animation_title"
-        android:summary="@string/charging_animation_summary"
-        android:defaultValue="true" />
-
-    <PreferenceCategory
-        android:key="dashboard_category"
-        android:title="@string/dashboard_category_title">
-
-        <SwitchPreference
-            android:key="enable_conditions"
-            android:title="@string/dashboard_conditions_title"
-            android:summaryOn="@string/summary_dashboard_conditions_enabled"
-            android:summaryOff="@string/summary_dashboard_conditions_disabled"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/doze_brightness_category">
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="ambient_doze_brightness"
-            android:title="@string/ambient_doze_brightness_title"
-            android:summary="@string/ambient_doze_brightness_summary"
-            android:max="255"
-            android:min="1"
-            android:persistent="false" />
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="ambient_pulse_brightness"
-            android:title="@string/ambient_pulse_brightness_title"
-            android:summary="@string/ambient_pulse_brightness_summary"
-            android:max="255"
-            android:min="1"
-            android:persistent="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="doze_brightness_force"
-            android:title="@string/doze_brightness_force_title"
-            android:summary="@string/doze_brightness_force_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/dev_options_title">
@@ -106,66 +28,6 @@
             android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
             android:title="@string/usb_default_config_title"
             android:summary="@string/usb_default_config_summary"/>
-
-        <com.evolution.settings.preference.GlobalSettingSwitchPreference
-            android:key="privileged_device_identifier_check_relaxed"
-            android:title="@string/device_identifier_access_restrictions_title"
-            android:summary="@string/device_identifier_access_restrictions_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/system_settings_title">
-
-        <!-- Sensor Block -->
-        <Preference
-            android:key="sensor_block_settings"
-            android:title="@string/sensor_block_title"
-            android:summary="@string/sensor_block_summary"
-            android:fragment="com.evolution.settings.fragments.SensorBlockSettings"/>
-
-        <com.evolution.settings.preference.GlobalSettingSwitchPreference
-            android:key="allow_signature_fake"
-            android:title="@string/allow_signature_fake"
-            android:summary="@string/allow_signature_fake_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/doze_settings_title">
-
-        <Preference
-            android:key="time_in_state"
-            android:title="@string/time_in_state_title"
-            android:summary="@string/time_in_state_summary"
-            android:fragment="com.evolution.settings.fragments.TimeInState" />
-
-        <Preference
-            android:key="doze_settings"
-            android:title="@string/doze_settings_title"
-            android:summary="@string/doze_settings_summary"
-            android:fragment="com.evolution.settings.fragments.DozeSettings" />
-
-    </PreferenceCategory>
-
-    <!-- Alarm & Wakelock blocker -->
-    <PreferenceCategory
-        android:key="wakelock_blocker_category"
-        android:title="@string/wakelock_blocker_title">
-
-        <Preference
-            android:key="alarm_blocker"
-            android:title="@string/alarm_blocker_title"
-            android:summary="@string/alarm_blocker_summary"
-            android:fragment="com.evolution.settings.fragments.AlarmBlocker" />
-
-        <Preference
-            android:key="wakelock_blocker"
-            android:title="@string/wakelock_blocker_title"
-            android:summary="@string/wakelock_blocker_summary"
-            android:fragment="com.evolution.settings.fragments.WakeLockBlocker" />
 
     </PreferenceCategory>
 

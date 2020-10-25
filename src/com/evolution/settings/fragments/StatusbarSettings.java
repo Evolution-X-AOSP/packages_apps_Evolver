@@ -16,94 +16,61 @@
 
 package com.evolution.settings.fragments;
 
-import android.app.Activity;
-import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto;
-
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
-
-import com.evolution.settings.preference.SecureSettingMasterSwitchPreference;
-import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@SearchIndexable
-public class LockScreenOwnerInfoSettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, Indexable {
-
-    private static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts";
-    private static final String LOCKOWNER_FONT_SIZE = "lockowner_font_size";
-
-    private ListPreference mLockOwnerInfoFonts;
-    private SystemSettingSeekBarPreference mOwnerInfoFontSize;
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+public class StatusbarSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.evolution_settings_lockscreen_ownerinfo);
-
-        ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        Resources resources = getResources();
-
-        // Lockscreen Owner Info Fonts
-        mLockOwnerInfoFonts = findPreference(LOCK_OWNERINFO_FONTS);
-        mLockOwnerInfoFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS, 28)));
-        mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry());
-        mLockOwnerInfoFonts.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Owner Info Size
-        mOwnerInfoFontSize = findPreference(LOCKOWNER_FONT_SIZE);
-        mOwnerInfoFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKOWNER_FONT_SIZE, 18));
-        mOwnerInfoFontSize.setOnPreferenceChangeListener(this);
+        addPreferencesFromResource(R.xml.evolution_settings_statusbar);
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mLockOwnerInfoFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockOwnerInfoFonts.setValue(String.valueOf(newValue));
-            mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry());
-            return true;
-        } else if (preference == mOwnerInfoFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKOWNER_FONT_SIZE, top*1);
-            return true;
-        }
         return false;
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVO_SETTINGS;
+        return MetricsEvent.EVOLVER;
     }
+
+    /**
+     * For Search.
+     */
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
@@ -114,7 +81,7 @@ public class LockScreenOwnerInfoSettings extends SettingsPreferenceFragment impl
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.evolution_settings_lockscreen_ownerinfo;
+                    sir.xmlResId = R.xml.evolution_settings_statusbar;
                     result.add(sir);
                     return result;
                 }
