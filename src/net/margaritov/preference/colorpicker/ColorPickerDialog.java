@@ -74,7 +74,7 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
                 Context.LAYOUT_INFLATER_SERVICE);
 
         assert inflater != null;
-        View layout = inflater.inflate(R.layout.dui_dialog_color_picker, null);
+        View layout = inflater.inflate(R.layout.preference_color_picker, null);
 
         mColorPicker = layout.findViewById(R.id.color_picker_view);
         mOldColor = layout.findViewById(R.id.old_color_panel);
