@@ -20,4 +20,42 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title">
 
+    <PreferenceCategory
+        android:key="qs_columns_rows_category"
+        android:title="@string/qs_columns_rows_category_title">
+
+        <com.evolution.settings.preference.CustomSystemSeekBarPreference
+            android:key="qs_rows_portrait"
+            android:title="@string/qs_rows_portrait_title"
+            android:max="5"
+            android:min="1"
+            android:defaultValue="3"
+            settings:units="" />
+
+        <com.evolution.settings.preference.CustomSystemSeekBarPreference
+            android:key="qs_rows_landscape"
+            android:title="@string/qs_rows_landscape_title"
+            android:max="5"
+            android:min="1"
+            android:defaultValue="1"
+            settings:units="" />
+
+        <com.evolution.settings.preference.CustomSystemSeekBarPreference
+            android:key="qs_columns_portrait"
+            android:title="@string/qs_columns_portrait_title"
+            android:max="7"
+            android:min="1"
+            android:defaultValue="4"
+            settings:units="" />
+
+        <com.evolution.settings.preference.CustomSystemSeekBarPreference
+            android:key="qs_columns_landscape"
+            android:title="@string/qs_columns_landscape_title"
+            android:max="9"
+            android:min="1"
+            android:defaultValue="4"
+            settings:units="" />
+
+        </PreferenceCategory>
+
 </PreferenceScreen>
