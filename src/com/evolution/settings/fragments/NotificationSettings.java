@@ -46,6 +46,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,14 +58,17 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String KEY_CHARGING_LIGHT = "charging_light";
     private static final String LED_CATEGORY = "led";
+    private static final String NOTIFICATION_HEADERS = "notification_headers";
 
     private Preference mChargingLeds;
     private PreferenceCategory mLedCategory;
+    private SystemSettingSwitchPreference mNotificationHeader;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_notifications);
+        ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefScreen = getPreferenceScreen();
         Resources res = getResources();
 
@@ -85,10 +90,23 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         if (!EvolutionUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
         }
+
+        mNotificationHeader = findPreference(NOTIFICATION_HEADERS);
+        mNotificationHeader.setChecked((Settings.System.getInt(resolver,
+                Settings.System.NOTIFICATION_HEADERS, 1) == 1));
+        mNotificationHeader.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mNotificationHeader) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.NOTIFICATION_HEADERS, value ? 1 : 0);
+            EvolutionUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
         return false;
     }
 
