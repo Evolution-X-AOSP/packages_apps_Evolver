@@ -477,38 +477,42 @@
         <item>3</item>
     </string-array>
 
+    <!-- Edge lightning timeout -->
     <string-array name="ambient_notification_light_timeout_entries" translatable="false">
-        <item>@string/entry_infinite</item>
-        <item>@string/entry_five_minute</item>
-        <item>@string/entry_ten_minute</item>
-        <item>@string/entry_fifteen_minute</item>
-        <item>@string/entry_thirty_minute</item>
-        <item>@string/entry_sixty_minute</item>
+        <item>@string/ambient_notification_light_timeout_forever</item>
+        <item>@string/ambient_notification_light_timeout_half_minute</item>
+        <item>@string/ambient_notification_light_timeout_minute</item>
+        <item>@string/ambient_notification_light_timeout_three_minutes</item>
+        <item>@string/ambient_notification_light_timeout_five_minutes</item>
+        <item>@string/ambient_notification_light_timeout_ten_minutes</item>
     </string-array>
 
     <string-array name="ambient_notification_light_timeout_values" translatable="false">
         <item>0</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
         <item>300</item>
         <item>600</item>
-        <item>900</item>
-        <item>1800</item>
-        <item>3600</item>
     </string-array>
 
-    <string-array name="ambient_notification_light_color_mode_entries" translatable="false">
-        <item>@string/ambient_notification_light_color_mode_automatic</item>
-        <item>@string/ambient_notification_light_color_mode_accent</item>
-        <item>@string/ambient_notification_light_color_mode_custom</item>
+    <!-- Edge lightning color mode -->
+    <string-array name="ambient_notification_color_mode_entries" translatable="false">
+        <item>@string/ambient_notification_color_mode_accent</item>
+        <item>@string/ambient_notification_color_mode_wall</item>
+        <item>@string/ambient_notification_color_mode_notification</item>
+        <item>@string/ambient_notification_color_mode_custom</item>
     </string-array>
 
-    <string-array name="ambient_notification_light_color_mode_values" translatable="false">
+    <string-array name="ambient_notification_color_mode_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <!-- Network traffic location -->
-    <string-array name="network_traffic_location_entries">
+    <string-array name="network_traffic_location_entries" translatable="false">
         <item>@string/traffic_disabled</item>
         <item>@string/traffic_status_bar</item>
         <item>@string/traffic_expanded_status_bar</item>
@@ -662,7 +666,7 @@
     </string-array>
 
     <!-- AOD Schedule -->
-    <string-array name="doze_always_on_auto_mode_entries">
+    <string-array name="doze_always_on_auto_mode_entries" translatable="false">
         <item>@string/disabled</item>
         <item>@string/night_display_auto_mode_twilight</item>
         <item>@string/night_display_auto_mode_custom</item>

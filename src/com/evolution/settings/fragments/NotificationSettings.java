@@ -46,6 +46,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +56,10 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+    private static final String KEY_EDGE_LIGHTNING = "pulse_ambient_light";
 
     private Preference mChargingLeds;
+    private SystemSettingMasterSwitchPreference mEdgeLightning;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -76,10 +80,24 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                         com.android.internal.R.bool.config_intrusiveBatteryLed)) {
             prefSet.removePreference(mChargingLeds);
         }
+
+        mEdgeLightning = (SystemSettingMasterSwitchPreference)
+                findPreference(KEY_EDGE_LIGHTNING);
+        boolean enabled = Settings.System.getIntForUser(resolver,
+                KEY_EDGE_LIGHTNING, 0, UserHandle.USER_CURRENT) == 1;
+        mEdgeLightning.setChecked(enabled);
+        mEdgeLightning.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mEdgeLightning) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver, KEY_EDGE_LIGHTNING,
+                    value ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        }
         return false;
     }
 
