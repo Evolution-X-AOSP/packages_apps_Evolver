@@ -56,13 +56,11 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
-    private static final String NAVBAR_TUNER = "navbar_tuner";
     private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 
     private ListPreference mVolumeKeyCursorControl;
     private Preference mGestureSystemNavigation;
-    private Preference mNavbarTuner;
     private SystemSettingSwitchPreference mPixelNavAnimation;
 
     @Override
@@ -82,7 +80,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         }
 
         mGestureSystemNavigation = findPreference(GESTURE_SYSTEM_NAVIGATION);
-        mNavbarTuner = findPreference(NAVBAR_TUNER);
         mPixelNavAnimation = findPreference(PIXEL_NAV_ANIMATION);
         if (EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
@@ -90,7 +87,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
             mGestureSystemNavigation.setSummary(getString(R.string.swipe_up_to_switch_apps_title));
         } else {
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
-            prefScreen.removePreference(mNavbarTuner);
             prefScreen.removePreference(mPixelNavAnimation);
         }
     }

@@ -29,7 +29,7 @@ public class AboutEvolutionX extends SettingsPreferenceFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.EVO_SETTINGS;
+        return MetricsEvent.EVOLVER;
     }
 
     @Override
