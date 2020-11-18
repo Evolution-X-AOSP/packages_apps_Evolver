@@ -88,17 +88,23 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         mLayoutSettings = findPreference(LAYOUT_SETTINGS);
         mSwapNavButtons = findPreference(NAVIGATION_BAR_INVERSE);
 
-        if (!EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
-            prefScreen.removePreference(mLayoutSettings);
-        }
+        // On three button nav
         if (EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
+            mPixelNavAnimation.setSummary(getString(R.string.pixel_navbar_anim_summary));
+        // On two button nav
         } else if (EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.swipe_up_to_switch_apps_title));
+            mPixelNavAnimation.setSummary(getString(R.string.pixel_navbar_anim_summary));
+        // On gesture nav
         } else {
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
-            prefScreen.removePreference(mPixelNavAnimation);
-            prefScreen.removePreference(mSwapNavButtons);
+            mLayoutSettings.setSummary(getString(R.string.unsupported_gestures));
+            mPixelNavAnimation.setSummary(getString(R.string.unsupported_gestures));
+            mSwapNavButtons.setSummary(getString(R.string.unsupported_gestures));
+            mLayoutSettings.setEnabled(false);
+            mPixelNavAnimation.setEnabled(false);
+            mSwapNavButtons.setEnabled(false);
         }
     }
 
