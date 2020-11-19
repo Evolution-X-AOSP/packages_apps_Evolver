@@ -22,7 +22,7 @@
 
     <Preference
         android:key="gesture_settings"
-        android:title="@string/aosp_gesture_title"
+        android:title="@string/aosp_setting_title"
         android:summary="@string/aosp_gesture_summary"
         android:fragment="com.android.settings.gestures.GestureSettings" />
 
@@ -52,11 +52,12 @@
         android:key="dtt_category"
         android:title="@string/dtt_category_title">
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="double_tap_sleep_gesture"
-            android:title="@string/doubletap_statusbar_title"
-            android:summary="@string/doubletap_statusbar_summary"
-            android:defaultValue="false" />
+        <Preference
+            android:key="gesture_doubletap_lockscreen"
+            android:title="@string/doubletap_lockscreen_screen_title"
+            android:summary="@string/doubletap_lockscreen_summary"
+            android:fragment="com.android.settings.gestures.DoubleTapLockscreenSettings"
+            settings:controller="com.android.settings.gestures.DoubleTapLockscreenPreferenceController" />
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="doze_pulse_on_double_tap"

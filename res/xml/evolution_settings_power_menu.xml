@@ -18,7 +18,14 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/powermenu_title">
+    android:title="@string/power_menu_setting_name">
+
+    <Preference
+        android:key="gesture_power_menu_summary"
+        android:title="@string/aosp_setting_title"
+        android:summary="@string/power_menu_cards_passes_device_controls"
+        android:fragment="com.android.settings.gestures.PowerMenuSettings"
+        settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
 
     <com.evolution.settings.preference.SecureSettingSwitchPreference
         android:key="power_menu_hide_on_secure"
