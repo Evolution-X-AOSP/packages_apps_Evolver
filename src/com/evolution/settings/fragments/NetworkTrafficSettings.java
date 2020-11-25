@@ -62,6 +62,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment implement
 
     private CustomSystemSeekBarPreference mThreshold;
     private ListPreference mNetTrafficLocation;
+    private ListPreference mNetTrafficType;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,6 +93,13 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment implement
             updateTrafficLocation(0);
         }
         mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
+
+        int type = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_TYPE, 0, UserHandle.USER_CURRENT);
+        mNetTrafficType = (ListPreference) findPreference("network_traffic_type");
+        mNetTrafficType.setValue(String.valueOf(type));
+        mNetTrafficType.setSummary(mNetTrafficType.getEntry());
+        mNetTrafficType.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -129,6 +137,14 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment implement
             Settings.System.putIntForUser(resolver,
                     Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
                     UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mNetTrafficType) {
+            int val = Integer.valueOf((String) objValue);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_TYPE, val,
+                    UserHandle.USER_CURRENT);
+            int index = mNetTrafficType.findIndexOfValue((String) objValue);
+            mNetTrafficType.setSummary(mNetTrafficType.getEntries()[index]);
             return true;
         }
         return false;
