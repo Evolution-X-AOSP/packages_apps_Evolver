@@ -54,7 +54,7 @@
     <string name="statusbar_summary">Персонализируйте элементы строки состояния</string>
     <string name="unsupported_gestures">Включите две кнопки или три кнопки навигации для использования этой функции</string>
     <!-- General strings -->
-    <string name="ok">OK</string>
+    <string name="ok">ОК</string>
     <string name="reset">Сбросить</string>
     <string name="cancel">Отмена</string>
     <string name="save">Сохранить</string>
@@ -113,7 +113,7 @@
     <string name="evolution_telegram_title">Группа в Telegram</string>
     <string name="evolution_telegram_summary">Нажмите здесь, чтобы посетить наше прекрасное сообщество!</string>
     <string name="evolution_github_summary">Нажмите здесь, чтобы открыть наш GitHub!</string>
-    <string name="evolution_about_info_summary">Evolution X - это пользовательская прошивка на базе AOSP, стремящаяся предоставить опыт использования схожий с Pixel, со множеством дополнительных настроек. Со времён Android Pie мы приносим свой бренд на ваши устройства. Мы продолжим предоставлять стабильные и полные настроек обновления нашим преданным пользователям.</string>
+    <string name="evolution_about_info_summary">Evolution X — это пользовательская прошивка на базе AOSP, стремящаяся предоставить опыт использования схожий с устройствами Pixel, со множеством дополнительных настроек. Со времён Android Pie мы приносим свой бренд на ваши устройства. Мы продолжим предоставлять стабильные и полные настроек обновления нашим преданным пользователям.</string>
     <string name="evolution_about_team">Команда Evolution X</string>
     <!-- Battery light -->
     <string name="light_settings_header">Настройки индикации батареи</string>
@@ -151,6 +151,7 @@
     <string name="fod_recog_animation_op_energy">Энергия</string>
     <string name="fod_recog_animation_op_mclaren">МаКларен</string>
     <string name="fod_recog_animation_op_ripple">Пульсация</string>
+    <string name="fod_recog_animation_op_scanning">Сканирование</string>
     <string name="fod_recog_animation_op_stripe">Полоса</string>
     <string name="fod_recog_animation_op_wave">Волна</string>
     <string name="fod_recog_animation_pureview_dna">DNA</string>
@@ -182,12 +183,16 @@
     <string name="traffic_title">Индикация трафика</string>
     <string name="traffic_summary">Включение и отключение индикатора сетевого трафика</string>
     <string name="network_traffic_title">Сетевой трафик</string>
-    <string name="network_traffic_type">Выберите тип сетевой активности</string>
-    <string name="show_network_traffic_up">Исходящий</string>
-    <string name="show_network_traffic_down">Входящий</string>
-    <string name="show_network_traffic_all">Исходящий и входящий</string>
-    <string name="network_traffic_state_title">Показывать сетевую активность в строке состояния</string>
+    <string name="network_traffic_location">Местоположение индикатора сетевой активности</string>
+    <string name="traffic_disabled">Отключено</string>
+    <string name="traffic_statusbar">Строка состояния</string>
+    <string name="traffic_expanded_statusbar">Развёрнутая строка состояния</string>
     <string name="network_traffic_autohide_threshold_title">Порог автоскрытия сетевой активности (KB/s)</string>
+    <string name="network_traffic_type">Выберите тип сетевой активности</string>
+    <string name="show_network_traffic_dynamic">Динамический ( Вверх-/Загрузка)</string>
+    <string name="show_network_traffic_up">Исходящий</string>
+    <string name="show_network_traffic_down">Загрузка</string>
+    <string name="show_network_traffic_all">Исходящий и входящий</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Вибрация при разблокировке по отпечатку пальца</string>
     <string name="fprint_sucess_vib_summary">Вибрация при успешной разблокировки по отпечатку пальца</string>
@@ -420,7 +425,8 @@
     <string name="battery_bar_summary">Отображение и настройка полосы батареи рядом со строкой состояния или панелью навигации</string>
     <string name="battery_bar_no_navbar">Расположение полосы батареи</string>
     <string name="battery_bar_location_hide">Скрыть</string>
-    <string name="battery_bar_location_statusbar">Строка состояния</string>
+    <string name="battery_bar_statusbar_top">Выше строки состояния</string>
+    <string name="battery_bar_statusbar_bot">Ниже строки состояния</string>
     <string name="battery_bar_color">Цвет полосы батареи</string>
     <string name="battery_bar_charging_color">Цвет полосы заряда батареи при зарядке</string>
     <string name="battery_bar_battery_low_color">Цвет полосы батареи при низком заряде</string>
@@ -453,4 +459,39 @@
     <!-- Notification headers -->
     <string name="notification_headers_title">Заголовок панели уведомлений</string>
     <string name="notification_headers_summary">Показывать заголовки в тени уведомлений</string>
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">Скрывать значок блокировки</string>
+    <string name="hide_lockicon_summary">Скрывать значок блокировки на экране блокировки</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_category">Свечение краёв экрана</string>
+    <string name="pulse_ambient_light_title">Пульсировать при получении новых уведомлений</string>
+    <string name="pulse_ambient_light_summary">Пульсировать по краям экрана при получении новых уведомлений</string>
+    <string name="ambient_notification_light_enabled_title">Пульсировать в режиме Always On</string>
+    <string name="ambient_notification_light_enabled_summary">Пульсировать при получении нового уведомления в режиме Always On</string>
+    <string name="ambient_notification_light_color_title">Пользовательский цвет</string>
+    <string name="ambient_notification_light_color_summary">Цвет пульсации по умолчанию</string>
+    <string name="ambient_notification_light_hide_aod_title">Показывать только пульсирование</string>
+    <string name="ambient_notification_light_hide_aod_summary">Скрывать все остальные элементы в режиме Always On</string>
+    <string name="ambient_notification_light_timeout_title">Интервал между пульсациями</string>
+    <string name="entry_infinite">Непрерывно</string>
+    <string name="entry_five_minute">5 минут</string>
+    <string name="entry_ten_minute">10 минут</string>
+    <string name="entry_thirty_minute">30 минут</string>
+    <string name="entry_sixty_minute">60 минут</string>
+    <string name="entry_fifteen_minute">15 минут</string>
+    <string name="ambient_notification_light_color_mode_title">Цвет пульсации</string>
+    <string name="ambient_notification_light_color_mode_automatic">Цвет уведомлений</string>
+    <string name="ambient_notification_light_color_mode_accent">Цвет акцента системы</string>
+    <string name="ambient_notification_light_color_mode_custom">Пользовательский цвет</string>
+    <string name="pulse_ambient_light_duration_title">Длительность</string>
+    <string name="pulse_ambient_light_duration_summary">Устанавливает длительность подсветки</string>
+    <string name="pulse_ambient_light_repeat_count_title">Количество повторов подсветки</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Установите максимальное количество повторений. 0 для бесконечного</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">Текст нижнего колонтитула</string>
+    <string name="qs_footer_text_summary">Отображать текст внизу панели быстрых настроек</string>
+    <string name="qs_footer_text_string_title">Пользовательский текст нижнего колонтитула</string>
+    <string name="qs_footer_text_string_summary">Оставьте пустым для значения по умолчанию</string>
+    <!-- NavBar Visibility -->
+    <string name="navbar_visibility">Включить панель навигации</string>
 </resources>
