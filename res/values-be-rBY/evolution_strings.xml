@@ -151,6 +151,7 @@
     <string name="fod_recog_animation_op_energy">Энэргія</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
     <string name="fod_recog_animation_op_ripple">Пульсацыя</string>
+    <string name="fod_recog_animation_op_scanning">Сканаванне</string>
     <string name="fod_recog_animation_op_stripe">Stripe</string>
     <string name="fod_recog_animation_op_wave">Хваля</string>
     <string name="fod_recog_animation_pureview_dna">DNA</string>
@@ -182,12 +183,16 @@
     <string name="traffic_title">Індыкатар трафіку</string>
     <string name="traffic_summary">Уключэнне і адключэнне індыкатара сеткавага трафіку</string>
     <string name="network_traffic_title">Сеткавы трафік</string>
-    <string name="network_traffic_type">Выберыце тып сеткавай актыўнасці</string>
-    <string name="show_network_traffic_up">Выходны</string>
-    <string name="show_network_traffic_down">Уваходны</string>
-    <string name="show_network_traffic_all">Выходны і ўваходны</string>
-    <string name="network_traffic_state_title">Паказваць індыкатар сеткавага трафіку ў радку стану</string>
+    <string name="network_traffic_location">Месцазнаходжанне індыкатара сеткавай актыўнасці</string>
+    <string name="traffic_disabled">Адключана</string>
+    <string name="traffic_statusbar">Радок стану</string>
+    <string name="traffic_expanded_statusbar">Разгорнуты радок стану</string>
     <string name="network_traffic_autohide_threshold_title">Аўтаматычна хаваць індыкатар сеткавай актыўнасці (KB/с)</string>
+    <string name="network_traffic_type">Выберыце тып сеткавай актыўнасці</string>
+    <string name="show_network_traffic_dynamic">Дынамічны (запампоўка/спампоўка)</string>
+    <string name="show_network_traffic_up">Выходны</string>
+    <string name="show_network_traffic_down">Спампоўка</string>
+    <string name="show_network_traffic_all">Выходны і ўваходны</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Вібрацыя пры распазнаванне адбітка пальца</string>
     <string name="fprint_sucess_vib_summary">Вібраваць пры паспяховай аўтэнтыфікацыі па адбітку пальца</string>
@@ -420,7 +425,8 @@
     <string name="battery_bar_summary">Адлюстраванне і налада панэлі батарэі каля панэлі стану ці панэлі навігацыі</string>
     <string name="battery_bar_no_navbar">Размяшчэнне індыкатара батарэі</string>
     <string name="battery_bar_location_hide">Схаваць</string>
-    <string name="battery_bar_location_statusbar">Радок стану</string>
+    <string name="battery_bar_statusbar_top">Вышэй радка стану</string>
+    <string name="battery_bar_statusbar_bot">Ніжэй радка стану</string>
     <string name="battery_bar_color">Колер панэлі зарада батарэі</string>
     <string name="battery_bar_charging_color">Колер панэлі зарада батарэі пры зарадцы</string>
     <string name="battery_bar_battery_low_color">Колер панэлі зарада батарэі пры нізкім зарадзе акумулятара</string>
@@ -453,4 +459,39 @@
     <!-- Notification headers -->
     <string name="notification_headers_title">Загаловак панэлі апавяшчэнняў</string>
     <string name="notification_headers_summary">Паказваць загалоўкі ў цені апавяшчэнняў</string>
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">Схаваць значок блакавання</string>
+    <string name="hide_lockicon_summary">Схаваць значок блакіроўкі на экране блакавання</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_category">Яркае асвятленне экрана</string>
+    <string name="pulse_ambient_light_title">Пульсаваць пры новых апавяшчэннях</string>
+    <string name="pulse_ambient_light_summary">Пульсаваць па краях экрана пры атрыманні новых апавяшчэнняў</string>
+    <string name="ambient_notification_light_enabled_title">Заўсёды паказваць</string>
+    <string name="ambient_notification_light_enabled_summary">Паказвайце светлавы імпульс пры новых апавяшчэннях на актыўным дысплеі</string>
+    <string name="ambient_notification_light_color_title">Карыстацкі колер</string>
+    <string name="ambient_notification_light_color_summary">Колер па змаўчанні для светлавога імпульсу</string>
+    <string name="ambient_notification_light_hide_aod_title">Паказаць толькі светлавую пульсацыю</string>
+    <string name="ambient_notification_light_hide_aod_summary">Схаваць усе астатнія элементы экрана ў рэжыме актыўнага дысплея</string>
+    <string name="ambient_notification_light_timeout_title">Інтэрвал пульсацыі</string>
+    <string name="entry_infinite">Бясконца</string>
+    <string name="entry_five_minute">5 хвілін</string>
+    <string name="entry_ten_minute">10 хвілін</string>
+    <string name="entry_thirty_minute">30 хвілін</string>
+    <string name="entry_sixty_minute">60 хвілін</string>
+    <string name="entry_fifteen_minute">15 хвілін</string>
+    <string name="ambient_notification_light_color_mode_title">Колер пульсацыі</string>
+    <string name="ambient_notification_light_color_mode_automatic">Колер апавяшчэння</string>
+    <string name="ambient_notification_light_color_mode_accent">Сістэмны колер</string>
+    <string name="ambient_notification_light_color_mode_custom">Карыстацкі колер</string>
+    <string name="pulse_ambient_light_duration_title">Працягласць</string>
+    <string name="pulse_ambient_light_duration_summary">Усталёўвае працягласць падсветкі анімацыі</string>
+    <string name="pulse_ambient_light_repeat_count_title">Колькасць паўтораў падсвятлення</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Усталяваць максімальную колькасць паўтораў (0 для бясконцасці)</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">Тэкст ніжняга калантытула</string>
+    <string name="qs_footer_text_summary">Адлюстроўваць тэкст унізе панэлі хуткіх налад</string>
+    <string name="qs_footer_text_string_title">Карыстацкі тэкст ніжняга калантытула</string>
+    <string name="qs_footer_text_string_summary">Пакіньце пустым для значэння па змаўчанні</string>
+    <!-- NavBar Visibility -->
+    <string name="navbar_visibility">Уключыць панэль навігацыі</string>
 </resources>
