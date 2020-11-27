@@ -151,6 +151,7 @@
     <string name="fod_recog_animation_op_energy">Energie</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
     <string name="fod_recog_animation_op_ripple">Welle</string>
+    <string name="fod_recog_animation_op_scanning">Scannen</string>
     <string name="fod_recog_animation_op_stripe">Streifen</string>
     <string name="fod_recog_animation_op_wave">Welle</string>
     <string name="fod_recog_animation_pureview_dna">DNA</string>
@@ -182,12 +183,16 @@
     <string name="traffic_title">Netzwerkgeschwindigkeitsanzeige</string>
     <string name="traffic_summary">Netzwerkgeschwindigkeitsanzeige aktivieren oder deaktivieren</string>
     <string name="network_traffic_title">Netzwerkverkehr</string>
-    <string name="network_traffic_type">Netzaktivitätstyp auswählen</string>
-    <string name="show_network_traffic_up">Aktuelle Hochlade-Rate</string>
-    <string name="show_network_traffic_down">Aktuelle Download-Rate</string>
-    <string name="show_network_traffic_all">Up- und Download</string>
-    <string name="network_traffic_state_title">Netzaktivität in der Statusleiste anzeigen</string>
+    <string name="network_traffic_location">Netzaktivität - Ort</string>
+    <string name="traffic_disabled">Deaktiviert</string>
+    <string name="traffic_statusbar">Statusleiste</string>
+    <string name="traffic_expanded_statusbar">Erweiterte Statusleiste</string>
     <string name="network_traffic_autohide_threshold_title">Schwellenwert in (KB/s), ab dem die Netzwerk-Aktivitätsanzeige verborgen wird</string>
+    <string name="network_traffic_type">Netzaktivitätstyp auswählen</string>
+    <string name="show_network_traffic_dynamic">Dynamisch (Up/Download)</string>
+    <string name="show_network_traffic_up">Aktuelle Hochlade-Rate</string>
+    <string name="show_network_traffic_down">Download</string>
+    <string name="show_network_traffic_all">Up- und Download</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Vibration bei Fingerabdruck-Authentifizierung</string>
     <string name="fprint_sucess_vib_summary">Vibration bei erfolgreicher Fingerabdruck-Erkennung</string>
@@ -420,7 +425,8 @@
     <string name="battery_bar_summary">Anzeige und Anpassung der Batterieleiste in der Nähe der Statusleiste oder der Navigationsleiste</string>
     <string name="battery_bar_no_navbar">Position der Batterieleiste</string>
     <string name="battery_bar_location_hide">Ausblenden</string>
-    <string name="battery_bar_location_statusbar">Statusleiste</string>
+    <string name="battery_bar_statusbar_top">Statusleisten - oben</string>
+    <string name="battery_bar_statusbar_bot">Statusleisten - unten</string>
     <string name="battery_bar_color">Farbe der Akku Leiste</string>
     <string name="battery_bar_charging_color">Farbe der Akkuleiste beim Laden</string>
     <string name="battery_bar_battery_low_color">Farbe der Akku-Indikatorleiste bei niedrigem Akkustand</string>
@@ -453,4 +459,39 @@
     <!-- Notification headers -->
     <string name="notification_headers_title">Benachrichtigungsüberschriften</string>
     <string name="notification_headers_summary">Überschriften in der Benachrichtigungsleiste anzeigen</string>
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">Schlosssymbol ausblenden</string>
+    <string name="hide_lockicon_summary">Schlosssymbol auf dem Sperrbildschirm ausblenden</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_category">Bildschirm-Seitenbeleuchtung bei Inaktivität</string>
+    <string name="pulse_ambient_light_title">Beim Empfang neuer Benachrichtigungen anzeigen</string>
+    <string name="pulse_ambient_light_summary">Pulslicht bei neuer Benachrichtigungen anzeigen</string>
+    <string name="ambient_notification_light_enabled_title">Bei Always-On anzeigen</string>
+    <string name="ambient_notification_light_enabled_summary">Pulslicht bei neuer Benachrichtigungen mit Always-On anzeigen</string>
+    <string name="ambient_notification_light_color_title">Benutzerdefinierte Farbe</string>
+    <string name="ambient_notification_light_color_summary">Standardfarbe für Pulslicht</string>
+    <string name="ambient_notification_light_hide_aod_title">Nur Pulslicht anzeigen</string>
+    <string name="ambient_notification_light_hide_aod_summary">Verstecke alle anderen Anzeigeelemente von Always-On</string>
+    <string name="ambient_notification_light_timeout_title">Timeout für Pulslicht</string>
+    <string name="entry_infinite">Unendlich</string>
+    <string name="entry_five_minute">5 Minuten</string>
+    <string name="entry_ten_minute">10 Minuten</string>
+    <string name="entry_thirty_minute">30 Minuten</string>
+    <string name="entry_sixty_minute">60 Minuten</string>
+    <string name="entry_fifteen_minute">15 Minuten</string>
+    <string name="ambient_notification_light_color_mode_title">Pulslicht-Farbe</string>
+    <string name="ambient_notification_light_color_mode_automatic">Benachrichtigungsfarbe</string>
+    <string name="ambient_notification_light_color_mode_accent">Systemakzentfarbe verwenden</string>
+    <string name="ambient_notification_light_color_mode_custom">Benutzerdefinierte Farbe</string>
+    <string name="pulse_ambient_light_duration_title">Dauer</string>
+    <string name="pulse_ambient_light_duration_summary">Legt die Dauer der Pulslicht-Animation fest</string>
+    <string name="pulse_ambient_light_repeat_count_title">Anzahl der Pulslicht Wiederholungen</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Maximale Wiederholungsanzahl einstellen. 0 für unendlich</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">QS-Fußzeilen Text</string>
+    <string name="qs_footer_text_summary">Text am unteren Rand des QS-Panels anzeigen</string>
+    <string name="qs_footer_text_string_title">Text der Fußzeile anpassen</string>
+    <string name="qs_footer_text_string_summary">Standardmäßig leer setzen</string>
+    <!-- NavBar Visibility -->
+    <string name="navbar_visibility">Navigationsleiste aktivieren</string>
 </resources>
