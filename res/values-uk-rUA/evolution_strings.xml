@@ -152,6 +152,7 @@
     <string name="fod_recog_animation_op_energy">Енергія</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
     <string name="fod_recog_animation_op_ripple">Пульсація</string>
+    <string name="fod_recog_animation_op_scanning">Сканування</string>
     <string name="fod_recog_animation_op_stripe">Смуга</string>
     <string name="fod_recog_animation_op_wave">Хвиля</string>
     <string name="fod_recog_animation_pureview_dna">ДНК</string>
@@ -183,12 +184,16 @@
     <string name="traffic_title">Індикатор трафіку</string>
     <string name="traffic_summary">Увімкнення або вимкнення індикатора швидкості мережі</string>
     <string name="network_traffic_title">Трафік мережі</string>
-    <string name="network_traffic_type">Оберіть тип мережевого трафіка</string>
-    <string name="show_network_traffic_up">Вихідний</string>
-    <string name="show_network_traffic_down">Вхідний</string>
-    <string name="show_network_traffic_all">Вихідний і вхідний</string>
-    <string name="network_traffic_state_title">Показувати мережеву активність в рядку стану</string>
+    <string name="network_traffic_location">Місцезнаходження мережевої активності</string>
+    <string name="traffic_disabled">Вимкнено</string>
+    <string name="traffic_statusbar">Рядок стану</string>
+    <string name="traffic_expanded_statusbar">Розширений рядок стану</string>
     <string name="network_traffic_autohide_threshold_title">Автоматичне приховування індикатора мережевої активності (KB/с)</string>
+    <string name="network_traffic_type">Оберіть тип мережевого трафіка</string>
+    <string name="show_network_traffic_dynamic">Динамічний (відвантаження/завантаження)</string>
+    <string name="show_network_traffic_up">Вихідний</string>
+    <string name="show_network_traffic_down">Завантаження</string>
+    <string name="show_network_traffic_all">Вихідний і вхідний</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Вібрація при розпізнаванні відбитку пальця</string>
     <string name="fprint_sucess_vib_summary">Вібрувати при успішному розпізнаванні відбитку пальця</string>
@@ -421,7 +426,8 @@
     <string name="battery_bar_summary">Показ та налаштування індикатора батареї в рядку стану або панелі навігації</string>
     <string name="battery_bar_no_navbar">Розташування індикатора батареї</string>
     <string name="battery_bar_location_hide">Приховати</string>
-    <string name="battery_bar_location_statusbar">Рядок стану</string>
+    <string name="battery_bar_statusbar_top">Зверху рядка стану</string>
+    <string name="battery_bar_statusbar_bot">Знизу рядка стану</string>
     <string name="battery_bar_color">Колір смужки батареї</string>
     <string name="battery_bar_charging_color">Колір смужки при заряджанні</string>
     <string name="battery_bar_battery_low_color">Колір смужки батареї при низькому заряді</string>
@@ -454,4 +460,39 @@
     <!-- Notification headers -->
     <string name="notification_headers_title">Відображення сповіщень</string>
     <string name="notification_headers_summary">Відображати заголовки у відтінку сповіщень</string>
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">Приховати значок блокування</string>
+    <string name="hide_lockicon_summary">Приховати значок блокування на екрані блокування</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_category">Яскравість підсвітки екрана</string>
+    <string name="pulse_ambient_light_title">Показати на новій частині повідомлення</string>
+    <string name="pulse_ambient_light_summary">Підсвічувати краї екрана при новому сповіщенню</string>
+    <string name="ambient_notification_light_enabled_title">Відображати бокові ефекти імпульсу сповіщень в Aod</string>
+    <string name="ambient_notification_light_enabled_summary">Відображати бокові ефекти при новому сповіщенні на активному дисплеї</string>
+    <string name="ambient_notification_light_color_title">Користувацький колір</string>
+    <string name="ambient_notification_light_color_summary">Колір за замовчуванням для світлового імпульсу</string>
+    <string name="ambient_notification_light_hide_aod_title">Показувати лише світову пульсацію</string>
+    <string name="ambient_notification_light_hide_aod_summary">Приховувати всі інші елементи відображення для активного дисплея</string>
+    <string name="ambient_notification_light_timeout_title">Час для вимкнення світлової пульсації</string>
+    <string name="entry_infinite">Безкінечно</string>
+    <string name="entry_five_minute">5 хвилин</string>
+    <string name="entry_ten_minute">10 хвилин</string>
+    <string name="entry_thirty_minute">30 хвилин</string>
+    <string name="entry_sixty_minute">60 хвилин</string>
+    <string name="entry_fifteen_minute">15 хвилин</string>
+    <string name="ambient_notification_light_color_mode_title">Колір світлового імпульсу</string>
+    <string name="ambient_notification_light_color_mode_automatic">Колір сповіщення</string>
+    <string name="ambient_notification_light_color_mode_accent">Колір акценту системи</string>
+    <string name="ambient_notification_light_color_mode_custom">Власний колір</string>
+    <string name="pulse_ambient_light_duration_title">Тривалість</string>
+    <string name="pulse_ambient_light_duration_summary">Встановлює тривалість підсвітки анімації</string>
+    <string name="pulse_ambient_light_repeat_count_title">Кількість повторів підсвічування</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Встановіть максимальну кількість повторів. 0 для безкінечної кількості</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">Текст нижнього колонтитулу</string>
+    <string name="qs_footer_text_summary">Показувати текст в нижній частині панелі швидких налаштувань</string>
+    <string name="qs_footer_text_string_title">Налаштувати текст нижнього колонтитула</string>
+    <string name="qs_footer_text_string_summary">Встановіть або залиште порожнім за замовчуванням</string>
+    <!-- NavBar Visibility -->
+    <string name="navbar_visibility">Увімкнути панель навігації</string>
 </resources>
