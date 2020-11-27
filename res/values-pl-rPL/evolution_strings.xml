@@ -18,7 +18,7 @@
     <!-- The Evolver -->
     <string name="evolver_dashboard_title">Evolver</string>
     <!-- Categories -->
-    <string name="aosp_gesture_title">Gesty AOSP</string>
+    <string name="aosp_setting_title">Ustawienia AOSP</string>
     <string name="animation_title">Animacje</string>
     <string name="buttons_title">Przyciski sprzętowe</string>
     <string name="dev_options_title">Opcje programistyczne</string>
@@ -52,6 +52,7 @@
     <string name="powermenu_summary">Skonfiguruj opcje wyłączania</string>
     <string name="quicksettings_summary">Modyfikuj układ panelu szybkich ustawień i więcej</string>
     <string name="statusbar_summary">Spersonalizuj elementy paska stanu</string>
+    <string name="unsupported_gestures">Włącz dwu- lub trzy-przyciskową nawigację, by użyć tej opcji</string>
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Resetuj</string>
@@ -88,9 +89,6 @@
     <string name="lockscreen_info_category_title">Elementy informacji na ekranie blokady</string>
     <!-- Double Tap gestures -->
     <string name="dtt_category_title">Gesty dwukrotnego dotknięcia</string>
-    <!-- Double tap-to-sleep -->
-    <string name="doubletap_statusbar_title">Stuknij dwukrotnie pasek stanu, aby uśpić</string>
-    <string name="doubletap_statusbar_summary">Dotknij dwukrotnie na pasku stanu, aby wyłączyć ekran</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">Konfiguracja USB</string>
     <string name="usb_default_config_summary">Wybierz domyślne zachowanie po podłączeniu do urządzenia przez USB</string>
@@ -153,6 +151,7 @@
     <string name="fod_recog_animation_op_energy">Energia</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
     <string name="fod_recog_animation_op_ripple">Plusk</string>
+    <string name="fod_recog_animation_op_scanning">Skanowanie</string>
     <string name="fod_recog_animation_op_stripe">Pasek</string>
     <string name="fod_recog_animation_op_wave">Fala</string>
     <string name="fod_recog_animation_pureview_dna">DNA</string>
@@ -166,6 +165,7 @@
     <string name="notification_light_settings">Dioda powiadomień</string>
     <!-- Heads up -->
     <string name="heads_up_notifications">Wyskakujące powiadomienia</string>
+    <string name="heads_up_notifications_summary">Wyskakujące powiadomienia na pasku stanu</string>
     <string name="summary_heads_up_enabled">Wyskakujące powiadomienia są włączone</string>
     <string name="summary_heads_up_disabled">Wyskakujące powiadomienia są wyłączone</string>
     <string name="add_heads_up_package">Dodaj aplikację</string>
@@ -183,12 +183,16 @@
     <string name="traffic_title">Wskaźnik ruchu sieciowego</string>
     <string name="traffic_summary">Włącz lub wyłącz wskaźniki prędkości sieci</string>
     <string name="network_traffic_title">Ruch sieciowy</string>
+    <string name="network_traffic_location">Miejsce wskaźnika sieci</string>
+    <string name="traffic_disabled">Wyłączone</string>
+    <string name="traffic_statusbar">Pasek stanu</string>
+    <string name="traffic_expanded_statusbar">Nagłówek rozszerzonego paska stanu</string>
+    <string name="network_traffic_autohide_threshold_title">Schowaj poniżej limitu (KB/s)</string>
     <string name="network_traffic_type">Wybierz typ aktywności sieci</string>
+    <string name="show_network_traffic_dynamic">Dynamiczny (Wysyłanie/Pobieranie)</string>
     <string name="show_network_traffic_up">Wysyłanie</string>
     <string name="show_network_traffic_down">Pobieranie</string>
     <string name="show_network_traffic_all">Wysyłanie i Pobieranie</string>
-    <string name="network_traffic_state_title">Pokaż aktywność sieci w pasku stanu</string>
-    <string name="network_traffic_autohide_threshold_title">Schowaj poniżej limitu (KB/s)</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Wibracja podczas uwierzytelniania odcisku palca</string>
     <string name="fprint_sucess_vib_summary">Wibracje po udanym uwierzytelnianiu odcisku palca</string>
@@ -249,9 +253,6 @@
     <string name="volume_key_cursor_control_off">Wyłączony</string>
     <string name="volume_key_cursor_control_on">Głośność w górę/dół przesuwa kursor w lewo/prawo</string>
     <string name="volume_key_cursor_control_on_reverse">Głośność w górę/dół przesuwa kursor w prawo/lewo</string>
-    <!-- Wakeup options -->
-    <string name="wakeup_when_plugged_unplugged_title">Wybudź po podłączeniu ładowarki</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Urządzenie będzie wybudzane przy podłączaniu/odłączaniu ładowarki</string>
     <!-- Media art -->
     <string name="lockscreen_media_category">Muzyka</string>
     <string name="media_art_title">Okładka albumu</string>
@@ -424,7 +425,8 @@
     <string name="battery_bar_summary">Wyświetl i dostosuj pasek baterii w pobliżu paska stanu lub paska nawigacji</string>
     <string name="battery_bar_no_navbar">Lokalizacja paska baterii</string>
     <string name="battery_bar_location_hide">Ukryty</string>
-    <string name="battery_bar_location_statusbar">Pasek stanu</string>
+    <string name="battery_bar_statusbar_top">Górny pasek stanu</string>
+    <string name="battery_bar_statusbar_bot">Dolny pasek stanu</string>
     <string name="battery_bar_color">Kolor paska baterii</string>
     <string name="battery_bar_charging_color">Kolor paska baterii podczas ładowania</string>
     <string name="battery_bar_battery_low_color">Kolor paska baterii przy niskim poziomie naładowania</string>
@@ -454,4 +456,42 @@
     <!-- Supress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Dźwięk powiadomienia, jeśli aktywny</string>
     <string name="notification_sound_vib_screen_on_summary">Odtwarzaj dźwięk i wibracje dla powiadomień, gdy ekran jest włączony</string>
+    <!-- Notification headers -->
+    <string name="notification_headers_title">Nagłówki powiadomień</string>
+    <string name="notification_headers_summary">Pokaż nagłówki w powiadomieniach</string>
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">Ukryj ikonę kłódki</string>
+    <string name="hide_lockicon_summary">Ukryj ikonę kłódki na ekranie blokady</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_category">Oświetlenie krawędzi ekranu</string>
+    <string name="pulse_ambient_light_title">Pokaż przy nowym powiadomieniu</string>
+    <string name="pulse_ambient_light_summary">Pokaż jasny puls przy nowym powiadomieniu</string>
+    <string name="ambient_notification_light_enabled_title">Pokaż przy AOD</string>
+    <string name="ambient_notification_light_enabled_summary">Pokaż jasny puls przy nowym powiadomieniu używając ekranu AOD</string>
+    <string name="ambient_notification_light_color_title">Niestandardowy kolor</string>
+    <string name="ambient_notification_light_color_summary">Domyślny kolor jasnego pulsu</string>
+    <string name="ambient_notification_light_hide_aod_title">Pokazuj tylko jasny puls powiadomień</string>
+    <string name="ambient_notification_light_hide_aod_summary">Ukryj wszystkie inne elementy wyświetlacza z AOD</string>
+    <string name="ambient_notification_light_timeout_title">Limit czasu dla jasnego pulsu powiadomień</string>
+    <string name="entry_infinite">Nieskończone</string>
+    <string name="entry_five_minute">5 minut</string>
+    <string name="entry_ten_minute">10 minut</string>
+    <string name="entry_thirty_minute">30 minut</string>
+    <string name="entry_sixty_minute">60 minut</string>
+    <string name="entry_fifteen_minute">15 minut</string>
+    <string name="ambient_notification_light_color_mode_title">Kolor pulsu powiadomień</string>
+    <string name="ambient_notification_light_color_mode_automatic">Kolor powiadomień</string>
+    <string name="ambient_notification_light_color_mode_accent">Kolor akcentu systemowego</string>
+    <string name="ambient_notification_light_color_mode_custom">Niestandardowy kolor</string>
+    <string name="pulse_ambient_light_duration_title">Czas trwania</string>
+    <string name="pulse_ambient_light_duration_summary">Ustawia czas trwania animacji światła otoczenia</string>
+    <string name="pulse_ambient_light_repeat_count_title">Liczba powtórzeń podświetlenia krawędzi</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Ustaw maksymalną liczbę powtórzeń. 0 dla nieskończonej</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">Tekst stopki szybkich ustawień</string>
+    <string name="qs_footer_text_summary">Wyświetlaj tekst na dole panelu szybkich ustawień</string>
+    <string name="qs_footer_text_string_title">Dostosuj tekst stopki</string>
+    <string name="qs_footer_text_string_summary">Ustaw jako puste dla domyślnych</string>
+    <!-- NavBar Visibility -->
+    <string name="navbar_visibility">Włącz pasek nawigacji</string>
 </resources>
