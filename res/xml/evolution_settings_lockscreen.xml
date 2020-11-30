@@ -57,6 +57,16 @@
             android:summary="@string/fod_icon_picker_summary"
             android:fragment="com.evolution.settings.fragments.FODIconPickerFragment" />
 
+        <!-- FOD pressed color -->
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="fod_color"
+            android:dialogTitle="@string/fod_pressed_color_title"
+            android:title="@string/fod_pressed_color_title"
+            android:summary="%s"
+            android:entries="@array/fod_pressed_color_entries"
+            android:entryValues="@array/fod_pressed_color_values"
+            android:defaultValue="@*android:integer/config_fod_pressed_color" />
+
         <!-- FOD recognizing animation -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="fod_recognizing_animation"
