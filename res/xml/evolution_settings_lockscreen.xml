@@ -38,8 +38,27 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="lockscreen_ui_finterprint_category"
+        android:key="lockscreen_fingerprint_category"
         android:title="@string/fingerprint_category">
+
+        <SwitchPreference
+            android:key="fingerprint_success_vib"
+            android:title="@string/fprint_success_vib_title"
+            android:summary="@string/fprint_success_vib_summary"
+            android:persistent="true" />
+
+        <SwitchPreference
+            android:key="fingerprint_error_vib"
+            android:title="@string/fprint_error_vib_title"
+            android:summary="@string/fprint_error_vib_summary"
+            android:persistent="true" />
+
+    </PreferenceCategory>
+
+    <!-- FOD customization options -->
+    <PreferenceCategory
+        android:key="fod_customization"
+        android:title="@string/fod_customization_title">
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="screen_off_fod"
@@ -53,17 +72,14 @@
             android:summary="@string/udfps_haptic_feedback_summary"
             android:defaultValue="true" />
 
-        <SwitchPreference
-            android:key="fingerprint_success_vib"
-            android:title="@string/fprint_success_vib_title"
-            android:summary="@string/fprint_success_vib_summary"
-            android:persistent="true" />
-
-        <SwitchPreference
-            android:key="fingerprint_error_vib"
-            android:title="@string/fprint_error_vib_title"
-            android:summary="@string/fprint_error_vib_summary"
-            android:persistent="true" />
+        <!-- FOD pressed color -->
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="fod_color"
+            android:title="@string/fod_pressed_color_title"
+            android:summary="%s"
+            android:entries="@array/fod_pressed_color_entries"
+            android:entryValues="@array/fod_pressed_color_values"
+            android:defaultValue="@*android:integer/config_fod_pressed_color" />
 
     </PreferenceCategory>
 
