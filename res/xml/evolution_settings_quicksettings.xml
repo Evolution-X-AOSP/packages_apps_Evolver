@@ -20,6 +20,21 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/qs_column_rows_settings_title">
 
+    <!-- Battery percent -->
+    <com.evolution.settings.preference.SystemSettingListPreference
+        android:key="qs_show_battery_percent"
+        android:title="@string/battery_percentage_title"
+        android:entries="@array/battery_percent_entries"
+        android:entryValues="@array/battery_percent_values"
+        android:defaultValue="0" />
+
+    <!-- Battery estimate -->
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="qs_show_battery_estimate"
+        android:title="@string/battery_estimate_title"
+        android:summary="@string/battery_estimate_summary"
+        android:defaultValue="true" />
+
     <com.evolution.settings.preference.SecureSettingListPreference
         android:key="status_bar_quick_qs_pulldown"
         android:title="@string/status_bar_quick_qs_pulldown"
