@@ -76,9 +76,9 @@
     <string name="press_color_to_apply">적용할 색상을 선택하세요.</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
-    <string name="hex">Hex:</string>
+    <string name="hex">16진수:</string>
     <string name="hex_hint">#ff000000</string>
-    <string name="set">Set</string>
+    <string name="set">설정</string>
     <string name="color_default">기본설정</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">기본값이 설정되지 않음</string>
@@ -151,6 +151,7 @@
     <string name="fod_recog_animation_op_energy">에너지</string>
     <string name="fod_recog_animation_op_mclaren">맥라렌</string>
     <string name="fod_recog_animation_op_ripple">물결</string>
+    <string name="fod_recog_animation_op_scanning">스캐닝 (사이버펑크 2077)</string>
     <string name="fod_recog_animation_op_stripe">줄무늬</string>
     <string name="fod_recog_animation_op_wave">파동</string>
     <string name="fod_recog_animation_pureview_dna">DNA</string>
@@ -182,12 +183,18 @@
     <string name="traffic_title">송수신 표시</string>
     <string name="traffic_summary">네트워크 속도를 표시합니다.</string>
     <string name="network_traffic_title">네트워크 사용량</string>
+    <string name="network_traffic_location">네트워크 활동 위치</string>
+    <string name="traffic_disabled">사용 안 함</string>
+    <string name="traffic_statusbar">상태 표시줄</string>
+    <string name="traffic_expanded_statusbar">확장된 상태 표시줄</string>
+    <string name="network_traffic_autohide_threshold_title">네트워크 사용량(KB/s) 자동 숨김</string>
     <string name="network_traffic_type">네트워크 종류 선택</string>
+    <string name="show_network_traffic_dynamic">동적 (업로드/다운로드)</string>
     <string name="show_network_traffic_up">업로드</string>
     <string name="show_network_traffic_down">다운로드</string>
     <string name="show_network_traffic_all">업로드 및 다운로드</string>
-    <string name="network_traffic_state_title">상태 표시줄에 네트워크 사용량 표시</string>
-    <string name="network_traffic_autohide_threshold_title">네트워크 사용량(KB/s) 자동 숨김</string>
+    <string name="network_traffic_arrow">화살표 보이기</string>
+    <string name="network_traffic_arrow_summary">네트워크 트래픽 표시 화살표 보기</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">지문인식 성공 진동</string>
     <string name="fprint_sucess_vib_summary">지문인식에 성공하면 진동이 울립니다.</string>
@@ -216,12 +223,16 @@
     <string name="status_bar_battery_style_filled_circle">꽉찬 원</string>
     <string name="status_bar_battery_style_text">수치</string>
     <string name="status_bar_battery_style_hidden">숨김</string>
-    <string name="status_bar_battery_percentage_title">배터리 잔량</string>
-    <string name="status_bar_battery_percentage_default">숨김</string>
-    <string name="status_bar_battery_percentage_text_inside">아이콘 안에 표시</string>
-    <string name="status_bar_battery_percentage_text_next">아이콘 바깥에 표시</string>
-    <string name="qs_battery_percentage_title">빠른 설정에 배터리 잔량 표시</string>
-    <string name="qs_battery_percentage_summary">빠른 설정 상단에 남은 배터리 사용 시간 대신 잔량을 표시합니다.</string>
+    <!-- Battery percentage -->
+    <string name="battery_percentage_title">배터리 잔량</string>
+    <string name="battery_percentage_default">숨김 (기본값)</string>
+    <string name="battery_percentage_text_inside">아이콘 안에 표시</string>
+    <string name="battery_percentage_text_next">아이콘 옆에 표시</string>
+    <string name="battery_text_charging_title">충전 중 배터리 잔량 표시</string>
+    <string name="battery_text_charging_summary">충전 중 항상 배터리 잔량 표시</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">배터리 예상</string>
+    <string name="battery_estimate_summary">가능한 경우 남은 배터리 사용 시간을 예상합니다</string>
     <!-- QS rows and columns -->
     <string name="qs_columns_rows_category_title">빠른 설정 행렬</string>
     <string name="qs_rows_columns_title">빠른 설정 행렬</string>
@@ -371,25 +382,6 @@
     <!-- Volume swap buttons -->
     <string name="swap_volume_buttons_title">버튼 반전</string>
     <string name="swap_volume_buttons_summary">화면이 회전되어 있을 때 볼륨 위/아래 버튼의 기능을 바꿉니다.</string>
-    <!-- Heads up timeout -->
-    <string name="heads_up_time_out_title">제한 시간</string>
-    <string name="heads_up_time_out_summary">헤드업 알림이 <xliff:g id="number">%d</xliff:g>초 동안 표시됩니다.</string>
-    <string name="heads_up_time_out_2sec">2초</string>
-    <string name="heads_up_time_out_4sec">4초</string>
-    <string name="heads_up_time_out_5sec">5초</string>
-    <string name="heads_up_time_out_6sec">6초</string>
-    <string name="heads_up_time_out_8sec">8초</string>
-    <string name="heads_up_time_out_10sec">10초</string>
-    <!-- Heads up snooze -->
-    <string name="heads_up_snooze_title">알림 일시 중지</string>
-    <string name="heads_up_snooze_summary_one_minute">헤드업 알림을 쓸어올리면 1분 동안 해당 앱의 알림을 일시 중지합니다.</string>
-    <string name="heads_up_snooze_summary">헤드업 알림을 쓸어올리면 <xliff:g id="number">%d</xliff:g>분 동안 해당 앱의 알림을 일시 중지합니다.</string>
-    <string name="heads_up_snooze_disabled_summary">일시 중지 사용 안 함</string>
-    <string name="heads_up_snooze_1min">1분</string>
-    <string name="heads_up_snooze_5min">5분</string>
-    <string name="heads_up_snooze_10min">10분</string>
-    <string name="heads_up_snooze_15min">15분</string>
-    <string name="heads_up_snooze_20min">20분</string>
     <string name="click_partial_screenshot_title">눌러서 부분 스크린샷 캡처</string>
     <string name="click_partial_screenshot_summary">볼륨 아래와 전원 버튼을 짧게 눌러 부분 스크린샷을 캡처합니다.</string>
     <!-- Roaming indicator icon -->
@@ -420,7 +412,8 @@
     <string name="battery_bar_summary">상태 표시줄 또는 탐색 표시줄 주변에 배터리 표시줄을 추가하고 수정합니다.</string>
     <string name="battery_bar_no_navbar">배터리 표시줄 위치</string>
     <string name="battery_bar_location_hide">숨김</string>
-    <string name="battery_bar_location_statusbar">상태 표시줄</string>
+    <string name="battery_bar_statusbar_top">상태 표시줄 상단</string>
+    <string name="battery_bar_statusbar_bot">상태 표시줄 하단</string>
     <string name="battery_bar_color">배터리 표시줄 색상</string>
     <string name="battery_bar_charging_color">배터리 충전 색상</string>
     <string name="battery_bar_battery_low_color">배터리 부족 색상</string>
@@ -453,4 +446,52 @@
     <!-- Notification headers -->
     <string name="notification_headers_title">알림 창 상단</string>
     <string name="notification_headers_summary">알림 창에 상단 부분을 표시합니다.</string>
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">자물쇠 아이콘 숨기기</string>
+    <string name="hide_lockicon_summary">잠금 화면에서 자물쇠 아이콘 숨깁니다</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_category">화면 가장자리 조명</string>
+    <string name="pulse_ambient_light_title">알림 수신 시 표시</string>
+    <string name="pulse_ambient_light_summary">새로운 알림을 받으면 조명으로 알립니다</string>
+    <string name="ambient_notification_light_enabled_title">앰비언트 디스플레이에 표시</string>
+    <string name="ambient_notification_light_enabled_summary">앰비언트 디스플레이에 조명을 표시합니다</string>
+    <string name="ambient_notification_light_color_title">사용자 지정 색상</string>
+    <string name="ambient_notification_light_color_summary">조명 기본 색상</string>
+    <string name="ambient_notification_light_hide_aod_title">조명만 표시</string>
+    <string name="ambient_notification_light_hide_aod_summary">앰비언트 디스플레이의 다른 모든 요소를 숨깁니다</string>
+    <string name="ambient_notification_light_timeout_title">조명 제한 시간</string>
+    <string name="entry_infinite">계속 유지</string>
+    <string name="entry_five_minute">5분</string>
+    <string name="entry_ten_minute">10분</string>
+    <string name="entry_thirty_minute">30분</string>
+    <string name="entry_sixty_minute">60분</string>
+    <string name="entry_fifteen_minute">15분</string>
+    <string name="ambient_notification_light_color_mode_title">조명 색상</string>
+    <string name="ambient_notification_light_color_mode_automatic">알림 색상</string>
+    <string name="ambient_notification_light_color_mode_accent">시스템 강조 색상</string>
+    <string name="ambient_notification_light_color_mode_custom">사용자 지정 색상</string>
+    <string name="pulse_ambient_light_duration_title">조명 지속 시간</string>
+    <string name="pulse_ambient_light_duration_summary">가장자리 조명 애니메이션 지속 시간을 설정합니다</string>
+    <string name="pulse_ambient_light_repeat_count_title">가장자리 조명 반복 횟수</string>
+    <string name="pulse_ambient_light_repeat_count_summary">최대 반복 횟수를 설정합니다. 0으로 설정 시 무한 반복됩니다</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">빠른 설정 바닥글</string>
+    <string name="qs_footer_text_summary">빠른 설정 패널에 바닥글을 표시합니다</string>
+    <string name="qs_footer_text_string_title">바닥글 변경</string>
+    <string name="qs_footer_text_string_summary">입력창을 비워 기본값으로 설정합니다</string>
+    <!-- NavBar Visibility -->
+    <string name="navbar_visibility">네비게이션 바 사용</string>
+    <!-- FOD icon picker -->
+    <string name="fod_icon_picker_title">지문인식 아이콘</string>
+    <string name="fod_icon_picker_summary">좋아하는 지문인식 아이콘을 선택하세요</string>
+    <string name="fod_icon_picker_footer">나만의 아이콘을 추가하려면 왼쪽 상단 아이콘을 선택하고 OnePlus 6T FP Customizer 앱을 사용하여 원하는 아이콘을 선택하세요.</string>
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">눌렀을 때 지문 아이콘 색상</string>
+    <string name="fod_pressed_color_white">하얀색</string>
+    <string name="fod_pressed_color_cyan">청록색</string>
+    <string name="fod_pressed_color_green">초록색</string>
+    <string name="fod_pressed_color_yellow">노란색</string>
+    <!-- Nightlight Fod -->
+    <string name="fod_night_light_title">지문 아이콘 표시 중 야간 조명 비활성화</string>
+    <string name="fod_night_light_summary">화면 지문인식이 활성화된 경우 야간 조명을 비활성화합니다. 이 설정을 비활성화할 경우 야간 조명 사용 중 지문인식 정확도에 영향을 줄 수 있습니다.</string>
 </resources>
