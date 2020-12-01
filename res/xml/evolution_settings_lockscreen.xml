@@ -67,6 +67,19 @@
             android:entryValues="@array/fod_pressed_color_values"
             android:defaultValue="@*android:integer/config_fod_pressed_color" />
 
+        <!-- FOD Nightlight -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="fod_night_light"
+            android:title="@string/fod_night_light_title"
+            android:summary="@string/fod_night_light_summary"
+            android:defaultValue="@*android:bool/disable_fod_night_light"  />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/fod_recog_animation"
+        android:key="fod_animations">
+
         <!-- FOD recognizing animation -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="fod_recognizing_animation"
@@ -82,13 +95,6 @@
             android:entryValues="@array/fod_recog_animation_values"
             android:defaultValue="0"
             android:dependency="fod_recognizing_animation" />
-
-        <!-- FOD Nightlight -->
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="fod_night_light"
-            android:title="@string/fod_night_light_title"
-            android:summary="@string/fod_night_light_summary"
-            android:defaultValue="@*android:bool/disable_fod_night_light"  />
 
     </PreferenceCategory>
 

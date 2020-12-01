@@ -37,6 +37,7 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.internal.util.evolution.fod.FodUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -51,6 +52,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String FOD_ANIMATION_CATEGORY = "fod_animations";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
 
     private FingerprintManager mFingerprintManager;
@@ -82,6 +84,14 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
             prefScreen.removePreference(mFODIconPickerCategory);
+        }
+
+        final PreferenceCategory fodCat = (PreferenceCategory) prefScreen
+                .findPreference(FOD_ANIMATION_CATEGORY);
+        final boolean isFodAnimationResources = EvolutionUtils.isPackageInstalled(getContext(),
+                      getResources().getString(com.android.internal.R.string.config_fodAnimationPackage));
+        if (!isFodAnimationResources) {
+            prefScreen.removePreference(fodCat);
         }
     }
 
