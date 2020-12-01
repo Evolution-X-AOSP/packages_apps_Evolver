@@ -194,6 +194,8 @@
     <string name="show_network_traffic_up">Вихідний</string>
     <string name="show_network_traffic_down">Завантаження</string>
     <string name="show_network_traffic_all">Вихідний і вхідний</string>
+    <string name="network_traffic_arrow">Показувати стрілки</string>
+    <string name="network_traffic_arrow_summary">Показувати стрілки індикатора мережевого трафіку</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Вібрація при розпізнаванні відбитку пальця</string>
     <string name="fprint_sucess_vib_summary">Вібрувати при успішному розпізнаванні відбитку пальця</string>
@@ -222,12 +224,16 @@
     <string name="status_bar_battery_style_filled_circle">Заповнене коло</string>
     <string name="status_bar_battery_style_text">Текст</string>
     <string name="status_bar_battery_style_hidden">Приховано</string>
-    <string name="status_bar_battery_percentage_title">Відсоток заряду батареї</string>
-    <string name="status_bar_battery_percentage_default">Приховано</string>
-    <string name="status_bar_battery_percentage_text_inside">Всередині іконки</string>
-    <string name="status_bar_battery_percentage_text_next">Поруч зі значком</string>
-    <string name="qs_battery_percentage_title">Відсоток батареї в Швидких Налаштуваннях</string>
-    <string name="qs_battery_percentage_summary">Показати відсоток заряду акумулятора в заголовку Швидких Налаштувань замість оцінки акумулятора</string>
+    <!-- Battery percentage -->
+    <string name="battery_percentage_title">Відсоток заряду батареї</string>
+    <string name="battery_percentage_default">Приховано (за замовчуванням)</string>
+    <string name="battery_percentage_text_inside">Всередині іконки</string>
+    <string name="battery_percentage_text_next">Поруч зі значком</string>
+    <string name="battery_text_charging_title">Відсоток заряду акумулятора під час заряджання</string>
+    <string name="battery_text_charging_summary">Завжди показувати відсотки акумулятора під час заряджання</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Оцінка залишку батареї</string>
+    <string name="battery_estimate_summary">Відображати передбачуваний ресурс акумулятора, якщо доступно</string>
     <!-- QS rows and columns -->
     <string name="qs_columns_rows_category_title">Стовпці та рядки швидких налаштувань</string>
     <string name="qs_rows_columns_title">Рядки та стовпці швидких налаштувань</string>
@@ -377,25 +383,6 @@
     <!-- Volume swap buttons -->
     <string name="swap_volume_buttons_title">Змінити орієнтацію кнопок регулювання гучності</string>
     <string name="swap_volume_buttons_summary">Змінювати призначення кнопок регулювання гучності відповідно до орієнтації екрану</string>
-    <!-- Heads up timeout -->
-    <string name="heads_up_time_out_title">Час вийшов</string>
-    <string name="heads_up_time_out_summary">Сповіщення буде показуватися <xliff:g id="number">%d</xliff:g> секунд(и)</string>
-    <string name="heads_up_time_out_2sec">2 секунди</string>
-    <string name="heads_up_time_out_4sec">4 секунди</string>
-    <string name="heads_up_time_out_5sec">5 секунд</string>
-    <string name="heads_up_time_out_6sec">6 секунд</string>
-    <string name="heads_up_time_out_8sec">8 секунд</string>
-    <string name="heads_up_time_out_10sec">10 секунд</string>
-    <!-- Heads up snooze -->
-    <string name="heads_up_snooze_title">Таймер повтору</string>
-    <string name="heads_up_snooze_summary_one_minute">Жест вгору приховає сповіщення від додатка на 1 хвилину</string>
-    <string name="heads_up_snooze_summary">Свайп вгору по спливаючому сповіщенню приховає його на <xliff:g id="number">%d</xliff:g> хвилин(и)</string>
-    <string name="heads_up_snooze_disabled_summary">Таймер відкладення вимкнено</string>
-    <string name="heads_up_snooze_1min">1 хвилина</string>
-    <string name="heads_up_snooze_5min">5 хвилин</string>
-    <string name="heads_up_snooze_10min">10 хвилин</string>
-    <string name="heads_up_snooze_15min">15 хвилин</string>
-    <string name="heads_up_snooze_20min">20 хвилин</string>
     <string name="click_partial_screenshot_title">Натисніть для часткового знімку екрану</string>
     <string name="click_partial_screenshot_summary">Коротке натискання кнопки зменшення гучності та живлення для часткового знімку екрану</string>
     <!-- Roaming indicator icon -->
@@ -495,4 +482,17 @@
     <string name="qs_footer_text_string_summary">Встановіть або залиште порожнім за замовчуванням</string>
     <!-- NavBar Visibility -->
     <string name="navbar_visibility">Увімкнути панель навігації</string>
+    <!-- FOD icon picker -->
+    <string name="fod_icon_picker_title">Значок відбитка пальця</string>
+    <string name="fod_icon_picker_summary">Виберіть бажаний символ відбитків пальців</string>
+    <string name="fod_icon_picker_footer">Для того, щоб додати власну іконку, виберіть ліву іконку та скористайтеся додатком OnePlus через 6T FP для вибору бажаної піктограми.</string>
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">Ефект натиснення відбитку пальця</string>
+    <string name="fod_pressed_color_white">Білий</string>
+    <string name="fod_pressed_color_cyan">Блакитний</string>
+    <string name="fod_pressed_color_green">Зелений</string>
+    <string name="fod_pressed_color_yellow">Жовтий</string>
+    <!-- Nightlight Fod -->
+    <string name="fod_night_light_title">Вимкнути нічний режим при увімкненому сканері на екрані блокування (FOD)</string>
+    <string name="fod_night_light_summary">Вимкніть нічне світло на екрані блокування, якщо він активний. Вимкнення цього параметру може вплинути на точність відбитка пальця при нічному світлі.</string>
 </resources>
