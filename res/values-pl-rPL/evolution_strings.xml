@@ -193,6 +193,8 @@
     <string name="show_network_traffic_up">Wysyłanie</string>
     <string name="show_network_traffic_down">Pobieranie</string>
     <string name="show_network_traffic_all">Wysyłanie i Pobieranie</string>
+    <string name="network_traffic_arrow">Pokaż strzałki</string>
+    <string name="network_traffic_arrow_summary">Pokaż strzałki wskaźnika ruchu sieciowego</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Wibracja podczas uwierzytelniania odcisku palca</string>
     <string name="fprint_sucess_vib_summary">Wibracje po udanym uwierzytelnianiu odcisku palca</string>
@@ -221,12 +223,16 @@
     <string name="status_bar_battery_style_filled_circle">Wypełniony okrąg</string>
     <string name="status_bar_battery_style_text">Tekst</string>
     <string name="status_bar_battery_style_hidden">Ukryty</string>
-    <string name="status_bar_battery_percentage_title">Procent baterii</string>
-    <string name="status_bar_battery_percentage_default">Ukryty</string>
-    <string name="status_bar_battery_percentage_text_inside">Wewnątrz ikony</string>
-    <string name="status_bar_battery_percentage_text_next">Obok ikony</string>
-    <string name="qs_battery_percentage_title">Pokaż procent baterii w szybkich ustawieniach</string>
-    <string name="qs_battery_percentage_summary">Pokaż procent baterii w szybkich ustawieniach zamiast szacowanego czasu pracy</string>
+    <!-- Battery percentage -->
+    <string name="battery_percentage_title">Procent baterii</string>
+    <string name="battery_percentage_default">Ukryty (domyślnie)</string>
+    <string name="battery_percentage_text_inside">Wewnątrz ikony</string>
+    <string name="battery_percentage_text_next">Obok ikony</string>
+    <string name="battery_text_charging_title">Poziom baterii w trakcie ładowania</string>
+    <string name="battery_text_charging_summary">Zawsze wyświetlaj poziom baterii w trakcie ładowania</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Szacunkowy czas pracy baterii</string>
+    <string name="battery_estimate_summary">Wyświetl szacowany pozostały okres życia baterii, gdy jest dostępny</string>
     <!-- QS rows and columns -->
     <string name="qs_columns_rows_category_title">Kolumny i wiersze szybkich ustawień</string>
     <string name="qs_rows_columns_title">Wiersze i kolumny szybkich ustawień</string>
@@ -376,25 +382,6 @@
     <!-- Volume swap buttons -->
     <string name="swap_volume_buttons_title">Zamiana orientacji</string>
     <string name="swap_volume_buttons_summary">Zamieniaj przyciski głośności gdy ekran jest obrócony</string>
-    <!-- Heads up timeout -->
-    <string name="heads_up_time_out_title">Limit czasu</string>
-    <string name="heads_up_time_out_summary">Wyskakujące powiadomienia będą wyświetlane przez <xliff:g id="number">%d</xliff:g> sekund</string>
-    <string name="heads_up_time_out_2sec">2 sekundy</string>
-    <string name="heads_up_time_out_4sec">4 sekundy</string>
-    <string name="heads_up_time_out_5sec">5 sekund</string>
-    <string name="heads_up_time_out_6sec">6 sekund</string>
-    <string name="heads_up_time_out_8sec">8 sekund</string>
-    <string name="heads_up_time_out_10sec">10 sekund</string>
-    <!-- Heads up snooze -->
-    <string name="heads_up_snooze_title">Drzemka</string>
-    <string name="heads_up_snooze_summary_one_minute">Przesunięcie w górę wyskakujących powiadomień wyłączy je na 1 minutę</string>
-    <string name="heads_up_snooze_summary">Przesunięcie w górę wyskakujących powiadomień wyłączy je w tej aplikacji na <xliff:g id="number">%d</xliff:g> minut</string>
-    <string name="heads_up_snooze_disabled_summary">Drzemka dla powiadomień jest wyłączona</string>
-    <string name="heads_up_snooze_1min">1 minuta</string>
-    <string name="heads_up_snooze_5min">5 minut</string>
-    <string name="heads_up_snooze_10min">10 minut</string>
-    <string name="heads_up_snooze_15min">15 minut</string>
-    <string name="heads_up_snooze_20min">20 minut</string>
     <string name="click_partial_screenshot_title">Kliknij, aby wykonać częściowy zrzut ekranu</string>
     <string name="click_partial_screenshot_summary">Kliknij krótko przycisk zmniejszania głośności i zasilania, aby wykonać częściowy zrzut ekranu</string>
     <!-- Roaming indicator icon -->
@@ -494,4 +481,17 @@
     <string name="qs_footer_text_string_summary">Ustaw jako puste dla domyślnych</string>
     <!-- NavBar Visibility -->
     <string name="navbar_visibility">Włącz pasek nawigacji</string>
+    <!-- FOD icon picker -->
+    <string name="fod_icon_picker_title">Ikona odcisku palca</string>
+    <string name="fod_icon_picker_summary">Wybierz swoją ulubioną ikonę odcisku palca</string>
+    <string name="fod_icon_picker_footer">Aby dodać własną ikonę, wybierz ikonę w lewym górnym rogu i użyj aplikacji OnePlus 6T FP Customizer aby wybrać ikonę, którą chcesz.</string>
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">Kolor naciśniętego odcisku palca</string>
+    <string name="fod_pressed_color_white">Biały</string>
+    <string name="fod_pressed_color_cyan">Błękitny</string>
+    <string name="fod_pressed_color_green">Zielony</string>
+    <string name="fod_pressed_color_yellow">Żółty</string>
+    <!-- Nightlight Fod -->
+    <string name="fod_night_light_title">Wyłącz podświetlenie nocne podczas wyświetlania FOD</string>
+    <string name="fod_night_light_summary">Wyłącz podświetlenie nocne na ekranie blokady, jeśli FOD jest aktywne. Wyłączenie tej opcji może mieć wpływ na dokładność odcisku palca przy włączonym oświetleniu nocnym.</string>
 </resources>
