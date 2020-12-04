@@ -151,6 +151,7 @@
     <string name="fod_recog_animation_op_energy">الطاقة</string>
     <string name="fod_recog_animation_op_mclaren">ماكلارين</string>
     <string name="fod_recog_animation_op_ripple">تموج</string>
+    <string name="fod_recog_animation_op_scanning">المسح (Cyberpunk 2077)</string>
     <string name="fod_recog_animation_op_stripe">خط</string>
     <string name="fod_recog_animation_op_wave">موجه</string>
     <string name="fod_recog_animation_pureview_dna">الحمض النووي</string>
@@ -182,12 +183,18 @@
     <string name="traffic_title">مؤشر حركة الشبكة</string>
     <string name="traffic_summary">تمكين أو تعطيل مؤشرات سرعة الشبكة</string>
     <string name="network_traffic_title">حركة مرور الشبكة</string>
-    <string name="network_traffic_type">حدد نوع نشاط الشبكة</string>
-    <string name="show_network_traffic_up">الصادرة</string>
-    <string name="show_network_traffic_down">الأستلام</string>
-    <string name="show_network_traffic_all">الإرسال والأستلام</string>
-    <string name="network_traffic_state_title">إظهار نشاط الشبكة في شريط الحالة</string>
+    <string name="network_traffic_location">موقع النشاط الصافي</string>
+    <string name="traffic_disabled">معطل</string>
+    <string name="traffic_statusbar">شريط الحالة</string>
+    <string name="traffic_expanded_statusbar">شريط الحالة الموسع </string>
     <string name="network_traffic_autohide_threshold_title">حد الإخفاء الذاتي لنشاط حركة الشبكة (KB/s)</string>
+    <string name="network_traffic_type">حدد نوع نشاط الشبكة</string>
+    <string name="show_network_traffic_dynamic">ديناميكية (التحميل)</string>
+    <string name="show_network_traffic_up">الصادرة</string>
+    <string name="show_network_traffic_down">تحميل</string>
+    <string name="show_network_traffic_all">الإرسال والأستلام</string>
+    <string name="network_traffic_arrow">إظهار الأسهم</string>
+    <string name="network_traffic_arrow_summary">إظهار أسهم حركة الشبكة</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">اهتزاز أثناء مصادقة بصمة الأصبع</string>
     <string name="fprint_sucess_vib_summary">اهتزاز عند نجاح المصادقة على بصمة الإصبع</string>
@@ -216,12 +223,16 @@
     <string name="status_bar_battery_style_filled_circle">دائرة معبأة</string>
     <string name="status_bar_battery_style_text">كتابة</string>
     <string name="status_bar_battery_style_hidden">مخفي</string>
-    <string name="status_bar_battery_percentage_title">النسبة المئوية للبطارية</string>
-    <string name="status_bar_battery_percentage_default">مخفي</string>
-    <string name="status_bar_battery_percentage_text_inside">داخل الأيقونة</string>
-    <string name="status_bar_battery_percentage_text_next">بجانب الأيقونة</string>
-    <string name="qs_battery_percentage_title">إظهار النسبة المئوية للبطارية</string>
-    <string name="qs_battery_percentage_summary">إظهار نسبة البطارية في رأس الإعدادات السريعة بدلاً من تقدير البطارية</string>
+    <!-- Battery percentage -->
+    <string name="battery_percentage_title">النسبة المئوية للبطارية</string>
+    <string name="battery_percentage_default">إخفاء (افتراضي)</string>
+    <string name="battery_percentage_text_inside">داخل الأيقونة</string>
+    <string name="battery_percentage_text_next">بجانب الأيقونة</string>
+    <string name="battery_text_charging_title">نسبه شحن البطاريه عن الشحن</string>
+    <string name="battery_text_charging_summary">دائما اعرض نسبه شحن البطاريه عن الشحن</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">تقديرات البطارية</string>
+    <string name="battery_estimate_summary">عرض يقدر عمر البطارية المتبقية عندما تكون متاحة</string>
     <!-- QS rows and columns -->
     <string name="qs_columns_rows_category_title">الأعمدة والصفوف</string>
     <string name="qs_rows_columns_title">صفوف وأعمدة الإعدادات السريعة</string>
@@ -371,25 +382,6 @@
     <!-- Volume swap buttons -->
     <string name="swap_volume_buttons_title">اعادة توجيه</string>
     <string name="swap_volume_buttons_summary">تبديل ازرار الصوت عند استدارة الشاشة</string>
-    <!-- Heads up timeout -->
-    <string name="heads_up_time_out_title">إنتهاء المهلة</string>
-    <string name="heads_up_time_out_summary">ستظل تظهر النظرة الخاطفة للإشعارات لمدة لـ <xliff:g id="number">%d</xliff:g> ثواني</string>
-    <string name="heads_up_time_out_2sec">ثانيتان</string>
-    <string name="heads_up_time_out_4sec">ثانيتان</string>
-    <string name="heads_up_time_out_5sec">5 ثوانٍ</string>
-    <string name="heads_up_time_out_6sec">5 ثوانٍ</string>
-    <string name="heads_up_time_out_8sec">8 ثوانٍ</string>
-    <string name="heads_up_time_out_10sec">10 ثوانٍ</string>
-    <!-- Heads up snooze -->
-    <string name="heads_up_snooze_title">مؤقت الغفـوة</string>
-    <string name="heads_up_snooze_summary_one_minute">السحب لأعلى على التنبيهات الخاطفة ستُغفِ الرؤوس العلوية لذلك التطبيق لمدة ١ دقيقة</string>
-    <string name="heads_up_snooze_summary">السحب لأعلى على التنبيهات الخاطفة ستُغفِ الرؤوس العلوية لذلك التطبيق لمدة <xliff:g id="number">%d</xliff:g> دقيقة</string>
-    <string name="heads_up_snooze_disabled_summary">مؤقت الغفوة مُعطّل</string>
-    <string name="heads_up_snooze_1min">دقيقة</string>
-    <string name="heads_up_snooze_5min">٥ دقائق</string>
-    <string name="heads_up_snooze_10min">٥ دقائق</string>
-    <string name="heads_up_snooze_15min">15 دقيقة</string>
-    <string name="heads_up_snooze_20min">20 دقيقة</string>
     <string name="click_partial_screenshot_title">التقاط لقطة جزئية للشاشة</string>
     <string name="click_partial_screenshot_summary">النقر القصير لأسفل الصوت والقوة لأخذ لقطة جزئية للشاشة</string>
     <!-- Roaming indicator icon -->
@@ -420,7 +412,8 @@
     <string name="battery_bar_summary">عرض وتخصيص شريط البطارية بالقرب من شريط الحالة أو شريط التنقل</string>
     <string name="battery_bar_no_navbar">مكان شريط البطارية</string>
     <string name="battery_bar_location_hide">إخفاء</string>
-    <string name="battery_bar_location_statusbar">شريط الحالة</string>
+    <string name="battery_bar_statusbar_top">ايقونة شريط الحالة</string>
+    <string name="battery_bar_statusbar_bot">ايقونة شريط الحالة</string>
     <string name="battery_bar_color">لون شريط البطارية</string>
     <string name="battery_bar_charging_color">لون شريط البطارية اثناء الشحن</string>
     <string name="battery_bar_battery_low_color">لون شريط البطارية عندما تكون البطارية منخفضة</string>
@@ -453,4 +446,52 @@
     <!-- Notification headers -->
     <string name="notification_headers_title">إظهار الإشعارات</string>
     <string name="notification_headers_summary">عرض الاستخدام في مركز الإشعارات</string>
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">اخفاء ايقونه القفل</string>
+    <string name="hide_lockicon_summary">اخفاء ايقونه القفل في شاشه القفل</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_category">إضاءة حافة الشاشة</string>
+    <string name="pulse_ambient_light_title">إظهار في الإشعارات الجديدة</string>
+    <string name="pulse_ambient_light_summary">تضيء الحواف الجانبية للشاشة على نبض الإعلام</string>
+    <string name="ambient_notification_light_enabled_title">الشاشة تعمل دائمآ ف العناوين</string>
+    <string name="ambient_notification_light_enabled_summary">وميض الشاشة عند استلام اشعار جديد</string>
+    <string name="ambient_notification_light_color_title">لون مخصص</string>
+    <string name="ambient_notification_light_color_summary">اللون الافتراضي لنبض الضوء</string>
+    <string name="ambient_notification_light_hide_aod_title">إظهار نبض الضوء فقط</string>
+    <string name="ambient_notification_light_hide_aod_summary">إخفاء جميع عناصر العرض الأخرى من تشغيل دائماً</string>
+    <string name="ambient_notification_light_timeout_title">مهلة نبض الضوء</string>
+    <string name="entry_infinite">غير محدود</string>
+    <string name="entry_five_minute">٥ دقائق</string>
+    <string name="entry_ten_minute">٥ دقائق</string>
+    <string name="entry_thirty_minute">٣٠ دقيقة</string>
+    <string name="entry_sixty_minute">٦٠ دقيقة</string>
+    <string name="entry_fifteen_minute">١٥ دقيقة</string>
+    <string name="ambient_notification_light_color_mode_title">إعادة تعيين ألوان النبض</string>
+    <string name="ambient_notification_light_color_mode_automatic">لون الإشعار</string>
+    <string name="ambient_notification_light_color_mode_accent">استخدام لون النظام</string>
+    <string name="ambient_notification_light_color_mode_custom">لون مخصص</string>
+    <string name="pulse_ambient_light_duration_title">المدة</string>
+    <string name="pulse_ambient_light_duration_summary">تعيين مدة الرسوم المتحركة للضوء المحيط</string>
+    <string name="pulse_ambient_light_repeat_count_title">عدد مرات تكرار الحافة</string>
+    <string name="pulse_ambient_light_repeat_count_summary">تعيين الحد الأقصى لعدد التكرار. 0 بلا حدود</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">نص الفوتر</string>
+    <string name="qs_footer_text_summary">عرض النص في أسفل لوحة الإعدادات السريعة</string>
+    <string name="qs_footer_text_string_title">تخصيص نص تذييل الصفحة</string>
+    <string name="qs_footer_text_string_summary">تعيين إلى فارغ الافتراضي</string>
+    <!-- NavBar Visibility -->
+    <string name="navbar_visibility">تمكين شريط التنقل</string>
+    <!-- FOD icon picker -->
+    <string name="fod_icon_picker_title">مخصص الأيقونة</string>
+    <string name="fod_icon_picker_summary">اختر أيقونة بصمة الإصبع المفضلة لديك</string>
+    <string name="fod_icon_picker_footer">لإضافة الإيقونة الخاص بك، حدد الرمز الأيسر العلوي واستخدم تطبيق OnePlus 6T FP Customizer لتحديد الإيقونة الذي تريده.</string>
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">تأثير الضغط على الأيقونة</string>
+    <string name="fod_pressed_color_white">أبيض</string>
+    <string name="fod_pressed_color_cyan">سماوي</string>
+    <string name="fod_pressed_color_green">أخضر</string>
+    <string name="fod_pressed_color_yellow">أصفر</string>
+    <!-- Nightlight Fod -->
+    <string name="fod_night_light_title">تعطيل الضوء الليلي عند عرض FOD</string>
+    <string name="fod_night_light_summary">تعطيل الضوء الليلي على شاشة القفل إذا كان FOD نشط. تعطيل هذا الخيار قد يؤثر على دقة بصمة إصبعك مع تشغيل الضوء الليلي.</string>
 </resources>
