@@ -27,6 +27,12 @@
         android:fragment="com.android.settings.gestures.PowerMenuSettings"
         settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
 
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="advanced_reboot"
+        android:title="@string/powermenu_advanced_reboot_title"
+        android:summary="@string/powermenu_advanced_reboot_summary"
+        android:defaultValue="true" />
+
     <com.evolution.settings.preference.SecureSettingSwitchPreference
         android:key="power_menu_hide_on_secure"
         android:title="@string/power_menu_hide_on_secure_title"
