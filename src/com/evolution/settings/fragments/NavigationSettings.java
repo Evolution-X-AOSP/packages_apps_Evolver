@@ -60,9 +60,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     private static final String NAVBAR_VISIBILITY = "navbar_visibility";
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
-    private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 
-    private ListPreference mVolumeKeyCursorControl;
     private Preference mGestureSystemNavigation;
     private Preference mLayoutSettings;
     private SwitchPreference mNavbarVisibility;
@@ -77,16 +75,6 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_navigation);
         final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        // volume key cursor control
-        mVolumeKeyCursorControl = findPreference(VOLUME_KEY_CURSOR_CONTROL);
-        if (mVolumeKeyCursorControl != null) {
-            mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
-            int volumeRockerCursorControl = Settings.System.getInt(getContentResolver(),
-                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
-            mVolumeKeyCursorControl.setValue(Integer.toString(volumeRockerCursorControl));
-            mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
-        }
 
         mGestureSystemNavigation = findPreference(GESTURE_SYSTEM_NAVIGATION);
         mPixelNavAnimation = findPreference(PIXEL_NAV_ANIMATION);
@@ -126,17 +114,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mVolumeKeyCursorControl) {
-            String volumeKeyCursorControl = (String) newValue;
-            int volumeKeyCursorControlValue = Integer.parseInt(volumeKeyCursorControl);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, volumeKeyCursorControlValue);
-            int volumeKeyCursorControlIndex = mVolumeKeyCursorControl
-                    .findIndexOfValue(volumeKeyCursorControl);
-            mVolumeKeyCursorControl
-                    .setSummary(mVolumeKeyCursorControl.getEntries()[volumeKeyCursorControlIndex]);
-            return true;
-        } else if (preference.equals(mNavbarVisibility)) {
+        if (preference.equals(mNavbarVisibility)) {
             if (mIsNavSwitchingMode) {
                 return false;
             }

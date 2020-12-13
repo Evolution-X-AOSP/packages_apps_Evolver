@@ -68,35 +68,4 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="volume_keys"
-        android:title="@string/volume_keys_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="click_partial_screenshot"
-            android:title="@string/click_partial_screenshot_title"
-            android:summary="@string/click_partial_screenshot_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="volume_rocker_wake"
-            android:summary="@string/volume_rocker_wake_summary"
-            android:title="@string/volume_rocker_wake_title"
-            android:defaultValue="false" />
-
-        <ListPreference
-            android:dialogTitle="@string/volume_key_cursor_control_title"
-            android:entries="@array/volume_key_cursor_control_entries"
-            android:entryValues="@array/volume_key_cursor_control_values"
-            android:key="volume_key_cursor_control"
-            android:title="@string/volume_key_cursor_control_title" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="swap_volume_buttons"
-            android:title="@string/swap_volume_buttons_title"
-            android:summary="@string/swap_volume_buttons_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
