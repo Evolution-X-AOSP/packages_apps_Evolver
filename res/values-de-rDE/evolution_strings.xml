@@ -46,7 +46,7 @@
     <string name="buttons_summary">Optimiere die Aktionen der physischen Tasten</string>
     <string name="gestures_summary">Gestenbasierte Optionen/Aktionen</string>
     <string name="lockscreen_summary">Passe deinen Sperrbildschirm an</string>
-    <string name="misc_summary">Entwickleroptionen und weitere Systemeinstellungen</string>
+    <string name="misc_summary">Gaming-Modus und weitere Systemeinstellungen</string>
     <string name="navigation_summary">Anpassung der HW-Tasten und Navigationsleistenstile</string>
     <string name="notifications_summary">Benachrichtigungseinstellungen verwalten</string>
     <string name="powermenu_summary">Konfiguration der Abschalt-Optionen</string>
@@ -176,9 +176,6 @@
     <string name="profile_choose_app">App auswählen</string>
     <string name="dialog_delete_title">Löschen</string>
     <string name="dialog_delete_message">Ausgewähltes Element löschen?</string>
-    <!-- Fingerprint unlock -->
-    <string name="fp_unlock_keystore_title">Authentifizierung durch Fingerabdruck erzwingen</string>
-    <string name="fp_unlock_keystore_summary">Gerät nach Neustart oder Sperre mit Fingerabdruck entsperren</string>
     <!-- Network traffic -->
     <string name="traffic_title">Netzwerkgeschwindigkeitsanzeige</string>
     <string name="traffic_summary">Netzwerkgeschwindigkeitsanzeige aktivieren oder deaktivieren</string>
@@ -205,7 +202,7 @@
     <string name="show_volte_title">VoLTE Symbol</string>
     <string name="show_volte_summary">VoLTE Symbol anzeigen</string>
     <!-- Long press power for torch -->
-    <string name="torch_long_press_power_gesture_title">Taschenlampe über Ein-/Aus-Taste bei ausgeschaltetem Display</string>
+    <string name="torch_long_press_power_gesture_title">Taschenlampe über Ein-/Aus-Taste bei ausgeschaltetem Display anschalten</string>
     <string name="torch_long_press_power_gesture_desc">Langes Drücken der Power-Taste bei ausgeschaltetem Bildschirm schaltet die Taschenlampe ein</string>
     <string name="torch_long_press_power_timeout_title">Taschenlampe automatisch ausschalten</string>
     <string name="torch_long_press_power_timeout_never">Niemals</string>
@@ -382,6 +379,8 @@
     <!-- Volume swap buttons -->
     <string name="swap_volume_buttons_title">Lautstärketasten umkehren</string>
     <string name="swap_volume_buttons_summary">Lautstärketasten tauschen, wenn das Gerät gedreht wird</string>
+    <string name="click_partial_screenshot_title">Zum Erstellen eines partiellen Screenshots klicken</string>
+    <string name="click_partial_screenshot_summary">Lautstärketaste nach unten und Powertaste kurz drücken, um einen partiellen Screenshot zu erstellen</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming-Indikator</string>
     <string name="roaming_indicator_icon_summary">Zeigt im Roaming-Betrieb den Indikator im Mobilnetz-Symbol</string>
@@ -495,4 +494,72 @@
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Musik-App beim Anschließen eines Kopfhörers starten</string>
     <string name="headset_connect_player_summary">Beim Verbinden eines Kopfhörers die Standard-Musik-App starten</string>
+    <!-- Incall Home button behavior-->
+    <string name="allow_incall_home_title">Anruf mit Home-Taste annehmen</string>
+    <string name="allow_incall_home_summary">Eingehende Anrufe können mit der Home-Taste angenommen werden</string>
+    <!-- Buttons backlight timeout -->
+    <string name="backlight_timeout_title">Tastenhintergrundbeleuchtung ausschalten nach</string>
+    <string name="backlight_timeout_on">Nie ausschalten</string>
+    <string name="backlight_timeout_3s">3 Sekunden</string>
+    <string name="backlight_timeout_default">5 Sekunden (Standard)</string>
+    <string name="backlight_timeout_10s">10 Sekunden</string>
+    <string name="backlight_timeout_15s">15 Sekunden</string>
+    <string name="backlight_timeout_20s">20 Sekunden</string>
+    <string name="backlight_timeout_30s">30 Sekunden</string>
+    <!-- Enable keys backlight-->
+    <string name="button_brightness_title">Hintergrundbeleuchtung</string>
+    <string name="button_brightness_sw_title">Hintergrundbeleuchtung einschalten</string>
+    <string name="button_backlight_on_touch_only_title">Bei Tastenberührung</string>
+    <string name="button_backlight_on_touch_only_summary">Zeitlich begrenzte Hintergrundbeleuchtung nur nach Tastendruck aktivieren</string>
+    <!-- HW Keys customization -->
+    <string name="picker_activities">Aktivitäten</string>
+    <string name="select_custom_app_title">Benutzerdefinierte App auswählen</string>
+    <string name="select_custom_activity_title">Benutzerdefinierte Aktivität auswählen</string>
+    <string name="profile_applist_title">Anwendungen</string>
+    <string name="choose_action_title">Aktion auswählen</string>
+    <string name="action_entry_default_action">Standardeinstellungen</string>
+    <string name="action_entry_select_app">Anwendung auswählen</string>
+    <string name="action_entry_custom_action">Benutzerdefinierte Aktion auswählen</string>
+    <string name="hardware_keys_home_key_title">Home-Taste</string>
+    <string name="hardware_keys_menu_key_title">Menü-Taste</string>
+    <string name="hardware_keys_assist_key_title">Suchen-Taste</string>
+    <string name="hardware_keys_appswitch_key_title">Anwendungsverlauf-Taste</string>
+    <string name="hardware_keys_back_key_title">Zurück-Taste</string>
+    <string name="hardware_keys_double_tap_summary">Aktion für doppeltes Tippen festlegen</string>
+    <string name="hardware_keys_single_tap_summary">Aktion für einfaches Tippen festlegen</string>
+    <string name="hardware_keys_long_press_summary">Aktion für langes Drücken festlegen</string>
+    <string name="hardware_keys_single_tap_title">Aktion für einfaches Tippen</string>
+    <string name="hardware_keys_long_press_title">Aktion für langes Drücken</string>
+    <string name="hardware_keys_double_tap_title">Aktion bei doppeltem Tippen</string>
+    <string name="hardware_keys_disable_title">Tasten deaktivieren</string>
+    <!-- ANBI -->
+    <string name="anbi_title">Versehentliches Berühren</string>
+    <string name="anbi_summary">Verhindert die Interaktion mit den Navigationstasten, während der Bildschirm berührt wird</string>
+    <string name="radio_info_title">Radio-Info</string>
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">Gaming-Modus</string>
+    <string name="gaming_mode_summary">Gaming-Modus-Einstellungen anpassen</string>
+    <string name="gaming_mode_enable_title">Gaming-Modus aktivieren</string>
+    <string name="gaming_mode_enable_summary">Hauptschalter für den Gaming-Modus</string>
+    <string name="gaming_mode_app_picker_title">Automatisch für diese Apps einschalten</string>
+    <string name="add_gaming_mode_package_title">Apps zum Gaming-Modus hinzufügen</string>
+    <string name="add_gaming_mode_package_summary">Gaming-Modus wird automatisch aktiviert, wenn diese Apps geöffnet werden und wird deaktiviert, wenn sie geschlossen werden</string>
+    <string name="gaming_mode_headsup_title">Benachrichtigungen blockieren</string>
+    <string name="gaming_mode_headsup_summary">Alle Pop-Up-Benachrichtigungen, ausser Anrufe, blockieren</string>
+    <string name="gaming_mode_hardware_keys_title">Sperrtasten</string>
+    <string name="gaming_mode_hardware_keys_summary">Deaktivieren der Hardwaretasten, wenn der Gaming-Modus aktiviert ist</string>
+    <string name="gaming_mode_brightness_title">Automatische Helligkeit deaktivieren</string>
+    <string name="gaming_mode_brightness_summary">Bildschirmhelligkeit sperren, wenn der Gaming-Modus eingeschaltet ist</string>
+    <string name="gaming_mode_ringer_title">Klingelton im Gaming-Modus</string>
+    <string name="gaming_mode_ringer_off_title">Nicht ändern</string>
+    <string name="gaming_mode_ringer_vibrate_title">Vibrieren</string>
+    <string name="gaming_mode_ringer_dnd_title">Nicht Stören</string>
+    <string name="gaming_mode_ringer_silent_title">Lautlos</string>
+    <string name="gaming_mode_notifications_title">Gaming-Modus-Anzeige</string>
+    <string name="gaming_mode_notifications_off_title">Deaktiviert</string>
+    <string name="gaming_mode_notifications_notif_title">Benachrichtigung anzeigen</string>
+    <string name="gaming_mode_notifications_toast_title">Toast-Benachrichtigungen anzeigen</string>
+    <string name="gaming_mode_notifications_all_title">Toast-Benachrichtigungen und Benachrichtigungen anzeigen</string>
+    <string name="gaming_mode_dynamic_title">Dynamischer Modus</string>
+    <string name="gaming_mode_dynamic_summary">Versuchen, Spiele automatisch zu erkennen und hinzuzufügen</string>
 </resources>
