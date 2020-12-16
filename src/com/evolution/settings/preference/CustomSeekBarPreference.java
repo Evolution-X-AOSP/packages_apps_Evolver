@@ -49,7 +49,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     protected int mInterval = 1;
     protected int mCurrentValue;
     protected int mDefaultValue = -1;
-    protected int mMax = 100;
+    protected int mMax = 255;
     protected String mUnits = "";
     protected SeekBar mSeekBar;
     protected TextView mTitle;
@@ -81,7 +81,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
                 attrs, R.styleable.CustomSeekBarPreference);
 
         mAllowEdit = attrs.getAttributeBooleanValue(null, "allowEditText", false);
-        mMax = attrs.getAttributeIntValue(ANDROIDNS, "max", 100);
+        mMax = attrs.getAttributeIntValue(ANDROIDNS, "max", 255);
         mMin = attrs.getAttributeIntValue(ANDROIDNS, "min", 0);
         mDefaultValue = attrs.getAttributeIntValue(ANDROIDNS, "defaultValue", -1);
         if (mDefaultValue > mMax) {
