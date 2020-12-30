@@ -63,6 +63,13 @@
         android:key="quick_settings_category"
         android:title="@string/qs_themes_category_title">
 
+        <!-- Custom QS header image -->
+        <Preference
+            android:key="custom_header"
+            android:fragment="com.evolution.settings.fragments.QsCustomHeaderSettings"
+            android:title="@string/custom_header_title"
+            android:summary="@string/custom_header_summary" />
+
         <ListPreference
             android:key="qs_tile_style"
             android:title="@string/qs_tile_style_title"
