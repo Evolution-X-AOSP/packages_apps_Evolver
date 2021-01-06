@@ -38,12 +38,14 @@
     <string name="statusbar_network_icons_title">Durum çubuğu ağ simgeleri</string>
     <string name="swipe_gestures_title">Kaydırma hareketleri</string>
     <string name="system_settings_title">Sistem seçenekleri</string>
+    <string name="themes_title">Temalar</string>
     <string name="torch_gestures_title">El feneri hareketleri</string>
     <string name="volume_keys_title">Ses tuşları</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Dahili temel Android hareketleri</string>
     <string name="animation_summary">Animasyon şeklini değiştir</string>
     <string name="buttons_summary">Fiziksel tuşların işlevselliğini değiştirin</string>
+    <string name="dark_ui_mode_summary">Koyu tema seçeneklerine göz atın</string>
     <string name="gestures_summary">Harekete dayalı seçenekler ve eylemler</string>
     <string name="lockscreen_summary">Kilit ekranı öğelerinin kontrolünü ele alın</string>
     <string name="misc_summary">Oyun modu ve diğer sistem ayarları</string>
@@ -52,6 +54,7 @@
     <string name="powermenu_summary">Kapatma seçeneklerinizi yapılandırın</string>
     <string name="quicksettings_summary">Hızlı ayarlar paneli düzenini ve daha fazlasını değiştirin</string>
     <string name="statusbar_summary">Durum çubuğu öğelerinizi kişiselleştirin</string>
+    <string name="themes_summary">Tema seçeneklerimizle cihazınızı değiştirin</string>
     <string name="unsupported_gestures">Bu özelliği kullanmak için iki veya üç düğmeli gezinmeyi etkinleştirin</string>
     <!-- General strings -->
     <string name="ok">Tamam</string>
@@ -80,6 +83,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Ayarla</string>
     <string name="color_default">Varsayılan</string>
+    <string name="color_picker_simple_dialog_title">Led rengi seçin</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Varsayılan değer ayarlanmadı</string>
     <string name="seekbar_default_value_set">Değer <xliff:g id="number">%d</xliff:g>\'in varsayılanına ayarlandı</string>
@@ -275,9 +279,6 @@
     <string name="screen_off_animation_default">Varsayılan</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Ölçek</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Müzik görselleştirici</string>
-    <string name="lockscreen_visualizer_enable_summary">Müzik çalarken görselleştirici çubukları gösterir</string>
     <!-- Power menu on lockscreen -->
     <string name="power_menu_hide_on_secure_title">Kilit ekranında gizle</string>
     <string name="power_menu_hide_on_secure_summary">Güvenli kilit ekranındaki genel işlemler menüsünü gizler</string>
@@ -451,9 +452,9 @@
     <string name="pulse_ambient_light_title">Yeni bildirimde göster</string>
     <string name="pulse_ambient_light_summary">Yeni bildirimde ekranın kenarlarını aydınlat</string>
     <string name="ambient_notification_light_enabled_title">Her zaman açıkta göster</string>
+    <string name="aod_disabled">AOD devre dışı bırakıldı</string>
     <string name="ambient_notification_light_enabled_summary">Her zaman açık özelliğini kullanarak yeni bildirimlerde kenar aydınlatmalarını göster</string>
     <string name="ambient_notification_light_color_title">Özel renk</string>
-    <string name="ambient_notification_light_color_summary">Kenar aydınlatmaları için varsayılan renk</string>
     <string name="ambient_notification_light_hide_aod_title">Sadece kenar aydınlatmalarını göster</string>
     <string name="ambient_notification_light_hide_aod_summary">Diğer tüm görüntüleme öğelerini her zaman açıkta gizle</string>
     <string name="ambient_notification_light_timeout_title">Kenar aydınlatmaları için zaman aşımı</string>
@@ -562,4 +563,84 @@
     <string name="gaming_mode_notifications_all_title">Hızlı bildirim ve bildirim göster</string>
     <string name="gaming_mode_dynamic_title">Dinamik mod</string>
     <string name="gaming_mode_dynamic_summary">Oyun uygulamalarını otomatik olarak algılamayı ve eklemeyi dene</string>
+    <!-- Global Actions -->
+    <string name="powermenu_advanced_reboot_title">Gelişmiş yeniden başlatma</string>
+    <string name="powermenu_advanced_reboot_summary">Kurtarma ve önyükleyiciye erişim sağlar</string>
+    <!-- Doze Brightness Config -->
+    <string name="doze_brightness_category">Ortam ekranı parlaklığı yapılandırması</string>
+    <string name="doze_brightness_force_title">Parlaklık değerlerini zorla</string>
+    <string name="doze_brightness_force_summary">Ekran parlaklığı yerine özel parlaklık değerleri kullanın</string>
+    <string name="ambient_pulse_brightness_title">Ortam ekranı bildirim parlaklığı</string>
+    <string name="ambient_pulse_brightness_summary">Bildirimler gösterilirken kullanılacak parlaklığı ayarla</string>
+    <string name="ambient_doze_brightness_title">Ortam ekranı parlaklığı</string>
+    <string name="ambient_doze_brightness_summary">Ortam ekranı açıkken kullanılacak parlaklığı ayarla</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWiFi simgesi</string>
+    <string name="vowifi_icon_hide">VoWiFi simgesini gizle</string>
+    <string name="vowifi_icon_show">VoWiFi simgesini göster</string>
+    <string name="vowifi_icon_over_volte">VoWiFi simgesini göster ve VoLTE\'yi gizle</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Tema oluşturma</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Vurgu rengi</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Başlık / Gövde yazı tipi</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Simge şekli</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">Durum çubuğu simgesi stili</string>
+    <!-- Accent color picker -->
+    <string name="accent_color_title">Vurgu rengi seçici</string>
+    <!-- QS themes -->
+    <string name="qs_themes_category_title">Hızlı ayarlar temaları</string>
+    <string name="qs_bg_use_new_tint">Vurgu rengi kullanarak hızlı ayarlar karelerini renklendirin</string>
+    <string name="qs_bg_use_new_tint_summary">Hızlı ayarlar karelerinde vurgu rengi tonunu etkinleştirin</string>
+    <string name="qs_bg_use_disco">Hızlı ayarlar kareleri diskosu</string>
+    <string name="qs_bg_use_disco_summary">Hızlı ayarlar karelerinizi renkli hale getirin!</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">Hızlı ayarlar kare stili</string>
+    <string name="qstile_default">Varsayılan</string>
+    <string name="qstile_circle_trim">Çerçeveli daire</string>
+    <string name="qstile_dual_tone_circle">Çift tonlu daire</string>
+    <string name="qstile_squircle_trim">Çerçeveli yuvarlatılmış kare</string>
+    <string name="qstile_wavey">Dalgalı</string>
+    <string name="qstile_pokesign">Poke topu</string>
+    <string name="qstile_ninja">Ninja</string>
+    <string name="qstile_dottedcircle">Noktalı daire</string>
+    <string name="qstile_attemptmountain">Dağ</string>
+    <string name="qstile_squaremedo">Çift kare</string>
+    <string name="qstile_inkdrop">Mürekkep</string>
+    <string name="qstile_cookie">Kurabiye</string>
+    <string name="qstile_circleoutline">Çizgi daire</string>
+    <string name="qstile_cosmos">Shishu cosmos</string>
+    <string name="qstile_divided">Bölünmüş daire</string>
+    <string name="qstile_neonlike">Neon ışık</string>
+    <string name="qstile_oos">Oksijen</string>
+    <string name="qstile_triangles">Üçgen</string>
+    <!-- Custom header -->
+    <string name="custom_header_browse_summary">Statik modda kullanmak için herhangi bir görüntüye tıklayın</string>
+    <string name="custom_header_browse_summary_new">Kullanılabilir tüm başlık koleksiyonlarına göz atın</string>
+    <string name="custom_header_browse_title">Yüklü başlıklara gözat</string>
+    <string name="custom_header_pick_summary">Sabit mod için kullanılacak bir görüntü seçin</string>
+    <string name="custom_header_pick_title">Başlık görüntüsü seç</string>
+    <string name="custom_header_provider_title">Başlık sağlayıcı</string>
+    <string name="custom_header_summary">Görüntüyü bildirim paneli üstünde görüntüle</string>
+    <string name="custom_header_title">Özel başlık</string>
+    <string name="daylight_header_pack_title">Başlık görüntü koleksiyonu</string>
+    <string name="daylight_header_provider_title">Resim koleksiyonu</string>
+    <string name="file_header_provider_title">Özel görüntü</string>
+    <string name="file_header_select_summary">Özel görüntü seçin</string>
+    <string name="file_header_select_title">Görüntü seç</string>
+    <string name="header_provider_disabled">Devre dışı</string>
+    <string name="static_header_provider_title">Sabit görüntü</string>
+    <string name="status_bar_custom_header_shadow_summary">Parlak görüntülerde daha iyi görünürlük için</string>
+    <string name="status_bar_custom_header_shadow_title">Başlık görüntü gölgesi</string>
+    <string name="unit_percent">\u0025</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Ses paneli stili</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Kompakt</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Kareler</string>
+    <!-- Volume Panel Plugin Values -->
 </resources>
