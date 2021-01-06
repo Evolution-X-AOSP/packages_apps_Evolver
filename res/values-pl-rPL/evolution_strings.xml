@@ -38,12 +38,14 @@
     <string name="statusbar_network_icons_title">Ikony sieci na pasku stanu</string>
     <string name="swipe_gestures_title">Gesty przeciągania</string>
     <string name="system_settings_title">Opcje systemowe</string>
+    <string name="themes_title">Motywy</string>
     <string name="torch_gestures_title">Gesty latarki</string>
     <string name="volume_keys_title">Klawisze głośności</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Seryjne gesty wbudowane w system Android</string>
     <string name="animation_summary">Zmień styl animacji</string>
     <string name="buttons_summary">Konfiguruj akcje przycisków sprzętowych</string>
+    <string name="dark_ui_mode_summary">Przeglądaj opcje ciemnego motywu</string>
     <string name="gestures_summary">Opcje / działania oparte na gestach</string>
     <string name="lockscreen_summary">Przejmij kontrolę nad elementami ekranu blokady</string>
     <string name="misc_summary">Tryb gry i inne ustawienia systemowe</string>
@@ -52,6 +54,7 @@
     <string name="powermenu_summary">Skonfiguruj opcje wyłączania</string>
     <string name="quicksettings_summary">Modyfikuj układ panelu szybkich ustawień i więcej</string>
     <string name="statusbar_summary">Spersonalizuj elementy paska stanu</string>
+    <string name="themes_summary">Odpicuj swoje urządzenie za pomocą niesamowitych opcji motywów</string>
     <string name="unsupported_gestures">Włącz dwu- lub trzy-przyciskową nawigację, by użyć tej opcji</string>
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -80,6 +83,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Ustaw</string>
     <string name="color_default">Domyślny</string>
+    <string name="color_picker_simple_dialog_title">Wybierz kolor Led</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Brak wartości domyślnej</string>
     <string name="seekbar_default_value_set">Ustawiono wartość domyślną <xliff:g id="number">%d</xliff:g></string>
@@ -275,9 +279,6 @@
     <string name="screen_off_animation_default">Domyślna</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Skala</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Wizualizacja muzyki</string>
-    <string name="lockscreen_visualizer_enable_summary">Pokaż paski wizualizacji podczas odtwarzania muzyki</string>
     <!-- Power menu on lockscreen -->
     <string name="power_menu_hide_on_secure_title">Ukryj na ekranie blokady</string>
     <string name="power_menu_hide_on_secure_summary">Ukrywa globalne menu akcji na ekranie blokady</string>
@@ -451,9 +452,9 @@
     <string name="pulse_ambient_light_title">Pokaż przy nowym powiadomieniu</string>
     <string name="pulse_ambient_light_summary">Pokaż jasny puls przy nowym powiadomieniu</string>
     <string name="ambient_notification_light_enabled_title">Pokaż przy AOD</string>
+    <string name="aod_disabled">AOD jest wyłączone</string>
     <string name="ambient_notification_light_enabled_summary">Pokaż jasny puls przy nowym powiadomieniu używając ekranu AOD</string>
     <string name="ambient_notification_light_color_title">Niestandardowy kolor</string>
-    <string name="ambient_notification_light_color_summary">Domyślny kolor jasnego pulsu</string>
     <string name="ambient_notification_light_hide_aod_title">Pokazuj tylko jasny puls powiadomień</string>
     <string name="ambient_notification_light_hide_aod_summary">Ukryj wszystkie inne elementy wyświetlacza z AOD</string>
     <string name="ambient_notification_light_timeout_title">Limit czasu dla jasnego pulsu powiadomień</string>
@@ -573,4 +574,73 @@
     <string name="ambient_pulse_brightness_summary">Ustaw jasność do użycia, gdy powiadomienia są wyświetlane</string>
     <string name="ambient_doze_brightness_title">Poziom jasności ekranu ambient</string>
     <string name="ambient_doze_brightness_summary">Ustaw jasność do użycia podczas wyświetlania Ambient Display</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">Ikona VoWiFi</string>
+    <string name="vowifi_icon_hide">Ukryj ikonę VoWiFi</string>
+    <string name="vowifi_icon_show">Wyświetl ikonę VoLTE</string>
+    <string name="vowifi_icon_over_volte">Wyświetl VoWiFi i ukryj VoLTE</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Motywy</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Kolor akcentów</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Czcionka nagłówka / paragrafów</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Kształt ikon</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">Ikony paska stanu</string>
+    <!-- Accent color picker -->
+    <string name="accent_color_title">Wybór kolorów akcentu</string>
+    <!-- QS themes -->
+    <string name="qs_themes_category_title">Motywy szybkich ustawień</string>
+    <string name="qs_bg_use_new_tint">Kolory szybkich ustawień za pomocą koloru akcentu</string>
+    <string name="qs_bg_use_new_tint_summary">Włącz kolor akcentu na kafelkach szybkich ustawień</string>
+    <string name="qs_bg_use_disco">Dyskoteka kafelków szybkich ustawień</string>
+    <string name="qs_bg_use_disco_summary">Spraw, by twoje kafelki szybkich ustawień były kolorowe!</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">Styl kafelek szybkich ustawień</string>
+    <string name="qstile_default">Domyślny</string>
+    <string name="qstile_circle_trim">Okrąg z podziałką</string>
+    <string name="qstile_dual_tone_circle">Dwutonowy Okrąg</string>
+    <string name="qstile_squircle_trim">Zaokrąglony kwadrat z podziałką</string>
+    <string name="qstile_wavey">Fala</string>
+    <string name="qstile_pokesign">Znak Pokemon</string>
+    <string name="qstile_ninja">Ninja</string>
+    <string name="qstile_dottedcircle">Przerywany okrąg</string>
+    <string name="qstile_attemptmountain">Próba góry</string>
+    <string name="qstile_squaremedo">Squaremedo</string>
+    <string name="qstile_inkdrop">Tusz</string>
+    <string name="qstile_cookie">Ciastko</string>
+    <string name="qstile_circleoutline">Obrys okręgu</string>
+    <string name="qstile_cosmos">Kosmos Shishu</string>
+    <string name="qstile_divided">Podzielone kółko</string>
+    <string name="qstile_neonlike">Neonowy znak</string>
+    <string name="qstile_oos">Tlen</string>
+    <string name="qstile_triangles">Trójkąt</string>
+    <!-- Custom header -->
+    <string name="custom_header_browse_summary">Kliknij na jakikolwiek obraz by użyć trybu statycznego</string>
+    <string name="custom_header_browse_summary_new">Przeglądaj wszystkie dostępne kolekcje nagłówków</string>
+    <string name="custom_header_browse_title">Przegladaj zainstalowane nagłówki</string>
+    <string name="custom_header_pick_summary">Wybierz obraz do użycia dla trybu statycznego</string>
+    <string name="custom_header_pick_title">Wybierz obraz nagłówka</string>
+    <string name="custom_header_provider_title">Dostawca nagłówka</string>
+    <string name="custom_header_summary">Wyświetlaj obraz u góry panelu powiadomień</string>
+    <string name="custom_header_title">Niestandardowy nagłówek</string>
+    <string name="daylight_header_pack_title">Kolekcja obrazów nagłówka</string>
+    <string name="daylight_header_provider_title">Kolekcja obrazów</string>
+    <string name="file_header_provider_title">Własny obraz</string>
+    <string name="file_header_select_summary">Wybierz niestandardowy obraz</string>
+    <string name="file_header_select_title">Wybierz obraz</string>
+    <string name="header_provider_disabled">Wyłączony</string>
+    <string name="static_header_provider_title">Obraz statyczny</string>
+    <string name="status_bar_custom_header_shadow_summary">Dla lepszej widoczności na jasnych obrazkach</string>
+    <string name="status_bar_custom_header_shadow_title">Cień obrazu nagłówka</string>
+    <string name="unit_percent">\u0025</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Styl panelu głośności</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Kompaktowy</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Kafelkowy</string>
+    <!-- Volume Panel Plugin Values -->
 </resources>
