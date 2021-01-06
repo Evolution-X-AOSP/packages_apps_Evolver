@@ -38,12 +38,14 @@
     <string name="statusbar_network_icons_title">Значки мережі в рядку стану</string>
     <string name="swipe_gestures_title">Свайп-жести</string>
     <string name="system_settings_title">Системні параметри</string>
+    <string name="themes_title">Теми</string>
     <string name="torch_gestures_title">Жести ліхтарика</string>
     <string name="volume_keys_title">Клавіші регулювання гучності</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Стокові жести включені в Android</string>
     <string name="animation_summary">Зміна стилю анімацій</string>
     <string name="buttons_summary">Налаштування дій при натисканні фізичних клавіш</string>
+    <string name="dark_ui_mode_summary">Переглянути параметри темної теми</string>
     <string name="gestures_summary">Параметри/дії на основі жестів</string>
     <string name="lockscreen_summary">Контроль опцій екрану блокування</string>
     <string name="misc_summary">Ігровий режим та інші налаштування системи</string>
@@ -53,6 +55,7 @@
     <string name="powermenu_summary">Налаштуйте параметри вимкнення</string>
     <string name="quicksettings_summary">Редагування макету панелі швидких налаштувань та іншого</string>
     <string name="statusbar_summary">Персоналізація опцій рядка стану</string>
+    <string name="themes_summary">Налаштуйте свій пристрій красивими варіантами тем</string>
     <string name="unsupported_gestures">Вмикає навігацію по двом кнопкам</string>
     <!-- General strings -->
     <string name="ok">Добре</string>
@@ -81,6 +84,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Встановити</string>
     <string name="color_default">За замовчуванням</string>
+    <string name="color_picker_simple_dialog_title">Вибрати колір LED</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Немає значень за умовчанням</string>
     <string name="seekbar_default_value_set">Значення встановлено за замовчуванням <xliff:g id="number">%d</xliff:g></string>
@@ -276,9 +280,6 @@
     <string name="screen_off_animation_default">За замовчуванням</string>
     <string name="screen_off_animation_crt">Ефект старого телевізора</string>
     <string name="screen_off_animation_scale">Масштабування</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Візуалізатор музики</string>
-    <string name="lockscreen_visualizer_enable_summary">Показувати візуалізацію під час програвання музики</string>
     <!-- Power menu on lockscreen -->
     <string name="power_menu_hide_on_secure_title">Не показувати на екрані блокування</string>
     <string name="power_menu_hide_on_secure_summary">Приховує меню глобальних дій на безпечному екрані блокування</string>
@@ -452,9 +453,9 @@
     <string name="pulse_ambient_light_title">Показати на новій частині повідомлення</string>
     <string name="pulse_ambient_light_summary">Підсвічувати краї екрана при новому сповіщенню</string>
     <string name="ambient_notification_light_enabled_title">Відображати бокові ефекти імпульсу сповіщень в Aod</string>
+    <string name="aod_disabled">AOD вимкнено</string>
     <string name="ambient_notification_light_enabled_summary">Відображати бокові ефекти при новому сповіщенні на активному дисплеї</string>
     <string name="ambient_notification_light_color_title">Користувацький колір</string>
-    <string name="ambient_notification_light_color_summary">Колір за замовчуванням для світлового імпульсу</string>
     <string name="ambient_notification_light_hide_aod_title">Показувати лише світову пульсацію</string>
     <string name="ambient_notification_light_hide_aod_summary">Приховувати всі інші елементи відображення для активного дисплея</string>
     <string name="ambient_notification_light_timeout_title">Час для вимкнення світлової пульсації</string>
@@ -574,4 +575,73 @@
     <string name="ambient_pulse_brightness_summary">Встановити яскравість яка буде використовуватися при появі сповіщень</string>
     <string name="ambient_doze_brightness_title">Рівень яскравості Активного дисплею</string>
     <string name="ambient_doze_brightness_summary">Встановити яскравість екрану Активного дисплею</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">Значок VoWiFi</string>
+    <string name="vowifi_icon_hide">Приховати значок VoWiFi</string>
+    <string name="vowifi_icon_show">Відображати значок VoWiFi</string>
+    <string name="vowifi_icon_over_volte">Відображати значок VoWiFi (приховує значок VoLTE)</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Теми</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Колір акценту</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Заголовки / Шрифт</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Форма значків</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">Стиль іконок рядка стану</string>
+    <!-- Accent color picker -->
+    <string name="accent_color_title">Вибір кольору акценту</string>
+    <!-- QS themes -->
+    <string name="qs_themes_category_title">Теми Швидких налаштувань</string>
+    <string name="qs_bg_use_new_tint">Тонувати плитки швидких налаштувань кольором акцента</string>
+    <string name="qs_bg_use_new_tint_summary">Включити відтінок кольора акцента на плитках швидких налаштувань</string>
+    <string name="qs_bg_use_disco">Значки швидких налаштувань в стилі диско</string>
+    <string name="qs_bg_use_disco_summary">Зробіть свої плитки швидких налаштувань!</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">Стиль плиток Швидких налаштувань</string>
+    <string name="qstile_default">За замовчуванням</string>
+    <string name="qstile_circle_trim">Штриховане коло</string>
+    <string name="qstile_dual_tone_circle">Двотонове коло</string>
+    <string name="qstile_squircle_trim">Штрихований еліпс</string>
+    <string name="qstile_wavey">Хвиляста</string>
+    <string name="qstile_pokesign">Pokesign</string>
+    <string name="qstile_ninja">Ніндзя</string>
+    <string name="qstile_dottedcircle">Пунктирне коло</string>
+    <string name="qstile_attemptmountain">З профілем гори</string>
+    <string name="qstile_squaremedo">Квадрат в ромбі</string>
+    <string name="qstile_inkdrop">Чорнило</string>
+    <string name="qstile_cookie">Печиво</string>
+    <string name="qstile_circleoutline">Обрис</string>
+    <string name="qstile_cosmos">Космос Shishu</string>
+    <string name="qstile_divided">Поділене коло</string>
+    <string name="qstile_neonlike">Неонове світло</string>
+    <string name="qstile_oos">Кисень</string>
+    <string name="qstile_triangles">Трикутник</string>
+    <!-- Custom header -->
+    <string name="custom_header_browse_summary">Виберіть зображення для статичного режиму</string>
+    <string name="custom_header_browse_summary_new">Перегляд всіх доступних колекцій заголовків</string>
+    <string name="custom_header_browse_title">Перегляд встановлених заголовків</string>
+    <string name="custom_header_pick_summary">Виберіть зображення для статичного режиму</string>
+    <string name="custom_header_pick_title">Виберіть зображення заголовку</string>
+    <string name="custom_header_provider_title">Провайдер заголовка</string>
+    <string name="custom_header_summary">Відображати зображення вгорі панелі сповіщень</string>
+    <string name="custom_header_title">Користувацький заголовок</string>
+    <string name="daylight_header_pack_title">Колекція зображень заголовка</string>
+    <string name="daylight_header_provider_title">Колекція зображень</string>
+    <string name="file_header_provider_title">Користувацьке зображення</string>
+    <string name="file_header_select_summary">Вибрати користувацьке зображення</string>
+    <string name="file_header_select_title">Вибрати зображення</string>
+    <string name="header_provider_disabled">Вимкнено</string>
+    <string name="static_header_provider_title">Статичне зображення</string>
+    <string name="status_bar_custom_header_shadow_summary">Для кращої видимості на яскравих зображеннях</string>
+    <string name="status_bar_custom_header_shadow_title">Тінь зображення в заголовку</string>
+    <string name="unit_percent">\u0025</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Стиль панелі гучності</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Компактний</string>
+    <string name="volume_panel_oreo">Орео</string>
+    <string name="volume_panel_tiled">Плитки</string>
+    <!-- Volume Panel Plugin Values -->
 </resources>
