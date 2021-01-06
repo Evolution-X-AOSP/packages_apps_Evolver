@@ -38,12 +38,14 @@
     <string name="statusbar_network_icons_title">상태 표시줄 네트워크 아이콘</string>
     <string name="swipe_gestures_title">스와이프 제스처</string>
     <string name="system_settings_title">시스템 설정</string>
+    <string name="themes_title">테마</string>
     <string name="torch_gestures_title">손전등 제스처</string>
     <string name="volume_keys_title">볼륨 버튼</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Android 기본 제스처</string>
     <string name="animation_summary">애니메이션 스타일을 변경합니다.</string>
     <string name="buttons_summary">물리 버튼의 역할을 설정합니다.</string>
+    <string name="dark_ui_mode_summary">어두운 테마 설정 찾아보기</string>
     <string name="gestures_summary">제스처의 옵션 및 역할을 설정합니다.</string>
     <string name="lockscreen_summary">잠금 화면의 항목을 설정합니다.</string>
     <string name="misc_summary">개발자 옵션 및 기타 시스템 설정</string>
@@ -52,6 +54,7 @@
     <string name="powermenu_summary">전원 메뉴를 설정합니다.</string>
     <string name="quicksettings_summary">빠른 설정 패널의 구성을 설정합니다.</string>
     <string name="statusbar_summary">상태 표시줄 항목을 설정합니다.</string>
+    <string name="themes_summary">멋진 테마 옵션으로 기기 꾸미기</string>
     <string name="unsupported_gestures">이 기능을 사용하려면 두 버튼 탐색이나 세 버튼 탐색을 켜세요.</string>
     <!-- General strings -->
     <string name="ok">확인</string>
@@ -80,6 +83,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">설정</string>
     <string name="color_default">기본설정</string>
+    <string name="color_picker_simple_dialog_title">LED 색 선택</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">기본값이 설정되지 않음</string>
     <string name="seekbar_default_value_set">기본 값으로 설정합니다. 값: <xliff:g id="number">%d</xliff:g></string>
@@ -275,9 +279,6 @@
     <string name="screen_off_animation_default">기본</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">스케일</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">음악 시각화</string>
-    <string name="lockscreen_visualizer_enable_summary">음악을 재생하는 동안 시각화 막대를 표시합니다.</string>
     <!-- Power menu on lockscreen -->
     <string name="power_menu_hide_on_secure_title">잠금 화면에서 차단</string>
     <string name="power_menu_hide_on_secure_summary">보안 잠금 화면에서 전원 메뉴를 표시하지 않습니다.</string>
@@ -451,9 +452,9 @@
     <string name="pulse_ambient_light_title">알림 수신 시 표시</string>
     <string name="pulse_ambient_light_summary">새로운 알림을 받으면 조명으로 알립니다</string>
     <string name="ambient_notification_light_enabled_title">앰비언트 디스플레이에 표시</string>
+    <string name="aod_disabled">AOD 비활성화됨</string>
     <string name="ambient_notification_light_enabled_summary">앰비언트 디스플레이에 조명을 표시합니다</string>
     <string name="ambient_notification_light_color_title">사용자 지정 색상</string>
-    <string name="ambient_notification_light_color_summary">조명 기본 색상</string>
     <string name="ambient_notification_light_hide_aod_title">조명만 표시</string>
     <string name="ambient_notification_light_hide_aod_summary">앰비언트 디스플레이의 다른 모든 요소를 숨깁니다</string>
     <string name="ambient_notification_light_timeout_title">조명 제한 시간</string>
@@ -573,4 +574,73 @@
     <string name="ambient_pulse_brightness_summary">알림이 표시 될 때 사용할 밝기를 설정합니다</string>
     <string name="ambient_doze_brightness_title">앰비언트 디스플레이 밝기</string>
     <string name="ambient_doze_brightness_summary">앰비언트 디스플레이에서 사용할 밝기를 설정합니다</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWiFi 아이콘</string>
+    <string name="vowifi_icon_hide">VoWiFi 아이콘 숨기기</string>
+    <string name="vowifi_icon_show">VoWiFi 아이콘 표시</string>
+    <string name="vowifi_icon_over_volte">VoWiFi 표시하고 VoLTE 숨기기</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">테마</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">강조 색상</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">제목 / 본문 글꼴</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">아이콘 모양</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">상태 표시줄 아이콘 스타일</string>
+    <!-- Accent color picker -->
+    <string name="accent_color_title">강조 색상 선택기</string>
+    <!-- QS themes -->
+    <string name="qs_themes_category_title">빠른 설정 테마</string>
+    <string name="qs_bg_use_new_tint">빠른 설정 타일에 강조 색상 입히기</string>
+    <string name="qs_bg_use_new_tint_summary">강조 색상으로 빠른 설정 타일을 칠하게 합니다</string>
+    <string name="qs_bg_use_disco">빠른 설정 타일 디스코</string>
+    <string name="qs_bg_use_disco_summary">빠른 설정 타일을 화려하게 만드세요!</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">빠른 설정 스타일</string>
+    <string name="qstile_default">기본값</string>
+    <string name="qstile_circle_trim">다듬은 원</string>
+    <string name="qstile_dual_tone_circle">투톤 원</string>
+    <string name="qstile_squircle_trim">다듬은 둥근 네모</string>
+    <string name="qstile_wavey">웨이브</string>
+    <string name="qstile_pokesign">Pokesign</string>
+    <string name="qstile_ninja">닌자</string>
+    <string name="qstile_dottedcircle">점선 원</string>
+    <string name="qstile_attemptmountain">산의 시도</string>
+    <string name="qstile_squaremedo">Squaremedo</string>
+    <string name="qstile_inkdrop">잉크</string>
+    <string name="qstile_cookie">쿠키</string>
+    <string name="qstile_circleoutline">원 테두리</string>
+    <string name="qstile_cosmos">코스모스</string>
+    <string name="qstile_divided">반원</string>
+    <string name="qstile_neonlike">네온 조명</string>
+    <string name="qstile_oos">Oxygen</string>
+    <string name="qstile_triangles">삼각형</string>
+    <!-- Custom header -->
+    <string name="custom_header_browse_summary">고정 모드에 사용할 이미지를 선택하세요</string>
+    <string name="custom_header_browse_summary_new">사용 가능한 헤더 모음을 찾아보세요</string>
+    <string name="custom_header_browse_title">설치된 헤더 찾아보기</string>
+    <string name="custom_header_pick_summary">고정 모드에 사용할 이미지를 선택하세요</string>
+    <string name="custom_header_pick_title">헤더 이미지 선택</string>
+    <string name="custom_header_provider_title">헤더 제공자</string>
+    <string name="custom_header_summary">알림 패널 상단에 이미지를 표시합니다</string>
+    <string name="custom_header_title">사용자 지정 헤더</string>
+    <string name="daylight_header_pack_title">헤더 이미지 모음</string>
+    <string name="daylight_header_provider_title">이미지 모음</string>
+    <string name="file_header_provider_title">사용자 지정 이미지</string>
+    <string name="file_header_select_summary">사용자 지정 이미지를 선택하세요</string>
+    <string name="file_header_select_title">이미지 선택</string>
+    <string name="header_provider_disabled">사용 안 함</string>
+    <string name="static_header_provider_title">고정 이미지</string>
+    <string name="status_bar_custom_header_shadow_summary">밝은 이미지에서의 시인성을 높입니다</string>
+    <string name="status_bar_custom_header_shadow_title">헤더 이미지 그림자</string>
+    <string name="unit_percent">\u0025</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">볼륨 패널 스타일</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">간단히</string>
+    <string name="volume_panel_oreo">안드로이드 오레오</string>
+    <string name="volume_panel_tiled">타일</string>
+    <!-- Volume Panel Plugin Values -->
 </resources>
