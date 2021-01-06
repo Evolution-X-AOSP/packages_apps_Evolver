@@ -95,24 +95,36 @@ public class BatteryBarSettings extends SettingsPreferenceFragment
         mBatteryBarStyle.setOnPreferenceChangeListener(this);
 
         mBatteryBarColor = (ColorPickerPreference) prefSet.findPreference(PREF_BATT_BAR_COLOR);
-        intColor = Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_COLOR, Color.WHITE);
-        hexColor = String.format("#%08x", (0xffffff & intColor));
+        intColor = Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_COLOR, 0xFFFFFFFF);
+        hexColor = String.format("#%08x", (0xFFFFFFFF & intColor));
         mBatteryBarColor.setNewPreviewColor(intColor);
-        mBatteryBarColor.setSummary(hexColor);
+        if (hexColor.equals("#ffffffff")) {
+            mBatteryBarColor.setSummary(R.string.color_default);
+        } else {
+            mBatteryBarColor.setSummary(hexColor);
+        }
         mBatteryBarColor.setOnPreferenceChangeListener(this);
 
         mBatteryBarChargingColor = (ColorPickerPreference) prefSet.findPreference(PREF_BATT_BAR_CHARGING_COLOR);
-        intColor = Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_CHARGING_COLOR, Color.WHITE);
-        hexColor = String.format("#%08x", (0xffffff & intColor));
+        intColor = Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_CHARGING_COLOR, 0xFFFFFFFF);
+        hexColor = String.format("#%08x", (0xFFFFFFFF & intColor));
         mBatteryBarChargingColor.setNewPreviewColor(intColor);
-        mBatteryBarChargingColor.setSummary(hexColor);
+        if (hexColor.equals("#ffffffff")) {
+            mBatteryBarChargingColor.setSummary(R.string.color_default);
+        } else {
+            mBatteryBarChargingColor.setSummary(hexColor);
+        }
         mBatteryBarChargingColor.setOnPreferenceChangeListener(this);
 
         mBatteryBarBatteryLowColor = (ColorPickerPreference) prefSet.findPreference(PREF_BATT_BAR_BATTERY_LOW_COLOR);
-        intColor = Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_BATTERY_LOW_COLOR, Color.WHITE);
-        hexColor = String.format("#%08x", (0xffffff & intColor));
+        intColor = Settings.System.getInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_BATTERY_LOW_COLOR, 0xFFFFFFFF);
+        hexColor = String.format("#%08x", (0xFFFFFFFF & intColor));
         mBatteryBarBatteryLowColor.setNewPreviewColor(intColor);
-        mBatteryBarBatteryLowColor.setSummary(hexColor);
+        if (hexColor.equals("#ffffffff")) {
+            mBatteryBarBatteryLowColor.setSummary(R.string.color_default);
+        } else {
+            mBatteryBarBatteryLowColor.setSummary(hexColor);
+        }
         mBatteryBarBatteryLowColor.setOnPreferenceChangeListener(this);
 
         mBatteryBarChargingAnimation = (SwitchPreference) prefSet.findPreference(PREF_BATT_ANIMATE);
@@ -138,7 +150,11 @@ public class BatteryBarSettings extends SettingsPreferenceFragment
         if (preference == mBatteryBarColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
                 .parseInt(String.valueOf(newValue)));
-            preference.setSummary(hex);
+            if (hex.equals("#ffffffff")) {
+                preference.setSummary(R.string.color_default);
+            } else {
+                preference.setSummary(hex);
+            }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,
                 Settings.System.STATUSBAR_BATTERY_BAR_COLOR, intHex);
@@ -146,7 +162,11 @@ public class BatteryBarSettings extends SettingsPreferenceFragment
         } else if (preference == mBatteryBarChargingColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
                 .parseInt(String.valueOf(newValue)));
-            preference.setSummary(hex);
+            if (hex.equals("#ffffffff")) {
+                preference.setSummary(R.string.color_default);
+            } else {
+                preference.setSummary(hex);
+            }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,
                 Settings.System.STATUSBAR_BATTERY_BAR_CHARGING_COLOR, intHex);
@@ -154,7 +174,11 @@ public class BatteryBarSettings extends SettingsPreferenceFragment
         } else if (preference == mBatteryBarBatteryLowColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
                 .parseInt(String.valueOf(newValue)));
-            preference.setSummary(hex);
+            if (hex.equals("#ffffffff")) {
+                preference.setSummary(R.string.color_default);
+            } else {
+                preference.setSummary(hex);
+            }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,
                 Settings.System.STATUSBAR_BATTERY_BAR_BATTERY_LOW_COLOR, intHex);

@@ -29,12 +29,14 @@
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="statusbar_battery_bar_color"
         android:title="@string/battery_bar_color"
-        android:defaultValue="0xffffff" />
+        settings:showReset="true"
+        android:defaultValue="0xFFFFFFFF" />
 
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="statusbar_battery_bar_battery_low_color"
         android:title="@string/battery_bar_battery_low_color"
-        android:defaultValue="0xffffff" />
+        settings:showReset="true"
+        android:defaultValue="0xFFFFFFFF" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="statusbar_battery_bar_enable_charging_color"
@@ -44,7 +46,8 @@
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="statusbar_battery_bar_charging_color"
         android:title="@string/battery_bar_charging_color"
-        android:defaultValue="0xffffff"
+        settings:showReset="true"
+        android:defaultValue="0xFFFFFFFF"
         android:dependency="statusbar_battery_bar_enable_charging_color" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
