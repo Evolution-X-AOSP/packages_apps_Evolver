@@ -38,12 +38,14 @@
     <string name="statusbar_network_icons_title">Icone di rete della barra di stato</string>
     <string name="swipe_gestures_title">Gesti a scorrimento</string>
     <string name="system_settings_title">Opzioni di sistema</string>
+    <string name="themes_title">Temi</string>
     <string name="torch_gestures_title">Gesture per la torcia</string>
     <string name="volume_keys_title">Pulsanti volume</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Gesture stock incluse con Android</string>
     <string name="animation_summary">Modifica l\'animazione (per nome)</string>
     <string name="buttons_summary">Modifica le azioni dei tasti fisici</string>
+    <string name="dark_ui_mode_summary">Sfoglia le opzioni del tema scuro</string>
     <string name="gestures_summary">Opzioni/azioni basate su gesti</string>
     <string name="lockscreen_summary">Prendi il controllo degli elementi nella schermata di blocco</string>
     <string name="misc_summary">Opzioni per sviluppatori e altre impostazioni di sistema</string>
@@ -52,6 +54,7 @@
     <string name="powermenu_summary">Configura le opzioni di spegnimento</string>
     <string name="quicksettings_summary">Modifica il pannello delle impostazioni rapide e altro</string>
     <string name="statusbar_summary">Personalizza gli elementi della barra di stato</string>
+    <string name="themes_summary">Rendi il tuo dispositivo meraviglioso con le nostre opzioni del tema</string>
     <string name="unsupported_gestures">Abilitare gesti a due o tre pulsanti per utilizzare questa funzionalità</string>
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -80,6 +83,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Imposta</string>
     <string name="color_default">Predefinito</string>
+    <string name="color_picker_simple_dialog_title">Seleziona un colore led</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Nessun valore predefinito</string>
     <string name="seekbar_default_value_set">Valore predefinito impostato <xliff:g id="number">%d</xliff:g></string>
@@ -275,9 +279,6 @@
     <string name="screen_off_animation_default">Predefinita</string>
     <string name="screen_off_animation_crt">Tubo catodico</string>
     <string name="screen_off_animation_scale">Scala</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Visualizzazione musicale</string>
-    <string name="lockscreen_visualizer_enable_summary">Mostra le barre delle frequenze durante la riproduzione di musica</string>
     <!-- Power menu on lockscreen -->
     <string name="power_menu_hide_on_secure_title">Nascondi nella schermata di blocco</string>
     <string name="power_menu_hide_on_secure_summary">Nasconde il menu delle azioni globali nella schermata di blocco sicura</string>
@@ -451,9 +452,9 @@
     <string name="pulse_ambient_light_title">Mostra sulla nuova notifica</string>
     <string name="pulse_ambient_light_summary">Illumina i bordi dello schermo all\'arrivo di una notifica</string>
     <string name="ambient_notification_light_enabled_title">Mostra su always on</string>
+    <string name="aod_disabled">AOD è disabilitato</string>
     <string name="ambient_notification_light_enabled_summary">Visualizza impulso luminoso alla ricezione di nuove notifiche sul display always on</string>
     <string name="ambient_notification_light_color_title">Colore personalizzato</string>
-    <string name="ambient_notification_light_color_summary">Colore predefinito per l\'impulso luminoso</string>
     <string name="ambient_notification_light_hide_aod_title">Mostra solo impulso luminoso</string>
     <string name="ambient_notification_light_hide_aod_summary">Nascondi tutti gli altri elementi dal display always on</string>
     <string name="ambient_notification_light_timeout_title">Durata dell\'impulso luminoso</string>
@@ -573,4 +574,73 @@
     <string name="ambient_pulse_brightness_summary">Imposta la luminosità da usare quando vengono mostrate le notifiche</string>
     <string name="ambient_doze_brightness_title">Luminosità Ambient Display</string>
     <string name="ambient_doze_brightness_summary">Imposta la luminosità da utilizzare quando l\'Ambient Display è abilitato</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">Icona VoWiFi</string>
+    <string name="vowifi_icon_hide">Nascondi icona VoWiFi</string>
+    <string name="vowifi_icon_show">Visualizza icona VoWiFi</string>
+    <string name="vowifi_icon_over_volte">Mostra VoWiFi e nascondi VoLTE</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Tema</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Colore primario</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Font Titoli / Paragrafi</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Forma delle icone</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">Stile delle icone della barra di stato</string>
+    <!-- Accent color picker -->
+    <string name="accent_color_title">Selettore colore accento</string>
+    <!-- QS themes -->
+    <string name="qs_themes_category_title">Impostazioni Rapide Temi</string>
+    <string name="qs_bg_use_new_tint">Tinta tile con colore accento</string>
+    <string name="qs_bg_use_new_tint_summary">Abilita la tinta colore principale sui tile delle impostazioni rapide</string>
+    <string name="qs_bg_use_disco">Disco tile impostazioni rapide</string>
+    <string name="qs_bg_use_disco_summary">Rendi le tue Tile colorate!</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">IR dello stile dei tile</string>
+    <string name="qstile_default">Predefinito</string>
+    <string name="qstile_circle_trim">Cerchio con taglio</string>
+    <string name="qstile_dual_tone_circle">Cerchio doppio tono</string>
+    <string name="qstile_squircle_trim">Supercerchio doppio-tono</string>
+    <string name="qstile_wavey">Ondulato</string>
+    <string name="qstile_pokesign">Pokesign</string>
+    <string name="qstile_ninja">Ninja</string>
+    <string name="qstile_dottedcircle">Cerchio tratteggiato</string>
+    <string name="qstile_attemptmountain">Un tentativo di montagna</string>
+    <string name="qstile_squaremedo">The Squaremedo</string>
+    <string name="qstile_inkdrop">Tinta</string>
+    <string name="qstile_cookie">Cookie</string>
+    <string name="qstile_circleoutline">Contorno cerchio</string>
+    <string name="qstile_cosmos">Shishu Cosmos</string>
+    <string name="qstile_divided">Cerchio diviso</string>
+    <string name="qstile_neonlike">Neon chiaro</string>
+    <string name="qstile_oos">Oxygen</string>
+    <string name="qstile_triangles">Triangolo</string>
+    <!-- Custom header -->
+    <string name="custom_header_browse_summary">Clicca su qualsiasi immagine per utilizzarla con la modalità statica</string>
+    <string name="custom_header_browse_summary_new">Sfoglia tutti le collezioni delle immagini d\'intestazione disponibili</string>
+    <string name="custom_header_browse_title">Sfoglia intestazioni installate</string>
+    <string name="custom_header_pick_summary">Seleziona un\'immagine da utilizzare per la modalità statica</string>
+    <string name="custom_header_pick_title">Seleziona immagine d\'intestazione</string>
+    <string name="custom_header_provider_title">Provider intestazione</string>
+    <string name="custom_header_summary">Visualizza un\'immagine in alto, nel pannello di notifica</string>
+    <string name="custom_header_title">Intestazioni personalizzate</string>
+    <string name="daylight_header_pack_title">Collezione di immagini d\'intestazione</string>
+    <string name="daylight_header_provider_title">Collezione di immagini</string>
+    <string name="file_header_provider_title">Immagine personalizzata</string>
+    <string name="file_header_select_summary">Seleziona un\'immagine personalizzata</string>
+    <string name="file_header_select_title">Seleziona un\'immagine</string>
+    <string name="header_provider_disabled">Disabilitato</string>
+    <string name="static_header_provider_title">Immagine statica</string>
+    <string name="status_bar_custom_header_shadow_summary">Per una migliore visibilità su immagini luminose</string>
+    <string name="status_bar_custom_header_shadow_title">Ombreggiatura immagine intestazione</string>
+    <string name="unit_percent">\u0025</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Stile pannello volume</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Compatto</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Tile</string>
+    <!-- Volume Panel Plugin Values -->
 </resources>
