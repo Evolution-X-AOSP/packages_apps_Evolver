@@ -38,12 +38,14 @@
     <string name="statusbar_network_icons_title">ネットワークアイコン</string>
     <string name="swipe_gestures_title">スワイプジェスチャー</string>
     <string name="system_settings_title">システムオプション</string>
+    <string name="themes_title">テーマ</string>
     <string name="torch_gestures_title">タッチジェスチャー</string>
     <string name="volume_keys_title">音量ボタン</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Android に含まれる標準のジェスチャー</string>
     <string name="animation_summary">アニメーションスタイルを変更する</string>
     <string name="buttons_summary">物理ボタンのアクションを設定する</string>
+    <string name="dark_ui_mode_summary">ダークテーマのオプションを参照する</string>
     <string name="gestures_summary">ジェスチャーのアクションを設定する</string>
     <string name="lockscreen_summary">ロック画面の項目を操作する</string>
     <string name="misc_summary">ゲームモードとその他のシステム設定</string>
@@ -52,6 +54,7 @@
     <string name="powermenu_summary">シャットダウンオプションを編集する</string>
     <string name="quicksettings_summary">クイック設定パネルのレイアウトなどを変更する</string>
     <string name="statusbar_summary">ステータスバーの項目を個別編集する</string>
+    <string name="themes_summary">私達のテーマオプションで端末を装飾しましょう</string>
     <string name="unsupported_gestures">この機能を使用するのに2つまたは3つのボタンナビゲーションを有効化する</string>
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -80,6 +83,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">設定</string>
     <string name="color_default">既定</string>
+    <string name="color_picker_simple_dialog_title">LED の色を選択</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">既定値が設定されていません</string>
     <string name="seekbar_default_value_set"><xliff:g id="number">%d</xliff:g> の既定に設定</string>
@@ -275,9 +279,6 @@
     <string name="screen_off_animation_default">既定</string>
     <string name="screen_off_animation_crt">ブラウン管</string>
     <string name="screen_off_animation_scale">縮小</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">音楽ビジュアライザー</string>
-    <string name="lockscreen_visualizer_enable_summary">音楽再生中はビジュアライザーのバーを表示する</string>
     <!-- Power menu on lockscreen -->
     <string name="power_menu_hide_on_secure_title">ロック画面では表示しない</string>
     <string name="power_menu_hide_on_secure_summary">保護されたロック画面でグローバルアクションメニューを非表示にする</string>
@@ -451,9 +452,9 @@
     <string name="pulse_ambient_light_title">新しい通知で表示</string>
     <string name="pulse_ambient_light_summary">新しい通知でライトを点滅させる</string>
     <string name="ambient_notification_light_enabled_title">Always on で表示</string>
+    <string name="aod_disabled">Always On Display は無効です。</string>
     <string name="ambient_notification_light_enabled_summary">Always On 使用時に新しい通知でライトを点滅させる</string>
     <string name="ambient_notification_light_color_title">カスタムの色</string>
-    <string name="ambient_notification_light_color_summary">ライト点滅の既定の色</string>
     <string name="ambient_notification_light_hide_aod_title">ライト点滅のみ表示</string>
     <string name="ambient_notification_light_hide_aod_summary">Always On からその他全ての要素を隠す</string>
     <string name="ambient_notification_light_timeout_title">ライト点滅の点滅時間</string>
@@ -573,4 +574,73 @@
     <string name="ambient_pulse_brightness_summary">通知表示時の明るさを設定する</string>
     <string name="ambient_doze_brightness_title">アンビエント表示の明るさ</string>
     <string name="ambient_doze_brightness_summary">アンビエント表示有効時の明るさを設定する</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWiFi アイコン</string>
+    <string name="vowifi_icon_hide">VoWiFi アイコンを隠す</string>
+    <string name="vowifi_icon_show">VoWiFi アイコンを表示する</string>
+    <string name="vowifi_icon_over_volte">VoWiFi を表示して VoLTE を隠す</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">テーマ</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">アクセント色</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">見出し / 説明フォント</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">アイコンの形状</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">ステータスバーのアイコンスタイル</string>
+    <!-- Accent color picker -->
+    <string name="accent_color_title">アクセント色の選択</string>
+    <!-- QS themes -->
+    <string name="qs_themes_category_title">クイック設定のテーマ</string>
+    <string name="qs_bg_use_new_tint">クイック設定タイルのアクセント色</string>
+    <string name="qs_bg_use_new_tint_summary">クイック設定タイルのアクセント色での色付けを有効にする</string>
+    <string name="qs_bg_use_disco">クイック設定タイルのディスコ</string>
+    <string name="qs_bg_use_disco_summary">クイック設定タイルをカラフルにしましょう!</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">タイルのスタイル</string>
+    <string name="qstile_default">既定</string>
+    <string name="qstile_circle_trim">トリム付きの円</string>
+    <string name="qstile_dual_tone_circle">デュアルトーンの円</string>
+    <string name="qstile_squircle_trim">トリム付きの角丸四角形</string>
+    <string name="qstile_wavey">波状</string>
+    <string name="qstile_pokesign">モンスターボール</string>
+    <string name="qstile_ninja">忍者</string>
+    <string name="qstile_dottedcircle">点線の円</string>
+    <string name="qstile_attemptmountain">山脈</string>
+    <string name="qstile_squaremedo">星型八角形</string>
+    <string name="qstile_inkdrop">インク</string>
+    <string name="qstile_cookie">クッキー</string>
+    <string name="qstile_circleoutline">アウトラインサークル</string>
+    <string name="qstile_cosmos">Shishu Cosmos</string>
+    <string name="qstile_divided">サークル (分割)</string>
+    <string name="qstile_neonlike">ネオンライト</string>
+    <string name="qstile_oos">Oxygen</string>
+    <string name="qstile_triangles">三角形</string>
+    <!-- Custom header -->
+    <string name="custom_header_browse_summary">固定モードで使用する画像をタップして下さい</string>
+    <string name="custom_header_browse_summary_new">利用可能な全てのヘッダーコレクションを表示する</string>
+    <string name="custom_header_browse_title">インストール済みのヘッダーを参照</string>
+    <string name="custom_header_pick_summary">固定モードで使う画像を選択する</string>
+    <string name="custom_header_pick_title">ヘッダー画像の選択</string>
+    <string name="custom_header_provider_title">ヘッダープロパイダー</string>
+    <string name="custom_header_summary">通知パネルの上部に画像を表示する</string>
+    <string name="custom_header_title">カスタムヘッダー</string>
+    <string name="daylight_header_pack_title">ヘッダー画像コレクション</string>
+    <string name="daylight_header_provider_title">画像コレクション</string>
+    <string name="file_header_provider_title">カスタム画像</string>
+    <string name="file_header_select_summary">カスタム画像を選択する</string>
+    <string name="file_header_select_title">画像を選択</string>
+    <string name="header_provider_disabled">無効</string>
+    <string name="static_header_provider_title">固定画像</string>
+    <string name="status_bar_custom_header_shadow_summary">明るい画像をより見やすくする</string>
+    <string name="status_bar_custom_header_shadow_title">ヘッダー画像の影</string>
+    <string name="unit_percent">\u0025</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">音量パネルのスタイル</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">コンパクト</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">タイル</string>
+    <!-- Volume Panel Plugin Values -->
 </resources>
