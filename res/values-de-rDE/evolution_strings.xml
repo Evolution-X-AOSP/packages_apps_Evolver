@@ -38,12 +38,14 @@
     <string name="statusbar_network_icons_title">Netzwerksymbole in der Statusleiste</string>
     <string name="swipe_gestures_title">Wischgesten</string>
     <string name="system_settings_title">Systemeinstellungen</string>
+    <string name="themes_title">Themes</string>
     <string name="torch_gestures_title">Taschenlampengesten</string>
     <string name="volume_keys_title">Lautstärketasten</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">In Android enthaltene Gesten</string>
     <string name="animation_summary">Änderung von Animationsstilen</string>
     <string name="buttons_summary">Optimiere die Aktionen der physischen Tasten</string>
+    <string name="dark_ui_mode_summary">Durchsuchen der dunklen Design-Optionen</string>
     <string name="gestures_summary">Gestenbasierte Optionen/Aktionen</string>
     <string name="lockscreen_summary">Passe deinen Sperrbildschirm an</string>
     <string name="misc_summary">Gaming-Modus und weitere Systemeinstellungen</string>
@@ -52,6 +54,7 @@
     <string name="powermenu_summary">Konfiguration der Abschalt-Optionen</string>
     <string name="quicksettings_summary">Passen Sie das QS-Panel Layout und mehr an</string>
     <string name="statusbar_summary">Personalisiere deine Statusleisten-Elemente</string>
+    <string name="themes_summary">Pimp dein Gerät mit unseren Theme-Optionen</string>
     <string name="unsupported_gestures">Aktivieren 2- oder 3-Tasten Navigation, um diese Funktion zu nutzen</string>
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -80,6 +83,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Übernehmen</string>
     <string name="color_default">Standard</string>
+    <string name="color_picker_simple_dialog_title">LED Farbe auswählen</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Kein Standardwert festgelegt</string>
     <string name="seekbar_default_value_set">Standardwert von <xliff:g id="number">%d</xliff:g> gesetzt</string>
@@ -275,9 +279,6 @@
     <string name="screen_off_animation_default">Standard</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Skalierung</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Musikvisualisierung</string>
-    <string name="lockscreen_visualizer_enable_summary">Visualisierungsbalken während Musik abgespielt wird anzeigen</string>
     <!-- Power menu on lockscreen -->
     <string name="power_menu_hide_on_secure_title">Auf Sperrbildschirm ausblenden</string>
     <string name="power_menu_hide_on_secure_summary">Versteckt das globale Aktionsmenü auf dem sicheren Sperrbildschirm</string>
@@ -451,9 +452,9 @@
     <string name="pulse_ambient_light_title">Beim Empfang neuer Benachrichtigungen anzeigen</string>
     <string name="pulse_ambient_light_summary">Pulslicht bei neuer Benachrichtigungen anzeigen</string>
     <string name="ambient_notification_light_enabled_title">Bei Always-On anzeigen</string>
+    <string name="aod_disabled">AOD ist deaktiviert</string>
     <string name="ambient_notification_light_enabled_summary">Pulslicht bei neuer Benachrichtigungen mit Always-On anzeigen</string>
     <string name="ambient_notification_light_color_title">Benutzerdefinierte Farbe</string>
-    <string name="ambient_notification_light_color_summary">Standardfarbe für Pulslicht</string>
     <string name="ambient_notification_light_hide_aod_title">Nur Pulslicht anzeigen</string>
     <string name="ambient_notification_light_hide_aod_summary">Verstecke alle anderen Anzeigeelemente von Always-On</string>
     <string name="ambient_notification_light_timeout_title">Timeout für Pulslicht</string>
@@ -573,4 +574,73 @@
     <string name="ambient_pulse_brightness_summary">Helligkeit welche verwendet wird, wenn Benachrichtigungen angezeigt werden</string>
     <string name="ambient_doze_brightness_title">Helligkeit des Ambient-Displays</string>
     <string name="ambient_doze_brightness_summary">Helligkeit einstellen, die während des Ambient-Displays verwendet wird</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWLAN-Symbol</string>
+    <string name="vowifi_icon_hide">VoWLAN-Symbol ausblenden</string>
+    <string name="vowifi_icon_show">VoWLAN-Symbol anzeigen</string>
+    <string name="vowifi_icon_over_volte">VoWLAN anzeigen und VoLTE ausblenden</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Theming</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Akzentfarbe</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Überschrift / Beschreibung Schriftart</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Symbolform</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">Statusleisten-Symbole</string>
+    <!-- Accent color picker -->
+    <string name="accent_color_title">Akzentfarbauswahl</string>
+    <!-- QS themes -->
+    <string name="qs_themes_category_title">QS-Designs</string>
+    <string name="qs_bg_use_new_tint">Einfärben der QS-Kacheln mit Akzentfarbe</string>
+    <string name="qs_bg_use_new_tint_summary">Aktivieren Sie die Akzentfarbe auf den QS-Kacheln</string>
+    <string name="qs_bg_use_disco">QS-Kachel-Disco</string>
+    <string name="qs_bg_use_disco_summary">Färben Sie Ihre QS Kacheln schön bunt!</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">QS-Kachelstil</string>
+    <string name="qstile_default">Standard</string>
+    <string name="qstile_circle_trim">Kreis mit Rand</string>
+    <string name="qstile_dual_tone_circle">Zweifarbiger Kreis</string>
+    <string name="qstile_squircle_trim">Abgerundetes Quadrat mit Rand</string>
+    <string name="qstile_wavey">Wellenförmig</string>
+    <string name="qstile_pokesign">Pokeball Design</string>
+    <string name="qstile_ninja">Ninja</string>
+    <string name="qstile_dottedcircle">Gepunkteter Kreis</string>
+    <string name="qstile_attemptmountain">Der Versuch eines Berges</string>
+    <string name="qstile_squaremedo">Der Squaremedo</string>
+    <string name="qstile_inkdrop">Farbe</string>
+    <string name="qstile_cookie">Keks</string>
+    <string name="qstile_circleoutline">Kreisumriss</string>
+    <string name="qstile_cosmos">Shishu Kosmos</string>
+    <string name="qstile_divided">Geteilter Kreis</string>
+    <string name="qstile_neonlike">Neonlicht</string>
+    <string name="qstile_oos">Oxygen</string>
+    <string name="qstile_triangles">Dreieck</string>
+    <!-- Custom header -->
+    <string name="custom_header_browse_summary">Auf ein Bild drücken, um es als statisches Bild zu nutzen</string>
+    <string name="custom_header_browse_summary_new">Alle verfügbaren Hintergrund-Pakete durchsuchen</string>
+    <string name="custom_header_browse_title">Installierte Header durchsuchen</string>
+    <string name="custom_header_pick_summary">Bild für statischen Modus wählen</string>
+    <string name="custom_header_pick_title">Headerbild auswählen</string>
+    <string name="custom_header_provider_title">Header-Anbieter</string>
+    <string name="custom_header_summary">Bild oben auf dem Benachrichtigungsfenster anzeigen</string>
+    <string name="custom_header_title">Eigener Header</string>
+    <string name="daylight_header_pack_title">Header-Bildersammlung</string>
+    <string name="daylight_header_provider_title">Bildersammlung</string>
+    <string name="file_header_provider_title">Benutzerdefiniertes Bild</string>
+    <string name="file_header_select_summary">Benutzerdefiniertes Bild auswählen</string>
+    <string name="file_header_select_title">Bild auswählen</string>
+    <string name="header_provider_disabled">Deaktiviert</string>
+    <string name="static_header_provider_title">Statisches Bild</string>
+    <string name="status_bar_custom_header_shadow_summary">Für bessere Sichtbarkeit auf hellen Hintergründen</string>
+    <string name="status_bar_custom_header_shadow_title">Header-Bildschatten</string>
+    <string name="unit_percent">\u0025</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel">Stil der Lautstärkeanzeige</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Kompakt</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Mit Kacheln</string>
+    <!-- Volume Panel Plugin Values -->
 </resources>
