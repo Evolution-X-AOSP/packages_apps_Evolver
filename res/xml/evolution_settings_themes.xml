@@ -109,13 +109,30 @@
             android:summary="@string/qs_bg_use_new_tint_summary"
             android:defaultValue="true" />
 
+        <!-- QS status bar opacity -->
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_sb_bg_alpha"
+            android:title="@string/qs_sb_bg_alpha_title"
+            android:defaultValue="255"
+            android:max="255"
+            android:min="0"
+            settings:units="" />
+
+        <!-- QS panel gradient below status bar -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_sb_bg_gradient"
+            android:title="@string/qs_panel_gradient_title"
+            android:summary="@string/qs_panel_gradient_summary"
+            android:defaultValue="true" />
+
+        <!-- QS panel opacity -->
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="qs_panel_bg_alpha"
             android:title="@string/qs_panel_alpha_title"
+            android:defaultValue="255"
             android:max="255"
-            android:min="100"
-            settings:interval="5"
-            android:defaultValue="255" />
+            android:min="0"
+            settings:units="" />
 
     </PreferenceCategory>
 
