@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2019-2020 The Evolution X Project
+ * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2019-2021 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.evolution.settings.preference;
+package com.evolution.settings.buttons.preference;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

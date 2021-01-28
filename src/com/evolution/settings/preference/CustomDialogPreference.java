@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2019-2020 The Evolution X Project
+ * Copyright (C) 2015 The Android Open Source Project
+ * Copyright (C) 2019-2021 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.evolution.settings.preference;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.preference.PreferenceDialogFragment;
-import androidx.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.preference.PreferenceDialogFragmentCompat;
+import androidx.preference.DialogPreference;
 
 public class CustomDialogPreference<T extends DialogInterface> extends DialogPreference {
 
@@ -97,7 +98,7 @@ public class CustomDialogPreference<T extends DialogInterface> extends DialogPre
         return true;
     }
 
-    public static class CustomPreferenceDialogFragment extends PreferenceDialogFragment {
+    public static class CustomPreferenceDialogFragment extends PreferenceDialogFragmentCompat {
 
         public static CustomPreferenceDialogFragment newInstance(String key) {
             final CustomPreferenceDialogFragment fragment = new CustomPreferenceDialogFragment();
