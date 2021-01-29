@@ -20,13 +20,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/navigation_title">
 
-    <Preference
-        android:key="gesture_system_navigation"
-        android:title="@string/system_navigation_title"
-        android:summary="@string/system_navigation_summary"
-        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
-        settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
-
     <PreferenceCategory
         android:key="navbar_key"
         android:title="@string/navigation_bar_title">
@@ -35,6 +28,13 @@
             android:key="navbar_visibility"
             android:title="@string/navbar_visibility"
             android:summary="@string/navbar_visibility_summary" />
+
+        <Preference
+            android:key="gesture_system_navigation"
+            android:title="@string/system_navigation_title"
+            android:summary="@string/system_navigation_summary"
+            android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
+            settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
 
         <!--Preference
             android:key="navbar_tuner"
@@ -51,18 +51,21 @@
             android:summary="%s"
             android:entries="@array/navbar_layout_entries"
             android:entryValues="@array/navbar_layout_values"
-            android:defaultValue="default" />
+            android:defaultValue="default"
+            android:dependency="navbar_visibility" />
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="navbar_inverse_layout"
             android:title="@string/navbar_invert_layout_title"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            android:dependency="navbar_visibility" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="pixel_nav_animation"
             android:title="@string/pixel_navbar_anim_title"
             android:summary="@string/pixel_navbar_anim_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true"
+            android:dependency="navbar_visibility" />
 
     </PreferenceCategory>
 
