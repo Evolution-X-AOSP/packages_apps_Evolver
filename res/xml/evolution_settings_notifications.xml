@@ -40,6 +40,18 @@
         android:defaultValue="true" />
 
     <PreferenceCategory
+        android:key="media_category"
+        android:title="@string/media_category">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="artwork_media_background"
+            android:title="@string/artwork_media_background_title"
+            android:summary="@string/artwork_media_background_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="notifications_general_category"
         android:title="@string/general_title">
 
