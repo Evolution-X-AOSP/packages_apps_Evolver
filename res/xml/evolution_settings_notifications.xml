@@ -126,8 +126,8 @@
             ledPreview="true"
             android:defaultValue="0xFF1A73E8" />
 
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="ambient_light_duration"
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="notification_pulse_duration"
             android:title="@string/pulse_ambient_light_duration_title"
             android:summary="@string/pulse_ambient_light_duration_summary"
             android:persistent="false"
@@ -138,8 +138,8 @@
             settings:interval="1"
             android:dependency="pulse_ambient_light" />
 
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="ambient_light_repeat_count"
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="notification_pulse_repeats"
             android:title="@string/pulse_ambient_light_repeat_count_title"
             android:summary="@string/pulse_ambient_light_repeat_count_summary"
             android:persistent="false"
