@@ -93,14 +93,17 @@
         android:key="string/qs_brightness_category"
         android:title="@string/qs_brightness_category_title">
 
-        <com.evolution.settings.preference.SecureSettingListPreference
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_show_brightness_slider_title"
-            android:summary="%s"
-            android:dialogTitle="@string/qs_show_brightness_slider_title"
-            android:entries="@array/qs_show_brightness_slider_entries"
-            android:entryValues="@array/qs_show_brightness_slider_values"
-            android:defaultValue="1" />
+            android:summary="@string/qs_show_brightness_slider_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="qs_show_brightness_slider_show_expanded"
+            android:title="@string/qs_show_brightness_slider_expanded_title"
+            android:summary="@string/qs_show_brightness_slider_expanded_summary"
+            android:defaultValue="true" />
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="qs_show_auto_brightness"
@@ -112,6 +115,7 @@
             android:key="qs_brightness_position_bottom"
             android:title="@string/qs_brightness_position_bottom_title"
             android:summary="@string/qs_brightness_position_bottom_summary"
+            android:dependency="qs_show_brightness_slider_show_expanded"
             android:defaultValue="false" />
 
     </PreferenceCategory>
