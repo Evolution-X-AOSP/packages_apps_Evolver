@@ -24,7 +24,7 @@ import static com.android.internal.util.custom.hwkeys.DeviceKeysConstants.*;
 
 public class ButtonSettingsUtils {
     public static boolean isAvailable(Context context) {
-        return NavbarUtils.canDisable(context);
+        return NavbarUtils.canDisable(context) || hasCameraKey(context);
     }
 
     public static int getDeviceKeys(Context context) {
