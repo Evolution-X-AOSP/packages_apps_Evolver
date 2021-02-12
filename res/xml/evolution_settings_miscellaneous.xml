@@ -48,6 +48,13 @@
     <PreferenceCategory
         android:title="@string/dev_options_title">
 
+        <!-- Sensor Block -->
+        <Preference
+            android:key="sensor_block_settings"
+            android:title="@string/sensor_block_title"
+            android:summary="@string/sensor_block_summary"
+            android:fragment="com.evolution.settings.fragments.SensorBlockSettings"/>
+
         <com.evolution.settings.preference.GlobalSettingSwitchPreference
             android:key="allow_signature_fake"
             android:title="@string/allow_signature_fake"
