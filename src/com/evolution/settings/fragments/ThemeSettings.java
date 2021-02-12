@@ -36,6 +36,7 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 
 import com.evolution.settings.display.AccentColorPreferenceController;
 import com.evolution.settings.display.QsTileStylePreferenceController;
+import com.evolution.settings.display.SwitchStylePreferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +82,7 @@ public class ThemeSettings extends DashboardFragment {
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack"));
         controllers.add(new QsTileStylePreferenceController(context));
+        controllers.add(new SwitchStylePreferenceController(context));
         return controllers;
     }
 
