@@ -82,4 +82,10 @@
             android:title="@string/add_gaming_mode_package_title" />
     </PreferenceCategory>
 
+    <com.android.settingslib.widget.FooterPreference
+        android:key="gaming_mode_footer"
+        android:selectable="false"
+        settings:searchable="false"
+        android:dependency="gaming_mode_enabled" />
+
 </PreferenceScreen>
