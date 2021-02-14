@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2020 The Evolution X Project
+ * Copyright (C) 2019-2021 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class FODIconPickerFragment extends SettingsPreferenceFragment {
 
+    private static final String FOD_ICON_FOOTER = "fod_icon_footer";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,8 @@ public class FODIconPickerFragment extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.evolution_settings_fod_picker);
 
         getActivity().getActionBar().setTitle(R.string.fod_icon_picker_title);
+
+        findPreference(FOD_ICON_FOOTER).setTitle(R.string.fod_icon_picker_footer);
     }
 
     @Override

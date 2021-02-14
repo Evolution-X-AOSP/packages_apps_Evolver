@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2019-2020 The Evolution X Project
+<!-- Copyright (C) 2019-2021 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -26,8 +25,7 @@
 
         <SwitchPreference
             android:key="navbar_visibility"
-            android:title="@string/navbar_visibility"
-            android:summary="@string/navbar_visibility_summary" />
+            android:title="@string/navbar_visibility" />
 
         <Preference
             android:key="gesture_system_navigation"
@@ -51,22 +49,24 @@
             android:summary="%s"
             android:entries="@array/navbar_layout_entries"
             android:entryValues="@array/navbar_layout_values"
-            android:defaultValue="default"
-            android:dependency="navbar_visibility" />
+            android:defaultValue="default" />
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="navbar_inverse_layout"
             android:title="@string/navbar_invert_layout_title"
-            android:defaultValue="false"
-            android:dependency="navbar_visibility" />
+            android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="pixel_nav_animation"
             android:title="@string/pixel_navbar_anim_title"
             android:summary="@string/pixel_navbar_anim_summary"
-            android:defaultValue="true"
-            android:dependency="navbar_visibility" />
+            android:defaultValue="true" />
 
     </PreferenceCategory>
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="navbar_visibility_footer"
+        android:selectable="false"
+        settings:searchable="false" />
 
 </PreferenceScreen>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2019-2020 The Evolution X Project
+<!-- Copyright (C) 2019-2021 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -32,17 +31,18 @@
         android:summary="@string/fprint_success_vib_summary"
         android:persistent="false" />
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="fod_gesture"
-        android:title="@string/fod_gesture_title"
-        android:summary="@string/fod_gesture_summary"
-        android:defaultValue="false"
-        settings:controller="com.android.settings.security.screenlock.ScreenOffFodPreferenceController" />
-
     <!-- FOD customization options -->
     <PreferenceCategory
         android:key="fod_icon_picker"
         android:title="@string/fod_icon_picker_category_title">
+
+        <!-- Screen off FOD -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="fod_gesture"
+            android:title="@string/fod_gesture_title"
+            android:summary="@string/fod_gesture_summary"
+            android:defaultValue="false"
+            settings:controller="com.android.settings.security.screenlock.ScreenOffFodPreferenceController" />
 
         <!-- FOD icon picker -->
         <Preference

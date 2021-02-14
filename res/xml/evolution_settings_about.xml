@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2019-2020 The Evolution X Project
+<!-- Copyright (C) 2019-2021 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -30,6 +29,8 @@
         android:title="@string/evolution_about_summary">
 
         <Preference
+            android:selectable="false"
+            settings:searchable="false"
             android:summary="@string/evolution_about_info_summary" />
 
         <Preference
@@ -88,7 +89,15 @@
             android:summary="@string/evolution_about_akito_summary">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://twitter.com/peaktogoo" />
+                android:data="https://twitter.com/RAkitoHaruka" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_about_justin"
+            android:summary="@string/evolution_about_justin_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/Justasic" />
         </Preference>
 
         <Preference
@@ -97,6 +106,14 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://twitter.com/raphielscape" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_about_aggelos"
+            android:summary="@string/evolution_about_aggelos_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://forum.xda-developers.com/member.php?u=8065843" />
         </Preference>
 
         <Preference
@@ -112,7 +129,7 @@
             android:summary="@string/evolution_about_marton_summary">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://twitter.com/marton_dev" />
+                android:data="https://twitter.com/martonlederer" />
         </Preference>
 
     </PreferenceCategory>

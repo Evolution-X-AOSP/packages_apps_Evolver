@@ -1,11 +1,12 @@
 /*
+ * Copyright (C) 2019-2021 The Evolution X Project
  * Copyright (C) 2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -63,6 +64,7 @@ public class GamingMode extends SettingsPreferenceFragment
         implements Preference.OnPreferenceClickListener {
 
     private static final int DIALOG_GAMING_APPS = 1;
+    private static final String GAMING_MODE_FOOTER = "gaming_mode_footer";
     private static final String GAMING_MODE_HW_KEYS = "gaming_mode_hw_keys_toggle";
 
     private SwitchPreference mHardwareKeysDisable;
@@ -87,7 +89,7 @@ public class GamingMode extends SettingsPreferenceFragment
         // Get launch-able applications
         addPreferencesFromResource(R.xml.evolution_settings_gaming_mode);
 
-    //    mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.add_gaming_mode_package_summary);
+        findPreference(GAMING_MODE_FOOTER).setTitle(R.string.add_gaming_mode_package_summary);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 

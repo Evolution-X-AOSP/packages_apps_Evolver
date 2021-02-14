@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2020 The Evolution X Project
+ * Copyright (C) 2019-2021 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
     private static final String LAYOUT_SETTINGS = "navbar_layout_views";
     private static final String NAVBAR_VISIBILITY = "navbar_visibility";
+    private static final String NAVBAR_VISIBILITY_FOOTER = "navbar_visibility_footer";
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
 
@@ -67,10 +68,18 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
 
+    private static final int KEY_MASK_HOME = 0x01;
+    private static final int KEY_MASK_BACK = 0x02;
+    private static final int KEY_MASK_MENU = 0x04;
+    private static final int KEY_MASK_APP_SWITCH = 0x10;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_navigation);
+
+        findPreference(NAVBAR_VISIBILITY_FOOTER).setTitle(R.string.navbar_visibility_footer);
+
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mGestureSystemNavigation = findPreference(GESTURE_SYSTEM_NAVIGATION);
@@ -104,7 +113,11 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
                 Settings.System.FORCE_SHOW_NAVBAR,
                 defaultToNavigationBar ? 1 : 0) != 0;
         updateBarVisibleAndUpdatePrefs(showing);
-        mNavbarVisibility.setOnPreferenceChangeListener(this);
+        if (!haveHWkeys()) {
+            mNavbarVisibility.setEnabled(false);
+        } else {
+            mNavbarVisibility.setOnPreferenceChangeListener(this);
+        }
 
         mHandler = new Handler();
     }
@@ -133,6 +146,19 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
     private void updateBarVisibleAndUpdatePrefs(boolean showing) {
         mNavbarVisibility.setChecked(showing);
+    }
+
+    private boolean haveHWkeys() {
+        final int deviceKeys = getContext().getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+
+        // read bits for present hardware keys
+        final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
+        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
+        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
+        final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+
+        return (hasHomeKey || hasBackKey || hasMenuKey || hasAppSwitchKey);
     }
 
     @Override
