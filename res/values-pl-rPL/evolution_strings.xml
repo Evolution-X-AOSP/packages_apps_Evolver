@@ -197,11 +197,16 @@
     <string name="network_traffic_arrow">Pokaż strzałki</string>
     <string name="network_traffic_arrow_summary">Pokaż strzałki wskaźnika ruchu sieciowego</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_sucess_vib_title">Wibracja podczas uwierzytelniania odcisku palca</string>
-    <string name="fprint_sucess_vib_summary">Wibracje po udanym uwierzytelnianiu odcisku palca</string>
+    <string name="fprint_error_vib_title">Wibracja błędu odcisku palca</string>
+    <string name="fprint_error_vib_summary">Wibruj po nieudanym uwierzytelnianiu odcisku palca</string>
+    <string name="fprint_success_vib_title">Wibracja podczas uwierzytelniania odcisku palca</string>
+    <string name="fprint_success_vib_summary">Wibracje po udanym uwierzytelnianiu odcisku palca</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_title">Pokaż 4G zamiast LTE</string>
     <string name="show_fourg_summary">Zamienia wskażnik LTE na 4G</string>
+    <!-- Show old style mobile data icon -->
+    <string name="use_old_mobiletype_title">Użyj starych ikon mobilnych danych</string>
+    <string name="use_old_mobiletype_summary">Użyj ikon pre-p dla sygnału</string>
     <!-- Show VoLTE switch -->
     <string name="show_volte_title">Ikona VoLTE</string>
     <string name="show_volte_summary">Wyświetl ikonę VoLTE</string>
@@ -246,11 +251,12 @@
     <string name="qs_brightness_category_title">Opcje suwaka jasności</string>
     <string name="qs_show_brightness_slider_title">Suwak jasności</string>
     <string name="qs_show_brightness_slider_summary">Pokaż suwak jasności w panelu szybkich ustawień</string>
+    <string name="qs_show_brightness_slider_expanded_title">Rozszerzony suwak jasności szybkich ustawień</string>
+    <string name="qs_show_brightness_slider_expanded_summary">Pokaż suwak jasności po rozszerzeniu</string>
     <string name="qs_show_auto_brightness_title">Ikona automatycznej jasności</string>
     <string name="qs_show_auto_brightness_summary">Pokaż przełącznik jasności adaptacyjnej obok suwaka jasności ekranu</string>
-    <string name="qs_show_brightness_slider_show_never">Nigdy nie pokazuj</string>
-    <string name="qs_show_brightness_slider_show_expanded">Pokaż po rozwinięciu</string>
-    <string name="qs_show_brightness_slider_show_always">Zawsze pokazuj</string>
+    <string name="qs_brightness_position_bottom_title">Suwak jasności na dole (działa tylko dla rozszerzonego QS)</string>
+    <string name="qs_brightness_position_bottom_summary">Pokaż suwak jasności na dole rozszerzonych szybkich ustawień</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Wybudzanie przyciskami głośności</string>
     <string name="volume_rocker_wake_summary">Naciśnięcie przycisków głośności wybudzi urządzenie</string>
@@ -317,9 +323,6 @@
     <string name="lockscreen_charging_animation_phone">Telefon</string>
     <string name="lockscreen_charging_animation_stack">Stos</string>
     <string name="lockscreen_charging_animation_wavy">Fala</string>
-    <!-- Transparent lockscreen notifications -->
-    <string name="transparent_lockscreen_notification_title">Przezroczyste powiadomienia</string>
-    <string name="transparent_lockscreen_notification_summary">Włącz powiadomienia na ekranie blokady z półprzezroczystym tłem</string>
     <!-- Statusbar Clock -->
     <string name="status_bar_clock_date_title">Zegar i data</string>
     <string name="status_bar_clock_date_summary">Dostosuj zegar i datę na pasku stanu</string>
@@ -457,6 +460,8 @@
     <string name="pulse_ambient_light_category">Oświetlenie krawędzi ekranu</string>
     <string name="pulse_ambient_light_title">Pokaż przy nowym powiadomieniu</string>
     <string name="pulse_ambient_light_summary">Pokaż jasny puls przy nowym powiadomieniu</string>
+    <string name="pulse_ambient_light_show_always_title">Pokaż dla wszystkich wydarzeń drzemki</string>
+    <string name="pulse_ambient_light_show_always_summary">Pokaż światła dla wszystkich wydarzeń drzemki, a nie tylko powiadomień</string>
     <string name="ambient_notification_light_enabled_title">Pokaż przy AOD</string>
     <string name="aod_disabled">AOD jest wyłączone</string>
     <string name="ambient_notification_light_enabled_summary">Pokaż jasny puls przy nowym powiadomieniu używając ekranu AOD</string>
@@ -496,6 +501,7 @@
     <string name="fod_pressed_color_cyan">Błękitny</string>
     <string name="fod_pressed_color_green">Zielony</string>
     <string name="fod_pressed_color_yellow">Żółty</string>
+    <string name="fod_pressed_color_light_yellow">Jasnożółty</string>
     <!-- Nightlight Fod -->
     <string name="fod_night_light_title">Wyłącz podświetlenie nocne podczas wyświetlania FOD</string>
     <string name="fod_night_light_summary">Wyłącz podświetlenie nocne na ekranie blokady, jeśli FOD jest aktywne. Wyłączenie tej opcji może mieć wpływ na dokładność odcisku palca przy włączonym oświetleniu nocnym.</string>
@@ -553,7 +559,11 @@
     <string name="add_gaming_mode_package_title">Dodaj aplikacje do trybu grania</string>
     <string name="add_gaming_mode_package_summary">Tryb grania zostanie automatycznie włączony przy uruchomieniu aplikacji oraz wyłączony po zakończeniu jej</string>
     <string name="gaming_mode_headsup_title">Blokuj powiadomienia</string>
-    <string name="gaming_mode_headsup_summary">Blokuj wszystkie wyskakujące wiadomości oprócz połączeń</string>
+    <string name="gaming_mode_headsup_allow">Zezwalaj na wyskakujące powiadomienia</string>
+    <string name="gaming_mode_headsup_dnc">Blokuj wszystkie wyskakujące powiadomienia poza połączeniami i &amp; alarmami</string>
+    <string name="gaming_mode_headsup_clock">Blokuj wszystkie wyskakujące powiadomienia poza alarmami</string>
+    <string name="gaming_mode_headsup_dialer">Blokuj wszystkie wyskakujące powiadomienia poza połączeniami</string>
+    <string name="gaming_mode_headsup_stop">Blokuj wszystkie wyskakujące powiadomienia</string>
     <string name="gaming_mode_hardware_keys_title">Zablokuj przyciski</string>
     <string name="gaming_mode_hardware_keys_summary">Wyłącz przyciski sprzętowe, gdy włączony jest tryb gier</string>
     <string name="gaming_mode_brightness_title">Wyłącz automatyczną jasność</string>
@@ -573,6 +583,12 @@
     <!-- Global Actions -->
     <string name="powermenu_advanced_reboot_title">Zaawansowany restart</string>
     <string name="powermenu_advanced_reboot_summary">Umożliwia dostęp do recovery i bootloadera</string>
+    <!-- Screenshot -->
+    <string name="global_actions_screenshot_title">Zrzut ekranu</string>
+    <string name="global_actions_screenshot_summary">Dodaj przełącznik zrzutu ekranu do menu zasilania</string>
+    <!-- Screen record -->
+    <string name="global_actions_screenrecord_title">Nagrywanie Ekranu</string>
+    <string name="global_actions_screenrecord_summary">Dodaj przełącznik Nagrywania Ekranu do Menu Zasilania</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Ustawienia jasności Doze</string>
     <string name="doze_brightness_force_title">Wymuś wartość jasności</string>
@@ -604,7 +620,13 @@
     <string name="qs_bg_use_new_tint_summary">Włącz kolor akcentu na kafelkach szybkich ustawień</string>
     <string name="qs_bg_use_disco">Dyskoteka kafelków szybkich ustawień</string>
     <string name="qs_bg_use_disco_summary">Spraw, by twoje kafelki szybkich ustawień były kolorowe!</string>
+    <!-- QS panel background opacity -->
     <string name="qs_panel_alpha_title">Przezroczystość tła</string>
+    <!-- QS panel gradient below status bar -->
+    <string name="qs_panel_gradient_title">Gradient paska statusu</string>
+    <string name="qs_panel_gradient_summary">Pokaż gradient pod paskiem stanu w panelu szybkich ustawień</string>
+    <!-- QS status bar background opacity -->
+    <string name="qs_sb_bg_alpha_title">Przeźroczystość paska stanu</string>
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">Styl kafelek szybkich ustawień</string>
     <string name="qstile_default">Domyślny</string>
@@ -646,6 +668,7 @@
     <string name="unit_percent">\u0025</string>
     <!-- Volume Panel Plugin -->
     <string name="volume_panel">Styl panelu głośności</string>
+    <string name="volume_panel_stock">Domyślny panel AOSP</string>
     <string name="volume_panel_aosp">AOSP</string>
     <string name="volume_panel_compact">Kompaktowy</string>
     <string name="volume_panel_oreo">Oreo</string>
@@ -657,4 +680,43 @@
     <!-- Show Statusbar on Lockscreen -->
     <string name="lockscreen_status_bar_title">Pasek stanu</string>
     <string name="lockscreen_status_bar_summary">Pokaż pasek statusu na ekranie blokady</string>
+    <!-- Notification Vibration -->
+    <string name="vibrate_on_notifications_title">Powiadomienie z wibracją</string>
+    <string name="vibrate_on_notifications_summary">Przełącz, aby wyłączyć wibracje powiadomień</string>
+    <!-- QS DataUsage Toggle -->
+    <string name="qs_datausage_title">Użycie danych w nagłówku szybkich ustawień</string>
+    <string name="qs_datausage_disabled">Wyłączone</string>
+    <string name="qs_datausage_daily">Dzienne użycie</string>
+    <string name="qs_datausage_monthly">Miesięczne użycie</string>
+    <!-- Lock screen media blur -->
+    <string name="lockscreen_media_blur_title">Poziom rozmycia okładki albumu</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_title">Inteligentne piksele</string>
+    <string name="smart_pixels_summary">Oszczędzaj baterię poprzez wyłączanie dodatkowych pikseli</string>
+    <string name="smart_pixels_on_power_save_title">Włącz automatycznie w trybie oszczędzania energii</string>
+    <string name="smart_pixels_on_power_save_summary">Włącz z oszczędzaniem baterii, by zwiększyć oszczędzanie energii</string>
+    <string name="smart_pixels_percent">Procent pikseli do wyłączenia</string>
+    <string name="smart_pixels_shift">Ochrona przed wypaleniem ekranu</string>
+    <string name="smart_pixels_warning_text">Inteligentne piksele to funkcja oszczędzania energii. W zależności od tego, ile pikseli zdecydujesz się wyłączyć, możesz zauważyć znaczną poprawę żywotności baterii. Dla wygody użytkowania zalecamy ustawienie liczby wyłączonych pikseli na 75 procent.</string>
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">Blokowanie czujników dla aplikacji</string>
+    <string name="sensor_block_summary">Zablokuj dostęp do niektórych czujników dla niektórych aplikacji aby oszczędzać baterię</string>
+    <string name="sensor_block_app_picker_title">Blokuj czujniki dla tych aplikacji</string>
+    <string name="add_sensor_block_package_title">Dodaj aplikacje do blokady czujników</string>
+    <string name="add_sensor_block_package_summary">Znaczący ruch, akcelerometr, czujniki przyspieszenia liniowego zostaną zablokowane dla tych aplikacji</string>
+    <!-- gvisual mod -->
+    <string name="gvisual_title">G-Visual Mod</string>
+    <string name="gvisual_summary">Różne dostosowania UI</string>
+    <string name="rounded_ui_title">Zaokrąglony róg</string>
+    <string name="rounded_ui_dialog_title">Wybierz model zaokrąglonego narożnika</string>
+    <string name="rounded_style_default">Domyślnie</string>
+    <string name="rounded_style_rectangle">Prostokąt</string>
+    <string name="rounded_style_large">Duży</string>
+    <string name="rounded_style_medium">Średni</string>
+    <string name="statusbar_height_title">Wysokość paska stanu</string>
+    <string name="statusbar_height_dialog_title">Wybierz model wysokości paska stanu</string>
+    <string name="sb_height_default">Domyślnie</string>
+    <string name="sb_height_medium">Średni</string>
+    <string name="sb_height_large">Duży</string>
+    <string name="sb_height_extralarge">Bardzo duży</string>
 </resources>
