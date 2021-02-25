@@ -59,12 +59,14 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
     private static final String PREF_ROUNDED_CORNER = "rounded_ui";
     private static final String PREF_SB_HEIGHT = "statusbar_height";
     private static final String PREF_NB_COLOR = "navbar_color";
+    private static final String PREF_HD_SIZE = "header_size";
 
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
     private ListPreference mRoundedUi;
     private ListPreference mSbHeight;
     private ListPreference mnbSwitch;
+    private ListPreference mhdSize;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,7 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
 
         setupNavbarSwitchPref();
+        setupHeaderSwitchPref();
 
         mRoundedUi = (ListPreference) findPreference(PREF_ROUNDED_CORNER);
         int roundedValue = getOverlayPosition(ThemesUtils.UI_RADIUS);
@@ -165,6 +168,30 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
          } catch (RemoteException ignored) {
          }
         return true;
+        } else if (preference == mhdSize){
+        String hdsize = (String) objValue;
+        final Context context = getContext();
+        switch (hdsize) {
+            case "1":
+            handleOverlays(ThemesUtils.HEADER_LARGE, false, mOverlayManager);
+            handleOverlays(ThemesUtils.HEADER_XLARGE, false, mOverlayManager);
+            break;
+            case "2":
+            handleOverlays(ThemesUtils.HEADER_LARGE, true, mOverlayManager);
+            handleOverlays(ThemesUtils.HEADER_XLARGE, false, mOverlayManager);
+            break;
+            case "3":
+            handleOverlays(ThemesUtils.HEADER_LARGE, false, mOverlayManager);
+            handleOverlays(ThemesUtils.HEADER_XLARGE, true, mOverlayManager);
+            break;
+        }
+        try {
+             mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
+             mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+             mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+         } catch (RemoteException ignored) {
+         }
+        return true;
         } else if (preference == mRoundedUi) {
         String rounded = (String) objValue;
         int roundedValue = Integer.parseInt(rounded);
@@ -235,6 +262,19 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
         }
         else{
             mnbSwitch.setValue("1");
+        }
+    }
+
+    private void setupHeaderSwitchPref() {
+        mhdSize = (ListPreference) findPreference(PREF_HD_SIZE);
+        mhdSize.setOnPreferenceChangeListener(this);
+        if (EvolutionUtils.isThemeEnabled("com.android.theme.header.xlarge")){
+            mhdSize.setValue("3");
+        } else if (EvolutionUtils.isThemeEnabled("com.android.theme.header.large")){
+            mhdSize.setValue("2");
+        }
+        else{
+            mhdSize.setValue("1");
         }
     }
 

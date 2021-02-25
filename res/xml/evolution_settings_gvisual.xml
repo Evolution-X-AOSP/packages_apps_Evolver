@@ -32,6 +32,15 @@
             android:entryValues="@array/statusbar_height_values" />
 
         <ListPreference
+            android:key="header_size"
+            android:title="@string/header_title"
+            android:summary="%s"
+            android:dialogTitle="@string/header_dialog_title"
+            android:entries="@array/header_titles"
+            android:entryValues="@array/header_values"
+            android:defaultValue="1" />
+
+        <ListPreference
             android:key="rounded_ui"
             android:title="@string/rounded_ui_title"
             android:dialogTitle="@string/rounded_ui_dialog_title"
