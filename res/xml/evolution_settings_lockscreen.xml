@@ -19,18 +19,23 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_title">
 
-    <!-- PreferenceCategory
+    <PreferenceCategory
         android:key="lockscreen_general_category"
         android:title="@string/general_category">
 
         <Preference
+            android:key="always_on_display_schedule"
+            android:title="@string/always_on_display_schedule_title"
+            android:fragment="com.evolution.settings.fragments.AODSchedule" />
+
+        <!-- Preference
             android:title="@string/lockscreen_tuner_title">
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
-        </Preference>
+        </Preference> -->
 
-    </PreferenceCategory> -->
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_ui_finterprint_category"
