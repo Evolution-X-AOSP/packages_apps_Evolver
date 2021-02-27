@@ -48,6 +48,7 @@ import java.util.List;
 public class LockscreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String FINGERPRINT_ERROR_VIB = "fingerprint_error_vib";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FOD_ANIMATION_CATEGORY = "fod_animations";
@@ -57,6 +58,8 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private PreferenceCategory mFODIconPickerCategory;
     private SwitchPreference mFingerprintErrorVib;
     private SwitchPreference mFingerprintVib;
+
+    Preference mAODPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,6 +109,32 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
                       getResources().getString(com.android.internal.R.string.config_fodAnimationPackage));
         if (!isFodAnimationResources) {
             prefScreen.removePreference(fodCat);
+        }
+
+        mAODPref = findPreference(AOD_SCHEDULE_KEY);
+        updateAlwaysOnSummary();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateAlwaysOnSummary();
+    }
+
+    private void updateAlwaysOnSummary() {
+        if (mAODPref == null) return;
+        int mode = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
+                Settings.Secure.DOZE_ALWAYS_ON_AUTO_MODE, 0, UserHandle.USER_CURRENT);
+        switch (mode) {
+            case 0:
+                mAODPref.setSummary(R.string.disabled);
+                break;
+            case 1:
+                mAODPref.setSummary(R.string.night_display_auto_mode_twilight);
+                break;
+            case 2:
+                mAODPref.setSummary(R.string.night_display_auto_mode_custom);
+                break;
         }
     }
 
