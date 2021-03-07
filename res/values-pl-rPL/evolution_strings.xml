@@ -65,6 +65,7 @@
     <string name="action_cancel">Anuluj</string>
     <string name="attention">Uwaga</string>
     <string name="default_string">Domyślnie</string>
+    <string name="disabled">Wyłączone</string>
     <string name="enable_first">Proszę najpierw włączyć</string>
     <string name="led_color_green">Zielony</string>
     <string name="led_color_red">Czerwony</string>
@@ -112,9 +113,7 @@
     <string name="evolution_about_summary">Informacje o zespole</string>
     <string name="evolution_website_title">Strona internetowa</string>
     <string name="evolution_website_summary">Stuknij tutaj, aby odwiedzić naszą niesamowitą stronę!</string>
-    <string name="evolution_twitter_title">Strona na Twitterze</string>
     <string name="evolution_twitter_summary">Dotknij tutaj, aby odwiedzić naszego Twittera!</string>
-    <string name="evolution_telegram_title">Grupa na Telegramie</string>
     <string name="evolution_telegram_summary">Stuknij tutaj, aby odwiedzić naszą niesamowitą społeczność!</string>
     <string name="evolution_github_summary">Stuknij tutaj, aby otworzyć nasz GitHub!</string>
     <string name="evolution_about_info_summary">Evolution X jest niestandardowym systemem opartym na AOSP w celu zapewnienia doświadczenia podobnego do smartofonów z rodziny Google Pixel z wieloma funkcjami personalizacji. Od Androida Pie przynosiliśmy naszą własną markę Androida na Wasze urządzenia, I nie planujemy przestać. Będziemy nadal dostarczać stabilne i bogate w funkcje aktualizacje dla naszych lojalnych użytkowników.</string>
@@ -207,9 +206,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Użyj starych ikon mobilnych danych</string>
     <string name="use_old_mobiletype_summary">Użyj ikon pre-p dla sygnału</string>
-    <!-- Show VoLTE switch -->
-    <string name="show_volte_title">Ikona VoLTE</string>
-    <string name="show_volte_summary">Wyświetl ikonę VoLTE</string>
     <!-- Long press power for torch -->
     <string name="torch_long_press_power_gesture_title">Włączenie latarki przyciskiem zasilania przy wyłączonym ekranie</string>
     <string name="torch_long_press_power_gesture_desc">Przytrzymaj przycisk zasilania przy wyłączonym ekranie, aby włączyć latarkę</string>
@@ -297,6 +293,8 @@
     <string name="qs_column_rows_settings_title">Ustawienia panelu szybkich ustawień</string>
     <string name="qs_edit_title">Edytuj ikonę</string>
     <string name="qs_edit_summary">Wyłącz ikonę edycji kafelków w stopce</string>
+    <string name="qs_footer_category_title">Opcje stopki</string>
+    <string name="qs_header_category_title">Opcje nagłówka</string>
     <string name="status_bar_quick_qs_pulldown">Szybkie rozwijanie szybkich ustawień</string>
     <string name="quick_pulldown_none">Wyłączony</string>
     <string name="quick_pulldown_right">Pociągnij w dół pasek stanu z prawej strony</string>
@@ -490,7 +488,7 @@
     <string name="qs_footer_text_string_summary">Ustaw jako puste dla domyślnych</string>
     <!-- NavBar Visibility -->
     <string name="navbar_visibility">Włącz pasek nawigacji</string>
-    <string name="navbar_visibility_summary">Może być używany tylko przez urządzenia z fizycznymi przyciskami</string>
+    <string name="navbar_visibility_footer">Ze względu na problemy z interfejsem, przełącznik widoczności paska nawigacyjnego został trwale wyłączony dla urządzeń bez kluczy HW. Użyj zamiast tego opcji koloru paska gestów.</string>
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_title">Ikona odcisku palca</string>
     <string name="fod_icon_picker_summary">Wybierz swoją ulubioną ikonę odcisku palca</string>
@@ -502,9 +500,6 @@
     <string name="fod_pressed_color_green">Zielony</string>
     <string name="fod_pressed_color_yellow">Żółty</string>
     <string name="fod_pressed_color_light_yellow">Jasnożółty</string>
-    <!-- Nightlight Fod -->
-    <string name="fod_night_light_title">Wyłącz podświetlenie nocne podczas wyświetlania FOD</string>
-    <string name="fod_night_light_summary">Wyłącz podświetlenie nocne na ekranie blokady, jeśli FOD jest aktywne. Wyłączenie tej opcji może mieć wpływ na dokładność odcisku palca przy włączonym oświetleniu nocnym.</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Uruchom odtwarzacz muzyki po podłączeniu zestawu słuchawkowego</string>
     <string name="headset_connect_player_summary">Uruchom domyślny odtwarzacz muzyki po podłączeniu słuchawek</string>
@@ -597,11 +592,7 @@
     <string name="ambient_pulse_brightness_summary">Ustaw jasność do użycia, gdy powiadomienia są wyświetlane</string>
     <string name="ambient_doze_brightness_title">Poziom jasności ekranu ambient</string>
     <string name="ambient_doze_brightness_summary">Ustaw jasność do użycia podczas wyświetlania Ambient Display</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Ikona VoWiFi</string>
-    <string name="vowifi_icon_hide">Ukryj ikonę VoWiFi</string>
-    <string name="vowifi_icon_show">Wyświetl ikonę VoLTE</string>
-    <string name="vowifi_icon_over_volte">Wyświetl VoWiFi i ukryj VoLTE</string>
+    <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Motywy</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
@@ -610,8 +601,13 @@
     <string name="theme_customization_font_title">Czcionka nagłówka / paragrafów</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">Kształt ikon</string>
-    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
-    <string name="theme_customization_sysui_icon_title">Ikony paska stanu</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">Pakiet ikon</string>
+    <string name="theme_customization_dark_theme_title">Próbnik kolorów</string>
+    <string name="default_accent_color">Pixel Blue (domyślny)</string>
+    <string name="default_font">Inter / Manrope (domyślny)</string>
+    <string name="default_icon_pack">AOSP (domyślne)</string>
+    <string name="default_icon_shape">Okrąg (domyślnie)</string>
     <!-- Accent color picker -->
     <string name="accent_color_title">Wybór kolorów akcentu</string>
     <!-- QS themes -->
@@ -719,4 +715,8 @@
     <string name="sb_height_medium">Średni</string>
     <string name="sb_height_large">Duży</string>
     <string name="sb_height_extralarge">Bardzo duży</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Always-On Display włączone</string>
+    <string name="always_on_display_schedule_sunset">Zachód słońca</string>
+    <string name="always_on_display_schedule_sunrise">Wschód słońca</string>
 </resources>
