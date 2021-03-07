@@ -65,6 +65,7 @@
     <string name="action_cancel">中止</string>
     <string name="attention">注意</string>
     <string name="default_string">既定</string>
+    <string name="disabled">無効</string>
     <string name="enable_first">最初に有効にしてください</string>
     <string name="led_color_green">緑</string>
     <string name="led_color_red">赤</string>
@@ -112,9 +113,7 @@
     <string name="evolution_about_summary">チームに関する情報</string>
     <string name="evolution_website_title">ウェブサイト</string>
     <string name="evolution_website_summary">こちらをタップして我々の素晴らしいウェブサイトをご覧ください!</string>
-    <string name="evolution_twitter_title">Twitter ページ</string>
     <string name="evolution_twitter_summary">こちらをタップして私たちの Twitter をご覧下さい!</string>
-    <string name="evolution_telegram_title">Telegram グループ</string>
     <string name="evolution_telegram_summary">ここをタップして素晴らしいコミュニティを訪れましょう!</string>
     <string name="evolution_github_summary">ここをタップして GitHub を開きます!</string>
     <string name="evolution_about_info_summary">Evolution X は AOSP ベースのカスタム ROM で、多くのカスタマイズ機能を持つピクセルライクな感触を提供することを目的としています。Android Pie 以来、私たちは独自の Androidブランドをお使いのデバイスにもたらしてきました。安定した機能豊富なアップデートを、忠実なユーザーに提供し続けます。</string>
@@ -207,9 +206,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">古いモバイルアイコンを使用</string>
     <string name="use_old_mobiletype_summary">Android P 以前の電波アイコンを使用する</string>
-    <!-- Show VoLTE switch -->
-    <string name="show_volte_title">VoLTE アイコン</string>
-    <string name="show_volte_summary">VoLTE アイコンを表示する</string>
     <!-- Long press power for torch -->
     <string name="torch_long_press_power_gesture_title">画面消灯時のライト点灯</string>
     <string name="torch_long_press_power_gesture_desc">画面消灯時に電源ボタンを長押ししてライトを点灯する</string>
@@ -297,6 +293,8 @@
     <string name="qs_column_rows_settings_title">クイック設定パネルの設定</string>
     <string name="qs_edit_title">編集アイコン</string>
     <string name="qs_edit_summary">フッターのタイル編集アイコンを有効化する</string>
+    <string name="qs_footer_category_title">フッターオプション</string>
+    <string name="qs_header_category_title">ヘッダーオプション</string>
     <string name="status_bar_quick_qs_pulldown">クイックプルダウン</string>
     <string name="quick_pulldown_none">無効</string>
     <string name="quick_pulldown_right">ステータスバーの右端をプルダウン</string>
@@ -490,7 +488,7 @@
     <string name="qs_footer_text_string_summary">空白に設定して既定値になります</string>
     <!-- NavBar Visibility -->
     <string name="navbar_visibility">ナビゲーションバーを有効化</string>
-    <string name="navbar_visibility_summary">ハードウェアキーを持つ端末でのみ使用できます</string>
+    <string name="navbar_visibility_footer">UI の問題により、ハードウェアキーの無い端末ではナビゲーションバーの表示切り替えが完全に無効になります。代替案としてピル表示またはジェスチャーバーの長さのオプションを使用して下さい。</string>
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_title">指紋アイコン</string>
     <string name="fod_icon_picker_summary">お気に入りの指紋アイコンを選択する</string>
@@ -502,9 +500,6 @@
     <string name="fod_pressed_color_green">グリーン</string>
     <string name="fod_pressed_color_yellow">イエロー</string>
     <string name="fod_pressed_color_light_yellow">明るい黄色</string>
-    <!-- Nightlight Fod -->
-    <string name="fod_night_light_title">画面内指紋認証表示時は夜間ライトを無効化する</string>
-    <string name="fod_night_light_summary">画面内指紋認証が有効な場合は夜間ライトを無効化します。このオプションを無効化すると、夜間ライト有効時に指紋認証の正確性に影響する場合があります。</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">ヘッドセット接続時に音楽アプリ起動</string>
     <string name="headset_connect_player_summary">ヘッドセット接続時に既定の音楽アプリを起動する</string>
@@ -597,11 +592,7 @@
     <string name="ambient_pulse_brightness_summary">通知表示時の明るさを設定する</string>
     <string name="ambient_doze_brightness_title">アンビエント表示の明るさ</string>
     <string name="ambient_doze_brightness_summary">アンビエント表示有効時の明るさを設定する</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi アイコン</string>
-    <string name="vowifi_icon_hide">VoWiFi アイコンを隠す</string>
-    <string name="vowifi_icon_show">VoWiFi アイコンを表示する</string>
-    <string name="vowifi_icon_over_volte">VoWiFi を表示して VoLTE を隠す</string>
+    <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">テーマ</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
@@ -610,8 +601,13 @@
     <string name="theme_customization_font_title">見出し / 説明フォント</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">アイコンの形状</string>
-    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
-    <string name="theme_customization_sysui_icon_title">ステータスバーのアイコンスタイル</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">アイコンパック</string>
+    <string name="theme_customization_dark_theme_title">色のバケツ</string>
+    <string name="default_accent_color">Pixel ブルー (既定)</string>
+    <string name="default_font">Inter / Manrope (既定)</string>
+    <string name="default_icon_pack">AOSP (既定)</string>
+    <string name="default_icon_shape">円 (既定)</string>
     <!-- Accent color picker -->
     <string name="accent_color_title">アクセント色の選択</string>
     <!-- QS themes -->
@@ -719,4 +715,8 @@
     <string name="sb_height_medium">中</string>
     <string name="sb_height_large">大</string>
     <string name="sb_height_extralarge">特大</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Always On Display のスケジュール</string>
+    <string name="always_on_display_schedule_sunset">日没</string>
+    <string name="always_on_display_schedule_sunrise">日出</string>
 </resources>

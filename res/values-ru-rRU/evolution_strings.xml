@@ -65,6 +65,7 @@
     <string name="action_cancel">Отмена</string>
     <string name="attention">Внимание</string>
     <string name="default_string">По умолчанию</string>
+    <string name="disabled">Отключено</string>
     <string name="enable_first">Пожалуйста, включите сначала</string>
     <string name="led_color_green">Зелёный</string>
     <string name="led_color_red">Красный</string>
@@ -112,9 +113,7 @@
     <string name="evolution_about_summary">Информация о команде</string>
     <string name="evolution_website_title">Сайт</string>
     <string name="evolution_website_summary">Нажмите здесь, чтобы посетить наш потрясающий веб-сайт!</string>
-    <string name="evolution_twitter_title">Страница в Twitter</string>
     <string name="evolution_twitter_summary">Нажмите здесь, чтобы посетить наш Twitter!</string>
-    <string name="evolution_telegram_title">Группа Telegram</string>
     <string name="evolution_telegram_summary">Нажмите здесь, чтобы посетить наше замечательное сообщество!</string>
     <string name="evolution_github_summary">Нажмите здесь, чтобы открыть наш GitHub!</string>
     <string name="evolution_about_info_summary">Evolution X — это легкодоступная пользовательская прошивка, целью которой является придать вашему Android устройству истинный стиль устройств Pixel со множеством дополнительных настроек в вашем распоряжении. Мы стремимся обеспечить частые сборки ежемесячными патчами безопасности из последних источников!</string>
@@ -197,14 +196,16 @@
     <string name="network_traffic_arrow">Показывать стрелки</string>
     <string name="network_traffic_arrow_summary">Показывать стрелки индикатора сетевого трафика</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_sucess_vib_title">Вибрация при использовании сканера отпечатка пальцев</string>
-    <string name="fprint_sucess_vib_summary">Вибрировать при успешной разблокировке по отпечатку пальца</string>
+    <string name="fprint_error_vib_title">Вибрировать при неудачной авторизации отпечатком пальца</string>
+    <string name="fprint_error_vib_summary">Вибрировать при ошибке распознавания отпечатка пальца</string>
+    <string name="fprint_success_vib_title">Вибрация при разблокировке по отпечатку пальца</string>
+    <string name="fprint_success_vib_summary">Вибрация при успешной разблокировки по отпечатку пальца</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_title">Показывать 4G вместо LTE</string>
     <string name="show_fourg_summary">Заменяет LTE индикатор строки состояния на 4G</string>
-    <!-- Show VoLTE switch -->
-    <string name="show_volte_title">Значок VoLTE</string>
-    <string name="show_volte_summary">Отображать значок VoLTE</string>
+    <!-- Show old style mobile data icon -->
+    <string name="use_old_mobiletype_title">Использовать старый стиль значков сети</string>
+    <string name="use_old_mobiletype_summary">Старый стиль значка сети</string>
     <!-- Long press power for torch -->
     <string name="torch_long_press_power_gesture_title">Включение фонарика долгим нажатием кнопки питания</string>
     <string name="torch_long_press_power_gesture_desc">Включать фонарик долгим нажатием кнопки питания при выключенном экране</string>
@@ -246,11 +247,12 @@
     <string name="qs_brightness_category_title">Параметры ползунка яркости</string>
     <string name="qs_show_brightness_slider_title">Ползунок яркости</string>
     <string name="qs_show_brightness_slider_summary">Показывать ползунок яркости в панели быстрых настроек</string>
+    <string name="qs_show_brightness_slider_expanded_title">Ползунок яркости в развернутых быстрых настройках</string>
+    <string name="qs_show_brightness_slider_expanded_summary">Показывать ползунок яркости при раскрытии</string>
     <string name="qs_show_auto_brightness_title">Значок автояркости</string>
     <string name="qs_show_auto_brightness_summary">Показывать переключатель адаптивной яркости рядом со слайдером</string>
-    <string name="qs_show_brightness_slider_show_never">Не показывать</string>
-    <string name="qs_show_brightness_slider_show_expanded">Показывать при развернутом</string>
-    <string name="qs_show_brightness_slider_show_always">Всегда показывать</string>
+    <string name="qs_brightness_position_bottom_title">Ползунок яркости внизу (работает только для расширенной панели быстрых настроек)</string>
+    <string name="qs_brightness_position_bottom_summary">Показывать ползунок яркости внизу развернутых быстрых настроек</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Пробуждение кнопками громкости</string>
     <string name="volume_rocker_wake_summary">Нажатие кнопок громкости разбудит ваше устройство</string>
@@ -291,6 +293,8 @@
     <string name="qs_column_rows_settings_title">Настройки панели быстрых настроек</string>
     <string name="qs_edit_title">Значок редактирования</string>
     <string name="qs_edit_summary">Включить значок редактирования плитки в нижнем колонтитуле</string>
+    <string name="qs_footer_category_title">Параметры нижнего колонтитула</string>
+    <string name="qs_header_category_title">Настройки заголовка</string>
     <string name="status_bar_quick_qs_pulldown">Быстрый доступ к панели быстрых настроек</string>
     <string name="quick_pulldown_none">Отключено</string>
     <string name="quick_pulldown_right">Потянуть строку состояния с правой стороны</string>
@@ -317,9 +321,6 @@
     <string name="lockscreen_charging_animation_phone">Телефон</string>
     <string name="lockscreen_charging_animation_stack">Стопка</string>
     <string name="lockscreen_charging_animation_wavy">Волны</string>
-    <!-- Transparent lockscreen notifications -->
-    <string name="transparent_lockscreen_notification_title">Прозрачные уведомления</string>
-    <string name="transparent_lockscreen_notification_summary">Отображать уведомления на экране блокировки с полупрозрачным фоном</string>
     <!-- Statusbar Clock -->
     <string name="status_bar_clock_date_title">Время и дата</string>
     <string name="status_bar_clock_date_summary">Настройки часов и даты в строке состояния</string>
@@ -457,6 +458,8 @@
     <string name="pulse_ambient_light_category">Свечение по краям экрана при получении уведомлений</string>
     <string name="pulse_ambient_light_title">Пульсировать при получении новых уведомлений</string>
     <string name="pulse_ambient_light_summary">Пульсировать по краям при получении новых уведомлений</string>
+    <string name="pulse_ambient_light_show_always_title">Показывать для всех Doze событий</string>
+    <string name="pulse_ambient_light_show_always_summary">Показывать уведомление индикатором для всех событий Doze, а не только для уведомлений</string>
     <string name="ambient_notification_light_enabled_title">Пульсировать в режиме Always On</string>
     <string name="aod_disabled">AOD отключён</string>
     <string name="ambient_notification_light_enabled_summary">Пульсировать при получении новых уведомлении в режиме Always On</string>
@@ -485,7 +488,7 @@
     <string name="qs_footer_text_string_summary">Оставьте пустым для значения по умолчанию</string>
     <!-- NavBar Visibility -->
     <string name="navbar_visibility">Включить панель навигации</string>
-    <string name="navbar_visibility_summary">Может использоваться только устройствами с аппаратными ключами</string>
+    <string name="navbar_visibility_footer">Из-за проблем с пользовательским интерфейсом панель навигации отключена для устройств без HW клавиш. Используйте вместо этого параметры индикатора жестов или длины полосы жеста.</string>
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_title">Иконка отпечатка пальца</string>
     <string name="fod_icon_picker_summary">Выберите понравившеюся иконку отпечатка пальца</string>
@@ -496,9 +499,7 @@
     <string name="fod_pressed_color_cyan">Бирюзовый</string>
     <string name="fod_pressed_color_green">Зелёный</string>
     <string name="fod_pressed_color_yellow">Жёлтый</string>
-    <!-- Nightlight Fod -->
-    <string name="fod_night_light_title">Отключить ночной режим, когда включен отпечаток</string>
-    <string name="fod_night_light_summary">Отключить ночной режим на заблокированном экране, если отпечаток активен. Отключение этой опции может повлиять на точность распознавания отпечатка при включенном ночном режиме.</string>
+    <string name="fod_pressed_color_light_yellow">Светло-желтый</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Запускать музыкальный плеер при подключении наушников</string>
     <string name="headset_connect_player_summary">Запускать стандартный музыкальный плеер при подключении гарнитуры</string>
@@ -553,7 +554,11 @@
     <string name="add_gaming_mode_package_title">Добавить приложение для игрового режима</string>
     <string name="add_gaming_mode_package_summary">Игровой режим будет включаться автоматически при открытии и выключаться при закрытии этих приложений</string>
     <string name="gaming_mode_headsup_title">Блокировать уведомления</string>
-    <string name="gaming_mode_headsup_summary">Блокировать все сообщения, кроме звонков</string>
+    <string name="gaming_mode_headsup_allow">Разрешить все всплывающие уведомления</string>
+    <string name="gaming_mode_headsup_dnc">Блокировать все всплывающие уведомления кроме звонков и будильника</string>
+    <string name="gaming_mode_headsup_clock">Запретить все всплывающие уведомления кроме будильников</string>
+    <string name="gaming_mode_headsup_dialer">Запретить все всплывающие уведомления кроме звонков</string>
+    <string name="gaming_mode_headsup_stop">Блокировать все всплывающие уведомления</string>
     <string name="gaming_mode_hardware_keys_title">Заблокировать кнопки</string>
     <string name="gaming_mode_hardware_keys_summary">Отключить аппаратные кнопки при включённом игровом режиме</string>
     <string name="gaming_mode_brightness_title">Отключить автоматическую настройку яркости</string>
@@ -573,6 +578,12 @@
     <!-- Global Actions -->
     <string name="powermenu_advanced_reboot_title">Расширенная перезагрузка</string>
     <string name="powermenu_advanced_reboot_summary">При перезагрузке также показывает опции для перезагрузки в рекавери и загрузчик</string>
+    <!-- Screenshot -->
+    <string name="global_actions_screenshot_title">Снимок экрана</string>
+    <string name="global_actions_screenshot_summary">Добавить кнопку \"Снимок экрана\" в меню питания</string>
+    <!-- Screen record -->
+    <string name="global_actions_screenrecord_title">Запись экрана</string>
+    <string name="global_actions_screenrecord_summary">Добавить кнопку \"Запись экрана\" в меню питания</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Настройка яркости Doze</string>
     <string name="doze_brightness_force_title">Принудительные значения яркости</string>
@@ -581,11 +592,7 @@
     <string name="ambient_pulse_brightness_summary">Установить яркость при отображении уведомлений</string>
     <string name="ambient_doze_brightness_title">Яркость Всегда включенного экрана</string>
     <string name="ambient_doze_brightness_summary">Установить яркость для использования во время включенного Всегда включенного экрана</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Значок VoWiFi</string>
-    <string name="vowifi_icon_hide">Скрыть значок VoWiFi</string>
-    <string name="vowifi_icon_show">Отображать значок VoWiFi</string>
-    <string name="vowifi_icon_over_volte">Отображать значок VoWiFi и скрыть значок VoLTE</string>
+    <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Темы</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
@@ -594,8 +601,13 @@
     <string name="theme_customization_font_title">Заголовок / Основной шрифт</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">Форма иконок</string>
-    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
-    <string name="theme_customization_sysui_icon_title">Стиль значков строки состояния</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">Набор иконок</string>
+    <string name="theme_customization_dark_theme_title">Палитра цветов</string>
+    <string name="default_accent_color">Pixel Blue (по умолчанию)</string>
+    <string name="default_font">Inter / Manrope (по умолчанию)</string>
+    <string name="default_icon_pack">AOSP (по умолчанию)</string>
+    <string name="default_icon_shape">Круг (по умолчанию)</string>
     <!-- Accent color picker -->
     <string name="accent_color_title">Выбор цвета акцента</string>
     <!-- QS themes -->
@@ -604,7 +616,13 @@
     <string name="qs_bg_use_new_tint_summary">Применить оттенок акцента для плиток быстрых настроек</string>
     <string name="qs_bg_use_disco">Диско-режим плиток быстрых настроек</string>
     <string name="qs_bg_use_disco_summary">Сделайте ваши плитки быстрых настроек цветными!</string>
+    <!-- QS panel background opacity -->
     <string name="qs_panel_alpha_title">Прозрачность фона</string>
+    <!-- QS panel gradient below status bar -->
+    <string name="qs_panel_gradient_title">Градиент строки состояния</string>
+    <string name="qs_panel_gradient_summary">Показывать градиент под статус-баром в панели быстрых настроек</string>
+    <!-- QS status bar background opacity -->
+    <string name="qs_sb_bg_alpha_title">Непрозрачность строки состояния</string>
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">Стиль элементов быстрых настроек</string>
     <string name="qstile_default">По умолчанию</string>
@@ -646,6 +664,7 @@
     <string name="unit_percent">\u0025</string>
     <!-- Volume Panel Plugin -->
     <string name="volume_panel">Стиль панели громкости</string>
+    <string name="volume_panel_stock">Панель AOSP</string>
     <string name="volume_panel_aosp">AOSP</string>
     <string name="volume_panel_compact">Компактная</string>
     <string name="volume_panel_oreo">Oreo</string>
@@ -657,4 +676,47 @@
     <!-- Show Statusbar on Lockscreen -->
     <string name="lockscreen_status_bar_title">Строка состояния</string>
     <string name="lockscreen_status_bar_summary">Показывать строку состояния на заблокированном экране</string>
+    <!-- Notification Vibration -->
+    <string name="vibrate_on_notifications_title">Вибрация для уведомлений</string>
+    <string name="vibrate_on_notifications_summary">Вкл/Выкл вибрация уведомлений</string>
+    <!-- QS DataUsage Toggle -->
+    <string name="qs_datausage_title">Статистика использования трафика в заголовке быстрых настроек</string>
+    <string name="qs_datausage_disabled">Отключено</string>
+    <string name="qs_datausage_daily">Ежедневное использование</string>
+    <string name="qs_datausage_monthly">Ежемесячное использование</string>
+    <!-- Lock screen media blur -->
+    <string name="lockscreen_media_blur_title">Уровень размытия медиа обложки</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_title">Умные пиксели</string>
+    <string name="smart_pixels_summary">Экономьте батарею, отключая лишние пиксели</string>
+    <string name="smart_pixels_on_power_save_title">Автоматическое включение при активации экономии зарядка батареи</string>
+    <string name="smart_pixels_on_power_save_summary">Включите функцию экономии заряда батареи, чтобы повысить энергосбережение</string>
+    <string name="smart_pixels_percent">Процент выключаемых пикселей</string>
+    <string name="smart_pixels_shift">Интервал смещения пикселей</string>
+    <string name="smart_pixels_warning_text">Умные пиксели - средство экономии заряда. В зависимости от того, сколько пикселей вы хотите отключить, это может привести к значительному увеличению автономности. Для оптимального использования рекомендуем установить количество отключённых пикселей на 75%.</string>
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">Блокировка сенсоров по-пакетно</string>
+    <string name="sensor_block_summary">Заблокировать доступ к датчикам для некоторых приложений для экономии заряда батареи</string>
+    <string name="sensor_block_app_picker_title">Блокировать датчики для этих приложений</string>
+    <string name="add_sensor_block_package_title">Выбрать приложения, для которых блокируются датчики</string>
+    <string name="add_sensor_block_package_summary">Акселерометр, датчики движения и линейного ускорения будут заблокированы для выбранных приложений</string>
+    <!-- gvisual mod -->
+    <string name="gvisual_title">G-Visual Мод</string>
+    <string name="gvisual_summary">Различные настройки пользовательского интерфейса</string>
+    <string name="rounded_ui_title">Закругленные углы</string>
+    <string name="rounded_ui_dialog_title">Выберите модель закругленного угла</string>
+    <string name="rounded_style_default">По умолчанию</string>
+    <string name="rounded_style_rectangle">Прямоугольник</string>
+    <string name="rounded_style_large">Большая</string>
+    <string name="rounded_style_medium">Средний</string>
+    <string name="statusbar_height_title">Высота строки состояния</string>
+    <string name="statusbar_height_dialog_title">Выберите высоту строки состояния</string>
+    <string name="sb_height_default">По умолчанию</string>
+    <string name="sb_height_medium">Средняя</string>
+    <string name="sb_height_large">Большая</string>
+    <string name="sb_height_extralarge">Очень большая</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Расписание работы Всегда включённого экрана</string>
+    <string name="always_on_display_schedule_sunset">Закат</string>
+    <string name="always_on_display_schedule_sunrise">Рассвет</string>
 </resources>
