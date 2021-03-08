@@ -146,11 +146,13 @@
             android:summary="@string/qs_panel_bg_disco_summary"
             android:defaultValue="false" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
+        <com.evolution.settings.preference.SystemSettingListPreference
             android:key="qs_panel_bg_use_new_tint"
-            android:title="@string/qs_panel_bg_use_new_tint_title"
-            android:summary="@string/qs_panel_bg_use_new_tint_summary"
-            android:defaultValue="false" />
+            android:title="@string/qs_bg_use_new_tint"
+            android:dialogTitle="@string/qs_bg_use_new_tint"
+            android:entries="@array/qs_tint_entries"
+            android:entryValues="@array/qs_tint_values"
+            android:defaultValue="0" />
 
     </PreferenceCategory>
 
