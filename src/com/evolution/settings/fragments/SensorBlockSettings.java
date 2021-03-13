@@ -48,6 +48,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.widget.FooterPreference;
 
 import com.evolution.settings.preference.AppListPreference;
 import com.evolution.settings.preference.PackageListAdapter;
@@ -80,7 +81,8 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
         // Get launch-able applications
         addPreferencesFromResource(R.xml.evolution_settings_sensor_block);
 
-        findPreference(SENSOR_BLOCK_FOOTER).setTitle(R.string.add_sensor_block_package_summary);
+        getPreferenceScreen().addPreference(new FooterPreference.Builder(getActivity()).setTitle(
+                R.string.add_sensor_block_package_summary).build());
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
