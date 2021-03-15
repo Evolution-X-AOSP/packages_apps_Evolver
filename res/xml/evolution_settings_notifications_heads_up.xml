@@ -31,6 +31,7 @@
         android:title="@string/heads_up_time_out_title"
         android:entries="@array/heads_up_time_out_entries"
         android:entryValues="@array/heads_up_time_out_values"
+        android:dependency="heads_up_notifications_enabled"
         android:persistent="false" />
 
     <ListPreference
@@ -38,12 +39,14 @@
         android:title="@string/heads_up_snooze_title"
         android:entries="@array/heads_up_snooze_entries"
         android:entryValues="@array/heads_up_snooze_values"
+        android:dependency="heads_up_notifications_enabled"
         android:persistent="false" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="less_boring_heads_up"
         android:title="@string/less_boring_heads_up_title"
         android:summary="@string/less_boring_heads_up_summary"
+        android:dependency="heads_up_notifications_enabled"
         android:defaultValue="false" />
 
     <PreferenceCategory
