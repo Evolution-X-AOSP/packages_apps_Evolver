@@ -52,7 +52,6 @@ public class MiscellaneousSettings extends SettingsPreferenceFragment implements
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String RINGTONE_FOCUS_MODE = "ringtone_focus_mode";
-    private static final String SMART_PIXELS = "smart_pixels";
 
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
@@ -62,8 +61,6 @@ public class MiscellaneousSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_miscellaneous);
-        updateSmartPixelsPreference();
-
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mHeadsetRingtoneFocus = (ListPreference) findPreference(RINGTONE_FOCUS_MODE);
@@ -92,17 +89,6 @@ public class MiscellaneousSettings extends SettingsPreferenceFragment implements
                 Settings.System.DOZE_BRIGHTNESS, defaultDoze);
         mDozeBrightness.setValue(value);
         mDozeBrightness.setOnPreferenceChangeListener(this);
-    }
-
-    private void updateSmartPixelsPreference() {
-        PreferenceScreen prefSet = getPreferenceScreen();
-        boolean enableSmartPixels = getContext().getResources().
-                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
-        Preference smartPixels = findPreference(SMART_PIXELS);
-
-        if (!enableSmartPixels){
-            prefSet.removePreference(smartPixels);
-        }
     }
 
     @Override
