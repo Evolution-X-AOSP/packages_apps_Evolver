@@ -53,6 +53,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.AppListPreference;
 import com.evolution.settings.preference.PackageListAdapter;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
 
@@ -286,7 +287,7 @@ public class GamingMode extends SettingsPreferenceFragment
         PackageInfo info = mPackageManager.getPackageInfo(pkg.name,
                 PackageManager.GET_META_DATA);
         Preference pref =
-                new Preference(getActivity());
+                new AppListPreference(getActivity());
 
         pref.setKey(pkg.name);
         pref.setTitle(info.applicationInfo.loadLabel(mPackageManager));

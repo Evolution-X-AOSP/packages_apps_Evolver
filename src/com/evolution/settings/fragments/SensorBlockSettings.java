@@ -45,12 +45,13 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.AppListPreference;
 import com.evolution.settings.preference.PackageListAdapter;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
 
@@ -109,13 +110,13 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVO_SETTINGS;
+        return MetricsEvent.EVOLVER;
     }
 
     @Override
     public int getDialogMetricsCategory(int dialogId) {
         if (dialogId == DIALOG_BLOCKED_APPS) {
-            return MetricsProto.MetricsEvent.EVO_SETTINGS;
+            return MetricsEvent.EVOLVER;
         }
         return 0;
     }
@@ -129,7 +130,6 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
         final Dialog dialog;
         final ListView list = new ListView(getActivity());
         list.setAdapter(mPackageAdapter);
-        list.setDivider(null);
 
         builder.setTitle(R.string.profile_choose_app);
         builder.setView(list);
@@ -256,7 +256,7 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
         PackageInfo info = mPackageManager.getPackageInfo(pkg.name,
                 PackageManager.GET_META_DATA);
         Preference pref =
-                new Preference(getActivity());
+                new AppListPreference(getActivity());
 
         pref.setKey(pkg.name);
         pref.setTitle(info.applicationInfo.loadLabel(mPackageManager));
@@ -305,9 +305,10 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
         }
     }
 
-
     private void savePackageList(boolean preferencesUpdated, Map<String,Package> map) {
-        String setting = map == mBlockedPackages ? Settings.System.SENSOR_BLOCKED_APP : Settings.System.SENSOR_BLOCKED_APP_DUMMY;
+        String setting = map == mBlockedPackages
+                ? Settings.System.SENSOR_BLOCKED_APP
+                : Settings.System.SENSOR_BLOCKED_APP_DUMMY;
 
         List<String> settings = new ArrayList<String>();
         for (Package app : map.values()) {

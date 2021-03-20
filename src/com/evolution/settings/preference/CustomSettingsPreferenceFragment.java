@@ -140,6 +140,6 @@ public abstract class CustomSettingsPreferenceFragment extends SettingsPreferenc
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.EVO_SETTINGS;
+        return MetricsEvent.EVOLVER;
     }
 }
