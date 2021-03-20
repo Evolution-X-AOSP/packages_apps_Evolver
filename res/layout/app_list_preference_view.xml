@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Copyright (C) 2019 The Android Open Source Project
+  Copyright (C) 2021 AOSiP
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -21,14 +21,14 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:background="?android:attr/selectableItemBackground"
-        android:paddingStart="@dimen/switchbar_subsettings_margin_start"
-        android:paddingEnd="@dimen/switchbar_subsettings_margin_end"
+        android:paddingStart="@dimen/app_list_margin_start"
+        android:paddingEnd="@dimen/app_list_margin_end"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:dividerHeight="0dp"
         android:clipToPadding="false">
 
-        <!-- Icon view for Heads-up BlackListing/StopListing app lists -->
+        <!-- Icon view for added apps -->
         <LinearLayout
             android:id="@+id/icon_container"
             android:layout_width="wrap_content"
@@ -42,12 +42,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerInside"
-                android:maxWidth="26dp"
-                android:maxHeight="26dp"/>
+                android:maxWidth="28dp"
+                android:maxHeight="28dp"/>
 
         </LinearLayout>
 
-        <!-- Text view for Heads-up BlackListing/StopListing app lists -->
+        <!-- Text view for added apps -->
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,8 +59,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingStart="14dp"
+                android:paddingTop="4dp"
                 android:gravity="center_vertical"
-                android:textAppearance="?android:attr/textAppearanceListItem"
+                android:textAppearance="?android:attr/textAppearanceListItemSecondary"
                 android:textColor="?android:attr/textColorSecondary"
                 android:textStyle="bold"
                 android:layout_marginBottom="8dip" />

@@ -20,7 +20,7 @@ package com.evolution.settings.preference;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import com.evolution.settings.R;
+import com.android.settings.R;
 
 import com.evolution.settings.preference.SystemSettingsStore;
 

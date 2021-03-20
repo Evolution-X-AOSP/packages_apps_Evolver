@@ -43,7 +43,8 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import com.evolution.settings.R;
+import com.android.settings.R;
+
 import com.evolution.settings.ui.ColorPanelView;
 import com.evolution.settings.ui.ColorPickerView;
 import com.evolution.settings.ui.ColorPickerView.OnColorChangedListener;

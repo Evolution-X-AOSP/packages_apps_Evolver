@@ -23,7 +23,7 @@ import android.view.View;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 
-import com.evolution.settings.R;
+import com.android.settings.R;
 
 public class TwoTargetPreference extends Preference {
 

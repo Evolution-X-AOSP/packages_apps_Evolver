@@ -25,7 +25,7 @@ import android.widget.Switch;
 
 import androidx.preference.PreferenceViewHolder;
 
-import com.evolution.settings.R;
+import com.android.settings.R;
 
 /**
  * A custom preference that provides inline switch toggle. It has a mandatory field for title, and

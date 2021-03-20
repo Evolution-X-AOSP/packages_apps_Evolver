@@ -31,7 +31,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.ImageView;
 
-import com.evolution.settings.R;
+import com.android.settings.R;
 
 public class ColorSelectPreference extends Preference implements DialogInterface.OnDismissListener {
 
