@@ -19,16 +19,8 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_title">
 
-    <PreferenceCategory
-        android:key="theme_customization_category"
-        android:title="@string/theme_customization_category">
-
-        <Preference
-            android:key="dark_ui_mode"
-            android:title="@string/dark_ui_mode"
-            android:summary="@string/dark_ui_mode_summary"
-            android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
-            settings:controller="com.android.settings.display.DarkUIPreferenceController" />
+    <PreferenceCategory 
+        android:title="@string/category_name_lock_display">
 
         <Preference
             android:key="clock_style"
@@ -40,6 +32,18 @@
                 android:targetClass="com.android.customization.picker.LockClockPickerActivity" />
         </Preference>
 
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/category_name_color">
+
+        <Preference
+            android:key="dark_ui_mode"
+            android:title="@string/dark_ui_mode"
+            android:summary="@string/dark_ui_mode_summary"
+            android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
+            settings:controller="com.android.settings.display.DarkUIPreferenceController" />
+
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="accent_color"
             android:title="@string/accent_color_title"
@@ -50,6 +54,11 @@
         <ListPreference
             android:key="android.theme.customization.accent_color"
             android:title="@string/theme_customization_accent_color_title"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/category_name_general">
 
         <ListPreference
             android:key="android.theme.customization.font"
@@ -95,11 +104,11 @@
 
     <PreferenceCategory
         android:key="volume_panel_stuff"
-        android:title="@string/volume_panel">
+        android:title="@string/volume_panel_category">
 
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="systemui_plugin_volume"
-            android:title="@string/volume_panel"
+            android:title="@string/volume_panel_title"
             android:entries="@array/volume_panel_entries"
             android:entryValues="@array/volume_panel_values"
             android:defaultValue="@string/volume_panel_stock_val" />
@@ -108,7 +117,7 @@
 
     <PreferenceCategory
         android:key="quick_settings_category"
-        android:title="@string/qs_themes_category_title">
+        android:title="@string/quicksettings_title">
 
         <!-- Custom QS header image -->
         <Preference
@@ -116,6 +125,15 @@
             android:fragment="com.evolution.settings.fragments.QsCustomHeaderSettings"
             android:title="@string/custom_header_title"
             android:summary="@string/custom_header_summary" />
+
+        <!-- QS panel opacity -->
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_panel_bg_alpha"
+            android:title="@string/qs_panel_alpha_title"
+            android:defaultValue="255"
+            android:max="255"
+            android:min="0"
+            settings:units="" />
 
         <ListPreference
             android:key="qs_tile_style"
@@ -135,31 +153,6 @@
             android:title="@string/qs_bg_use_new_tint"
             android:summary="@string/qs_bg_use_new_tint_summary"
             android:defaultValue="false" />
-
-        <!-- QS status bar opacity -->
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="qs_sb_bg_alpha"
-            android:title="@string/qs_sb_bg_alpha_title"
-            android:defaultValue="255"
-            android:max="255"
-            android:min="0"
-            settings:units="" />
-
-        <!-- QS panel gradient below status bar -->
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_sb_bg_gradient"
-            android:title="@string/qs_panel_gradient_title"
-            android:summary="@string/qs_panel_gradient_summary"
-            android:defaultValue="true" />
-
-        <!-- QS panel opacity -->
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="qs_panel_bg_alpha"
-            android:title="@string/qs_panel_alpha_title"
-            android:defaultValue="255"
-            android:max="255"
-            android:min="0"
-            settings:units="" />
 
     </PreferenceCategory>
 
