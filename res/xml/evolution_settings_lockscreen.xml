@@ -111,6 +111,13 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="lockscreen_charging_animation_style"
+            android:title="@string/lockscreen_charging_animation_title"
+            android:entries="@array/lockscreen_charging_animation_entries"
+            android:entryValues="@array/lockscreen_charging_animation_values"
+            android:defaultValue="1" />
+
         <Preference
             android:title="@string/lockscreen_tuner_title"
             android:summary="@string/lockscreen_tuner_summary">
@@ -118,13 +125,6 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
         </Preference>
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="lockscreen_charging_animation_style"
-            android:title="@string/lockscreen_charging_animation_title"
-            android:entries="@array/lockscreen_charging_animation_entries"
-            android:entryValues="@array/lockscreen_charging_animation_values"
-            android:defaultValue="1" />
 
     </PreferenceCategory>
 

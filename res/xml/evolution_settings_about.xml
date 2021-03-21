@@ -19,11 +19,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/evolution_about_title">
 
-    <!-- About Evolution X -->
-    <Preference
+    <!-- Evolution X logo -->
+    <PreferenceScreen
         android:key="evolution_logo"
-        android:layout="@layout/evolution_logo" />
+        android:clickable="true"
+        android:layout="@layout/evolution_logo"
+        android:fragment="com.android.settings.deviceinfo.firmwareversion.EvolutionXVersionSettings"/>
 
+    <!-- About Evolution X -->
     <PreferenceCategory
         android:key="evolution_about_summary"
         android:title="@string/evolution_about_summary">

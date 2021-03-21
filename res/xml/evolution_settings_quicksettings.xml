@@ -89,34 +89,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/qs_header_category_title">
-
-        <!-- QS Header data uasge -->
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="qs_datausage"
-            android:title="@string/qs_datausage_title"
-            android:entries="@array/qs_datausage_entries"
-            android:entryValues="@array/qs_datausage_values"
-            android:defaultValue="0" />
-
-        <!-- Battery percent -->
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="qs_show_battery_percent"
-            android:title="@string/battery_percentage_title"
-            android:entries="@array/battery_percent_entries"
-            android:entryValues="@array/battery_percent_values"
-            android:defaultValue="2" />
-
-        <!-- Battery estimate -->
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_show_battery_estimate"
-            android:title="@string/battery_estimate_title"
-            android:summary="@string/battery_estimate_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="string/qs_brightness_category"
         android:title="@string/qs_brightness_category_title">
 
@@ -144,6 +116,34 @@
             android:summary="@string/qs_brightness_position_bottom_summary"
             android:dependency="qs_show_brightness_slider_show_expanded"
             android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/qs_panel_category_title">
+
+        <!-- QS panel data uasge -->
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="qs_datausage"
+            android:title="@string/qs_datausage_title"
+            android:entries="@array/qs_datausage_entries"
+            android:entryValues="@array/qs_datausage_values"
+            android:defaultValue="0" />
+
+        <!-- Battery percent -->
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="qs_show_battery_percent"
+            android:title="@string/battery_percentage_title"
+            android:entries="@array/battery_percent_entries"
+            android:entryValues="@array/battery_percent_values"
+            android:defaultValue="2" />
+
+        <!-- Battery estimate -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_show_battery_estimate"
+            android:title="@string/battery_estimate_title"
+            android:summary="@string/battery_estimate_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 

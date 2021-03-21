@@ -56,6 +56,7 @@ import java.util.List;
 public class GvisualSettings extends SettingsPreferenceFragment implements
          OnPreferenceChangeListener {
 
+    private static final String GVISUAL_FOOTER = "gvisual_footer";
     private static final String PREF_ROUNDED_CORNER = "rounded_ui";
     private static final String PREF_SB_HEIGHT = "statusbar_height";
     private static final String PREF_NB_COLOR = "navbar_color";
@@ -72,6 +73,8 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_gvisual);
+
+        findPreference(GVISUAL_FOOTER).setTitle(R.string.gvisual_footer);
 
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
