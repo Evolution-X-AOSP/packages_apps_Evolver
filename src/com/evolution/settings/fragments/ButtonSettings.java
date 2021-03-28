@@ -142,6 +142,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         // Force Navigation bar related options
         mDisableNavigationKeys = findPreference(DISABLE_NAV_KEYS);
 
+        mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
+        if (mSwapCapacitiveKeys != null && !isKeySwapperSupported(getActivity())) {
+            prefScreen.removePreference(mSwapCapacitiveKeys);
+            mSwapCapacitiveKeys = null;
+        }
+
         Action defaultHomeLongPressAction = Action.fromIntSafe(res.getInteger(
                 com.android.internal.R.integer.config_longPressOnHomeBehavior));
         Action defaultHomeDoubleTapAction = Action.fromIntSafe(res.getInteger(
@@ -283,13 +289,6 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                     com.android.internal.R.bool.config_singleStageCameraKey)) {
                 mCameraSleepOnRelease.setDependency(Settings.System.CAMERA_WAKE_SCREEN);
             }
-        }
-
-        mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
-        if (mSwapCapacitiveKeys != null && !isKeySwapperSupported(getActivity())) {
-            prefScreen.removePreference(mSwapCapacitiveKeys);
-        } else {
-            mSwapCapacitiveKeys.setDependency(DISABLE_NAV_KEYS);
         }
 
         // Override key actions on Go devices in order to hide any unsupported features
