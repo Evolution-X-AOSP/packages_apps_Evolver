@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2020 The Evolution X Project
+     Copyright (C) 2019-2021 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@
     <string name="action_cancel">Annulla</string>
     <string name="attention">Attenzione</string>
     <string name="default_string">Predefinito</string>
+    <string name="disabled">Disabilitato</string>
     <string name="enable_first">Per favore, abilitare prima</string>
     <string name="led_color_green">Verde</string>
     <string name="led_color_red">Rosso</string>
@@ -112,9 +113,7 @@
     <string name="evolution_about_summary">Informazioni sul team</string>
     <string name="evolution_website_title">Sito web</string>
     <string name="evolution_website_summary">Tocca qui per visitare il nostro fantastico sito web!</string>
-    <string name="evolution_twitter_title">Pagina Twitter</string>
     <string name="evolution_twitter_summary">Tocca qui per visitare il nostro Twitter!</string>
-    <string name="evolution_telegram_title">Gruppo Telegram</string>
     <string name="evolution_telegram_summary">Tocca qui per visitare la nostra fantastica community!</string>
     <string name="evolution_github_summary">Tocca qui per aprire il nostro GitHub!</string>
     <string name="evolution_about_info_summary">Evolution X è una ROM personalizzata flashabile che porta una vera esperienza Pixel sul tuo dispositivo Android, con molte configurazioni aggiuntive a vostra disposizione. Miriamo a fornire frequenti aggiornamenti con patch di sicurezza mensili dalle ultime fonti AOSP!</string>
@@ -197,14 +196,16 @@
     <string name="network_traffic_arrow">Mostra frecce</string>
     <string name="network_traffic_arrow_summary">Mostra le frecce dell\'indicatore di traffico di rete</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_sucess_vib_title">Vibrazione di autenticazione dell\'impronta digitale</string>
-    <string name="fprint_sucess_vib_summary">Vibra all\'autenticazione dell\'impronta digitale riuscita</string>
+    <string name="fprint_error_vib_title">Vibrazione all\'errore dell\'impronta digitale</string>
+    <string name="fprint_error_vib_summary">Vibra all\'errore di autenticazione tramite impronta</string>
+    <string name="fprint_success_vib_title">Vibrazione autenticazione impronta digitale</string>
+    <string name="fprint_success_vib_summary">Vibra quando l\'autenticazione delle impronte digitali è riuscita</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_title">Mostra 4G invece di LTE</string>
     <string name="show_fourg_summary">Sostituisci gli indicatori LTE della barra di stato con 4G</string>
-    <!-- Show VoLTE switch -->
-    <string name="show_volte_title">Icona VoLTE</string>
-    <string name="show_volte_summary">Mostra l\'icona VoLTE</string>
+    <!-- Show old style mobile data icon -->
+    <string name="use_old_mobiletype_title">Usa icone dati mobili vecchio stile</string>
+    <string name="use_old_mobiletype_summary">Usa icone pre-p del tipo mobiletype per il segnale</string>
     <!-- Long press power for torch -->
     <string name="torch_long_press_power_gesture_title">Attiva la torcia a schermo spento col pulsante di accensione</string>
     <string name="torch_long_press_power_gesture_desc">Pressione lunga del pulsante di accensione mentre lo schermo è spento per accendere la torcia</string>
@@ -246,11 +247,12 @@
     <string name="qs_brightness_category_title">Opzioni del cursore della luminosità</string>
     <string name="qs_show_brightness_slider_title">Barra della luminosità</string>
     <string name="qs_show_brightness_slider_summary">Mostra la barra della luminosità nelle impostazioni rapide</string>
+    <string name="qs_show_brightness_slider_expanded_title">Cursore della luminosità estesa nelle impostazioni rapide</string>
+    <string name="qs_show_brightness_slider_expanded_summary">Mostra il cursore della luminosità quando espanso</string>
     <string name="qs_show_auto_brightness_title">Icona luminosità automatica</string>
     <string name="qs_show_auto_brightness_summary">Mostra l\'interruttore per la luminosità automatica vicino alla barra</string>
-    <string name="qs_show_brightness_slider_show_never">Non mostrare</string>
-    <string name="qs_show_brightness_slider_show_expanded">Mostra quando esteso</string>
-    <string name="qs_show_brightness_slider_show_always">Mostra sempre</string>
+    <string name="qs_brightness_position_bottom_title">Cursore luminosità in basso (funziona solo per le QS espanse)</string>
+    <string name="qs_brightness_position_bottom_summary">Mostra il cursore della luminosità in fondo alle impostazioni rapide espanse</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Risveglio con tasti del volume</string>
     <string name="volume_rocker_wake_summary">I tasti del volume risveglieranno il dispositivo</string>
@@ -289,10 +291,16 @@
     <string name="incall_vibrate_disconnect_title">Vibra alla chiusura</string>
     <!-- QS advanced settings -->
     <string name="qs_column_rows_settings_title">Impostazioni pannello Impostazioni Rapide</string>
+    <string name="qs_edit_title">Icona modifica</string>
+    <string name="qs_edit_summary">Abilita l\'icona della modifica dei tile nel piè di pagina</string>
+    <string name="qs_footer_category_title">Piè di Pagina QS</string>
+    <string name="qs_header_category_title">Intestazione QS</string>
+    <string name="qs_panel_category_title">Pannello QS</string>
     <string name="status_bar_quick_qs_pulldown">Apertura rapida delle impostazioni rapide</string>
     <string name="quick_pulldown_none">Disabilitata</string>
     <string name="quick_pulldown_right">Scorrimento in basso dal lato destro</string>
     <string name="quick_pulldown_left">Scorrimento in basso dal lato sinistro</string>
+    <string name="quick_pulldown_always">Mostra sempre le impostazioni rapide sulla barra di stato a discesa rapida</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Da dove riprodurre la suoneria</string>
     <string name="ringtone_focus_mode_dynamic">Dall\'auricolare se collegato e in riproduzione</string>
@@ -311,10 +319,10 @@
     <string name="lockscreen_charging_animation_drop">Caduta</string>
     <string name="lockscreen_charging_animation_explosion">Esplosione</string>
     <string name="lockscreen_charging_animation_water">Acqua</string>
-    <!-- Transparent lockscreen notifications -->
-    <string name="transparent_lockscreen_notification_title">Notifiche trasparenti</string>
-    <string name="transparent_lockscreen_notification_summary">Abilita le notifiche con sfondo semi-trasparente nella schermata di blocco</string>
-    <!-- Statusbar Clock -->
+    <string name="lockscreen_charging_animation_phone">Telefono</string>
+    <string name="lockscreen_charging_animation_stack">Pila</string>
+    <string name="lockscreen_charging_animation_wavy">Onda</string>
+    <!-- Status bar Clock -->
     <string name="status_bar_clock_date_title">Orologio e data</string>
     <string name="status_bar_clock_date_summary">Personalizza orologio e data nella barra di stato</string>
     <string name="status_bar_clock_title">Impostazioni orologio</string>
@@ -402,9 +410,6 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Pulsante termina app</string>
     <string name="notification_guts_kill_app_button_summary">Mostra un pulsante per terminare l\'applicazione quando si preme a lungo sulla notifica</string>
-    <!-- Double Tap on Doze to wake -->
-    <string name="double_tap_on_doze_to_wake_title">Doppio tocco per attivare con doze</string>
-    <string name="double_tap_on_doze_to_wake_summary">Doppio tocco per riattivare quando il dispositivo sta dormendo</string>
     <!-- Battery Bar -->
     <string name="battery_bar_title">Barra della batteria</string>
     <string name="battery_bar_summary">Visualizza e personalizza la barra della batteria vicino alla barra di stato o alla barra di navigazione</string>
@@ -451,6 +456,8 @@
     <string name="pulse_ambient_light_category">Illuminazione bordo schermo</string>
     <string name="pulse_ambient_light_title">Mostra sulla nuova notifica</string>
     <string name="pulse_ambient_light_summary">Illumina i bordi dello schermo all\'arrivo di una notifica</string>
+    <string name="pulse_ambient_light_show_always_title">Mostra per tutti gli eventi doze</string>
+    <string name="pulse_ambient_light_show_always_summary">Mostra luci per tutti gli eventi doze e non solo notifiche</string>
     <string name="ambient_notification_light_enabled_title">Mostra su always on</string>
     <string name="aod_disabled">AOD è disabilitato</string>
     <string name="ambient_notification_light_enabled_summary">Visualizza impulso luminoso alla ricezione di nuove notifiche sul display always on</string>
@@ -479,6 +486,7 @@
     <string name="qs_footer_text_string_summary">Impostato su vuoto per impostazione predefinita</string>
     <!-- NavBar Visibility -->
     <string name="navbar_visibility">Abilita Barra di Navigazione</string>
+    <string name="navbar_visibility_footer">A causa di problemi di interfaccia utente, l\'interruttore di visibilità della barra di navigazione è stato disabilitato in modo permanente per dispositivi senza tasti HW. Utilizzare sia la pillola di visualizzazione o le opzioni di lunghezza della barra dei gesti.</string>
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_title">Icona impronta digitale</string>
     <string name="fod_icon_picker_summary">Scegli l\'icona preferita per l\'impronta digitale</string>
@@ -489,6 +497,7 @@
     <string name="fod_pressed_color_cyan">Ciano</string>
     <string name="fod_pressed_color_green">Verde</string>
     <string name="fod_pressed_color_yellow">Giallo</string>
+    <string name="fod_pressed_color_light_yellow">Giallo chiaro</string>
     <!-- Nightlight Fod -->
     <string name="fod_night_light_title">Disabilita la luce notturna durante la visualizzazione di FOD</string>
     <string name="fod_night_light_summary">Disabilita la luce notturna sulla schermata di blocco se il FOD è attivo. La disattivazione di questa opzione potrebbe influire sulla precisione delle impronte digitali con la luce notturna accesa.</string>
@@ -546,7 +555,11 @@
     <string name="add_gaming_mode_package_title">Aggiungi app per la modalità gioco</string>
     <string name="add_gaming_mode_package_summary">La modalità gioco si attiva automaticamente quando queste app vengono aperte e si disattiva quando sono chiuse</string>
     <string name="gaming_mode_headsup_title">Blocca notifiche</string>
-    <string name="gaming_mode_headsup_summary">Blocca tutti i messaggi fluttuanti tranne per le chiamate</string>
+    <string name="gaming_mode_headsup_allow">Consenti tutte le notifiche fluttuanti</string>
+    <string name="gaming_mode_headsup_dnc">Blocca tutte le notifiche fluttuanti eccetto chiamate e sveglie</string>
+    <string name="gaming_mode_headsup_clock">Blocca tutte le notifiche fluttuanti tranne le sveglie</string>
+    <string name="gaming_mode_headsup_dialer">Blocca tutte le notifiche fluttuanti tranne per le chiamate</string>
+    <string name="gaming_mode_headsup_stop">Blocca tutte le notifiche fluttuanti</string>
     <string name="gaming_mode_hardware_keys_title">Blocca pulsanti</string>
     <string name="gaming_mode_hardware_keys_summary">Disabilita i pulsanti hardware quando la modalità gioco è attiva</string>
     <string name="gaming_mode_brightness_title">Disabilita luminosità automatica</string>
@@ -566,6 +579,12 @@
     <!-- Global Actions -->
     <string name="powermenu_advanced_reboot_title">Riavvio avanzato</string>
     <string name="powermenu_advanced_reboot_summary">Abilita l\'accesso a recovery e bootloader</string>
+    <!-- Screenshot -->
+    <string name="global_actions_screenshot_title">Screenshot</string>
+    <string name="global_actions_screenshot_summary">Aggiungi screenshot attiva/disattiva dal menù di alimentazione</string>
+    <!-- Screen record -->
+    <string name="global_actions_screenrecord_title">Registra schermo</string>
+    <string name="global_actions_screenrecord_summary">Aggiungi registrazione schermo attiva/disattiva al menù alimentazione</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Configurazione luminosità Doze</string>
     <string name="doze_brightness_force_title">Forza i valori di luminosità</string>
@@ -574,11 +593,7 @@
     <string name="ambient_pulse_brightness_summary">Imposta la luminosità da usare quando vengono mostrate le notifiche</string>
     <string name="ambient_doze_brightness_title">Luminosità Ambient Display</string>
     <string name="ambient_doze_brightness_summary">Imposta la luminosità da utilizzare quando l\'Ambient Display è abilitato</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Icona VoWiFi</string>
-    <string name="vowifi_icon_hide">Nascondi icona VoWiFi</string>
-    <string name="vowifi_icon_show">Visualizza icona VoWiFi</string>
-    <string name="vowifi_icon_over_volte">Mostra VoWiFi e nascondi VoLTE</string>
+    <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Tema</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
@@ -587,8 +602,13 @@
     <string name="theme_customization_font_title">Font Titoli / Paragrafi</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">Forma delle icone</string>
-    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
-    <string name="theme_customization_sysui_icon_title">Stile delle icone della barra di stato</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">Pacchetto icone</string>
+    <string name="theme_customization_dark_theme_title">Selettore dei colori</string>
+    <string name="default_accent_color">Pixel Blue (predefinito)</string>
+    <string name="default_font">Corrimano (predefinito)</string>
+    <string name="default_icon_pack">AOSP (predefinito)</string>
+    <string name="default_icon_shape">Cerchio (predefinito)</string>
     <!-- Accent color picker -->
     <string name="accent_color_title">Selettore colore accento</string>
     <!-- QS themes -->
@@ -597,6 +617,8 @@
     <string name="qs_bg_use_new_tint_summary">Abilita la tinta colore principale sui tile delle impostazioni rapide</string>
     <string name="qs_bg_use_disco">Disco tile impostazioni rapide</string>
     <string name="qs_bg_use_disco_summary">Rendi le tue Tile colorate!</string>
+    <!-- QS panel background opacity -->
+    <string name="qs_panel_alpha_title">Trasparenza del pannello</string>
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">IR dello stile dei tile</string>
     <string name="qstile_default">Predefinito</string>
@@ -637,10 +659,81 @@
     <string name="status_bar_custom_header_shadow_title">Ombreggiatura immagine intestazione</string>
     <string name="unit_percent">\u0025</string>
     <!-- Volume Panel Plugin -->
-    <string name="volume_panel">Stile pannello volume</string>
+    <string name="volume_panel_category">Pannelo del volume</string>
+    <string name="volume_panel_title">Stile pannello del volume</string>
+    <string name="volume_panel_stock">Pannello AOSP Stock</string>
     <string name="volume_panel_aosp">AOSP</string>
     <string name="volume_panel_compact">Compatto</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Tile</string>
     <!-- Volume Panel Plugin Values -->
+    <!-- Show Status bar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Barra di stato</string>
+    <string name="lockscreen_status_bar_summary">Visualizza la barra di stato nella schermata di blocco</string>
+    <!-- Notification Vibration -->
+    <string name="vibrate_on_notifications_title">Vibrazione per notifiche</string>
+    <string name="vibrate_on_notifications_summary">Attiva/disattiva la vibrazione delle notifiche</string>
+    <!-- QS DataUsage Toggle -->
+    <string name="qs_datausage_title">Visibilità d\'uso dati</string>
+    <string name="qs_datausage_disabled">Disabilitato</string>
+    <string name="qs_datausage_daily">Utilizzo quotidiano</string>
+    <string name="qs_datausage_monthly">Utilizzo mensile</string>
+    <!-- Lock screen media blur -->
+    <string name="lockscreen_media_blur_title">Livello di sfocatura copertina</string>
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">Blocca sensori per pacchetto</string>
+    <string name="sensor_block_summary">Impedisce alle applicazioni di accedere a determinati sensori e risparmiare batteria</string>
+    <string name="sensor_block_app_picker_title">Blocca i sensori per queste app</string>
+    <string name="add_sensor_block_package_title">Aggiungi app per il blocco sensori</string>
+    <string name="add_sensor_block_package_summary">I sensori di movimento, l\'accelerometro, i sensori di accelerazione lineare saranno bloccati per queste app</string>
+    <!-- gvisual mod -->
+    <string name="gvisual_title">G-Visual Mod</string>
+    <string name="gvisual_summary">Varie personalizzazioni dell\'interfaccia utente</string>
+    <string name="gvisual_footer">Per qualche strano motivo, l\'opzione d\'angolo Arrotondato non funziona quando sono selezionati Rettangolo Arrotondato, Quadrato Arrotondato e Goccia come forme dell\'icona di sistema.</string>
+    <string name="rounded_ui_title">Angolo arrotondato</string>
+    <string name="rounded_ui_dialog_title">Seleziona modello angolare arrotondato</string>
+    <string name="rounded_style_default">Predefinito</string>
+    <string name="rounded_style_rectangle">Rettangolo</string>
+    <string name="rounded_style_large">Grande</string>
+    <string name="rounded_style_medium">Medio</string>
+    <string name="statusbar_height_title">Altezza barra di stato</string>
+    <string name="statusbar_height_dialog_title">Seleziona modello di altezza della barra di stato</string>
+    <string name="sb_height_default">Predefinito</string>
+    <string name="sb_height_medium">Medio</string>
+    <string name="sb_height_large">Grande</string>
+    <string name="sb_height_extralarge">Grandissimo</string>
+    <string name="navbar_color_title">Colore barra navigazione</string>
+    <string name="navbar_color_dialog_title">Seleziona colore</string>
+    <string name="navbar_default">Predefinito</string>
+    <string name="navbar_orchid">Orchidea</string>
+    <string name="navbar_red">Rosso</string>
+    <string name="navbar_purp">Viola</string>
+    <string name="navbar_blue">Blu</string>
+    <string name="navbar_rose">Rosa</string>
+    <string name="header_default">Predefinito</string>
+    <string name="header_large">Grande</string>
+    <string name="header_xlarge">Molto Grande</string>
+    <string name="header_title">Dimensioni intestazione</string>
+    <string name="header_dialog_title">Seleziona dimensione</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Sempre sulla pianificazione del display</string>
+    <string name="always_on_display_schedule_sunset">Tramonto</string>
+    <string name="always_on_display_schedule_sunrise">Alba</string>
+    <string name="always_on_display_schedule_mixed_sunset">Accendi dall\'alba a un orario</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Accendi da un orario all\'alba</string>
+    <!-- Settings dashboard icon style -->
+    <string name="theming_settings_dashboard_icons_title">Icone della dashboard delle impostazioni</string>
+    <string name="theming_settings_dashboard_icons_default">Sfondo predefinito / Primo piano trasparente</string>
+    <string name="theming_settings_dashboard_icons_white">Sfondo predefinito / Primo piano bianco</string>
+    <string name="theming_settings_dashboard_icons_accent">Sfondo accento / Primo piano trasparente</string>
+    <string name="theming_settings_dashboard_icons_plain">Sfondo trasparente / Primo piano semplice</string>
+    <string name="theming_settings_dashboard_icons_plain_accent">Sfondo trasparente / Primo piano accento</string>
+    <!-- Switch styles -->
+    <string name="switch_style_title">Cambia stile</string>
+    <string name="switch_default">Predefinito</string>
+    <string name="switch_contained">Contenuto</string>
+    <string name="switch_telegram">Telegram</string>
+    <string name="switch_md2">Design Materiale 2</string>
+    <string name="switch_retro">Retro</string>
+    <string name="switch_oos">OxygenOS 11</string>
 </resources>
