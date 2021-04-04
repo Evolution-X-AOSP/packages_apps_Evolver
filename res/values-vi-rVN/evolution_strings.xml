@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2020 The Evolution X Project
+     Copyright (C) 2019-2021 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -27,14 +27,14 @@
     <string name="hardware_keys_title">Phím cứng</string>
     <string name="lockscreen_title">Màn hình khóa</string>
     <string name="misc_title">Cài đặt khác</string>
-    <string name="navigation_title">Điều hướng</string>
+    <string name="navigation_title">Thanh điều hướng</string>
     <string name="notifications_title">Thông báo</string>
     <string name="powermenu_title">Menu nguồn</string>
     <string name="powermenu_items_title">Các mục trong menu nguồn</string>
     <string name="quicksettings_title">Cài đặt nhanh</string>
     <string name="statusbar_title">Thanh trạng thái</string>
     <string name="statusbar_icons_title">Biểu tượng thanh trạng thái</string>
-    <string name="statusbar_items_categories_title">Các loại mục thanh trạng thái</string>
+    <string name="statusbar_items_categories_title">Các loại mục của thanh trạng thái</string>
     <string name="statusbar_network_icons_title">Biểu tượng mạng trên thanh trạng thái</string>
     <string name="swipe_gestures_title">Cử chỉ vuốt</string>
     <string name="system_settings_title">Cài đặt hệ thống</string>
@@ -53,7 +53,7 @@
     <string name="notifications_summary">Quản lý cài đặt thông báo của bạn</string>
     <string name="powermenu_summary">Thiết lập các tùy chọn trong menu nguồn</string>
     <string name="quicksettings_summary">Tùy chỉnh bố cục cài đặt nhanh và hơn thế nữa</string>
-    <string name="statusbar_summary">Cá nhân hoá thanh trạng thái</string>
+    <string name="statusbar_summary">Cá nhân hoá các mục trên thanh trạng thái</string>
     <string name="themes_summary">Đưa thiết bị của bạn vào các tùy chọn chủ đề của chúng tôi</string>
     <string name="unsupported_gestures">Bật điều hướng bằng hai phím hoặc ba phím để sử dụng tính năng này</string>
     <!-- General strings -->
@@ -65,6 +65,7 @@
     <string name="action_cancel">Hủy</string>
     <string name="attention">Cảnh báo</string>
     <string name="default_string">Mặc định</string>
+    <string name="disabled">Đã vô hiệu hoá</string>
     <string name="enable_first">Vui lòng kích hoạt trước</string>
     <string name="led_color_green">Lục</string>
     <string name="led_color_red">Đỏ</string>
@@ -112,9 +113,7 @@
     <string name="evolution_about_summary">Thông tin về Nhóm </string>
     <string name="evolution_website_title">Trang web</string>
     <string name="evolution_website_summary">Chạm để đến website</string>
-    <string name="evolution_twitter_title">Trang Twiiter</string>
     <string name="evolution_twitter_summary">Nhấn để ghé thăm trang Twiiter!</string>
-    <string name="evolution_telegram_title">Nhóm Telegram</string>
     <string name="evolution_telegram_summary">Chạm để ghé thăm cộng đồng của chúng tôi!</string>
     <string name="evolution_github_summary">Chạm để mở Github!</string>
     <string name="evolution_about_info_summary">Evolution X là ROM tùy chỉnh dựa trên AOSP, với mục tiêu cung cấp cảm giác giống Pixel với nhiều tính năng tùy chỉnh. Kể từ Android Pie, chúng tôi đã mang thương hiệu Android của riêng mình đến các thiết bị của bạn. Chúng tôi sẽ tiếp tục cung cấp các bản cập nhật ổn định và giàu tính năng cho người dùng trung thành của chúng tôi.</string>
@@ -197,14 +196,16 @@
     <string name="network_traffic_arrow">Hiển thị mũi tên</string>
     <string name="network_traffic_arrow_summary">Hiện biểu tượng mũi tên chỉ lưu lượng mạng</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_sucess_vib_title">Rung khi xác thực dấu vân tay</string>
-    <string name="fprint_sucess_vib_summary">Rung khi xác thực dấu vân tay thành công</string>
+    <string name="fprint_error_vib_title">Rung khi lỗi vân tay</string>
+    <string name="fprint_error_vib_summary">Rung khi xác thực dấu vân tay lỗi</string>
+    <string name="fprint_success_vib_title">Rung xác thực bằng vân tay</string>
+    <string name="fprint_success_vib_summary">Rung khi xác thực dấu vân tay thành công</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_title">Hiện 4G thay cho LTE</string>
     <string name="show_fourg_summary">Thay thế biểu tượng LTE bằng 4G</string>
-    <!-- Show VoLTE switch -->
-    <string name="show_volte_title">Biểu tượng VoLTE</string>
-    <string name="show_volte_summary">Hiển thị biểu tượng VoLTE</string>
+    <!-- Show old style mobile data icon -->
+    <string name="use_old_mobiletype_title">Sử dụng các biểu tượng dữ liệu di động kiểu cũ</string>
+    <string name="use_old_mobiletype_summary">Sử dụng các biểu tượng loại di động trước p cho tín hiệu</string>
     <!-- Long press power for torch -->
     <string name="torch_long_press_power_gesture_title">Bật đèn pin bằng phím nguồn khi màn hình tắt</string>
     <string name="torch_long_press_power_gesture_desc">Nhấn giữ nút nguồn trong khi màn hình tắt để bật đèn pin</string>
@@ -246,11 +247,12 @@
     <string name="qs_brightness_category_title">Tùy chỉnh thanh trượt độ sáng</string>
     <string name="qs_show_brightness_slider_title">Thanh vuốt điều chỉnh độ sáng</string>
     <string name="qs_show_brightness_slider_summary">Hiển thị thanh vuốt điều chỉnh độ sáng trong bảng cài đặt nhanh</string>
+    <string name="qs_show_brightness_slider_expanded_title">Thanh trượt độ sáng QS mở rộng</string>
+    <string name="qs_show_brightness_slider_expanded_summary">Hiển thị thanh trượt độ sáng khi được mở rộng</string>
     <string name="qs_show_auto_brightness_title">Biểu tượng độ sáng tự động</string>
     <string name="qs_show_auto_brightness_summary">Hiển thị phím bật Độ sáng tự động bên cạnh thanh độ sáng</string>
-    <string name="qs_show_brightness_slider_show_never">Không hiển thị</string>
-    <string name="qs_show_brightness_slider_show_expanded">Hiển thị khi mở rộng</string>
-    <string name="qs_show_brightness_slider_show_always">Luôn hiển thị</string>
+    <string name="qs_brightness_position_bottom_title">Thanh trượt độ sáng ở dưới cùng (chỉ hoạt động đối với QS mở rộng)</string>
+    <string name="qs_brightness_position_bottom_summary">Hiển thị thanh trượt độ sáng ở cuối cài đặt nhanh mở rộng</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Đánh thức bằng phím âm lượng</string>
     <string name="volume_rocker_wake_summary">Nhấn nút âm lượng sẽ đánh thức thiết bị</string>
@@ -289,10 +291,16 @@
     <string name="incall_vibrate_disconnect_title">Rung khi ngắt kết nối</string>
     <!-- QS advanced settings -->
     <string name="qs_column_rows_settings_title">Cài đặt bảng điều khiển QS</string>
+    <string name="qs_edit_title">Chỉnh sửa biểu tượng</string>
+    <string name="qs_edit_summary">Kích hoạt biểu tượng chỉnh sửa ô ở chân trang</string>
+    <string name="qs_footer_category_title">Tiêu đề Cài đặt nhanh</string>
+    <string name="qs_header_category_title">Tiêu đề Cài đặt nhanh</string>
+    <string name="qs_panel_category_title">Bảng Cài đặt nhanh</string>
     <string name="status_bar_quick_qs_pulldown">Mở nhanh Bảng Cài đặt</string>
     <string name="quick_pulldown_none">Đã tắt</string>
     <string name="quick_pulldown_right">Kéo từ cạnh phải của thanh trạng thái</string>
     <string name="quick_pulldown_left">Kéo từ cạnh trái của thanh trạng thái</string>
+    <string name="quick_pulldown_always">Luôn hiển thị cài đặt nhanh trên thanh trạng thái khi kéo xuống</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Cho phép chơi nhạc chuông từ</string>
     <string name="ringtone_focus_mode_dynamic">Tai nghe nếu đã kết nối và chơi âm nhạc</string>
@@ -311,10 +319,10 @@
     <string name="lockscreen_charging_animation_drop">Nhỏ giọt</string>
     <string name="lockscreen_charging_animation_explosion">Nổ</string>
     <string name="lockscreen_charging_animation_water">Nước</string>
-    <!-- Transparent lockscreen notifications -->
-    <string name="transparent_lockscreen_notification_title">Thông báo trong suốt</string>
-    <string name="transparent_lockscreen_notification_summary">Bật thông báo màn hình khoá với ảnh nền trong suốt một nửa</string>
-    <!-- Statusbar Clock -->
+    <string name="lockscreen_charging_animation_phone">Điện thoại</string>
+    <string name="lockscreen_charging_animation_stack">Xếp chồng</string>
+    <string name="lockscreen_charging_animation_wavy">Dợn sóng</string>
+    <!-- Status bar Clock -->
     <string name="status_bar_clock_date_title">Đồng hồ và ngày</string>
     <string name="status_bar_clock_date_summary">Tùy chỉnh ngày và giờ trên thanh trạng thái</string>
     <string name="status_bar_clock_title">Cài đặt đồng hồ</string>
@@ -402,9 +410,6 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Nút tắt ứng dụng</string>
     <string name="notification_guts_kill_app_button_summary">Hiển thị nút buộc dừng ứng dụng trong menu thông báo</string>
-    <!-- Double Tap on Doze to wake -->
-    <string name="double_tap_on_doze_to_wake_title">Chạm 2 lần để mở thiết bị</string>
-    <string name="double_tap_on_doze_to_wake_summary">Nhấn đúp để đánh thức khi thiết bị đang ngủ</string>
     <!-- Battery Bar -->
     <string name="battery_bar_title">Thanh pin</string>
     <string name="battery_bar_summary">Hiển thị và tùy chỉnh thanh pin gần thanh trạng thái hoặc thanh điều hướng</string>
@@ -451,6 +456,8 @@
     <string name="pulse_ambient_light_category">Ánh sáng cạnh</string>
     <string name="pulse_ambient_light_title">Hiển thị thông báo mới</string>
     <string name="pulse_ambient_light_summary">Hiển thị xung ánh sáng trên thông báo mới</string>
+    <string name="pulse_ambient_light_show_always_title">Hiển thị cho tất cả các sự kiện ngủ </string>
+    <string name="pulse_ambient_light_show_always_summary">Hiển thị đèn cho tất cả các sự kiện ngủ gật và không chỉ thông báo</string>
     <string name="ambient_notification_light_enabled_title">Hiển thị trên luôn bật</string>
     <string name="aod_disabled">AOD đã tắt</string>
     <string name="ambient_notification_light_enabled_summary">Hiển thị xung ánh sáng trên thông báo mới bằng cách luôn bật</string>
@@ -479,6 +486,7 @@
     <string name="qs_footer_text_string_summary">Đặt thành trống cho mặc định</string>
     <!-- NavBar Visibility -->
     <string name="navbar_visibility">Bật thanh điều hướng</string>
+    <string name="navbar_visibility_footer">Do các vấn đề về giao diện người dùng, chuyển đổi hiển thị thanh điều hướng đã bị vô hiệu hóa vĩnh viễn đối với các thiết bị không có phím HW. Thay vào đó, hãy sử dụng tùy chọn độ dài thanh cử chỉ hoặc thanh hiển thị.</string>
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_title">Biểu tượng vân tay</string>
     <string name="fod_icon_picker_summary">Chọn biểu tượng vân tay ưa thích</string>
@@ -489,6 +497,7 @@
     <string name="fod_pressed_color_cyan">Xanh da trời</string>
     <string name="fod_pressed_color_green">Xanh lá</string>
     <string name="fod_pressed_color_yellow">Vàng</string>
+    <string name="fod_pressed_color_light_yellow">Vàng nhạt</string>
     <!-- Nightlight Fod -->
     <string name="fod_night_light_title">Tắt ánh sáng chạm khi hiển thị FOD</string>
     <string name="fod_night_light_summary">Tắt đèn ngủ trên màn hình khóa nếu FOD đang hoạt động. Tắt tùy chọn này có thể ảnh hưởng đến độ chính xác của vân tay khi bật đèn ngủ.</string>
@@ -546,7 +555,11 @@
     <string name="add_gaming_mode_package_title">Thêm ứng dụng cho chế độ trò chơi</string>
     <string name="add_gaming_mode_package_summary">Chế độ trò chơi sẽ tự động bật tắt đối với các ứng dụng này</string>
     <string name="gaming_mode_headsup_title">Chặn thông báo</string>
-    <string name="gaming_mode_headsup_summary">Chặn tất cả các thông báo nổi ngoại trừ cuộc gọi</string>
+    <string name="gaming_mode_headsup_allow">Cho phép bật thông báo nổi</string>
+    <string name="gaming_mode_headsup_dnc">Chặn tất cả các thông báo nổi ngoại trừ các cuộc gọi &amp; báo thức</string>
+    <string name="gaming_mode_headsup_clock">Chặn tất cả các thông báo nổi ngoại trừ báo thức</string>
+    <string name="gaming_mode_headsup_dialer">Chặn tất cả các thông báo nổi ngoại trừ cuộc gọi</string>
+    <string name="gaming_mode_headsup_stop">Chặn tất cả các thông báo nổi</string>
     <string name="gaming_mode_hardware_keys_title">Khóa phím</string>
     <string name="gaming_mode_hardware_keys_summary">Vô hiệu hóa phím cứng khi chế độ trò chơi được bật</string>
     <string name="gaming_mode_brightness_title">Vô hiệu hóa độ sáng tự động</string>
@@ -566,6 +579,12 @@
     <!-- Global Actions -->
     <string name="powermenu_advanced_reboot_title">Khởi động lại nâng cao</string>
     <string name="powermenu_advanced_reboot_summary">Cho phép truy cập vào khôi phục và bộ nạp khởi động</string>
+    <!-- Screenshot -->
+    <string name="global_actions_screenshot_title">Chụp màn hình</string>
+    <string name="global_actions_screenshot_summary">Thêm nút Chụp ảnh màn hình vào Menu nguồn</string>
+    <!-- Screen record -->
+    <string name="global_actions_screenrecord_title">Quay Màn Hình</string>
+    <string name="global_actions_screenrecord_summary">Thêm nút Quay màn hình vào Menu nguồn</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Cấu hình độ sáng Doze</string>
     <string name="doze_brightness_force_title">Buộc giá trị độ sáng</string>
@@ -574,11 +593,7 @@
     <string name="ambient_pulse_brightness_summary">Đặt độ sáng để sử dụng khi thông báo được hiển thị</string>
     <string name="ambient_doze_brightness_title">Độ sáng màn hình luôn bật</string>
     <string name="ambient_doze_brightness_summary">Đặt độ sáng để sử dụng trong khi mở màn hình luôn bật</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Biểu tượng VoWifi</string>
-    <string name="vowifi_icon_hide">Ẩn biểu tượng VoWiFi</string>
-    <string name="vowifi_icon_show">Hiển thị biểu tượng VoLTE</string>
-    <string name="vowifi_icon_over_volte">Hiển thị VoWiFi và ẩn VoLTE</string>
+    <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Chủ đề</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
@@ -587,8 +602,13 @@
     <string name="theme_customization_font_title">Phông chữ tiêu đề/nội dung</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">Hình dạng biểu tượng</string>
-    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
-    <string name="theme_customization_sysui_icon_title">Biểu tượng thanh trạng thái</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">Gói biểu tượng</string>
+    <string name="theme_customization_dark_theme_title">Bảng chọn màu</string>
+    <string name="default_accent_color">Pixel Xanh biển (Mặc định)</string>
+    <string name="default_font">Circle (Mặc định)</string>
+    <string name="default_icon_pack">AOSP (Mặc định)</string>
+    <string name="default_icon_shape">Circle (Mặc định)</string>
     <!-- Accent color picker -->
     <string name="accent_color_title">Bộ chọn màu chủ đạo</string>
     <!-- QS themes -->
@@ -597,6 +617,8 @@
     <string name="qs_bg_use_new_tint_summary">Bật tông màu nhấn trên ô Cài đặt nhanh</string>
     <string name="qs_bg_use_disco">Vũ trường xếp gạch QS</string>
     <string name="qs_bg_use_disco_summary">Làm cho biểu tượng Cài đặt nhanh của bạn đầy màu sắc!</string>
+    <!-- QS panel background opacity -->
+    <string name="qs_panel_alpha_title">Bảng điều chỉnh độ trong suốt Cài đặt nhanh</string>
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">Kiểu biểu tượng ô cài đặt nhanh</string>
     <string name="qstile_default">Mặc định</string>
@@ -637,10 +659,81 @@
     <string name="status_bar_custom_header_shadow_title">Đổ bóng ảnh Header</string>
     <string name="unit_percent">\u0025</string>
     <!-- Volume Panel Plugin -->
-    <string name="volume_panel">Kiểu bảng điều khiển âm lượng</string>
+    <string name="volume_panel_category">Bảng điều chỉnh âm lượng</string>
+    <string name="volume_panel_title">Kiểu bảng điều khiển âm lượng</string>
+    <string name="volume_panel_stock">Bảng điều khiển AOSP mặc định</string>
     <string name="volume_panel_aosp">AOSP</string>
     <string name="volume_panel_compact">Nhỏ gọn</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Ô xếp</string>
     <!-- Volume Panel Plugin Values -->
+    <!-- Show Status bar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Thanh trạng thái</string>
+    <string name="lockscreen_status_bar_summary">Hiển thị thanh trạng thái trên màn hình khóa</string>
+    <!-- Notification Vibration -->
+    <string name="vibrate_on_notifications_title">Rung khi có thông báo</string>
+    <string name="vibrate_on_notifications_summary">Chạm để tắt rung thông báo</string>
+    <!-- QS DataUsage Toggle -->
+    <string name="qs_datausage_title">Mức độ sử dụng dữ liệu</string>
+    <string name="qs_datausage_disabled">Đã tắt</string>
+    <string name="qs_datausage_daily">Sử dụng hàng ngày</string>
+    <string name="qs_datausage_monthly">Sử dụng hàng tháng</string>
+    <!-- Lock screen media blur -->
+    <string name="lockscreen_media_blur_title">Mức độ mờ ảnh bìa</string>
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">Khối cảm biến trên mỗi gói</string>
+    <string name="sensor_block_summary">Chặn quyền truy cập vào một số cảm biến nhất định đối với một số ứng dụng để tiết kiệm pin</string>
+    <string name="sensor_block_app_picker_title">Chặn cảm biến cho các ứng dụng này</string>
+    <string name="add_sensor_block_package_title">Thêm ứng dụng cho khối cảm biến</string>
+    <string name="add_sensor_block_package_summary">Các cảm biến chuyển động, gia tốc kế, cảm biến gia tốc tuyến tính quan trọng sẽ bị chặn đối với các ứng dụng này</string>
+    <!-- gvisual mod -->
+    <string name="gvisual_title">G-Visual Mod</string>
+    <string name="gvisual_summary">Các tùy chỉnh giao diện khác</string>
+    <string name="gvisual_footer">Vì một số lý do, tùy chọn Hình tròn không hoạt động khi Hình chữ nhật tròn, Hình vuông và Hình giọt nước được chọn làm hình dạng biểu tượng hệ thống.</string>
+    <string name="rounded_ui_title">Độ bo góc</string>
+    <string name="rounded_ui_dialog_title">Tuỳ chọn kiểu góc tròn</string>
+    <string name="rounded_style_default">Mặc định</string>
+    <string name="rounded_style_rectangle">Hình chữ nhật</string>
+    <string name="rounded_style_large">Lớn</string>
+    <string name="rounded_style_medium">Vừa</string>
+    <string name="statusbar_height_title">Chiều cao thanh trạng thái </string>
+    <string name="statusbar_height_dialog_title">Chọn kiểu chiều cao thanh trạng thái</string>
+    <string name="sb_height_default">Mặc định</string>
+    <string name="sb_height_medium">Vừa</string>
+    <string name="sb_height_large">Lớn</string>
+    <string name="sb_height_extralarge">Rất lớn</string>
+    <string name="navbar_color_title">Màu của thanh điều hướng</string>
+    <string name="navbar_color_dialog_title">Chọn Màu</string>
+    <string name="navbar_default">Mặc định</string>
+    <string name="navbar_orchid">Tím phong lan</string>
+    <string name="navbar_red">Đỏ</string>
+    <string name="navbar_purp">Tím</string>
+    <string name="navbar_blue">Xanh da trời</string>
+    <string name="navbar_rose">Hoa Hồng</string>
+    <string name="header_default">Mặc định</string>
+    <string name="header_large">Lớn</string>
+    <string name="header_xlarge">Rất lớn</string>
+    <string name="header_title">Kích thước tiêu đề</string>
+    <string name="header_dialog_title">Chọn kích thước</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Luôn hiển thị theo lịch biểu</string>
+    <string name="always_on_display_schedule_sunset">Trời tối</string>
+    <string name="always_on_display_schedule_sunrise">Trời sáng</string>
+    <string name="always_on_display_schedule_mixed_sunset">Bật từ hoàng hôn đến bình minh</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Bật từ hoàng hôn đến bình minh</string>
+    <!-- Settings dashboard icon style -->
+    <string name="theming_settings_dashboard_icons_title">Cài đặt biểu tượng bảng điều khiển</string>
+    <string name="theming_settings_dashboard_icons_default">Nền mặc định / Nền trước trong suốt</string>
+    <string name="theming_settings_dashboard_icons_white">Nền mặc định / Nền trước màu trắng</string>
+    <string name="theming_settings_dashboard_icons_accent">Nền nhấn / Nền trước trong suốt</string>
+    <string name="theming_settings_dashboard_icons_plain">Nền trong suốt / Nền trước trơn</string>
+    <string name="theming_settings_dashboard_icons_plain_accent">Nền trong suốt / Nền trước màu nhấn</string>
+    <!-- Switch styles -->
+    <string name="switch_style_title">Chuyển đổi phong cách</string>
+    <string name="switch_default">Mặc định</string>
+    <string name="switch_contained">Chứa</string>
+    <string name="switch_telegram">Telegram</string>
+    <string name="switch_md2">Material Design 2</string>
+    <string name="switch_retro">Hoài cổ</string>
+    <string name="switch_oos">OxygenOS 11</string>
 </resources>

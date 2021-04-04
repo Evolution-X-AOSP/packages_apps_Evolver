@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2020 The Evolution X Project
+     Copyright (C) 2019-2021 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -295,6 +295,7 @@
     <string name="qs_edit_summary">Wyłącz ikonę edycji kafelków w stopce</string>
     <string name="qs_footer_category_title">Opcje stopki</string>
     <string name="qs_header_category_title">Opcje nagłówka</string>
+    <string name="qs_panel_category_title">Panel Szybkich Ustawień</string>
     <string name="status_bar_quick_qs_pulldown">Szybkie rozwijanie szybkich ustawień</string>
     <string name="quick_pulldown_none">Wyłączony</string>
     <string name="quick_pulldown_right">Pociągnij w dół pasek stanu z prawej strony</string>
@@ -321,7 +322,7 @@
     <string name="lockscreen_charging_animation_phone">Telefon</string>
     <string name="lockscreen_charging_animation_stack">Stos</string>
     <string name="lockscreen_charging_animation_wavy">Fala</string>
-    <!-- Statusbar Clock -->
+    <!-- Status bar Clock -->
     <string name="status_bar_clock_date_title">Zegar i data</string>
     <string name="status_bar_clock_date_summary">Dostosuj zegar i datę na pasku stanu</string>
     <string name="status_bar_clock_title">Ustawienia zegara</string>
@@ -409,9 +410,6 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Przycisk zabijania aplikacji</string>
     <string name="notification_guts_kill_app_button_summary">Pokaż przycisk zabicia aplikacji po długim przytrzymaniu powiadomienia</string>
-    <!-- Double Tap on Doze to wake -->
-    <string name="double_tap_on_doze_to_wake_title">Podwójne dotknięcie ekranu wybudza urządzenie</string>
-    <string name="double_tap_on_doze_to_wake_summary">Dotknij dwukrotnie ekranu, aby wybudzić urządzenie, gdy słodko śpi</string>
     <!-- Battery Bar -->
     <string name="battery_bar_title">Pasek baterii</string>
     <string name="battery_bar_summary">Wyświetl i dostosuj pasek baterii w pobliżu paska stanu lub paska nawigacji</string>
@@ -500,6 +498,9 @@
     <string name="fod_pressed_color_green">Zielony</string>
     <string name="fod_pressed_color_yellow">Żółty</string>
     <string name="fod_pressed_color_light_yellow">Jasnożółty</string>
+    <!-- Nightlight Fod -->
+    <string name="fod_night_light_title">Wyłącz podświetlenie nocne podczas wyświetlania FOD</string>
+    <string name="fod_night_light_summary">Wyłącz podświetlenie nocne na ekranie blokady, jeśli FOD jest aktywne. Wyłączenie tej opcji może mieć wpływ na dokładność odcisku palca przy włączonym oświetleniu nocnym.</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Uruchom odtwarzacz muzyki po podłączeniu zestawu słuchawkowego</string>
     <string name="headset_connect_player_summary">Uruchom domyślny odtwarzacz muzyki po podłączeniu słuchawek</string>
@@ -618,11 +619,6 @@
     <string name="qs_bg_use_disco_summary">Spraw, by twoje kafelki szybkich ustawień były kolorowe!</string>
     <!-- QS panel background opacity -->
     <string name="qs_panel_alpha_title">Przezroczystość tła</string>
-    <!-- QS panel gradient below status bar -->
-    <string name="qs_panel_gradient_title">Gradient paska statusu</string>
-    <string name="qs_panel_gradient_summary">Pokaż gradient pod paskiem stanu w panelu szybkich ustawień</string>
-    <!-- QS status bar background opacity -->
-    <string name="qs_sb_bg_alpha_title">Przeźroczystość paska stanu</string>
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">Styl kafelek szybkich ustawień</string>
     <string name="qstile_default">Domyślny</string>
@@ -663,17 +659,15 @@
     <string name="status_bar_custom_header_shadow_title">Cień obrazu nagłówka</string>
     <string name="unit_percent">\u0025</string>
     <!-- Volume Panel Plugin -->
-    <string name="volume_panel">Styl panelu głośności</string>
+    <string name="volume_panel_category">Panel głośności</string>
+    <string name="volume_panel_title">Styl panelu głośności</string>
     <string name="volume_panel_stock">Domyślny panel AOSP</string>
     <string name="volume_panel_aosp">AOSP</string>
     <string name="volume_panel_compact">Kompaktowy</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Kafelkowy</string>
     <!-- Volume Panel Plugin Values -->
-    <!-- Allow fake signature -->
-    <string name="allow_signature_fake">Pozwól na fałszowanie podpisu</string>
-    <string name="allow_signature_fake_summary">Zezwalaj aplikacji na ominięcie zabezpieczeń systemu poprzez udawanie innej aplikacji.</string>
-    <!-- Show Statusbar on Lockscreen -->
+    <!-- Show Status bar on Lockscreen -->
     <string name="lockscreen_status_bar_title">Pasek stanu</string>
     <string name="lockscreen_status_bar_summary">Pokaż pasek statusu na ekranie blokady</string>
     <!-- Notification Vibration -->
@@ -686,14 +680,6 @@
     <string name="qs_datausage_monthly">Miesięczne użycie</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Poziom rozmycia okładki albumu</string>
-    <!-- Smart Pixels -->
-    <string name="smart_pixels_title">Inteligentne piksele</string>
-    <string name="smart_pixels_summary">Oszczędzaj baterię poprzez wyłączanie dodatkowych pikseli</string>
-    <string name="smart_pixels_on_power_save_title">Włącz automatycznie w trybie oszczędzania energii</string>
-    <string name="smart_pixels_on_power_save_summary">Włącz z oszczędzaniem baterii, by zwiększyć oszczędzanie energii</string>
-    <string name="smart_pixels_percent">Procent pikseli do wyłączenia</string>
-    <string name="smart_pixels_shift">Ochrona przed wypaleniem ekranu</string>
-    <string name="smart_pixels_warning_text">Inteligentne piksele to funkcja oszczędzania energii. W zależności od tego, ile pikseli zdecydujesz się wyłączyć, możesz zauważyć znaczną poprawę żywotności baterii. Dla wygody użytkowania zalecamy ustawienie liczby wyłączonych pikseli na 75 procent.</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Blokowanie czujników dla aplikacji</string>
     <string name="sensor_block_summary">Zablokuj dostęp do niektórych czujników dla niektórych aplikacji aby oszczędzać baterię</string>
@@ -703,6 +689,7 @@
     <!-- gvisual mod -->
     <string name="gvisual_title">G-Visual Mod</string>
     <string name="gvisual_summary">Różne dostosowania UI</string>
+    <string name="gvisual_footer">Z jakiegoś powodu opcja zaokrąglonego rogu nie działa, gdy kształt ikony to Zaokrąglony Prostokąt, Zaokrąglony Kwadrat lub Łza.</string>
     <string name="rounded_ui_title">Zaokrąglony róg</string>
     <string name="rounded_ui_dialog_title">Wybierz model zaokrąglonego narożnika</string>
     <string name="rounded_style_default">Domyślnie</string>
@@ -715,8 +702,38 @@
     <string name="sb_height_medium">Średni</string>
     <string name="sb_height_large">Duży</string>
     <string name="sb_height_extralarge">Bardzo duży</string>
+    <string name="navbar_color_title">Kolory paska nawigacji</string>
+    <string name="navbar_color_dialog_title">Wybierz kolor</string>
+    <string name="navbar_default">Domyślnie</string>
+    <string name="navbar_orchid">Orchideowy</string>
+    <string name="navbar_red">Czerwony</string>
+    <string name="navbar_purp">Fioletowy</string>
+    <string name="navbar_blue">Niebieski</string>
+    <string name="navbar_rose">Różowy</string>
+    <string name="header_default">Domyślny</string>
+    <string name="header_large">Duży</string>
+    <string name="header_xlarge">Bardzo duży</string>
+    <string name="header_title">Rozmiary nagłówka</string>
+    <string name="header_dialog_title">Wybierz rozmiar</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Always-On Display włączone</string>
     <string name="always_on_display_schedule_sunset">Zachód słońca</string>
     <string name="always_on_display_schedule_sunrise">Wschód słońca</string>
+    <string name="always_on_display_schedule_mixed_sunset">Włącza od zachodu słońca do czasu</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Włącza od czasu do wschodu słońca</string>
+    <!-- Settings dashboard icon style -->
+    <string name="theming_settings_dashboard_icons_title">Ustawienia elementów panelu ustawień</string>
+    <string name="theming_settings_dashboard_icons_default">Domyślne tło / Przezroczyste</string>
+    <string name="theming_settings_dashboard_icons_white">Domyślne tło / Białe</string>
+    <string name="theming_settings_dashboard_icons_accent">Akcentowe tło / Przezroczysty pierwszy plan</string>
+    <string name="theming_settings_dashboard_icons_plain">Przezroczyste tło / Zwykły</string>
+    <string name="theming_settings_dashboard_icons_plain_accent">Przezroczyste tło / Akcent</string>
+    <!-- Switch styles -->
+    <string name="switch_style_title">Zmień styl</string>
+    <string name="switch_default">Domyślnie</string>
+    <string name="switch_contained">Zwarty</string>
+    <string name="switch_telegram">Telegram</string>
+    <string name="switch_md2">Styl Material Design 2</string>
+    <string name="switch_retro">Tryb Retro</string>
+    <string name="switch_oos">OxygenOS 11</string>
 </resources>
