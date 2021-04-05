@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (C) 2020 The exTHmUI Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/gaming_title" >
+    
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="gaming_mode_enabled"
+        android:title="@string/gaming_mode_enabled_title"
+        android:defaultValue="false" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="gaming_mode_dynamic_add"
+        android:title="@string/gaming_mode_dynamic_add_title"
+        android:summary="@string/gaming_mode_dynamic_add_summary"
+        android:defaultValue="true"
+        android:dependency="gaming_mode_enabled" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="gaming_mode_disable_auto_brightness"
+        android:title="@string/gaming_mode_disable_auto_brightness_title"
+        android:summary="@string/gaming_mode_disable_auto_brightness_summary"
+        android:defaultValue="true"
+        android:dependency="gaming_mode_enabled" />
+
+    <Preference
+        android:key="gaming_mode_notification_danmaku"
+        android:title="@string/gaming_mode_notification_danmaku_title" 
+        android:summary="@string/gaming_mode_notification_danmaku_summary"
+        android:fragment="com.evolution.settings.fragments.DanmakuSettings"
+        android:dependency="gaming_mode_enabled" />
+
+    <Preference
+        android:key="gaming_mode_quick_start_apps"
+        android:title="@string/gaming_mode_quick_start_apps_title" 
+        android:summary="@string/gaming_mode_quick_start_apps_summary"
+        android:fragment="com.evolution.settings.fragments.QuickStartAppSettings"
+        android:dependency="gaming_mode_enabled" />
+
+    <PreferenceCategory
+        android:title="@string/gaming_mode_performance">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="gaming_mode_use_game_driver"
+            android:title="@string/gaming_mode_use_game_driver_title"
+            android:summary="@string/gaming_mode_use_game_driver_summary"
+            android:defaultValue="true"
+            android:dependency="gaming_mode_enabled" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="gaming_mode_change_performance_level"
+            android:title="@string/gaming_mode_change_performance_title"
+            android:summary="@string/gaming_mode_change_performance_summary"
+            android:defaultValue="true"
+            android:dependency="gaming_mode_enabled" />
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="gaming_mode_performance_level"
+            android:title="@string/gaming_mode_performance_title"
+            android:defaultValue="5"
+            android:max="6"
+            settings:min="0"
+            settings:units=""
+            android:dependency="gaming_mode_change_performance_level" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/gaming_mode_dnd">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="gaming_mode_disable_notification_alert"
+            android:title="@string/gaming_mode_disable_notification_alert_title"
+            android:summary="@string/gaming_mode_disable_notification_alert_summary"
+            android:defaultValue="true"
+            android:dependency="gaming_mode_enabled" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="gaming_mode_disable_ringtone"
+            android:title="@string/gaming_mode_disable_ringtone_title"
+            android:summary="@string/gaming_mode_disable_ringtone_summary"
+            android:defaultValue="false"
+            android:dependency="gaming_mode_enabled" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="gaming_mode_auto_answer_call"
+            android:title="@string/gaming_mode_auto_answer_call_title"
+            android:summary="@string/gaming_mode_auto_answer_call_summary"
+            android:defaultValue="false"
+            android:dependency="gaming_mode_enabled" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/gaming_mode_prevent_accidental_touch">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="gaming_mode_disable_gesture"
+            android:title="@string/gaming_mode_disable_gesture_title"
+            android:defaultValue="false"
+            android:dependency="gaming_mode_enabled" />
+
+    </PreferenceCategory>
+
+    <com.evolution.settings.preference.PackageListPreference
+        android:key="gaming_mode_app_list"
+        android:title="@string/gaming_mode_apps"
+        android:dependency="gaming_mode_enabled" />
+
+</PreferenceScreen>
