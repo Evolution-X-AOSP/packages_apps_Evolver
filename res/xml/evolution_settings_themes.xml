@@ -22,15 +22,16 @@
     <PreferenceCategory 
         android:title="@string/category_name_lock_display">
 
-        <Preference
-            android:key="clock_style"
-            android:title="@string/clock_style_title"
-            android:summary="@string/clock_style_summary">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:targetPackage="com.android.wallpaper"
-                android:targetClass="com.android.customization.picker.LockClockPickerActivity" />
-        </Preference>
+        <ListPreference
+            android:layout="@layout/themes_lock_clock_preview"
+            android:selectable="false" />
+
+        <ListPreference
+            android:key="lock_screen_custom_clock_face"
+            android:summary="%s"
+            android:title="@string/lock_screen_custom_clock_face_title"
+            android:entries="@array/lock_screen_custom_clock_face_entries"
+            android:entryValues="@array/lock_screen_custom_clock_face_values" />
 
     </PreferenceCategory>
 
