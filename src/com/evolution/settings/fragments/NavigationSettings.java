@@ -54,31 +54,21 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
 
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
     private static final String LAYOUT_SETTINGS = "navbar_layout_views";
-    private static final String NAVBAR_VISIBILITY = "navbar_visibility";
-    private static final String NAVBAR_VISIBILITY_FOOTER = "navbar_visibility_footer";
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
 
     private Preference mGestureSystemNavigation;
     private Preference mLayoutSettings;
-    private SwitchPreference mNavbarVisibility;
     private SwitchPreference mSwapNavButtons;
     private SystemSettingSwitchPreference mPixelNavAnimation;
 
     private boolean mIsNavSwitchingMode = false;
     private Handler mHandler;
 
-    private static final int KEY_MASK_HOME = 0x01;
-    private static final int KEY_MASK_BACK = 0x02;
-    private static final int KEY_MASK_MENU = 0x04;
-    private static final int KEY_MASK_APP_SWITCH = 0x10;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_navigation);
-
-        findPreference(NAVBAR_VISIBILITY_FOOTER).setTitle(R.string.navbar_visibility_footer);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
@@ -106,59 +96,12 @@ public class NavigationSettings extends SettingsPreferenceFragment implements
             mSwapNavButtons.setEnabled(false);
         }
 
-        mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
-
-        boolean defaultToNavigationBar = EvolutionUtils.deviceSupportNavigationBar(getActivity());
-        boolean showing = Settings.System.getInt(getContentResolver(),
-                Settings.System.FORCE_SHOW_NAVBAR,
-                defaultToNavigationBar ? 1 : 0) != 0;
-        updateBarVisibleAndUpdatePrefs(showing);
-        if (!haveHWkeys()) {
-            mNavbarVisibility.setEnabled(false);
-        } else {
-            mNavbarVisibility.setOnPreferenceChangeListener(this);
-        }
-
         mHandler = new Handler();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference.equals(mNavbarVisibility)) {
-            if (mIsNavSwitchingMode) {
-                return false;
-            }
-            mIsNavSwitchingMode = true;
-            boolean showing = ((Boolean)newValue);
-            Settings.System.putInt(getContentResolver(), Settings.System.FORCE_SHOW_NAVBAR,
-                    showing ? 1 : 0);
-            updateBarVisibleAndUpdatePrefs(showing);
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    mIsNavSwitchingMode = false;
-                }
-            }, 1500);
-            return true;
-        }
         return false;
-    }
-
-    private void updateBarVisibleAndUpdatePrefs(boolean showing) {
-        mNavbarVisibility.setChecked(showing);
-    }
-
-    private boolean haveHWkeys() {
-        final int deviceKeys = getContext().getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys);
-
-        // read bits for present hardware keys
-        final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
-        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
-        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
-        final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
-
-        return (hasHomeKey || hasBackKey || hasMenuKey || hasAppSwitchKey);
     }
 
     @Override

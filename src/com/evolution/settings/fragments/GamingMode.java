@@ -65,9 +65,6 @@ public class GamingMode extends SettingsPreferenceFragment
 
     private static final int DIALOG_GAMING_APPS = 1;
     private static final String GAMING_MODE_FOOTER = "gaming_mode_footer";
-    private static final String GAMING_MODE_HW_KEYS = "gaming_mode_hw_keys_toggle";
-
-    private SwitchPreference mHardwareKeysDisable;
 
     private PackageListAdapter mPackageAdapter;
     private PackageManager mPackageManager;
@@ -78,11 +75,6 @@ public class GamingMode extends SettingsPreferenceFragment
     private Map<String, Package> mGamingPackages;
     private Context mContext;
 
-    private static final int KEY_MASK_HOME = 0x01;
-    private static final int KEY_MASK_BACK = 0x02;
-    private static final int KEY_MASK_MENU = 0x04;
-    private static final int KEY_MASK_APP_SWITCH = 0x10;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,12 +84,6 @@ public class GamingMode extends SettingsPreferenceFragment
         findPreference(GAMING_MODE_FOOTER).setTitle(R.string.add_gaming_mode_package_summary);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        mHardwareKeysDisable = (SwitchPreference) findPreference(GAMING_MODE_HW_KEYS);
-
-        if (!haveHWkeys()) {
-            prefScreen.removePreference(mHardwareKeysDisable);
-        }
 
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
@@ -348,19 +334,6 @@ public class GamingMode extends SettingsPreferenceFragment
         }
         Settings.System.putString(getContentResolver(),
                 setting, value);
-    }
-
-    private boolean haveHWkeys() {
-        final int deviceKeys = getContext().getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys);
-
-        // read bits for present hardware keys
-        final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
-        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
-        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
-        final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
-
-        return (hasHomeKey || hasBackKey || hasMenuKey || hasAppSwitchKey);
     }
 
     /**

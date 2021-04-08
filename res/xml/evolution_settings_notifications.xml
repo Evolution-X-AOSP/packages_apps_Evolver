@@ -104,7 +104,8 @@
             android:key="ambient_light_pulse_for_all"
             android:title="@string/pulse_ambient_light_show_always_title"
             android:summary="@string/pulse_ambient_light_show_always_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            android:dependency="pulse_ambient_light" />
 
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="ambient_notification_light_timeout"
@@ -122,13 +123,15 @@
             android:persistent="false"
             android:entries="@array/ambient_notification_light_color_mode_entries"
             android:entryValues="@array/ambient_notification_light_color_mode_values"
-            android:defaultValue="2" />
+            android:defaultValue="2"
+            android:dependency="pulse_ambient_light" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="ambient_notification_light_color"
             android:title="@string/ambient_notification_light_color_title"
             ledPreview="true"
-            android:defaultValue="0xFF1A73E8" />
+            android:defaultValue="0xFF1A73E8"
+            android:dependency="pulse_ambient_light" />
 
         <com.evolution.settings.preference.CustomSeekBarPreference
             android:key="notification_pulse_duration"
