@@ -36,6 +36,19 @@
     </PreferenceCategory>
 
     <PreferenceCategory 
+        android:title="@string/theme_customization_font_title">
+
+        <ListPreference
+            android:layout="@layout/themes_font_preview"
+            android:selectable="false" />
+
+        <ListPreference
+            android:key="android.theme.customization.font"
+            android:title="@string/theme_customization_font_title"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory 
         android:title="@string/category_name_color">
 
         <Preference
@@ -44,6 +57,10 @@
             android:summary="@string/dark_ui_mode_summary"
             android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
             settings:controller="com.android.settings.display.DarkUIPreferenceController" />
+
+        <ListPreference
+            android:layout="@layout/themes_accent_preview"
+            android:selectable="false" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="accent_color"
@@ -60,10 +77,6 @@
 
     <PreferenceCategory 
         android:title="@string/category_name_general">
-
-        <ListPreference
-            android:key="android.theme.customization.font"
-            android:title="@string/theme_customization_font_title"/>
 
         <ListPreference
             android:key="android.theme.customization.adaptive_icon_shape"

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2020-2021 ProjectFluid
+    
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/themes_preview_background"
+    android:gravity="center"
+    android:layout_marginBottom="32dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_marginVertical="32dp">
+
+        <LinearLayout
+            android:id="@+id/accent_preview_elements"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:background="@drawable/preview_card"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-8dp">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:allowUndo="true"
+                    android:checked="true" />
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="128dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                android:alpha="0.2"
+                android:background="@drawable/accent_button_preview" />
+
+            <FrameLayout
+                android:layout_width="128dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/accent_button_preview" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/accent_preview_seekbar"
+            android:layout_width="40dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/accent_preview_elements"
+            android:background="@drawable/preview_card">
+
+            <SeekBar
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="-60dp"
+                android:progress="69"
+                android:rotation="270" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/adaptive_shape_preview"
+            android:layout_width="216dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/accent_preview_elements"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/preview_card"
+            android:gravity="center">
+
+            <View
+                android:id="@+id/adaptive_settings_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/adaptive_settings" />
+
+            <View
+                android:id="@+id/adaptive_messages_icon"
+                android:layout_toEndOf="@id/adaptive_settings_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/adaptive_messages" />
+
+            <View
+                android:id="@+id/adaptive_dialer_icon"
+                android:layout_toEndOf="@id/adaptive_messages_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/adaptive_dialer" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
