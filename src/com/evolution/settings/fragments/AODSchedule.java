@@ -41,6 +41,9 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.SecureSettingListPreference;
 
+import java.time.format.DateTimeFormatter;
+import java.time.LocalTime;
+
 @SearchIndexable
 public class AODSchedule extends SettingsPreferenceFragment implements
         Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
@@ -78,7 +81,7 @@ public class AODSchedule extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        int value = Integer.valueOf((String) objValue);
+        int value = Integer.parseInt((String) objValue);
         int index = mModePref.findIndexOfValue((String) objValue);
         mModePref.setSummary(mModePref.getEntries()[index]);
         Settings.Secure.putIntForUser(getActivity().getContentResolver(),
@@ -92,12 +95,9 @@ public class AODSchedule extends SettingsPreferenceFragment implements
     public boolean onPreferenceClick(Preference preference) {
         String[] times = getCustomTimeSetting();
         boolean isSince = preference == mSincePref;
-        int hour, minute; hour = minute = 0;
-        TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                updateTimeSetting(isSince, hourOfDay, minute);
-            }
+        int hour, minute;
+        TimePickerDialog.OnTimeSetListener listener = (view, hourOfDay, minute1) -> {
+            updateTimeSetting(isSince, hourOfDay, minute1);
         };
         if (isSince) {
             String[] sinceValues = times[0].split(":", 0);
@@ -136,41 +136,29 @@ public class AODSchedule extends SettingsPreferenceFragment implements
             mTillPref.setSummary("-");
             return;
         }
+
         if (mode == MODE_NIGHT) {
             mSincePref.setSummary(R.string.always_on_display_schedule_sunset);
             mTillPref.setSummary(R.string.always_on_display_schedule_sunrise);
             return;
         }
+
+        String outputFormat = DateFormat.is24HourFormat(getContext()) ? "HH:mm" : "hh:mm a";
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern(outputFormat);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        LocalTime sinceDT = LocalTime.parse(times[0], formatter);
+        LocalTime tillDT = LocalTime.parse(times[1], formatter);
+
         if (mode == MODE_MIXED_SUNSET) {
             mSincePref.setSummary(R.string.always_on_display_schedule_sunset);
+            mTillPref.setSummary(tillDT.format(outputFormatter));
         } else if (mode == MODE_MIXED_SUNRISE) {
             mTillPref.setSummary(R.string.always_on_display_schedule_sunrise);
-        }
-        if (DateFormat.is24HourFormat(getContext())) {
-            if (mode != MODE_MIXED_SUNSET) mSincePref.setSummary(times[0]);
-            if (mode != MODE_MIXED_SUNRISE) mTillPref.setSummary(times[1]);
-            return;
-        }
-        String[] sinceValues = times[0].split(":", 0);
-        String[] tillValues = times[1].split(":", 0);
-        int sinceHour = Integer.parseInt(sinceValues[0]);
-        int tillHour = Integer.parseInt(tillValues[0]);
-        String sinceSummary = "";
-        String tillSummary = "";
-        if (sinceHour > 12) {
-            sinceHour -= 12;
-            sinceSummary += String.valueOf(sinceHour) + ":" + sinceValues[1] + " PM";
+            mSincePref.setSummary(sinceDT.format(outputFormatter));
         } else {
-            sinceSummary = times[0].substring(1) + " AM";
+            mSincePref.setSummary(sinceDT.format(outputFormatter));
+            mTillPref.setSummary(tillDT.format(outputFormatter));
         }
-        if (tillHour > 12) {
-            tillHour -= 12;
-            tillSummary += String.valueOf(tillHour) + ":" + tillValues[1] + " PM";
-        } else {
-            tillSummary = times[0].substring(1) + " AM";
-        }
-        if (mode != MODE_MIXED_SUNSET) mSincePref.setSummary(sinceSummary);
-        if (mode != MODE_MIXED_SUNRISE) mTillPref.setSummary(tillSummary);
     }
 
     private void updateTimeSetting(boolean since, int hour, int minute) {
