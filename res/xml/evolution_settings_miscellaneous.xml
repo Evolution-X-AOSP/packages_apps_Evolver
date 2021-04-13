@@ -25,6 +25,16 @@
         android:title="@string/gaming_mode_title"
         android:summary="@string/gaming_mode_summary" />
 
+    <!-- Screenshot compression -->
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="screenshot_compression"
+        android:title="@string/screenshot_compression_title"
+        android:summary="@string/screenshot_compression_summary"
+        android:defaultValue="100"
+        android:max="100"
+        android:min="10"
+        settings:units="%" />
+
     <!-- Launch music player when headset is connected -->
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="headset_connect_player"
