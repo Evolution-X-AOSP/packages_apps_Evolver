@@ -44,7 +44,7 @@ import com.evolution.settings.preference.SecureSettingListPreference;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalTime;
 
-@SearchIndexable
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class AODSchedule extends SettingsPreferenceFragment implements
         Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
 

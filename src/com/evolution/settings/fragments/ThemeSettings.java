@@ -36,6 +36,7 @@ import com.android.settings.development.OverlayCategoryPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.display.AccentColorPreferenceController;
 import com.evolution.settings.display.QsColorPreferenceController;
@@ -48,6 +49,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class ThemeSettings extends DashboardFragment implements OnPreferenceChangeListener {
 
     public static final String TAG = "ThemeSettings";

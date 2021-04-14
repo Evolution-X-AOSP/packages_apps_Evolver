@@ -32,6 +32,18 @@
         android:entryValues="@array/screen_off_animation_values"
         android:summary="%s"
         android:defaultValue="0" />
+
+    <com.evolution.settings.preference.SecureSettingSwitchPreference 
+        android:key="show_back_arrow_gesture"
+        android:title="@string/back_gesture_arrow_message"
+        android:summary="@string/back_gesture_arrow_summary"
+        android:defaultValue="true" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="charging_animation"
+        android:title="@string/charging_animation_title"
+        android:summary="@string/charging_animation_summary"
+        android:defaultValue="true" />
    
     <ListPreference
         android:key="pref_scrollingcache"

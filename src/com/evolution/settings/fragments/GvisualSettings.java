@@ -48,11 +48,13 @@ import com.android.internal.util.evolution.ThemesUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class GvisualSettings extends SettingsPreferenceFragment implements
          OnPreferenceChangeListener {
 

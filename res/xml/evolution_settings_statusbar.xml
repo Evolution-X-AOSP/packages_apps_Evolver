@@ -17,10 +17,16 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/statusbar_title">
+    android:title="@string/status_bar_title">
+
+    <Preference
+        android:key="traffic"
+        android:title="@string/network_traffic_settings_title"
+        android:summary="@string/network_traffic_settings_summary"
+        android:fragment="com.evolution.settings.fragments.NetworkTrafficSettings" />
 
     <PreferenceCategory
-        android:title="@string/statusbar_items_categories_title">
+        android:title="@string/status_bar_items_categories_title">
 
         <Preference
             android:key="statusbar_clock_date"
@@ -37,7 +43,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/statusbar_icons_title">
+        android:title="@string/status_bar_icons_title">
 
         <Preference
             android:key="statusbar_battery"
@@ -46,14 +52,8 @@
             android:fragment="com.evolution.settings.fragments.StatusbarBatterySettings"/>
 
         <Preference
-            android:key="traffic"
-            android:title="@string/traffic_title"
-            android:summary="@string/traffic_summary"
-            android:fragment="com.evolution.settings.fragments.NetworkTrafficSettings" />
-
-        <Preference
-            android:title="@string/icon_manager_title"
-            android:summary="@string/icon_manager_summary">
+            android:title="@string/status_bar_system_icons_title"
+            android:summary="@string/status_bar_system_icons_summary">
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />

@@ -131,9 +131,9 @@
 
     <!--- Volume key cursor control -->
     <string-array name="volume_key_cursor_control_entries">
-        <item>@string/volume_key_cursor_control_off</item>
-        <item>@string/volume_key_cursor_control_on</item>
-        <item>@string/volume_key_cursor_control_on_reverse</item>
+        <item>@string/volbtn_cursor_control_off</item>
+        <item>@string/volbtn_cursor_control_on</item>
+        <item>@string/volbtn_cursor_control_on_reverse</item>
     </string-array>
 
     <string-array name="volume_key_cursor_control_values">
@@ -237,7 +237,7 @@
         <item>space;space;left,back,home,recent,right</item>
     </string-array>
 
-    <!-- Statusbar Clock -->
+    <!-- Status bar Clock -->
     <string-array name="status_bar_clock_style_entries" translatable="false">
         <item>@string/status_bar_clock_style_left</item>
         <item>@string/status_bar_clock_style_center</item>
@@ -385,8 +385,8 @@
     <!-- Battery bar -->
     <string-array name="battery_bar_no_navbar_entries">
         <item>@string/battery_bar_location_hide</item>
-        <item>@string/battery_bar_statusbar_top</item>
-        <item>@string/battery_bar_statusbar_bot</item>
+        <item>@string/battery_bar_status_bar_top</item>
+        <item>@string/battery_bar_status_bar_bot</item>
     </string-array>
 
     <string-array name="battery_bar_no_navbar_values" translatable="false">
@@ -455,8 +455,8 @@
     <!-- Network traffic location -->
     <string-array name="network_traffic_location_entries">
         <item>@string/traffic_disabled</item>
-        <item>@string/traffic_statusbar</item>
-        <item>@string/traffic_expanded_statusbar</item>
+        <item>@string/traffic_status_bar</item>
+        <item>@string/traffic_expanded_status_bar</item>
     </string-array>
 
     <string-array name="network_traffic_location_values" translatable="false">
@@ -644,14 +644,14 @@
         <item>4</item>
     </string-array>
 
-    <string-array name="statusbar_height_titles" translatable="false">
+    <string-array name="status_bar_height_titles" translatable="false">
         <item>@string/sb_height_default</item>
         <item>@string/sb_height_medium</item>
         <item>@string/sb_height_large</item>
         <item>@string/sb_height_extralarge</item>
     </string-array>
 
-    <string-array name="statusbar_height_values" translatable="false">
+    <string-array name="status_bar_height_values" translatable="false">
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -761,38 +761,42 @@
         <item>@string/lock_screen_custom_clock_face_default</item>
         <item>@string/lock_screen_custom_clock_face_default_bold</item>
         <item>@string/lock_screen_custom_clock_face_analog</item>
+        <item>@string/lock_screen_custom_clock_face_binary</item>
         <item>@string/lock_screen_custom_clock_face_bubble</item>
+        <item>@string/lock_screen_custom_clock_face_typographic</item>
+        <item>@string/lock_screen_custom_clock_face_typographic_alt</item>
+        <item>@string/lock_screen_custom_clock_face_samsung</item>
+        <item>@string/lock_screen_custom_clock_face_samsung_bold</item>
+        <item>@string/lock_screen_custom_clock_face_samsung_highlight</item>
         <item>@string/lock_screen_custom_clock_face_divided</item>
         <item>@string/lock_screen_custom_clock_face_fluid</item>
         <item>@string/lock_screen_custom_clock_face_ide</item>
         <item>@string/lock_screen_custom_clock_face_mnml_box</item>
         <item>@string/lock_screen_custom_clock_face_mnml_minimal</item>
-        <item>@string/lock_screen_custom_clock_face_samsung</item>
-        <item>@string/lock_screen_custom_clock_face_samsung_bold</item>
-        <item>@string/lock_screen_custom_clock_face_samsung_highlight</item>
         <item>@string/lock_screen_custom_clock_face_sfuny</item>
         <item>@string/lock_screen_custom_clock_face_shapeshift</item>
-        <item>@string/lock_screen_custom_clock_face_typographic</item>
-        <item>@string/lock_screen_custom_clock_face_typographic_alt</item>
+        <item>@string/lock_screen_custom_clock_face_spectrum</item>
     </string-array>
 
     <string-array name="lock_screen_custom_clock_face_values" translatable="false">
         <item>com.android.keyguard.clock.DefaultClockController</item>
         <item>com.android.keyguard.clock.DefaultBoldClockController</item>
         <item>com.android.keyguard.clock.AnalogClockController</item>
+        <item>com.android.keyguard.clock.BinaryClockController</item>
         <item>com.android.keyguard.clock.BubbleClockController</item>
+        <item>com.android.keyguard.clock.TypeClockController</item>
+        <item>com.android.keyguard.clock.TypeClockAltController</item>
+        <item>com.android.keyguard.clock.SamsungClockController</item>
+        <item>com.android.keyguard.clock.SamsungBoldClockController</item>
+        <item>com.android.keyguard.clock.SamsungHighlightClockController</item>
         <item>com.android.keyguard.clock.DividedLinesClockController</item>
         <item>com.android.keyguard.clock.FluidClockController</item>
         <item>com.android.keyguard.clock.IDEClockController</item>
         <item>com.android.keyguard.clock.MNMLBoxClockController</item>
         <item>com.android.keyguard.clock.MNMLMinimalClockController</item>
-        <item>com.android.keyguard.clock.SamsungClockController</item>
-        <item>com.android.keyguard.clock.SamsungBoldClockController</item>
-        <item>com.android.keyguard.clock.SamsungHighlightClockController</item>
         <item>com.android.keyguard.clock.SfunyClockController</item>
         <item>com.android.keyguard.clock.ShapeShiftClockController</item>
-        <item>com.android.keyguard.clock.TypeClockController</item>
-        <item>com.android.keyguard.clock.TypeClockAltController</item>
+        <item>com.android.keyguard.clock.SpectrumClockController</item>
     </string-array>
 
     <!-- Hardware key rebinding -->
@@ -805,7 +809,14 @@
         <item>@string/hardware_keys_action_launch_camera</item>
         <item>@string/hardware_keys_action_sleep</item>
         <item>@string/hardware_keys_action_split_screen</item>
-        <item>@*android:string/global_action_screenshot</item>
+        <item>@string/hardware_keys_action_close_app</item>
+        <item>@string/hardware_keys_action_torch</item>
+        <item>@string/hardware_keys_action_screenshot</item>
+        <item>@string/hardware_keys_action_volume_panel</item>
+        <item>@string/hardware_keys_action_clear_all_notifications</item>
+        <item>@string/hardware_keys_action_notifications_panel</item>
+        <item>@string/hardware_keys_action_toggle_qs_panel</item>
+        <item>@string/hardware_keys_action_ringer_modes</item>
     </string-array>
 
     <!-- Hardware key rebinding for Go enabled devices -->
@@ -834,6 +845,13 @@
         <item>6</item>
         <item>7</item>
         <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
     </string-array>
 
     <string-array name="hardware_keys_action_values_go" translatable="false">

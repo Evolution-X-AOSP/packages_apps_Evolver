@@ -25,18 +25,18 @@
         android:title="@string/gaming_mode_title"
         android:summary="@string/gaming_mode_summary" />
 
+    <Preference
+        android:key="screenshot_settings"
+        android:title="@string/screenshot_settings_title"
+        android:summary="@string/screenshot_settings_summary"
+        android:fragment="com.android.settings.gestures.SwipeToScreenshotGestureSettings" />
+
     <!-- Launch music player when headset is connected -->
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="headset_connect_player"
         android:title="@string/headset_connect_player_title"
         android:summary="@string/headset_connect_player_summary"
         android:defaultValue="false" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="charging_animation"
-        android:title="@string/charging_animation_title"
-        android:summary="@string/charging_animation_summary"
-        android:defaultValue="true" />
 
     <PreferenceCategory
         android:title="@string/dev_options_title">

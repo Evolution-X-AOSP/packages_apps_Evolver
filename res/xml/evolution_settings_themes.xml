@@ -23,10 +23,6 @@
         android:title="@string/category_name_lock_display">
 
         <ListPreference
-            android:layout="@layout/themes_lock_clock_preview"
-            android:selectable="false" />
-
-        <ListPreference
             android:key="lock_screen_custom_clock_face"
             android:summary="%s"
             android:title="@string/lock_screen_custom_clock_face_title"
@@ -139,18 +135,25 @@
         android:key="quick_settings_category"
         android:title="@string/quicksettings_title">
 
-        <ListPreference
-            android:key="qs_tile_style"
-            android:title="@string/qs_tile_style_title"
-            android:persistent="false"
-            android:entries="@array/qs_selector_entries"
-            android:entryValues="@array/qs_selector_values" />
+        <!-- Custom QS header image -->
+        <Preference
+            android:key="custom_header"
+            android:fragment="com.evolution.settings.fragments.QsCustomHeaderSettings"
+            android:title="@string/custom_header_title"
+            android:summary="@string/custom_header_summary" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_tiles_bg_disco"
             android:title="@string/qs_panel_bg_disco_title"
             android:summary="@string/qs_panel_bg_disco_summary"
             android:defaultValue="false" />
+
+        <ListPreference
+            android:key="qs_tile_style"
+            android:title="@string/qs_tile_style_title"
+            android:persistent="false"
+            android:entries="@array/qs_selector_entries"
+            android:entryValues="@array/qs_selector_values" />
 
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="qs_panel_bg_use_new_tint"
@@ -165,22 +168,6 @@
     <PreferenceCategory
         android:key="quick_settings_colors_category"
         android:title="@string/qs_panel_colors_title">
-
-        <!-- Custom QS header image -->
-        <Preference
-            android:key="custom_header"
-            android:fragment="com.evolution.settings.fragments.QsCustomHeaderSettings"
-            android:title="@string/custom_header_title"
-            android:summary="@string/custom_header_summary" />
-
-        <!-- QS panel opacity -->
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="qs_panel_bg_alpha"
-            android:title="@string/qs_panel_bg_alpha_title"
-            android:defaultValue="255"
-            android:max="255"
-            android:min="0"
-            settings:units="" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_panel_bg_use_fw"
@@ -203,6 +190,15 @@
             android:defaultValue="0xFFFFFFFF"
             android:persistent="false"
             android:dependency="sysui_colors_active" />
+
+        <!-- QS panel opacity -->
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_panel_bg_alpha"
+            android:title="@string/qs_panel_bg_alpha_title"
+            android:defaultValue="255"
+            android:max="255"
+            android:min="0"
+            settings:units="" />
 
     </PreferenceCategory>
 

@@ -47,16 +47,27 @@
         android:summary="@string/status_bar_toggle_brightness_summary"
         android:defaultValue="false" />
 
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="three_finger_gesture"
+        android:title="@string/three_finger_gesture"
+        android:summary="@string/three_finger_gesture_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="dtt_category"
         android:title="@string/dtt_category_title">
 
-        <Preference
-            android:key="gesture_doubletap_lockscreen"
-            android:title="@string/doubletap_lockscreen_screen_title"
-            android:summary="@string/doubletap_lockscreen_summary"
-            android:fragment="com.android.settings.gestures.DoubleTapLockscreenSettings"
-            settings:controller="com.android.settings.gestures.DoubleTapLockscreenPreferenceController" />
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="doze_trigger_doubletap"
+            android:title="@string/doze_double_tap_title"
+            android:summary="@string/doze_double_tap_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="double_tap_sleep_lockscreen"
+            android:title="@string/double_tap_title"
+            android:summary="@string/double_tap_lock_screen_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 

@@ -42,6 +42,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.PackageListAdapter;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
@@ -51,6 +52,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class HeadsUpSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceClickListener {
 
