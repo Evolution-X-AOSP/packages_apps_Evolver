@@ -23,10 +23,6 @@
         android:title="@string/category_name_lock_display">
 
         <ListPreference
-            android:layout="@layout/themes_lock_clock_preview"
-            android:selectable="false" />
-
-        <ListPreference
             android:key="lock_screen_custom_clock_face"
             android:summary="%s"
             android:title="@string/lock_screen_custom_clock_face_title"
@@ -130,8 +126,15 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="quick_settings_category"
-        android:title="@string/quicksettings_title">
+        android:key="quick_settings_colors_category"
+        android:title="@string/qs_panel_colors_title">
+
+        <!-- Custom QS header image -->
+        <Preference
+            android:key="custom_header"
+            android:fragment="com.evolution.settings.fragments.QsCustomHeaderSettings"
+            android:title="@string/custom_header_title"
+            android:summary="@string/custom_header_summary" />
 
         <ListPreference
             android:key="qs_tile_style"
@@ -154,19 +157,6 @@
             android:entryValues="@array/qs_tint_values"
             android:defaultValue="0" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="quick_settings_colors_category"
-        android:title="@string/qs_panel_colors_title">
-
-        <!-- Custom QS header image -->
-        <Preference
-            android:key="custom_header"
-            android:fragment="com.evolution.settings.fragments.QsCustomHeaderSettings"
-            android:title="@string/custom_header_title"
-            android:summary="@string/custom_header_summary" />
-
         <!-- QS panel opacity -->
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="qs_panel_bg_alpha"
@@ -175,28 +165,6 @@
             android:max="255"
             android:min="0"
             settings:units="" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_panel_bg_use_fw"
-            android:title="@string/qs_panel_bg_use_fw_title"
-            android:summary="@string/qs_panel_bg_use_fw_summary"
-            android:defaultValue="true"
-            android:disableDependentsState="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="sysui_colors_active"
-            android:title="@string/sysui_colors_active_title"
-            android:summary="@string/sysui_colors_active_summary"
-            android:defaultValue="false"
-            android:dependency="qs_panel_bg_use_fw"
-            android:disableDependentsState="true" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="qs_panel_color"
-            android:title="@string/qs_panel_bg_color_title"
-            android:defaultValue="0xFFFFFFFF"
-            android:persistent="false"
-            android:dependency="sysui_colors_active" />
 
     </PreferenceCategory>
 
