@@ -90,7 +90,7 @@
     <string name="seekbar_default_value_set">Valore predefinito impostato <xliff:g id="number">%d</xliff:g></string>
     <string name="seekbar_default_value_already_set">Valore predefinito già impostato</string>
     <string name="seekbar_default_string">Predefinito</string>
-    <!-- Lockscreen information -->
+    <!-- Lock screen information -->
     <string name="lockscreen_info_category_title">Elementi info nella schermata di blocco</string>
     <!-- Double Tap gestures -->
     <string name="dtt_category_title">Gesti doppio tocco</string>
@@ -100,7 +100,7 @@
     <!-- Status bar Icon Manager -->
     <string name="icon_manager_title">Gestore icona</string>
     <string name="icon_manager_summary">Controlla la visibilità delle icone della barra di stato</string>
-    <!-- Lockscreen icons -->
+    <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Scorciatoie schermata di blocco</string>
     <string name="lockscreen_tuner_summary">Modifica le scorciatoie visualizzate nella schermata di blocco</string>
     <!-- Navbar options -->
@@ -131,7 +131,7 @@
     <string name="battery_light_medium_color">Metà batteria rimanente</string>
     <string name="battery_light_full_color">Batteria quasi carica</string>
     <string name="battery_light_reallyfull_color">Batteria carica (100%)</string>
-    <!-- Lockscreen battery info indicator  -->
+    <!-- Lock screen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Informazioni di carica su blocco schermo</string>
     <string name="lockscreen_battery_info_summary">Mostra la corrente di ricarica, il voltaggio, il wattaggio e la temperatura della batteria sul blocco schermo durante la ricarica</string>
     <!-- FOD icon picker -->
@@ -245,14 +245,17 @@
     <string name="qs_tile_title_visibility_title">Mostra il titolo dei tile</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_category_title">Opzioni del cursore della luminosità</string>
-    <string name="qs_show_brightness_slider_title">Barra della luminosità</string>
-    <string name="qs_show_brightness_slider_summary">Mostra la barra della luminosità nelle impostazioni rapide</string>
     <string name="qs_show_brightness_slider_expanded_title">Cursore della luminosità estesa nelle impostazioni rapide</string>
     <string name="qs_show_brightness_slider_expanded_summary">Mostra il cursore della luminosità quando espanso</string>
     <string name="qs_show_auto_brightness_title">Icona luminosità automatica</string>
     <string name="qs_show_auto_brightness_summary">Mostra l\'interruttore per la luminosità automatica vicino alla barra</string>
     <string name="qs_brightness_position_bottom_title">Cursore luminosità in basso (funziona solo per le QS espanse)</string>
     <string name="qs_brightness_position_bottom_summary">Mostra il cursore della luminosità in fondo alle impostazioni rapide espanse</string>
+    <!-- QQS brightness slider -->
+    <string name="qqs_brightness_slider_title">Cursore luminosità QQS</string>
+    <string name="qs_brightness_slider_hide">Nascondi</string>
+    <string name="qs_brightness_slider_bottom">Basso</string>
+    <string name="qs_brightness_slider_top">Sup</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Risveglio con tasti del volume</string>
     <string name="volume_rocker_wake_summary">I tasti del volume risveglieranno il dispositivo</string>
@@ -281,7 +284,7 @@
     <string name="screen_off_animation_default">Predefinita</string>
     <string name="screen_off_animation_crt">Tubo catodico</string>
     <string name="screen_off_animation_scale">Scala</string>
-    <!-- Power menu on lockscreen -->
+    <!-- Power menu on lock screen -->
     <string name="power_menu_hide_on_secure_title">Nascondi nella schermata di blocco</string>
     <string name="power_menu_hide_on_secure_summary">Nasconde il menu delle azioni globali nella schermata di blocco sicura</string>
     <!-- Incall vibrate options -->
@@ -304,8 +307,8 @@
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Da dove riprodurre la suoneria</string>
     <string name="ringtone_focus_mode_dynamic">Dall\'auricolare se collegato e in riproduzione</string>
-    <string name="ringtone_focus_mode_stock">"Dall'altoparlante (predefinito AOSP)"</string>
-    <!-- Lockscreen album art filter -->
+    <string name="ringtone_focus_mode_stock">Dall\'altoparlante (predefinito AOSP)</string>
+    <!-- Lock screen album art filter -->
     <string name="lockscreen_albumart_filter_title">Filtro per copertine multimediali</string>
     <string name="lockscreen_albumart_filter_none">Nessuno</string>
     <string name="lockscreen_albumart_filter_grayscale">Scala di grigi</string>
@@ -443,7 +446,7 @@
     <!-- Force disable transition animation -->
     <string name="disable_transition_animations_title">Disabilita le animazioni di transizione</string>
     <string name="disable_transition_animations_summary">Disattivazione forzata di tutte le animazioni di transizione</string>
-    <!-- Supress notifications if screen is on -->
+    <!-- Suppress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Suono delle notifiche se attivo</string>
     <string name="notification_sound_vib_screen_on_summary">Riproduci il suono e la vibrazione delle notifiche quando lo schermo è acceso</string>
     <!-- Notification headers -->
@@ -484,9 +487,6 @@
     <string name="qs_footer_text_summary">Mostra testo in fondo al pannello delle impostazioni rapide</string>
     <string name="qs_footer_text_string_title">Personalizza testo piè di pagina</string>
     <string name="qs_footer_text_string_summary">Impostato su vuoto per impostazione predefinita</string>
-    <!-- NavBar Visibility -->
-    <string name="navbar_visibility">Abilita Barra di Navigazione</string>
-    <string name="navbar_visibility_footer">A causa di problemi di interfaccia utente, l\'interruttore di visibilità della barra di navigazione è stato disabilitato in modo permanente per dispositivi senza tasti HW. Utilizzare sia la pillola di visualizzazione o le opzioni di lunghezza della barra dei gesti.</string>
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_title">Icona impronta digitale</string>
     <string name="fod_icon_picker_summary">Scegli l\'icona preferita per l\'impronta digitale</string>
@@ -498,53 +498,12 @@
     <string name="fod_pressed_color_green">Verde</string>
     <string name="fod_pressed_color_yellow">Giallo</string>
     <string name="fod_pressed_color_light_yellow">Giallo chiaro</string>
-    <!-- Nightlight Fod -->
+    <!-- Night light FOD -->
     <string name="fod_night_light_title">Disabilita la luce notturna durante la visualizzazione di FOD</string>
     <string name="fod_night_light_summary">Disabilita la luce notturna sulla schermata di blocco se il FOD è attivo. La disattivazione di questa opzione potrebbe influire sulla precisione delle impronte digitali con la luce notturna accesa.</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Avvia il lettore musicale al collegamento delle cuffie</string>
     <string name="headset_connect_player_summary">Avvia il lettore musicale predefinito quando vengono connesse le cuffie</string>
-    <!-- Incall Home button behavior-->
-    <string name="allow_incall_home_title">Pulsante home durante lo squillo</string>
-    <string name="allow_incall_home_summary">Consenti l\'utilizzo del pulsante home quando il dispositivo squilla</string>
-    <!-- Buttons backlight timeout -->
-    <string name="backlight_timeout_title">Durata retroilluminazione dei pulsanti</string>
-    <string name="backlight_timeout_on">Sempre abilitato</string>
-    <string name="backlight_timeout_3s">3 secondi</string>
-    <string name="backlight_timeout_default">5 secondi (predefinito)</string>
-    <string name="backlight_timeout_10s">10 secondi</string>
-    <string name="backlight_timeout_15s">15 secondi</string>
-    <string name="backlight_timeout_20s">20 secondi</string>
-    <string name="backlight_timeout_30s">30 secondi</string>
-    <!-- Enable keys backlight-->
-    <string name="button_brightness_title">Retroilluminazione</string>
-    <string name="button_brightness_sw_title">Attiva la retroilluminazione</string>
-    <string name="button_backlight_on_touch_only_title">Tocco pulsante</string>
-    <string name="button_backlight_on_touch_only_summary">Attiva la retroilluminazione solo al tocco del pulsante</string>
-    <!-- HW Keys customization -->
-    <string name="picker_activities">Attività</string>
-    <string name="select_custom_app_title">Seleziona un\'app personalizzata</string>
-    <string name="select_custom_activity_title">Seleziona un\'attività personalizzata</string>
-    <string name="profile_applist_title">Applicazioni</string>
-    <string name="choose_action_title">Scegli un\'azione</string>
-    <string name="action_entry_default_action">Impostazioni predefinite</string>
-    <string name="action_entry_select_app">Seleziona un\'applicazione</string>
-    <string name="action_entry_custom_action">Seleziona un\'azione personalizzata</string>
-    <string name="hardware_keys_home_key_title">Pulsante home</string>
-    <string name="hardware_keys_menu_key_title">Pulsante menù</string>
-    <string name="hardware_keys_assist_key_title">Pulsante cerca</string>
-    <string name="hardware_keys_appswitch_key_title">Pulsante recenti</string>
-    <string name="hardware_keys_back_key_title">Pulsante indietro</string>
-    <string name="hardware_keys_double_tap_summary">Imposta azione doppio tocco</string>
-    <string name="hardware_keys_single_tap_summary">Imposta azione singolo tocco</string>
-    <string name="hardware_keys_long_press_summary">Imposta azione tocco prolungato</string>
-    <string name="hardware_keys_single_tap_title">Azione singolo tocco</string>
-    <string name="hardware_keys_long_press_title">Azione pressione prolungata</string>
-    <string name="hardware_keys_double_tap_title">Azione doppio tocco</string>
-    <string name="hardware_keys_disable_title">Disabilita tasti</string>
-    <!-- ANBI -->
-    <string name="anbi_title">Tocco accidentale</string>
-    <string name="anbi_summary">Previeni l\'interazione con i pulsanti di navigazione mentre si tocca lo schermo</string>
     <string name="radio_info_title">Info radio</string>
     <!-- Gaming mode -->
     <string name="gaming_mode_title">Modalità gioco</string>
@@ -579,12 +538,6 @@
     <!-- Global Actions -->
     <string name="powermenu_advanced_reboot_title">Riavvio avanzato</string>
     <string name="powermenu_advanced_reboot_summary">Abilita l\'accesso a recovery e bootloader</string>
-    <!-- Screenshot -->
-    <string name="global_actions_screenshot_title">Screenshot</string>
-    <string name="global_actions_screenshot_summary">Aggiungi screenshot attiva/disattiva dal menù di alimentazione</string>
-    <!-- Screen record -->
-    <string name="global_actions_screenrecord_title">Registra schermo</string>
-    <string name="global_actions_screenrecord_summary">Aggiungi registrazione schermo attiva/disattiva al menù alimentazione</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Configurazione luminosità Doze</string>
     <string name="doze_brightness_force_title">Forza i valori di luminosità</string>
@@ -611,14 +564,6 @@
     <string name="default_icon_shape">Cerchio (predefinito)</string>
     <!-- Accent color picker -->
     <string name="accent_color_title">Selettore colore accento</string>
-    <!-- QS themes -->
-    <string name="qs_themes_category_title">Impostazioni Rapide Temi</string>
-    <string name="qs_bg_use_new_tint">Tinta tile con colore accento</string>
-    <string name="qs_bg_use_new_tint_summary">Abilita la tinta colore principale sui tile delle impostazioni rapide</string>
-    <string name="qs_bg_use_disco">Disco tile impostazioni rapide</string>
-    <string name="qs_bg_use_disco_summary">Rendi le tue Tile colorate!</string>
-    <!-- QS panel background opacity -->
-    <string name="qs_panel_alpha_title">Trasparenza del pannello</string>
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">IR dello stile dei tile</string>
     <string name="qstile_default">Predefinito</string>
@@ -666,8 +611,9 @@
     <string name="volume_panel_compact">Compatto</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Tile</string>
+    <string name="volume_panel_miui">MIUI Compact</string>
     <!-- Volume Panel Plugin Values -->
-    <!-- Show Status bar on Lockscreen -->
+    <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Barra di stato</string>
     <string name="lockscreen_status_bar_summary">Visualizza la barra di stato nella schermata di blocco</string>
     <!-- Notification Vibration -->
@@ -686,7 +632,7 @@
     <string name="sensor_block_app_picker_title">Blocca i sensori per queste app</string>
     <string name="add_sensor_block_package_title">Aggiungi app per il blocco sensori</string>
     <string name="add_sensor_block_package_summary">I sensori di movimento, l\'accelerometro, i sensori di accelerazione lineare saranno bloccati per queste app</string>
-    <!-- gvisual mod -->
+    <!-- G-Visual mod -->
     <string name="gvisual_title">G-Visual Mod</string>
     <string name="gvisual_summary">Varie personalizzazioni dell\'interfaccia utente</string>
     <string name="gvisual_footer">Per qualche strano motivo, l\'opzione d\'angolo Arrotondato non funziona quando sono selezionati Rettangolo Arrotondato, Quadrato Arrotondato e Goccia come forme dell\'icona di sistema.</string>
@@ -736,4 +682,94 @@
     <string name="switch_md2">Design Materiale 2</string>
     <string name="switch_retro">Retro</string>
     <string name="switch_oos">OxygenOS 11</string>
+    <!-- Global Actions -->
+    <string name="global_actions_users_choice_title">Azioni utente facoltative</string>
+    <string name="global_actions_flashlight_title">Torcia</string>
+    <string name="global_actions_screenshot_title">Screenshot</string>
+    <string name="global_actions_screenrecord_title">Registra schermo</string>
+    <string name="global_actions_none_title">Nessuna</string>
+    <!-- QS themes -->
+    <string name="qs_panel_colors_title">Colore impostazioni rapide</string>
+    <string name="qs_panel_bg_alpha_title">Sfondo alfa</string>
+    <string name="qs_panel_bg_disco_title">Disco Pannello Impostazioni Rapide</string>
+    <string name="qs_panel_bg_disco_summary">Colora i tuoi Pannelli QS!</string>
+    <!-- Accent QS tint -->
+    <string name="qs_bg_use_new_tint">Tinta tile con colore accento</string>
+    <string name="qs_bg_use_new_tint_summary">Abilita la tinta colore principale sui tile delle impostazioni rapide</string>
+    <string name="qs_tint_off">Predefinito</string>
+    <string name="qs_tint_accent">Colore primario</string>
+    <string name="qs_tint_oos">OxygenOS 11</string>
+    <string name="qs_tint_twelve">Android 12</string>
+    <!-- Lock screen Clocks -->
+    <string name="lock_screen_custom_clock_face_category">Orologio del blocco schermo</string>
+    <string name="lock_screen_custom_clock_face_title">Stile orologio del blocco schermo</string>
+    <string name="lock_screen_custom_clock_face_default">Predefinito</string>
+    <string name="lock_screen_custom_clock_face_default_bold">Predefinito (grassetto)</string>
+    <string name="lock_screen_custom_clock_face_analog">Analogico</string>
+    <string name="lock_screen_custom_clock_face_binary">Binario</string>
+    <string name="lock_screen_custom_clock_face_bubble">Bolla</string>
+    <string name="lock_screen_custom_clock_face_divided">Linee Divise</string>
+    <string name="lock_screen_custom_clock_face_fluid">Fluido</string>
+    <string name="lock_screen_custom_clock_face_ide">IDE</string>
+    <string name="lock_screen_custom_clock_face_mnml_box">Casella di MNML</string>
+    <string name="lock_screen_custom_clock_face_mnml_minimal">MNML Ridotto</string>
+    <string name="lock_screen_custom_clock_face_samsung">Samsung</string>
+    <string name="lock_screen_custom_clock_face_samsung_bold">Samsung (grassetto)</string>
+    <string name="lock_screen_custom_clock_face_samsung_highlight">Samsung (evidenziazione)</string>
+    <string name="lock_screen_custom_clock_face_sfuny">SFUNY</string>
+    <string name="lock_screen_custom_clock_face_shapeshift">ShapeShift</string>
+    <string name="lock_screen_custom_clock_face_spectrum">Spectrum</string>
+    <string name="lock_screen_custom_clock_face_typographic">Tipografico</string>
+    <string name="lock_screen_custom_clock_face_typographic_alt">Tipografico (centro)</string>
+    <!-- Buttons -->
+    <string name="button_pref_title">Pulsanti</string>
+    <string name="hardware_keys_home_key_title">Pulsante home</string>
+    <string name="hardware_keys_back_key_title">Pulsante indietro</string>
+    <string name="hardware_keys_menu_key_title">Pulsante menù</string>
+    <string name="hardware_keys_assist_key_title">Pulsante cerca</string>
+    <string name="hardware_keys_appswitch_key_title">Pulsante recenti</string>
+    <string name="hardware_keys_camera_key_title">Pulsante fotocamera</string>
+    <string name="hardware_keys_short_press_title">Azione pressione breve</string>
+    <string name="hardware_keys_long_press_title">Azione pressione prolungata</string>
+    <string name="hardware_keys_double_tap_title">Azione doppio tocco</string>
+    <string name="hardware_keys_action_nothing">Nessuna azione</string>
+    <string name="hardware_keys_action_menu">Apri/chiudi menu</string>
+    <string name="hardware_keys_action_app_switch">Selettore app recenti</string>
+    <string name="hardware_keys_action_search">Assistente di ricerca</string>
+    <string name="hardware_keys_action_voice_search">Ricerca vocale</string>
+    <string name="hardware_keys_action_in_app_search">Ricerca in app</string>
+    <string name="hardware_keys_action_launch_camera">Avvia fotocamera</string>
+    <string name="hardware_keys_action_sleep">Spegni lo schermo</string>
+    <string name="hardware_keys_action_split_screen">Schermo diviso</string>
+    <string name="hardware_keys_swipe_right_key_title">Scorri a destra</string>
+    <string name="hardware_keys_swipe_left_key_title">Scorri a sinistra</string>
+    <string name="hardware_keys_long_tap_key_title">Tocco prolungato</string>
+    <string name="hardware_keys_swipe_tap_title">Azione di scorrimento</string>
+    <string name="hardware_keys_long_tap_title">Azione tocco prolungato</string>
+    <string name="button_wake_title">Sveglia dispositivo</string>
+    <string name="camera_sleep_on_release_title">Anteprima dello schermo</string>
+    <string name="camera_sleep_on_release_summary">Una mezza pressione terrà acceso lo schermo solo mentre il pulsante è tenuto premuto</string>
+    <string name="camera_launch_title">Avvia fotocamera</string>
+    <string name="camera_launch_summary">Una pressione prolungata e rilascio avvierà la fotocamera</string>
+    <!-- Key backlight -->
+    <string name="button_backlight_title">Retroilluminazione</string>
+    <string name="button_backlight_enabled">Illumina pulsanti</string>
+    <string name="button_backlight_only_when_pressed_title">Illumina i pulsanti solo quando premuti</string>
+    <string name="keyboard_backlight_enabled">Illumina tastiera</string>
+    <string name="button_backlight_seekbar_title">Luminosità pulsanti</string>
+    <string name="keyboard_backlight_seekbar_title">Luminosità tastiera</string>
+    <string name="backlight_timeout_title">Durata retroilluminazione dei pulsanti</string>
+    <string name="backlight_timeout_unlimited">Non spegnere</string>
+    <string name="backlight_summary_disabled">Disabilitato</string>
+    <string name="backlight_summary_enabled_with_timeout">Abilitato per <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Abilitato</string>
+    <!-- Buttons - Enable navbar -->
+    <string name="disable_navkeys_title">Abilita barra di navigazione su schermo</string>
+    <string name="disable_navkeys_summary">Abilita barra di navigazione su schermo e disabilita pulsanti hardware</string>
+    <!-- Buttons - Swap capacitive keys -->
+    <string name="swap_capacitive_keys_title">Inverti pulsanti capacitivi</string>
+    <string name="swap_capacitive_keys_summary">Scambia l\'ordine dei pulsanti recenti e indietro</string>
+    <!-- Screenshot compression  -->
+    <string name="screenshot_compression_title">Qualità screenshot</string>
+    <string name="screenshot_compression_summary">Comprimi la dimensione dello screenshot con perdita nella qualità dell\'immagine</string>
 </resources>
