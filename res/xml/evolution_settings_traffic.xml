@@ -19,26 +19,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/traffic_title">
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="network_traffic_state"
-        android:title="@string/network_traffic_state_title"
-        android:defaultValue="false" />
-
-    <com.evolution.settings.preference.SystemSettingListPreference
+    <ListPreference
         android:key="network_traffic_location"
         android:title="@string/network_traffic_location_title"
+        android:summary="%s"
         android:entries="@array/network_traffic_location_entries"
         android:entryValues="@array/network_traffic_location_values"
         android:defaultValue="0"
-        android:dependency="network_traffic_state" />
-
-    <com.evolution.settings.preference.SystemSettingListPreference
-        android:key="network_traffic_mode"
-        android:title="@string/network_traffic_mode_title"
-        android:entries="@array/network_traffic_mode_entries"
-        android:entryValues="@array/network_traffic_mode_values"
-        android:defaultValue="0"
-        android:dependency="network_traffic_state" />
+        android:persistent="false" />
 
     <com.evolution.settings.preference.CustomSeekBarPreference
         android:key="network_traffic_autohide_threshold"
@@ -48,13 +36,19 @@
         settings:units="KB/s"
         android:defaultValue="0" />
 
+    <com.evolution.settings.preference.SystemSettingListPreference
+        android:key="network_traffic_mode"
+        android:title="@string/network_traffic_mode_title"
+        android:entries="@array/network_traffic_mode_entries"
+        android:entryValues="@array/network_traffic_mode_values"
+        android:defaultValue="0" />
+
     <com.evolution.settings.preference.SystemSettingSeekBarPreference
         android:key="network_traffic_refresh_interval"
         android:title="@string/network_traffic_refresh_interval_title"
         android:max="10"
         settings:min="1"
         settings:units="sec"
-        android:defaultValue="1"
-        android:dependency="network_traffic_state" />
+        android:defaultValue="1" />
 
 </PreferenceScreen>
