@@ -102,6 +102,15 @@
         android:key="lockscreen_info_category"
         android:title="@string/lockscreen_info_category_title">
 
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="lockscreen_blur"
+            android:title="@string/lockscreen_blur_title"
+            android:max="100"
+            settings:min="0"
+            settings:units="%"
+            settings:interval="5"
+            android:defaultValue="0" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="lockscreen_status_bar"
             android:title="@string/lockscreen_status_bar_title"

@@ -49,6 +49,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.evolution.settings.preference.SystemSettingListPreference;
+import com.evolution.settings.preference.SystemSettingSeekBarPreference;
+import com.evolution.settings.utils.Utils;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class LockscreenSettings extends SettingsPreferenceFragment implements
@@ -59,12 +61,14 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FOD_ANIMATION_CATEGORY = "fod_animations";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+    private static final String KEY_LOCKSCREEN_BLUR = "lockscreen_blur";
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
     private SwitchPreference mFingerprintErrorVib;
     private SwitchPreference mFingerprintVib;
     private SystemSettingListPreference mBatteryTempUnit;
+    private SystemSettingSeekBarPreference mLockscreenBlur;
 
     static final int MODE_DISABLED = 0;
     static final int MODE_NIGHT = 1;
@@ -111,6 +115,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             }
         } else {
             prefScreen.removePreference(mFingerprintErrorVib);
+        }
+
+        mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
+        if (!Utils.isBlurSupported()) {
+            prefScreen.removePreference(mLockscreenBlur);
         }
 
         mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);

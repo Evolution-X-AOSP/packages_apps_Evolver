@@ -17,6 +17,7 @@
 package com.evolution.settings.utils;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -38,4 +39,11 @@ import android.view.KeyEvent;
 import android.view.Surface;
 
 public final class Utils {
+    public static boolean isBlurSupported() {
+        boolean blurSupportedSysProp = SystemProperties
+            .getBoolean("ro.surface_flinger.supports_background_blur", false);
+        boolean blurDisabledSysProp = SystemProperties
+            .getBoolean("persist.sys.sf.disable_blurs", false);
+        return blurSupportedSysProp && !blurDisabledSysProp && ActivityManager.isHighEndGfx();
+    }
 }
