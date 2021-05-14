@@ -41,6 +41,22 @@
         android:key="fod_icon_picker"
         android:title="@string/fod_icon_picker_category_title">
 
+        <!-- Animated FOD icon -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="fod_icon_animation"
+            android:title="@string/fod_icon_animation"
+            android:summary="@string/fod_icon_animation_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="fod_icon_anim_type"
+            android:title="@string/fod_icon_animation_effect_title"
+            android:summary="%s"
+            android:entries="@array/fod_icon_animation_entries"
+            android:entryValues="@array/fod_icon_animation_values"
+            android:defaultValue="0"
+            android:dependency="fod_icon_animation" />
+
         <!-- FOD icon picker -->
         <Preference
             android:key="fod_icon_picker_category"
