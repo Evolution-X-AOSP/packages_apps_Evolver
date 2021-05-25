@@ -39,7 +39,6 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.display.AccentColorPreferenceController;
-import com.evolution.settings.display.QsColorPreferenceController;
 import com.evolution.settings.display.QsTileStylePreferenceController;
 import com.evolution.settings.display.SwitchStylePreferenceController;
 
@@ -138,7 +137,6 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack"));
-        controllers.add(new QsColorPreferenceController(context));
         controllers.add(new QsTileStylePreferenceController(context));
         controllers.add(new SwitchStylePreferenceController(context));
         return controllers;
