@@ -18,8 +18,11 @@ package com.evolution.settings.fragments;
 
 import static android.os.UserHandle.USER_CURRENT;
 
+import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.provider.Settings;
 
@@ -33,6 +36,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.development.OverlayCategoryPreferenceController;
+import com.android.settings.display.FontPickerPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
@@ -59,10 +63,26 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
     private ListPreference mLockClockStyles;
     private Context mContext;
 
+    private IntentFilter mIntentFilter;
+    private static FontPickerPreferenceController mFontPickerPreference;
+
+    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action.equals("com.android.server.ACTION_FONT_CHANGED")) {
+                mFontPickerPreference.stopProgress();
+            }
+        }
+    };
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mContext = getActivity();
+
+        mIntentFilter = new IntentFilter();
+        mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED");
 
         mLockClockStyles = (ListPreference) findPreference(CUSTOM_CLOCK_FACE);
         String mLockClockStylesValue = getLockScreenCustomClockFace();
@@ -137,7 +157,23 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
                 "android.theme.customization.icon_pack"));
         controllers.add(new QsTileStylePreferenceController(context));
         controllers.add(new SwitchStylePreferenceController(context));
+        controllers.add(mFontPickerPreference = new FontPickerPreferenceController(context, lifecycle));
         return controllers;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        final Context context = getActivity();
+        context.registerReceiver(mIntentReceiver, mIntentFilter);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        final Context context = getActivity();
+        context.unregisterReceiver(mIntentReceiver);
+        mFontPickerPreference.stopProgress();
     }
 
     /**
