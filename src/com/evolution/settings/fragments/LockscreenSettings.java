@@ -26,6 +26,7 @@ import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.os.UserHandle;
 import android.provider.Settings;
 
@@ -79,8 +80,10 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_lockscreen);
+        Context mContext = getContext();
         PreferenceScreen prefScreen = getPreferenceScreen();
         final PackageManager mPm = getActivity().getPackageManager();
+        WallpaperManager manager = WallpaperManager.getInstance(mContext);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -112,8 +115,9 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mFingerprintErrorVib);
         }
 
+        ParcelFileDescriptor pfd = manager.getWallpaperFile(WallpaperManager.FLAG_LOCK);
         mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
-        if (!Utils.isBlurSupported()) {
+        if (!Utils.isBlurSupported() || pfd != null) {
             prefScreen.removePreference(mLockscreenBlur);
         }
 
