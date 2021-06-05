@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.TextUtils;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -59,6 +60,7 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
 
     private static final String CUSTOM_CLOCK_FACE = Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE;
     private static final String DEFAULT_CLOCK = "com.android.keyguard.clock.DefaultClockController";
+    private static final String PREF_KEY_CUTOUT = "cutout_settings";
 
     private ListPreference mLockClockStyles;
     private Context mContext;
@@ -89,6 +91,14 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
         mLockClockStyles.setValue(mLockClockStylesValue);
         mLockClockStyles.setSummary(mLockClockStyles.getEntry());
         mLockClockStyles.setOnPreferenceChangeListener(this);
+
+        Preference mCutoutPref = (Preference) findPreference(PREF_KEY_CUTOUT);
+
+        String hasDisplayCutout = getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
+
+        if (TextUtils.isEmpty(hasDisplayCutout)) {
+            getPreferenceScreen().removePreference(mCutoutPref);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
