@@ -196,5 +196,27 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
      */
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_lockscreen);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_lockscreen) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    FingerprintManager mFingerprintManager = (FingerprintManager)
+                            context.getSystemService(Context.FINGERPRINT_SERVICE);
+                    if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+                        keys.add(FINGERPRINT_VIB);
+                        keys.add(FINGERPRINT_ERROR_VIB);
+                    }
+
+                    if (!FodUtils.hasFodSupport(context)) {
+                        keys.add(FOD_ICON_PICKER_CATEGORY);
+                    }
+
+                    if (!Utils.isBlurSupported()) {
+                        keys.add(KEY_LOCKSCREEN_BLUR);
+                    }
+
+                    return keys;
+                }
+            };
 }
