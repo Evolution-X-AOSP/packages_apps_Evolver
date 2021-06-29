@@ -58,6 +58,7 @@ import java.util.List;
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String CHARGING_LIGHTS_PREF = "charging_light";
     private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
@@ -67,6 +68,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String PREF_FLASH_ON_CALL_DND = "flashlight_on_call_ignore_dnd";
     private static final String PREF_FLASH_ON_CALL_RATE = "flashlight_on_call_rate";
 
+    private Preference mAlertSlider;
     private Preference mChargingLeds;
     private Preference mNotLights;
     private CustomSeekBarPreference mFlashOnCallRate;
@@ -134,6 +136,12 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 KEY_EDGE_LIGHTNING, 0, UserHandle.USER_CURRENT) == 1;
         mEdgeLightning.setChecked(enabled);
         mEdgeLightning.setOnPreferenceChangeListener(this);
+
+        mAlertSlider = (Preference) findPreference(ALERT_SLIDER_PREF);
+        boolean mAlertSliderAvailable = res.getBoolean(
+                com.android.internal.R.bool.config_hasAlertSlider);
+        if (!mAlertSliderAvailable)
+            prefSet.removePreference(mAlertSlider);
     }
 
     @Override
