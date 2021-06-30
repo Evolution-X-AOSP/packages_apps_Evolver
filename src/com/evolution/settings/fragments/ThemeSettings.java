@@ -26,9 +26,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.om.IOverlayManager;
 import android.content.res.Resources;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
 
@@ -53,6 +57,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.evolution.settings.display.AccentColorPreferenceController;
 import com.evolution.settings.display.QsTileStylePreferenceController;
 import com.evolution.settings.display.SwitchStylePreferenceController;
+import com.evolution.settings.preference.SystemSettingListPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
@@ -71,16 +76,19 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
     private static final String HIDE_NOTCH = "display_hide_notch";
     private static final String PREF_KEY_CUTOUT = "cutout_category";
     private static final String PREF_NAVBAR_STYLE = "theme_navbar_style";
+    private static final String SLIDER_STYLE  = "slider_style";
 
     private static FontPickerPreferenceController mFontPickerPreference;
 
     private Context mContext;
+    private Handler mHandler;
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
     private IntentFilter mIntentFilter;
 
     private ListPreference mLockClockStyles;
     private ListPreference mNavbarPicker;
+    private SystemSettingListPreference mSlider;
     private SystemSettingSwitchPreference mHideNotch;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
@@ -142,6 +150,9 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
         if (!mHideNotchSupported) {
             prefScreen.removePreference(mHideNotch);
         }
+
+        mSlider = (SystemSettingListPreference) findPreference(SLIDER_STYLE);
+        mCustomSettingsObserver.observe();
     }
 
     private int getOverlayPosition(String[] overlays) {
@@ -174,6 +185,85 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
         }
     }
 
+    private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
+    private class CustomSettingsObserver extends ContentObserver {
+
+        CustomSettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            Context mContext = getContext();
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.SLIDER_STYLE),
+                    false, this, UserHandle.USER_ALL);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            if (uri.equals(Settings.System.getUriFor(Settings.System.SLIDER_STYLE))) {
+                updateSlider();
+            }
+        }
+    }
+
+    private void updateSlider() {
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        boolean sliderDefault = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.SLIDER_STYLE , 0, UserHandle.USER_CURRENT) == 0;
+        boolean sliderOOS = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.SLIDER_STYLE , 0, UserHandle.USER_CURRENT) == 1;
+        boolean sliderAosp = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.SLIDER_STYLE , 0, UserHandle.USER_CURRENT) == 2;
+        boolean sliderRUI = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.SLIDER_STYLE , 0, UserHandle.USER_CURRENT) == 3;
+
+        if (sliderDefault) {
+            setDefaultSlider(mOverlayService);
+        } else if (sliderOOS) {
+            enableSlider(mOverlayService, "com.android.theme.systemui_slider_oos");
+        } else if (sliderAosp) {
+            enableSlider(mOverlayService, "com.android.theme.systemui_slider.aosp");
+        } else if (sliderRUI) {
+            enableSlider(mOverlayService, "com.android.theme.systemui_slider.rui");
+        }
+    }
+
+    public static void setDefaultSlider(IOverlayManager overlayManager) {
+        for (int i = 0; i < SLIDERS.length; i++) {
+            String sliders = SLIDERS[i];
+            try {
+                overlayManager.setEnabled(sliders, false, USER_SYSTEM);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void enableSlider(IOverlayManager overlayManager, String overlayName) {
+        try {
+            for (int i = 0; i < SLIDERS.length; i++) {
+                String sliders = SLIDERS[i];
+                try {
+                    overlayManager.setEnabled(sliders, false, USER_SYSTEM);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            }
+            overlayManager.setEnabled(overlayName, true, USER_SYSTEM);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static final String[] SLIDERS = {
+        "com.android.theme.systemui_slider_oos",
+        "com.android.theme.systemui_slider.aosp",
+        "com.android.theme.systemui_slider.rui"
+    };
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mLockClockStyles) {
             setLockScreenCustomClockFace((String) newValue);
@@ -193,6 +283,9 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
                             true, mOverlayManager);
             }
             mNavbarPicker.setSummary(mNavbarPicker.getEntry());
+            return true;
+        } else if (preference == mSlider) {
+            mCustomSettingsObserver.observe();
             return true;
         }
         return false;

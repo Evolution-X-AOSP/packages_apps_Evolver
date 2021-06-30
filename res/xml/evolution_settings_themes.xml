@@ -146,6 +146,14 @@
             android:title="@string/custom_header_title"
             android:summary="@string/custom_header_summary" />
 
+        <!-- QS brightness slider styles -->
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="slider_style"
+            android:title="@string/slider_styles_title"
+            android:entries="@array/slider_styles_entries"
+            android:entryValues="@array/slider_styles_values"
+            android:defaultValue="0" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_tiles_bg_disco"
             android:title="@string/qs_panel_bg_disco_title"
