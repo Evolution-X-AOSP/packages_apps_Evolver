@@ -54,8 +54,11 @@
     <string name="led_color_red">Czerwony</string>
     <string name="edit_hint">Wartość</string>
     <string name="seek_value_edit_label">Ustaw wartość</string>
+    <!-- Units -->
+    <string name="unit_milliseconds">milisekundy</string>
     <string name="unit_percent">\u0025</string>
     <string name="unit_pixels">dp</string>
+    <string name="unit_seconds">sekundy</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Włącz</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -88,9 +91,6 @@
     <string name="status_bar_items_categories_title">Kategorie elementów na pasku stanu</string>
     <string name="status_bar_system_icons_title">Ikony systemowe</string>
     <string name="status_bar_system_icons_summary">Wybierz, które ikony będą wyświetlane w pasku statusu</string>
-    <!-- Lock screen icons -->
-    <string name="lockscreen_tuner_title">Skróty ekranu blokady</string>
-    <string name="lockscreen_tuner_summary">Modyfikuj skróty wyświetlane na ekranie blokady</string>
     <!-- Navigation bar -->
     <string name="navigation_bar_category">Pasek nawigacji</string>
     <string name="navigation_bar_title">Pasek nawigacji</string>
@@ -485,9 +485,6 @@
     <string name="fod_pressed_color_green">Zielony</string>
     <string name="fod_pressed_color_yellow">Żółty</string>
     <string name="fod_pressed_color_light_yellow">Jasnożółty</string>
-    <!-- Night light FOD -->
-    <string name="fod_night_light_title">Wyłącz podświetlenie nocne podczas wyświetlania FOD</string>
-    <string name="fod_night_light_summary">Wyłącz podświetlenie nocne na ekranie blokady, jeśli FOD jest aktywne. Wyłączenie tej opcji może mieć wpływ na dokładność odcisku palca przy włączonym oświetleniu nocnym.</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Uruchom odtwarzacz muzyki po podłączeniu zestawu słuchawkowego</string>
     <string name="headset_connect_player_summary">Uruchom domyślny odtwarzacz muzyki po podłączeniu słuchawek</string>
@@ -666,6 +663,7 @@
     <string name="switch_md2">Styl Material Design 2</string>
     <string name="switch_retro">Tryb Retro</string>
     <string name="switch_oos">OxygenOS 11</string>
+    <string name="switch_android12">Android 12</string>
     <!-- Global Actions -->
     <string name="global_actions_users_choice_title">Opcjonalne działanie użytkownika</string>
     <string name="global_actions_flashlight_title">Latarka</string>
@@ -696,16 +694,22 @@
     <string name="lock_screen_custom_clock_face_default_bold">Domyślny (pogrubiony)</string>
     <string name="lock_screen_custom_clock_face_alt_typographic">Typograficzny (nowy)</string>
     <string name="lock_screen_custom_clock_face_analog">Analogowy</string>
+    <string name="lock_screen_custom_clock_face_android_s">Android S</string>
+    <string name="lock_screen_custom_clock_face_android_s_dp3">Android S DP3</string>
     <string name="lock_screen_custom_clock_face_binary">Binarny</string>
     <string name="lock_screen_custom_clock_face_bubble">Dymek</string>
     <string name="lock_screen_custom_clock_face_clockertino">Clockertino</string>
     <string name="lock_screen_custom_clock_face_divided">Podzielone linie</string>
     <string name="lock_screen_custom_clock_face_fluid">Płynny</string>
+    <string name="lock_screen_custom_clock_face_fluid_v2">Fluid v2</string>
     <string name="lock_screen_custom_clock_face_gradient_fire">Gradient ogień</string>
     <string name="lock_screen_custom_clock_face_ide">IDE</string>
     <string name="lock_screen_custom_clock_face_ide_java">IDE (Java Mix)</string>
     <string name="lock_screen_custom_clock_face_mnml_box">Pole MNML</string>
     <string name="lock_screen_custom_clock_face_mnml_minimal">Minimalny MNML</string>
+    <string name="lock_screen_custom_clock_face_op_minimal">OnePlus Minimal</string>
+    <string name="lock_screen_custom_clock_face_op_numbers">OnePlus Numbers</string>
+    <string name="lock_screen_custom_clock_face_op_roman">OnePlus Roman</string>
     <string name="lock_screen_custom_clock_face_samsung">Samsung</string>
     <string name="lock_screen_custom_clock_face_samsung_bold">Samsung (pogrubiony)</string>
     <string name="lock_screen_custom_clock_face_samsung_highlight">Samsung (wyróżniony)</string>
@@ -833,6 +837,7 @@
     <string name="corner_fwvals">Użyj wartości frameworka</string>
     <string name="corner_fwvals_summary">Przydatne jeśli urządzenie ma zaokrąglone narożniki</string>
     <!-- Display cutout options -->
+    <string name="cutout_category_title">Opcje wcięcia</string>
     <string name="cutout_main">Wcięcie w ekranie</string>
     <string name="cutout_main_summary">Naprawdę przycięte narożniki</string>
     <string name="display_cutout_style_title">Styl wcięcia</string>
@@ -841,11 +846,54 @@
     <string name="display_cutout_style_hide">Ukryte</string>
     <string name="stock_statusbar_in_hide">Domyślna wysokość paska stanu</string>
     <string name="stock_statusbar_in_hide_summary">Użyj domyślnej wysokości paska statusu w trybie ukrytym</string>
-    <!-- Lock screen battery info indicator -->
-    <string name="lockscreen_battery_info_title">Informacje o ładowaniu na ekranie blokady</string>
-    <string name="lockscreen_battery_info_summary">Wyświetl na ekranie blokady podczas ładowania aktualne informacje o napięciu, mocy oraz temperaturze ładowania</string>
-    <!-- Lockscreen charge temperature unit -->
-    <string name="lockscreen_charge_temp_unit_title">Jednostka temperatury</string>
-    <string name="lockscreen_charge_temp_unit_farhenheit">Farhenheit</string>
-    <string name="lockscreen_charge_temp_unit_celsius">Celsjusz</string>
+    <!-- Status Bar Ticker -->
+    <string name="ticker_screen_title">Pasek powiadomień</string>
+    <string name="ticker_screen_summary">Pokaż powiadomienia na pasku stanu</string>
+    <string name="ticker_screen_footer">Pasek jest widoczny tylko wtedy, gdy powiadomienia nie są wyświetlane. Urządzenia z notchem centralnym powinny ukryć wycinanie w opcjach wcięcia.</string>
+    <string name="ticker_title">Ticker paska stanu</string>
+    <string name="ticker_summary">Włącz ticker paska stanu</string>
+    <string name="ticker_restore_defaults_title">Przywróć domyślne</string>
+    <string name="text_title">Tekst</string>
+    <string name="icon_title">Ikona</string>
+    <string name="colors_title">Kolory</string>
+    <string name="values_restored_title">Wartości przywrócone</string>
+    <string name="ticker_disabled">Bez tickera</string>
+    <string name="ticker_enabled">Powiadomienia</string>
+    <string name="ticker_media_enabled">Powiadomienia i muzyka</string>
+    <string name="ticker_animation_mode_title">Styl animacji paska powiadomień</string>
+    <string name="ticker_animation_mode_alpha_fade">Zanikanie</string>
+    <string name="ticker_animation_mode_scroll">Przewijanie</string>
+    <string name="ticker_tick_duration_title">Czas trwania tickera</string>
+    <!-- Lockscreen blur -->
+    <string name="lockscreen_blur_title">Rozmycie tła</string>
+    <string name="lockscreen_blur_disabled">Rozmycie ekranu blokady nie może być włączone, ponieważ aktualna tapeta ekranu blokady nie pasuje do twojego ekranu głównego, albo twoje urządzenie w ogóle nie obsługuje rozmycia.</string>
+    <!-- Navbar Picker -->
+    <string name="theme_navbar_picker_title">Styl paska nawigacyjnego (dla 3-przyciskowej nawigacji)</string>
+    <string name="theme_navbar_picker_summary">Wybierz styl paska nawigacji</string>
+    <string name="theme_navbar_picker_default">Domyślny</string>
+    <string name="theme_navbar_picker_oneplus">OnePlus</string>
+    <string name="theme_navbar_picker_oneui">One UI</string>
+    <string name="theme_navbar_picker_tecno">Tecno Camon</string>
+    <string name="theme_navbar_picker_asus">ASUS</string>
+    <string name="theme_navbar_picker_android">Android</string>
+    <string name="theme_navbar_picker_moto">Moto</string>
+    <string name="theme_navbar_picker_nexus">Nexus</string>
+    <string name="theme_navbar_picker_old">Stary</string>
+    <string name="theme_navbar_picker_sammy">Samsung</string>
+    <!-- FOD on doze -->
+    <string name="fod_on_doze_title">FOD na drzemce</string>
+    <string name="fod_on_doze_summary">Pokaż odcisk palca na ekranie zgodnym z otoczeniem i AoD. To tylko ukryje ikonę i nie wyłączy funkcjonalności</string>
+    <!-- Alarm and Wakelock blocker -->
+    <string name="blocker_action_reload">Przeładuj</string>
+    <string name="blocker_action_save">Zapisz</string>
+    <string name="blocker_action_save_toast">Ustawienia zostały zapisane pomyślnie</string>
+    <string name="blocker_warning_title">Uwaga</string>
+    <string name="wakelock_blocker_title">Blokowanie wybudzeń</string>
+    <string name="wakelock_blocker_summary">Zablokuj wybudzanie systemowe aby oszczędzać baterię</string>
+    <string name="wakelock_blocker_warning">Blokowanie wybudzeń może powodować niestabilność, awarię lub utratę danych.</string>
+    <string name="wakelock_blocker_display_text">Aby zobaczyć i zablokować wybudzanie, włącz blokowanie wybudzeń.</string>
+    <string name="alarm_blocker_title">Blokada alarmów</string>
+    <string name="alarm_blocker_summary">Blokuj alarmy gdy ekran jest wyłączony, aby zaoszczędzić baterię</string>
+    <string name="alarm_blocker_warning">Blokowanie alarmów może w znacznym stopniu prowadzić do niestabilności, błędów lub utraty danych.</string>
+    <string name="alarm_blocker_display_text">Aby zobaczyć i zablokować wybudzanie, włącz blokowanie alarmów.</string>
 </resources>
