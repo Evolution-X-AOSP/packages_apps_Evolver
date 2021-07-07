@@ -48,6 +48,12 @@
             android:title="@string/always_on_display_schedule_title"
             android:fragment="com.evolution.settings.fragments.AODSchedule" />
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_status_bar"
+            android:title="@string/hide_lockscreen_status_bar_title"
+            android:summary="@string/hide_lockscreen_status_bar_summary"
+            android:defaultValue="false" />
+
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="secure_lockscreen_qs_disabled"
             android:title="@string/disable_qs_title"
