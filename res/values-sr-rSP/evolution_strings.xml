@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2020 The Evolution X Project
+     Copyright (C) 2019-2021 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,13 +18,11 @@
     <!-- The Evolver -->
     <string name="evolver_dashboard_title">Програмер</string>
     <!-- Categories -->
-    <string name="aosp_setting_title">AOSP подешавања</string>
+    <string name="aosp_setting_title">Системска подешавања</string>
     <string name="animation_title">Анимације</string>
-    <string name="buttons_title">Физичка дугмад</string>
     <string name="dev_options_title">Ставке опције за програмере</string>
     <string name="general_title">Опште</string>
     <string name="gestures_title">Покрети</string>
-    <string name="hardware_keys_title">Хардверска дугмад</string>
     <string name="lockscreen_title">Закључан екран</string>
     <string name="misc_title">Разно</string>
     <string name="navigation_title">Навигација</string>
@@ -32,26 +30,14 @@
     <string name="powermenu_title">Мени напајања</string>
     <string name="powermenu_items_title">Ставке менија за напајање</string>
     <string name="quicksettings_title">Брза подешавања</string>
-    <string name="statusbar_title">Статусна трака</string>
-    <string name="statusbar_icons_title">Иконе стаутусне траке</string>
-    <string name="statusbar_items_categories_title">Категорије ставки статусне траке</string>
-    <string name="statusbar_network_icons_title">Иконе мреже статуске траке</string>
+    <string name="status_bar_title">Статусна трака</string>
     <string name="swipe_gestures_title">Гестови превлачења</string>
     <string name="system_settings_title">Опције система</string>
+    <string name="themes_title">Теме</string>
     <string name="torch_gestures_title">Гестови сијалице</string>
-    <string name="volume_keys_title">Дугмад за појачавање</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Сток гестови укључени у Андроид</string>
-    <string name="animation_summary">Промените стил анимације</string>
-    <string name="buttons_summary">Подесите радње физичких дугмади</string>
-    <string name="gestures_summary">Опције / акције засноване на гесту</string>
-    <string name="lockscreen_summary">Преузмите контролу над ставкама закључаног екрана</string>
-    <string name="misc_summary">Опције за програмере и друга системска подешавања</string>
-    <string name="navigation_summary">Прилагодите стил и понашање навигационе траке</string>
-    <string name="notifications_summary">Управљајте подешавањима обавештења</string>
-    <string name="powermenu_summary">Конфигуришите опције искључивања</string>
-    <string name="quicksettings_summary">Модификујте изглед QS панела и још много тога</string>
-    <string name="statusbar_summary">Прилагодите ставке статуске траке</string>
+    <string name="dark_ui_mode_summary">Прегледај опције тамне теме</string>
     <string name="unsupported_gestures">Омогућите навигацију са два тастера или три тастера да бисте користили ову функцију</string>
     <!-- General strings -->
     <string name="ok">Ок</string>
@@ -62,11 +48,18 @@
     <string name="action_cancel">Откажи</string>
     <string name="attention">Пажња</string>
     <string name="default_string">Подразумевано</string>
+    <string name="disabled">Искључено</string>
     <string name="enable_first">Молим вас прво омогућите</string>
     <string name="led_color_green">Зелена</string>
     <string name="led_color_red">Црвена</string>
     <string name="edit_hint">Вредност</string>
     <string name="seek_value_edit_label">Подеси вредност</string>
+    <string name="android_s">Андроид С</string>
+    <!-- Units -->
+    <string name="unit_milliseconds">милисекунде</string>
+    <string name="unit_percent">\u0025</string>
+    <string name="unit_pixels">dp</string>
+    <string name="unit_seconds">секунде</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Укључено</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -80,44 +73,55 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Постави</string>
     <string name="color_default">Подразумевано</string>
+    <string name="color_picker_simple_dialog_title">Изабери боју лед лампице</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Није постављена подразумевана вредност</string>
     <string name="seekbar_default_value_set">Вредност је постављена на подразумевано <xliff:g id="number">%d</xliff:g></string>
     <string name="seekbar_default_value_already_set">Подразумевана вредност је већ подешена</string>
     <string name="seekbar_default_string">Подразумевано</string>
-    <!-- Lockscreen information -->
+    <!-- Lock screen information -->
     <string name="lockscreen_info_category_title">Информације о елементима закључаног екрана</string>
     <!-- Double Tap gestures -->
-    <string name="dtt_category_title">Двапут додирните покрете</string>
+    <string name="dtt_category_title">Двоструки додир</string>
+    <string name="double_tap_to_sleep_title">Двоклик за спавање</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">USB подешавање</string>
     <string name="usb_default_config_summary">Изаберите подразумевано понашање када сте повезани на уређај путем USB-а</string>
-    <!-- Status bar Icon Manager -->
-    <string name="icon_manager_title">Управљач икона</string>
-    <string name="icon_manager_summary">Контролишите видљивост икона статусне траке</string>
-    <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">Пречице на закључаном екрану</string>
-    <string name="lockscreen_tuner_summary">Измените пречице приказане на закључаном екрану</string>
-    <!-- Navbar options -->
+    <!-- Status bar - icons -->
+    <string name="status_bar_icons_title">Иконе статусне траке</string>
+    <string name="status_bar_items_categories_title">Категорије ставки статусне траке</string>
+    <string name="status_bar_system_icons_title">Системске иконе</string>
+    <string name="status_bar_system_icons_summary">Одаберите које се иконе приказују у статусној траци</string>
+    <!-- Navigation bar -->
+    <string name="navigation_bar_category">Навигациона трака</string>
+    <string name="navigation_bar_title">Навигациона трака</string>
+    <string name="navigation_bar_summary">Прикажи на екрану навигациона дугмад. Ако ово искључите според дугмади сакрићете и навигационе гесте. Уместо овога користите импресивну навигацију</string>
+    <string name="navigation_bar_invert_layout_title">Обрни распоред</string>
+    <string name="navigation_bar_invert_layout_summary">Обрни распоред траке за навигацију и друге ставке</string>
     <string name="nav_bar_tuner_title">Штимер навигационе траке</string>
     <string name="nav_bar_tuner_summary">Промените изглед навигационог поља</string>
-    <string name="navigation_bar_title">Навигациона трака</string>
+    <string name="navbar_layout_title">Изглед</string>
+    <string name="navbar_layout_normal">Нормалан</string>
+    <string name="navbar_layout_compact">Компактно</string>
+    <string name="navbar_layout_leftleaning">Лево наслоњен</string>
+    <string name="navbar_layout_rightleaning">Десно наслоњен</string>
     <string name="system_navigation_summary">Изаберите који стил системске навигације ћете користити</string>
+    <!-- Navbar Animation -->
+    <string name="pixel_navbar_anim_title">Pixel анимација</string>
+    <string name="pixel_navbar_anim_summary">Укључивање анимације дугмета за почетак</string>
     <!-- About Evolution X -->
     <string name="evolution_about_title">О Evolution X</string>
     <string name="evolution_about_summary">Информације о тиму</string>
     <string name="evolution_website_title">Веб сајт</string>
-    <string name="evolution_website_summary">Додирните овде да посетите нашу сјајну веб страницу!</string>
-    <string name="evolution_twitter_title">Твитер страница</string>
-    <string name="evolution_twitter_summary">Додирните овде да посетите наш Твитер!</string>
-    <string name="evolution_telegram_title">Телеграм Група</string>
-    <string name="evolution_telegram_summary">Додирните овде да посетите нашу невероватну заједницу!</string>
-    <string name="evolution_github_summary">Дирните овде да отворите наш GitHub!</string>
-    <string name="evolution_about_info_summary">Evolution X је флексибилни прилагођени РОМ који на први поглед доноси прави осећај Pixel-а на ваш Андроид уређај, са много додатних конфигурација на располагању. Циљ нам је да пружамо честе израде месечних безбедносних закрпа из најновијих aosp извора!</string>
-    <string name="evolution_about_team">Evolution X Тим</string>
+    <string name="evolution_website_summary">Слободно навратите на нашу веб страницу</string>
+    <string name="evolution_twitter_summary">Дођите да видите наше твитове</string>
+    <string name="evolution_telegram_summary">Посетите наш чет заједнице</string>
+    <string name="evolution_github_summary">Погледајте наш GitHub</string>
+    <string name="evolution_about_info_summary">Evolution X је прилагођени РОМ чији је циљ да на први поглед направи осећај пиксела на вашем уређају.</string>
+    <string name="evolution_about_team">Сарадници</string>
     <!-- Battery light -->
     <string name="light_settings_header">Подешавања светла</string>
-    <string name="battery_light_settings">Лампица за пуњење батерије</string>
+    <string name="battery_light_settings">Лампица батерије</string>
     <string name="battery_light_summary">Омогућите или онемогућите лампицу батерије док је DND, празна батерија</string>
     <string name="battery_light_enable">Светло батерије</string>
     <string name="battery_full_light_enabled">Лампица батерије када је напуњена</string>
@@ -127,14 +131,12 @@
     <string name="battery_light_low_color">Слаба батерија</string>
     <string name="battery_light_medium_color">Средња батерија</string>
     <string name="battery_light_full_color">Скоро пуна батерија</string>
-    <string name="battery_light_reallyfull_color">Батеријa пунa (100)</string>
-    <!-- Lockscreen battery info indicator  -->
-    <string name="lockscreen_battery_info_title">Информације о пуњењу на закљ. екрану</string>
-    <string name="lockscreen_battery_info_summary">Прикажите струју пуњења, напон, снагу и температуру батерије на закључаном екрану током пуњења</string>
+    <string name="battery_light_reallyfull_color">Напуњено</string>
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_category_title">FOD подешавања</string>
     <!-- FOD animations -->
-    <string name="fod_recog_animation">Анимација отиска прста</string>
+    <string name="fod_recog_animation_category">FOD анимација</string>
+    <string name="fod_recog_animation_title">Препознавање анимације</string>
     <string name="fod_recog_animation_summary">Приказује анимацију док читате прст</string>
     <string name="fod_recog_animation_effect_title">Изаберите ефекат анимације отиска прста</string>
     <string name="fod_recog_animation_miui_normal">MIUI подразумевано</string>
@@ -151,6 +153,7 @@
     <string name="fod_recog_animation_op_energy">Енергија</string>
     <string name="fod_recog_animation_op_mclaren">Мекларен</string>
     <string name="fod_recog_animation_op_ripple">Пераја</string>
+    <string name="fod_recog_animation_op_scanning">Скенирање (Cyberpunk 2077)</string>
     <string name="fod_recog_animation_op_stripe">Штрафта</string>
     <string name="fod_recog_animation_op_wave">Талас</string>
     <string name="fod_recog_animation_pureview_dna">DNA</string>
@@ -160,6 +163,17 @@
     <string name="fod_recog_animation_rog_fusion">Фузија</string>
     <string name="fod_recog_animation_rog_pulsar">Притисните</string>
     <string name="fod_recog_animation_rog_supernova">Супернова</string>
+    <string name="fod_recog_animation_oppo_shine">Сјајно</string>
+    <string name="fod_recog_animation_realme_quantum">Quantum</string>
+    <string name="fod_recog_animation_realme_smoke">Дим</string>
+    <string name="fod_recog_animation_realme_strings">Нити</string>
+    <!-- FOD icon animation -->
+    <string name="fod_icon_animation">Анимирана икона за FOD</string>
+    <string name="fod_icon_animation_effect_title">Изабери ефекат анимације за FOD икону</string>
+    <string name="fod_icon_animation_summary">Анимација FOD иконе при укључењу екрана</string>
+    <string name="fod_icon_animation_oneui1">OneUI 1</string>
+    <string name="fod_icon_animation_oneui2">OneUI 2</string>
+    <string name="fod_icon_animation_oos">OOS 11</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Светло за обавештења</string>
     <!-- Heads up -->
@@ -175,28 +189,32 @@
     <string name="profile_choose_app">Изабери апликацију</string>
     <string name="dialog_delete_title">Обриши</string>
     <string name="dialog_delete_message">Уклонити изабрану ставку?</string>
-    <!-- Fingerprint unlock -->
-    <string name="fp_unlock_keystore_title">Принудна аутентификација отиска прста</string>
-    <string name="fp_unlock_keystore_summary">Откључајте уређај отиском прста након поновног покретања или закључавања</string>
-    <!-- Network traffic -->
-    <string name="traffic_title">Показатељи саобраћаја</string>
-    <string name="traffic_summary">Омогућите или онемогућите индикаторе брзине мреже</string>
-    <string name="network_traffic_title">Мрежни саобраћај</string>
-    <string name="network_traffic_type">Изаберите врсту активности мреже</string>
-    <string name="show_network_traffic_up">Uplink</string>
-    <string name="show_network_traffic_down">Downlink</string>
-    <string name="show_network_traffic_all">Uplink и Downlink</string>
-    <string name="network_traffic_state_title">Прикажи активност мреже на статусној траци</string>
+    <!-- Status bar - Network Traffic -->
+    <string name="network_traffic_settings_title">Праћење мрежног саобраћаја</string>
+    <string name="network_traffic_settings_summary">Прикажи тренутни проток мрежног саобраћаја у статусној траци</string>
+    <string name="network_traffic_location">Интернет локација</string>
+    <string name="traffic_disabled">Онемогућено</string>
+    <string name="traffic_status_bar">Статусна трака</string>
+    <string name="traffic_expanded_status_bar">QS заглавље</string>
     <string name="network_traffic_autohide_threshold_title">Граница аутоматског скривања активности мреже (KB/s)</string>
+    <string name="network_traffic_type">Режим приказа</string>
+    <string name="show_network_traffic_dynamic">Динамично (Отпремање / Преузимање)</string>
+    <string name="show_network_traffic_up">Само отпреми</string>
+    <string name="show_network_traffic_down">Само преузимање</string>
+    <string name="show_network_traffic_all">Отпреми и преузми</string>
+    <string name="network_traffic_arrow">Прикажи стрелице</string>
+    <string name="network_traffic_arrow_summary">Прикажите стрелице индикатора мрежног саобраћаја</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_sucess_vib_title">Вибрација код аутентикације отиска прста</string>
-    <string name="fprint_sucess_vib_summary">Вибрација при успешној провери отиска</string>
+    <string name="fprint_error_vib_title">Вибрација грешке у отиску прста</string>
+    <string name="fprint_error_vib_summary">Вибрација приликом грешке провере отиска</string>
+    <string name="fprint_success_vib_title">Вибрација код аутентикације отиска прста</string>
+    <string name="fprint_success_vib_summary">Вибрација при успешној провери отиска</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_title">Прикажи 4G уместо ЛТЕ</string>
     <string name="show_fourg_summary">Замењује LTE индикатор статусне траке са 4G</string>
-    <!-- Show VoLTE switch -->
-    <string name="show_volte_title">VoLTE икона</string>
-    <string name="show_volte_summary">Прикажи VoLTE икону</string>
+    <!-- Show old style mobile data icon -->
+    <string name="use_old_mobiletype_title">Користи стари изглед иконе података</string>
+    <string name="use_old_mobiletype_summary">Користите мобилне иконе пре пита за сигнални контекст</string>
     <!-- Long press power for torch -->
     <string name="torch_long_press_power_gesture_title">Искључите лампу дугметом за напајање</string>
     <string name="torch_long_press_power_gesture_desc">Дуго притисните тастер за напајање док је екран искључен да бисте укључили лампицу</string>
@@ -206,7 +224,7 @@
     <string name="torch_long_press_power_timeout_2min">2 минута</string>
     <string name="torch_long_press_power_timeout_5min">5 минута</string>
     <string name="torch_long_press_power_timeout_10min">10 минута</string>
-    <!-- Battery Styles -->
+    <!-- Status bar - Battery styles -->
     <string name="battery_percent_title">Индикатор батерије на статусној траци</string>
     <string name="battery_percent_summary">Конфигуришите иконе и стилове текста за индикатор напуњености статусне траке</string>
     <string name="status_bar_battery_style_title">Изглед батерије</string>
@@ -216,61 +234,49 @@
     <string name="status_bar_battery_style_filled_circle">Испуњен круг</string>
     <string name="status_bar_battery_style_text">Текст</string>
     <string name="status_bar_battery_style_hidden">Сакривено</string>
-    <string name="status_bar_battery_percentage_title">Проценат батерије</string>
-    <string name="status_bar_battery_percentage_default">Сакривено</string>
-    <string name="status_bar_battery_percentage_text_inside">Унутар иконе</string>
-    <string name="status_bar_battery_percentage_text_next">Поред иконе</string>
-    <string name="qs_battery_percentage_title">Проценат QS батерије</string>
-    <string name="qs_battery_percentage_summary">Прикажите проценат батерије у QS заглављу уместо процене батерије</string>
+    <!-- Status bar - Battery percentage -->
+    <string name="battery_percentage_title">Проценат батерије</string>
+    <string name="battery_percentage_default">Скривени (подразумевани)</string>
+    <string name="battery_percentage_text_inside">Унутар иконе</string>
+    <string name="battery_percentage_text_next">Поред иконе</string>
+    <string name="battery_text_charging_title">Проценат батерије када се пуни</string>
+    <string name="battery_text_charging_summary">Увек прикажи проценат батерије када се пуни</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Процена батерије</string>
+    <string name="battery_estimate_summary">Прикажи време до истека батерије када је то могуће</string>
     <!-- QS rows and columns -->
-    <string name="qs_columns_rows_category_title">QS колоне и редови</string>
+    <string name="qs_columns_rows_category_title">Колоне и Редови</string>
     <string name="qs_rows_columns_title">QS редови и колоне</string>
     <string name="qs_rows_portrait_title">Редови плочица на портрету</string>
     <string name="qs_rows_landscape_title">Редови плочица на пејзажу</string>
     <string name="qs_columns_portrait_title">Плочице колоне на портрету</string>
     <string name="qs_columns_landscape_title">Плочице колоне на пејзажу</string>
     <string name="qs_tile_title_visibility_title">Прикажи наслов плочица</string>
-    <!-- Quick Settings brightness slider -->
-    <string name="qs_brightness_category_title">Опције клизача за осветљење</string>
-    <string name="qs_show_brightness_slider_title">Клизач за осветљеност</string>
-    <string name="qs_show_brightness_slider_summary">Прикажи клизач осветљења на плочи брзих обавештења</string>
+    <!-- Status bar - Brightness -->
+    <string name="status_bar_brightness_category">Осветљеност</string>
+    <string name="qs_show_brightness_slider_expanded_title">Проширен QS</string>
+    <string name="qs_show_brightness_slider_expanded_summary">Прилагодите осветљеност из брзих подешавања</string>
     <string name="qs_show_auto_brightness_title">Икона аутоматске осветљености</string>
     <string name="qs_show_auto_brightness_summary">Приказује дугме за аутоматско прилагођавање осветљености поред клизача</string>
-    <string name="qs_show_brightness_slider_show_never">Никада не приказуј</string>
-    <string name="qs_show_brightness_slider_show_expanded">Прикажи када је проширено</string>
-    <string name="qs_show_brightness_slider_show_always">Стално прикажи</string>
+    <string name="qs_brightness_position_bottom_title">Приказати на дну када се прошири</string>
+    <!-- QQS brightness slider -->
+    <string name="qqs_brightness_slider_title">Клизач за осветљеност</string>
+    <string name="qs_brightness_slider_hide">Сакриј</string>
+    <string name="qs_brightness_slider_bottom">Дно</string>
+    <string name="qs_brightness_slider_top">Горе</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Укључивање екрана помоћу дугмади за јачину звука</string>
     <string name="volume_rocker_wake_summary">Притискање било ког дугмета за јачину звука ће пробудити ваш уређај</string>
-    <!-- Volume rocker cursor control -->
-    <string name="cursor_section_header">Курсор</string>
-    <string name="volume_key_cursor_control_title">Контрола курсора тастера за јачину звука</string>
-    <string name="volume_key_cursor_control_off">Искључено</string>
-    <string name="volume_key_cursor_control_on">Дугмићи за јачину звука покрећу курсор лево/десно</string>
-    <string name="volume_key_cursor_control_on_reverse">Дугмићи за јачину звука покрећу курсор десно/лево</string>
     <!-- Media art -->
     <string name="lockscreen_media_category">Музика</string>
     <string name="media_art_title">Медији омота</string>
     <string name="media_art_summary">Омогућите медије омота који се приказује на закључаном екрану</string>
-    <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Pixel анимација</string>
-    <string name="pixel_navbar_anim_summary">Укључивање анимације дугмета за почетак</string>
-    <!-- Navbar options -->
-    <string name="navbar_invert_layout_title">Обрни распоред</string>
-    <string name="navbar_layout_title">Изглед</string>
-    <string name="navbar_layout_normal">Нормалан</string>
-    <string name="navbar_layout_compact">Компактно</string>
-    <string name="navbar_layout_leftleaning">Лево наслоњен</string>
-    <string name="navbar_layout_rightleaning">Десно наслоњен</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Анимација искључивања екрана</string>
     <string name="screen_off_animation_default">Подразумевано</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Скала</string>
-    <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">Музички визуализатор</string>
-    <string name="lockscreen_visualizer_enable_summary">Приказивање музичких трака за време репродукције музике</string>
-    <!-- Power menu on lockscreen -->
+    <!-- Power menu on lock screen -->
     <string name="power_menu_hide_on_secure_title">Сакриј на екрану за откључавање</string>
     <string name="power_menu_hide_on_secure_summary">Сакрива мени глобалних радњи на сигурном закључаном екрану</string>
     <!-- Incall vibrate options -->
@@ -279,16 +285,22 @@
     <string name="incall_vibrate_call_wait_title">Вибрација при чекању</string>
     <string name="incall_vibrate_disconnect_title">Вибрирајте при прекиду везе</string>
     <!-- QS advanced settings -->
-    <string name="qs_column_rows_settings_title">Подешавања QS панела</string>
-    <string name="status_bar_quick_qs_pulldown">Брзо QS повлачење</string>
+    <string name="qs_column_rows_settings_title">Брза подешавања</string>
+    <string name="qs_edit_title">Уређивање иконе</string>
+    <string name="qs_edit_summary">Омогућите икону за уређивање плочица у подножју</string>
+    <string name="qs_footer_category_title">QS подножје</string>
+    <string name="qs_header_category_title">QS Заглавље</string>
+    <string name="qs_panel_category_title">QS Панел</string>
+    <string name="status_bar_quick_qs_pulldown">Брзо повлачење</string>
     <string name="quick_pulldown_none">Онемогућено</string>
     <string name="quick_pulldown_right">Падајућа статусна трака са десне стране</string>
     <string name="quick_pulldown_left">Падајућа статусна трака са леве стране</string>
+    <string name="quick_pulldown_always">Увек</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Одакле пустити мелодије звона</string>
     <string name="ringtone_focus_mode_dynamic">Из слушалица ако су повезане и пуштају музику</string>
-    <string name="ringtone_focus_mode_stock">"Са спикерфона (AOSP подразумевано)"</string>
-    <!-- Lockscreen album art filter -->
+    <string name="ringtone_focus_mode_stock">Са спикерфона (AOSP подразумевано)</string>
+    <!-- Lock screen album art filter -->
     <string name="lockscreen_albumart_filter_title">Филтер за насловну страну медија</string>
     <string name="lockscreen_albumart_filter_none">Ниједан</string>
     <string name="lockscreen_albumart_filter_grayscale">Сивило</string>
@@ -302,10 +314,10 @@
     <string name="lockscreen_charging_animation_drop">Баци</string>
     <string name="lockscreen_charging_animation_explosion">Експлозија</string>
     <string name="lockscreen_charging_animation_water">Вода</string>
-    <!-- Transparent lockscreen notifications -->
-    <string name="transparent_lockscreen_notification_title">Транспарентна обавештења</string>
-    <string name="transparent_lockscreen_notification_summary">Омогућите обавештења на закључаном екрану са полупрозирним позадинама</string>
-    <!-- Statusbar Clock -->
+    <string name="lockscreen_charging_animation_phone">Телефон</string>
+    <string name="lockscreen_charging_animation_stack">Листање</string>
+    <string name="lockscreen_charging_animation_wavy">Таласи</string>
+    <!-- Status bar - Clock -->
     <string name="status_bar_clock_date_title">Сат и Датум</string>
     <string name="status_bar_clock_date_summary">Прилагодите сат и датум на статусној траци</string>
     <string name="status_bar_clock_title">Подешавања сата</string>
@@ -320,7 +332,8 @@
     <string name="status_bar_am_pm_normal">Нормалан</string>
     <string name="status_bar_am_pm_small">Мало</string>
     <string name="status_bar_am_pm_hidden">Сaкривен (подразумевано)</string>
-    <string name="clock_seconds_display">Прикажи секунде</string>
+    <string name="clock_seconds_title">Прикажи секунде</string>
+    <string name="clock_seconds_summary">Прикажи сате, минуте и секунде</string>
     <string name="clock_date_display">Датум</string>
     <string name="clock_date_display_summary">Приказ лично подешеног датума, пре сата</string>
     <string name="clock_date_display_none">Не приказуј</string>
@@ -368,30 +381,6 @@
     <!-- Quick Settings -->
     <string name="lockscreen_qs_disabled_title">Онемогући брза подешавања када су закључана</string>
     <string name="lockscreen_qs_disabled_summary">Онемогући ширење брзих поставки на сигурним закључаним екранима</string>
-    <!-- Volume swap buttons -->
-    <string name="swap_volume_buttons_title">Преоријентисати</string>
-    <string name="swap_volume_buttons_summary">Замените места дугмади за јачину звука када је екран ротиран</string>
-    <!-- Heads up timeout -->
-    <string name="heads_up_time_out_title">Истекло време</string>
-    <string name="heads_up_time_out_summary">Обавештења о провиривању приказиваће се за <xliff:g id="number">%d</xliff:g> секунди</string>
-    <string name="heads_up_time_out_2sec">2 секунде</string>
-    <string name="heads_up_time_out_4sec">4 секунде</string>
-    <string name="heads_up_time_out_5sec">5 секунде</string>
-    <string name="heads_up_time_out_6sec">6 секунде</string>
-    <string name="heads_up_time_out_8sec">8 секунде</string>
-    <string name="heads_up_time_out_10sec">10 секунди</string>
-    <!-- Heads up snooze -->
-    <string name="heads_up_snooze_title">Тајмер одлагања</string>
-    <string name="heads_up_snooze_summary_one_minute">Превлачењем обазривих обавештења одлагаћете главе из те апликације на 1 минут</string>
-    <string name="heads_up_snooze_summary">Превлачењем обавештења која провирују одлагаћете heads up из те апликације на<xliff:g id="number">%d</xliff:g> минута</string>
-    <string name="heads_up_snooze_disabled_summary">Тајмер \"дремања\" је онемогућен</string>
-    <string name="heads_up_snooze_1min">1 минут</string>
-    <string name="heads_up_snooze_5min">5 минута</string>
-    <string name="heads_up_snooze_10min">10 минута</string>
-    <string name="heads_up_snooze_15min">15 минута</string>
-    <string name="heads_up_snooze_20min">20 минута</string>
-    <string name="click_partial_screenshot_title">Кликните на делимични снимак екрана</string>
-    <string name="click_partial_screenshot_summary">Кратко притисните тастер за појачавање звука и дугме за гашење екрана да бисте снимили делимични снимак екрана</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Индикатор роминга</string>
     <string name="roaming_indicator_icon_summary">Прикажи индикатор роминга у икони сигнала у роминг режиму</string>
@@ -412,15 +401,13 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Затвори апликацију дугметом</string>
     <string name="notification_guts_kill_app_button_summary">Прикажите дугме за убијање апликације у менију за дуготрајно притискање обавештења</string>
-    <!-- Double Tap on Doze to wake -->
-    <string name="double_tap_on_doze_to_wake_title">Двапут додирните да бисте пробудили уређај</string>
-    <string name="double_tap_on_doze_to_wake_summary">Двапут додирните да бисте се пробудили када уређај сања</string>
     <!-- Battery Bar -->
     <string name="battery_bar_title">Трака батерије</string>
     <string name="battery_bar_summary">Прикажите и прилагодите траку батерије у близини статусне траке или траке за навигацију</string>
     <string name="battery_bar_no_navbar">Локација батеријске траке</string>
     <string name="battery_bar_location_hide">Сакриј</string>
-    <string name="battery_bar_location_statusbar">Статусна трака</string>
+    <string name="battery_bar_status_bar_top">Врх статусне траке</string>
+    <string name="battery_bar_status_bar_bot">Дно статусне траке</string>
     <string name="battery_bar_color">Боја батеријске траке</string>
     <string name="battery_bar_charging_color">Боја батеријске траке приликом пуњења</string>
     <string name="battery_bar_battery_low_color">Боја батеријске траке при ниском нивоу батерије</string>
@@ -447,10 +434,477 @@
     <!-- Force disable transition animation -->
     <string name="disable_transition_animations_title">Онемогући анимације прелаза</string>
     <string name="disable_transition_animations_summary">Присилино онемогућити све анимације транзиције</string>
-    <!-- Supress notifications if screen is on -->
+    <!-- Suppress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Звук обавештења ако је активан</string>
     <string name="notification_sound_vib_screen_on_summary">Репродукујте звук и вибрацију за обавештења када је екран укључен</string>
     <!-- Notification headers -->
     <string name="notification_headers_title">Заглавља обавештења</string>
     <string name="notification_headers_summary">Прикажите заглавља у сенци обавештења</string>
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">Икона закључавања</string>
+    <string name="hide_lockicon_summary">Сакријте икону катанца на закључаном екрану</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_category">Осветљење ивица екрана</string>
+    <string name="pulse_ambient_light_title">Прикажи на новом обавештењу</string>
+    <string name="pulse_ambient_light_summary">Покажите светлосни пулс на новом обавештењу</string>
+    <string name="pulse_ambient_light_show_always_title">Прикажи за све облике уштеде</string>
+    <string name="pulse_ambient_light_show_always_summary">Покажите светла за све догађаје дремке, а не само за обавештења</string>
+    <string name="ambient_notification_light_enabled_title">Приказуј увек укључено</string>
+    <string name="aod_disabled">\" Увек укључен екран \" - искључено</string>
+    <string name="ambient_notification_light_enabled_summary">Покажите светлосни пулс на новом обавештењу користећи увек укључено</string>
+    <string name="ambient_notification_light_color_title">Прилагођена боја</string>
+    <string name="ambient_notification_light_hide_aod_title">Приказујте само светлосни пулс</string>
+    <string name="ambient_notification_light_hide_aod_summary">Увек сакриј све остале елементе приказа</string>
+    <string name="ambient_notification_light_timeout_title">Временско ограничење за пулс светлости</string>
+    <string name="entry_infinite">Бесконачно</string>
+    <string name="entry_five_minute">5 минута</string>
+    <string name="entry_ten_minute">10 минута</string>
+    <string name="entry_thirty_minute">30 минута</string>
+    <string name="entry_sixty_minute">60 минута</string>
+    <string name="entry_fifteen_minute">15 минута</string>
+    <string name="ambient_notification_light_color_mode_title">Боја светлог пулса</string>
+    <string name="ambient_notification_light_color_mode_automatic">Боја обавештења</string>
+    <string name="ambient_notification_light_color_mode_accent">Боја акцента система</string>
+    <string name="ambient_notification_light_color_mode_custom">Прилагођена боја</string>
+    <string name="pulse_ambient_light_duration_title">Трајање</string>
+    <string name="pulse_ambient_light_duration_summary">Подешава трајање анимације амбијенталног светла</string>
+    <string name="pulse_ambient_light_repeat_count_title">Светло на Ивицама Понављање</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Подесите максималан број понављања. 0 за бесконачно</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">Tekst podnožja</string>
+    <string name="qs_footer_text_summary">Прикажите текст на дну QS панела</string>
+    <string name="qs_footer_text_string_title">Прилагодите текст подножја</string>
+    <string name="qs_footer_text_string_summary">Подразумевано је празно</string>
+    <!-- FOD icon picker -->
+    <string name="fod_icon_picker_title">Икона отиска прста</string>
+    <string name="fod_icon_picker_summary">Изабери омиљену икону отиска прста</string>
+    <string name="fod_icon_picker_footer">Да бисте додали своју икону, изаберите горњу леву икону и помоћу апликације OnePlus 6T FP Customizer одаберите жељену икону.</string>
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">Боја при читању отиска прста</string>
+    <string name="fod_pressed_color_white">Бела</string>
+    <string name="fod_pressed_color_cyan">Св.плава</string>
+    <string name="fod_pressed_color_green">Зелена</string>
+    <string name="fod_pressed_color_yellow">Жута</string>
+    <string name="fod_pressed_color_light_yellow">Жуто светло</string>
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">Покрени апликацију за музику приликом спајања слушалица</string>
+    <string name="headset_connect_player_summary">Покрени подразумевану музичку апликацију када су слушалице повезане</string>
+    <string name="radio_info_title">Инфо о радију</string>
+    <!-- Game mode -->
+    <string name="gaming_mode_title">Мод за игре</string>
+    <string name="gaming_mode_summary">Оптимизација за игрице</string>
+    <string name="gaming_mode_enable_title">Омогући мод за игрице</string>
+    <string name="gaming_mode_enable_summary">Главни прекидач за мод игрица</string>
+    <string name="gaming_mode_app_picker_title">Аутоматски се укључи за ове апликације</string>
+    <string name="add_gaming_mode_package_title">Додајте апликације за мод игрица</string>
+    <string name="add_gaming_mode_package_summary">Режим играња аутоматски ће се укључити када се отворе ове апликације и искључити када се затворе</string>
+    <string name="gaming_mode_headsup_title">\"Heads up\" обавештења</string>
+    <string name="gaming_mode_headsup_allow">Омогући сва искачућа обавештења</string>
+    <string name="gaming_mode_headsup_dnc">Блокирај сва искачућа обавештења осим Позива &amp; Аларма</string>
+    <string name="gaming_mode_headsup_clock">Блокирај сва искачућа обавештења осим Аларма</string>
+    <string name="gaming_mode_headsup_dialer">Блокирај сва искачућа обавештења осим Позива</string>
+    <string name="gaming_mode_headsup_stop">Блокирај сва искачућа обавештења</string>
+    <string name="gaming_mode_hardware_keys_title">Тастери за закључавање</string>
+    <string name="gaming_mode_hardware_keys_summary">Онемогућите хардверске тастере када је укључен режим игре</string>
+    <string name="gaming_mode_brightness_title">Онемогући аутоматску осветљеност</string>
+    <string name="gaming_mode_brightness_summary">Закључајте осветљеност екрана када је укључен режим играња</string>
+    <string name="gaming_mode_ringer_title">Звонити у току играња</string>
+    <string name="gaming_mode_ringer_off_title">Не мењај</string>
+    <string name="gaming_mode_ringer_vibrate_title">Вибрација</string>
+    <string name="gaming_mode_ringer_dnd_title">Не узнемиравај</string>
+    <string name="gaming_mode_ringer_silent_title">Нечујно</string>
+    <string name="gaming_mode_notifications_title">Индикација у режима играња</string>
+    <string name="gaming_mode_notifications_off_title">Онемогућено</string>
+    <string name="gaming_mode_notifications_notif_title">Прикажи обавештења</string>
+    <string name="gaming_mode_notifications_toast_title">Прикажи тренутне акције</string>
+    <string name="gaming_mode_notifications_all_title">Прикажи тренутне акције и обавештења</string>
+    <string name="gaming_mode_dynamic_title">Динамички режим</string>
+    <string name="gaming_mode_dynamic_summary">Покушајте аутоматски открити и додати апликације за играње</string>
+    <!-- Global Actions -->
+    <string name="powermenu_advanced_reboot_title">Напредно поновно покретање</string>
+    <string name="powermenu_advanced_reboot_summary">Омогући приступ опцијама recovery и bootloader</string>
+    <!-- Doze Brightness Config -->
+    <string name="doze_brightness_category">Подешавање нивоа осветљења</string>
+    <string name="doze_brightness_force_title">Присилите вредности осветљености</string>
+    <string name="doze_brightness_force_summary">Уместо осветљености екрана користите прилагођене вредности осветљености</string>
+    <string name="ambient_pulse_brightness_title">Осветљеност амбијенталног обавештења</string>
+    <string name="ambient_pulse_brightness_summary">Подесите осветљеност која ће се користити када се приказују обавештења</string>
+    <string name="ambient_doze_brightness_title">Осветљеност амбијенталног екрана</string>
+    <string name="ambient_doze_brightness_summary">Set brightness to use during ambient display on</string>
+    <!-- Themes customization -->
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Теме</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Унапред подешене акценат боје</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Промени облик иконе</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">Пакет икона</string>
+    <string name="theme_customization_dark_theme_title">Канта у боји</string>
+    <string name="default_accent_color">Pixel Blue (default)</string>
+    <string name="default_font">Roboto (default)</string>
+    <string name="default_icon_pack">Сток (подразумевано)</string>
+    <string name="default_icon_shape">Circle (default)</string>
+    <!-- Accent color picker -->
+    <string name="accent_color_title">Избор основне боје</string>
+    <!-- QS tile icon styles -->
+    <string name="qs_tile_style_title">QS стил иконе плочице</string>
+    <string name="qstile_default">Подразумевано</string>
+    <string name="qstile_circle_trim">Круг са исечцима</string>
+    <string name="qstile_dual_tone_circle">Круг двоструко појачан</string>
+    <string name="qstile_squircle_trim">Шара са исечком</string>
+    <string name="qstile_wavey">Wavey</string>
+    <string name="qstile_pokesign">Pokesign</string>
+    <string name="qstile_ninja">Нинђа</string>
+    <string name="qstile_dottedcircle">Испрекидани круг</string>
+    <string name="qstile_attemptmountain">Планина облик</string>
+    <string name="qstile_squaremedo">The Squaremedo</string>
+    <string name="qstile_inkdrop">Мастило</string>
+    <string name="qstile_cookie">Колачић</string>
+    <string name="qstile_circleoutline">Круг - оивичено</string>
+    <string name="qstile_cosmos">Shishu Cosmos</string>
+    <string name="qstile_divided">Круг подељено</string>
+    <string name="qstile_neonlike">Неонске боје</string>
+    <string name="qstile_oos">Oxygen</string>
+    <string name="qstile_triangles">Троугао</string>
+    <!-- Custom header -->
+    <string name="custom_header_browse_summary">Одабери слику за статични мод</string>
+    <string name="custom_header_browse_summary_new">Прегледај колецију свих хедера</string>
+    <string name="custom_header_browse_title">Прегледај инсталиране хедере</string>
+    <string name="custom_header_pick_summary">Одабери слику за статични мод</string>
+    <string name="custom_header_pick_title">Одабери слику за хедер</string>
+    <string name="custom_header_provider_title">Извор за хедер</string>
+    <string name="custom_header_summary">Прикажи слику на врху панела обавештења</string>
+    <string name="custom_header_title">Хедер по избору</string>
+    <string name="daylight_header_pack_title">Колекција хедера</string>
+    <string name="daylight_header_provider_title">Колекција слика</string>
+    <string name="file_header_provider_title">Слика по избору</string>
+    <string name="file_header_select_summary">Постави слику по избору</string>
+    <string name="file_header_select_title">Изабери слику</string>
+    <string name="header_provider_disabled">Онемогућено</string>
+    <string name="static_header_provider_title">Статична слика</string>
+    <string name="status_bar_custom_header_shadow_summary">За бољу видљивост на светлим сликама</string>
+    <string name="status_bar_custom_header_shadow_title">Сенка на слици хедера</string>
+    <!-- Volume Panel Plugin -->
+    <string name="volume_panel_category">Панел јачине звука</string>
+    <string name="volume_panel_title">Стил звучног панела</string>
+    <string name="volume_panel_stock">Фабрички</string>
+    <string name="volume_panel_compact">Компактно</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Плочице</string>
+    <string name="volume_panel_miui">Компактни MIUI</string>
+    <string name="volume_panel_oos">ООС</string>
+    <string name="volume_panel_p404">P404</string>
+    <string name="volume_panel_ssos">Померање облика</string>
+    <!-- Volume Panel Plugin Values -->
+    <!-- Show Status bar on Lock screen -->
+    <string name="lockscreen_status_bar_title">Статусна трака</string>
+    <string name="lockscreen_status_bar_summary">Прикажите статусну траку на закључаном екрану</string>
+    <!-- Notification Vibration -->
+    <string name="vibrate_on_notifications_title">Вибрирај за обавештења</string>
+    <string name="vibrate_on_notifications_summary">Пребаци за искључење вибрације обавештења</string>
+    <!-- QS DataUsage Toggle -->
+    <string name="qs_datausage_title">Видљивост коришћења података</string>
+    <string name="qs_datausage_disabled">Онемогућено</string>
+    <string name="qs_datausage_daily">Дневна употреба</string>
+    <string name="qs_datausage_monthly">Месечна употреба</string>
+    <!-- Lock screen media blur -->
+    <string name="lockscreen_media_blur_title">Ниво блур ефекта на сликама</string>
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">Блокада сензора за пакете</string>
+    <string name="sensor_block_summary">Спречи апликације да приступе извесним сензорима ради уштеде енергије</string>
+    <string name="sensor_block_app_picker_title">Блокирај сензоре за ове апликације</string>
+    <string name="add_sensor_block_package_title">Додајте апликације за сензорски блок</string>
+    <string name="add_sensor_block_package_summary">Значајни сензори покрета, акцелерометара и линеарног убрзања биће блокирани за ове апликације</string>
+    <!-- G-Visual mod -->
+    <string name="gvisual_title">G-Visual mod</string>
+    <string name="gvisual_summary">Разна прилагођавања корисничког интерфејса</string>
+    <string name="gvisual_footer">Из неког необичног разлога опција заобљеног угла не ради када се заобљени правоугаоник, веверица и суза су изабрани као облик системске иконе.</string>
+    <string name="rounded_ui_title">Заобљени углови</string>
+    <string name="rounded_ui_dialog_title">Изабери количину закривљења углова</string>
+    <string name="rounded_style_default">Подразумевано</string>
+    <string name="rounded_style_rectangle">Правоугаоник</string>
+    <string name="rounded_style_medium">Средње</string>
+    <string name="status_bar_height_title">Висина статусне траке</string>
+    <string name="status_bar_height_dialog_title">Изаберите висину статусне траке модела</string>
+    <string name="sb_height_default">Подразумевано</string>
+    <string name="sb_height_medium">Средње</string>
+    <string name="sb_height_large">Велико</string>
+    <string name="sb_height_extralarge">Веома велико</string>
+    <string name="navbar_color_title">Боје навигационог бара</string>
+    <string name="navbar_color_dialog_title">Изабери боју</string>
+    <string name="navbar_default">Подразумевано</string>
+    <string name="navbar_orchid">Орхидеја</string>
+    <string name="navbar_red">Црвена</string>
+    <string name="navbar_purp">Љубичаста</string>
+    <string name="navbar_blue">Плава</string>
+    <string name="navbar_rose">Розе</string>
+    <string name="header_default">Подразумевано</string>
+    <string name="header_large">Велико</string>
+    <string name="header_xlarge">Веома велико</string>
+    <string name="header_title">Величине заглавља</string>
+    <string name="header_dialog_title">Изаберите величину</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Подешавања за опцију Увек на екрану</string>
+    <string name="always_on_display_schedule_sunset">Залазак_сунца</string>
+    <string name="always_on_display_schedule_sunrise">Излазак Сунца</string>
+    <string name="always_on_display_schedule_mixed_sunset">Уклјучи од заласка сунца до неког времена</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Уклјучи од неког времена па до свитања</string>
+    <!-- Settings dashboard icon style -->
+    <string name="theming_settings_dashboard_icons_title">Подешавања икона контролне табле</string>
+    <string name="theming_settings_dashboard_icons_default">Подразумевана позадина / Прозирни први план</string>
+    <string name="theming_settings_dashboard_icons_white">Подразумевана позадина / Бели предњи план</string>
+    <string name="theming_settings_dashboard_icons_accent">Хаглашена позадина / Прозирни предњи план</string>
+    <string name="theming_settings_dashboard_icons_plain">Прозирна позадина / Обичан први план</string>
+    <string name="theming_settings_dashboard_icons_plain_accent">Прозирна позадина / Нагласак у првом плану</string>
+    <!-- Switch styles -->
+    <string name="switch_style_title">Пребацити стил</string>
+    <string name="switch_default">Подразумевано</string>
+    <string name="switch_contained">Садржана</string>
+    <string name="switch_telegram">Телеграм</string>
+    <string name="switch_md2">Дизајн материјала 2</string>
+    <string name="switch_retro">Ретро</string>
+    <string name="switch_oos">OxygenOS 11</string>
+    <!-- Global Actions -->
+    <string name="global_actions_users_choice_title">Необавезна радња корисника</string>
+    <string name="global_actions_flashlight_title">Батеријска лампа</string>
+    <string name="global_actions_screenshot_title">Снимак екрана</string>
+    <string name="global_actions_screenrecord_title">Снимање екрана</string>
+    <string name="global_actions_onthego_title">Режим у-покрету</string>
+    <string name="global_actions_none_title">Ниједан</string>
+    <!-- QS themes -->
+    <string name="qs_panel_colors_title">Брза подешавања боја</string>
+    <string name="qs_panel_bg_alpha_title">Позадина алфа</string>
+    <string name="qs_panel_bg_disco_title">QS плочица дискотека</string>
+    <string name="qs_panel_bg_disco_summary">Нека ваши QS наслови буду шарени!</string>
+    <!-- Notification background opacity -->
+    <string name="notification_alpha_title">Просветљеност позадине за обавештења</string>
+    <!-- Power menu background opacity -->
+    <string name="power_menu_alpha_title">Просветљеност за мени укључивања</string>
+    <!-- QS tile tint styles -->
+    <string name="qs_tint_title">QS стил нијанси плочица</string>
+    <string name="qs_tint_off">Подразумевано</string>
+    <string name="qs_tint_accent">Примарна боја</string>
+    <string name="qs_tint_oos">OxygenOS 11</string>
+    <!-- Lock screen Clocks -->
+    <string name="clock_show_status_area">Прикажи статусну зону ( време и сл.)</string>
+    <string name="clock_show_status_area_summary">Прикажи додатни ред информација испод закључаног екрана (SysUI рестарт може бити затражен)</string>
+    <string name="lock_screen_custom_clock_face_category">Закључани екран сата</string>
+    <string name="lock_screen_custom_clock_face_title">Стил закључаног екрана</string>
+    <string name="lock_screen_custom_clock_face_default">Подразумевано</string>
+    <string name="lock_screen_custom_clock_face_default_bold">Подразумевано (Подебљано)</string>
+    <string name="lock_screen_custom_clock_face_alt_typographic">Типографски (Ново)</string>
+    <string name="lock_screen_custom_clock_face_analog">Аналогни</string>
+    <string name="lock_screen_custom_clock_face_android_s_dp3">Android S DP3</string>
+    <string name="lock_screen_custom_clock_face_binary">Бинарни</string>
+    <string name="lock_screen_custom_clock_face_bubble">Балон</string>
+    <string name="lock_screen_custom_clock_face_clockertino">Clockertino</string>
+    <string name="lock_screen_custom_clock_face_divided">Подељене Линије</string>
+    <string name="lock_screen_custom_clock_face_fluid">Течност</string>
+    <string name="lock_screen_custom_clock_face_fluid_v2">Fluid v2</string>
+    <string name="lock_screen_custom_clock_face_gradient_fire">Градијентна ватра</string>
+    <string name="lock_screen_custom_clock_face_ide">IDE</string>
+    <string name="lock_screen_custom_clock_face_ide_java">IDE (Java Mix)</string>
+    <string name="lock_screen_custom_clock_face_mnml_box">MNML Box</string>
+    <string name="lock_screen_custom_clock_face_mnml_minimal">MNML Минимално</string>
+    <string name="lock_screen_custom_clock_face_op_minimal">OnePlus Minimal</string>
+    <string name="lock_screen_custom_clock_face_op_numbers">OnePlus Numbers</string>
+    <string name="lock_screen_custom_clock_face_op_roman">OnePlus Roman</string>
+    <string name="lock_screen_custom_clock_face_samsung">Самсунг</string>
+    <string name="lock_screen_custom_clock_face_samsung_bold">Самсунг (Подебљано)</string>
+    <string name="lock_screen_custom_clock_face_samsung_highlight">Самсунг (Истакнути)</string>
+    <string name="lock_screen_custom_clock_face_sfuny">SFUNY</string>
+    <string name="lock_screen_custom_clock_face_shapeshift">Померање облика</string>
+    <string name="lock_screen_custom_clock_face_spectrum">Spectrum</string>
+    <string name="lock_screen_custom_clock_face_sticker_tag">Ознака Налепнице</string>
+    <string name="lock_screen_custom_clock_face_typographic">Типографски</string>
+    <string name="lock_screen_custom_clock_face_typographic_alt">Типографски (Средина)</string>
+    <!-- Volume rocker gestures -->
+    <string name="volume_skiptrack_screen_title">Прескочите музичке нумере</string>
+    <!-- HW keys -->
+    <string name="hardware_keys_title">Хардверска дугмад</string>
+    <string name="hardware_keys_disable_title">Физичка дугмад</string>
+    <string name="hardware_keys_disable_summary">За навигацију користите тастере хардвера уређаја</string>
+    <string name="hardware_keys_volume_keys_title">Дугмад за појачавање</string>
+    <!-- ANBI -->
+    <string name="anbi_title">Случајан додир</string>
+    <string name="anbi_summary">Спречите интеракцију са хардверским тастерима док се екран користи</string>
+    <!-- Button settings -->
+    <string name="button_pref_title">Дугмад</string>
+    <string name="hardware_keys_home_key_title">Дугме „Почетно“</string>
+    <string name="hardware_keys_back_key_title">Дугме „Назад“</string>
+    <string name="hardware_keys_menu_key_title">Дугме „Мени“</string>
+    <string name="hardware_keys_assist_key_title">Дугме „Претрага“</string>
+    <string name="hardware_keys_appswitch_key_title">Недавно дугме</string>
+    <string name="hardware_keys_camera_key_title">Дугме за камеру</string>
+    <string name="hardware_keys_short_press_title">Кратки притисак</string>
+    <string name="hardware_keys_long_press_title">Дуги притисак</string>
+    <string name="hardware_keys_double_tap_title">Двоструки додир</string>
+    <string name="hardware_keys_action_nothing">Без радње</string>
+    <string name="hardware_keys_action_menu">Отвори/затвори мени</string>
+    <string name="hardware_keys_action_app_switch">Пребацивач недавних апликација</string>
+    <string name="hardware_keys_action_search">Помоћник за претрагу</string>
+    <string name="hardware_keys_action_voice_search">Гласовна претрага</string>
+    <string name="hardware_keys_action_in_app_search">Претрага у апликацији</string>
+    <string name="hardware_keys_action_launch_camera">Покрени камеру</string>
+    <string name="hardware_keys_action_sleep">Искључи екран</string>
+    <string name="hardware_keys_action_split_screen">Подељени екран</string>
+    <string name="hardware_keys_action_close_app">Затвори апликацију</string>
+    <string name="hardware_keys_action_torch">Бакља</string>
+    <string name="hardware_keys_action_screenshot">Снимак екрана</string>
+    <string name="hardware_keys_action_volume_panel">Пребацивање панела за јачину звука</string>
+    <string name="hardware_keys_action_clear_all_notifications">Обриши сва обавештења</string>
+    <string name="hardware_keys_action_notifications_panel">Пребацивање табле са обавештењима</string>
+    <string name="hardware_keys_action_toggle_qs_panel">Пребацивање QS панела</string>
+    <string name="hardware_keys_action_ringer_modes">Режими звона</string>
+    <string name="hardware_keys_swipe_right_key_title">Превуци десно</string>
+    <string name="hardware_keys_swipe_left_key_title">Превуци лево</string>
+    <string name="hardware_keys_long_tap_key_title">Дуги додир</string>
+    <string name="hardware_keys_swipe_tap_title">Акција превлачења</string>
+    <string name="hardware_keys_long_tap_title">Акција дугог додира</string>
+    <string name="button_wake_title">Пробуди уређај</string>
+    <string name="button_wake_summary">Пробудите уређај притиском на дугме</string>
+    <string name="camera_sleep_on_release_title">Завиривање екрана</string>
+    <string name="camera_sleep_on_release_summary">Половични притисак ће задржати екран укључен само док је дугме притиснуто</string>
+    <string name="camera_launch_title">Покрени камеру</string>
+    <string name="camera_launch_summary">Дуги притисак и пуштање покреће камеру</string>
+    <string name="volbtn_music_controls_title">Управљање репродукцијом</string>
+    <string name="volbtn_music_controls_summary">Промените нумере дугим притиском на дугмад за јачину звука док је екран искључен</string>
+    <string name="volbtn_cursor_control_title">Контрола курсора на тастатури</string>
+    <string name="volbtn_cursor_control_off">Онемогућено</string>
+    <string name="volbtn_cursor_control_on">Дугмићи за јачину звука покрећу курсор лево/десно</string>
+    <string name="volbtn_cursor_control_on_reverse">Дугмићи за јачину звука покрећу курсор десно/лево</string>
+    <string name="swap_volume_buttons_title">Преоријентисати</string>
+    <string name="swap_volume_buttons_summary">Замените места дугмади за јачину звука када је екран ротиран</string>
+    <string name="volume_panel_on_left_summary">Прикажи панел за звук на левој страни екрана</string>
+    <string name="extras_title">Додаци</string>
+    <string name="click_partial_screenshot_title">Кликните на делимични снимак екрана</string>
+    <string name="click_partial_screenshot_summary">Кратко притисните тастер за појачавање звука и дугме за гашење екрана да бисте снимили делимични снимак екрана</string>
+    <!-- Key backlight -->
+    <string name="button_backlight_title">Позадинско осветљење тастера</string>
+    <string name="button_backlight_enabled">Дугмад за осветљење</string>
+    <string name="button_backlight_only_when_pressed_title">Тастери осветљавају само када се притисну</string>
+    <string name="keyboard_backlight_enabled">Осветљена тастатура</string>
+    <string name="button_backlight_seekbar_title">Осветљеност дугмади</string>
+    <string name="keyboard_backlight_seekbar_title">Осветљеност тастатуре</string>
+    <string name="backlight_timeout_title">Трајање осветљености</string>
+    <string name="backlight_timeout_unlimited">Не искључуј</string>
+    <string name="backlight_summary_disabled">Искључено</string>
+    <string name="backlight_summary_enabled_with_timeout">Омогућено за <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Укључен</string>
+    <!-- Buttons - Enable navbar -->
+    <string name="disable_navkeys_title">Омогући навигациону траку на екрану</string>
+    <string name="disable_navkeys_summary">Омогући навигациону траку на екрану и онемогући хардверске дугмиће</string>
+    <!-- Buttons - Swap capacitive keys -->
+    <string name="swap_capacitive_keys_title">Замени капацитивне тастере</string>
+    <string name="swap_capacitive_keys_summary">Замените места дугмади „Преглед“ и „Назад“</string>
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Визуализатор</string>
+    <string name="lockscreen_visualizer_enable">Музички визуализатор</string>
+    <string name="lockscreen_visualizer_enable_summary">Приказивање музичких трака за време репродукције музике</string>
+    <string name="lockscreen_autocolor_title">Аутоматска боја</string>
+    <string name="lockscreen_autocolor_summary">Синхронизујте боју са позадином закључаног екрана</string>
+    <string name="lockscreen_autocolor_lavalamp">Захтева лава лампа искључена</string>
+    <string name="lockscreen_lavalamp_title">Лава лампа</string>
+    <string name="lockscreen_lavalamp_summary">Користите глатку анимацију мешавине боја у стилу лава лампе</string>
+    <string name="lockscreen_lavalamp_speed_title">Интервал мешања боја</string>
+    <string name="lockscreen_solid_lines_category">Пуне линије</string>
+    <string name="lockscreen_solid_units_count_title">Број линијe</string>
+    <string name="lockscreen_solid_fudge_factor_title">Здрав разум</string>
+    <string name="lockscreen_solid_units_opacity_title">Непрозирност линија</string>
+    <!-- Heads up timeout -->
+    <string name="heads_up_footer">Функције чекања могу захтевати поновно покретање система.</string>
+    <string name="heads_up_time_out_title">Истекло време</string>
+    <string name="heads_up_time_out_summary">Обавештења о провиривању приказиваће се за <xliff:g id="number">%d</xliff:g> секунди</string>
+    <string name="heads_up_time_out_2sec">2 секунде</string>
+    <string name="heads_up_time_out_4sec">4 секунде</string>
+    <string name="heads_up_time_out_5sec">5 секунде</string>
+    <string name="heads_up_time_out_6sec">6 секунде</string>
+    <string name="heads_up_time_out_8sec">8 секунде</string>
+    <string name="heads_up_time_out_10sec">10 секунди</string>
+    <!-- Per-app volume -->
+    <string name="show_app_volume_title">Прикажи звук апликације</string>
+    <string name="show_app_volume_summary">Прикажи гласноћу апликације у панелу гласноће</string>
+    <!-- Alert Slider Notifications (OnePlus devices) -->
+    <string name="alert_slider_notifications_title">Слајдер обавештења аларма</string>
+    <string name="alert_slider_notifications_summary">Прикажи обавештење при промени положаја слајдера за аларм</string>
+    <!-- Rounded corners -->
+    <string name="corners_category_title">Заобљени углови</string>
+    <string name="corners_category_summary">Подешавање заобљених углова и положаја садржаја</string>
+    <string name="corners_title">Прилагоди заобљеност углова</string>
+    <string name="corner_radius">Радијус заобљености углова</string>
+    <string name="content_padding">Удаљност садржаја од углова</string>
+    <string name="corner_fwvals">Користите системске вредности</string>
+    <string name="corner_fwvals_summary">Корисно ако уређај има заобљене углове</string>
+    <!-- Display cutout options -->
+    <string name="cutout_category_title">Подешавање отсецања углова</string>
+    <string name="cutout_main">Исечак Екрана</string>
+    <string name="cutout_main_summary">Стварно исецање углова са овим</string>
+    <string name="display_cutout_style_title">Стил исецања</string>
+    <string name="display_cutout_style_normal">Нормалан</string>
+    <string name="display_cutout_style_immerse">Уроните</string>
+    <string name="display_cutout_style_hide">Сакриј</string>
+    <string name="stock_statusbar_in_hide">Системска висина статусбара</string>
+    <string name="stock_statusbar_in_hide_summary">Користи подразумевану висину статусбара када је скривен</string>
+    <!-- Status Bar Ticker -->
+    <string name="ticker_screen_title">Ticker</string>
+    <string name="ticker_screen_summary">Прикажи обавештења у статус бару на начин тикера</string>
+    <string name="ticker_screen_footer">Тикер је видљив само када се не приказује упозорење \"подигнуте главе\". Уређаји са средишњим изрезом (notch) треба да сакрију изрез у опцијама : Изрезивање.</string>
+    <string name="ticker_title">Тикер у статус бару</string>
+    <string name="ticker_summary">Омогући тикер у статус бару</string>
+    <string name="ticker_restore_defaults_title">Поврати подразумевано</string>
+    <string name="text_title">Текст</string>
+    <string name="icon_title">Икона</string>
+    <string name="colors_title">Боје</string>
+    <string name="values_restored_title">Повраћене вредности</string>
+    <string name="ticker_disabled">Без тикера</string>
+    <string name="ticker_enabled">Тикер обавештење</string>
+    <string name="ticker_media_enabled">Обавештења и музички тикер</string>
+    <string name="ticker_animation_mode_title">Стил анимације тикера</string>
+    <string name="ticker_animation_mode_alpha_fade">Избледи</string>
+    <string name="ticker_animation_mode_scroll">Померање</string>
+    <string name="ticker_tick_duration_title">Трајања тикера</string>
+    <!-- Lockscreen blur -->
+    <string name="lockscreen_blur_title">Замагљена позадина</string>
+    <string name="lockscreen_blur_summary">Замагљена позадина закључаног екрана</string>
+    <string name="lockscreen_blur_disabled">Затамњење закључаног екрана се неможе укључити јер одабрана позадина се не уклапа или ваш уређај не подржава ову опцију.</string>
+    <!-- Navbar Picker -->
+    <string name="theme_navbar_picker_title">Стил навигационог бара (за навигациони бар са 3 дугмета)</string>
+    <string name="theme_navbar_picker_summary">Изабери стил навигационог бара</string>
+    <string name="theme_navbar_picker_default">Подразумевано</string>
+    <string name="theme_navbar_picker_oneplus">OnePlus</string>
+    <string name="theme_navbar_picker_oneui">One UI</string>
+    <string name="theme_navbar_picker_tecno">Tecno Camon</string>
+    <string name="theme_navbar_picker_asus">ASUS</string>
+    <string name="theme_navbar_picker_android">Андроид</string>
+    <string name="theme_navbar_picker_moto">Moto</string>
+    <string name="theme_navbar_picker_nexus">Nexus</string>
+    <string name="theme_navbar_picker_old">Стари</string>
+    <string name="theme_navbar_picker_sammy">Samsung</string>
+    <!-- FOD on doze -->
+    <string name="fod_on_doze_title">FOD на мерама уштеде</string>
+    <string name="fod_on_doze_summary">Прикажи отисак прста на екрану при амбијенталном екрану и увек укљученом екрану (AoD-у)</string>
+    <!-- Alarm and Wakelock blocker -->
+    <string name="blocker_action_reload">Учитај опед</string>
+    <string name="blocker_action_save">Сачувај</string>
+    <string name="blocker_action_save_toast">Подешавања успешно сачувана</string>
+    <string name="blocker_warning_title">Упозорење</string>
+    <string name="wakelock_blocker_title">Wakelock блокада</string>
+    <string name="wakelock_blocker_summary">Блокирај непотребно буђење уређаја ради уштеде у батерији</string>
+    <string name="wakelock_blocker_warning">Блокада буђења уређаја може изазвати нестабилност, пад система или губитак података.</string>
+    <string name="wakelock_blocker_display_text">За приказ и блокирање непотребног буђења екрана, укључи опцију блокирања непотребног буђења.</string>
+    <string name="alarm_blocker_title">Блокатор аларма</string>
+    <string name="alarm_blocker_summary">Блокирати аларм док је екран искључен ради уштеде батерије</string>
+    <string name="alarm_blocker_warning">Блокада аларма може изазвати нестабилност, пад система или губитак података.</string>
+    <string name="alarm_blocker_display_text">За преглед и блокирање аларма, укључите блокер аларма.</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="notification_flash_title">Батеријска лампа</string>
+    <string name="flashlight_on_call_title">Треперење лампице приликом позива</string>
+    <string name="flashlight_on_call_disabled">Онемогућено</string>
+    <string name="flashlight_on_call_not_dnd">Само у режиму звона</string>
+    <string name="flashlight_on_call_dnd">Само у режиму DND</string>
+    <string name="flashlight_on_call_always">Увек</string>
+    <!-- Status Bar Lyric -->
+    <string name="status_bar_show_lyric_title">Опција приказа текста песама у статус бару</string>
+    <string name="status_bar_show_lyric_summary">Прикажи текст песама у статус бару ( захтева подршку апликације и поновно покретање система)</string>
 </resources>
