@@ -54,6 +54,7 @@
     <string name="led_color_red">強調色-紅色</string>
     <string name="edit_hint">值</string>
     <string name="seek_value_edit_label">設定值</string>
+    <string name="android_s">Android S</string>
     <!-- Units -->
     <string name="unit_milliseconds">毫秒</string>
     <string name="unit_percent">\u0025</string>
@@ -326,7 +327,7 @@
     <string name="status_bar_clock_style_center">置中</string>
     <string name="status_bar_clock_style_left">左</string>
     <string name="status_bar_date_title">日期設置</string>
-    <string name="status_bar_am_pm_title">AM/PM 樣式</string>
+    <string name="status_bar_am_pm_title">上午/下午 樣式</string>
     <string name="status_bar_am_pm_info">24小時制已啓用</string>
     <string name="status_bar_am_pm_normal">一般</string>
     <string name="status_bar_am_pm_small">小</string>
@@ -564,7 +565,7 @@
     <string name="qstile_cosmos">宇宙雛形</string>
     <string name="qstile_divided">虛線分割圓</string>
     <string name="qstile_neonlike">霓虹燈</string>
-    <string name="qstile_oos">氧</string>
+    <string name="qstile_oos">Oxygen OS(一加)</string>
     <string name="qstile_triangles">三角形</string>
     <!-- Custom header -->
     <string name="custom_header_browse_summary">選擇用於靜態模式的任一圖像</string>
@@ -588,11 +589,13 @@
     <string name="volume_panel_category">音量面板</string>
     <string name="volume_panel_title">音量面板樣式</string>
     <string name="volume_panel_stock">AOSP原生面板</string>
-    <string name="volume_panel_aosp">AOSP延伸</string>
     <string name="volume_panel_compact">緊湊</string>
-    <string name="volume_panel_oreo">奧利奧</string>
+    <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">卡片</string>
     <string name="volume_panel_miui">MIUI風格</string>
+    <string name="volume_panel_oos">氧OS</string>
+    <string name="volume_panel_p404">P404</string>
+    <string name="volume_panel_ssos">ShapeShift</string>
     <!-- Volume Panel Plugin Values -->
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">狀態欄</string>
@@ -621,7 +624,6 @@
     <string name="rounded_ui_dialog_title">選擇圓角樣式</string>
     <string name="rounded_style_default">預設</string>
     <string name="rounded_style_rectangle">長方形</string>
-    <string name="rounded_style_large">Android 12</string>
     <string name="rounded_style_medium">中等</string>
     <string name="status_bar_height_title">狀態欄高度</string>
     <string name="status_bar_height_dialog_title">選擇狀態欄高度模式</string>
@@ -658,17 +660,17 @@
     <!-- Switch styles -->
     <string name="switch_style_title">開關風格</string>
     <string name="switch_default">預設</string>
-    <string name="switch_contained">包含</string>
+    <string name="switch_contained">iOS</string>
     <string name="switch_telegram">Telegram</string>
     <string name="switch_md2">Material 設計 2</string>
     <string name="switch_retro">Retro</string>
-    <string name="switch_oos">氧OS 11</string>
-    <string name="switch_android12">Android 12</string>
+    <string name="switch_oos">Oxygen OS(一加)</string>
     <!-- Global Actions -->
     <string name="global_actions_users_choice_title">可選的用戶操作</string>
     <string name="global_actions_flashlight_title">手電筒</string>
     <string name="global_actions_screenshot_title">螢幕擷取畫面</string>
     <string name="global_actions_screenrecord_title">螢幕畫面錄製</string>
+    <string name="global_actions_onthego_title">步行模式</string>
     <string name="global_actions_none_title">無</string>
     <!-- QS themes -->
     <string name="qs_panel_colors_title">快速設定磁貼顏色</string>
@@ -684,7 +686,6 @@
     <string name="qs_tint_off">預設</string>
     <string name="qs_tint_accent">系統主色</string>
     <string name="qs_tint_oos">OxygenOS 11</string>
-    <string name="qs_tint_twelve">Android 12</string>
     <!-- Lock screen Clocks -->
     <string name="clock_show_status_area">顯示狀態區域（例如天氣）</string>
     <string name="clock_show_status_area_summary">在鎖定畫面的時鐘下顯示附加的訊息行 (系统界面可能需要重啟)</string>
@@ -694,7 +695,6 @@
     <string name="lock_screen_custom_clock_face_default_bold">預設（粗體）</string>
     <string name="lock_screen_custom_clock_face_alt_typographic">文字（新版）</string>
     <string name="lock_screen_custom_clock_face_analog">指針</string>
-    <string name="lock_screen_custom_clock_face_android_s">Android S</string>
     <string name="lock_screen_custom_clock_face_android_s_dp3">Android S DP3</string>
     <string name="lock_screen_custom_clock_face_binary">二進制</string>
     <string name="lock_screen_custom_clock_face_bubble">泡泡</string>
@@ -779,7 +779,7 @@
     <string name="volume_panel_on_left_summary">在螢幕左邊顯示音量面板</string>
     <string name="extras_title">附加功能</string>
     <string name="click_partial_screenshot_title">點擊以局部螢幕擷圖</string>
-    <string name="click_partial_screenshot_summary">同時按下“音量減鍵”和“電源鍵”以擷取部分熒幕擷圖</string>
+    <string name="click_partial_screenshot_summary">同時按下“音量減鍵”和“電源鍵”以擷取部分螢幕擷圖</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">按鈕背光</string>
     <string name="button_backlight_enabled">點亮按鈕</string>
@@ -866,6 +866,7 @@
     <string name="ticker_tick_duration_title">通知提示文字顯示時間</string>
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">背景顏色</string>
+    <string name="lockscreen_blur_summary">模糊鎖定畫面背景</string>
     <string name="lockscreen_blur_disabled">無法使用鎖屏模糊，因為您目前的鎖定畫面背景與主畫面不合適，或是您的設備不支持模糊。</string>
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">導覽列風格（三按鈕操作）</string>
@@ -896,4 +897,14 @@
     <string name="alarm_blocker_summary">在螢幕關閉時使用警報阻止工具節省電量</string>
     <string name="alarm_blocker_warning">警報阻止工具可能會導致系統不穩定、出錯或資料遺失</string>
     <string name="alarm_blocker_display_text">要查看警報阻止工具，請先打開警報阻止功能。</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="notification_flash_title">手電筒</string>
+    <string name="flashlight_on_call_title">來電時閃光燈閃爍</string>
+    <string name="flashlight_on_call_disabled">已停用</string>
+    <string name="flashlight_on_call_not_dnd">僅在響鈴模式下</string>
+    <string name="flashlight_on_call_dnd">僅在勿擾模式下</string>
+    <string name="flashlight_on_call_always">一律採用</string>
+    <!-- Status Bar Lyric -->
+    <string name="status_bar_show_lyric_title">狀態欄歌詞功能</string>
+    <string name="status_bar_show_lyric_summary">顯示歌詞在狀態欄（需要APP支持和重啟手機）</string>
 </resources>
