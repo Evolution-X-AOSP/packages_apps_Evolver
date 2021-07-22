@@ -54,6 +54,7 @@
     <string name="led_color_red">Đỏ</string>
     <string name="edit_hint">Giá trị</string>
     <string name="seek_value_edit_label">Đặt giá trị</string>
+    <string name="android_s">Android S</string>
     <!-- Units -->
     <string name="unit_milliseconds">mili giây</string>
     <string name="unit_percent">\u0025</string>
@@ -588,11 +589,13 @@
     <string name="volume_panel_category">Bảng điều chỉnh âm lượng</string>
     <string name="volume_panel_title">Kiểu bảng điều khiển âm lượng</string>
     <string name="volume_panel_stock">Bảng điều khiển AOSP mặc định</string>
-    <string name="volume_panel_aosp">AOSP</string>
     <string name="volume_panel_compact">Nhỏ gọn</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Ô xếp</string>
     <string name="volume_panel_miui">MIUI gọn nhẹ</string>
+    <string name="volume_panel_oos">OOS</string>
+    <string name="volume_panel_p404">P404</string>
+    <string name="volume_panel_ssos">ShapeShift</string>
     <!-- Volume Panel Plugin Values -->
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Thanh trạng thái</string>
@@ -621,7 +624,6 @@
     <string name="rounded_ui_dialog_title">Tuỳ chọn kiểu góc tròn</string>
     <string name="rounded_style_default">Mặc định</string>
     <string name="rounded_style_rectangle">Hình chữ nhật</string>
-    <string name="rounded_style_large">Lớn</string>
     <string name="rounded_style_medium">Vừa</string>
     <string name="status_bar_height_title">Chiều cao thanh trạng thái</string>
     <string name="status_bar_height_dialog_title">Chọn kiểu chiều cao thanh trạng thái</string>
@@ -663,12 +665,12 @@
     <string name="switch_md2">Material Design 2</string>
     <string name="switch_retro">Hoài cổ</string>
     <string name="switch_oos">OxygenOS 11</string>
-    <string name="switch_android12">Android 12</string>
     <!-- Global Actions -->
     <string name="global_actions_users_choice_title">Hành động tùy chọn của người dùng</string>
     <string name="global_actions_flashlight_title">Đèn pin</string>
     <string name="global_actions_screenshot_title">Chụp màn hình</string>
     <string name="global_actions_screenrecord_title">Quay Màn Hình</string>
+    <string name="global_actions_onthego_title">Chế độ On-The-Go</string>
     <string name="global_actions_none_title">Không</string>
     <!-- QS themes -->
     <string name="qs_panel_colors_title">Màu Bảng Cài đặt nhanh</string>
@@ -684,7 +686,6 @@
     <string name="qs_tint_off">Mặc định</string>
     <string name="qs_tint_accent">Màu chủ đề</string>
     <string name="qs_tint_oos">OxygenOS 11</string>
-    <string name="qs_tint_twelve">Android 12</string>
     <!-- Lock screen Clocks -->
     <string name="clock_show_status_area">Hiển thị trạng thái khu vực (thời tiết,...)</string>
     <string name="clock_show_status_area_summary">Hiển thị thêm dòng thông tin dưới đồng hồ màn hình khóa (có thể cần khởi động lại Hệ thống)</string>
@@ -694,7 +695,6 @@
     <string name="lock_screen_custom_clock_face_default_bold">Mặc định (đậm)</string>
     <string name="lock_screen_custom_clock_face_alt_typographic">Typographic (Mới)</string>
     <string name="lock_screen_custom_clock_face_analog">Đồng hồ kim</string>
-    <string name="lock_screen_custom_clock_face_android_s">Android S</string>
     <string name="lock_screen_custom_clock_face_android_s_dp3">Android S DP3</string>
     <string name="lock_screen_custom_clock_face_binary">Nhị phân</string>
     <string name="lock_screen_custom_clock_face_bubble">Bong bóng</string>
@@ -866,6 +866,7 @@
     <string name="ticker_tick_duration_title">Thời gian tường thuật</string>
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">Làm mờ nền</string>
+    <string name="lockscreen_blur_summary">Hình nền mờ màn hình khóa</string>
     <string name="lockscreen_blur_disabled">Không thể bật Làm mờ màn hình khóa vì hình nền màn hình khóa hiện tại của bạn không khớp với màn hình chính của bạn hoặc thiết bị của bạn không hỗ trợ Làm mờ.</string>
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">Kiểu điều hướng (dành cho điều hướng 3 nút)</string>
@@ -896,4 +897,14 @@
     <string name="alarm_blocker_summary">Chặn cảnh báo khi màn hình tắt</string>
     <string name="alarm_blocker_warning">Chặn các cảnh báo có khả năng gây mất ổn định, dừng đột ngột hoặc mất dữ liệu.</string>
     <string name="alarm_blocker_display_text">Để xem và chặn wakelock, hãy bật trình chặn wakelock.</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="notification_flash_title">Đèn pin</string>
+    <string name="flashlight_on_call_title">Chớp đèn flash cuộc gọi đến</string>
+    <string name="flashlight_on_call_disabled">Đã tắt</string>
+    <string name="flashlight_on_call_not_dnd">Chỉ trong chế độ chuông</string>
+    <string name="flashlight_on_call_dnd">Chỉ trong chế độ không làm phiền</string>
+    <string name="flashlight_on_call_always">Luôn cho phép</string>
+    <!-- Status Bar Lyric -->
+    <string name="status_bar_show_lyric_title">Tính năng lời bài hát trên thanh trạng thái</string>
+    <string name="status_bar_show_lyric_summary">Hiển thị lời bài hát trên thanh trạng thái (yêu cầu hỗ trợ ứng dụng và khởi động lại SystemUI)</string>
 </resources>

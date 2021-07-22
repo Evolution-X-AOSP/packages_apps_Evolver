@@ -54,6 +54,7 @@
     <string name="led_color_red">Κόκκινο</string>
     <string name="edit_hint">Τιμή</string>
     <string name="seek_value_edit_label">Ορίστε τιμή</string>
+    <string name="android_s">Android S</string>
     <!-- Units -->
     <string name="unit_milliseconds">χιλιοστά του δευτερολέπτου</string>
     <string name="unit_percent">\u0025</string>
@@ -588,11 +589,13 @@
     <string name="volume_panel_category">Πίνακας έντασης</string>
     <string name="volume_panel_title">Στυλ πίνακα έντασης</string>
     <string name="volume_panel_stock">Απόθεμα</string>
-    <string name="volume_panel_aosp">Επέκταση AOSP</string>
     <string name="volume_panel_compact">Συμπαγής</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Με πλακάκια</string>
     <string name="volume_panel_miui">MIUI Compact</string>
+    <string name="volume_panel_oos">OOS</string>
+    <string name="volume_panel_p404">P404</string>
+    <string name="volume_panel_ssos">ShapeShift</string>
     <!-- Volume Panel Plugin Values -->
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Γραμμή κατάστασης</string>
@@ -621,7 +624,6 @@
     <string name="rounded_ui_dialog_title">Επιλέξτε μοντέλο στρογγυλεμένης γωνίας</string>
     <string name="rounded_style_default">Προκαθορισμένο</string>
     <string name="rounded_style_rectangle">Ορθογώνιο παραλληλόγραμμο</string>
-    <string name="rounded_style_large">Μεγάλο</string>
     <string name="rounded_style_medium">Μεσαίο</string>
     <string name="status_bar_height_title">Ύψος γραμμής κατάστασης</string>
     <string name="status_bar_height_dialog_title">Επιλέξτε μοντέλο ύψους γραμμής κατάστασης</string>
@@ -663,12 +665,12 @@
     <string name="switch_md2">Material Design 2</string>
     <string name="switch_retro">Retro</string>
     <string name="switch_oos">OxygenOS 11</string>
-    <string name="switch_android12">Android 12</string>
     <!-- Global Actions -->
     <string name="global_actions_users_choice_title">Προαιρετική ενέργεια χρήστη</string>
     <string name="global_actions_flashlight_title">Φακός</string>
     <string name="global_actions_screenshot_title">Στιγμιότυπο οθόνης</string>
     <string name="global_actions_screenrecord_title">Καταγραφή Οθόνης</string>
+    <string name="global_actions_onthego_title">Λειτουργία εν κινήσει</string>
     <string name="global_actions_none_title">Κανένα</string>
     <!-- QS themes -->
     <string name="qs_panel_colors_title">Χρώματα γρήγορων ρυθμίσεων</string>
@@ -684,7 +686,6 @@
     <string name="qs_tint_off">Προεπιλογή</string>
     <string name="qs_tint_accent">Χρώμα έμφασης</string>
     <string name="qs_tint_oos">OxygenOS 11</string>
-    <string name="qs_tint_twelve">Android 12</string>
     <!-- Lock screen Clocks -->
     <string name="clock_show_status_area">Εμφάνιση περιοχής κατάστασης (καιρός κ. λπ.)</string>
     <string name="clock_show_status_area_summary">Εμφάνιση της επιπλέον σειρά πληροφοριών κάτω από το ρολόι οθόνης κλειδώματος (ενδέχεται να απαιτείται επανεκκίνηση SysUI)</string>
@@ -694,7 +695,6 @@
     <string name="lock_screen_custom_clock_face_default_bold">Προεπιλεγμένο (έντονο)</string>
     <string name="lock_screen_custom_clock_face_alt_typographic">Τυπογραφικά (Νέα)</string>
     <string name="lock_screen_custom_clock_face_analog">Αναλογικό</string>
-    <string name="lock_screen_custom_clock_face_android_s">Android S</string>
     <string name="lock_screen_custom_clock_face_android_s_dp3">Android S DP3</string>
     <string name="lock_screen_custom_clock_face_binary">Δυαδικό</string>
     <string name="lock_screen_custom_clock_face_bubble">Φούσκα</string>
@@ -824,7 +824,7 @@
     <string name="heads_up_time_out_10sec">10 δευτερόλεπτα</string>
     <!-- Per-app volume -->
     <string name="show_app_volume_title">Εμφάνιση έντασης εφαρμογής</string>
-    <string name="show_app_volume_summary">Εμφάνιση όγκου εφαρμογών στον πίνακα έντασης (Λειτουργεί μόνο για πίνακα αποθεμάτων)</string>
+    <string name="show_app_volume_summary">Εμφάνιση έντασης ήχου εφαρμογής στον πίνακα έντασης ήχου</string>
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Ειδοποιήσεις συναγερμού ολίσθησης</string>
     <string name="alert_slider_notifications_summary">Εμφάνιση ειδοποίησης κατά την αλλαγή της θέσης του ρυθμιστικού ειδοποίησης</string>
@@ -866,6 +866,7 @@
     <string name="ticker_tick_duration_title">Διάρκεια ticker</string>
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">Θολό παρασκήνιο</string>
+    <string name="lockscreen_blur_summary">Θάμπωμα φόντου οθόνης κλειδώματος</string>
     <string name="lockscreen_blur_disabled">Δεν είναι δυνατή η ενεργοποίηση της θαμπάδας οθόνης κλειδώματος, επειδή η τρέχουσα ταπετσαρία οθόνης κλειδώματος δεν ταιριάζει με την αρχική οθόνη ή η συσκευή σας δεν υποστηρίζει καθόλου τη θόλωση.</string>
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">Στυλ γραμμής πλοήγησης (για 3-κουμπιά πλοήγησης)</string>
@@ -896,4 +897,14 @@
     <string name="alarm_blocker_summary">Μπλοκάρισμα ειδοποιήσεων ενώ η οθόνη είναι απενεργοποιημένη για εξοικονόμηση μπαταρίας</string>
     <string name="alarm_blocker_warning">Μπλοκάροντας τις ειδοποιήσεις υπάρχει η δυνατότητα να προκληθεί αστάθεια, σφάλματα ή απώλεια δεδομένων.</string>
     <string name="alarm_blocker_display_text">Για να δείτε και να αποκλείσετε ειδοποιήσεις, ενεργοποιήστε το almarm blocker.</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="notification_flash_title">Φακός</string>
+    <string name="flashlight_on_call_title">Αναβόσβημα του φακού κατά την κλήση</string>
+    <string name="flashlight_on_call_disabled">Απενεργοποιημένο</string>
+    <string name="flashlight_on_call_not_dnd">Μόνο σε λειτουργία κουδουνίσματος</string>
+    <string name="flashlight_on_call_dnd">Μόνο στην λειτουργία μην ενοχλείτε</string>
+    <string name="flashlight_on_call_always">Πάντα</string>
+    <!-- Status Bar Lyric -->
+    <string name="status_bar_show_lyric_title">Λυρική λειτουργία γραμμής κατάστασης</string>
+    <string name="status_bar_show_lyric_summary">Εμφάνιση στίχων στη γραμμή κατάστασης (απαιτεί υποστήριξη εφαρμογών και επανεκκίνηση SystemUI)</string>
 </resources>

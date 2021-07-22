@@ -54,8 +54,12 @@
     <string name="led_color_red">强调色-红色</string>
     <string name="edit_hint">数值</string>
     <string name="seek_value_edit_label">设置数值</string>
+    <string name="android_s">Android S</string>
+    <!-- Units -->
+    <string name="unit_milliseconds">毫秒</string>
     <string name="unit_percent">\u0025</string>
     <string name="unit_pixels">dp</string>
+    <string name="unit_seconds">秒</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">开启</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -88,9 +92,6 @@
     <string name="status_bar_items_categories_title">状态栏项目类别</string>
     <string name="status_bar_system_icons_title">系统图标</string>
     <string name="status_bar_system_icons_summary">控制在状态栏显示的图标</string>
-    <!-- Lock screen icons -->
-    <string name="lockscreen_tuner_title">锁屏界面快捷方式</string>
-    <string name="lockscreen_tuner_summary">修改锁屏界面显示的快捷方式</string>
     <!-- Navigation bar -->
     <string name="navigation_bar_category">导航栏</string>
     <string name="navigation_bar_title">导航栏</string>
@@ -485,9 +486,6 @@
     <string name="fod_pressed_color_green">绿色</string>
     <string name="fod_pressed_color_yellow">黄色</string>
     <string name="fod_pressed_color_light_yellow">浅黄</string>
-    <!-- Night light FOD -->
-    <string name="fod_night_light_title">显示屏幕指纹时禁用小夜灯</string>
-    <string name="fod_night_light_summary">如果屏幕指纹已激活，请在锁定屏幕上禁用夜灯。 禁用此选项可能会在夜灯开启时影响您的指纹准确性。</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">耳机连接时启动音乐应用</string>
     <string name="headset_connect_player_summary">当耳机连接时启动默认音乐应用</string>
@@ -591,11 +589,13 @@
     <string name="volume_panel_category">声音面板</string>
     <string name="volume_panel_title">音量面板样式</string>
     <string name="volume_panel_stock">AOSP 原生面板</string>
-    <string name="volume_panel_aosp">AOSP 扩展</string>
     <string name="volume_panel_compact">紧凑</string>
     <string name="volume_panel_oreo">奥利奥</string>
     <string name="volume_panel_tiled">磁贴</string>
     <string name="volume_panel_miui">MIUI 紧凑的</string>
+    <string name="volume_panel_oos">氧 OS</string>
+    <string name="volume_panel_p404">P404</string>
+    <string name="volume_panel_ssos">ShapeShift</string>
     <!-- Volume Panel Plugin Values -->
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">状态栏</string>
@@ -624,7 +624,6 @@
     <string name="rounded_ui_dialog_title">选择圆角模型</string>
     <string name="rounded_style_default">默认</string>
     <string name="rounded_style_rectangle">长方形</string>
-    <string name="rounded_style_large">大</string>
     <string name="rounded_style_medium">中等</string>
     <string name="status_bar_height_title">状态栏高度</string>
     <string name="status_bar_height_dialog_title">选择状态栏高度模型</string>
@@ -671,6 +670,7 @@
     <string name="global_actions_flashlight_title">手电筒</string>
     <string name="global_actions_screenshot_title">屏幕截图</string>
     <string name="global_actions_screenrecord_title">屏幕录制</string>
+    <string name="global_actions_onthego_title">行走模式</string>
     <string name="global_actions_none_title">无</string>
     <!-- QS themes -->
     <string name="qs_panel_colors_title">快速设置颜色</string>
@@ -686,7 +686,6 @@
     <string name="qs_tint_off">默认</string>
     <string name="qs_tint_accent">色调</string>
     <string name="qs_tint_oos">氧 OS11</string>
-    <string name="qs_tint_twelve">Android 12</string>
     <!-- Lock screen Clocks -->
     <string name="clock_show_status_area">显示状态区域 (天气等)</string>
     <string name="clock_show_status_area_summary">在锁屏时钟下显示附加的信息行 (系统界面可能需要重启)</string>
@@ -696,16 +695,21 @@
     <string name="lock_screen_custom_clock_face_default_bold">默认 (粗体)</string>
     <string name="lock_screen_custom_clock_face_alt_typographic">印刷 (新版)</string>
     <string name="lock_screen_custom_clock_face_analog">模拟</string>
+    <string name="lock_screen_custom_clock_face_android_s_dp3">Android S DP3</string>
     <string name="lock_screen_custom_clock_face_binary">二进制</string>
     <string name="lock_screen_custom_clock_face_bubble">气泡</string>
     <string name="lock_screen_custom_clock_face_clockertino">Clockertino</string>
     <string name="lock_screen_custom_clock_face_divided">分隔线</string>
     <string name="lock_screen_custom_clock_face_fluid">流体计数</string>
+    <string name="lock_screen_custom_clock_face_fluid_v2">流体 v2</string>
     <string name="lock_screen_custom_clock_face_gradient_fire">渐变火力</string>
     <string name="lock_screen_custom_clock_face_ide">集成开发工具</string>
     <string name="lock_screen_custom_clock_face_ide_java">IDE (Java Mix)</string>
     <string name="lock_screen_custom_clock_face_mnml_box">MNML 框</string>
     <string name="lock_screen_custom_clock_face_mnml_minimal">MNML 最小化</string>
+    <string name="lock_screen_custom_clock_face_op_minimal">OnePlus Minimal</string>
+    <string name="lock_screen_custom_clock_face_op_numbers">OnePlus 数字</string>
+    <string name="lock_screen_custom_clock_face_op_roman">OnePlus Roman</string>
     <string name="lock_screen_custom_clock_face_samsung">三星</string>
     <string name="lock_screen_custom_clock_face_samsung_bold">三星 (粗体)</string>
     <string name="lock_screen_custom_clock_face_samsung_highlight">三星 (高亮)</string>
@@ -825,7 +829,7 @@
     <string name="alert_slider_notifications_title">三段式开关通知</string>
     <string name="alert_slider_notifications_summary">更改警报滑块位置时显示通知</string>
     <!-- Rounded corners -->
-    <string name="corners_category_title">剪切 &amp; 圆角</string>
+    <string name="corners_category_title">圆角</string>
     <string name="corners_category_summary">调整圆角和填充</string>
     <string name="corners_title">自定义圆角</string>
     <string name="corner_radius">圆角半径</string>
@@ -833,6 +837,7 @@
     <string name="corner_fwvals">使用框架值</string>
     <string name="corner_fwvals_summary">如果设备实际上有圆角，则很有用</string>
     <!-- Display cutout options -->
+    <string name="cutout_category_title">切口选项</string>
     <string name="cutout_main">刘海屏</string>
     <string name="cutout_main_summary">他们在这个上真的偷工减料</string>
     <string name="display_cutout_style_title">刘海样式</string>
@@ -841,11 +846,65 @@
     <string name="display_cutout_style_hide">隐藏</string>
     <string name="stock_statusbar_in_hide">原生状态栏高度</string>
     <string name="stock_statusbar_in_hide_summary">在隐藏中使用默认状态栏高度</string>
-    <!-- Lock screen battery info indicator -->
-    <string name="lockscreen_battery_info_title">锁屏充电信息</string>
-    <string name="lockscreen_battery_info_summary">充电时在锁屏上显示充电电流、电压、功率和电池温度</string>
-    <!-- Lockscreen charge temperature unit -->
-    <string name="lockscreen_charge_temp_unit_title">温度单位</string>
-    <string name="lockscreen_charge_temp_unit_farhenheit">法伦海特</string>
-    <string name="lockscreen_charge_temp_unit_celsius">摄氏度</string>
+    <!-- Status Bar Ticker -->
+    <string name="ticker_screen_title">状态栏通知</string>
+    <string name="ticker_screen_summary">在状态栏中显示通知样式</string>
+    <string name="ticker_screen_footer">仅当未显示通知提示时，代码才可见。 具有中心凹口的设备应在“切口”选项下隐藏切口</string>
+    <string name="ticker_title">状态栏通知提示</string>
+    <string name="ticker_summary">使用旧的时钟样式</string>
+    <string name="ticker_restore_defaults_title">恢复默认值</string>
+    <string name="text_title">文本</string>
+    <string name="icon_title">图标</string>
+    <string name="colors_title">颜色</string>
+    <string name="values_restored_title">设置已恢复</string>
+    <string name="ticker_disabled">没有</string>
+    <string name="ticker_enabled">通知提示</string>
+    <string name="ticker_media_enabled">通知和音乐提示</string>
+    <string name="ticker_animation_mode_title">状态栏通知动画</string>
+    <string name="ticker_animation_mode_alpha_fade">淡入淡出</string>
+    <string name="ticker_animation_mode_scroll">滚动</string>
+    <string name="ticker_tick_duration_title">状态栏通知时长</string>
+    <!-- Lockscreen blur -->
+    <string name="lockscreen_blur_title">背景模糊</string>
+    <string name="lockscreen_blur_summary">模糊锁屏背景</string>
+    <string name="lockscreen_blur_disabled">锁屏界面模糊无法启用，因为您当前的锁屏壁纸与主屏幕界面不匹配。 或者您的设备根本不支持模糊。</string>
+    <!-- Navbar Picker -->
+    <string name="theme_navbar_picker_title">导航栏样式 (3 按钮导航)</string>
+    <string name="theme_navbar_picker_summary">选择导航栏样式</string>
+    <string name="theme_navbar_picker_default">默认</string>
+    <string name="theme_navbar_picker_oneplus">一加</string>
+    <string name="theme_navbar_picker_oneui">One UI</string>
+    <string name="theme_navbar_picker_tecno">传音 Camon</string>
+    <string name="theme_navbar_picker_asus">华硕</string>
+    <string name="theme_navbar_picker_android">Android</string>
+    <string name="theme_navbar_picker_moto">Moto</string>
+    <string name="theme_navbar_picker_nexus">Nexus</string>
+    <string name="theme_navbar_picker_old">旧版本</string>
+    <string name="theme_navbar_picker_sammy">三星</string>
+    <!-- FOD on doze -->
+    <string name="fod_on_doze_title">打盹时的屏幕指纹</string>
+    <string name="fod_on_doze_summary">在环境显示和 Aod 期间在显示屏上显示指纹。 这只会隐藏图标，不会禁用功能</string>
+    <!-- Alarm and Wakelock blocker -->
+    <string name="blocker_action_reload">重新加载</string>
+    <string name="blocker_action_save">保存</string>
+    <string name="blocker_action_save_toast">设置保存成功</string>
+    <string name="blocker_warning_title">警告</string>
+    <string name="wakelock_blocker_title">唤醒锁拦截器</string>
+    <string name="wakelock_blocker_summary">屏蔽系统唤醒锁以节省电池</string>
+    <string name="wakelock_blocker_warning">拦截唤醒锁可能导致系统不稳定、崩溃或甚至数据丢失</string>
+    <string name="wakelock_blocker_display_text">要查看和屏蔽唤醒锁，请打开唤醒锁拦截器</string>
+    <string name="alarm_blocker_title">警报拦截器</string>
+    <string name="alarm_blocker_summary">屏幕关闭时阻止闹钟以节省电池</string>
+    <string name="alarm_blocker_warning">拦截警报可能导致系统不稳定、崩溃或数据丢失</string>
+    <string name="alarm_blocker_display_text">要查看和屏蔽闹钟，请打开警报拦截器</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="notification_flash_title">手电筒</string>
+    <string name="flashlight_on_call_title">来电话时闪烁闪光灯</string>
+    <string name="flashlight_on_call_disabled">已禁用</string>
+    <string name="flashlight_on_call_not_dnd">仅在响铃模式下</string>
+    <string name="flashlight_on_call_dnd">仅在勿扰模式下</string>
+    <string name="flashlight_on_call_always">始终</string>
+    <!-- Status Bar Lyric -->
+    <string name="status_bar_show_lyric_title">状态栏歌词功能</string>
+    <string name="status_bar_show_lyric_summary">在状态栏显示歌词 (需要应用程序支持并重启系统界面)</string>
 </resources>
