@@ -190,8 +190,8 @@
 
     <!-- Rounded Corners -->
     <PreferenceCategory 
-         android:key="rounded_corners_category"
-         android:title="@string/corners_category_title">
+        android:key="rounded_corners_category"
+        android:title="@string/corners_category_title">
 
         <Preference
             android:key="rounded_corners"
@@ -201,10 +201,17 @@
 
     </PreferenceCategory>
 
+    <!-- Hide notch fill -->
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="display_hide_notch"
+        android:title="@string/display_hide_notch_title"
+        android:summary="@string/display_hide_notch_summary"
+        android:defaultValue="false" />
+
     <!-- Display cutout -->
     <PreferenceCategory
-         android:key="cutout_category"
-         android:title="@string/cutout_category_title">
+        android:key="cutout_category"
+        android:title="@string/cutout_category_title">
 
         <Preference
             android:key="cutout_settings"

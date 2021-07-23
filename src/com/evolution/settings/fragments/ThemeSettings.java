@@ -25,6 +25,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.om.IOverlayManager;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -52,6 +53,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.evolution.settings.display.AccentColorPreferenceController;
 import com.evolution.settings.display.QsTileStylePreferenceController;
 import com.evolution.settings.display.SwitchStylePreferenceController;
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +68,7 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
 
     private static final String CUSTOM_CLOCK_FACE = Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_FACE;
     private static final String DEFAULT_CLOCK = "com.android.keyguard.clock.DefaultClockController";
+    private static final String HIDE_NOTCH = "display_hide_notch";
     private static final String PREF_KEY_CUTOUT = "cutout_category";
     private static final String PREF_NAVBAR_STYLE = "theme_navbar_style";
 
@@ -78,6 +81,7 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
 
     private ListPreference mLockClockStyles;
     private ListPreference mNavbarPicker;
+    private SystemSettingSwitchPreference mHideNotch;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
@@ -94,6 +98,8 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
 
         ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefScreen = getPreferenceScreen();
+
+        final Resources res = getResources();
         mContext = getActivity();
 
         mOverlayService = IOverlayManager.Stub
@@ -123,6 +129,13 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
         String hasDisplayCutout = getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
         if (TextUtils.isEmpty(hasDisplayCutout)) {
             prefScreen.removePreference(mCutoutPref);
+        }
+
+        mHideNotch = (SystemSettingSwitchPreference) prefScreen.findPreference(HIDE_NOTCH);
+        boolean mHideNotchSupported = res.getBoolean(
+                com.android.internal.R.bool.config_showHideNotchSettings);
+        if (!mHideNotchSupported) {
+            prefScreen.removePreference(mHideNotch);
         }
     }
 
