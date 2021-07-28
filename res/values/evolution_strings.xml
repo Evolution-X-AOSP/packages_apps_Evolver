@@ -52,13 +52,19 @@
     <string name="action_cancel">Cancel</string>
     <string name="attention">Attention</string>
     <string name="default_string">Default</string>
+    <string name="hidden_string">Hidden</string>
+    <string name="large_string">Large</string>
+    <string name="medium_string">Medium</string>
+    <string name="xlarge_string">Extra large</string>
     <string name="disabled">Disabled</string>
     <string name="enable_first">Please enable first</string>
     <string name="led_color_green">Green</string>
     <string name="led_color_red">Red</string>
     <string name="edit_hint">Value</string>
     <string name="seek_value_edit_label">Set value</string>
-    <string name="android_s">Android S</string>
+    <string name="android_s_string">Android S</string>
+    <string name="miui_string">MIUI</string>
+    <string name="oos_string">OxygenOS</string>
 
     <!-- Units -->
     <string name="unit_milliseconds">milliseconds</string>
@@ -92,10 +98,6 @@
     <!-- Lock screen information -->
     <string name="lockscreen_info_category_title">Lock screen info</string>
 
-    <!-- Double Tap gestures -->
-    <string name="dtt_category_title">Double tap</string>
-    <string name="double_tap_to_sleep_title">Tap to sleep</string>
-
     <!-- USB configuration -->
     <string name="usb_default_config_title">USB configuration</string>
     <string name="usb_default_config_summary">Choose the default behavior when connected to a device via USB</string>
@@ -109,7 +111,7 @@
     <!-- Navigation bar -->
     <string name="navigation_bar_category">Navigation bar</string>
     <string name="navigation_bar_title">Navigation bar</string>
-    <string name="navigation_bar_summary">Show on-screen navigation keys. Turning this off will not only hide the navigation keys, but also turn off navigation gestures. Use Immersive Navigation instead</string>
+    <string name="navigation_bar_summary">Show on-screen navigation keys. Disabling this will also turn off nav gestures</string>
     <string name="navigation_bar_invert_layout_title">Invert layout</string>
     <string name="navigation_bar_invert_layout_summary">Inverts the layout of the navigation bar and other items</string>
     <string name="nav_bar_tuner_title">Navigation bar tuner</string>
@@ -179,7 +181,6 @@
     <string name="fod_recog_animation_title">Recognizing animation</string>
     <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
     <string name="fod_recog_animation_effect_title">Recognizing animation effect</string>
-    <string name="fod_recog_animation_miui_normal">MIUI default</string>
     <string name="fod_recog_animation_miui_aod">MIUI AOD</string>
     <string name="fod_recog_animation_miui_aurora">Aurora (K30 Pro)</string>
     <string name="fod_recog_animation_miui_aurora_cas">Aurora (Mi 10 Ultra)</string>
@@ -209,12 +210,11 @@
     <string name="fod_recog_animation_realme_strings">Strings</string>
 
     <!-- FOD icon animation -->
-    <string name="fod_icon_animation">Animated FOD icon</string>
+    <string name="fod_icon_animation">Animated icon</string>
     <string name="fod_icon_animation_effect_title">Select FOD icon animation effect</string>
     <string name="fod_icon_animation_summary">Animate the FOD icon when turning on the screen</string>
     <string name="fod_icon_animation_oneui1">OneUI 1</string>
     <string name="fod_icon_animation_oneui2">OneUI 2</string>
-    <string name="fod_icon_animation_oos">OOS 11</string>
 
     <!-- Notification light -->
     <string name="notification_light_settings">Notification light</string>
@@ -282,7 +282,6 @@
     <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
     <string name="status_bar_battery_style_filled_circle">Filled circle</string>
     <string name="status_bar_battery_style_text">Text</string>
-    <string name="status_bar_battery_style_hidden">Hidden</string>
 
     <!-- Status bar - Battery percentage -->
     <string name="battery_percentage_title">Battery percentage</string>
@@ -306,16 +305,15 @@
     <string name="qs_tile_title_visibility_title">Show QS tiles title</string>
 
     <!-- Status bar - Brightness -->
-    <string name="status_bar_brightness_category">Brightness</string>
+    <string name="status_bar_brightness_category">Brightness slider</string>
     <string name="qs_show_brightness_slider_expanded_title">Expanded QS</string>
     <string name="qs_show_brightness_slider_expanded_summary">Adjust brightness from the Quick Settings</string>
     <string name="qs_show_auto_brightness_title">Auto brightness</string>
     <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
-    <string name="qs_brightness_position_bottom_title">Show at the bottom when expanded</string>
+    <string name="qs_brightness_position_bottom_title">Move slider to the bottom when expanded</string>
 
     <!-- QQS brightness slider -->
-    <string name="qqs_brightness_slider_title">Quick QS brightness slider</string>
-    <string name="qs_brightness_slider_hide">Hide</string>
+    <string name="qqs_brightness_slider_title">QQS brightness slider</string>
     <string name="qs_brightness_slider_bottom">Bottom</string>
     <string name="qs_brightness_slider_top">Top</string>
 
@@ -330,7 +328,6 @@
 
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_default">Default</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
 
@@ -432,7 +429,6 @@
     <string name="qs_tile_animation_style_flip">Flip</string>
     <string name="qs_tile_animation_style_rotate">Rotate</string>
     <string name="qs_tile_animation_duration_low">Low</string>
-    <string name="qs_tile_animation_duration_default">Default</string>
     <string name="qs_tile_animation_duration_fast">Fast</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
@@ -479,7 +475,6 @@
     <string name="battery_bar_title">Battery bar</string>
     <string name="battery_bar_summary">Display and customize battery bar near status bar</string>
     <string name="battery_bar_no_navbar">Battery bar location</string>
-    <string name="battery_bar_location_hide">Hide</string>
     <string name="battery_bar_status_bar_top">Status bar top</string>
     <string name="battery_bar_status_bar_bot">Status bar bottom</string>
     <string name="battery_bar_color">Battery bar color</string>
@@ -640,7 +635,6 @@
 
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">QS tile icon style</string>
-    <string name="qstile_default">Default</string>
     <string name="qstile_circle_trim">Circle with trim</string>
     <string name="qstile_dual_tone_circle">Dual-toned circle</string>
     <string name="qstile_squircle_trim">Squircle with trim</string>
@@ -656,7 +650,6 @@
     <string name="qstile_cosmos">Shishu Cosmos</string>
     <string name="qstile_divided">Divided Circle</string>
     <string name="qstile_neonlike">Neon Light</string>
-    <string name="qstile_oos">Oxygen</string>
     <string name="qstile_triangles">Triangle</string>
 
     <!-- Custom header -->
@@ -684,12 +677,9 @@
     <!-- Volume Panel Plugin -->
     <string name="volume_panel_category">Volume panel</string>
     <string name="volume_panel_title">Volume panel style</string>
-    <string name="volume_panel_stock">Stock</string>
     <string name="volume_panel_compact">Compact</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Tiled</string>
-    <string name="volume_panel_miui">MIUI Compact</string>
-    <string name="volume_panel_oos">OOS</string>
     <string name="volume_panel_p404">P404</string>
     <string name="volume_panel_ssos">ShapeShift</string>
 
@@ -733,26 +723,16 @@
     <string name="gvisual_footer">For some odd reason, the Rounded corner option doesn\'t work when Rounded Rectangle, Squircle and Teardrop are selected as the system icon shape.</string>
     <string name="rounded_ui_title">Rounded corner</string>
     <string name="rounded_ui_dialog_title">Select rounded corner model</string>
-    <string name="rounded_style_default">Default</string>
     <string name="rounded_style_rectangle">Rectangle</string>
-    <string name="rounded_style_medium">Medium</string>
     <string name="status_bar_height_title">Status bar height</string>
     <string name="status_bar_height_dialog_title">Select status bar height model</string>
-    <string name="sb_height_default">Default</string>
-    <string name="sb_height_medium">Medium</string>
-    <string name="sb_height_large">Large</string>
-    <string name="sb_height_extralarge">Extra large</string>
     <string name="navbar_color_title">Navbar colors</string>
     <string name="navbar_color_dialog_title">Select color</string>
-    <string name="navbar_default">Default</string>
     <string name="navbar_orchid">Orchid</string>
     <string name="navbar_red">Red</string>
     <string name="navbar_purp">Purple</string>
     <string name="navbar_blue">Blue</string>
     <string name="navbar_rose">Rose</string>
-    <string name="header_default">Default</string>
-    <string name="header_large">Large</string>
-    <string name="header_xlarge">Extra large</string>
     <string name="header_title">Header sizes</string>
     <string name="header_dialog_title">Select size</string>
 
@@ -773,12 +753,10 @@
 
     <!-- Switch styles -->
     <string name="switch_style_title">Switch style</string>
-    <string name="switch_default">Default</string>
     <string name="switch_contained">Contained</string>
     <string name="switch_telegram">Telegram</string>
     <string name="switch_md2">Material Design 2</string>
     <string name="switch_retro">Retro</string>
-    <string name="switch_oos">OxygenOS 11</string>
 
     <!-- Global Actions -->
     <string name="global_actions_users_choice_title">Optional user action</string>
@@ -789,7 +767,6 @@
     <string name="global_actions_none_title">None</string>
 
     <!-- QS themes -->
-    <string name="qs_panel_colors_title">Quick settings colors</string>
     <string name="qs_panel_bg_alpha_title">Background alpha</string>
     <string name="qs_panel_bg_disco_title">QS tile disco</string>
     <string name="qs_panel_bg_disco_summary">Make your QS Tiles colorful!</string>
@@ -802,16 +779,13 @@
 
     <!-- QS tile tint styles -->
     <string name="qs_tint_title">QS tile tint style</string>
-    <string name="qs_tint_off">Default</string>
     <string name="qs_tint_accent">Accent color</string>
-    <string name="qs_tint_oos">OxygenOS 11</string>
 
     <!-- Lock screen Clocks -->
     <string name="clock_show_status_area">Show status area (weather etc.)</string>
     <string name="clock_show_status_area_summary">Show the extra row of info under the lock screen clock (SysUI restart may be required)</string>
     <string name="lock_screen_custom_clock_face_category">Lock screen Clock</string>
     <string name="lock_screen_custom_clock_face_title">Lock screen clock style</string>
-    <string name="lock_screen_custom_clock_face_default">Default</string>
     <string name="lock_screen_custom_clock_face_default_bold">Default (Bold)</string>
     <string name="lock_screen_custom_clock_face_alt_typographic">Typographic (New)</string>
     <string name="lock_screen_custom_clock_face_analog">Analog</string>
@@ -975,10 +949,9 @@
     <string name="cutout_main_summary">They really cut corners with this one</string>
     <string name="display_cutout_style_title">Cutout style</string>
     <string name="display_cutout_style_normal">Normal</string>
-    <string name="display_cutout_style_immerse">Immerse</string>
-    <string name="display_cutout_style_hide">Hide</string>
+    <string name="display_cutout_style_immerse">Immersive</string>
     <string name="stock_statusbar_in_hide">Stock statusbar height</string>
-    <string name="stock_statusbar_in_hide_summary">Use default statusbar height in Hide</string>
+    <string name="stock_statusbar_in_hide_summary">Use default statusbar height while hiding cutout</string>
     <string name="display_hide_notch_title">Hide display cutout</string>
     <string name="display_hide_notch_summary">Disable black fill-in for display cutout</string>
 
@@ -1003,14 +976,10 @@
 
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">Background blur</string>
-    <string name="lockscreen_blur_summary">Blur lock screen background</string>
-    <string name="lockscreen_blur_disabled">Lock screen Blur cannot be enabled because your current lock screen wallpaper does not match your home screen one, or your device does not support Blur at all.</string>
 
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">Navbar style (for 3-button nav)</string>
     <string name="theme_navbar_picker_summary">Select navbar style</string>
-    <string name="theme_navbar_picker_default">Default</string>
-    <string name="theme_navbar_picker_oneplus">OnePlus</string>
     <string name="theme_navbar_picker_oneui">One UI</string>
     <string name="theme_navbar_picker_tecno">Tecno Camon</string>
     <string name="theme_navbar_picker_asus">ASUS</string>

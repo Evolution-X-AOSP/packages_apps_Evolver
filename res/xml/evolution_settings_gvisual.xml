@@ -13,50 +13,42 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/gvisual_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- Gvisual mod -->
-    <PreferenceCategory
-        android:key="gvisual_category"
-        android:title="@string/gvisual_title" >
+    <ListPreference
+        android:key="statusbar_height"
+        android:title="@string/status_bar_height_title"
+        android:dialogTitle="@string/status_bar_height_dialog_title"
+        android:entries="@array/status_bar_height_titles"
+        android:entryValues="@array/status_bar_height_values" />
 
-        <ListPreference
-            android:key="statusbar_height"
-            android:title="@string/status_bar_height_title"
-            android:dialogTitle="@string/status_bar_height_dialog_title"
-            android:entries="@array/status_bar_height_titles"
-            android:entryValues="@array/status_bar_height_values" />
+    <ListPreference
+        android:key="header_size"
+        android:title="@string/header_title"
+        android:summary="%s"
+        android:dialogTitle="@string/header_dialog_title"
+        android:entries="@array/header_titles"
+        android:entryValues="@array/header_values"
+        android:defaultValue="1" />
 
-        <ListPreference
-            android:key="header_size"
-            android:title="@string/header_title"
-            android:summary="%s"
-            android:dialogTitle="@string/header_dialog_title"
-            android:entries="@array/header_titles"
-            android:entryValues="@array/header_values"
-            android:defaultValue="1" />
+    <ListPreference
+        android:key="rounded_ui"
+        android:title="@string/rounded_ui_title"
+        android:dialogTitle="@string/rounded_ui_dialog_title"
+        android:entries="@array/rounded_ui_titles"
+        android:entryValues="@array/rounded_ui_values" />
 
-        <ListPreference
-            android:key="rounded_ui"
-            android:title="@string/rounded_ui_title"
-            android:dialogTitle="@string/rounded_ui_dialog_title"
-            android:entries="@array/rounded_ui_titles"
-            android:entryValues="@array/rounded_ui_values" />
-
-        <ListPreference
-            android:key="navbar_color"
-            android:title="@string/navbar_color_title"
-            android:summary="%s"
-            android:dialogTitle="@string/navbar_color_dialog_title"
-            android:entries="@array/navbar_color_titles"
-            android:entryValues="@array/navbar_color_values"
-            android:defaultValue="1" />
-
-    </PreferenceCategory>
+    <ListPreference
+        android:key="navbar_color"
+        android:title="@string/navbar_color_title"
+        android:summary="%s"
+        android:dialogTitle="@string/navbar_color_dialog_title"
+        android:entries="@array/navbar_color_titles"
+        android:entryValues="@array/navbar_color_values"
+        android:defaultValue="1" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="gvisual_footer"

@@ -13,7 +13,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
@@ -37,6 +36,33 @@
         android:title="@string/headset_connect_player_title"
         android:summary="@string/headset_connect_player_summary"
         android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:title="@string/doze_brightness_category">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="doze_brightness_force"
+            android:title="@string/doze_brightness_force_title"
+            android:summary="@string/doze_brightness_force_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="ambient_doze_brightness"
+            android:title="@string/ambient_doze_brightness_title"
+            android:summary="@string/ambient_doze_brightness_summary"
+            android:max="255"
+            android:min="1"
+            android:persistent="false" />
+
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="ambient_pulse_brightness"
+            android:title="@string/ambient_pulse_brightness_title"
+            android:summary="@string/ambient_pulse_brightness_summary"
+            android:max="255"
+            android:min="1"
+            android:persistent="false" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/dev_options_title">
@@ -79,33 +105,6 @@
                 android:targetPackage="com.android.phone"
                 android:targetClass="com.android.phone.settings.RadioInfo" />
         </Preference>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/doze_brightness_category">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="doze_brightness_force"
-            android:title="@string/doze_brightness_force_title"
-            android:summary="@string/doze_brightness_force_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.CustomSeekBarPreference
-            android:key="ambient_doze_brightness"
-            android:title="@string/ambient_doze_brightness_title"
-            android:summary="@string/ambient_doze_brightness_summary"
-            android:max="255"
-            android:min="1"
-            android:persistent="false" />
-
-        <com.evolution.settings.preference.CustomSeekBarPreference
-            android:key="ambient_pulse_brightness"
-            android:title="@string/ambient_pulse_brightness_title"
-            android:summary="@string/ambient_pulse_brightness_summary"
-            android:max="255"
-            android:min="1"
-            android:persistent="false" />
 
     </PreferenceCategory>
 

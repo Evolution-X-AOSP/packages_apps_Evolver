@@ -118,8 +118,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         ParcelFileDescriptor pfd = manager.getWallpaperFile(WallpaperManager.FLAG_LOCK);
         mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
         if (!Utils.isBlurSupported() || pfd != null) {
-            mLockscreenBlur.setEnabled(false);
-            mLockscreenBlur.setSummary(getString(R.string.lockscreen_blur_disabled));
+            mLockscreenBlur.setVisible(false);
         }
 
         mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);

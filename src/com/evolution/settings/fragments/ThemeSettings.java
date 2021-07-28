@@ -124,6 +124,11 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
         mNavbarPicker.setSummary(mNavbarPicker.getEntry());
         mNavbarPicker.setOnPreferenceChangeListener(this);
 
+        // On three button nav
+        if (!EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            mNavbarPicker.setVisible(false);
+        }
+
         PreferenceCategory mCutoutPref = (PreferenceCategory) prefScreen
                 .findPreference(PREF_KEY_CUTOUT);
         String hasDisplayCutout = getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
