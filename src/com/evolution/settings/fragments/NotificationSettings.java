@@ -39,7 +39,6 @@ import androidx.preference.PreferenceViewHolder;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -58,7 +57,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
-    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String KEY_AMBIENT = "ambient_notification_light_enabled";
     private static final String KEY_CHARGING_LIGHT = "charging_light";
     private static final String LED_CATEGORY = "led";
@@ -105,11 +103,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         } else {
             mLedCategory = findPreference(LED_CATEGORY);
             mLedCategory.setVisible(false);
-        }
-
-        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
-        if (!EvolutionUtils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(incallVibCategory);
         }
 
         mNotificationHeader = findPreference(NOTIFICATION_HEADERS);
