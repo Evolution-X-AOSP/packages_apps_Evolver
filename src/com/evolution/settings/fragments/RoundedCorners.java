@@ -56,12 +56,9 @@ public class RoundedCorners extends SettingsPreferenceFragment implements
          OnPreferenceChangeListener {
 
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
-    //private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
-    //private static final String SYSUI_STATUS_BAR_PADDING = "sysui_status_bar_padding";
     private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
 
     private CustomSeekBarPreference mCornerRadius;
-    //private CustomSeekBarPreference mContentPadding;
     private SwitchPreference mRoundedFwvals;
 
     @Override
@@ -87,18 +84,6 @@ public class RoundedCorners extends SettingsPreferenceFragment implements
         mCornerRadius.setValue(cornerRadius);
         mCornerRadius.setOnPreferenceChangeListener(this);
 
-        // Rounded Content Padding
-        /*
-        mContentPadding = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_CONTENT_PADDING);
-        int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null,
-                null);
-        int contentPadding = Settings.Secure.getIntForUser(ctx.getContentResolver(),
-                Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
-                (int) (res.getDimension(resourceIdPadding) / density), UserHandle.USER_CURRENT);
-        mContentPadding.setValue(contentPadding);
-        mContentPadding.setOnPreferenceChangeListener(this);
-        */
-
         // Rounded use Framework Values
         mRoundedFwvals = (SwitchPreference) findPreference(SYSUI_ROUNDED_FWVALS);
         mRoundedFwvals.setOnPreferenceChangeListener(this);
@@ -116,10 +101,7 @@ public class RoundedCorners extends SettingsPreferenceFragment implements
         }
 
         int resourceIdRadius = (int) ctx.getResources().getDimension(com.android.internal.R.dimen.rounded_corner_radius);
-        int cornerRadius = Settings.Secure.getIntForUser(ctx.getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
-                ((int) (resourceIdRadius / density)), UserHandle.USER_CURRENT);
-        mCornerRadius.setValue(cornerRadius);
-        //int resourceIdPadding = res.getIdentifier("com.android.systemui:dimen/rounded_corner_content_padding", null, null);
+        mCornerRadius.setValue((int) (resourceIdRadius / density));
     }
 
     @Override
@@ -128,11 +110,6 @@ public class RoundedCorners extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
                     (int) newValue, UserHandle.USER_CURRENT);
             return true;
-        /*
-        } else if (preference == mContentPadding) {
-            Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
-                    (int) newValue, UserHandle.USER_CURRENT);
-        */
         } else if (preference == mRoundedFwvals) {
             restoreCorners();
             return true;
