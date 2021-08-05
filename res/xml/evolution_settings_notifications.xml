@@ -49,6 +49,16 @@
             android:summary="@string/artwork_media_background_summary"
             android:defaultValue="false" />
 
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="artwork_media_fade_level"
+            android:title="@string/artwork_media_fade_level_title"
+            android:dependency="artwork_media_background"
+            android:max="100"
+            settings:min="0"
+            settings:units="%"
+            settings:interval="5"
+            android:defaultValue="30" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
