@@ -58,15 +58,12 @@ import java.util.List;
 public class GvisualSettings extends SettingsPreferenceFragment implements
          OnPreferenceChangeListener {
 
-    private static final String GVISUAL_FOOTER = "gvisual_footer";
-    private static final String PREF_ROUNDED_CORNER = "rounded_ui";
     private static final String PREF_SB_HEIGHT = "statusbar_height";
     private static final String PREF_NB_COLOR = "navbar_color";
     private static final String PREF_HD_SIZE = "header_size";
 
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
-    private ListPreference mRoundedUi;
     private ListPreference mSbHeight;
     private ListPreference mnbSwitch;
     private ListPreference mhdSize;
@@ -76,8 +73,6 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.evolution_settings_gvisual);
 
-        findPreference(GVISUAL_FOOTER).setTitle(R.string.gvisual_footer);
-
         PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
@@ -86,16 +81,6 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
 
         setupNavbarSwitchPref();
         setupHeaderSwitchPref();
-
-        mRoundedUi = (ListPreference) findPreference(PREF_ROUNDED_CORNER);
-        int roundedValue = getOverlayPosition(ThemesUtils.UI_RADIUS);
-        if (roundedValue != -1) {
-            mRoundedUi.setValue(String.valueOf(roundedValue + 2));
-        } else {
-            mRoundedUi.setValue("1");
-        }
-        mRoundedUi.setSummary(mRoundedUi.getEntry());
-        mRoundedUi.setOnPreferenceChangeListener(this);
 
         mSbHeight = (ListPreference) findPreference(PREF_SB_HEIGHT);
         int sbHeightValue = getOverlayPosition(ThemesUtils.STATUSBAR_HEIGHT);
@@ -196,20 +181,6 @@ public class GvisualSettings extends SettingsPreferenceFragment implements
              mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
          } catch (RemoteException ignored) {
          }
-        return true;
-        } else if (preference == mRoundedUi) {
-        String rounded = (String) objValue;
-        int roundedValue = Integer.parseInt(rounded);
-        mRoundedUi.setValue(String.valueOf(roundedValue));
-        String overlayName = getOverlayName(ThemesUtils.UI_RADIUS);
-            if (overlayName != null) {
-                handleOverlays(overlayName, false, mOverlayManager);
-            }
-            if (roundedValue > 1) {
-                handleOverlays(ThemesUtils.UI_RADIUS[roundedValue -2],
-                        true, mOverlayManager);
-        }
-        mRoundedUi.setSummary(mRoundedUi.getEntry());
         return true;
         } else if (preference == mSbHeight) {
         String sbheight = (String) objValue;
