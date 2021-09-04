@@ -50,6 +50,19 @@
         android:key="udfps_customization"
         android:title="@string/udfps_customization">
     
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="custom_fp_icon_enabled"
+            android:title="@string/custom_fp_icon_title"
+            android:summary="@string/custom_fp_icon_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="custom_fp_file_select"
+            android:title="@string/custom_fp_select_title"
+            android:summary="@string/custom_fp_select_summary"
+            android:dependency="custom_fp_icon_enabled"
+            android:persistent="false" />
+
         <Preference
             android:key="udfps_icon_picker"
             android:title="@string/udfps_icon_picker_title"
