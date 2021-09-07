@@ -16,6 +16,9 @@
 
 package com.evolution.settings.fragments;
 
+import static android.view.DisplayCutout.BOUNDS_POSITION_LEFT;
+import static android.view.DisplayCutout.BOUNDS_POSITION_RIGHT;
+
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -39,6 +42,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.evolution.EvolutionUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -53,6 +57,8 @@ import java.util.List;
 
 public class ClockDateSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener, Indexable {
+
+    private static final String TAG = "ClockDateSettings";
 
     private static final String PREF_AM_PM_STYLE = "statusbar_clock_am_pm_style";
     private static final String PREF_CLOCK_DATE_DISPLAY = "statusbar_clock_date_display";
@@ -156,6 +162,29 @@ public class ClockDateSettings extends SettingsPreferenceFragment
             mClockDateStyle.setEnabled(false);
             mClockDateFormat.setEnabled(false);
             mClockDatePosition.setEnabled(false);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        final boolean hasNotch = EvolutionUtils.hasNotch(getActivity());
+        final int notchType = EvolutionUtils.getCutoutType(getActivity());
+        Log.v(TAG,"notchType: " + notchType);
+
+        // Adjust status bar preferences for RTL
+        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+            if (hasNotch && !(notchType == BOUNDS_POSITION_LEFT || notchType == BOUNDS_POSITION_RIGHT)) {
+                mStatusBarClockStyle.setEntries(R.array.statusbar_clock_style_entries_notch_rtl);
+                mStatusBarClockStyle.setEntryValues(R.array.statusbar_clock_style_values_notch_rtl);
+            } else {
+                mStatusBarClockStyle.setEntries(R.array.statusbar_clock_style_entries_rtl);
+                mStatusBarClockStyle.setEntryValues(R.array.statusbar_clock_style_values_rtl);
+            }
+        } else if (hasNotch && !(notchType == BOUNDS_POSITION_LEFT || notchType == BOUNDS_POSITION_RIGHT)) {
+            mStatusBarClockStyle.setEntries(R.array.statusbar_clock_style_entries_notch);
+            mStatusBarClockStyle.setEntryValues(R.array.statusbar_clock_style_values_notch);
         }
     }
 
