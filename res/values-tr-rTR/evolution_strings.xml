@@ -20,11 +20,9 @@
     <!-- Categories -->
     <string name="aosp_setting_title">Sistem ayarları</string>
     <string name="animation_title">Animasyonlar</string>
-    <string name="buttons_title">Donanımsal tuşlar</string>
-    <string name="dev_options_title">Geliştirici seçenekleri öğeleri</string>
+    <string name="dev_options_title">Geliştirici seçenekleri</string>
     <string name="general_title">Genel</string>
     <string name="gestures_title">Hareketler</string>
-    <string name="hardware_keys_title">Donanım tuşları</string>
     <string name="lockscreen_title">Kilit ekranı</string>
     <string name="misc_title">Çeşitli</string>
     <string name="navigation_title">Gezinme</string>
@@ -32,29 +30,14 @@
     <string name="powermenu_title">Güç menüsü</string>
     <string name="powermenu_items_title">Güç menüsü öğeleri</string>
     <string name="quicksettings_title">Hızlı ayarlar</string>
-    <string name="statusbar_title">Durum çubuğu</string>
-    <string name="statusbar_icons_title">Durum çubuğu simgeleri</string>
-    <string name="statusbar_items_categories_title">Durum çubuğu öğeleri kategorileri</string>
-    <string name="statusbar_network_icons_title">Durum çubuğu ağ simgeleri</string>
+    <string name="status_bar_title">Durum çubuğu</string>
     <string name="swipe_gestures_title">Kaydırma hareketleri</string>
     <string name="system_settings_title">Sistem seçenekleri</string>
     <string name="themes_title">Temalar</string>
     <string name="torch_gestures_title">El feneri hareketleri</string>
-    <string name="volume_keys_title">Ses tuşları</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Dahili temel Android hareketleri</string>
-    <string name="animation_summary">Animasyon şeklini değiştir</string>
-    <string name="buttons_summary">Fiziksel tuşların işlevselliğini değiştirin</string>
     <string name="dark_ui_mode_summary">Koyu tema seçeneklerine göz atın</string>
-    <string name="gestures_summary">Harekete dayalı seçenekler ve eylemler</string>
-    <string name="lockscreen_summary">Kilit ekranı öğelerinin kontrolünü ele alın</string>
-    <string name="misc_summary">Oyun modu ve diğer sistem ayarları</string>
-    <string name="navigation_summary">Gezinme çubuğu stilini ve davranışını özelleştirme</string>
-    <string name="notifications_summary">Bildirim ayarlarınızı yönetin</string>
-    <string name="powermenu_summary">Kapatma seçeneklerinizi yapılandırın</string>
-    <string name="quicksettings_summary">Hızlı ayarlar paneli düzenini ve daha fazlasını değiştirin</string>
-    <string name="statusbar_summary">Durum çubuğu öğelerinizi kişiselleştirin</string>
-    <string name="themes_summary">Tema seçeneklerimizle cihazınızı değiştirin</string>
     <string name="unsupported_gestures">Bu özelliği kullanmak için iki veya üç düğmeli gezinmeyi etkinleştirin</string>
     <!-- General strings -->
     <string name="ok">Tamam</string>
@@ -65,12 +48,22 @@
     <string name="action_cancel">İptal</string>
     <string name="attention">Dikkat</string>
     <string name="default_string">Varsayılan</string>
+    <string name="none_string">Yok</string>
+    <string name="hidden_string">Gizli</string>
+    <string name="large_string">Büyük</string>
+    <string name="medium_string">Orta</string>
+    <string name="xlarge_string">Çok büyük</string>
     <string name="disabled">Devre dışı</string>
     <string name="enable_first">Lütfen önce etkinleştirin</string>
     <string name="led_color_green">Yeşil</string>
     <string name="led_color_red">Kırmızı</string>
     <string name="edit_hint">Değer</string>
     <string name="seek_value_edit_label">Değer belirle</string>
+    <!-- Units -->
+    <string name="unit_milliseconds">milisaniye</string>
+    <string name="unit_percent">\u0025</string>
+    <string name="unit_pixels">dp</string>
+    <string name="unit_seconds">saniye</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Açık</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -92,22 +85,31 @@
     <string name="seekbar_default_string">Varsayılan</string>
     <!-- Lock screen information -->
     <string name="lockscreen_info_category_title">Kilit ekranı bilgisi</string>
-    <!-- Double Tap gestures -->
-    <string name="dtt_category_title">Çift dokunma hareketleri</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">USB yapılandırması</string>
     <string name="usb_default_config_summary">Bir cihaza USB üzerinden bağlandığınızda varsayılan davranışı seçin</string>
-    <!-- Status bar Icon Manager -->
-    <string name="icon_manager_title">Simge yöneticisi</string>
-    <string name="icon_manager_summary">Durum çubuğu simgelerinin görünürlüğünü kontrol edin</string>
-    <!-- Lock screen icons -->
-    <string name="lockscreen_tuner_title">Kilit ekranı kısayolları</string>
-    <string name="lockscreen_tuner_summary">Kilit ekranında gösterilen kısayolları değiştirin</string>
-    <!-- Navbar options -->
+    <!-- Status bar - icons -->
+    <string name="status_bar_icons_title">Durum çubuğu simgeleri</string>
+    <string name="status_bar_items_categories_title">Durum çubuğu öğeleri kategorileri</string>
+    <string name="status_bar_system_icons_title">Sistem simgeleri</string>
+    <string name="status_bar_system_icons_summary">Durum çubuğunda gösterilecek simgeleri kontrol edin</string>
+    <!-- Navigation bar -->
+    <string name="navigation_bar_category">Gezinme çubuğu</string>
+    <string name="navigation_bar_title">Gezinme çubuğu</string>
+    <string name="navigation_bar_summary">Ekrandaki gezinme tuşlarını göster. Bunu devre dışı bırakmak, gezinme hareketlerini de kapatır</string>
+    <string name="navigation_bar_invert_layout_title">Düzeni tersine çevir</string>
+    <string name="navigation_bar_invert_layout_summary">Gezinme çubuğunu ve diğer öğelerin düzenini tersine çevirir</string>
     <string name="nav_bar_tuner_title">Gezinme çubuğu düzenleyicisi</string>
     <string name="nav_bar_tuner_summary">Gezinme çubuğu düzenini değiştir</string>
-    <string name="navigation_bar_title">Gezinme çubuğu</string>
+    <string name="navbar_layout_title">Düzen</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Kompakt</string>
+    <string name="navbar_layout_leftleaning">Sola yaslanmış</string>
+    <string name="navbar_layout_rightleaning">Sağa yaslanmış</string>
     <string name="system_navigation_summary">Hangi sistem gezinme stilini kullanacağınızı seçin</string>
+    <!-- Navbar Animation -->
+    <string name="pixel_navbar_anim_title">Pixel animasyonu</string>
+    <string name="pixel_navbar_anim_summary">Ana ekran tuşu animasyonunu değiştir</string>
     <!-- About Evolution X -->
     <string name="evolution_about_title">Evolution X Hakkında</string>
     <string name="evolution_about_summary">Ekip hakkında bilgiler</string>
@@ -131,20 +133,18 @@
     <string name="battery_light_medium_color">Orta seviye pil</string>
     <string name="battery_light_full_color">Neredeyse dolu pil</string>
     <string name="battery_light_reallyfull_color">Tam dolu pil (%100)</string>
-    <!-- Lock screen battery info indicator  -->
-    <string name="lockscreen_battery_info_title">Şarj bilgisi</string>
-    <string name="lockscreen_battery_info_summary">Şarj olurken kilit ekranında şarj akımını, voltajını, watt değerini ve pil sıcaklığını gösterir</string>
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_category_title">Ekran içi parmak izi ayarları</string>
     <!-- FOD animations -->
-    <string name="fod_recog_animation">Parmak izi animasyonu</string>
+    <string name="fod_recog_animation_category">FOD animasyonu</string>
+    <string name="fod_recog_animation_title">Tanıma animasyonu</string>
     <string name="fod_recog_animation_summary">Parmak izi okunurken bir animasyon göster</string>
     <string name="fod_recog_animation_effect_title">Parmak izi animasyon efektini seçin</string>
-    <string name="fod_recog_animation_miui_normal">MIUI varsayılanı</string>
-    <string name="fod_recog_animation_miui_aod">MIUI AOD</string>
+    <string name="fod_recog_animation_miui_aurora_old">Aurora (Eski)</string>
     <string name="fod_recog_animation_miui_aurora">Aurora (K30 Pro)</string>
-    <string name="fod_recog_animation_miui_aurora_cas">Aurora (Mi 10 Ultra)</string>
     <string name="fod_recog_animation_miui_light">Açık</string>
+    <string name="fod_recog_animation_miui_neon">Neon</string>
+    <string name="fod_recog_animation_miui_neon_blue">Neon (Mavi)</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Yanma</string>
     <string name="fod_recog_animation_miui_pulse_white">Yanma (Beyaz)</string>
@@ -164,6 +164,16 @@
     <string name="fod_recog_animation_rog_fusion">Füzyon</string>
     <string name="fod_recog_animation_rog_pulsar">Pulsar</string>
     <string name="fod_recog_animation_rog_supernova">Süpernova</string>
+    <string name="fod_recog_animation_oppo_shine">Parıltı</string>
+    <string name="fod_recog_animation_realme_quantum">Kuantum</string>
+    <string name="fod_recog_animation_realme_smoke">Duman</string>
+    <string name="fod_recog_animation_realme_strings">Dizgiler</string>
+    <!-- FOD icon animation -->
+    <string name="fod_icon_animation">Hareketli simge</string>
+    <string name="fod_icon_animation_effect_title">FOD simgesi animasyon efekti seçin</string>
+    <string name="fod_icon_animation_summary">Ekran açılırken parmak izi animasyonunu oynat</string>
+    <string name="fod_icon_animation_oneui1">OneUI 1</string>
+    <string name="fod_icon_animation_oneui2">OneUI 2</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Bildirim ışığı</string>
     <!-- Heads up -->
@@ -179,16 +189,15 @@
     <string name="profile_choose_app">Uygulama seç</string>
     <string name="dialog_delete_title">Sil</string>
     <string name="dialog_delete_message">Seçili öge silinsin mi?</string>
-    <!-- Network traffic -->
-    <string name="traffic_title">Ağ etkinliği</string>
-    <string name="traffic_summary">Ağ hızı göstergelerini etkinleştir veya devre dışı bırak</string>
-    <string name="network_traffic_title">Ağ etkinliği</string>
+    <!-- Status bar - Network Traffic -->
+    <string name="network_traffic_settings_title">Ağ trafiği göstergesi</string>
+    <string name="network_traffic_settings_summary">Durum çubuğunda mevcut ağ trafiği seviyelerini göster</string>
     <string name="network_traffic_location">Ağ trafiği aktivite yeri</string>
     <string name="traffic_disabled">Devre dışı</string>
-    <string name="traffic_statusbar">Durum çubuğu</string>
-    <string name="traffic_expanded_statusbar">Hızlı ayarlar başlığı</string>
+    <string name="traffic_status_bar">Durum çubuğu</string>
+    <string name="traffic_expanded_status_bar">Hızlı ayarlar başlığı</string>
     <string name="network_traffic_autohide_threshold_title">Ağ etkinliği otomatik gizlenme eşiği (KB/s)</string>
-    <string name="network_traffic_type">İnternet etkinlik türü seçin</string>
+    <string name="network_traffic_type">Görüntü modu</string>
     <string name="show_network_traffic_dynamic">Dinamik (Yükleme/İndirme)</string>
     <string name="show_network_traffic_up">Yükleme</string>
     <string name="show_network_traffic_down">İndirme</string>
@@ -215,7 +224,7 @@
     <string name="torch_long_press_power_timeout_2min">2 dakika</string>
     <string name="torch_long_press_power_timeout_5min">5 dakika</string>
     <string name="torch_long_press_power_timeout_10min">10 dakika</string>
-    <!-- Battery Styles -->
+    <!-- Status bar - Battery styles -->
     <string name="battery_percent_title">Pil göstergesi</string>
     <string name="battery_percent_summary">Pil göstergesi için simge ve metin stillerini yapılandırın</string>
     <string name="status_bar_battery_style_title">Pil stili</string>
@@ -224,8 +233,7 @@
     <string name="status_bar_battery_style_dotted_circle">Noktalı daire</string>
     <string name="status_bar_battery_style_filled_circle">Dolu daire</string>
     <string name="status_bar_battery_style_text">Metin</string>
-    <string name="status_bar_battery_style_hidden">Gizli</string>
-    <!-- Battery percentage -->
+    <!-- Status bar - Battery percentage -->
     <string name="battery_percentage_title">Pil yüzdesi</string>
     <string name="battery_percentage_default">Gizli (varsayılan)</string>
     <string name="battery_percentage_text_inside">Simgenin içinde</string>
@@ -243,55 +251,31 @@
     <string name="qs_columns_portrait_title">Dikey modda sütunlar</string>
     <string name="qs_columns_landscape_title">Yatay modda sütunlar</string>
     <string name="qs_tile_title_visibility_title">Kare başlıklarını göster</string>
-    <!-- Quick Settings brightness slider -->
-    <string name="qs_brightness_category_title">Parlaklık kaydırıcısı</string>
+    <!-- Status bar - Brightness -->
+    <string name="status_bar_brightness_category">Parlaklık kaydırıcısı</string>
     <string name="qs_show_brightness_slider_expanded_title">Genişletilmiş hızlı ayarlar parlaklık kaydırıcısı</string>
     <string name="qs_show_brightness_slider_expanded_summary">Genişletildiğinde parlaklık kaydırıcısını göster</string>
     <string name="qs_show_auto_brightness_title">Otomatik parlaklık simgesi</string>
     <string name="qs_show_auto_brightness_summary">Kaydırıcının yanında uyarlanabilir parlaklık için geçişi göster</string>
     <string name="qs_brightness_position_bottom_title">Parlaklık kaydırıcısı altta (Genişletilmiş hızlı ayarlarda)</string>
-    <string name="qs_brightness_position_bottom_summary">Genişletilmiş hızlı ayarların altında parlaklık kaydırıcısını göster</string>
     <!-- QQS brightness slider -->
     <string name="qqs_brightness_slider_title">Hızlı ayarlar parlaklık kaydırıcısı</string>
-    <string name="qs_brightness_slider_hide">Gizle</string>
     <string name="qs_brightness_slider_bottom">Alt</string>
     <string name="qs_brightness_slider_top">Üst</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Ses tuşlarıyla uyandır</string>
     <string name="volume_rocker_wake_summary">Ses tuşlarına basıldığında cihazı uyandır</string>
-    <!-- Volume rocker cursor control -->
-    <string name="cursor_section_header">İmleç</string>
-    <string name="volume_key_cursor_control_title">Ses tuşu ile imleç kontrolü</string>
-    <string name="volume_key_cursor_control_off">Devre dışı</string>
-    <string name="volume_key_cursor_control_on">Ses arttırma/azaltma imleci sol/sağa kaydırır</string>
-    <string name="volume_key_cursor_control_on_reverse">Ses arttırma/azaltma imleci sağa/sola kaydırır</string>
     <!-- Media art -->
     <string name="lockscreen_media_category">Müzik</string>
     <string name="media_art_title">Medya kapak görüntüsü</string>
     <string name="media_art_summary">Kilit ekranında medya kapak görüntüsünü etkinleştir</string>
-    <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Pixel animasyonu</string>
-    <string name="pixel_navbar_anim_summary">Ana ekran tuşu animasyonunu değiştir</string>
-    <!-- Navbar options -->
-    <string name="navbar_invert_layout_title">Düzeni tersine çevir</string>
-    <string name="navbar_layout_title">Düzen</string>
-    <string name="navbar_layout_normal">Normal</string>
-    <string name="navbar_layout_compact">Kompakt</string>
-    <string name="navbar_layout_leftleaning">Sola yaslanmış</string>
-    <string name="navbar_layout_rightleaning">Sağa yaslanmış</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Ekran kapanma animasyonu</string>
-    <string name="screen_off_animation_default">Varsayılan</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Ölçek</string>
     <!-- Power menu on lock screen -->
     <string name="power_menu_hide_on_secure_title">Kilit ekranında gizle</string>
     <string name="power_menu_hide_on_secure_summary">Güvenli kilit ekranında genel işlemler menüsünü gizler</string>
-    <!-- Incall vibrate options -->
-    <string name="incall_vibration_category">Görüşme sırasındaki titreşim seçenekleri</string>
-    <string name="incall_vibrate_connect_title">Arama bağlandığında titret</string>
-    <string name="incall_vibrate_call_wait_title">Arama bekletildiğinde titret</string>
-    <string name="incall_vibrate_disconnect_title">Arama bağlantısı kesildiğinde titret</string>
     <!-- QS advanced settings -->
     <string name="qs_column_rows_settings_title">Hızlı ayarlar</string>
     <string name="qs_edit_title">Düzenle simgesi</string>
@@ -300,7 +284,7 @@
     <string name="qs_header_category_title">Hızlı ayarlar başlığı</string>
     <string name="qs_panel_category_title">Hızlı ayarlar paneli</string>
     <string name="status_bar_quick_qs_pulldown">Hızlı aşağı çekme</string>
-    <string name="quick_pulldown_none">Devre dışı</string>
+    <string name="quick_pulldown_none">Kapalı</string>
     <string name="quick_pulldown_right">Durum çubuğunu sağ taraftan aşağı çekin</string>
     <string name="quick_pulldown_left">Durum çubuğunu sol taraftan aşağı çekin</string>
     <string name="quick_pulldown_always">Durum çubuğunu aşağı çekince her zaman hızlı ayarları göster</string>
@@ -310,7 +294,6 @@
     <string name="ringtone_focus_mode_stock">Hoparlörden (AOSP varsayılan)</string>
     <!-- Lock screen album art filter -->
     <string name="lockscreen_albumart_filter_title">Medya kapak resmi filtresi</string>
-    <string name="lockscreen_albumart_filter_none">Hiçbiri</string>
     <string name="lockscreen_albumart_filter_grayscale">Gri tonlama</string>
     <string name="lockscreen_albumart_filter_tint">Vurgu renkli</string>
     <string name="lockscreen_albumart_filter_blur">Bulanık</string>
@@ -325,7 +308,7 @@
     <string name="lockscreen_charging_animation_phone">Telefon</string>
     <string name="lockscreen_charging_animation_stack">Yığın</string>
     <string name="lockscreen_charging_animation_wavy">Dalgalı</string>
-    <!-- Status bar Clock -->
+    <!-- Status bar - Clock -->
     <string name="status_bar_clock_date_title">Saat ve tarih</string>
     <string name="status_bar_clock_date_summary">Durum çubuğu saati ve tarihini özelleştirin</string>
     <string name="status_bar_clock_title">Saat ayarları</string>
@@ -340,7 +323,8 @@
     <string name="status_bar_am_pm_normal">Normal</string>
     <string name="status_bar_am_pm_small">Küçük</string>
     <string name="status_bar_am_pm_hidden">Gizli (varsayılan)</string>
-    <string name="clock_seconds_display">Saniyeyi göster</string>
+    <string name="clock_seconds_title">Saniyeyi göster</string>
+    <string name="clock_seconds_summary">Saati, dakikayı ve saniyeyi göster</string>
     <string name="clock_date_display">Tarih</string>
     <string name="clock_date_display_summary">Saatten önce özel tarihi göster</string>
     <string name="clock_date_display_none">Gösterme</string>
@@ -372,7 +356,6 @@
     <string name="qs_tile_animation_style_flip">Çevir</string>
     <string name="qs_tile_animation_style_rotate">Döndür</string>
     <string name="qs_tile_animation_duration_low">Yavaş</string>
-    <string name="qs_tile_animation_duration_default">Varsayılan</string>
     <string name="qs_tile_animation_duration_fast">Hızlı</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Çizgisel</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Hızlandır</string>
@@ -388,11 +371,6 @@
     <!-- Quick Settings -->
     <string name="lockscreen_qs_disabled_title">Kilit ekranında hızlı ayarları devre dışı bırak</string>
     <string name="lockscreen_qs_disabled_summary">Güvenli kilit ekranlarında hızlı ayarların genişletilmesini devre dışı bırak</string>
-    <!-- Volume swap buttons -->
-    <string name="swap_volume_buttons_title">Yerini değiştir</string>
-    <string name="swap_volume_buttons_summary">Ekran döndürüldüğünde ses tuşlarının yerini değiştir</string>
-    <string name="click_partial_screenshot_title">Kısmi ekran görüntüsü için tıklayın</string>
-    <string name="click_partial_screenshot_summary">Kısmi ekran görüntüsü almak için Sesi Kısma ve Güç tuşuna kısa basın</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Dolaşım göstergesi</string>
     <string name="roaming_indicator_icon_summary">Dolaşım modundayken sinyal simgesinde dolaşım göstergesini göster</string>
@@ -417,9 +395,8 @@
     <string name="battery_bar_title">Pil çubuğu</string>
     <string name="battery_bar_summary">Durum çubuğunda veya gezinme çubuğunun yakınında pil çubuğunu görüntüleyin ve özelleştirin</string>
     <string name="battery_bar_no_navbar">Pil çubuğu konumu</string>
-    <string name="battery_bar_location_hide">Gizle</string>
-    <string name="battery_bar_statusbar_top">Durum çubuğunun üstü</string>
-    <string name="battery_bar_statusbar_bot">Durum çubuğunun altı</string>
+    <string name="battery_bar_status_bar_top">Durum çubuğunun üstü</string>
+    <string name="battery_bar_status_bar_bot">Durum çubuğunun altı</string>
     <string name="battery_bar_color">Pil çubuğu rengi</string>
     <string name="battery_bar_charging_color">Pil çubuğu şarj rengi</string>
     <string name="battery_bar_battery_low_color">Pil çubuğu düşük pil rengi</string>
@@ -453,8 +430,8 @@
     <string name="notification_headers_title">Bildirim başlığı</string>
     <string name="notification_headers_summary">Başlıkları bildirim gölgesinde göster</string>
     <!-- Lock icon -->
-    <string name="hide_lockicon_title">Kilit simgesi</string>
-    <string name="hide_lockicon_summary">Kilit ekranında kilit simgesini gizle</string>
+    <string name="lockscreen_lock_icon_title">Kilit simgesi</string>
+    <string name="lockscreen_lock_icon_summary">Kilit ekranında kilit simgesini göster</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_category">Ekran kenarı aydınlatması</string>
     <string name="pulse_ambient_light_title">Yeni bildirimde göster</string>
@@ -498,43 +475,10 @@
     <string name="fod_pressed_color_green">Yeşil</string>
     <string name="fod_pressed_color_yellow">Sarı</string>
     <string name="fod_pressed_color_light_yellow">Açık sarı</string>
-    <!-- Night light FOD -->
-    <string name="fod_night_light_title">Ekran altı parmak izi gösterilirken gece ışığını devre dışı bırak</string>
-    <string name="fod_night_light_summary">Ekran altı parmak izi etkinse, kilit ekranında gece ışığını devre dışı bırakın. Bu seçeneği devre dışı bırakmak, gece ışığı açıkken parmak izinizin doğruluğunu etkileyebilir.</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Kulaklık takıldığında müzik uygulamasını başlat</string>
     <string name="headset_connect_player_summary">Kulaklık takıldığında varsayılan müzik uygulamasını başlat</string>
     <string name="radio_info_title">Radyo bilgisi</string>
-    <!-- Gaming mode -->
-    <string name="gaming_mode_title">Oyun modu</string>
-    <string name="gaming_mode_summary">Oyun modu tercihlerini özelleştirin</string>
-    <string name="gaming_mode_enable_title">Oyun modunu etkinleştir</string>
-    <string name="gaming_mode_enable_summary">Oyun Modu için ana anahtar</string>
-    <string name="gaming_mode_app_picker_title">Bu uygulamalar için otomatik olarak aç</string>
-    <string name="add_gaming_mode_package_title">Oyun modu için uygulamalar ekle</string>
-    <string name="add_gaming_mode_package_summary">Bu uygulamalar açıldığında oyun modu otomatik olarak açılacak ve kapatıldığında kapanacak</string>
-    <string name="gaming_mode_headsup_title">Bildirim pencereleri</string>
-    <string name="gaming_mode_headsup_allow">Bildirim pencerelerine izin ver</string>
-    <string name="gaming_mode_headsup_dnc">Aramalar ve alarmlar haricindeki tüm bildirim pencerelerini engelle</string>
-    <string name="gaming_mode_headsup_clock">Alarmlar haricindeki tüm bildirim pencerelerini engelle</string>
-    <string name="gaming_mode_headsup_dialer">Aramalar haricindeki tüm bildirim pencerelerini engelle</string>
-    <string name="gaming_mode_headsup_stop">Tüm bildirim pencerelerini engelle</string>
-    <string name="gaming_mode_hardware_keys_title">Tuşları kilitle</string>
-    <string name="gaming_mode_hardware_keys_summary">Oyun modu açıldığında donanım tuşlarını devre dışı bırakır</string>
-    <string name="gaming_mode_brightness_title">Otomatik parlaklığı devre dışı bırak</string>
-    <string name="gaming_mode_brightness_summary">Oyun modu açıldığında otomatik ekran parlaklığını kilitler</string>
-    <string name="gaming_mode_ringer_title">Oyun modunda zil sesi</string>
-    <string name="gaming_mode_ringer_off_title">Değiştirme</string>
-    <string name="gaming_mode_ringer_vibrate_title">Titreşim</string>
-    <string name="gaming_mode_ringer_dnd_title">Rahatsız etmeyin</string>
-    <string name="gaming_mode_ringer_silent_title">Sessiz</string>
-    <string name="gaming_mode_notifications_title">Oyun modu göstergesi</string>
-    <string name="gaming_mode_notifications_off_title">Devre dışı</string>
-    <string name="gaming_mode_notifications_notif_title">Bildirim göster</string>
-    <string name="gaming_mode_notifications_toast_title">Hızlı bildirim göster</string>
-    <string name="gaming_mode_notifications_all_title">Hızlı bildirim ve bildirim göster</string>
-    <string name="gaming_mode_dynamic_title">Dinamik mod</string>
-    <string name="gaming_mode_dynamic_summary">Oyun uygulamalarını otomatik olarak algılamayı ve eklemeyi dene</string>
     <!-- Global Actions -->
     <string name="powermenu_advanced_reboot_title">Gelişmiş yeniden başlatma</string>
     <string name="powermenu_advanced_reboot_summary">Kurtarma ve önyükleyiciye erişim sağlar</string>
@@ -551,8 +495,6 @@
     <string name="theme_customization_category">Tema oluşturma</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
     <string name="theme_customization_accent_color_title">Vurgu rengi</string>
-    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
-    <string name="theme_customization_font_title">Başlık / Gövde yazı tipi</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">Simge şekli</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
@@ -564,9 +506,8 @@
     <string name="default_icon_shape">Daire (varsayılan)</string>
     <!-- Accent color picker -->
     <string name="accent_color_title">Vurgu rengi seçici</string>
-    <!-- QS tile styles -->
+    <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">Hızlı ayarlar kare stili</string>
-    <string name="qstile_default">Varsayılan</string>
     <string name="qstile_circle_trim">Çerçeveli daire</string>
     <string name="qstile_dual_tone_circle">Çift tonlu daire</string>
     <string name="qstile_squircle_trim">Çerçeveli köşeli daire</string>
@@ -582,7 +523,6 @@
     <string name="qstile_cosmos">Shishu cosmos</string>
     <string name="qstile_divided">Bölünmüş daire</string>
     <string name="qstile_neonlike">Neon ışık</string>
-    <string name="qstile_oos">Oksijen</string>
     <string name="qstile_triangles">Üçgen</string>
     <!-- Custom header -->
     <string name="custom_header_browse_summary">Statik modda kullanmak için herhangi bir görüntüye tıklayın</string>
@@ -602,16 +542,14 @@
     <string name="static_header_provider_title">Sabit görüntü</string>
     <string name="status_bar_custom_header_shadow_summary">Parlak görüntülerde daha iyi görünürlük için</string>
     <string name="status_bar_custom_header_shadow_title">Başlık görüntü gölgesi</string>
-    <string name="unit_percent">\u0025</string>
     <!-- Volume Panel Plugin -->
     <string name="volume_panel_category">Ses paneli</string>
     <string name="volume_panel_title">Ses paneli stili</string>
-    <string name="volume_panel_stock">Varsayılan panel</string>
-    <string name="volume_panel_aosp">Genişletilmiş</string>
     <string name="volume_panel_compact">Kompakt</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Kareler</string>
-    <string name="volume_panel_miui">MIUI Kompakt</string>
+    <string name="volume_panel_p404">P404</string>
+    <string name="volume_panel_ssos">ShapeShift</string>
     <!-- Volume Panel Plugin Values -->
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Durum çubuğu</string>
@@ -635,30 +573,15 @@
     <!-- G-Visual mod -->
     <string name="gvisual_title">G-Görsel Mod</string>
     <string name="gvisual_summary">Çeşitli kullanıcı arayüzü özelleştirmeleri</string>
-    <string name="gvisual_footer">Garip bir nedenden ötürü, sistem simgesi şekli olarak Yuvarlatılmış Diktörtgen, Köşeli Daire ve Gözyaşı seçildiğinde Yuvarlak köşe seçeneği çalışmıyor.</string>
-    <string name="rounded_ui_title">Yuvarlatılmış köşeler</string>
-    <string name="rounded_ui_dialog_title">Yuvarlatılmış köşeler modelini seçin</string>
-    <string name="rounded_style_default">Varsayılan</string>
-    <string name="rounded_style_rectangle">Dikdörtgen</string>
-    <string name="rounded_style_large">Büyük</string>
-    <string name="rounded_style_medium">Orta</string>
-    <string name="statusbar_height_title">Durum çubuğu yüksekliği</string>
-    <string name="statusbar_height_dialog_title">Durum çubuğu yükseklik modelini seçin</string>
-    <string name="sb_height_default">Varsayılan</string>
-    <string name="sb_height_medium">Orta</string>
-    <string name="sb_height_large">Büyük</string>
-    <string name="sb_height_extralarge">Çok büyük</string>
+    <string name="status_bar_height_title">Durum çubuğu yüksekliği</string>
+    <string name="status_bar_height_dialog_title">Durum çubuğu yükseklik modelini seçin</string>
     <string name="navbar_color_title">Gezinme çubuğu renkleri</string>
     <string name="navbar_color_dialog_title">Renk seçin</string>
-    <string name="navbar_default">Varsayılan</string>
     <string name="navbar_orchid">Orkide</string>
     <string name="navbar_red">Kırmızı</string>
     <string name="navbar_purp">Mor</string>
     <string name="navbar_blue">Mavi</string>
     <string name="navbar_rose">Gül</string>
-    <string name="header_default">Varsayılan</string>
-    <string name="header_large">Büyük</string>
-    <string name="header_xlarge">Çok büyük</string>
     <string name="header_title">Başlık boyutları</string>
     <string name="header_dialog_title">Boyut seç</string>
     <!-- AOD Schedule -->
@@ -676,52 +599,70 @@
     <string name="theming_settings_dashboard_icons_plain_accent">Şeffaf arkaplan / Vurgu renkli önplan</string>
     <!-- Switch styles -->
     <string name="switch_style_title">Stili değiştir</string>
-    <string name="switch_default">Varsayılan</string>
     <string name="switch_contained">Kapsadığı</string>
     <string name="switch_telegram">Telegram</string>
     <string name="switch_md2">Metaryal Tasarım 2</string>
     <string name="switch_retro">Eski tarz</string>
-    <string name="switch_oos">OxygenOS 11</string>
     <!-- Global Actions -->
     <string name="global_actions_users_choice_title">İsteğe bağlı kullanıcı eylemi</string>
     <string name="global_actions_flashlight_title">El feneri</string>
     <string name="global_actions_screenshot_title">Ekran görüntüsü</string>
     <string name="global_actions_screenrecord_title">Ekran kaydı</string>
-    <string name="global_actions_none_title">Yok</string>
+    <string name="global_actions_onthego_title">On-The-Go Modu</string>
     <!-- QS themes -->
-    <string name="qs_panel_colors_title">Hızlı ayarlar rengi</string>
     <string name="qs_panel_bg_alpha_title">Arka plan alfa</string>
     <string name="qs_panel_bg_disco_title">Hızlı ayarlar kareleri diskosu</string>
     <string name="qs_panel_bg_disco_summary">Hızlı ayarlar karelerinizi renkli hale getirin!</string>
-    <!-- Accent QS tint -->
-    <string name="qs_bg_use_new_tint">Hızlı ayarlar kare renk tonu</string>
-    <string name="qs_bg_use_new_tint_summary">Hızlı ayarlar renk tonu stilini seçin</string>
-    <string name="qs_tint_off">Varsayılan</string>
+    <!-- Notification background opacity -->
+    <string name="notification_alpha_title">Bildirim arka planı şeffaflığı</string>
+    <!-- Power menu background opacity -->
+    <string name="power_menu_alpha_title">Güç menüsü şeffaflığı</string>
+    <!-- QS tile tint styles -->
+    <string name="qs_tint_title">Hızlı ayarlar kare renk tonu stili</string>
     <string name="qs_tint_accent">Vurgu rengi</string>
-    <string name="qs_tint_oos">OxygenOS 11</string>
-    <string name="qs_tint_twelve">Android 12</string>
     <!-- Lock screen Clocks -->
+    <string name="clock_show_status_area">Durum alanını göster (hava durumu vb.)</string>
+    <string name="clock_show_status_area_summary">Ekstra bilgi satırını kilit ekranı saatinin altında gösterin (Sistem arayüzünün yeniden başlatılması gerekebilir)</string>
     <string name="lock_screen_custom_clock_face_category">Kilit ekranı bilgisi</string>
     <string name="lock_screen_custom_clock_face_title">Kilit ekranı saati stili</string>
-    <string name="lock_screen_custom_clock_face_default">Varsayılan</string>
     <string name="lock_screen_custom_clock_face_default_bold">Varsayılan (kalın)</string>
+    <string name="lock_screen_custom_clock_face_alt_typographic">Tipografik (Yeni)</string>
     <string name="lock_screen_custom_clock_face_analog">Analog</string>
+    <string name="lock_screen_custom_clock_face_android_s_dp3">Android S DP3</string>
     <string name="lock_screen_custom_clock_face_binary">İkili</string>
     <string name="lock_screen_custom_clock_face_bubble">Baloncuk</string>
+    <string name="lock_screen_custom_clock_face_clockertino">Clockertino</string>
     <string name="lock_screen_custom_clock_face_divided">Bölünmüş Çizgiler</string>
     <string name="lock_screen_custom_clock_face_fluid">Sıvı</string>
+    <string name="lock_screen_custom_clock_face_fluid_v2">Fluid v2</string>
+    <string name="lock_screen_custom_clock_face_gradient_fire">Gradyan ateşi</string>
     <string name="lock_screen_custom_clock_face_ide">IDE</string>
+    <string name="lock_screen_custom_clock_face_ide_java">IDE (Java Mix)</string>
     <string name="lock_screen_custom_clock_face_mnml_box">MNML Kutu</string>
     <string name="lock_screen_custom_clock_face_mnml_minimal">MNML Küçültülmüş</string>
+    <string name="lock_screen_custom_clock_face_op_minimal">OnePlus Minimal</string>
+    <string name="lock_screen_custom_clock_face_op_numbers">OnePlus Sayılar</string>
+    <string name="lock_screen_custom_clock_face_op_roman">OnePlus Roman</string>
     <string name="lock_screen_custom_clock_face_samsung">Samsung</string>
     <string name="lock_screen_custom_clock_face_samsung_bold">Samsung (kalın)</string>
     <string name="lock_screen_custom_clock_face_samsung_highlight">Samsung (vurgu)</string>
     <string name="lock_screen_custom_clock_face_sfuny">SFUNY</string>
     <string name="lock_screen_custom_clock_face_shapeshift">Şekil Kaydırma</string>
     <string name="lock_screen_custom_clock_face_spectrum">Spectrum</string>
+    <string name="lock_screen_custom_clock_face_sticker_tag">Çıkartma etiketi</string>
     <string name="lock_screen_custom_clock_face_typographic">Tipografik</string>
     <string name="lock_screen_custom_clock_face_typographic_alt">Tipografik (ortada)</string>
-    <!-- Buttons -->
+    <!-- Volume rocker gestures -->
+    <string name="volume_skiptrack_screen_title">Müzik parçalarını değiştir</string>
+    <!-- HW keys -->
+    <string name="hardware_keys_title">Donanım tuşları</string>
+    <string name="hardware_keys_disable_title">Donanım tuşları</string>
+    <string name="hardware_keys_disable_summary">Gezinme için cihazın donanımsal tuşlarını kullanın</string>
+    <string name="hardware_keys_volume_keys_title">Ses tuşları</string>
+    <!-- ANBI -->
+    <string name="anbi_title">Yanlışlıkla dokunma</string>
+    <string name="anbi_summary">Ekran kullanılırken donanım tuşlarıyla etkileşimi önle</string>
+    <!-- Button settings -->
     <string name="button_pref_title">Tuşlar</string>
     <string name="hardware_keys_home_key_title">Ana ekran tuşu</string>
     <string name="hardware_keys_back_key_title">Geri tuşu</string>
@@ -741,16 +682,37 @@
     <string name="hardware_keys_action_launch_camera">Kamerayı başlat</string>
     <string name="hardware_keys_action_sleep">Ekranı kapat</string>
     <string name="hardware_keys_action_split_screen">Bölünmüş ekran</string>
+    <string name="hardware_keys_action_close_app">Uygulamayı sonlandır</string>
+    <string name="hardware_keys_action_torch">El feneri</string>
+    <string name="hardware_keys_action_screenshot">Ekran görüntüsü</string>
+    <string name="hardware_keys_action_volume_panel">Ses panelini aç/kapat</string>
+    <string name="hardware_keys_action_clear_all_notifications">Tüm bildirimleri temizle</string>
+    <string name="hardware_keys_action_notifications_panel">Bildirim panelini aç/kapat</string>
+    <string name="hardware_keys_action_toggle_qs_panel">Hızlı ayarlar panelini aç/kapat</string>
+    <string name="hardware_keys_action_ringer_modes">Zil modları</string>
     <string name="hardware_keys_swipe_right_key_title">Sağa kaydır</string>
     <string name="hardware_keys_swipe_left_key_title">Sola kaydır</string>
     <string name="hardware_keys_long_tap_key_title">Uzun basma</string>
     <string name="hardware_keys_swipe_tap_title">Kaydırma eylemi</string>
     <string name="hardware_keys_long_tap_title">Uzun basma eylemi</string>
     <string name="button_wake_title">Cihazı uyandır</string>
+    <string name="button_wake_summary">Tuşa basıldığında cihazı uyandır</string>
     <string name="camera_sleep_on_release_title">Ekrana göz at</string>
     <string name="camera_sleep_on_release_summary">Yarım basmak, ekranı yalnızca düğme basılı tutulduğunda açık tutacaktır</string>
     <string name="camera_launch_title">Kamerayı başlat</string>
     <string name="camera_launch_summary">Uzun basıp bırakma kamerayı başlatacak</string>
+    <string name="volbtn_music_controls_title">Oynatma kontrolü</string>
+    <string name="volbtn_music_controls_summary">Ekran kapalıyken ses tuşlarına uzun basarak müzik parçalarını arayın</string>
+    <string name="volbtn_cursor_control_title">Klavye imleç kontrolü</string>
+    <string name="volbtn_cursor_control_off">Devre dışı</string>
+    <string name="volbtn_cursor_control_on">Ses arttırma/azaltma imleci sola/sağa kaydırır</string>
+    <string name="volbtn_cursor_control_on_reverse">Ses arttırma/azaltma imleci sağa/sola kaydırır</string>
+    <string name="swap_volume_buttons_title">Yerini değiştir</string>
+    <string name="swap_volume_buttons_summary">Ekran döndürüldüğünde ses tuşlarının yerini değiştir</string>
+    <string name="volume_panel_on_left_summary">Ses panelini ekranın sol tarafında görüntüle</string>
+    <string name="extras_title">Ekstralar</string>
+    <string name="click_partial_screenshot_title">Kısmi ekran görüntüsü için tıklayın</string>
+    <string name="click_partial_screenshot_summary">Kısmi ekran görüntüsü almak için Sesi Kısma ve Güç tuşuna kısa basın</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Arka ışık</string>
     <string name="button_backlight_enabled">Tuşları aydınlat</string>
@@ -769,7 +731,160 @@
     <!-- Buttons - Swap capacitive keys -->
     <string name="swap_capacitive_keys_title">Dokunmatik tuşları değiştir</string>
     <string name="swap_capacitive_keys_summary">Son uygulamalar ve geri tuşlarının yerini değiştir</string>
-    <!-- Screenshot compression  -->
-    <string name="screenshot_compression_title">Ekran görüntüsü kalitesi</string>
-    <string name="screenshot_compression_summary">Görüntü kalitesini düşürerek ekran görüntüsü boyutunu sıkıştırır</string>
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Görselleştirme</string>
+    <string name="lockscreen_visualizer_enable">Müzik görselleştirici</string>
+    <string name="lockscreen_visualizer_enable_summary">Müzik çalarken görselleştirici çubukları gösterir</string>
+    <string name="lockscreen_autocolor_title">Otomatik renk</string>
+    <string name="lockscreen_autocolor_summary">Rengi kilit ekranı arkaplanı ile eşitle</string>
+    <string name="lockscreen_autocolor_lavalamp">Lav lambasının devre dışı olması gerekir</string>
+    <string name="lockscreen_lavalamp_title">Lav lambası</string>
+    <string name="lockscreen_lavalamp_summary">Pürüzsüz bir lav lambası tarzı renk karışımı animasyonu kullan</string>
+    <string name="lockscreen_lavalamp_speed_title">Renk karışımı aralığı</string>
+    <string name="lockscreen_solid_lines_category">Düz çizgiler</string>
+    <string name="lockscreen_solid_units_count_title">Çizgi sayısı</string>
+    <string name="lockscreen_solid_fudge_factor_title">Davranış seviyesi</string>
+    <string name="lockscreen_solid_units_opacity_title">Çizgi şeffaflığı</string>
+    <!-- Heads up timeout -->
+    <string name="heads_up_footer">Zaman aşımı özelliği, Sistem arayüzünün yeniden başlatılmasını gerektirebilir.</string>
+    <string name="heads_up_time_out_title">Zaman aşımı</string>
+    <string name="heads_up_time_out_summary">Bildirim pencereleri <xliff:g id="number">%d</xliff:g> saniye boyunca gösterilecek</string>
+    <string name="heads_up_time_out_2sec">2 saniye</string>
+    <string name="heads_up_time_out_4sec">4 saniye</string>
+    <string name="heads_up_time_out_5sec">5 saniye</string>
+    <string name="heads_up_time_out_6sec">6 saniye</string>
+    <string name="heads_up_time_out_8sec">8 saniye</string>
+    <string name="heads_up_time_out_10sec">10 saniyede</string>
+    <!-- Per-app volume -->
+    <string name="show_app_volume_title">Uygulama sesini göster</string>
+    <string name="show_app_volume_summary">Ses panelinde uygulama sesini göster</string>
+    <!-- Alert Slider Notifications (OnePlus devices) -->
+    <string name="alert_slider_notifications_title">Uyarı bildirimleri</string>
+    <string name="alert_slider_notifications_summary">Uyarı kaydırıcısının konumunu değiştirirken bildirimi görüntüle</string>
+    <!-- Rounded corners -->
+    <string name="corners_title">Yuvarlatılmış köşeleri özelleştirin</string>
+    <string name="corners_summary">Yuvarlatılmış köşe değerlerini ayarlayın</string>
+    <string name="corner_radius">Yuvarlatılmış köşe yarıçapı</string>
+    <string name="content_padding">Köşe içerik dolgusu</string>
+    <string name="corner_fwvals">Varsayılan değerleri kullan</string>
+    <string name="corner_fwvals_summary">Cihazın gerçekten yuvarlatılmış köşeleri varsa kullanışlıdır</string>
+    <!-- Display cutout options -->
+    <string name="cutout_category_title">Kesim seçenekleri</string>
+    <string name="cutout_main">Ekran kesimi</string>
+    <string name="cutout_main_summary">Bununla köşeler gerçekten kesilir</string>
+    <string name="display_cutout_style_title">Kesim stili</string>
+    <string name="display_cutout_style_normal">Normal</string>
+    <string name="display_cutout_style_immerse">Tam ekran</string>
+    <string name="stock_statusbar_in_hide">Varsayılan durum çubuğu yüksekliği</string>
+    <string name="stock_statusbar_in_hide_summary">Kesmeyi gizlerken varsayılan durum çubuğu yüksekliğini kullanın</string>
+    <string name="display_hide_notch_title">Ekran kesmesini gizle</string>
+    <string name="display_hide_notch_summary">Ekran kesmesi için siyah dolguyu devre dışı bırak</string>
+    <!-- Status Bar Ticker -->
+    <string name="ticker_screen_title">Şerit</string>
+    <string name="ticker_screen_summary">Durum çubuğunda şerit bildirim stilini göster</string>
+    <string name="ticker_screen_footer">Kayan yazı yalnızca bildirim uyarısı gösterilmediğinde görünür. Çentiği ortada bulunan cihazlarda, Kesme seçenekleri altında kesmeyi gizlemelidir.</string>
+    <string name="ticker_title">Durum çubuğu şeridi</string>
+    <string name="ticker_summary">Durum çubuğu şeridini etkinleştir</string>
+    <string name="ticker_restore_defaults_title">Varsayılanları geri yükle</string>
+    <string name="text_title">Metin</string>
+    <string name="icon_title">Simge</string>
+    <string name="colors_title">Renkler</string>
+    <string name="values_restored_title">Değerler geri yüklendi</string>
+    <string name="ticker_disabled">Şerit yok</string>
+    <string name="ticker_enabled">Bildirim şeridi</string>
+    <string name="ticker_media_enabled">Bildirim ve müzik şeridi</string>
+    <string name="ticker_animation_mode_title">Şerit animasyonu stili</string>
+    <string name="ticker_animation_mode_alpha_fade">Soldur</string>
+    <string name="ticker_animation_mode_scroll">Kaydır</string>
+    <string name="ticker_tick_duration_title">Şerit süresi</string>
+    <!-- Lockscreen blur -->
+    <string name="lockscreen_blur_title">Arkaplan bulanıklığı</string>
+    <!-- Navbar Picker -->
+    <string name="theme_navbar_picker_title">Gezinme çubuğu stili (3 düğmeli gezinme için)</string>
+    <string name="theme_navbar_picker_summary">Gezinme çubuğu stili seçin</string>
+    <string name="theme_navbar_picker_oneui">One UI</string>
+    <string name="theme_navbar_picker_tecno">Tecno Camon</string>
+    <string name="theme_navbar_picker_asus">ASUS</string>
+    <string name="theme_navbar_picker_android">Android</string>
+    <string name="theme_navbar_picker_moto">Moto</string>
+    <string name="theme_navbar_picker_nexus">Nexus</string>
+    <string name="theme_navbar_picker_old">Eski</string>
+    <string name="theme_navbar_picker_sammy">Samsung</string>
+    <!-- FOD on doze -->
+    <string name="fod_on_doze_title">Uykuda FOD</string>
+    <string name="fod_on_doze_summary">Ortam ekranı ve AoD sırasında parmak izini ekranda göster. Bu yalnızca simgeyi gizler ve işlevselliği devre dışı bırakmaz</string>
+    <!-- Alarm and Wakelock blocker -->
+    <string name="blocker_action_reload">Yeniden yükle</string>
+    <string name="blocker_action_save">Kaydet</string>
+    <string name="blocker_action_save_toast">Ayarlar başarıyla kaydedildi</string>
+    <string name="blocker_warning_title">Uyarı</string>
+    <string name="wakelock_blocker_title">Uyandırma kilidi engelleyici</string>
+    <string name="wakelock_blocker_summary">Pilden tasarruf etmek için sistem uyandırma kilitlerini engelleyin</string>
+    <string name="wakelock_blocker_warning">Uyandırma kilitlerini engellemek, kararsızlığa, çökmelere veya veri kaybına neden olma potansiyeline sahiptir.</string>
+    <string name="wakelock_blocker_display_text">Uyandırma kilitlerini görmek ve engellemek için uyandırma kilidi engelleyiciyi açın.</string>
+    <string name="alarm_blocker_title">Alarm engelleyici</string>
+    <string name="alarm_blocker_summary">Pilden tasarruf etmek için ekran kapalıyken alarmları engelleyin</string>
+    <string name="alarm_blocker_warning">Alarmları engellemek, kararsızlığa, çökmelere veya veri kaybına neden olma potansiyeline sahiptir.</string>
+    <string name="alarm_blocker_display_text">Alarmları görmek ve engellemek için alarm engelleyiciyi açın.</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="notification_flash_title">El feneri</string>
+    <string name="flashlight_on_call_title">Gelen aramada bildirim flaşı</string>
+    <string name="flashlight_on_call_disabled">Devre dışı</string>
+    <string name="flashlight_on_call_not_dnd">Yalnızca zil sesi modunda</string>
+    <string name="flashlight_on_call_dnd">Yalnızca rahatsız etmeyin modunda</string>
+    <string name="flashlight_on_call_always">Her zaman</string>
+    <!-- Status Bar Lyric -->
+    <string name="status_bar_show_lyric_title">Durum çubuğu şarkı sözü özelliği</string>
+    <string name="status_bar_show_lyric_summary">Durum çubuğunda şarkı sözlerini göster (uygulama desteği ve Sistem arayüzünün yeniden başlatılması gerekir)</string>
+    <!-- Notification Media Options -->
+    <string name="media_category">Medya bildirimi seçenekleri</string>
+    <string name="artwork_media_background_title">Medya resmi arka planı</string>
+    <string name="artwork_media_background_summary">Medya resmini bildirim medyası arka planı olarak ayarla</string>
+    <string name="artwork_media_fade_level_title">Medya resmi karartma seviyesi</string>
+    <!-- Rounded styles -->
+    <string name="rounded_style_title">Sistem diyalogları için yuvarlak stil</string>
+    <string name="rounded_slight">Hafif</string>
+    <string name="rounded_high">Yüksek</string>
+    <string name="rounded_extreme">Aşırı</string>
+    <!-- Brightness slider styles -->
+    <string name="slider_styles_title">Parlaklık kaydırıcı stili</string>
+    <string name="slider_rui">RUI</string>
+    <!-- Gaming mode -->
+    <string name="gaming_title">Oyun modu</string>
+    <string name="gaming_title_summary">Tam ekran oyun deneyimi için ekstra özellikler</string>
+    <string name="gaming_mode_enabled_title">Oyun modunu etkinleştir</string>
+    <string name="gaming_mode_disable_auto_brightness_title">Otomatik parlaklığı devre dışı bırak</string>
+    <string name="gaming_mode_disable_auto_brightness_summary">Oyun moduna geçerken otomatik parlaklığı devre dışı bırak</string>
+    <string name="gaming_mode_notification_danmaku_title">Danmaku bildirim</string>
+    <string name="gaming_mode_notification_danmaku_summary">Oyunda bildirim içeriğini danmaku şeklinde göster</string>
+    <string name="gaming_mode_quick_start_apps_title">Uygulamaları hızlı başlat</string>
+    <string name="gaming_mode_quick_start_apps_summary">Uçan bir top şeklinde başlatmak için uygulama seç</string>
+    <string name="gaming_mode_menu_opacity_title">Menü şeffaflık seviyesi</string>
+    <string name="gaming_mode_performance">Performans</string>
+    <string name="gaming_mode_use_game_driver_title">Oyun sürücüsü kullan</string>
+    <string name="gaming_mode_use_game_driver_summary">Oyun için özel sürücüler kullan</string>
+    <string name="gaming_mode_change_performance_title">Performans ayarları</string>
+    <string name="gaming_mode_change_performance_summary">Oyun başlatırken performans düzeyini ayarla</string>
+    <string name="gaming_mode_performance_title">Performans seviyesi</string>
+    <string name="gaming_mode_dnd">Rahatsız etmeyin</string>
+    <string name="gaming_mode_disable_notification_alert_title">Bildirimleri devre dışı bırak</string>
+    <string name="gaming_mode_disable_notification_alert_summary">Gelen aramalar ve alarmlar dışında tüm açılan pencere bildirimlerine ve sohbet balonlarına izin verme</string>
+    <string name="gaming_mode_disable_ringtone_title">Zil sesi yok</string>
+    <string name="gaming_mode_disable_ringtone_summary">Oyun modunda gelen arama ve bildirim seslerini kapat</string>
+    <string name="gaming_mode_auto_answer_call_title">Aramaları otomatik cevapla</string>
+    <string name="gaming_mode_auto_answer_call_summary">Oyundayken aramaları otomatik cevapla ve kulaklık takılı değilse eller serbest kullan</string>
+    <string name="gaming_mode_prevent_accidental_touch">Yanlışlıkla dokunmayı önle</string>
+    <string name="gaming_mode_disable_gesture_title">Hareket devre dışı</string>
+    <string name="gaming_mode_apps">Oyun Listesi</string>
+    <string name="gaming_mode_dynamic_add_title">Dinamik mod</string>
+    <string name="gaming_mode_dynamic_add_summary">Oyun uygulamalarını otomatik olarak algılamayı ve eklemeyi dene</string>
+    <string name="gaming_mode_show_danmaku_title">Danmaku göster</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">Dinamik filtreli bildirimler</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">Devam eden indirme işlemi gibi bildirimleri otomatik filtrele</string>
+    <string name="gaming_mode_danmaku_size_horizontal_title">Danmaku boyutu (yatay)</string>
+    <string name="gaming_mode_danmaku_size_vertical_title">Danmaku boyutu (dikey)</string>
+    <string name="gaming_mode_danmaku_speed_horizontal_title">Danmaku hızı (yatay)</string>
+    <string name="gaming_mode_danmaku_speed_vertical_title">Danmaku hızı (dikey)</string>
+    <string name="gaming_mode_danmaku_blacklist">Kara liste</string>
+    <string name="add_package_to_title">Uygulama ekle</string>
 </resources>
