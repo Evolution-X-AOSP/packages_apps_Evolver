@@ -18,7 +18,7 @@
     <!-- The Evolver -->
     <string name="evolver_dashboard_title">Evolution 自定义</string>
     <!-- Categories -->
-    <string name="aosp_setting_title">AOSP 设置</string>
+    <string name="aosp_setting_title">系统设置</string>
     <string name="animation_title">动画</string>
     <string name="dev_options_title">开发者选项</string>
     <string name="general_title">常规</string>
@@ -48,13 +48,17 @@
     <string name="action_cancel">取消</string>
     <string name="attention">注意</string>
     <string name="default_string">默认</string>
+    <string name="none_string">无</string>
+    <string name="hidden_string">隐藏</string>
+    <string name="large_string">较大</string>
+    <string name="medium_string">中等</string>
+    <string name="xlarge_string">特大</string>
     <string name="disabled">已禁用</string>
     <string name="enable_first">请先启用</string>
     <string name="led_color_green">强调色-绿色</string>
     <string name="led_color_red">强调色-红色</string>
     <string name="edit_hint">数值</string>
     <string name="seek_value_edit_label">设置数值</string>
-    <string name="android_s">Android S</string>
     <!-- Units -->
     <string name="unit_milliseconds">毫秒</string>
     <string name="unit_percent">\u0025</string>
@@ -69,7 +73,7 @@
     <string name="press_color_to_apply">选取并应用颜色</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
-    <string name="hex">Hex:</string>
+    <string name="hex">十六进制：</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">设置</string>
     <string name="color_default">默认</string>
@@ -81,9 +85,6 @@
     <string name="seekbar_default_string">默认</string>
     <!-- Lock screen information -->
     <string name="lockscreen_info_category_title">锁屏信息元素</string>
-    <!-- Double Tap gestures -->
-    <string name="dtt_category_title">双击</string>
-    <string name="double_tap_to_sleep_title">双击睡眠</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">USB 配置</string>
     <string name="usb_default_config_summary">选择通过 USB 连接到设备时的默认行为</string>
@@ -139,11 +140,11 @@
     <string name="fod_recog_animation_title">指纹动画</string>
     <string name="fod_recog_animation_summary">在识别指纹时显示动画</string>
     <string name="fod_recog_animation_effect_title">选择指纹动画效果</string>
-    <string name="fod_recog_animation_miui_normal">MIUI 默认</string>
-    <string name="fod_recog_animation_miui_aod">MIUI - 环境显示</string>
+    <string name="fod_recog_animation_miui_aurora_old">极光 (旧)</string>
     <string name="fod_recog_animation_miui_aurora">Aurora (K30 Pro)</string>
-    <string name="fod_recog_animation_miui_aurora_cas">Aurora (Mi 10 Ultra)</string>
     <string name="fod_recog_animation_miui_light">亮色</string>
+    <string name="fod_recog_animation_miui_neon">霓虹</string>
+    <string name="fod_recog_animation_miui_neon_blue">霓虹 (蓝)</string>
     <string name="fod_recog_animation_miui_pop">弹出</string>
     <string name="fod_recog_animation_miui_pulse">脉冲</string>
     <string name="fod_recog_animation_miui_pulse_white">脉冲 (白色)</string>
@@ -173,7 +174,6 @@
     <string name="fod_icon_animation_summary">打开屏幕时显示视场图标</string>
     <string name="fod_icon_animation_oneui1">OneUI 1</string>
     <string name="fod_icon_animation_oneui2">OneUI 2</string>
-    <string name="fod_icon_animation_oos">OOS 11</string>
     <!-- Notification light -->
     <string name="notification_light_settings">通知灯</string>
     <!-- Heads up -->
@@ -233,7 +233,6 @@
     <string name="status_bar_battery_style_dotted_circle">虚线圆</string>
     <string name="status_bar_battery_style_filled_circle">实心圆</string>
     <string name="status_bar_battery_style_text">文本</string>
-    <string name="status_bar_battery_style_hidden">隐藏</string>
     <!-- Status bar - Battery percentage -->
     <string name="battery_percentage_title">电量百分比</string>
     <string name="battery_percentage_default">隐藏 (默认值)</string>
@@ -261,7 +260,6 @@
     <string name="qs_brightness_position_bottom_title">底部亮度滑动器 (仅适合扩展快速设置)</string>
     <!-- QQS brightness slider -->
     <string name="qqs_brightness_slider_title">亮度滑块</string>
-    <string name="qs_brightness_slider_hide">隐藏</string>
     <string name="qs_brightness_slider_bottom">底部</string>
     <string name="qs_brightness_slider_top">顶部</string>
     <!-- Volume rocker wake -->
@@ -273,17 +271,11 @@
     <string name="media_art_summary">在锁屏界面上启用媒体封面</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">锁屏动画</string>
-    <string name="screen_off_animation_default">默认</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">缩放</string>
     <!-- Power menu on lock screen -->
     <string name="power_menu_hide_on_secure_title">在锁屏界面隐藏</string>
     <string name="power_menu_hide_on_secure_summary">在安全锁屏界面隐藏全局动作菜单</string>
-    <!-- Incall vibrate options -->
-    <string name="incall_vibration_category">通话振动选项</string>
-    <string name="incall_vibrate_connect_title">接通时振动</string>
-    <string name="incall_vibrate_call_wait_title">呼叫保持时振动</string>
-    <string name="incall_vibrate_disconnect_title">挂断时振动</string>
     <!-- QS advanced settings -->
     <string name="qs_column_rows_settings_title">快速设置面板</string>
     <string name="qs_edit_title">编辑图标</string>
@@ -292,7 +284,7 @@
     <string name="qs_header_category_title">标头选项</string>
     <string name="qs_panel_category_title">快速设置面板</string>
     <string name="status_bar_quick_qs_pulldown">快速设置下拉</string>
-    <string name="quick_pulldown_none">已禁用</string>
+    <string name="quick_pulldown_none">关闭</string>
     <string name="quick_pulldown_right">从右侧下拉状态栏</string>
     <string name="quick_pulldown_left">从左侧下拉状态栏</string>
     <string name="quick_pulldown_always">状态栏下拉时始终显示快速设置</string>
@@ -302,7 +294,6 @@
     <string name="ringtone_focus_mode_stock">从麦克风 (AOSP默认) </string>
     <!-- Lock screen album art filter -->
     <string name="lockscreen_albumart_filter_title">媒体封面过滤器</string>
-    <string name="lockscreen_albumart_filter_none">无</string>
     <string name="lockscreen_albumart_filter_grayscale">灰度</string>
     <string name="lockscreen_albumart_filter_tint">主题色</string>
     <string name="lockscreen_albumart_filter_blur">模糊</string>
@@ -365,7 +356,6 @@
     <string name="qs_tile_animation_style_flip">翻转</string>
     <string name="qs_tile_animation_style_rotate">旋转</string>
     <string name="qs_tile_animation_duration_low">慢速</string>
-    <string name="qs_tile_animation_duration_default">默认</string>
     <string name="qs_tile_animation_duration_fast">快速</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">线性</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">加速</string>
@@ -405,7 +395,6 @@
     <string name="battery_bar_title">电量条</string>
     <string name="battery_bar_summary">显示和自定义在状态栏或导航栏附近的电量条</string>
     <string name="battery_bar_no_navbar">电量条位置</string>
-    <string name="battery_bar_location_hide">隐藏</string>
     <string name="battery_bar_status_bar_top">状态栏顶部</string>
     <string name="battery_bar_status_bar_bot">状态栏底部</string>
     <string name="battery_bar_color">电量条颜色</string>
@@ -441,8 +430,8 @@
     <string name="notification_headers_title">通知栏头部</string>
     <string name="notification_headers_summary">在通知栏阴影中显示标题</string>
     <!-- Lock icon -->
-    <string name="hide_lockicon_title">隐藏锁定图标</string>
-    <string name="hide_lockicon_summary">在锁屏界面隐藏锁定图标</string>
+    <string name="lockscreen_lock_icon_title">锁定图标</string>
+    <string name="lockscreen_lock_icon_summary">在锁屏界面显示锁定图标</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_category">环境显示侧边亮屏</string>
     <string name="pulse_ambient_light_title">新通知闪光</string>
@@ -483,43 +472,13 @@
     <string name="fod_pressed_color_title">按下图标效果</string>
     <string name="fod_pressed_color_white">白色</string>
     <string name="fod_pressed_color_cyan">青色</string>
-    <string name="fod_pressed_color_green">绿色</string>
+    <string name="fod_pressed_color_green">强调色-绿色</string>
     <string name="fod_pressed_color_yellow">黄色</string>
     <string name="fod_pressed_color_light_yellow">浅黄</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">耳机连接时启动音乐应用</string>
     <string name="headset_connect_player_summary">当耳机连接时启动默认音乐应用</string>
     <string name="radio_info_title">电台资讯</string>
-    <!-- Game mode -->
-    <string name="gaming_mode_title">游戏模式</string>
-    <string name="gaming_mode_summary">自定义游戏模式</string>
-    <string name="gaming_mode_enable_title">启用游戏模式</string>
-    <string name="gaming_mode_enable_summary">游戏模式的主开关</string>
-    <string name="gaming_mode_app_picker_title">自动打开这些应用</string>
-    <string name="add_gaming_mode_package_title">添加游戏模式的应用</string>
-    <string name="add_gaming_mode_package_summary">游戏模式将在这些应用打开时自动开启，并在应用退出时自动关闭</string>
-    <string name="gaming_mode_headsup_title">屏蔽通知</string>
-    <string name="gaming_mode_headsup_allow">允许横幅通知</string>
-    <string name="gaming_mode_headsup_dnc">屏蔽除通话 &amp; 闹钟以外所有的横幅通知</string>
-    <string name="gaming_mode_headsup_clock">屏蔽除闹钟以外所有的横幅通知</string>
-    <string name="gaming_mode_headsup_dialer">屏蔽除通话以外所有的横幅通知</string>
-    <string name="gaming_mode_headsup_stop">屏蔽所有横幅通知</string>
-    <string name="gaming_mode_hardware_keys_title">屏蔽按钮</string>
-    <string name="gaming_mode_hardware_keys_summary">打开游戏模式时锁定实体按键</string>
-    <string name="gaming_mode_brightness_title">禁用自动亮度</string>
-    <string name="gaming_mode_brightness_summary">开启游戏模式时锁定屏幕亮度</string>
-    <string name="gaming_mode_ringer_title">游戏模式中的铃声</string>
-    <string name="gaming_mode_ringer_off_title">不更改</string>
-    <string name="gaming_mode_ringer_vibrate_title">振动</string>
-    <string name="gaming_mode_ringer_dnd_title">勿扰模式</string>
-    <string name="gaming_mode_ringer_silent_title">静音</string>
-    <string name="gaming_mode_notifications_title">游戏模式指示器</string>
-    <string name="gaming_mode_notifications_off_title">已禁用</string>
-    <string name="gaming_mode_notifications_notif_title">显示通知</string>
-    <string name="gaming_mode_notifications_toast_title">显示提示</string>
-    <string name="gaming_mode_notifications_all_title">显示提示和通知</string>
-    <string name="gaming_mode_dynamic_title">动态模式</string>
-    <string name="gaming_mode_dynamic_summary">尝试自动检测并添加游戏应用</string>
     <!-- Global Actions -->
     <string name="powermenu_advanced_reboot_title">高级重启</string>
     <string name="powermenu_advanced_reboot_summary">启用恢复和引导访问权限</string>
@@ -549,7 +508,6 @@
     <string name="accent_color_title">主题颜色选择器</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">快速设置磁贴样式</string>
-    <string name="qstile_default">默认​​​​​</string>
     <string name="qstile_circle_trim">印章</string>
     <string name="qstile_dual_tone_circle">双色调圆</string>
     <string name="qstile_squircle_trim">圆角方印章</string>
@@ -565,7 +523,6 @@
     <string name="qstile_cosmos">刺绣宇宙</string>
     <string name="qstile_divided">虚线分割圆</string>
     <string name="qstile_neonlike">霓虹灯</string>
-    <string name="qstile_oos">氧</string>
     <string name="qstile_triangles">三角形</string>
     <!-- Custom header -->
     <string name="custom_header_browse_summary">选择用于静态模式的图像</string>
@@ -588,12 +545,9 @@
     <!-- Volume Panel Plugin -->
     <string name="volume_panel_category">声音面板</string>
     <string name="volume_panel_title">音量面板样式</string>
-    <string name="volume_panel_stock">AOSP 原生面板</string>
     <string name="volume_panel_compact">紧凑</string>
     <string name="volume_panel_oreo">奥利奥</string>
     <string name="volume_panel_tiled">磁贴</string>
-    <string name="volume_panel_miui">MIUI 紧凑的</string>
-    <string name="volume_panel_oos">氧 OS</string>
     <string name="volume_panel_p404">P404</string>
     <string name="volume_panel_ssos">ShapeShift</string>
     <!-- Volume Panel Plugin Values -->
@@ -619,29 +573,15 @@
     <!-- G-Visual mod -->
     <string name="gvisual_title">G-Visual Mod</string>
     <string name="gvisual_summary">各种界面自定义</string>
-    <string name="gvisual_footer">出于某些奇怪的原因，圆角角的选项在圆角矩形、方块和拆解线被选为系统图标形状时不起作用。</string>
-    <string name="rounded_ui_title">圆角</string>
-    <string name="rounded_ui_dialog_title">选择圆角模型</string>
-    <string name="rounded_style_default">默认</string>
-    <string name="rounded_style_rectangle">长方形</string>
-    <string name="rounded_style_medium">中等</string>
     <string name="status_bar_height_title">状态栏高度</string>
     <string name="status_bar_height_dialog_title">选择状态栏高度模型</string>
-    <string name="sb_height_default">默认</string>
-    <string name="sb_height_medium">中等</string>
-    <string name="sb_height_large">大</string>
-    <string name="sb_height_extralarge">特大</string>
     <string name="navbar_color_title">导航栏颜色</string>
     <string name="navbar_color_dialog_title">选择颜色</string>
-    <string name="navbar_default">默认</string>
     <string name="navbar_orchid">淡紫色</string>
-    <string name="navbar_red">红色</string>
+    <string name="navbar_red">强调色-红色</string>
     <string name="navbar_purp">紫色</string>
     <string name="navbar_blue">蓝色</string>
     <string name="navbar_rose">玫瑰</string>
-    <string name="header_default">默认</string>
-    <string name="header_large">大</string>
-    <string name="header_xlarge">特大</string>
     <string name="header_title">标头大小</string>
     <string name="header_dialog_title">选择大小</string>
     <!-- AOD Schedule -->
@@ -659,21 +599,17 @@
     <string name="theming_settings_dashboard_icons_plain_accent">透明背景/突出前景</string>
     <!-- Switch styles -->
     <string name="switch_style_title">切换样式</string>
-    <string name="switch_default">默认</string>
     <string name="switch_contained">包含</string>
     <string name="switch_telegram">电报</string>
     <string name="switch_md2">Material 设计 2</string>
     <string name="switch_retro">复古</string>
-    <string name="switch_oos">氧 OS</string>
     <!-- Global Actions -->
     <string name="global_actions_users_choice_title">可选用户操作</string>
     <string name="global_actions_flashlight_title">手电筒</string>
     <string name="global_actions_screenshot_title">屏幕截图</string>
     <string name="global_actions_screenrecord_title">屏幕录制</string>
     <string name="global_actions_onthego_title">行走模式</string>
-    <string name="global_actions_none_title">无</string>
     <!-- QS themes -->
-    <string name="qs_panel_colors_title">快速设置颜色</string>
     <string name="qs_panel_bg_alpha_title">背景透明度</string>
     <string name="qs_panel_bg_disco_title">快速设置磁贴迪斯科</string>
     <string name="qs_panel_bg_disco_summary">让你的快速设置磁贴变得缤纷多彩！</string>
@@ -683,15 +619,12 @@
     <string name="power_menu_alpha_title">电源菜单不透明度</string>
     <!-- QS tile tint styles -->
     <string name="qs_tint_title">快速设置磁贴色调风格</string>
-    <string name="qs_tint_off">默认</string>
     <string name="qs_tint_accent">色调</string>
-    <string name="qs_tint_oos">氧 OS11</string>
     <!-- Lock screen Clocks -->
     <string name="clock_show_status_area">显示状态区域 (天气等)</string>
     <string name="clock_show_status_area_summary">在锁屏时钟下显示附加的信息行 (系统界面可能需要重启)</string>
     <string name="lock_screen_custom_clock_face_category">锁屏时钟</string>
     <string name="lock_screen_custom_clock_face_title">锁屏时钟样式</string>
-    <string name="lock_screen_custom_clock_face_default">默认</string>
     <string name="lock_screen_custom_clock_face_default_bold">默认 (粗体)</string>
     <string name="lock_screen_custom_clock_face_alt_typographic">印刷 (新版)</string>
     <string name="lock_screen_custom_clock_face_analog">模拟</string>
@@ -829,9 +762,8 @@
     <string name="alert_slider_notifications_title">三段式开关通知</string>
     <string name="alert_slider_notifications_summary">更改警报滑块位置时显示通知</string>
     <!-- Rounded corners -->
-    <string name="corners_category_title">圆角</string>
-    <string name="corners_category_summary">调整圆角和填充</string>
     <string name="corners_title">自定义圆角</string>
+    <string name="corners_summary">调整圆角值</string>
     <string name="corner_radius">圆角半径</string>
     <string name="content_padding">边角内容填充</string>
     <string name="corner_fwvals">使用框架值</string>
@@ -843,9 +775,10 @@
     <string name="display_cutout_style_title">刘海样式</string>
     <string name="display_cutout_style_normal">标准</string>
     <string name="display_cutout_style_immerse">沉浸模式</string>
-    <string name="display_cutout_style_hide">隐藏</string>
     <string name="stock_statusbar_in_hide">原生状态栏高度</string>
     <string name="stock_statusbar_in_hide_summary">在隐藏中使用默认状态栏高度</string>
+    <string name="display_hide_notch_title">隐藏显示切口</string>
+    <string name="display_hide_notch_summary">禁用显示切口的黑色填充</string>
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">状态栏通知</string>
     <string name="ticker_screen_summary">在状态栏中显示通知样式</string>
@@ -866,13 +799,9 @@
     <string name="ticker_tick_duration_title">状态栏通知时长</string>
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">背景模糊</string>
-    <string name="lockscreen_blur_summary">模糊锁屏背景</string>
-    <string name="lockscreen_blur_disabled">锁屏界面模糊无法启用，因为您当前的锁屏壁纸与主屏幕界面不匹配。 或者您的设备根本不支持模糊。</string>
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">导航栏样式 (3 按钮导航)</string>
     <string name="theme_navbar_picker_summary">选择导航栏样式</string>
-    <string name="theme_navbar_picker_default">默认</string>
-    <string name="theme_navbar_picker_oneplus">一加</string>
     <string name="theme_navbar_picker_oneui">One UI</string>
     <string name="theme_navbar_picker_tecno">传音 Camon</string>
     <string name="theme_navbar_picker_asus">华硕</string>
@@ -907,4 +836,55 @@
     <!-- Status Bar Lyric -->
     <string name="status_bar_show_lyric_title">状态栏歌词功能</string>
     <string name="status_bar_show_lyric_summary">在状态栏显示歌词 (需要应用程序支持并重启系统界面)</string>
+    <!-- Notification Media Options -->
+    <string name="media_category">媒体通知选项</string>
+    <string name="artwork_media_background_title">艺术品媒体背景</string>
+    <string name="artwork_media_background_summary">设置媒体图稿为通知媒体背景</string>
+    <string name="artwork_media_fade_level_title">艺术品褪色级别</string>
+    <!-- Rounded styles -->
+    <string name="rounded_style_title">系统对话框的圆角样式</string>
+    <string name="rounded_slight">细长</string>
+    <string name="rounded_high">较高</string>
+    <string name="rounded_extreme">极高</string>
+    <!-- Brightness slider styles -->
+    <string name="slider_styles_title">亮度滑块样式</string>
+    <string name="slider_rui">RUI</string>
+    <!-- Gaming mode -->
+    <string name="gaming_title">游戏模式</string>
+    <string name="gaming_title_summary">沉浸式游戏体验的额外功能</string>
+    <string name="gaming_mode_enabled_title">启用游戏模式</string>
+    <string name="gaming_mode_disable_auto_brightness_title">禁用自动亮度</string>
+    <string name="gaming_mode_disable_auto_brightness_summary">进入游戏模式时禁用自动亮度</string>
+    <string name="gaming_mode_notification_danmaku_title">通知弹幕</string>
+    <string name="gaming_mode_notification_danmaku_summary">在游戏中以弹幕的形式显示通知内容</string>
+    <string name="gaming_mode_quick_start_apps_title">快速启动应用程序</string>
+    <string name="gaming_mode_quick_start_apps_summary">选择要使用浮动球启动的应用程序</string>
+    <string name="gaming_mode_menu_opacity_title">菜单透明度级别</string>
+    <string name="gaming_mode_performance">性能</string>
+    <string name="gaming_mode_use_game_driver_title">使用游戏驱动</string>
+    <string name="gaming_mode_use_game_driver_summary">为游戏使用特定的驱动程序</string>
+    <string name="gaming_mode_change_performance_title">性能调校</string>
+    <string name="gaming_mode_change_performance_summary">在开始游戏时调整性能等级</string>
+    <string name="gaming_mode_performance_title">性能等级</string>
+    <string name="gaming_mode_dnd">请勿打扰</string>
+    <string name="gaming_mode_disable_notification_alert_title">关闭消息通知</string>
+    <string name="gaming_mode_disable_notification_alert_summary">除来电和闹钟通知外，不显示浮动通知和对话气泡。</string>
+    <string name="gaming_mode_disable_ringtone_title">静音</string>
+    <string name="gaming_mode_disable_ringtone_summary">游戏模式中关闭来电及通知铃声。</string>
+    <string name="gaming_mode_auto_answer_call_title">自动接听来电</string>
+    <string name="gaming_mode_auto_answer_call_summary">在游戏中自动接听来电</string>
+    <string name="gaming_mode_prevent_accidental_touch">防止误触</string>
+    <string name="gaming_mode_disable_gesture_title">禁用手势</string>
+    <string name="gaming_mode_apps">游戏列表</string>
+    <string name="gaming_mode_dynamic_add_title">动态模式</string>
+    <string name="gaming_mode_dynamic_add_summary">尝试自动检测和添加游戏应用</string>
+    <string name="gaming_mode_show_danmaku_title">显示弹幕</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">动态过滤通知</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">自动过滤如下载进度在内的通知</string>
+    <string name="gaming_mode_danmaku_size_horizontal_title">弹幕大小 (横向)</string>
+    <string name="gaming_mode_danmaku_size_vertical_title">弹幕大小 (竖向)</string>
+    <string name="gaming_mode_danmaku_speed_horizontal_title">弹幕速度 (横向)</string>
+    <string name="gaming_mode_danmaku_speed_vertical_title">弹幕速度 (竖向)</string>
+    <string name="gaming_mode_danmaku_blacklist">黑名单</string>
+    <string name="add_package_to_title">添加应用程序</string>
 </resources>
