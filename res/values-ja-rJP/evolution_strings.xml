@@ -48,13 +48,17 @@
     <string name="action_cancel">中止</string>
     <string name="attention">注意</string>
     <string name="default_string">既定</string>
+    <string name="none_string">なし</string>
+    <string name="hidden_string">非表示</string>
+    <string name="large_string">大</string>
+    <string name="medium_string">中</string>
+    <string name="xlarge_string">特大</string>
     <string name="disabled">無効</string>
     <string name="enable_first">最初に有効にして下さい</string>
     <string name="led_color_green">緑</string>
     <string name="led_color_red">赤</string>
     <string name="edit_hint">値</string>
     <string name="seek_value_edit_label">値の設定</string>
-    <string name="android_s">Android S</string>
     <!-- Units -->
     <string name="unit_milliseconds">ミリ秒</string>
     <string name="unit_percent">\u0025</string>
@@ -81,9 +85,6 @@
     <string name="seekbar_default_string">既定</string>
     <!-- Lock screen information -->
     <string name="lockscreen_info_category_title">ロック画面の情報</string>
-    <!-- Double Tap gestures -->
-    <string name="dtt_category_title">ダブルタップ</string>
-    <string name="double_tap_to_sleep_title">ダブルタップでスリープ</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">USB 設定</string>
     <string name="usb_default_config_summary">USB 経由で端末に接続されている時の既定の動作を選択する</string>
@@ -139,11 +140,11 @@
     <string name="fod_recog_animation_title">認識アニメーション</string>
     <string name="fod_recog_animation_summary">指紋認識中にアニメーションを表示する</string>
     <string name="fod_recog_animation_effect_title">アニメーション効果</string>
-    <string name="fod_recog_animation_miui_normal">MIUI 既定</string>
-    <string name="fod_recog_animation_miui_aod">MIUI AOD</string>
+    <string name="fod_recog_animation_miui_aurora_old">オーロラ (旧)</string>
     <string name="fod_recog_animation_miui_aurora">オーロラ (K30 Pro)</string>
-    <string name="fod_recog_animation_miui_aurora_cas">オーロラ (Mi 10 Ultra)</string>
     <string name="fod_recog_animation_miui_light">ライト</string>
+    <string name="fod_recog_animation_miui_neon">ネオン</string>
+    <string name="fod_recog_animation_miui_neon_blue">ネオン (青)</string>
     <string name="fod_recog_animation_miui_pop">ポップ</string>
     <string name="fod_recog_animation_miui_pulse">パルス</string>
     <string name="fod_recog_animation_miui_pulse_white">パルス (白)</string>
@@ -173,7 +174,6 @@
     <string name="fod_icon_animation_summary">画面点灯時に画面内指紋認証アイコンをアニメーションさせる</string>
     <string name="fod_icon_animation_oneui1">OneUI 1</string>
     <string name="fod_icon_animation_oneui2">OneUI 2</string>
-    <string name="fod_icon_animation_oos">OOS 11</string>
     <!-- Notification light -->
     <string name="notification_light_settings">通知ライト</string>
     <!-- Heads up -->
@@ -205,7 +205,7 @@
     <string name="network_traffic_arrow">矢印を表示</string>
     <string name="network_traffic_arrow_summary">通信方向の矢印を表示する</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_error_vib_title">指紋認証エラー時の振動</string>
+    <string name="fprint_error_vib_title">指紋認証失敗時の振動</string>
     <string name="fprint_error_vib_summary">指紋認証が失敗した時に振動させる</string>
     <string name="fprint_success_vib_title">指紋認証の振動</string>
     <string name="fprint_success_vib_summary">指紋認証が成功した時に振動させる</string>
@@ -233,7 +233,6 @@
     <string name="status_bar_battery_style_dotted_circle">点線の円</string>
     <string name="status_bar_battery_style_filled_circle">塗り潰しの円</string>
     <string name="status_bar_battery_style_text">文字</string>
-    <string name="status_bar_battery_style_hidden">非表示</string>
     <!-- Status bar - Battery percentage -->
     <string name="battery_percentage_title">バッテリー残量</string>
     <string name="battery_percentage_default">非表示 (既定)</string>
@@ -261,7 +260,6 @@
     <string name="qs_brightness_position_bottom_title">展開時に下部に表示</string>
     <!-- QQS brightness slider -->
     <string name="qqs_brightness_slider_title">クイック設定の明るさスライダー</string>
-    <string name="qs_brightness_slider_hide">非表示</string>
     <string name="qs_brightness_slider_bottom">下部</string>
     <string name="qs_brightness_slider_top">上部</string>
     <!-- Volume rocker wake -->
@@ -273,17 +271,11 @@
     <string name="media_art_summary">ロック画面にアルバムアートを表示する</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">画面消灯時のアニメーション</string>
-    <string name="screen_off_animation_default">既定</string>
     <string name="screen_off_animation_crt">ブラウン管</string>
     <string name="screen_off_animation_scale">縮小</string>
     <!-- Power menu on lock screen -->
     <string name="power_menu_hide_on_secure_title">ロック画面では表示しない</string>
     <string name="power_menu_hide_on_secure_summary">保護されたロック画面でグローバルアクションメニューを非表示にする</string>
-    <!-- Incall vibrate options -->
-    <string name="incall_vibration_category">通話中の振動オプション</string>
-    <string name="incall_vibrate_connect_title">接続時に振動</string>
-    <string name="incall_vibrate_call_wait_title">割込通話時に振動</string>
-    <string name="incall_vibrate_disconnect_title">切断時に振動</string>
     <!-- QS advanced settings -->
     <string name="qs_column_rows_settings_title">クイック設定</string>
     <string name="qs_edit_title">編集アイコン</string>
@@ -292,7 +284,7 @@
     <string name="qs_header_category_title">クイック設定ヘッダー</string>
     <string name="qs_panel_category_title">クイック設定パネル</string>
     <string name="status_bar_quick_qs_pulldown">クイックプルダウン</string>
-    <string name="quick_pulldown_none">無効</string>
+    <string name="quick_pulldown_none">OFF</string>
     <string name="quick_pulldown_right">ステータスバーの右端をプルダウン</string>
     <string name="quick_pulldown_left">ステータスバーの左端をプルダウン</string>
     <string name="quick_pulldown_always">ステータスバーを引き下げたら常にクイック設定を開く</string>
@@ -302,7 +294,6 @@
     <string name="ringtone_focus_mode_stock">内蔵スピーカー（AOSP 既定）</string>
     <!-- Lock screen album art filter -->
     <string name="lockscreen_albumart_filter_title">メディアカバーアートのフィルター</string>
-    <string name="lockscreen_albumart_filter_none">なし</string>
     <string name="lockscreen_albumart_filter_grayscale">グレースケール</string>
     <string name="lockscreen_albumart_filter_tint">アクセント色</string>
     <string name="lockscreen_albumart_filter_blur">ぼかし</string>
@@ -365,7 +356,6 @@
     <string name="qs_tile_animation_style_flip">反転</string>
     <string name="qs_tile_animation_style_rotate">回転</string>
     <string name="qs_tile_animation_duration_low">低速</string>
-    <string name="qs_tile_animation_duration_default">既定</string>
     <string name="qs_tile_animation_duration_fast">高速</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">等速</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">加速</string>
@@ -405,7 +395,6 @@
     <string name="battery_bar_title">バッテリーバー</string>
     <string name="battery_bar_summary">ステータスバー又はナビゲーションバー付近のバッテリーバーの表示や編集をする</string>
     <string name="battery_bar_no_navbar">バッテリーバーの位置</string>
-    <string name="battery_bar_location_hide">非表示</string>
     <string name="battery_bar_status_bar_top">ステータスバー上部</string>
     <string name="battery_bar_status_bar_bot">ステータスバー下部</string>
     <string name="battery_bar_color">色</string>
@@ -441,8 +430,8 @@
     <string name="notification_headers_title">通知領域のヘッダー</string>
     <string name="notification_headers_summary">通知の影にヘッダーを表示する</string>
     <!-- Lock icon -->
-    <string name="hide_lockicon_title">ロックアイコン</string>
-    <string name="hide_lockicon_summary">ロック画面からロックアイコンを隠す</string>
+    <string name="lockscreen_lock_icon_title">ロックアイコン</string>
+    <string name="lockscreen_lock_icon_summary">ロック画面にロックアイコンを表示する</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_category">画面エッジのライト</string>
     <string name="pulse_ambient_light_title">新しい通知で表示</string>
@@ -483,43 +472,13 @@
     <string name="fod_pressed_color_title">指紋認証タッチ時の色</string>
     <string name="fod_pressed_color_white">ホワイト</string>
     <string name="fod_pressed_color_cyan">シアン</string>
-    <string name="fod_pressed_color_green">グリーン</string>
+    <string name="fod_pressed_color_green">緑</string>
     <string name="fod_pressed_color_yellow">イエロー</string>
     <string name="fod_pressed_color_light_yellow">明るい黄色</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">ヘッドセット接続時に音楽アプリ起動</string>
     <string name="headset_connect_player_summary">ヘッドセット接続時に既定の音楽アプリを起動する</string>
     <string name="radio_info_title">基地局の情報</string>
-    <!-- Game mode -->
-    <string name="gaming_mode_title">ゲームモード</string>
-    <string name="gaming_mode_summary">ゲームモードの設定を編集する</string>
-    <string name="gaming_mode_enable_title">ゲームモードを有効化</string>
-    <string name="gaming_mode_enable_summary">ゲームモードのメインスイッチです</string>
-    <string name="gaming_mode_app_picker_title">自動有効にするアプリ</string>
-    <string name="add_gaming_mode_package_title">アプリを追加</string>
-    <string name="add_gaming_mode_package_summary">指定したアプリを開いた時にゲームモードを自動的に有効化し、閉じたときに無効化します。</string>
-    <string name="gaming_mode_headsup_title">Heads Up 通知</string>
-    <string name="gaming_mode_headsup_allow">全ての Heads Up 通知を許可する</string>
-    <string name="gaming_mode_headsup_dnc">通話とアラーム以外の全ての Heads Up 通知を拒否する</string>
-    <string name="gaming_mode_headsup_clock">アラーム以外の全ての Heads Up 通知を拒否する</string>
-    <string name="gaming_mode_headsup_dialer">通話以外の全ての Heads Up 通知を拒否する</string>
-    <string name="gaming_mode_headsup_stop">全ての Heads Up 通知を拒否する</string>
-    <string name="gaming_mode_hardware_keys_title">ボタンのロック</string>
-    <string name="gaming_mode_hardware_keys_summary">ゲームモード有効時はハードウェアボタンを無効化する</string>
-    <string name="gaming_mode_brightness_title">自動明るさ調節の無効化</string>
-    <string name="gaming_mode_brightness_summary">ゲームモード有効時は明るさを固定する</string>
-    <string name="gaming_mode_ringer_title">ゲームモードでの音声モード</string>
-    <string name="gaming_mode_ringer_off_title">変更しない</string>
-    <string name="gaming_mode_ringer_vibrate_title">振動</string>
-    <string name="gaming_mode_ringer_dnd_title">マナーモード</string>
-    <string name="gaming_mode_ringer_silent_title">サイレント</string>
-    <string name="gaming_mode_notifications_title">ゲームモードの表示</string>
-    <string name="gaming_mode_notifications_off_title">無効</string>
-    <string name="gaming_mode_notifications_notif_title">通知を表示</string>
-    <string name="gaming_mode_notifications_toast_title">トーストを表示</string>
-    <string name="gaming_mode_notifications_all_title">トーストと通知を表示</string>
-    <string name="gaming_mode_dynamic_title">ダイナミックモード</string>
-    <string name="gaming_mode_dynamic_summary">ゲームアプリを自動的に判別して追加しよう試みる</string>
     <!-- Global Actions -->
     <string name="powermenu_advanced_reboot_title">高度な再起動</string>
     <string name="powermenu_advanced_reboot_summary">リカバリーとブートローダーへの再起動を有効にする</string>
@@ -549,7 +508,6 @@
     <string name="accent_color_title">アクセント色の選択</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">タイルのスタイル</string>
-    <string name="qstile_default">既定</string>
     <string name="qstile_circle_trim">トリム付きの円</string>
     <string name="qstile_dual_tone_circle">デュアルトーンの円</string>
     <string name="qstile_squircle_trim">トリム付きのスクワークル</string>
@@ -565,7 +523,6 @@
     <string name="qstile_cosmos">Shishu Cosmos</string>
     <string name="qstile_divided">サークル (分割)</string>
     <string name="qstile_neonlike">ネオンライト</string>
-    <string name="qstile_oos">Oxygen</string>
     <string name="qstile_triangles">三角形</string>
     <!-- Custom header -->
     <string name="custom_header_browse_summary">固定モードで使用する画像をタップして下さい</string>
@@ -588,12 +545,9 @@
     <!-- Volume Panel Plugin -->
     <string name="volume_panel_category">音量パネル</string>
     <string name="volume_panel_title">音量パネルのスタイル</string>
-    <string name="volume_panel_stock">標準 AOSP パネル</string>
     <string name="volume_panel_compact">コンパクト</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">タイル</string>
-    <string name="volume_panel_miui">MIUI コンパクト</string>
-    <string name="volume_panel_oos">OOS</string>
     <string name="volume_panel_p404">P404</string>
     <string name="volume_panel_ssos">ShapeShift</string>
     <!-- Volume Panel Plugin Values -->
@@ -619,29 +573,15 @@
     <!-- G-Visual mod -->
     <string name="gvisual_title">G-Visual MOD</string>
     <string name="gvisual_summary">様々な UI カスタマイズをする</string>
-    <string name="gvisual_footer">いくつかの不明な理由で、角丸四角形、Squircle、涙型がシステムアイコン形状に選択されている時に画面の丸い角のオプションが動作しません。</string>
-    <string name="rounded_ui_title">丸い画面の角</string>
-    <string name="rounded_ui_dialog_title">画面の角の丸みの種類を指定する</string>
-    <string name="rounded_style_default">既定</string>
-    <string name="rounded_style_rectangle">長方形</string>
-    <string name="rounded_style_medium">中</string>
     <string name="status_bar_height_title">ステータスバーの高さ</string>
     <string name="status_bar_height_dialog_title">ステータスバーの高さの種類を指定する</string>
-    <string name="sb_height_default">既定</string>
-    <string name="sb_height_medium">中</string>
-    <string name="sb_height_large">大</string>
-    <string name="sb_height_extralarge">特大</string>
     <string name="navbar_color_title">ナビゲーションバーの色</string>
     <string name="navbar_color_dialog_title">色を選択</string>
-    <string name="navbar_default">既定</string>
     <string name="navbar_orchid">蘭</string>
     <string name="navbar_red">赤</string>
     <string name="navbar_purp">紫</string>
     <string name="navbar_blue">青</string>
     <string name="navbar_rose">ローズ</string>
-    <string name="header_default">既定</string>
-    <string name="header_large">大</string>
-    <string name="header_xlarge">特大</string>
     <string name="header_title">ヘッダーのサイズ</string>
     <string name="header_dialog_title">サイズを選択</string>
     <!-- AOD Schedule -->
@@ -659,21 +599,17 @@
     <string name="theming_settings_dashboard_icons_plain_accent">透明な背景/アクセントの前面</string>
     <!-- Switch styles -->
     <string name="switch_style_title">スタイルの切り替え</string>
-    <string name="switch_default">既定</string>
     <string name="switch_contained">Contained</string>
     <string name="switch_telegram">Telegram</string>
-    <string name="switch_md2">Material Design 2</string>
-    <string name="switch_retro">Retro</string>
-    <string name="switch_oos">OxygenOS 11</string>
+    <string name="switch_md2">マテリアルデザイン2</string>
+    <string name="switch_retro">レトロ</string>
     <!-- Global Actions -->
     <string name="global_actions_users_choice_title">オプションのユーザーアクション</string>
     <string name="global_actions_flashlight_title">フラッシュライト</string>
     <string name="global_actions_screenshot_title">スクリーンショット</string>
     <string name="global_actions_screenrecord_title">画面録画</string>
     <string name="global_actions_onthego_title">OTG モード</string>
-    <string name="global_actions_none_title">なし</string>
     <!-- QS themes -->
-    <string name="qs_panel_colors_title">クイック設定の色</string>
     <string name="qs_panel_bg_alpha_title">背景の透過度</string>
     <string name="qs_panel_bg_disco_title">クイック設定タイルのディスコ</string>
     <string name="qs_panel_bg_disco_summary">クイック設定タイルをカラフルにしましょう!</string>
@@ -683,15 +619,12 @@
     <string name="power_menu_alpha_title">電源メニューの不透明度</string>
     <!-- QS tile tint styles -->
     <string name="qs_tint_title">タイルのスタイル</string>
-    <string name="qs_tint_off">既定</string>
     <string name="qs_tint_accent">アクセントの色</string>
-    <string name="qs_tint_oos">OxygenOS 11</string>
     <!-- Lock screen Clocks -->
     <string name="clock_show_status_area">ステータスエリアを表示 (天気など)</string>
     <string name="clock_show_status_area_summary">ロック画面の時計の下に追加の行を表示する (システム UI の再起動が必要な場合があります)</string>
     <string name="lock_screen_custom_clock_face_category">ロック画面の時計</string>
     <string name="lock_screen_custom_clock_face_title">ロック画面の時計のスタイル</string>
-    <string name="lock_screen_custom_clock_face_default">既定</string>
     <string name="lock_screen_custom_clock_face_default_bold">既定 (太字)</string>
     <string name="lock_screen_custom_clock_face_alt_typographic">タイポグラフィ (新)</string>
     <string name="lock_screen_custom_clock_face_analog">アナログ</string>
@@ -829,9 +762,8 @@
     <string name="alert_slider_notifications_title">Alert Slider 通知</string>
     <string name="alert_slider_notifications_summary">充電中に Alert Slider の位置に通知を表示する</string>
     <!-- Rounded corners -->
-    <string name="corners_category_title">切り取りと画面の角の丸み</string>
-    <string name="corners_category_summary">丸い画面の角と余白を調整する</string>
     <string name="corners_title">画面の角の丸みを編集</string>
+    <string name="corners_summary">画面の丸い角の半径の値を調整する</string>
     <string name="corner_radius">丸みの半径</string>
     <string name="content_padding">画面の角の余白</string>
     <string name="corner_fwvals">フレームワークの値を使用</string>
@@ -843,9 +775,10 @@
     <string name="display_cutout_style_title">切り取りのスタイル</string>
     <string name="display_cutout_style_normal">標準</string>
     <string name="display_cutout_style_immerse">没入</string>
-    <string name="display_cutout_style_hide">非表示</string>
     <string name="stock_statusbar_in_hide">標準のステータスバーの高さ</string>
     <string name="stock_statusbar_in_hide_summary">非表示時は既定のステータスバーの高さを使う</string>
+    <string name="display_hide_notch_title">画面の切り欠きを隠す</string>
+    <string name="display_hide_notch_summary">画面の切り欠きを黒く塗り潰す機能を無効化する</string>
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">ティッカー</string>
     <string name="ticker_screen_summary">ステータスバーにティッカーのスタイルの通知を表示する</string>
@@ -866,13 +799,9 @@
     <string name="ticker_tick_duration_title">ティッカーの動作時間</string>
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">背景のぼかし</string>
-    <string name="lockscreen_blur_summary">ロック画面の背景をぼかす</string>
-    <string name="lockscreen_blur_disabled">現在のロック画面の壁紙がホーム画面の壁紙と一致しないためか、お使いの端末がぼかしに完全に対応していないため、ロック画面のぼかしを有効化できません。</string>
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">ナビゲーションバーのスタイル (3ボタン用)</string>
     <string name="theme_navbar_picker_summary">ナビゲーションバーのスタイルを選択する</string>
-    <string name="theme_navbar_picker_default">既定</string>
-    <string name="theme_navbar_picker_oneplus">OnePlus</string>
     <string name="theme_navbar_picker_oneui">One UI</string>
     <string name="theme_navbar_picker_tecno">Tecno Camon</string>
     <string name="theme_navbar_picker_asus">ASUS</string>
@@ -907,4 +836,55 @@
     <!-- Status Bar Lyric -->
     <string name="status_bar_show_lyric_title">ステータスバーの歌詞機能</string>
     <string name="status_bar_show_lyric_summary">ステータスバーに歌詞を表示する (アプリの対応とシステム UI の再起動が必要)</string>
+    <!-- Notification Media Options -->
+    <string name="media_category">メディア通知のオプション</string>
+    <string name="artwork_media_background_title">メディアアートワークの背景</string>
+    <string name="artwork_media_background_summary">メディアアートワークをメディア通知の背景に設定する</string>
+    <string name="artwork_media_fade_level_title">アートワークのフェードレベル</string>
+    <!-- Rounded styles -->
+    <string name="rounded_style_title">システムダイアログの丸みのスタイル</string>
+    <string name="rounded_slight">弱</string>
+    <string name="rounded_high">高</string>
+    <string name="rounded_extreme">最高</string>
+    <!-- Brightness slider styles -->
+    <string name="slider_styles_title">明るさスライダーのスタイル</string>
+    <string name="slider_rui">RUI</string>
+    <!-- Gaming mode -->
+    <string name="gaming_title">ゲームモード</string>
+    <string name="gaming_title_summary">ゲームの没入型体験のための追加機能を設定する</string>
+    <string name="gaming_mode_enabled_title">ゲームモードを有効化</string>
+    <string name="gaming_mode_disable_auto_brightness_title">自動明るさ調節の無効化</string>
+    <string name="gaming_mode_disable_auto_brightness_summary">ゲームモード時に自動明るさ調節を無効にする</string>
+    <string name="gaming_mode_notification_danmaku_title">通知の弾幕表示</string>
+    <string name="gaming_mode_notification_danmaku_summary">ゲーム中は通知の内容を弾幕の形式で表示する</string>
+    <string name="gaming_mode_quick_start_apps_title">クイックスタートアプリ</string>
+    <string name="gaming_mode_quick_start_apps_summary">フローティングボールで起動するアプリを選択する</string>
+    <string name="gaming_mode_menu_opacity_title">メニューの不透明度レベル</string>
+    <string name="gaming_mode_performance">パフォーマンス</string>
+    <string name="gaming_mode_use_game_driver_title">ゲームドライバーを使う</string>
+    <string name="gaming_mode_use_game_driver_summary">ゲームに特定のドライバーを使用する</string>
+    <string name="gaming_mode_change_performance_title">パフォーマンスチューニング</string>
+    <string name="gaming_mode_change_performance_summary">ゲーム開始時のパフォーマンスレベルを調整する</string>
+    <string name="gaming_mode_performance_title">パフォーマンスレベル</string>
+    <string name="gaming_mode_dnd">Do Not Disturb</string>
+    <string name="gaming_mode_disable_notification_alert_title">通知を無効化</string>
+    <string name="gaming_mode_disable_notification_alert_summary">着信をアラーム以外の通知の表示と会話のバブルを表示しない</string>
+    <string name="gaming_mode_disable_ringtone_title">着信の無音化</string>
+    <string name="gaming_mode_disable_ringtone_summary">ゲームモード中は着信の呼び出しと通知を無効にする</string>
+    <string name="gaming_mode_auto_answer_call_title">通話の自動応答</string>
+    <string name="gaming_mode_auto_answer_call_summary">ゲーム中は通話に自動応答してヘッドセットが接続されていない時はハンズフリーにする</string>
+    <string name="gaming_mode_prevent_accidental_touch">誤タッチ防止</string>
+    <string name="gaming_mode_disable_gesture_title">ジェスチャーの無効化</string>
+    <string name="gaming_mode_apps">ゲームリスト</string>
+    <string name="gaming_mode_dynamic_add_title">ダイナミックモード</string>
+    <string name="gaming_mode_dynamic_add_summary">ゲームアプリを自動的に判別して追加しよう試みる</string>
+    <string name="gaming_mode_show_danmaku_title">弾幕の表示</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">動的な通知のフィルタリング</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">ダウンロードの進行状況などの通知を自動的にフィルターする</string>
+    <string name="gaming_mode_danmaku_size_horizontal_title">弾幕サイズ (水平)</string>
+    <string name="gaming_mode_danmaku_size_vertical_title">弾幕サイズ (垂直)</string>
+    <string name="gaming_mode_danmaku_speed_horizontal_title">弾幕速度 (水平)</string>
+    <string name="gaming_mode_danmaku_speed_vertical_title">弾幕速度 (垂直)</string>
+    <string name="gaming_mode_danmaku_blacklist">ブラックリスト</string>
+    <string name="add_package_to_title">アプリの追加</string>
 </resources>
