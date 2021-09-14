@@ -32,6 +32,27 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="burnin_category"
+        android:title="@string/burnin_category">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="burn_in_protection"
+            android:title="@string/burn_in_protection_title"
+            android:summary="@string/burn_in_protection_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="burn_in_protection_interval"
+            android:title="@string/burn_in_protection_interval_title"
+            android:max="120"
+            android:min="45"
+            settings:units="@string/unit_x1000ms"
+            android:dependency="burn_in_protection"
+            android:defaultValue="60" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/dev_options_title" />
 
         <com.evolution.settings.preference.GlobalSettingSwitchPreference
