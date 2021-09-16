@@ -37,6 +37,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.SecureSettingSwitchPreference;
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class StatusbarSettings extends SettingsPreferenceFragment implements
@@ -47,15 +48,19 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
     private static final String PREF_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String PREF_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String LEFT_BATTERY_TEXT = "do_left_battery_text";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
-    private static final int BATTERY_STYLE_TEXT = 4;
-    private static final int BATTERY_STYLE_HIDDEN = 5;
+    private static final int BATTERY_STYLE_TEXT = 8;
+    private static final int BATTERY_STYLE_HIDDEN = 9;
     private static final int BATTERY_PERCENT_HIDDEN = 0;
+    //private static final int BATTERY_PERCENT_SHOW_INSIDE = 1;
+    //private static final int BATTERY_PERCENT_SHOW_OUTSIDE = 2;
 
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
     private SecureSettingSwitchPreference mCombinedIcons;
+    private SystemSettingSwitchPreference mLeftBatteryText;
     private int mBatteryPercentValue;
 
     @Override
@@ -102,6 +107,10 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
 
         mBatteryPercent.setEnabled(
                 batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
+		
+        mLeftBatteryText = (SystemSettingSwitchPreference) findPreference(LEFT_BATTERY_TEXT);
+        mLeftBatteryText.setEnabled(
+                batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
     }
 
     @Override
@@ -115,6 +124,8 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
             int index = mBatteryStyle.findIndexOfValue((String) newValue);
             mBatteryStyle.setSummary(mBatteryStyle.getEntries()[index]);
             mBatteryPercent.setEnabled(
+                    batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
+            mLeftBatteryText.setEnabled(
                     batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
             return true;
         } else if (preference == mBatteryPercent) {
