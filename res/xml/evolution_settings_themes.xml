@@ -15,53 +15,32 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_title">
 
-    <PreferenceCategory 
-        android:title="@string/category_name_lock_display">
+    <ListPreference
+        android:layout="@layout/themes_accent_preview"
+        android:selectable="false" />
 
-        <ListPreference
-            android:key="lock_screen_custom_clock_face"
-            android:summary="%s"
-            android:title="@string/lock_screen_custom_clock_face_title"
-            android:entries="@array/lock_screen_custom_clock_face_entries"
-            android:entryValues="@array/lock_screen_custom_clock_face_values" />
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="accent_color"
+        android:title="@string/accent_color_title"
+        android:defaultValue="0xFF1A73E8"
+        settings:showReset="true"
+        android:persistent="false"
+        app:allowDividerAbove="true" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="clock_show_status_area"
-            android:title="@string/clock_show_status_area"
-            android:summary="@string/clock_show_status_area_summary"
-            android:defaultValue="true" />
+    <ListPreference
+        android:key="android.theme.customization.accent_color"
+        android:title="@string/theme_customization_accent_color_title"/>
 
-    </PreferenceCategory>
-
-    <PreferenceCategory 
-        android:title="@string/category_name_color">
-
-        <ListPreference
-            android:layout="@layout/themes_accent_preview"
-            android:selectable="false" />
-
-        <Preference
-            android:key="dark_ui_mode"
-            android:title="@string/dark_ui_mode"
-            android:summary="@string/dark_ui_mode_summary"
-            android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
-            settings:controller="com.android.settings.display.DarkUIPreferenceController" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="accent_color"
-            android:title="@string/accent_color_title"
-            android:defaultValue="0xFF1A73E8"
-            settings:showReset="true"
-            android:persistent="false" />
-
-        <ListPreference
-            android:key="android.theme.customization.accent_color"
-            android:title="@string/theme_customization_accent_color_title"/>
-
-    </PreferenceCategory>
+    <Preference
+        android:key="dark_ui_mode"
+        android:title="@string/dark_ui_mode"
+        android:summary="@string/dark_ui_mode_summary"
+        android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
+        settings:controller="com.android.settings.display.DarkUIPreferenceController" />
 
     <PreferenceCategory 
         android:title="@string/category_name_general">
@@ -78,6 +57,12 @@
         <ListPreference
             android:key="android.theme.customization.icon_pack"
             android:title="@string/theme_customization_icon_pack_title"/>
+
+        <Preference
+            android:key="rounded_corners"
+            android:title="@string/corners_title"
+            android:summary="@string/corners_summary"
+            android:fragment="com.evolution.settings.fragments.RoundedCorners" />
 
         <!-- Settings dashboard icon style -->
         <com.evolution.settings.preference.SystemSettingIntListPreference
@@ -116,22 +101,41 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="volume_panel_stuff"
-        android:title="@string/volume_panel_category">
+    <PreferenceCategory 
+        android:title="@string/category_name_lock_display">
 
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="systemui_plugin_volume"
-            android:title="@string/volume_panel_title"
-            android:entries="@array/volume_panel_entries"
-            android:entryValues="@array/volume_panel_values"
-            android:defaultValue="@string/volume_panel_stock_val" />
+        <ListPreference
+            android:key="lock_screen_custom_clock_face"
+            android:summary="%s"
+            android:title="@string/lock_screen_custom_clock_face_title"
+            android:entries="@array/lock_screen_custom_clock_face_entries"
+            android:entryValues="@array/lock_screen_custom_clock_face_values" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="show_app_volume"
-            android:title="@string/show_app_volume_title"
-            android:summary="@string/show_app_volume_summary"
-            android:defaultValue="false" />
+            android:key="clock_show_status_area"
+            android:title="@string/clock_show_status_area"
+            android:summary="@string/clock_show_status_area_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <!-- Hide notch fill -->
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="display_hide_notch"
+        android:title="@string/display_hide_notch_title"
+        android:summary="@string/display_hide_notch_summary"
+        android:defaultValue="false" />
+
+    <!-- Display cutout -->
+    <PreferenceCategory
+        android:key="cutout_category"
+        android:title="@string/cutout_category_title">
+
+        <Preference
+            android:key="cutout_settings"
+            android:title="@string/cutout_main"
+            android:summary="@string/cutout_main_summary"
+            android:fragment="com.evolution.settings.fragments.CutoutFragment" />
 
     </PreferenceCategory>
 
@@ -139,12 +143,14 @@
         android:key="quick_settings_colors_category"
         android:title="@string/quicksettings_title">
 
-        <!-- Custom QS header image -->
-        <Preference
-            android:key="custom_header"
-            android:fragment="com.evolution.settings.fragments.QsCustomHeaderSettings"
-            android:title="@string/custom_header_title"
-            android:summary="@string/custom_header_summary" />
+        <!-- QS panel opacity -->
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_panel_bg_alpha"
+            android:title="@string/qs_panel_bg_alpha_title"
+            android:defaultValue="255"
+            android:max="255"
+            android:min="0"
+            settings:units="" />
 
         <!-- QS brightness slider styles -->
         <com.evolution.settings.preference.SystemSettingListPreference
@@ -153,6 +159,13 @@
             android:entries="@array/slider_styles_entries"
             android:entryValues="@array/slider_styles_values"
             android:defaultValue="0" />
+
+        <!-- Custom QS header image -->
+        <Preference
+            android:key="custom_header"
+            android:fragment="com.evolution.settings.fragments.QsCustomHeaderSettings"
+            android:title="@string/custom_header_title"
+            android:summary="@string/custom_header_summary" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_tiles_bg_disco"
@@ -175,34 +188,24 @@
             android:entryValues="@array/qs_tint_values"
             android:defaultValue="0" />
 
-        <!-- QS panel opacity -->
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="qs_panel_bg_alpha"
-            android:title="@string/qs_panel_bg_alpha_title"
-            android:defaultValue="255"
-            android:max="255"
-            android:min="0"
-            settings:units="" />
-
     </PreferenceCategory>
 
-    <!-- Hide notch fill -->
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="display_hide_notch"
-        android:title="@string/display_hide_notch_title"
-        android:summary="@string/display_hide_notch_summary"
-        android:defaultValue="false" />
-
-    <!-- Display cutout -->
     <PreferenceCategory
-        android:key="cutout_category"
-        android:title="@string/cutout_category_title">
+        android:key="volume_panel_stuff"
+        android:title="@string/volume_panel_category">
 
-        <Preference
-            android:key="cutout_settings"
-            android:title="@string/cutout_main"
-            android:summary="@string/cutout_main_summary"
-            android:fragment="com.evolution.settings.fragments.CutoutFragment" />
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="systemui_plugin_volume"
+            android:title="@string/volume_panel_title"
+            android:entries="@array/volume_panel_entries"
+            android:entryValues="@array/volume_panel_values"
+            android:defaultValue="@string/volume_panel_stock_val" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="show_app_volume"
+            android:title="@string/show_app_volume_title"
+            android:summary="@string/show_app_volume_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 

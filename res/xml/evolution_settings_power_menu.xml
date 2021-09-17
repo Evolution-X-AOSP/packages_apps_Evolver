@@ -15,6 +15,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/power_menu_setting_name">
 
@@ -29,7 +30,8 @@
         android:key="advanced_reboot"
         android:title="@string/powermenu_advanced_reboot_title"
         android:summary="@string/powermenu_advanced_reboot_summary"
-        android:defaultValue="true" />
+        android:defaultValue="true"
+        app:allowDividerAbove="true" />
 
     <com.evolution.settings.preference.SecureSettingSwitchPreference
         android:key="power_menu_hide_on_secure"

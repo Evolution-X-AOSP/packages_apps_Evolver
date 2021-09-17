@@ -15,6 +15,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/animation_title">
 
@@ -30,7 +31,8 @@
         android:entries="@array/screen_off_animation_entries"
         android:entryValues="@array/screen_off_animation_values"
         android:summary="%s"
-        android:defaultValue="0" />
+        android:defaultValue="0"
+        app:allowDividerAbove="true" />
 
     <com.evolution.settings.preference.SecureSettingSwitchPreference 
         android:key="show_back_arrow_gesture"
@@ -38,12 +40,6 @@
         android:summary="@string/back_gesture_arrow_summary"
         android:defaultValue="true" />
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="charging_animation"
-        android:title="@string/charging_animation_title"
-        android:summary="@string/charging_animation_summary"
-        android:defaultValue="true" />
-   
     <ListPreference
         android:key="pref_scrollingcache"
         android:dialogTitle="@string/pref_scrollingcache_title"
