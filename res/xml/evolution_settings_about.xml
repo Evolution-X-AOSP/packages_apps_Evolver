@@ -22,7 +22,11 @@
     <PreferenceScreen
         android:key="evolution_logo"
         android:clickable="true"
-        android:layout="@layout/evolution_logo" />
+        android:layout="@layout/evolution_logo">
+        <intent
+            android:targetPackage="org.evolution.easteregg"
+            android:targetClass="org.evolution.easteregg.EasterEgg" />
+    </PreferenceScreen>
 
     <!-- About Evolution X -->
     <PreferenceCategory
