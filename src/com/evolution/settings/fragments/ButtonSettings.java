@@ -90,6 +90,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
 
+    private static final String KEY_NAVIGATION_BAR_ARROWS = "navigation_bar_menu_arrow_keys";
     private static final String LAYOUT_SETTINGS = "navbar_layout_views";
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
@@ -117,8 +118,9 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private Handler mHandler;
 
     private ListPreference mVolumeKeyCursorControl;
-    private Preference mLayoutSettings;
-    private SwitchPreference mSwapNavButtons;
+    private Preference mNavBarLayout;
+    private SwitchPreference mSwapNavbar;
+    private SystemSettingSwitchPreference mNavigationArrowKeys;
     private SystemSettingSwitchPreference mPixelNavAnimation;
 
     @Override
@@ -161,9 +163,10 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         mAnbi = (SwitchPreference) findPreference(KEY_ANBI);
         mGestureSystemNavigation = (Preference) findPreference(KEY_GESTURE_SYSTEM);
-        mLayoutSettings = findPreference(LAYOUT_SETTINGS);
+        mNavBarLayout = findPreference(LAYOUT_SETTINGS);
         mPixelNavAnimation = findPreference(PIXEL_NAV_ANIMATION);
-        mSwapNavButtons = findPreference(NAVIGATION_BAR_INVERSE);
+        mSwapNavbar = findPreference(NAVIGATION_BAR_INVERSE);
+        mNavigationArrowKeys = (SystemSettingSwitchPreference) findPreference(KEY_NAVIGATION_BAR_ARROWS);
 
         mHandler = new Handler();
 
@@ -344,9 +347,10 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         // On gesture nav
         } else {
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
-            mLayoutSettings.setVisible(false);
+            mNavBarLayout.setVisible(false);
             mPixelNavAnimation.setVisible(false);
-            mSwapNavButtons.setVisible(false);
+            mSwapNavbar.setVisible(false);
+            mNavigationArrowKeys.setVisible(false);
         }
 
         // Override key actions on Go devices in order to hide any unsupported features
@@ -558,6 +562,18 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         }
         if (mSwapCapacitiveKeys != null) {
             mSwapCapacitiveKeys.setEnabled(!navbarEnabled);
+        }
+        if (mGestureSystemNavigation != null) {
+            mGestureSystemNavigation.setEnabled(navbarEnabled);
+        }
+        if (mNavBarLayout != null) {
+            mNavBarLayout.setEnabled(navbarEnabled);
+        }
+        if (mSwapNavbar != null) {
+            mSwapNavbar.setEnabled(navbarEnabled);
+        }
+        if (mNavigationArrowKeys != null) {
+            mNavigationArrowKeys.setEnabled(navbarEnabled);
         }
     }
 
