@@ -20,7 +20,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
      <ListPreference
-        android:key="network_traffic_location"
+        android:key="network_traffic_view_location"
         android:title="@string/network_traffic_location"
         android:summary="%s"
         android:entries="@array/network_traffic_location_entries"
@@ -35,26 +35,26 @@
         android:defaultValue="0"
         android:persistent="false" />
 
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="network_traffic_arrow"
+        android:title="@string/network_traffic_arrow"
+        android:summary="@string/network_traffic_arrow_summary"
+        android:defaultValue="false" />
+
     <com.evolution.settings.preference.CustomSeekBarPreference
         android:key="network_traffic_autohide_threshold"
         android:title="@string/network_traffic_autohide_threshold_title"
         android:max="10"
         settings:min="0"
+        settings:defaultValue="1"
         settings:units="" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="network_traffic_hidearrow"
-        android:title="@string/network_traffic_arrow"
-        android:summary="@string/network_traffic_arrow_summary"
-        android:dependency="network_traffic_state"
-        android:defaultValue="false" />
 
     <com.evolution.settings.preference.CustomSeekBarPreference
         android:key="network_traffic_font_size"
         android:title="@string/nettraf_font_size"
-        android:max="60"
-        settings:min="21"
-        settings:defaultValue="30"
+        android:max="46"
+        android:min="26"
+        settings:defaultValue="36"
         settings:units="dp" />
 
 </PreferenceScreen>

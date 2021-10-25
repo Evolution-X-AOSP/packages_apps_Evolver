@@ -52,6 +52,10 @@ import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 public class Traffic extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
+    private static final String NETWORK_TRAFFIC_TYPE  = "network_traffic_type";
+    private static final String NETWORK_TRAFFIC_VIEW_LOCATION  = "network_traffic_view_location";
+    private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD  = "network_traffic_autohide_threshold";
+    private static final String NETWORK_TRAFFIC_ARROW  = "network_traffic_arrow";
     private static final String NETWORK_TRAFFIC_FONT_SIZE  = "network_traffic_font_size";
 
     private ListPreference mNetTrafficLocation;
@@ -70,29 +74,29 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
         final PreferenceScreen prefSet = getPreferenceScreen();
 
         int NetTrafficSize = Settings.System.getInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 42);
+                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 36);
         mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
         mNetTrafficSize.setValue(NetTrafficSize / 1);
         mNetTrafficSize.setOnPreferenceChangeListener(this);
 
         int type = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_TYPE, 0, UserHandle.USER_CURRENT);
-        mNetTrafficType = (ListPreference) findPreference("network_traffic_type");
+        mNetTrafficType = (ListPreference) findPreference(NETWORK_TRAFFIC_TYPE);
         mNetTrafficType.setValue(String.valueOf(type));
         mNetTrafficType.setSummary(mNetTrafficType.getEntry());
         mNetTrafficType.setOnPreferenceChangeListener(this);
 
-        mNetTrafficLocation = (ListPreference) findPreference("network_traffic_location");
+        mNetTrafficLocation = (ListPreference) findPreference(NETWORK_TRAFFIC_VIEW_LOCATION);
         int location = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 0, UserHandle.USER_CURRENT);
         mNetTrafficLocation.setOnPreferenceChangeListener(this);
 
         int trafvalue = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
-        mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
+        mThreshold = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
         mThreshold.setValue(trafvalue);
         mThreshold.setOnPreferenceChangeListener(this);
-        mShowArrows = (SystemSettingSwitchPreference) findPreference("network_traffic_arrow");
+        mShowArrows = (SystemSettingSwitchPreference) findPreference(NETWORK_TRAFFIC_ARROW);
 
         int netMonitorEnabled = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
@@ -101,7 +105,7 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
             updateTrafficLocation(location+1);
         } else {
             mNetTrafficLocation.setValue("0");
-            updateTrafficLocation(0); 
+            updateTrafficLocation(0);
         }
         mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
     }
@@ -160,22 +164,16 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
     }
 
     public void updateTrafficLocation(int location) {
-        switch (location) {
-            case 0:
-                mThreshold.setEnabled(false);
-                mShowArrows.setEnabled(false);
-                mNetTrafficType.setEnabled(false);
-                mNetTrafficSize.setEnabled(false);
-                break;
-            case 1:
-            case 2:
-                mThreshold.setEnabled(true);
-                mShowArrows.setEnabled(true);
-                mNetTrafficType.setEnabled(true);
-                mNetTrafficSize.setEnabled(true);
-                break;
-            default:
-                break;
+        if (location == 0) {
+            mThreshold.setEnabled(false);
+            mShowArrows.setEnabled(false);
+            mNetTrafficType.setEnabled(false);
+            mNetTrafficSize.setEnabled(false);
+        } else {
+            mThreshold.setEnabled(true);
+            mShowArrows.setEnabled(true);
+            mNetTrafficType.setEnabled(true);
+            mNetTrafficSize.setEnabled(true);
         }
     }
 }
