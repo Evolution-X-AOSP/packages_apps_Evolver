@@ -19,87 +19,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
-    <Preference
-        android:key="gaming_category"
-        android:title="@string/gaming_title"
-        android:summary="@string/gaming_title_summary"
-        android:fragment="com.evolution.settings.fragments.GamingModeSettings" />
-
-    <Preference
-        android:key="screenshot_settings"
-        android:title="@string/screenshot_settings_title"
-        android:summary="@string/screenshot_settings_summary"
-        android:fragment="com.android.settings.gestures.SwipeToScreenshotGestureSettings"
-        app:allowDividerAbove="true" />
-
-    <!-- Launch music player when headset is connected -->
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="headset_connect_player"
-        android:title="@string/headset_connect_player_title"
-        android:summary="@string/headset_connect_player_summary"
-        android:defaultValue="false"
-        app:allowDividerAbove="true" />
-
     <PreferenceCategory
-        android:title="@string/doze_brightness_category">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="doze_brightness_force"
-            android:title="@string/doze_brightness_force_title"
-            android:summary="@string/doze_brightness_force_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.CustomSeekBarPreference
-            android:key="ambient_doze_brightness"
-            android:title="@string/ambient_doze_brightness_title"
-            android:summary="@string/ambient_doze_brightness_summary"
-            android:max="255"
-            android:min="1"
-            android:persistent="false" />
-
-        <com.evolution.settings.preference.CustomSeekBarPreference
-            android:key="ambient_pulse_brightness"
-            android:title="@string/ambient_pulse_brightness_title"
-            android:summary="@string/ambient_pulse_brightness_summary"
-            android:max="255"
-            android:min="1"
-            android:persistent="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/dev_options_title">
-
-        <!-- Sensor Block -->
-        <Preference
-            android:key="sensor_block_settings"
-            android:title="@string/sensor_block_title"
-            android:summary="@string/sensor_block_summary"
-            android:fragment="com.evolution.settings.fragments.SensorBlockSettings"/>
-
-        <Preference
-            android:key="wakelock_blocker"
-            android:title="@string/wakelock_blocker_title"
-            android:summary="@string/wakelock_blocker_summary"
-            android:fragment="com.evolution.settings.fragments.WakeLockBlocker" />
-
-        <Preference
-            android:key="alarm_blocker"
-            android:title="@string/alarm_blocker_title"
-            android:summary="@string/alarm_blocker_summary"
-            android:fragment="com.evolution.settings.fragments.AlarmBlocker" />
+        android:title="@string/dev_options_title" />
 
         <Preference
             android:key="default_usb_configuration"
             android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
             android:title="@string/usb_default_config_title"
             android:summary="@string/usb_default_config_summary"/>
-
-        <ListPreference
-            android:key="ringtone_focus_mode"
-            android:title="@string/ringtone_focus_mode_title"
-            android:entries="@array/ringtone_focus_mode_entries"
-            android:entryValues="@array/ringtone_focus_mode_values" />
 
         <Preference
             android:title="@string/radio_info_title"
@@ -108,7 +35,5 @@
                 android:targetPackage="com.android.phone"
                 android:targetClass="com.android.phone.settings.RadioInfo" />
         </Preference>
-
-    </PreferenceCategory>
 
 </PreferenceScreen>

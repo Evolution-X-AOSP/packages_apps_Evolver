@@ -31,7 +31,7 @@
     <!-- About Evolution X -->
     <PreferenceCategory
         android:key="evolution_about_summary"
-        android:title="@string/evolution_about_summary">
+        android:title="@string/evolution_about_summary" />
 
         <Preference
             android:selectable="false"
@@ -74,12 +74,10 @@
                 android:data="https://github.com/Evolution-X" />
         </Preference>
 
-    </PreferenceCategory>
-
     <!-- Team Evolution X -->
     <PreferenceCategory
         android:key="about_team"
-        android:title="@string/evolution_about_team">
+        android:title="@string/evolution_about_team" />
 
         <Preference
             android:title="@string/evolution_about_stallix"
@@ -98,6 +96,14 @@
         </Preference>
 
         <Preference
+            android:title="@string/evolution_about_chenyang"
+            android:summary="@string/evolution_about_chenyang_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://jjpprrrr.com" />
+        </Preference>
+
+        <Preference
             android:title="@string/evolution_about_anierin"
             android:summary="@string/evolution_about_anierin_summary">
             <intent
@@ -111,14 +117,6 @@
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://github.com/Justasic" />
-        </Preference>
-
-        <Preference
-            android:title="@string/evolution_about_chenyang"
-            android:summary="@string/evolution_about_chenyang_summary">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://jjpprrrr.com" />
         </Preference>
 
         <Preference
@@ -152,7 +150,5 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://twitter.com/martonlederer" />
         </Preference>
-
-    </PreferenceCategory>
 
 </PreferenceScreen>
