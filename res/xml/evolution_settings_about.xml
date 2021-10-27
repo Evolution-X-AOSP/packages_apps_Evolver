@@ -18,6 +18,16 @@
             android:targetClass="org.evolution.easteregg.EasterEgg" />
     </PreferenceScreen>
 
+    <!-- Evolution X Changelog -->
+    <Preference
+        android:key="evolution_changelog"
+        android:title="@string/changelog_evolution_title"
+        android:summary="@string/changelog_evolution_summary">
+        <intent android:action="android.intent.action.MAIN"
+             android:targetPackage="com.android.settings"
+             android:targetClass="com.evolution.settings.about.ChangelogActivity"/>
+    </Preference>
+
     <!-- About Evolution X -->
     <PreferenceCategory
         android:key="evolution_about_summary"
