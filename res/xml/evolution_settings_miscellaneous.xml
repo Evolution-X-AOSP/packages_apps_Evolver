@@ -34,6 +34,12 @@
     <PreferenceCategory
         android:title="@string/dev_options_title" />
 
+        <com.evolution.settings.preference.GlobalSettingSwitchPreference
+            android:key="show_cpu_overlay"
+            android:title="@string/show_cpu_info"
+            android:summary="@string/show_cpu_info_summary" 
+            android:defaultValue="false" />
+
         <Preference
             android:key="default_usb_configuration"
             android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
