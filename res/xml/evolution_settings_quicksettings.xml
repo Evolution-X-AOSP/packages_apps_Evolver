@@ -75,6 +75,37 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="quick_settings_brighness_category"
+        android:title="@string/qs_brightness_slider_category">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_show_brightness"
+            android:title="@string/qs_brightness_slider_title"
+            android:summary="@string/qs_brightness_slider_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_brightness_position_bottom"
+            android:title="@string/qs_brightness_position_bottom_title"
+            android:summary="@string/qs_brightness_position_bottom_summary"
+            android:defaultValue="false"
+            android:dependency="qs_show_brightness" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qqs_show_brightness"
+            android:title="@string/quick_qs_brightness_slider_title"
+            android:summary="@string/quick_qs_brightness_slider_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_show_auto_brightness_button"
+            android:title="@string/brightness_icon_title"
+            android:summary="@string/brightness_icon_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="quick_settings_animations"
         android:title="@string/qs_tile_animation_title">
 
