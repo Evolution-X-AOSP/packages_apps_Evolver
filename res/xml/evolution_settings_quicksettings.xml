@@ -18,7 +18,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title">
 
-     <PreferenceCategory
+    <!-- Gaming macro QS tile -->
+    <Preference
+        android:key="gaming_mode_tile"
+        android:title="@string/gaming_mode_tile_title"
+        android:summary="@string/gaming_mode_tile_summary"
+        android:fragment="com.evolution.settings.fragments.GamingMode" />
+
+    <PreferenceCategory
         android:key="quick_settings_general_category"
         android:title="@string/general_category">
 
