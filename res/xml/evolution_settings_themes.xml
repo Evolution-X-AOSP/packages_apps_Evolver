@@ -19,12 +19,24 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_title">
 
-    <Preference
-        android:key="dark_ui_mode"
-        android:title="@string/dark_ui_mode"
-        android:summary="@string/dark_ui_mode_summary"
-        android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
-        settings:controller="com.android.settings.display.DarkUIPreferenceController" />
+    <PreferenceCategory
+        android:key="theme_customization_category"
+        android:title="@string/theme_customization_category">
+
+        <Preference
+            android:key="dark_ui_mode"
+            android:title="@string/dark_ui_mode"
+            android:summary="@string/dark_ui_mode_summary"
+            android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
+            settings:controller="com.android.settings.display.DarkUIPreferenceController" />
+
+        <ListPreference
+            android:key="android.theme.customization.font"
+            android:title="@string/theme_customization_font_title"/>
+        <ListPreference
+            android:key="android.theme.customization.icon_pack"
+            android:title="@string/theme_customization_icon_pack_title"/>
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="monet_category"
