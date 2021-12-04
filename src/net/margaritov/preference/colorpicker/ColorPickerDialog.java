@@ -18,7 +18,6 @@
 package net.margaritov.preference.colorpicker;
 
 import android.app.AlertDialog;
-import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
@@ -27,22 +26,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.view.KeyEvent;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.android.settings.R;
 
-public class ColorPickerDialog extends AlertDialog implements ColorPickerView.OnColorChangedListener, View.OnClickListener {
+public class ColorPickerDialog extends AlertDialog implements ColorPickerView.OnColorChangedListener, View.OnClickListener, View.OnKeyListener {
 
     private ColorPickerView mColorPicker;
     private ColorPickerPanelView mOldColor;
     private ColorPickerPanelView mNewColor;
     private EditText mHex;
-
-    private boolean mShowLedPreview;
-
-    private NotificationManager mNoMan;
-    private Context mContext;
 
     private OnColorChangedListener mListener;
 
@@ -50,10 +45,9 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
         void onColorChanged(int color);
     }
 
-    ColorPickerDialog(Context context, int initialColor, boolean showLedPreview) {
+    ColorPickerDialog(Context context, int initialColor) {
         super(context);
-        mContext = context;
-        mShowLedPreview = showLedPreview;
+
         init(initialColor);
     }
 
@@ -65,12 +59,19 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
         }
     }
 
+    private void setColorFromHex() {
+        String text = mHex.getText().toString();
+        try {
+            int newColor = ColorPickerPreference.convertToColorInt(text);
+            mColorPicker.setColor(newColor, true);
+        } catch (Exception ignored) {
+        }
+    }
+
     private void setUp(int color) {
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
-        mNoMan = (NotificationManager)
-                mContext.getSystemService(Context.NOTIFICATION_SERVICE);
 
         assert inflater != null;
         View layout = inflater.inflate(R.layout.preference_color_picker, null);
@@ -80,7 +81,6 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
         mNewColor = layout.findViewById(R.id.new_color_panel);
 
         mHex = layout.findViewById(R.id.hex);
-        ImageButton mSetButton = layout.findViewById(R.id.enter);
 
         ((LinearLayout) mOldColor.getParent()).setPadding(Math.round(mColorPicker.getDrawingOffset()),
                 0, Math.round(mColorPicker.getDrawingOffset()), 0);
@@ -90,20 +90,10 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
         mColorPicker.setOnColorChangedListener(this);
         mOldColor.setColor(color);
         mColorPicker.setColor(color, true);
-        showLed(color);
 
         if (mHex != null) {
-            mHex.setText(ColorPickerPreference.convertToARGB(color));
-        }
-        if (mSetButton != null) {
-            mSetButton.setOnClickListener(v -> {
-                String text = mHex.getText().toString();
-                try {
-                    int newColor = ColorPickerPreference.convertToColorInt(text);
-                    mColorPicker.setColor(newColor, true);
-                } catch (Exception ignored) {
-                }
-            });
+            mHex.setText(ColorPickerPreference.convertToRGB(color));
+            mHex.setOnKeyListener(this);
         }
 
         setView(layout);
@@ -115,26 +105,9 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
         mNewColor.setColor(color);
         try {
             if (mHex != null) {
-                mHex.setText(ColorPickerPreference.convertToARGB(color));
+                mHex.setText(ColorPickerPreference.convertToRGB(color));
             }
         } catch (Exception ignored) {
-        }
-        showLed(color);
-    }
-
-    private void showLed(int color) {
-        if (mShowLedPreview) {
-            if (color == 0xFFFFFFFF) {
-                // argb white doesn't work
-                color = 0xffffff;
-            }
-            mNoMan.forceShowLedLight(color);
-        }
-    }
-
-    private void switchOffLed() {
-        if (mShowLedPreview) {
-            mNoMan.forceShowLedLight(-1);
         }
     }
 
@@ -156,6 +129,16 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
     }
 
     @Override
+    public boolean onKey(View v, int keyCode, KeyEvent event) {
+        if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                    (keyCode == KeyEvent.KEYCODE_ENTER)) {
+            setColorFromHex();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public void onClick(View v) {
         if (v.getId() == R.id.new_color_panel) {
             if (mListener != null) {
@@ -163,15 +146,7 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
             }
         }
         dismiss();
-        switchOffLed();
     }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        switchOffLed();
-    }
-
 
     @NonNull
     @Override
@@ -180,7 +155,6 @@ public class ColorPickerDialog extends AlertDialog implements ColorPickerView.On
         state.putInt("old_color", mOldColor.getColor());
         state.putInt("new_color", mNewColor.getColor());
         dismiss();
-        switchOffLed();
         return state;
     }
 
