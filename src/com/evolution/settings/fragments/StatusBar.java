@@ -55,10 +55,18 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
     private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
+    private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
     private static final String KEY_USE_OLD_MOBILETYPE = "use_old_mobiletype";
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
 
+    private static final int BATTERY_STYLE_PORTRAIT = 0;
+    private static final int BATTERY_STYLE_TEXT = 4;
+    private static final int BATTERY_STYLE_HIDDEN = 5;
+
+    private SwitchPreference mBatteryTextCharging;
     private SwitchPreference mCombinedIcons;
     private SwitchPreference mOverride;
     private SwitchPreference mShowRoaming;
@@ -67,6 +75,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SwitchPreference mOldMobileType;
     private SystemSettingSeekBarPreference mVolteIconStyle;
     private SystemSettingSeekBarPreference mVowifiIconStyle;
+    private SystemSettingListPreference mBatteryPercent;
+    private SystemSettingListPreference mBatteryStyle;
     private SystemSettingListPreference mStatusBarClock;
 
     @Override
@@ -98,6 +108,23 @@ public class StatusBar extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mOldMobileType);
         }
 
+        int batterystyle = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
+        int batterypercent = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
+
+        mBatteryStyle = (SystemSettingListPreference) findPreference(KEY_STATUS_BAR_BATTERY_STYLE);
+        mBatteryStyle.setOnPreferenceChangeListener(this);
+
+        mBatteryPercent = (SystemSettingListPreference) findPreference(KEY_STATUS_BAR_SHOW_BATTERY_PERCENT);
+        mBatteryPercent.setEnabled(
+                batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
+        mBatteryPercent.setOnPreferenceChangeListener(this);
+
+        mBatteryTextCharging = (SwitchPreference) findPreference(KEY_STATUS_BAR_BATTERY_TEXT_CHARGING);
+        mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
+                (batterystyle != BATTERY_STYLE_TEXT && batterypercent != 2));
+
         mStatusBarClock =
                 (SystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
 
@@ -111,6 +138,23 @@ public class StatusBar extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mBatteryStyle) {
+            int value = Integer.parseInt((String) newValue);
+            int batterypercent = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
+            mBatteryPercent.setEnabled(
+                    value != BATTERY_STYLE_TEXT && value != BATTERY_STYLE_HIDDEN);
+            mBatteryTextCharging.setEnabled(value == BATTERY_STYLE_HIDDEN ||
+                    (value != BATTERY_STYLE_TEXT && batterypercent != 2));
+            return true;
+        } else if (preference == mBatteryPercent) {
+            int value = Integer.parseInt((String) newValue);
+            int batterystyle = Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
+            mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
+                    (batterystyle != BATTERY_STYLE_TEXT && value != 2));
+            return true;
+        }
         return false;
     }
 
