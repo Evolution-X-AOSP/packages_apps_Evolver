@@ -71,6 +71,26 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="statusbar_padding"
+        android:title="@string/statusbar_padding">
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="statusbar_left_padding"
+            android:title="@string/statusbar_left_padding"
+            android:max="50"
+            android:min="-5"
+            android:defaultValue="8"/>
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="statusbar_right_padding"
+            android:title="@string/statusbar_right_padding"
+            android:max="50"
+            android:min="-5"
+            android:defaultValue="8"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="misc_icons_category"
         android:title="@string/icons_category">
 
