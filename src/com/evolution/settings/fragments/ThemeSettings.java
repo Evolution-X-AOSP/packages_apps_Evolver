@@ -84,6 +84,8 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
         mMonetColor.setNewPreviewColor(intColor);
         mMonetColor.setSummary(hexColor);
         mMonetColor.setOnPreferenceChangeListener(this);
+		mOverlayService = IOverlayManager.Stub
+                .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
