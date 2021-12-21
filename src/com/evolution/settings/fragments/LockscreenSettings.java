@@ -53,22 +53,15 @@ import java.util.List;
 public class LockscreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private boolean mShowFODPressedColor = true;
-    private boolean mShowScreenOffPref;
-
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String FINGERPRINT_SUCCESS_VIB = "fingerprint_success_vib";
     private static final String FINGERPRINT_ERROR_VIB = "fingerprint_error_vib";
-    private static final String FOD_CUSTOMIZATION_CATEGORY = "fod_customization";
-    private static final String FOD_PRESSED_COLOR = "fod_color";
-    private static final String SCREEN_OFF_FOD_KEY = "screen_off_fod";
-    private static final String UDFPS_HAPTIC_FEEDBACK = "udfps_haptic_feedback";
+    private static final String UDFPS_CATEGORY = "udfps_category";
 
     private FingerprintManager mFingerprintManager;
-    private PreferenceCategory mFODCustomizationCategory;
+    private PreferenceCategory mUdfpsCategory;
     private SwitchPreference mFingerprintSuccessVib;
     private SwitchPreference mFingerprintErrorVib;
-    private SystemSettingListPreference mFODPressedColor;
 
     static final int MODE_DISABLED = 0;
     static final int MODE_NIGHT = 1;
@@ -77,7 +70,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     static final int MODE_MIXED_SUNRISE = 4;
 
     Preference mAODPref;
-    Preference mFODPref;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -109,21 +101,9 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
             prefSet.removePreference(mFingerprintErrorVib);
         }
 
-        mFODCustomizationCategory = findPreference(FOD_CUSTOMIZATION_CATEGORY);
-        if (mFODCustomizationCategory != null && !UdfpsUtils.hasUdfpsSupport(getContext())) {
-            prefSet.removePreference(mFODCustomizationCategory);
-        }
-
-        mShowFODPressedColor = getContext().getResources().getBoolean(R.bool.config_show_fod_pressed_color_settings);
-        mFODPressedColor = (SystemSettingListPreference) findPreference(FOD_PRESSED_COLOR);
-        if (!mShowFODPressedColor) {
-            prefSet.removePreference(mFODPressedColor);
-        }
-
-        mShowScreenOffPref = getContext().getResources().getBoolean(R.bool.config_supportScreenOffFod);
-        mFODPref = findPreference(SCREEN_OFF_FOD_KEY);
-        if (!mShowScreenOffPref && !UdfpsUtils.hasUdfpsSupport(getContext())) {
-            prefSet.removePreference(mFODPref);
+        mUdfpsCategory = findPreference(UDFPS_CATEGORY);
+        if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
+            prefSet.removePreference(mUdfpsCategory);
         }
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);

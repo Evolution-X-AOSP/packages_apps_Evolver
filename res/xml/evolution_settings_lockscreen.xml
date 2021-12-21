@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2019-2021 The Evolution X Project
+<!-- Copyright (C) 2019-2022 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,6 +18,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_title">
+
+    <!-- UDFPS options -->
+    <PreferenceCategory
+        android:key="udfps_category"
+        android:title="@string/udfps_category">
+
+        <Preference
+            android:key="udfps_settings"
+            android:title="@string/udfps_settings_title"
+            android:summary="@string/udfps_settings_summary"
+            android:fragment="com.evolution.settings.fragments.UdfpsSettings" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_general_category"
@@ -58,41 +71,6 @@
             android:title="@string/fprint_error_vib_title"
             android:summary="@string/fprint_error_vib_summary"
             android:persistent="true" />
-
-    </PreferenceCategory>
-
-    <!-- FOD customization options -->
-    <PreferenceCategory
-        android:key="fod_customization"
-        android:title="@string/fod_customization_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="screen_off_fod"
-            android:title="@string/screen_off_fod_title"
-            android:summary="@string/screen_off_fod_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="udfps_haptic_feedback"
-            android:title="@string/udfps_haptic_feedback_title"
-            android:summary="@string/udfps_haptic_feedback_summary"
-            android:defaultValue="true" />
-
-        <!-- FOD pressed color -->
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="fod_color"
-            android:title="@string/fod_pressed_color_title"
-            android:summary="%s"
-            android:entries="@array/fod_pressed_color_entries"
-            android:entryValues="@array/fod_pressed_color_values"
-            android:defaultValue="@*android:integer/config_fod_pressed_color" />
-
-        <!-- FOD Night light -->
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="fod_night_light"
-            android:title="@string/fod_night_light_title"
-            android:summary="@string/fod_night_light_summary"
-            android:defaultValue="@*android:bool/disable_fod_night_light"  />
 
     </PreferenceCategory>
 

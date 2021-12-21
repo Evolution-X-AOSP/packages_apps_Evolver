@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019-2022 The Evolution X Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/udfps_category">
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="udfps_haptic_feedback"
+        android:title="@string/udfps_haptic_feedback_title"
+        android:summary="@string/udfps_haptic_feedback_summary"
+        android:defaultValue="true" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="screen_off_fod"
+        android:title="@string/screen_off_udfps_title"
+        android:summary="@string/screen_off_udfps_summary"
+        android:defaultValue="true" />
+
+    <!-- UDFPS Night light -->
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="fod_night_light"
+        android:title="@string/udfps_night_light_title"
+        android:summary="@string/udfps_night_light_summary"
+        android:defaultValue="@*android:bool/disable_fod_night_light" />
+
+    <!-- UDFPS pressed color -->
+    <com.evolution.settings.preference.SystemSettingListPreference
+        android:key="fod_color"
+        android:title="@string/udfps_pressed_color_title"
+        android:summary="%s"
+        android:entries="@array/udfps_pressed_color_entries"
+        android:entryValues="@array/udfps_pressed_color_values"
+        android:defaultValue="@*android:integer/config_fod_pressed_color" />
+
+    <PreferenceCategory
+        android:key="udfps_customization"
+        android:title="@string/udfps_customization">
+    
+        <Preference
+            android:key="udfps_icon_picker"
+            android:title="@string/udfps_icon_picker_title"
+            android:summary="@string/udfps_icon_picker_summary"
+            android:fragment="com.evolution.settings.fragments.UdfpsIconPicker" />
+
+        <Preference
+            android:key="udfps_recognizing_animation_preview"
+            android:title="@string/udfps_recog_animation_effect_title"
+            android:summary="@string/udfps_recog_animation_effect_summary"
+            android:fragment="com.evolution.settings.fragments.UdfpsAnimation" />
+    
+    </PreferenceCategory>
+
+</PreferenceScreen>
