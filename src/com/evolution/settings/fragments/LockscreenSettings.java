@@ -37,6 +37,7 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.udfps.UdfpsUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -53,6 +54,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String FINGERPRINT_SUCCESS_VIB = "fingerprint_success_vib";
     private static final String FINGERPRINT_ERROR_VIB = "fingerprint_error_vib";
+    private static final String SCREEN_OFF_FOD_KEY = "screen_off_fod";
 
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintSuccessVib;
@@ -65,6 +67,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     static final int MODE_MIXED_SUNRISE = 4;
 
     Preference mAODPref;
+    Preference mFODPref;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -94,6 +97,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         } else {
             prefSet.removePreference(mFingerprintSuccessVib);
             prefSet.removePreference(mFingerprintErrorVib);
+        }
+
+        mFODPref = findPreference(SCREEN_OFF_FOD_KEY);
+        if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
+            removePreference(SCREEN_OFF_FOD_KEY);
         }
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
