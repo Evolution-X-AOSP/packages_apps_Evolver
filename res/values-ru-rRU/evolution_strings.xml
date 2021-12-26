@@ -63,8 +63,6 @@
     <string name="seek_value_edit_label">Установка значения</string>
     <!-- Units -->
     <string name="unit_milliseconds">миллисекунд</string>
-    <string name="unit_percent">\u0025</string>
-    <string name="unit_pixels">пиксели</string>
     <string name="unit_seconds">секунд</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Вкл.</string>
@@ -211,20 +209,12 @@
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">Отображать 4G вместо LTE</string>
     <string name="show_fourg_icon_summary">Заменить значок LTE в строке состояния на 4G</string>
-    <!-- Show VoLTE icon on statusbar -->
-    <string name="volte_switch_title">Иконка VoLTE</string>
-    <string name="volte_switch_summary">Отображать значок VoLTE</string>
+    <!-- VoLTE icon -->
     <string name="volte_icon_title">Иконка VoLTE</string>
     <string name="volte_icon_summary">Отображать значок VoLTE</string>
-    <string name="volte_icon_style_title">Выбрать иконку VoLTE</string>
-    <string name="volte_icon_asus">Asus</string>
-    <string name="volte_icon_vo">Только Vo</string>
-    <string name="volte_icon_volte">VoLTE</string>
-    <string name="volte_icon_oos">OOS</string>
-    <string name="volte_icon_hd">HD</string>
-    <string name="volte_icon_hd2">HD CAF</string>
-    <string name="volte_icon_miui">MIUI 11</string>
-    <string name="volte_icon_emui">EMUI</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">Значок VoWiFi</string>
+    <string name="vowifi_icon_summary">Показывать значок VoWiFi, когда доступно</string>
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Использовать старый стиль значков сети</string>
     <string name="use_old_mobiletype_summary">Показывать значок мобильной сети над индикатором сигнала</string>
@@ -245,6 +235,8 @@
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Стиль батареи</string>
     <string name="status_bar_battery_style_icon_portrait">Вертикальная иконка (по умолчанию)</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Горизонтальная иконка (справа)</string>
+    <string name="status_bar_battery_style_icon_landscape">Горизонтальная иконка (слева)</string>
     <string name="status_bar_battery_style_circle">Круг</string>
     <string name="status_bar_battery_style_dotted_circle">Круг (Точечный)</string>
     <string name="status_bar_battery_style_filled_circle">Круг (Заполняющийся)</string>
@@ -252,6 +244,8 @@
     <string name="status_bar_battery_style_big_dotted_circle">Большой точечный круг</string>
     <string name="status_bar_battery_style_text">Текст</string>
     <string name="status_bar_battery_style_hidden">Скрыт</string>
+    <string name="left_battery_text_title">Текст батареи слева</string>
+    <string name="left_battery_text_summary">Отображение текста слева от иконки батареи</string>
     <!-- Status bar - Battery percentage -->
     <string name="status_bar_battery_percentage_title">Процент заряда батареи</string>
     <string name="status_bar_battery_percentage_default">Не отображать (по умолчанию)</string>
@@ -477,6 +471,19 @@
     <string name="ambient_notification_color_mode_notification">Цвет значков уведомлений</string>
     <string name="ambient_notification_color_mode_custom">@string/ambient_notification_light_color_title</string>
     <string name="ambient_notification_light_color_title">Пользовательский цвет</string>
+    <string name="pulse_ambient_light_show_always_title">Всегда показывать</string>
+    <string name="pulse_ambient_light_show_always_summary">Показывать уведомление индикатором для всех событий Doze, а не только для уведомлений</string>
+    <string name="pulse_ambient_light_repeat_direction_title">Количество повторов подсветки</string>
+    <string name="pulse_ambient_light_repeat_direction_restart">Перезагрузка</string>
+    <string name="pulse_ambient_light_repeat_direction_reverse">Инвертировать</string>
+    <string name="pulse_ambient_light_layout_title">Стиль подсветки</string>
+    <string name="pulse_ambient_light_layout_solid">Сплошной</string>
+    <string name="pulse_ambient_light_layout_faded">Затухание</string>
+    <string name="pulse_ambient_light_width_title">Ширина подсветки</string>
+    <string name="pulse_light_layout_style_title">Светлый стиль</string>
+    <string name="pulse_light_both">Все четыре стороны</string>
+    <string name="pulse_light_top_bottom">Только сверху внизу</string>
+    <string name="pulse_light_left_right">Только слева направо</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">Текст нижнего колонтитула</string>
     <string name="qs_footer_text_summary">Отображать текст внизу панели быстрых настроек</string>
@@ -501,6 +508,7 @@
     <string name="power_menu_title">Меню питания</string>
     <string name="power_menu_title_summary">Просмотр или изменение пунктов меню питания</string>
     <string name="powermenu_screenshot">Снимок экрана</string>
+    <string name="powermenu_onthego">Режим «На ходу»</string>
     <string name="powermenu_torch">Фонарик</string>
     <string name="powermenu_advanced">Расширенное меню перезагрузки</string>
     <string name="powermenu_airplane">Режим полета</string>
@@ -941,9 +949,6 @@
     <!-- Double tap status bar to sleep -->
     <string name="double_tap_to_sleep_title">Двойное касание по строке состояния для перевода в режим сна</string>
     <string name="double_tap_to_sleep_summary">Дважды коснитесь строки состояния, чтобы перевести устройство в спящий режим</string>
-    <!--3-Finger screenshot-->
-    <string name="three_finger_gesture">Жест тремя пальцами</string>
-    <string name="three_finger_gesture_summary">Проведите тремя пальцами для создания скриншота</string>
     <!-- Torch Power button gestures -->
     <string name="torch_power_button_gesture_title">Переключить фонарик при выключенном экране</string>
     <string name="torch_power_button_gesture_none">Отключено</string>
@@ -1019,7 +1024,22 @@
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Уровень заряда Bluetooth</string>
     <string name="bluetooth_battery_summary">Отображение состояния батареи подключенных Bluetooth устройств, если доступно</string>
-    <!-- Call strength icons in QS -->
-    <string name="show_qs_call_strength_icon_title">Показывать иконку(и) силы сигнала сети</string>
-    <string name="show_qs_call_strength_icon_summary">Показывать значки силы сигнала сети на панели быстрых настроек, когда доступно</string>
+    <!-- Screen off FOD -->
+    <string name="screen_off_fod_title">Отпечаток на выключенном экране</string>
+    <string name="screen_off_fod_summary">Не включать FOD при выключенном экране</string>
+    <!-- QSTile requires unlocking before being accessible -->
+    <string name="qstile_requires_unlocking_title">Доступ к быстрым настройкам требует разблокировки</string>
+    <string name="qstile_requires_unlocking_summary">Данные плитки быстрого доступа требуют разблокировки девайса перед тем как вы сможете использовать с экрана блокировки:\nРежим Полета, Мобильные данные, NFC, Точка Доступа, Раздача по USB и Геолокацию</string>
+    <!-- Ambient Ticker -->
+    <string name="pulse_on_new_tracks_title">Текущий трек</string>
+    <string name="pulse_on_new_tracks_summary">Отображать название музыки на Ambient Display во время переключения треков</string>
+    <!-- Burn-in Protection -->
+    <string name="burnin_category">Защита от выгорания экрана</string>
+    <string name="burn_in_protection_title">Защита от выгорания экрана</string>
+    <string name="burn_in_protection_summary">Сдвигать иконки навигационной панели и строки состояния для защиты от выгорания экрана</string>
+    <string name="burn_in_protection_interval_title">Интервал сдвига</string>
+    <string name="burn_in_protection_interval_summary">Насколько часто сдвигать иконки</string>
+    <!-- Udfps Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">Использовать виброотклик для FOD</string>
+    <string name="udfps_haptic_feedback_summary">Вибрировать при нажатии на иконку FOD</string>
 </resources>
