@@ -63,8 +63,6 @@
     <string name="seek_value_edit_label">Tetapkan nilai</string>
     <!-- Units -->
     <string name="unit_milliseconds">milidetik</string>
-    <string name="unit_percent">\u0025</string>
-    <string name="unit_pixels">dp</string>
     <string name="unit_seconds">detik</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Aktif</string>
@@ -211,20 +209,12 @@
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">Tampilkan 4G daripada LTE</string>
     <string name="show_fourg_icon_summary">Ganti indikator bilah status LTE dengan 4G</string>
-    <!-- Show VoLTE icon on statusbar -->
-    <string name="volte_switch_title">Ikon VoLTE</string>
-    <string name="volte_switch_summary">Tampilkan ikon VoLTE</string>
+    <!-- VoLTE icon -->
     <string name="volte_icon_title">Ikon VoLTE</string>
     <string name="volte_icon_summary">Tampilkan ikon VoLTE</string>
-    <string name="volte_icon_style_title">Pilih Ikon VoLTE</string>
-    <string name="volte_icon_asus">Asus</string>
-    <string name="volte_icon_vo">Hanya Vo</string>
-    <string name="volte_icon_volte">VoLTE</string>
-    <string name="volte_icon_oos">OOS</string>
-    <string name="volte_icon_hd">HD</string>
-    <string name="volte_icon_hd2">HD CAF</string>
-    <string name="volte_icon_miui">MIUI 11</string>
-    <string name="volte_icon_emui">EMUI</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">Ikon VoWiFi</string>
+    <string name="vowifi_icon_summary">Tampilkan ikon VoWiFi bila tersedia</string>
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Gunakan ikon data seluler gaya lama</string>
     <string name="use_old_mobiletype_summary">Tampilkan tipe ikon seluler di atas indikator sinyal</string>
@@ -245,6 +235,8 @@
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Gaya Baterai</string>
     <string name="status_bar_battery_style_icon_portrait">Ikon tegak (standar)</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Ikon mendatar (Kanan)</string>
+    <string name="status_bar_battery_style_icon_landscape">Ikon mendatar (Kiri)</string>
     <string name="status_bar_battery_style_circle">Lingkaran</string>
     <string name="status_bar_battery_style_dotted_circle">Lingkaran (Putus-putus)</string>
     <string name="status_bar_battery_style_filled_circle">Lingkaran (Terisi)</string>
@@ -252,6 +244,8 @@
     <string name="status_bar_battery_style_big_dotted_circle">Lingkaran besar putus-putus</string>
     <string name="status_bar_battery_style_text">Teks</string>
     <string name="status_bar_battery_style_hidden">Sembunyikan</string>
+    <string name="left_battery_text_title">Teks baterai kiri</string>
+    <string name="left_battery_text_summary">Letakkan teks baterai di sebelah kiri ikon baterai</string>
     <!-- Status bar - Battery percentage -->
     <string name="status_bar_battery_percentage_title">Persentase baterai</string>
     <string name="status_bar_battery_percentage_default">Tersembunyi (bawaan)</string>
@@ -477,6 +471,19 @@
     <string name="ambient_notification_color_mode_notification">Warna ikon notifikasi</string>
     <string name="ambient_notification_color_mode_custom">@string/ambient_notification_light_color_title</string>
     <string name="ambient_notification_light_color_title">Warna kustom</string>
+    <string name="pulse_ambient_light_show_always_title">Selalu tampilkan</string>
+    <string name="pulse_ambient_light_show_always_summary">Tampilkan cahaya untuk semua acara tertunda dan bukan sekadar notifikasi</string>
+    <string name="pulse_ambient_light_repeat_direction_title">Mode pengulangan cahaya</string>
+    <string name="pulse_ambient_light_repeat_direction_restart">Mulai ulang</string>
+    <string name="pulse_ambient_light_repeat_direction_reverse">Putar balik</string>
+    <string name="pulse_ambient_light_layout_title">Tampilan cahaya</string>
+    <string name="pulse_ambient_light_layout_solid">Padat</string>
+    <string name="pulse_ambient_light_layout_faded">Memudar</string>
+    <string name="pulse_ambient_light_width_title">Lebar terang</string>
+    <string name="pulse_light_layout_style_title">Gaya Tata Letak Cahaya</string>
+    <string name="pulse_light_both">Semua Empat Sisi</string>
+    <string name="pulse_light_top_bottom">Hanya Atas-Bawah</string>
+    <string name="pulse_light_left_right">Hanya Kiri-Kanan</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">Teks pada footer QS</string>
     <string name="qs_footer_text_summary">Tampilkan teks di bagian bawah panel QS</string>
@@ -501,6 +508,7 @@
     <string name="power_menu_title">Menu daya</string>
     <string name="power_menu_title_summary">Lihat atau ubah pilihan menu daya</string>
     <string name="powermenu_screenshot">Tangkapan Layar</string>
+    <string name="powermenu_onthego">Mode On-The-Go</string>
     <string name="powermenu_torch">Senter</string>
     <string name="powermenu_advanced">Opsi mulai ulang lanjutan</string>
     <string name="powermenu_airplane">Mode pesawat</string>
@@ -1019,7 +1027,22 @@
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Status baterai Bluetooth</string>
     <string name="bluetooth_battery_summary">Tampilkan status baterai untuk perangkat bluetooth yang terhubung, jika tersedia</string>
-    <!-- Call strength icons in QS -->
-    <string name="show_qs_call_strength_icon_title">Tampilkan ikon kekuatan panggilan</string>
-    <string name="show_qs_call_strength_icon_summary">Tampilkan ikon kekuatan panggilan di panel Setelan Cepat jika tersedia</string>
+    <!-- Screen off FOD -->
+    <string name="screen_off_fod_title">FOD layar mati</string>
+    <string name="screen_off_fod_summary">Tetap aktifkan FOD saat layar mati</string>
+    <!-- QSTile requires unlocking before being accessible -->
+    <string name="qstile_requires_unlocking_title">Ubin QS yang aman memerlukan pembukaan kunci</string>
+    <string name="qstile_requires_unlocking_summary">Ubin QS berikut memerlukan pembukaan kunci sebelum Anda dapat mengaksesnya dari layar kunci:\nMode pesawat, Data seluler, NFC, Hotspot, Penambatan USB, dan Lokasi</string>
+    <!-- Ambient Ticker -->
+    <string name="pulse_on_new_tracks_title">Penampil musik</string>
+    <string name="pulse_on_new_tracks_summary">Tampilkan penampil musik di Tampilan Ambien selama perubahan trek</string>
+    <!-- Burn-in Protection -->
+    <string name="burnin_category">Perlindungan burn-in</string>
+    <string name="burn_in_protection_title">Gunakan perlindungan burn-in</string>
+    <string name="burn_in_protection_summary">Geser ikon bilah navigasi dan bilah status untuk mencegah burn-in</string>
+    <string name="burn_in_protection_interval_title">Interval pergeseran</string>
+    <string name="burn_in_protection_interval_summary">Seberapa sering membuat ikon bergeser</string>
+    <!-- Udfps Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">Umpan balik FOD</string>
+    <string name="udfps_haptic_feedback_summary">Bergetar saat menyentuh ikon FOD</string>
 </resources>

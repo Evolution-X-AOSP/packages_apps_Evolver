@@ -63,8 +63,6 @@
     <string name="seek_value_edit_label">設定值</string>
     <!-- Units -->
     <string name="unit_milliseconds">毫秒</string>
-    <string name="unit_percent">\u0025</string>
-    <string name="unit_pixels">dp</string>
     <string name="unit_seconds">秒</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">開啟</string>
@@ -211,20 +209,12 @@
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">顯示 4G 以替代 LTE</string>
     <string name="show_fourg_icon_summary">使用4G圖示替代狀態列中的LTE圖示</string>
-    <!-- Show VoLTE icon on statusbar -->
-    <string name="volte_switch_title">VoLTE 圖示</string>
-    <string name="volte_switch_summary">顯示 VoLTE 圖示</string>
+    <!-- VoLTE icon -->
     <string name="volte_icon_title">VoLTE 圖示</string>
     <string name="volte_icon_summary">顯示 VoLTE 圖示</string>
-    <string name="volte_icon_style_title">選擇 VoLTE 圖示</string>
-    <string name="volte_icon_asus">Asus</string>
-    <string name="volte_icon_vo">Vo Only</string>
-    <string name="volte_icon_volte">VoLTE</string>
-    <string name="volte_icon_oos">OOS</string>
-    <string name="volte_icon_hd">HD</string>
-    <string name="volte_icon_hd2">HD CAF</string>
-    <string name="volte_icon_miui">MIUI 11</string>
-    <string name="volte_icon_emui">EMUI</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWiFi 圖示</string>
+    <string name="vowifi_icon_summary">可用時顯示 VoWiFi 圖示</string>
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">使用舊的數據圖示風格</string>
     <string name="use_old_mobiletype_summary">在訊號指示器頂部顯示行動類型圖示</string>
@@ -245,6 +235,8 @@
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">電池圖示樣式</string>
     <string name="status_bar_battery_style_icon_portrait">直立圖示 (預設)</string>
+    <string name="status_bar_battery_style_icon_rlandscape">橫向圖標（右側）</string>
+    <string name="status_bar_battery_style_icon_landscape">橫向圖標（右側）</string>
     <string name="status_bar_battery_style_circle">圓圈</string>
     <string name="status_bar_battery_style_dotted_circle">虛線圓圈</string>
     <string name="status_bar_battery_style_filled_circle">實心圓圈</string>
@@ -252,6 +244,8 @@
     <string name="status_bar_battery_style_big_dotted_circle">虛線大圓圈</string>
     <string name="status_bar_battery_style_text">文字</string>
     <string name="status_bar_battery_style_hidden">隱藏</string>
+    <string name="left_battery_text_title">左側電量文字</string>
+    <string name="left_battery_text_summary">將電量文字放在電池圖示的左側</string>
     <!-- Status bar - Battery percentage -->
     <string name="status_bar_battery_percentage_title">電量百分比</string>
     <string name="status_bar_battery_percentage_default">隱藏 (預設)</string>
@@ -477,6 +471,19 @@
     <string name="ambient_notification_color_mode_notification">通知圖示顏色</string>
     <string name="ambient_notification_color_mode_custom">@string/ambient_notification_light_color_title</string>
     <string name="ambient_notification_light_color_title">自訂顏色</string>
+    <string name="pulse_ambient_light_show_always_title">永遠顯示</string>
+    <string name="pulse_ambient_light_show_always_summary">除了通知以外，也顯示所有 Doze 事件的燈光</string>
+    <string name="pulse_ambient_light_repeat_direction_title">燈光重複模式</string>
+    <string name="pulse_ambient_light_repeat_direction_restart">重新開始</string>
+    <string name="pulse_ambient_light_repeat_direction_reverse">倒轉</string>
+    <string name="pulse_ambient_light_layout_title">燈光樣式</string>
+    <string name="pulse_ambient_light_layout_solid">純色</string>
+    <string name="pulse_ambient_light_layout_faded">漸淡</string>
+    <string name="pulse_ambient_light_width_title">燈光寬度</string>
+    <string name="pulse_light_layout_style_title">燈光布局樣式</string>
+    <string name="pulse_light_both">在所有的螢幕邊緣</string>
+    <string name="pulse_light_top_bottom">只在上下螢幕邊緣</string>
+    <string name="pulse_light_left_right">只在左右螢幕邊緣</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">快速設定面板底部文字</string>
     <string name="qs_footer_text_summary">在快速設定面板底部顯示文字</string>
@@ -501,6 +508,7 @@
     <string name="power_menu_title">電源按鈕選單</string>
     <string name="power_menu_title_summary">檢視或更改電源按鈕選單</string>
     <string name="powermenu_screenshot">螢幕擷取畫面</string>
+    <string name="powermenu_onthego">OTG 模式</string>
     <string name="powermenu_torch">手電筒</string>
     <string name="powermenu_advanced">進階重新啟動選項</string>
     <string name="powermenu_airplane">飛航模式</string>
@@ -1019,7 +1027,22 @@
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">顯示藍牙設備電量</string>
     <string name="bluetooth_battery_summary">顯示當前連接的藍牙裝置電量。 （如果設備支持）</string>
-    <!-- Call strength icons in QS -->
-    <string name="show_qs_call_strength_icon_title">顯示信號強度圖式</string>
-    <string name="show_qs_call_strength_icon_summary">在快速設定面板中顯示信號強度圖式</string>
+    <!-- Screen off FOD -->
+    <string name="screen_off_fod_title">螢幕關閉時啟用螢幕指紋辨識</string>
+    <string name="screen_off_fod_summary">螢幕指紋辨識功能在螢幕關閉時仍然啟用</string>
+    <!-- QSTile requires unlocking before being accessible -->
+    <string name="qstile_requires_unlocking_title">需解鎖才允許使用部分快速設定按鈕</string>
+    <string name="qstile_requires_unlocking_summary">下列快速設定按鈕需要先將裝置解鎖才能使用：\n飛航模式、行動數據、NFC、無線基地台、USB 網路共用以及定位</string>
+    <!-- Ambient Ticker -->
+    <string name="pulse_on_new_tracks_title">音樂提示訊息</string>
+    <string name="pulse_on_new_tracks_summary">切換曲目時於微光螢幕上顯示訊息</string>
+    <!-- Burn-in Protection -->
+    <string name="burnin_category">螢幕烙印防護</string>
+    <string name="burn_in_protection_title">使用螢幕烙印防護</string>
+    <string name="burn_in_protection_summary">透過不時微調導航列與狀態列圖示位置來防止螢幕產生烙印</string>
+    <string name="burn_in_protection_interval_title">微調間隔時間</string>
+    <string name="burn_in_protection_interval_summary">設定圖示位置微調的頻率</string>
+    <!-- Udfps Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">螢幕指紋辨識觸覺回饋</string>
+    <string name="udfps_haptic_feedback_summary">在使用銀幕指紋辨識時發出震動</string>
 </resources>
