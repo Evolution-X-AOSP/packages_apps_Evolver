@@ -20,55 +20,17 @@
     android:title="@string/themes_title">
 
     <Preference
+        android:key="monet_engine"
+        android:title="@string/monet_engine_title"
+        android:summary="@string/monet_engine_summary"
+        android:fragment="com.evolution.settings.fragments.MonetEngine"/>
+
+    <Preference
         android:key="dark_ui_mode"
         android:title="@string/dark_ui_mode"
         android:summary="@string/dark_ui_mode_summary"
         android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
         settings:controller="com.android.settings.display.DarkUIPreferenceController" />
-
-    <PreferenceCategory
-        android:key="monet_category"
-        android:title="@string/theme_summary">
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="monet_engine_custom_color"
-            android:title="@string/monet_engine_custom_color_title"
-            android:summary="@string/monet_engine_custom_color_summary"
-            android:defaultValue="false" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="monet_engine_color_override"
-            android:title="@string/monet_engine_color_override_title"
-            android:dependency="monet_engine_custom_color"
-            android:defaultValue="0xffffff" />
-
-        <com.evolution.settings.preference.SecureSettingSeekBarPreference
-            android:key="monet_engine_white_luminance_user"
-            android:title="@string/monet_engine_white_luminance_user_title"
-            android:defaultValue="425"
-            android:max="1000"
-            settings:min="0"
-            settings:interval="25"/>
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="monet_engine_accurate_shades"
-            android:title="@string/monet_engine_accurate_shades_title"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SecureSettingSeekBarPreference
-            android:key="monet_engine_chroma_factor"
-            android:title="@string/monet_engine_chroma_factor_title"
-            android:defaultValue="100"
-            android:max="400"
-            settings:min="50"
-            settings:interval="25"/>
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="monet_engine_linear_lightness"
-            android:title="@string/monet_engine_linear_lightness_title"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory 
         android:title="@string/category_name_general">

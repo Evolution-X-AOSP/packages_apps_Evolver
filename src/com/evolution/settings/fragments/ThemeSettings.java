@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2021 The Evolution X Project
+ * Copyright (C) 2019-2022 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import android.content.IntentFilter;
 import android.content.om.IOverlayManager;
 import android.content.res.Resources;
 import android.database.ContentObserver;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -55,8 +54,6 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -65,38 +62,11 @@ public class ThemeSettings extends DashboardFragment implements OnPreferenceChan
 
     public static final String TAG = "ThemeSettings";
 
-    private String MONET_ENGINE_COLOR_OVERRIDE = "monet_engine_color_override";
-
-    private ColorPickerPreference mMonetColor;
-    private Context mContext;
-
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
-        final Resources res = getResources();
-        mContext = getActivity();
-
-        mMonetColor = (ColorPickerPreference)findPreference(MONET_ENGINE_COLOR_OVERRIDE);
-        int intColor = Settings.Secure.getInt(resolver, MONET_ENGINE_COLOR_OVERRIDE, Color.WHITE);
-        String hexColor = String.format("#%08x", (0xffffff & intColor));
-        mMonetColor.setNewPreviewColor(intColor);
-        mMonetColor.setSummary(hexColor);
-        mMonetColor.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mMonetColor) {
-            String hex = ColorPickerPreference.convertToARGB(Integer
-                .parseInt(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.Secure.putInt(resolver,
-                MONET_ENGINE_COLOR_OVERRIDE, intHex);
-            return true;
-        }
         return false;
     }
 
