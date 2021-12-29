@@ -33,8 +33,27 @@
         settings:controller="com.android.settings.display.DarkUIPreferenceController"
         app:allowDividerAbove="true" />
 
-    <PreferenceCategory 
-        android:title="@string/category_name_general">
+    <PreferenceCategory
+        android:key="theme_customization_category"
+        android:title="@string/theme_customization_category">
+
+        <Preference
+            android:key="android.theme.customization.fonts"
+            android:title="@string/theme_customization_font_title"
+            android:summary="@string/theme_customization_font_summary"
+            android:fragment="com.evolution.settings.fragments.FontsPicker" />
+
+        <Preference
+            android:key="android.theme.customization.icon_pack"
+            android:title="@string/theme_customization_icon_pack_title"
+            android:summary="@string/theme_customization_icon_pack_summary"
+            android:fragment="com.evolution.settings.fragments.StatusbarIcons" />
+
+        <Preference
+            android:key="android.theme.customization.adaptive_icon_shape"
+            android:title="@string/theme_customization_icon_shape_title"
+            android:summary="@string/theme_customization_icon_shape_summary"
+            android:fragment="com.evolution.settings.fragments.IconShapes" />
 
     </PreferenceCategory>
 
