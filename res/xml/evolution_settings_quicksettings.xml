@@ -75,6 +75,33 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="quick_settings_brighness_category"
+        android:title="@string/qs_show_brightness_slider_title">
+
+        <!-- Brightness slider -->
+        <com.evolution.settings.preference.SecureSettingListPreference
+            android:key="qs_show_brightness_slider"
+            android:title="@string/qs_show_brightness_slider_title"
+            android:entries="@array/qs_show_brightness_slider_entries"
+            android:entryValues="@array/qs_show_brightness_slider_values"
+            android:defaultValue="1" />
+
+        <com.evolution.settings.preference.SecureSettingListPreference
+            android:key="qs_brightness_slider_position"
+            android:title="@string/qs_brightness_slider_position_title"
+            android:entries="@array/qs_brightness_slider_position_entries"
+            android:entryValues="@array/qs_brightness_slider_position_values"
+            android:defaultValue="0" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="qs_show_auto_brightness"
+            android:title="@string/qs_show_auto_brightness_title"
+            android:summary="@string/qs_show_auto_brightness_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory 
          android:title="@string/qs_footer_category">
 
