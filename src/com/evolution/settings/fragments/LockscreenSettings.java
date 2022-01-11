@@ -54,6 +54,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private boolean mShowFODPressedColor = true;
+    private boolean mShowScreenOffPref;
 
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String FINGERPRINT_SUCCESS_VIB = "fingerprint_success_vib";
@@ -76,6 +77,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
     static final int MODE_MIXED_SUNRISE = 4;
 
     Preference mAODPref;
+    Preference mFODPref;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -116,6 +118,12 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
         mFODPressedColor = (SystemSettingListPreference) findPreference(FOD_PRESSED_COLOR);
         if (!mShowFODPressedColor) {
             prefSet.removePreference(mFODPressedColor);
+        }
+
+        mShowScreenOffPref = getContext().getResources().getBoolean(R.bool.config_supportScreenOffFod);
+        mFODPref = findPreference(SCREEN_OFF_FOD_KEY);
+        if (!mShowScreenOffPref && !UdfpsUtils.hasUdfpsSupport(getContext())) {
+            prefSet.removePreference(mFODPref);
         }
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
