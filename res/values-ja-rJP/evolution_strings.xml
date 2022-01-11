@@ -40,7 +40,7 @@
     <string name="aosp_gesture_summary">Android に含まれる標準のジェスチャー</string>
     <string name="dark_ui_mode_summary">ダークテーマのオプションを参照する</string>
     <string name="theme_summary">Monet 設定</string>
-    <string name="unsupported_gestures">この機能を使用するのに2つまたは3つのボタンナビゲーションを有効化する</string>
+    <string name="unsupported_gestures">この機能を使用するには2または3ボタンナビゲーションを有効化して下さい</string>
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">リセット</string>
@@ -120,15 +120,15 @@
     <string name="battery_light_summary">残量低下時とマナーモード時のライトの有無を設定する</string>
     <string name="battery_light_enable">バッテリーライト</string>
     <string name="battery_full_light_enabled">フル充電時のバッテリーライト</string>
-    <string name="battery_light_allow_on_dnd_title">マナーモード中のライト</string>
+    <string name="battery_light_allow_on_dnd_title">Do Not Disturb 中のライト</string>
     <string name="battery_light_low_blinking_title">残量低下時の点滅</string>
     <string name="battery_light_cat">充電中のライトの色</string>
     <string name="battery_light_low_color">残量低下</string>
     <string name="battery_light_medium_color">中程度</string>
     <string name="battery_light_full_color">ほぼ充電完了</string>
     <string name="battery_light_reallyfull_color">充電完了</string>
-    <!-- FOD icon picker -->
-    <string name="fod_icon_picker_category_title">指紋認証の設定</string>
+    <!-- FOD settings -->
+    <string name="fod_customization_title">指紋認証の設定</string>
     <!-- FOD animations -->
     <string name="fod_recog_animation_category">指紋認証のアニメーション</string>
     <string name="fod_recog_animation_title">認識アニメーション</string>
@@ -262,17 +262,18 @@
     <string name="qs_columns_portrait_title">縦向き時の列数</string>
     <string name="qs_columns_landscape_title">横向き時の列数</string>
     <string name="qs_tile_title_visibility_title">タイルのタイトルを表示</string>
-    <!-- Status bar - Brightness -->
-    <string name="status_bar_brightness_category">明るさ</string>
-    <string name="qs_show_brightness_slider_expanded_title">展開時に表示</string>
-    <string name="qs_show_brightness_slider_expanded_summary">展開時に明るさスライダーを表示する</string>
-    <string name="qs_show_auto_brightness_title">自動明るさ調整アイコン</string>
-    <string name="qs_show_auto_brightness_summary">スライダーの近くに明るさ自動調節のトグルを表示する</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_brightness_slider_category">明るさスライダー</string>
+    <string name="qs_brightness_slider_title">明るさスライダーを表示</string>
+    <string name="qs_brightness_slider_summary">クイック設定パネルに明るさスライダーを表示する</string>
     <string name="qs_brightness_position_bottom_title">展開時に下部に表示</string>
-    <!-- QQS brightness slider -->
-    <string name="qqs_brightness_slider_title">クイック設定の明るさスライダー</string>
-    <string name="qs_brightness_slider_bottom">下部</string>
-    <string name="qs_brightness_slider_top">上部</string>
+    <string name="qs_brightness_position_bottom_summary">クイック設定下部に明るさスライダーを表示する</string>
+    <!-- Quick Settings brightness icon -->
+    <string name="brightness_icon_title">明るさ自動調節ボタン</string>
+    <string name="brightness_icon_summary">明るさ自動調節ボタンを表示する</string>
+    <!-- Quick QS Panel brightness slider -->
+    <string name="quick_qs_brightness_slider_title">明るさスライダーを表示</string>
+    <string name="quick_qs_brightness_slider_summary">クイック設定に画面の明るさスライダーを表示する</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">音量ボタンでスリープ解除</string>
     <string name="volume_rocker_wake_summary">音量ボタンを押してスリープ解除を許可する</string>
@@ -495,11 +496,12 @@
     <string name="fod_icon_picker_footer">独自のアイコンを追加するには、左上のアイコンを選択し、OnePlus 6T 指紋カスタマイズアプリを使用して必要なアイコンを選択して下さい。</string>
     <!-- FOD pressed color -->
     <string name="fod_pressed_color_title">指紋認証タッチ時の色</string>
+    <string name="fod_pressed_color_default">既定</string>
     <string name="fod_pressed_color_white">ホワイト</string>
-    <string name="fod_pressed_color_cyan">シアン</string>
+    <string name="fod_pressed_color_white_new">ホワイト (新)</string>
     <string name="fod_pressed_color_green">緑</string>
     <string name="fod_pressed_color_yellow">イエロー</string>
-    <string name="fod_pressed_color_light_yellow">明るい黄色</string>
+    <string name="fod_pressed_color_light_yellow">ライトイエロー</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">ヘッドセット接続時に音楽アプリ起動</string>
     <string name="headset_connect_player_summary">ヘッドセット接続時に既定の音楽アプリを起動する</string>
@@ -510,7 +512,9 @@
     <string name="powermenu_screenshot">スクリーンショット</string>
     <string name="powermenu_onthego">On-The-Go モード</string>
     <string name="powermenu_torch">フラッシュライト</string>
+    <string name="powermenu_power">電源</string>
     <string name="powermenu_advanced">高度な再起動オプション</string>
+    <string name="powermenu_restart">再起動</string>
     <string name="powermenu_airplane">機内モード</string>
     <string name="powermenu_settings">設定</string>
     <string name="powermenu_lockdown">画面ロック</string>
@@ -529,10 +533,16 @@
     <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">テーマ</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">アイコンの形状</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">見出し / 説明フォント</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">アイコンパック</string>
+    <!-- Custom Signal bar icons -->
+    <string name="theme_customization_icon_signal_bar_title">電波アイコン</string>
+    <!-- Custom Wi-Fi bar icons -->
+    <string name="theme_customization_icon_wifi_bar_title">Wi-Fi</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">タイルのスタイル</string>
     <string name="qstile_circle_trim">トリム付きの円</string>
@@ -888,49 +898,21 @@
     <string name="rounded_style_title">システムダイアログの丸みのスタイル</string>
     <string name="rounded_slight">弱</string>
     <string name="rounded_high">高</string>
-    <!-- Brightness slider styles -->
-    <string name="slider_styles_title">明るさスライダーのスタイル</string>
-    <string name="slider_rui">RUI</string>
-    <!-- Gaming mode -->
-    <string name="gaming_title">ゲームモード</string>
-    <string name="gaming_title_summary">ゲームの没入型体験のための追加機能を設定する</string>
-    <string name="gaming_mode_enabled_title">ゲームモードを有効化</string>
-    <string name="gaming_mode_disable_auto_brightness_title">自動明るさ調節の無効化</string>
-    <string name="gaming_mode_disable_auto_brightness_summary">ゲームモード時に自動明るさ調節を無効にする</string>
-    <string name="gaming_mode_notification_danmaku_title">通知の弾幕表示</string>
-    <string name="gaming_mode_notification_danmaku_summary">ゲーム中は通知の内容を弾幕の形式で表示する</string>
-    <string name="gaming_mode_quick_start_apps_title">クイックスタートアプリ</string>
-    <string name="gaming_mode_quick_start_apps_summary">フローティングボールで起動するアプリを選択する</string>
-    <string name="gaming_mode_menu_opacity_title">メニューの不透明度レベル</string>
-    <string name="gaming_mode_use_menu_overlay_title">メニューオーバーレイ表示</string>
-    <string name="gaming_mode_use_menu_overlay_summary">ゲーム実行中にメニューをオーバーレイ表示します。このオプションが無効になっている場合は、弾幕形式の通知などのいくつかのゲームモードの機能が無効にされます。</string>
-    <string name="gaming_mode_performance">パフォーマンス</string>
-    <string name="gaming_mode_use_game_driver_title">ゲームドライバーを使う</string>
-    <string name="gaming_mode_use_game_driver_summary">ゲームに特定のドライバーを使用する</string>
-    <string name="gaming_mode_change_performance_title">パフォーマンスチューニング</string>
-    <string name="gaming_mode_change_performance_summary">ゲーム開始時のパフォーマンスレベルを調整する</string>
-    <string name="gaming_mode_performance_title">パフォーマンスレベル</string>
-    <string name="gaming_mode_dnd">Do Not Disturb</string>
-    <string name="gaming_mode_disable_notification_alert_title">通知を無効化</string>
-    <string name="gaming_mode_disable_notification_alert_summary">着信をアラーム以外の通知の表示と会話のバブルを表示しない</string>
-    <string name="gaming_mode_disable_ringtone_title">着信の無音化</string>
-    <string name="gaming_mode_disable_ringtone_summary">ゲームモード中は着信の呼び出しと通知を無効にする</string>
-    <string name="gaming_mode_auto_answer_call_title">通話の自動応答</string>
-    <string name="gaming_mode_auto_answer_call_summary">ゲーム中は通話に自動応答してヘッドセットが接続されていない時はハンズフリーにする</string>
-    <string name="gaming_mode_prevent_accidental_touch">誤タッチ防止</string>
-    <string name="gaming_mode_disable_gesture_title">ジェスチャーの無効化</string>
-    <string name="gaming_mode_apps">ゲームリスト</string>
-    <string name="gaming_mode_dynamic_add_title">ダイナミックモード</string>
-    <string name="gaming_mode_dynamic_add_summary">ゲームアプリを自動的に判別して追加しよう試みる</string>
-    <string name="gaming_mode_show_danmaku_title">弾幕の表示</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">動的な通知のフィルタリング</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">ダウンロードの進行状況などの通知を自動的にフィルターする</string>
-    <string name="gaming_mode_danmaku_size_horizontal_title">弾幕サイズ (水平)</string>
-    <string name="gaming_mode_danmaku_size_vertical_title">弾幕サイズ (垂直)</string>
-    <string name="gaming_mode_danmaku_speed_horizontal_title">弾幕速度 (水平)</string>
-    <string name="gaming_mode_danmaku_speed_vertical_title">弾幕速度 (垂直)</string>
-    <string name="gaming_mode_danmaku_blacklist">ブラックリスト</string>
-    <string name="add_package_to_title">アプリの追加</string>
+    <!-- Gaming macro QS tile -->
+    <string name="gaming_mode_tile_title">ゲームマクロ</string>
+    <string name="gaming_mode_tile_summary">クイック設定タイルの設定のゲームマクロ</string>
+    <string name="gaming_mode_heads_up_title">Heads Up</string>
+    <string name="gaming_mode_heads_up_summary">Heads Up を無効にする</string>
+    <string name="gaming_mode_zen_title">Do Not Disturb</string>
+    <string name="gaming_mode_zen_summary">Do Not Disturb を有効にする</string>
+    <string name="gaming_mode_brightness_enabled_title">自動明るさ調整</string>
+    <string name="gaming_mode_brightness_enabled_summary">明るさ自動調節を無効にする</string>
+    <string name="gaming_mode_media_enabled_title">メディアの音量</string>
+    <string name="gaming_mode_media_enabled_summary">メディア音量を設定する</string>
+    <string name="gaming_mode_media_title">設定音量</string>
+    <string name="gaming_mode_desc">ゲームマクロは上部であなたが選択した設定を切り替えます。あなたが選択した全ての設定は保存と切り替えが行われ、ゲームマクロを無効にすれば切り替えが元に戻ります。</string>
+    <string name="gaming_mode_screen_off_title">画面消灯時に無効化</string>
+    <string name="gaming_mode_screen_off_summary">画面消灯時はゲームマクロを無効にする</string>
     <!-- OOS style material dismiss all button for notifications -->
     <string name="notification_material_dismiss_button_title">マテリアルの削除ボタン</string>
     <string name="notification_material_dismiss_button_summary">全て終了ボタンをフローティングボタンに置き換える</string>
@@ -1030,9 +1012,6 @@
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">セキュアなクイック設定</string>
     <string name="qstile_requires_unlocking_summary">以下のクイック設定タイルは使用する前にロック画面の解除が必要になります:\n機内モード・モバイルデータ・NFC・Wi-Fi ホットスポット・USB テザリング・位置情報 </string>
-    <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">音楽ティッカー</string>
-    <string name="pulse_on_new_tracks_summary">再生中の音楽の変更時にアンビエント表示に音楽ティッカーを表示する</string>
     <!-- Burn-in Protection -->
     <string name="burnin_category">焼き付き保護</string>
     <string name="burn_in_protection_title">焼き付き保護を使用</string>
@@ -1042,4 +1021,13 @@
     <!-- Udfps Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">画面内指紋認証の振動の使用</string>
     <string name="udfps_haptic_feedback_summary">画面内指紋認証アイコンに触れた時に振動させる</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">通知の数を表示</string>
+    <string name="status_bar_notif_count_summary">保留中の通知の数を表示する</string>
+    <!-- Nightlight Fod -->
+    <string name="fod_night_light_title">画面内指紋認証中は夜間ライト無効化</string>
+    <string name="fod_night_light_summary">画面内指紋認証が有効な場合は夜間ライトを無効化します。このオプションを無効化すると、夜間ライト有効時に指紋認証の正確性に影響する場合があります。</string>
+    <!-- Location Privacy Indicator -->
+    <string name="location_privacy_title"> 位置情報プライバシー表示</string>
+    <string name="location_privacy_summary">クイック設定とステータスバーの位置情報プライバシー表示を切り替える</string>
 </resources>

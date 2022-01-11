@@ -127,8 +127,8 @@
     <string name="battery_light_medium_color">Baterai sedang</string>
     <string name="battery_light_full_color">Baterai hampir penuh</string>
     <string name="battery_light_reallyfull_color">Baterai penuh (100%)</string>
-    <!-- FOD icon picker -->
-    <string name="fod_icon_picker_category_title">Pengaturan FOD</string>
+    <!-- FOD settings -->
+    <string name="fod_customization_title">Pengaturan FOD</string>
     <!-- FOD animations -->
     <string name="fod_recog_animation_category">Animasi FOD</string>
     <string name="fod_recog_animation_title">Animasi pengenalan</string>
@@ -262,17 +262,18 @@
     <string name="qs_columns_portrait_title">Kolom ubin pada tampilan potret</string>
     <string name="qs_columns_landscape_title">Kolom ubin pada tampilan lanskap</string>
     <string name="qs_tile_title_visibility_title">Tampilkan judul ikon</string>
-    <!-- Status bar - Brightness -->
-    <string name="status_bar_brightness_category">Slider pengatur kecerahan</string>
-    <string name="qs_show_brightness_slider_expanded_title">Slider kecerahan QS yang diperluas</string>
-    <string name="qs_show_brightness_slider_expanded_summary">Tampilkan slider kecerahan saat diluaskan</string>
-    <string name="qs_show_auto_brightness_title">Ikon Kecerahan Otomatis</string>
-    <string name="qs_show_auto_brightness_summary">Tampilkan tombol kecerahan adaptif di dekat slider</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_brightness_slider_category">Slider kecerahan</string>
+    <string name="qs_brightness_slider_title">Tampilkan slider kecerahan</string>
+    <string name="qs_brightness_slider_summary">Tampilkan slider kecerahan di panel Setelan Cepat</string>
     <string name="qs_brightness_position_bottom_title">Slider kecerahan di bagian bawah (hanya berfungsi untuk QS yang diperluas)</string>
-    <!-- QQS brightness slider -->
-    <string name="qqs_brightness_slider_title">Slider Kecerahan Cepat</string>
-    <string name="qs_brightness_slider_bottom">Bawah</string>
-    <string name="qs_brightness_slider_top">Atas</string>
+    <string name="qs_brightness_position_bottom_summary">Tampilkan slider kecerahan di setelan cepat bawah</string>
+    <!-- Quick Settings brightness icon -->
+    <string name="brightness_icon_title">Tombol kecerahan adaptif</string>
+    <string name="brightness_icon_summary">Tampilkan tombol kecerahan adaptif</string>
+    <!-- Quick QS Panel brightness slider -->
+    <string name="quick_qs_brightness_slider_title">Tampilkan slider kecerahan di Panel QS Cepat</string>
+    <string name="quick_qs_brightness_slider_summary">Tampilkan slider kecerahan di panel qs cepat</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Bangun dengan tombol volume</string>
     <string name="volume_rocker_wake_summary">Menekan tombol volume akan membangunkan perangkat Anda</string>
@@ -495,8 +496,9 @@
     <string name="fod_icon_picker_footer">Untuk menambahkan ikon Anda sendiri, pilih ikon kiri atas dan gunakan aplikasi OnePlus 6T FP Customizer untuk memilih ikon yang Anda inginkan.</string>
     <!-- FOD pressed color -->
     <string name="fod_pressed_color_title">Warna sidik jari ditekan</string>
+    <string name="fod_pressed_color_default">Default</string>
     <string name="fod_pressed_color_white">Putih</string>
-    <string name="fod_pressed_color_cyan">Biru Kehijauan</string>
+    <string name="fod_pressed_color_white_new">Putih (Baru)</string>
     <string name="fod_pressed_color_green">Hijau</string>
     <string name="fod_pressed_color_yellow">Kuning</string>
     <string name="fod_pressed_color_light_yellow">Cahaya Kuning</string>
@@ -510,7 +512,9 @@
     <string name="powermenu_screenshot">Tangkapan Layar</string>
     <string name="powermenu_onthego">Mode On-The-Go</string>
     <string name="powermenu_torch">Senter</string>
+    <string name="powermenu_power">Matikan Daya</string>
     <string name="powermenu_advanced">Opsi mulai ulang lanjutan</string>
+    <string name="powermenu_restart">Mulai ulang</string>
     <string name="powermenu_airplane">Mode pesawat</string>
     <string name="powermenu_settings">Setelan</string>
     <string name="powermenu_lockdown">Kunci rapat</string>
@@ -529,10 +533,16 @@
     <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Tema</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Bentuk ikon</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Font Judul / Isi</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Paket ikon</string>
+    <!-- Custom Signal bar icons -->
+    <string name="theme_customization_icon_signal_bar_title">Sinyal</string>
+    <!-- Custom Wi-Fi bar icons -->
+    <string name="theme_customization_icon_wifi_bar_title">Wi-Fi</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">Gaya bingkai QS</string>
     <string name="qstile_circle_trim">Lingkaran dengan trim</string>
@@ -888,49 +898,21 @@
     <string name="rounded_style_title">Gaya lengkungan untuk dialog sistem</string>
     <string name="rounded_slight">Sedikit</string>
     <string name="rounded_high">Tinggi</string>
-    <!-- Brightness slider styles -->
-    <string name="slider_styles_title">Gaya slider kecerahan</string>
-    <string name="slider_rui">RUI</string>
-    <!-- Gaming mode -->
-    <string name="gaming_title">Mode Permainan</string>
-    <string name="gaming_title_summary">Fitur ekstra untuk pengalaman bermain game yang impresif</string>
-    <string name="gaming_mode_enabled_title">Aktifkan Mode Permainan</string>
-    <string name="gaming_mode_disable_auto_brightness_title">Nonaktifkan kecerahan otomatis</string>
-    <string name="gaming_mode_disable_auto_brightness_summary">Nonaktifkan kecerahan otomatis saat memasuki mode permainan</string>
-    <string name="gaming_mode_notification_danmaku_title">Notifikasi Danmaku</string>
-    <string name="gaming_mode_notification_danmaku_summary">Menampilkan konten notifikasi berupa danmaku di dalam game</string>
-    <string name="gaming_mode_quick_start_apps_title">Aplikasi Mulai Cepat</string>
-    <string name="gaming_mode_quick_start_apps_summary">Pilih aplikasi yang ingin Anda luncurkan dengan bola mengambang</string>
-    <string name="gaming_mode_menu_opacity_title">Tingkat opasitas menu</string>
-    <string name="gaming_mode_use_menu_overlay_title">Tampilkan hamparan menu</string>
-    <string name="gaming_mode_use_menu_overlay_summary">Tampilkan hamparan menu saat game sedang berjalan. Jika opsi ini dinonaktifkan, beberapa fitur mode permainan akan dinonaktifkan, seperti notifikasi Danmaku</string>
-    <string name="gaming_mode_performance">Kinerja</string>
-    <string name="gaming_mode_use_game_driver_title">Gunakan driver game</string>
-    <string name="gaming_mode_use_game_driver_summary">Gunakan driver khusus untuk game</string>
-    <string name="gaming_mode_change_performance_title">Penyesuaian kinerja</string>
-    <string name="gaming_mode_change_performance_summary">Sesuaikan tingkat kinerja saat memulai game</string>
-    <string name="gaming_mode_performance_title">Tingkat performa</string>
-    <string name="gaming_mode_dnd">Jangan Ganggu</string>
-    <string name="gaming_mode_disable_notification_alert_title">Nonaktifkan peringatan notifikasi</string>
-    <string name="gaming_mode_disable_notification_alert_summary">Jangan izinkan notifikasi mengambang dan gelembung percakapan selain panggilan masuk dan alarm</string>
-    <string name="gaming_mode_disable_ringtone_title">Tidak berdering</string>
-    <string name="gaming_mode_disable_ringtone_summary">Matikan dering panggilan masuk dan notifikasi dalam mode permainan</string>
-    <string name="gaming_mode_auto_answer_call_title">Menjawab panggilan otomatis</string>
-    <string name="gaming_mode_auto_answer_call_summary">Jawab panggilan secara otomatis dalam game dan handsfree saat tidak ada headphone yang terhubung</string>
-    <string name="gaming_mode_prevent_accidental_touch">Cegah sentuhan tak disengaja</string>
-    <string name="gaming_mode_disable_gesture_title">Nonaktifkan gestur</string>
-    <string name="gaming_mode_apps">Daftar game</string>
-    <string name="gaming_mode_dynamic_add_title">Mode dinamis</string>
-    <string name="gaming_mode_dynamic_add_summary">Mendeteksi dan menambah aplikasi game secara otomatis</string>
-    <string name="gaming_mode_show_danmaku_title">Tampilkan danmaku</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">Notifikasi pemfilteran dinamis</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">Secara otomatis menyaring notifikasi seperti kemajuan unduhan</string>
-    <string name="gaming_mode_danmaku_size_horizontal_title">Ukuran danmaku (horizontal)</string>
-    <string name="gaming_mode_danmaku_size_vertical_title">Ukuran danmaku (vertikal)</string>
-    <string name="gaming_mode_danmaku_speed_horizontal_title">Kecepatan danmaku (horizontal)</string>
-    <string name="gaming_mode_danmaku_speed_vertical_title">Kecepatan danmaku (vertikal)</string>
-    <string name="gaming_mode_danmaku_blacklist">Daftar hitam</string>
-    <string name="add_package_to_title">Tambah aplikasi</string>
+    <!-- Gaming macro QS tile -->
+    <string name="gaming_mode_tile_title">Makro game</string>
+    <string name="gaming_mode_tile_summary">Pengaturan ubin QS makro game</string>
+    <string name="gaming_mode_heads_up_title">Notifikasi Mengambang</string>
+    <string name="gaming_mode_heads_up_summary">Apakah akan menonaktifkan Notifikasi Mengambang</string>
+    <string name="gaming_mode_zen_title">Jangan Ganggu</string>
+    <string name="gaming_mode_zen_summary">Apakah akan mengaktifkan Jangan Ganggu</string>
+    <string name="gaming_mode_brightness_enabled_title">Kecerahan Otomatis</string>
+    <string name="gaming_mode_brightness_enabled_summary">Apakah akan menonaktifkan kecerahan otomatis</string>
+    <string name="gaming_mode_media_enabled_title">Volume Media</string>
+    <string name="gaming_mode_media_enabled_summary">Apakah akan mengatur volume media</string>
+    <string name="gaming_mode_media_title">Atur volume ke</string>
+    <string name="gaming_mode_desc">Makro Game akan mengaktifkan pengaturan yang Anda pilih di atas. Semua pengaturan yang diaktifkan akan disimpan dan diaktifkan kembali setelah Anda menonaktifkan Makro Game</string>
+    <string name="gaming_mode_screen_off_title">Layar mati dinonaktifkan</string>
+    <string name="gaming_mode_screen_off_summary">Nonaktifkan makro game saat layar mati</string>
     <!-- OOS style material dismiss all button for notifications -->
     <string name="notification_material_dismiss_button_title">Tombol bersihkan semua</string>
     <string name="notification_material_dismiss_button_summary">Aktifkan untuk menggunakan tombol di tengah bawah sebagai ganti stok teks Hapus Semua</string>
@@ -1030,9 +1012,6 @@
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Ubin QS yang aman memerlukan pembukaan kunci</string>
     <string name="qstile_requires_unlocking_summary">Ubin QS berikut memerlukan pembukaan kunci sebelum Anda dapat mengaksesnya dari layar kunci:\nMode pesawat, Data seluler, NFC, Hotspot, Penambatan USB, dan Lokasi</string>
-    <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Penampil musik</string>
-    <string name="pulse_on_new_tracks_summary">Tampilkan penampil musik di Tampilan Ambien selama perubahan trek</string>
     <!-- Burn-in Protection -->
     <string name="burnin_category">Perlindungan burn-in</string>
     <string name="burn_in_protection_title">Gunakan perlindungan burn-in</string>
@@ -1042,4 +1021,13 @@
     <!-- Udfps Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">Umpan balik FOD</string>
     <string name="udfps_haptic_feedback_summary">Bergetar saat menyentuh ikon FOD</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Tampilkan jumlah notifikasi</string>
+    <string name="status_bar_notif_count_summary">Menampilkan jumlah dari notifikasi tertunda</string>
+    <!-- Nightlight Fod -->
+    <string name="fod_night_light_title">Nonaktifkan Cahaya Malam saat menampilkan FOD</string>
+    <string name="fod_night_light_summary">Nonaktifkan Cahaya Malam di layar kunci jika FOD aktif. Menonaktifkan opsi ini dapat memengaruhi akurasi sidik jari Anda dengan Cahaya Malam menyala.</string>
+    <!-- Location Privacy Indicator -->
+    <string name="location_privacy_title"> Tampilkan Indikator Privasi Lokasi</string>
+    <string name="location_privacy_summary">Aktifkan - Nonaktifkan indikator privasi lokasi di qs dan bilah status</string>
 </resources>
