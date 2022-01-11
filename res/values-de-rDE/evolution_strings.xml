@@ -127,8 +127,8 @@
     <string name="battery_light_medium_color">Mittlerer Akkustand</string>
     <string name="battery_light_full_color">Akku fast voll</string>
     <string name="battery_light_reallyfull_color">Akku voll geladen (100%)</string>
-    <!-- FOD icon picker -->
-    <string name="fod_icon_picker_category_title">Fingerabdrucksensor-Einstellungen</string>
+    <!-- FOD settings -->
+    <string name="fod_customization_title">Fingerabdrucksensor-Einstellungen</string>
     <!-- FOD animations -->
     <string name="fod_recog_animation_category">Animation des Fingerabdrucksymbols</string>
     <string name="fod_recog_animation_title">Animation beim Erkennen des Fingerabdrucks</string>
@@ -262,17 +262,18 @@
     <string name="qs_columns_portrait_title">Spalten im Hochformat</string>
     <string name="qs_columns_landscape_title">Kachel-Spalten im Querformat</string>
     <string name="qs_tile_title_visibility_title">Namen der Kacheln anzeigen</string>
-    <!-- Status bar - Brightness -->
-    <string name="status_bar_brightness_category">Helligkeitsregler</string>
-    <string name="qs_show_brightness_slider_expanded_title">Erweiterte Schnelleinstellungen</string>
-    <string name="qs_show_brightness_slider_expanded_summary">Helligkeitsregler in den Schnelleinstellungen anzeigen</string>
-    <string name="qs_show_auto_brightness_title">Automatische Helligkeit Symbol</string>
-    <string name="qs_show_auto_brightness_summary">Schalter für adaptive Helligkeit neben dem Schieberegler anzeigen</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_brightness_slider_category">Helligkeitsregler</string>
+    <string name="qs_brightness_slider_title">Helligkeitsregler anzeigen</string>
+    <string name="qs_brightness_slider_summary">Zeige Helligkeitsregler in den Schnelleinstellungen</string>
     <string name="qs_brightness_position_bottom_title">Schieberegler nach unten verschieben, wenn erweitert</string>
-    <!-- QQS brightness slider -->
-    <string name="qqs_brightness_slider_title">Schnelleinstellung Helligkeitsregeler</string>
-    <string name="qs_brightness_slider_bottom">Unten</string>
-    <string name="qs_brightness_slider_top">Oben</string>
+    <string name="qs_brightness_position_bottom_summary">Helligkeitsregler unten in den Schnelleinstellungen anzeigen</string>
+    <!-- Quick Settings brightness icon -->
+    <string name="brightness_icon_title">Schaltfläche \"Adaptive Helligkeit\"</string>
+    <string name="brightness_icon_summary">Schaltfläche \"Adaptive Helligkeit\" anzeigen</string>
+    <!-- Quick QS Panel brightness slider -->
+    <string name="quick_qs_brightness_slider_title">Helligkeitsregler in den Schnelleinstellungen anzeigen</string>
+    <string name="quick_qs_brightness_slider_summary">Helligkeitsregler in den Schnelleinstellungen anzeigen</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Aufwecken mit Lautstärketasten</string>
     <string name="volume_rocker_wake_summary">Drücken der Lautstärketasten weckt das Gerät</string>
@@ -495,8 +496,9 @@
     <string name="fod_icon_picker_footer">Um ein eigenes Symbol hinzuzufügen, das Symbol oben links wählen und die \"OnePlus 6T FP Customizer\" App verwenden, um das gewünschte Symbol auszuwählen.</string>
     <!-- FOD pressed color -->
     <string name="fod_pressed_color_title">Fingerabdruck Farbe gedrückt</string>
+    <string name="fod_pressed_color_default">Standard</string>
     <string name="fod_pressed_color_white">Weiß</string>
-    <string name="fod_pressed_color_cyan">Türkis</string>
+    <string name="fod_pressed_color_white_new">Weiß (Neu)</string>
     <string name="fod_pressed_color_green">Grün</string>
     <string name="fod_pressed_color_yellow">Gelb</string>
     <string name="fod_pressed_color_light_yellow">Hellgelb</string>
@@ -510,7 +512,9 @@
     <string name="powermenu_screenshot">Screenshot</string>
     <string name="powermenu_onthego">On-The-Go Modus</string>
     <string name="powermenu_torch">Taschenlampe</string>
+    <string name="powermenu_power">Start</string>
     <string name="powermenu_advanced">Erweitertes Neustartmenü</string>
+    <string name="powermenu_restart">Neustart</string>
     <string name="powermenu_airplane">Flugmodus</string>
     <string name="powermenu_settings">Einstellungen</string>
     <string name="powermenu_lockdown">Sperren</string>
@@ -529,10 +533,16 @@
     <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Design</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Symbolform</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Überschrift / Beschreibung Schriftart</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Symbolpaket</string>
+    <!-- Custom Signal bar icons -->
+    <string name="theme_customization_icon_signal_bar_title">Empfang</string>
+    <!-- Custom Wi-Fi bar icons -->
+    <string name="theme_customization_icon_wifi_bar_title">WLAN</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">QS-Kachelstil</string>
     <string name="qstile_circle_trim">Kreis mit Rand</string>
@@ -888,49 +898,21 @@
     <string name="rounded_style_title">Abrundungsstil für Systemdialoge</string>
     <string name="rounded_slight">Schwach</string>
     <string name="rounded_high">Hoch</string>
-    <!-- Brightness slider styles -->
-    <string name="slider_styles_title">Stil des Helligkeitsreglers</string>
-    <string name="slider_rui">RUI</string>
-    <!-- Gaming mode -->
-    <string name="gaming_title">Gaming-Modus</string>
-    <string name="gaming_title_summary">Zusätzliche Funktionen für ungestörtes Spielerlebnis</string>
-    <string name="gaming_mode_enabled_title">Gaming-Modus aktivieren</string>
-    <string name="gaming_mode_disable_auto_brightness_title">Automatische Helligkeit deaktivieren</string>
-    <string name="gaming_mode_disable_auto_brightness_summary">Automatische Helligkeit beim Start des Spielmodus deaktivieren</string>
-    <string name="gaming_mode_notification_danmaku_title">Danmaku-Benachrichtigungen</string>
-    <string name="gaming_mode_notification_danmaku_summary">Benachrichtigungsinhalte in Form von danmaku im Spiel anzeigen</string>
-    <string name="gaming_mode_quick_start_apps_title">Schnellstart-Apps</string>
-    <string name="gaming_mode_quick_start_apps_summary">Eine Anwendung auswählen, die mittels einer schwebenden Kugel gestartet werden kann</string>
-    <string name="gaming_mode_menu_opacity_title">Deckkraft des Menüs</string>
-    <string name="gaming_mode_use_menu_overlay_title">Zeige Menü-Überlagerung</string>
-    <string name="gaming_mode_use_menu_overlay_summary">Menü-Überlagerung anzeigen, wenn ein Spiel ausgeführt wird. Wenn diese Option deaktiviert ist, werden einige Funktionen im Spielmodus deaktiviert, wie z. B. Danmaku-Benachrichtigungen</string>
-    <string name="gaming_mode_performance">Leistung</string>
-    <string name="gaming_mode_use_game_driver_title">Spiele-Treiber benutzen</string>
-    <string name="gaming_mode_use_game_driver_summary">Verwende bestimmte Treiber für Spiele, z. B. Grafiktreiber</string>
-    <string name="gaming_mode_change_performance_title">Leistungsanpassung</string>
-    <string name="gaming_mode_change_performance_summary">Systemleistung beim Start eines Spiels anpassen</string>
-    <string name="gaming_mode_performance_title">Leistungsstufe</string>
-    <string name="gaming_mode_dnd">Nicht stören</string>
-    <string name="gaming_mode_disable_notification_alert_title">Benachrichtigungen deaktivieren</string>
-    <string name="gaming_mode_disable_notification_alert_summary">Erlaube keine schwebenden Benachrichtigungen und Gesprächsblasen außer bei eingehenden Anrufen und Alarmen</string>
-    <string name="gaming_mode_disable_ringtone_title">Kein Klingeln</string>
-    <string name="gaming_mode_disable_ringtone_summary">Klingelton eingehender Anrufe und Benachrichtigungen im Spielmodus deaktivieren</string>
-    <string name="gaming_mode_auto_answer_call_title">Anrufe Automatisch antworten</string>
-    <string name="gaming_mode_auto_answer_call_summary">Anrufe automatisch während eines Spiels annehmen, wenn kein Kopfhörer verbunden ist</string>
-    <string name="gaming_mode_prevent_accidental_touch">Unbeabsichtigte Berührungen verhindern</string>
-    <string name="gaming_mode_disable_gesture_title">Gesten deaktivieren</string>
-    <string name="gaming_mode_apps">Liste der Spiele</string>
-    <string name="gaming_mode_dynamic_add_title">Dynamischer Modus</string>
-    <string name="gaming_mode_dynamic_add_summary">Versuchen, Spiele automatisch zu erkennen und hinzuzufügen</string>
-    <string name="gaming_mode_show_danmaku_title">Zeige danmaku</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">Dynamische Filterung von Benachrichtigungen</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">Benachrichtigungen, wie Download-Fortschritt, automatisch filtern</string>
-    <string name="gaming_mode_danmaku_size_horizontal_title">Danmaku-Größe (Horizontal)</string>
-    <string name="gaming_mode_danmaku_size_vertical_title">Danmaku-Größe (Vertikal)</string>
-    <string name="gaming_mode_danmaku_speed_horizontal_title">Danmaku-Geschwindigkeit (Horizontal)</string>
-    <string name="gaming_mode_danmaku_speed_vertical_title">Danmaku-Geschwindigkeit (Vertikal)</string>
-    <string name="gaming_mode_danmaku_blacklist">Blacklist</string>
-    <string name="add_package_to_title">Anwendung hinzufügen</string>
+    <!-- Gaming macro QS tile -->
+    <string name="gaming_mode_tile_title">Spielmakro</string>
+    <string name="gaming_mode_tile_summary">Gaming Makro QS Kachel-Einstellungen</string>
+    <string name="gaming_mode_heads_up_title">Heads-Up</string>
+    <string name="gaming_mode_heads_up_summary">Ob Heads-Up deaktiviert werden soll</string>
+    <string name="gaming_mode_zen_title">Bitte nicht stören</string>
+    <string name="gaming_mode_zen_summary">Ob DND aktiviert werden soll</string>
+    <string name="gaming_mode_brightness_enabled_title">Automatische Helligkeit</string>
+    <string name="gaming_mode_brightness_enabled_summary">Ob die automatische Helligkeit deaktiviert werden soll</string>
+    <string name="gaming_mode_media_enabled_title">Medienlautstärke</string>
+    <string name="gaming_mode_media_enabled_summary">Medienlautstärke einstellen</string>
+    <string name="gaming_mode_media_title">Setze Lautstärke auf</string>
+    <string name="gaming_mode_desc">Das Spielmakro schaltet die oben gewählten Einstellungen um. Alle eingestellten Einstellungen werden gespeichert und zurückgesetzt, sobald du Gaming Makro deaktivierst</string>
+    <string name="gaming_mode_screen_off_title">Bildschirm aus deaktiviert</string>
+    <string name="gaming_mode_screen_off_summary">Spiele-Makro deaktivieren, wenn der Bildschirm ausgeschaltet wird</string>
     <!-- OOS style material dismiss all button for notifications -->
     <string name="notification_material_dismiss_button_title">Material-Abbruchtaste</string>
     <string name="notification_material_dismiss_button_summary">Entfernt löschen des gesamten Benachrichtigungstextes mit schwebender Taste</string>
@@ -1030,9 +1012,6 @@
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Sichere QS-Kacheln erfordern Entsperren</string>
     <string name="qstile_requires_unlocking_summary">Die folgenden QS-Kacheln müssen entsperrt werden, bevor Sie vom Sperrbildschirm aus darauf zugreifen können: \nFlugzeug, Mobiltelefon, NFC, Hotspot, USB-Tethering und Standort</string>
-    <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Musik-Ticker</string>
-    <string name="pulse_on_new_tracks_summary">Musikticker beim Titelwechsel auf Ambient Display anzeigen</string>
     <!-- Burn-in Protection -->
     <string name="burnin_category">Einbrenn-Schutz</string>
     <string name="burn_in_protection_title">Einbrenn-Schutz verwenden</string>
@@ -1042,4 +1021,13 @@
     <!-- Udfps Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">Haptisches Feedback des FOD</string>
     <string name="udfps_haptic_feedback_summary">Vibrieren bei Berührung des FOD-Symbols</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Benachrichtigungszähler anzeigen</string>
+    <string name="status_bar_notif_count_summary">Anzahl der ungelesenen Benachrichtigungen anzeigen</string>
+    <!-- Nightlight Fod -->
+    <string name="fod_night_light_title">Nachtlicht deaktivieren, wenn FOD angezeigt wird</string>
+    <string name="fod_night_light_summary">Deaktiviere Nachtlicht auf dem Sperrbildschirm, wenn FOD aktiv ist. Das Deaktivieren dieser Option kann deine Fingerabdruckgenauigkeit bei aktiviertem Nachtlicht beeinflussen.</string>
+    <!-- Location Privacy Indicator -->
+    <string name="location_privacy_title"> Standort-Datenschutz-Indikator anzeigen</string>
+    <string name="location_privacy_summary">Aktivieren - Standort Datenschutz in Schnelleinstellungen und der Statusleiste deaktivieren</string>
 </resources>
