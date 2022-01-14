@@ -37,10 +37,27 @@
         android:defaultValue="false" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="gaming_mode_night_light"
+        android:title="@string/gaming_mode_night_light_title"
+        android:summary="@string/gaming_mode_night_light_summary"
+        android:defaultValue="false" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_brightness_enabled"
         android:title="@string/gaming_mode_brightness_enabled_title"
         android:summary="@string/gaming_mode_brightness_enabled_summary"
         android:defaultValue="false" />
+
+    <com.evolution.settings.preference.CustomSeekBarPreference
+        android:key="gaming_mode_brightness"
+        android:title="@string/gaming_mode_brightness_title"
+        android:summary="@string/gaming_mode_brightness_summary"
+        android:dependency="gaming_mode_brightness_enabled"
+        android:max="100"
+        settings:min="0"
+        settings:defaultValue="80"
+        settings:interval="5"
+        settings:units="%" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="gaming_mode_media_enabled"

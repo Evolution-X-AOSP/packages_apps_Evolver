@@ -35,8 +35,10 @@ public class GamingMode extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String GAMING_MODE_MEDIA_KEY = "gaming_mode_media";
+    private static final String GAMING_MODE_BRIGHTNESS_KEY = "gaming_mode_brightness";
 
     CustomSeekBarPreference mMediaVolume;
+    CustomSeekBarPreference mBrightnessLevel;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -44,19 +46,29 @@ public class GamingMode extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.evolution_settings_gaming_mode);
 
+        final ContentResolver resolver = getActivity().getContentResolver();
+
         mMediaVolume = findPreference(GAMING_MODE_MEDIA_KEY);
-        int value = Settings.System.getInt(getActivity().getContentResolver(),
-                GAMING_MODE_MEDIA_KEY, 80);
+        int value = Settings.System.getInt(resolver, GAMING_MODE_MEDIA_KEY, 80);
         mMediaVolume.setValue(value);
         mMediaVolume.setOnPreferenceChangeListener(this);
+
+        mBrightnessLevel = findPreference(GAMING_MODE_BRIGHTNESS_KEY);
+        value = Settings.System.getInt(resolver, GAMING_MODE_BRIGHTNESS_KEY, 80);
+        mBrightnessLevel.setValue(value);
+        mBrightnessLevel.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+        final ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mMediaVolume) {
             int value = (Integer) objValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    GAMING_MODE_MEDIA_KEY, value);
+            Settings.System.putInt(resolver, GAMING_MODE_MEDIA_KEY, value);
+            return true;
+        } else if (preference == mBrightnessLevel) {
+            int value = (Integer) objValue;
+            Settings.System.putInt(resolver, GAMING_MODE_BRIGHTNESS_KEY, value);
             return true;
         }
         return false;
