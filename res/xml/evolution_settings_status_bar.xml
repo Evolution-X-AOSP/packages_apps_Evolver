@@ -106,12 +106,6 @@
             android:summary="@string/use_old_mobiletype_summary"
             android:defaultValue="true" />
 
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="enable_location_privacy_indicator"
-            android:title="@string/location_privacy_indicator_title"
-            android:summary="@string/location_privacy_indicator_summary"
-            android:defaultValue="false" />
-
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="show_fourg_icon"
             android:title="@string/show_fourg_icon_title"
@@ -135,6 +129,18 @@
             android:max="7"
             settings:min="0"
             settings:units="" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="enable_camera_privacy_indicator"
+            android:title="@string/mic_camera_privacy_indicator_title"
+            android:summary="@string/mic_camera_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="enable_location_privacy_indicator"
+            android:title="@string/location_privacy_indicator_title"
+            android:summary="@string/location_privacy_indicator_summary"
+            android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="roaming_indicator_icon"
