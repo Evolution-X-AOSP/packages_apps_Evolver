@@ -31,7 +31,6 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.ListPreference;
@@ -90,10 +89,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     public static final int KEY_MASK_CAMERA = 0x20;
     public static final int KEY_MASK_VOLUME = 0x40;
 
-    private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
-
     private SwitchPreference mHwKeyDisable;
-    private ListPreference mTorchPowerButton;
     private CustomSeekBarPreference mButtonTimoutBar;
     private CustomSeekBarPreference mManualButtonBrightness;
     private PreferenceCategory mButtonBackLightCategory;
@@ -176,14 +172,6 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         // load preferences first
         setActionPreferencesEnabled(keysDisabled == 0);
 
-        // screen off torch
-        mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
-        int mTorchPowerButtonValue = Settings.System.getInt(resolver,
-                Settings.System.TORCH_POWER_BUTTON_GESTURE, 0);
-        mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
-        mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
-        mTorchPowerButton.setOnPreferenceChangeListener(this);
-
         mManualButtonBrightness = (CustomSeekBarPreference) findPreference(
                 KEY_BUTTON_MANUAL_BRIGHTNESS_NEW);
         final int customButtonBrightness = getResources().getInteger(
@@ -235,15 +223,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mTorchPowerButton) {
-            int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
-            int index = mTorchPowerButton.findIndexOfValue((String) newValue);
-            mTorchPowerButton.setSummary(
-                    mTorchPowerButton.getEntries()[index]);
-            Settings.System.putInt(resolver, Settings.System.TORCH_POWER_BUTTON_GESTURE,
-                    mTorchPowerButtonValue);
-            return true;
-        } else if (preference == mHwKeyDisable) {
+        if (preference == mHwKeyDisable) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), Settings.System.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);

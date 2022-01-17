@@ -34,6 +34,13 @@
             android:title="@string/navigation_bar_title"
             android:summary="@string/navigation_bar_summary" />
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="navigation_bar_menu_arrow_keys"
+            android:title="@string/navigation_bar_arrow_keys_title"
+            android:summary="@string/navigation_bar_arrow_keys_summary"
+            android:dependency="force_show_navbar"
+            android:defaultValue="false" />
+
         <Preference
             android:key="layout_settings"
             android:title="@string/navigation_bar_layout_title"
@@ -44,28 +51,10 @@
                 android:targetClass="com.android.systemui.tuner.NavbarActivity" />
         </Preference>
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="navigation_bar_menu_arrow_keys"
-            android:title="@string/navigation_bar_arrow_keys_title"
-            android:summary="@string/navigation_bar_arrow_keys_summary"
-            android:dependency="force_show_navbar"
-            android:defaultValue="false" />
-
         <com.android.settingslib.widget.FooterPreference
             android:key="navigation_bar_footer_preference"
             android:selectable="false"
             android:title="@string/navigation_bar_help_text" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/gestures_title">
-
-        <ListPreference
-            android:key="torch_power_button_gesture"
-            android:title="@string/torch_power_button_gesture_title"
-            android:entries="@array/torch_power_button_gesture_entries"
-            android:entryValues="@array/torch_power_button_gesture_values" />
 
     </PreferenceCategory>
 
