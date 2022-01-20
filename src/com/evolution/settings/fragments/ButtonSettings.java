@@ -25,7 +25,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.os.UserHandle;
@@ -89,12 +88,11 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     public static final int KEY_MASK_CAMERA = 0x20;
     public static final int KEY_MASK_VOLUME = 0x40;
 
-    private SwitchPreference mHwKeyDisable;
     private CustomSeekBarPreference mButtonTimoutBar;
     private CustomSeekBarPreference mManualButtonBrightness;
-    private PreferenceCategory mButtonBackLightCategory;
-
     private Preference mLayoutSettings;
+    private PreferenceCategory mButtonBackLightCategory;
+    private SwitchPreference mHwKeyDisable;
     private SwitchPreference mNavigationBar;
     private SystemSettingSwitchPreference mNavigationArrows;
 
@@ -178,8 +176,6 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                 com.android.internal.R.integer.config_button_brightness_default);
         final int currentBrightness = Settings.System.getInt(resolver,
                 Settings.System.CUSTOM_BUTTON_BRIGHTNESS, customButtonBrightness);
-        PowerManager pm = (PowerManager)getActivity().getSystemService(Context.POWER_SERVICE);
-        mManualButtonBrightness.setMax(pm.getMaximumScreenBrightnessSetting());
         mManualButtonBrightness.setValue(currentBrightness);
         mManualButtonBrightness.setOnPreferenceChangeListener(this);
 
