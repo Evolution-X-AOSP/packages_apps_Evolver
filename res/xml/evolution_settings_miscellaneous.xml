@@ -19,6 +19,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
+    <!-- Gaming mode -->
+    <Preference
+        android:key="gaming_mode"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary">
+
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="org.exthmui.game"
+            android:targetClass="org.exthmui.game.ui.MainActivity" />
+    </Preference>
+
     <PreferenceCategory
         android:key="pulse_category"
         android:title="@string/pulse_category">
