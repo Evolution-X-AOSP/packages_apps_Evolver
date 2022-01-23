@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2021 The Evolution X Project
+     Copyright (C) 2019-2022 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -82,6 +82,11 @@
     <string name="seekbar_default_value_set">Значение по умолчанию установлено на <xliff:g id="number">%d</xliff:g></string>
     <string name="seekbar_default_value_already_set">Значение по умолчанию уже установлено</string>
     <string name="seekbar_default_string">По умолчанию</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Значение: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">по умолчанию</string>
+    <string name="custom_seekbar_default_value_to_set">Значение по умолчанию: <xliff:g id="v">%s</xliff:g>\nДлительное нажатие для настройки</string>
+    <string name="custom_seekbar_default_value_is_set">Значение по умолчанию установлено</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">Настройка USB</string>
     <string name="usb_default_config_summary">Выберите поведение по умолчанию при подключении к устройству через USB</string>
@@ -93,6 +98,7 @@
     <string name="navigation_bar_layout_summary">Настройка расположения панели навигации</string>
     <string name="navigation_bar_arrow_keys_title">Показывать клавиши со стрелками во время набора текста</string>
     <string name="navigation_bar_arrow_keys_summary">Отображать кнопки перемещения курсора влево или вправо на панели навигации при вводе</string>
+    <string name="navigation_bar_help_text">Эти настройки относятся в основном к 3-кнопочной панели навигации. Если вы используете жестовую навигацию и хотите настроить ее, например, скрыть ручку жеста, посетите раздел: Настройки &gt; Система &gt; Жесты.</string>
     <string name="nav_bar_tuner_title">Настройки навигационной панели</string>
     <string name="nav_bar_tuner_summary">Изменить расположение панели навигации</string>
     <string name="navbar_layout_title">Расположение</string>
@@ -127,47 +133,18 @@
     <string name="battery_light_medium_color">Зарядка</string>
     <string name="battery_light_full_color">Почти полный заряд батареи</string>
     <string name="battery_light_reallyfull_color">Полностью заряжен</string>
-    <!-- FOD icon picker -->
-    <string name="fod_icon_picker_category_title">Настройки FOD</string>
-    <!-- FOD animations -->
-    <string name="fod_recog_animation_category">Анимация FOD</string>
-    <string name="fod_recog_animation_title">Анимация распознавания отпечатка пальца</string>
-    <string name="fod_recog_animation_summary">Показывать анимацию при сканировании отпечатка пальца</string>
-    <string name="fod_recog_animation_effect_title">Выберите эффект анимации отпечатка пальца</string>
-    <string name="fod_recog_animation_miui_aurora_old">Аврора (старый)</string>
-    <string name="fod_recog_animation_miui_aurora">Aurora (K30 Pro)</string>
-    <string name="fod_recog_animation_miui_light">Светлая</string>
-    <string name="fod_recog_animation_miui_neon">Неон</string>
-    <string name="fod_recog_animation_miui_neon_blue">Неоновый (синий)</string>
-    <string name="fod_recog_animation_miui_pop">Поп</string>
-    <string name="fod_recog_animation_miui_pulse">Пульсация</string>
-    <string name="fod_recog_animation_miui_pulse_white">Пульс (белый)</string>
-    <string name="fod_recog_animation_miui_rhythm">Ритм</string>
-    <string name="fod_recog_animation_miui_star_cas">Звездный свет</string>
-    <string name="fod_recog_animation_op_cosmos">Космос</string>
-    <string name="fod_recog_animation_op_energy">Энергия</string>
-    <string name="fod_recog_animation_op_mclaren">МаКларен</string>
-    <string name="fod_recog_animation_op_ripple">Пульсация</string>
-    <string name="fod_recog_animation_op_scanning">Сканирование (Cyberpunk 2077)</string>
-    <string name="fod_recog_animation_op_stripe">Полоса</string>
-    <string name="fod_recog_animation_op_wave">Волна</string>
-    <string name="fod_recog_animation_pureview_dna">ДНК</string>
-    <string name="fod_recog_animation_pureview_future">Будущее</string>
-    <string name="fod_recog_animation_pureview_halo_ring">Кольцо Хало</string>
-    <string name="fod_recog_animation_pureview_molecular">Молекулярная</string>
-    <string name="fod_recog_animation_rog_fusion">Слияние</string>
-    <string name="fod_recog_animation_rog_pulsar">Пульсар</string>
-    <string name="fod_recog_animation_rog_supernova">Сверхновая</string>
-    <string name="fod_recog_animation_oppo_shine">Сияние</string>
-    <string name="fod_recog_animation_realme_quantum">Квантум</string>
-    <string name="fod_recog_animation_realme_smoke">Дым</string>
-    <string name="fod_recog_animation_realme_strings">Строки</string>
-    <!-- FOD icon animation -->
-    <string name="fod_icon_animation">Анимированная иконка отпечатка пальца</string>
-    <string name="fod_icon_animation_effect_title">Выберите анимацию иконки отпечатка пальца</string>
-    <string name="fod_icon_animation_summary">Воспроизводить анимацию иконки отпечатка пальца когда экран включается</string>
-    <string name="fod_icon_animation_oneui1">OneUI 1</string>
-    <string name="fod_icon_animation_oneui2">OneUI 2</string>
+    <!-- UDFPS settings -->
+    <string name="udfps_category">UDFPS</string>
+    <string name="udfps_customization">Настройка UDFPS</string>
+    <string name="udfps_recog_animation">Анимация UDFPS</string>
+    <string name="udfps_recog_animation_summary">Показывает анимацию во время чтения пальца</string>
+    <string name="udfps_recog_animation_effect_title">Эффект анимации UDFPS</string>
+    <string name="udfps_recog_animation_effect_summary">Выберите эффект анимации</string>
+    <string name="udfps_settings_title">Настройки UDFPS</string>
+    <string name="udfps_settings_summary">Настройки для персонализации UDFPS</string>
+    <!-- UDFPS icon picker -->
+    <string name="udfps_icon_picker_title">Выбор значка UDFPS</string>
+    <string name="udfps_icon_picker_summary">Выберите понравившеюся иконку отпечатка пальца</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Индикатор уведомлений</string>
     <!-- Heads up -->
@@ -262,24 +239,21 @@
     <string name="qs_columns_portrait_title">Столбцы плиток в портретной ориентации</string>
     <string name="qs_columns_landscape_title">Столбцы плиток в альбомной ориентации</string>
     <string name="qs_tile_title_visibility_title">Показывать названия плиток</string>
-    <!-- Status bar - Brightness -->
-    <string name="status_bar_brightness_category">Яркость</string>
-    <string name="qs_show_brightness_slider_expanded_title">Ползунок яркости в развернутых быстрых настройках</string>
-    <string name="qs_show_brightness_slider_expanded_summary">Показывать ползунок яркости в раскрытом состоянии</string>
-    <string name="qs_show_auto_brightness_title">Значок автояркости</string>
-    <string name="qs_show_auto_brightness_summary">Показывать переключатель адаптивной яркости рядом со слайдером</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_brightness_slider_category">Ползунок яркости</string>
+    <string name="qs_brightness_slider_title">Показывать ползунок управления яркостью</string>
+    <string name="qs_brightness_slider_summary">Показывать ползунок яркости в быстрых настройках</string>
     <string name="qs_brightness_position_bottom_title">Ползунок яркости внизу (работает только для развёрнутой панели быстрых настроек)</string>
-    <!-- QQS brightness slider -->
-    <string name="qqs_brightness_slider_title">Слайдер яркости быстрых настроек</string>
-    <string name="qs_brightness_slider_bottom">Внизу</string>
-    <string name="qs_brightness_slider_top">Сверху</string>
+    <string name="qs_brightness_position_bottom_summary">Показывать ползунок яркости внизу быстрых настроек</string>
+    <!-- Quick Settings brightness icon -->
+    <string name="brightness_icon_title">Кнопка адаптивной яркости</string>
+    <string name="brightness_icon_summary">Показывать кнопку адаптивной яркости</string>
+    <!-- Quick QS Panel brightness slider -->
+    <string name="quick_qs_brightness_slider_title">Показывать ползунок яркости в панели быстрых настроек</string>
+    <string name="quick_qs_brightness_slider_summary">Показать ползунок яркости в панели быстрых настроек</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Пробуждение кнопками громкости</string>
     <string name="volume_rocker_wake_summary">Нажатие кнопок громкости разбудит ваше устройство</string>
-    <!-- Media art -->
-    <string name="lockscreen_media_category">Музыка</string>
-    <string name="media_art_title">Обложка произведения</string>
-    <string name="media_art_summary">Отображать обложки аудио/видео на экране блокировки</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Анимация выключения экрана</string>
     <string name="screen_off_animation_crt">ЭЛТ</string>
@@ -382,9 +356,9 @@
     <string name="qs_set_animation_style">%1$s</string>
     <string name="qs_set_animation_duration">%1$s</string>
     <string name="qs_set_animation_interpolator">%1$s</string>
-    <!-- Quick Settings -->
-    <string name="lockscreen_qs_disabled_title">Отключить быстрые настройки при блокировке экрана</string>
-    <string name="lockscreen_qs_disabled_summary">Отключить возможность раскрывать панель быстрых настроек на экране блокировки</string>
+    <!-- Disable QS -->
+    <string name="disable_qs_title">Скрыть QS на экране блокировки</string>
+    <string name="disable_qs_summary">Скрывает QS, если устройство заблокировано. Не отключает тень уведомлений</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Индикатор роуминга</string>
     <string name="roaming_indicator_icon_summary">Отображать индикатор роуминга в значке сигнала в режиме роуминга</string>
@@ -489,17 +463,14 @@
     <string name="qs_footer_text_summary">Отображать текст внизу панели быстрых настроек</string>
     <string name="qs_footer_text_string_title">Пользовательский текст нижнего колонтитула</string>
     <string name="qs_footer_text_string_summary">Оставьте пустым для значения по умолчанию</string>
-    <!-- FOD icon picker -->
-    <string name="fod_icon_picker_title">Иконка отпечатка пальца</string>
-    <string name="fod_icon_picker_summary">Выберите вашу любимую иконку отпечатка пальца</string>
-    <string name="fod_icon_picker_footer">Чтобы добавить свою иконку, нажмите значок в верхнем левом углу и с помощью приложения OnePlus 6T FP Customizer выберите нужную иконку.</string>
-    <!-- FOD pressed color -->
-    <string name="fod_pressed_color_title">Эффект нажатого отпечатка пальца</string>
-    <string name="fod_pressed_color_white">Белый</string>
-    <string name="fod_pressed_color_cyan">Бирюзовый</string>
-    <string name="fod_pressed_color_green">Зелёный</string>
-    <string name="fod_pressed_color_yellow">Жёлтый</string>
-    <string name="fod_pressed_color_light_yellow">Светло-желтый</string>
+    <!-- UDFPS pressed color -->
+    <string name="udfps_pressed_color_title">Цвет нажатого UDFPS</string>
+    <string name="udfps_pressed_color_default">По умолчанию</string>
+    <string name="udfps_pressed_color_white">Белый</string>
+    <string name="udfps_pressed_color_white_new">Белый (новый)</string>
+    <string name="udfps_pressed_color_green">Зеленый</string>
+    <string name="udfps_pressed_color_yellow">Жёлтый</string>
+    <string name="udfps_pressed_color_light_yellow">Светло-желтый</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Запускать музыкальный плеер при подключении наушников</string>
     <string name="headset_connect_player_summary">Запускать стандартный музыкальный плеер при подключении гарнитуры</string>
@@ -510,7 +481,9 @@
     <string name="powermenu_screenshot">Снимок экрана</string>
     <string name="powermenu_onthego">Режим «На ходу»</string>
     <string name="powermenu_torch">Фонарик</string>
+    <string name="powermenu_power">Выключить</string>
     <string name="powermenu_advanced">Расширенное меню перезагрузки</string>
+    <string name="powermenu_restart">Перезагрузка</string>
     <string name="powermenu_airplane">Режим полета</string>
     <string name="powermenu_settings">Настройки</string>
     <string name="powermenu_lockdown">Заблокировать</string>
@@ -529,10 +502,16 @@
     <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Темы</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Форма иконок</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Заголовок / Основной шрифт</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Набор иконок</string>
+    <!-- Custom Signal bar icons -->
+    <string name="theme_customization_icon_signal_bar_title">Сигнал</string>
+    <!-- Custom Wi-Fi bar icons -->
+    <string name="theme_customization_icon_wifi_bar_title">WiFi</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">Стиль элементов быстрых настроек</string>
     <string name="qstile_circle_trim">Круг с окантовкой</string>
@@ -740,10 +719,11 @@
     <string name="volume_key_cursor_control_on_reverse">Громкость вверх/вниз перемещает курсор вправо/влево</string>
     <string name="swap_volume_buttons_title">Автопереопределение</string>
     <string name="swap_volume_buttons_summary">Поменять местами кнопки громкости при повороте экрана</string>
+    <string name="volume_panel_on_left_title">Показывать панель громкости слева</string>
     <string name="volume_panel_on_left_summary">Отображение панели громкости в левой части экрана</string>
     <string name="extras_title">Дополнения</string>
     <string name="click_partial_screenshot_title">Частичный скриншот</string>
-    <string name="click_partial_screenshot_summary">Нажмите кнопку уменьшения громкости и кнопку питания, чтобы сделать частичный скриншот</string>
+    <string name="click_partial_screenshot_summary">Нажмите кнопку уменьшения громкости и кнопку питания, чтобы сделать частичный снимок экрана</string>
     <!-- Button brightness -->
     <string name="button_backlight_options_category">Настройки подсветки</string>
     <string name="button_backlight_enable_title">Разрешить подсветку кнопок</string>
@@ -760,7 +740,6 @@
     <string name="swap_capacitive_keys_title">Поменять местами емкостные кнопки</string>
     <string name="swap_capacitive_keys_summary">Поменять местами кнопки назад и недвание</string>
     <!-- Lock screen visualizer -->
-    <string name="enable_visualizer">Включить визуализатор</string>
     <string name="lockscreen_visualizer_title">Визуализатор</string>
     <string name="lockscreen_visualizer_enable">Музыкальный визуализатор</string>
     <string name="lockscreen_visualizer_enable_summary">Показывать визуализацию во время воспроизведения музыки</string>
@@ -849,9 +828,6 @@
     <string name="theme_navbar_picker_nexus">Nexus</string>
     <string name="theme_navbar_picker_old">Старый</string>
     <string name="theme_navbar_picker_sammy">Samsung</string>
-    <!-- FOD on doze -->
-    <string name="fod_on_doze_title">FOD в режиме Doze</string>
-    <string name="fod_on_doze_summary">Показывать отпечаток пальца на дисплее во время Ambient Display и AoD. Это только лишь скрывает значок - но не отключает функциональность</string>
     <!-- Alarm and Wakelock blocker -->
     <string name="blocker_action_reload">Перезагрузить</string>
     <string name="blocker_action_save">Сохранить</string>
@@ -888,49 +864,6 @@
     <string name="rounded_style_title">Скругленный стиль для системных диалогов</string>
     <string name="rounded_slight">Слегка</string>
     <string name="rounded_high">Сильно</string>
-    <!-- Brightness slider styles -->
-    <string name="slider_styles_title">Стиль ползунка яркости</string>
-    <string name="slider_rui">RUI</string>
-    <!-- Gaming mode -->
-    <string name="gaming_title">Игровой режим</string>
-    <string name="gaming_title_summary">Дополнительные возможности для погружения в игровой опыт</string>
-    <string name="gaming_mode_enabled_title">Включить игровой режим</string>
-    <string name="gaming_mode_disable_auto_brightness_title">Отключить автоматическую настройку яркости</string>
-    <string name="gaming_mode_disable_auto_brightness_summary">Отключить автояркость при входе в режим игры</string>
-    <string name="gaming_mode_notification_danmaku_title">Уведомление Данмаку (уведомления вида \"стена огня\")</string>
-    <string name="gaming_mode_notification_danmaku_summary">Отображать содержимое уведомления в виде данмаку в игре</string>
-    <string name="gaming_mode_quick_start_apps_title">Приложения для быстрого запуска</string>
-    <string name="gaming_mode_quick_start_apps_summary">Выберите приложение, которое вы хотите запустить из плавающего меню режима</string>
-    <string name="gaming_mode_menu_opacity_title">Уровень прозрачности меню</string>
-    <string name="gaming_mode_use_menu_overlay_title">Показывать оверлей</string>
-    <string name="gaming_mode_use_menu_overlay_summary">Показывать оверлей при запуске игры. Если опция выключена, некоторые функции игрового режима будут отключены, например Danmaku уведомления</string>
-    <string name="gaming_mode_performance">Производительность</string>
-    <string name="gaming_mode_use_game_driver_title">Использовать игровой драйвер</string>
-    <string name="gaming_mode_use_game_driver_summary">Использовать специальные драйверы для игр</string>
-    <string name="gaming_mode_change_performance_title">Настройка производительности</string>
-    <string name="gaming_mode_change_performance_summary">Регулировать уровень производительности при запуске игры</string>
-    <string name="gaming_mode_performance_title">Уровень производительности</string>
-    <string name="gaming_mode_dnd">Не беспокоить</string>
-    <string name="gaming_mode_disable_notification_alert_title">Отключить уведомления</string>
-    <string name="gaming_mode_disable_notification_alert_summary">Запретить всплывающие уведомления и разговоры кроме входящих звонков и будильников</string>
-    <string name="gaming_mode_disable_ringtone_title">Нет звонка</string>
-    <string name="gaming_mode_disable_ringtone_summary">Отключить звонок входящих вызовов и уведомлений в игровом режиме</string>
-    <string name="gaming_mode_auto_answer_call_title">Автоматический отвечать на звонки</string>
-    <string name="gaming_mode_auto_answer_call_summary">Отвечайте на звонки автоматически в игре и в режиме громкой связи, когда наушники не подключены</string>
-    <string name="gaming_mode_prevent_accidental_touch">Предотвращать случайные касания</string>
-    <string name="gaming_mode_disable_gesture_title">Отключить жесты</string>
-    <string name="gaming_mode_apps">Список игр</string>
-    <string name="gaming_mode_dynamic_add_title">Динамический режим</string>
-    <string name="gaming_mode_dynamic_add_summary">Попробовать обнаружить и добавить приложения для игрового режима автоматически</string>
-    <string name="gaming_mode_show_danmaku_title">Показать данмаку</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">Уведомление о динамической фильтрации</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">Автоматически фильтровать уведомления, такие как прогресс загрузки</string>
-    <string name="gaming_mode_danmaku_size_horizontal_title">Размер данмаку (горизонтально)</string>
-    <string name="gaming_mode_danmaku_size_vertical_title">Размер данмаку (вертикально)</string>
-    <string name="gaming_mode_danmaku_speed_horizontal_title">Скорость данмаку (горизонтально)</string>
-    <string name="gaming_mode_danmaku_speed_vertical_title">Скорость данмаку (вертикально)</string>
-    <string name="gaming_mode_danmaku_blacklist">Черный список</string>
-    <string name="add_package_to_title">Добавить приложение</string>
     <!-- OOS style material dismiss all button for notifications -->
     <string name="notification_material_dismiss_button_title">Material-style кнопка очистки уведомлений</string>
     <string name="notification_material_dismiss_button_summary">Заменить \"Очистить все\" на плавающую кнопку</string>
@@ -1024,22 +957,70 @@
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Уровень заряда Bluetooth</string>
     <string name="bluetooth_battery_summary">Отображение состояния батареи подключенных Bluetooth устройств, если доступно</string>
-    <!-- Screen off FOD -->
-    <string name="screen_off_fod_title">Отпечаток на выключенном экране</string>
-    <string name="screen_off_fod_summary">Не включать FOD при выключенном экране</string>
+    <!-- Screen off UDFPS -->
+    <string name="screen_off_udfps_title">Отпечаток на выключенном экране</string>
+    <string name="screen_off_udfps_summary">Сохранять UDFPS включенным, когда экран выключен</string>
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Доступ к быстрым настройкам требует разблокировки</string>
     <string name="qstile_requires_unlocking_summary">Данные плитки быстрого доступа требуют разблокировки девайса перед тем как вы сможете использовать с экрана блокировки:\nРежим Полета, Мобильные данные, NFC, Точка Доступа, Раздача по USB и Геолокацию</string>
-    <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Текущий трек</string>
-    <string name="pulse_on_new_tracks_summary">Отображать название музыки на Ambient Display во время переключения треков</string>
     <!-- Burn-in Protection -->
     <string name="burnin_category">Защита от выгорания экрана</string>
     <string name="burn_in_protection_title">Защита от выгорания экрана</string>
     <string name="burn_in_protection_summary">Сдвигать иконки навигационной панели и строки состояния для защиты от выгорания экрана</string>
     <string name="burn_in_protection_interval_title">Интервал сдвига</string>
     <string name="burn_in_protection_interval_summary">Насколько часто сдвигать иконки</string>
-    <!-- Udfps Haptic Feedback -->
+    <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">Использовать виброотклик для FOD</string>
     <string name="udfps_haptic_feedback_summary">Вибрировать при нажатии на иконку FOD</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Показывать счетчик уведомлений</string>
+    <string name="status_bar_notif_count_summary">Показывать количество не просмотренных уведомлений</string>
+    <!-- Night Light UDFPS -->
+    <string name="udfps_night_light_title">Отключать ночной режим при распознавании подэкранного отпечатка пальцев</string>
+    <string name="udfps_night_light_summary">Отключать ночной режим на заблокированном экране, если активен UDFPS. Отключение этого параметра может сказаться на точности распознавания отпечатка с режимом ночной подсветки.</string>
+    <!-- Privacy indicators -->
+    <string name="mic_camera_privacy_indicator_title">Индикатор использования камеры и микрофона</string>
+    <string name="mic_camera_privacy_indicator_summary">Показывать раздельные индикаторы, когда любое приложение использует микрофон или камеру</string>
+    <string name="location_privacy_indicator_title">Показать индикатор конфиденциальности местоположения</string>
+    <string name="location_privacy_indicator_summary">Показывать раздельные индикаторы, когда любое приложение использует местоположение</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_category">Pulse визуализация</string>
+    <string name="pulse_help_policy_notice_title">Про Pulse</string>
+    <string name="pulse_help_policy_notice_summary">Pulse — это блестящий графический аудио-эквалайзер, работающий при воспроизведении музыки на устройстве</string>
+    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings_summary">Графический аудио-эквалайзер для панели навигации и экрана блокировки</string>
+    <string name="show_navbar_pulse_title">Визуализатор на панели навигации</string>
+    <string name="show_navbar_pulse_summary">Графический аудио-эквалайзер на панели навигации</string>
+    <string name="show_lockscreen_pulse_title">Визуализация на экране блокировки</string>
+    <string name="show_lockscreen_pulse_summary">Графический аудио-эквалайзер на экране блокировки</string>
+    <string name="show_ambient_pulse_title">Визуализатор на всегда включённом экране</string>
+    <string name="show_ambient_pulse_summary">Графический аудио-эквалайзер на всегда включенном экране</string>
+    <string name="pulse_render_mode_title">Режим отображения</string>
+    <string name="pulse_render_mode_fading_bars">Затухающие блоки</string>
+    <string name="pulse_render_mode_solid_lines">Сплошные линии</string>
+    <string name="pulse_legacy_mode_advanced_category">Настройки режима затухающих блоков</string>
+    <string name="pulse_custom_fudge_factor">Уровень чувствительности</string>
+    <string name="pulse_lavalamp_speed_title">Скорость Лавовой лампы</string>
+    <string name="pulse_solid_units_count">Количество сплошных линий</string>
+    <string name="pulse_solid_units_opacity">Прозрачность сплошных линий</string>
+    <string name="pulse_solid_units_rounded_title">Закругленные углы</string>
+    <string name="pulse_solid_units_rounded_summary">Сплошные линии с закруглённым кончиком</string>
+    <string name="pulse_solid_dimen_category">Настройки режима сплошных линий</string>
+    <string name="pulse_color_mode_title">Цвет</string>
+    <string name="pulse_color_accent">Акцент</string>
+    <string name="pulse_color_custom">Свое</string>
+    <string name="pulse_color_lava_lamp">Лавовая лампа</string>
+    <string name="pulse_color_user_title">Выбрать цвет</string>
+    <string name="pulse_smoothing_enabled_title">Включить сглаживание</string>
+    <string name="pulse_smoothing_enabled_summary">Каждая полоса анимируется более гладко</string>
+    <string name="pulse_custom_dimen">Ширина полосы</string>
+    <string name="pulse_custom_div">Расстояние между столбцами</string>
+    <string name="pulse_filled_block_size">Размер блока</string>
+    <string name="pulse_empty_block_size">Расстояние между блоками</string>
+    <!-- Keyguard force small clock -->
+    <string name="lockscreen_small_clock_title">Принудительные небольшие часы</string>
+    <string name="lockscreen_small_clock_summary">Не переключаться на большие часы, когда нет уведомлений</string>
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">Игровое пространство</string>
+    <string name="gaming_mode_summary">Дополнительные возможности для полноценного погружения в игру</string>
 </resources>
