@@ -19,33 +19,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_title">
 
-    <PreferenceCategory
-        android:key="theme_customization_category"
-        android:title="@string/theme_customization_category">
-
-        <Preference
-            android:key="dark_ui_mode"
-            android:title="@string/dark_ui_mode"
-            android:summary="@string/dark_ui_mode_summary"
-            android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
-            settings:controller="com.android.settings.display.DarkUIPreferenceController" />
-
-        <ListPreference
-            android:key="android.theme.customization.font"
-            android:title="@string/theme_customization_font_title"/>
-        <ListPreference
-            android:key="android.theme.customization.adaptive_icon_shape"
-            android:title="@string/theme_customization_icon_shape_title"/>
-        <ListPreference
-            android:key="android.theme.customization.icon_pack"
-            android:title="@string/theme_customization_icon_pack_title"/>
-        <ListPreference
-            android:key="android.theme.customization.signal_icon"
-            android:title="@string/theme_customization_icon_signal_bar_title"/>
-        <ListPreference
-            android:key="android.theme.customization.wifi_icon"
-            android:title="@string/theme_customization_icon_wifi_bar_title"/>
-    </PreferenceCategory>
+    <Preference
+        android:key="dark_ui_mode"
+        android:title="@string/dark_ui_mode"
+        android:summary="@string/dark_ui_mode_summary"
+        android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
+        settings:controller="com.android.settings.display.DarkUIPreferenceController" />
 
     <PreferenceCategory
         android:key="monet_category"
@@ -89,6 +68,26 @@
             android:title="@string/monet_engine_linear_lightness_title"
             android:defaultValue="false" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/category_name_general">
+
+        <ListPreference
+            android:key="android.theme.customization.font"
+            android:title="@string/theme_customization_font_title"/>
+        <ListPreference
+            android:key="android.theme.customization.adaptive_icon_shape"
+            android:title="@string/theme_customization_icon_shape_title"/>
+        <ListPreference
+            android:key="android.theme.customization.icon_pack"
+            android:title="@string/theme_customization_icon_pack_title"/>
+        <ListPreference
+            android:key="android.theme.customization.signal_icon"
+            android:title="@string/theme_customization_icon_signal_bar_title"/>
+        <ListPreference
+            android:key="android.theme.customization.wifi_icon"
+            android:title="@string/theme_customization_icon_wifi_bar_title"/>
     </PreferenceCategory>
 
 </PreferenceScreen>
