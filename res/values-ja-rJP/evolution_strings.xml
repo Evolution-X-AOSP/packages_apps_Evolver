@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2021 The Evolution X Project
+     Copyright (C) 2019-2022 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -82,6 +82,11 @@
     <string name="seekbar_default_value_set"><xliff:g id="number">%d</xliff:g> の既定に設定</string>
     <string name="seekbar_default_value_already_set">既定値が既に設定されています</string>
     <string name="seekbar_default_string">既定</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">値: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">既定</string>
+    <string name="custom_seekbar_default_value_to_set">既定値: <xliff:g id="v">%s</xliff:g>\n長押しで設定</string>
+    <string name="custom_seekbar_default_value_is_set">既定値が設定されています</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">USB 設定</string>
     <string name="usb_default_config_summary">USB 経由で端末に接続されている時の既定の動作を選択する</string>
@@ -93,6 +98,7 @@
     <string name="navigation_bar_layout_summary">ナビゲーションバーのレイアウトを編集する</string>
     <string name="navigation_bar_arrow_keys_title">入力中に矢印キーを表示</string>
     <string name="navigation_bar_arrow_keys_summary">入力中は左右のカーソルボタンをナビゲーションバーに表示する</string>
+    <string name="navigation_bar_help_text">これらは主に3ボタンナビゲーションバーに関係する設定です。ジェスチャーナビゲーションを使用していて、それをカスタマイズ (例: ジェスチャーハンドルを隠す) しようとする場合は、「設定&gt;システム&gt;ジェスチャー」に移動して下さい。</string>
     <string name="nav_bar_tuner_title">ナビゲーションバーチューナー</string>
     <string name="nav_bar_tuner_summary">ナビゲーションバーのレイアウトを変更する</string>
     <string name="navbar_layout_title">レイアウト</string>
@@ -127,47 +133,18 @@
     <string name="battery_light_medium_color">中程度</string>
     <string name="battery_light_full_color">ほぼ充電完了</string>
     <string name="battery_light_reallyfull_color">充電完了</string>
-    <!-- FOD settings -->
-    <string name="fod_customization_title">指紋認証の設定</string>
-    <!-- FOD animations -->
-    <string name="fod_recog_animation_category">指紋認証のアニメーション</string>
-    <string name="fod_recog_animation_title">認識アニメーション</string>
-    <string name="fod_recog_animation_summary">指紋認識中にアニメーションを表示する</string>
-    <string name="fod_recog_animation_effect_title">アニメーション効果</string>
-    <string name="fod_recog_animation_miui_aurora_old">オーロラ (旧)</string>
-    <string name="fod_recog_animation_miui_aurora">オーロラ (K30 Pro)</string>
-    <string name="fod_recog_animation_miui_light">ライト</string>
-    <string name="fod_recog_animation_miui_neon">ネオン</string>
-    <string name="fod_recog_animation_miui_neon_blue">ネオン (青)</string>
-    <string name="fod_recog_animation_miui_pop">ポップ</string>
-    <string name="fod_recog_animation_miui_pulse">パルス</string>
-    <string name="fod_recog_animation_miui_pulse_white">パルス (白)</string>
-    <string name="fod_recog_animation_miui_rhythm">リズム</string>
-    <string name="fod_recog_animation_miui_star_cas">スターライト</string>
-    <string name="fod_recog_animation_op_cosmos">コスモス</string>
-    <string name="fod_recog_animation_op_energy">エナジー</string>
-    <string name="fod_recog_animation_op_mclaren">マクラーレン</string>
-    <string name="fod_recog_animation_op_ripple">波紋</string>
-    <string name="fod_recog_animation_op_scanning">スキャン中 (サイバーパンク 2077)</string>
-    <string name="fod_recog_animation_op_stripe">ストライプ</string>
-    <string name="fod_recog_animation_op_wave">波</string>
-    <string name="fod_recog_animation_pureview_dna">DNA</string>
-    <string name="fod_recog_animation_pureview_future">未来</string>
-    <string name="fod_recog_animation_pureview_halo_ring">Halo Ring</string>
-    <string name="fod_recog_animation_pureview_molecular">分子</string>
-    <string name="fod_recog_animation_rog_fusion">フュージョン</string>
-    <string name="fod_recog_animation_rog_pulsar">パルサー</string>
-    <string name="fod_recog_animation_rog_supernova">スーパーノヴァ</string>
-    <string name="fod_recog_animation_oppo_shine">シャイン</string>
-    <string name="fod_recog_animation_realme_quantum">クアンタム</string>
-    <string name="fod_recog_animation_realme_smoke">スモーク</string>
-    <string name="fod_recog_animation_realme_strings">文字列</string>
-    <!-- FOD icon animation -->
-    <string name="fod_icon_animation">指紋認証アイコンのアニメーション</string>
-    <string name="fod_icon_animation_effect_title">画面内指紋認証のアニメーション効果を選択する</string>
-    <string name="fod_icon_animation_summary">画面点灯時に画面内指紋認証アイコンをアニメーションさせる</string>
-    <string name="fod_icon_animation_oneui1">OneUI 1</string>
-    <string name="fod_icon_animation_oneui2">OneUI 2</string>
+    <!-- UDFPS settings -->
+    <string name="udfps_category">画面内指紋認証</string>
+    <string name="udfps_customization">画面内指紋認証の編集</string>
+    <string name="udfps_recog_animation">画面内指紋認証のアニメーション</string>
+    <string name="udfps_recog_animation_summary">指紋認識中にアニメーションを表示する</string>
+    <string name="udfps_recog_animation_effect_title">画面内指紋認証アニメーションの効果</string>
+    <string name="udfps_recog_animation_effect_summary">アニメーション効果を選択する</string>
+    <string name="udfps_settings_title">画面内指紋認証の設定</string>
+    <string name="udfps_settings_summary">画面内指紋認証の編集を設定する</string>
+    <!-- UDFPS icon picker -->
+    <string name="udfps_icon_picker_title">画面内指紋認証アイコンの選択</string>
+    <string name="udfps_icon_picker_summary">お気に入りの指紋アイコンを選択する</string>
     <!-- Notification light -->
     <string name="notification_light_settings">通知ライト</string>
     <!-- Heads up -->
@@ -277,10 +254,6 @@
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">音量ボタンでスリープ解除</string>
     <string name="volume_rocker_wake_summary">音量ボタンを押してスリープ解除を許可する</string>
-    <!-- Media art -->
-    <string name="lockscreen_media_category">音楽</string>
-    <string name="media_art_title">メディアカバーアート</string>
-    <string name="media_art_summary">ロック画面にアルバムアートを表示する</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">画面消灯時のアニメーション</string>
     <string name="screen_off_animation_crt">ブラウン管</string>
@@ -383,9 +356,9 @@
     <string name="qs_set_animation_style">%1$s</string>
     <string name="qs_set_animation_duration">%1$s</string>
     <string name="qs_set_animation_interpolator">%1$s</string>
-    <!-- Quick Settings -->
-    <string name="lockscreen_qs_disabled_title">保護時は無効</string>
-    <string name="lockscreen_qs_disabled_summary">保護されたロック画面でのクイック設定の展開を無効にする</string>
+    <!-- Disable QS -->
+    <string name="disable_qs_title">ロック画面でクイック設定非表示</string>
+    <string name="disable_qs_summary">保護されたロック画面でクイック設定をロックします。通知のシェードは無効にしません。</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">ローミング表示</string>
     <string name="roaming_indicator_icon_summary">ローミング中は電波アイコンにローミング表示する</string>
@@ -490,18 +463,14 @@
     <string name="qs_footer_text_summary">クイック設定パネルの下部にテキストを表示する</string>
     <string name="qs_footer_text_string_title">フッターのテキストを編集</string>
     <string name="qs_footer_text_string_summary">空白に設定して既定値になります</string>
-    <!-- FOD icon picker -->
-    <string name="fod_icon_picker_title">指紋アイコン</string>
-    <string name="fod_icon_picker_summary">お気に入りの指紋アイコンを選択する</string>
-    <string name="fod_icon_picker_footer">独自のアイコンを追加するには、左上のアイコンを選択し、OnePlus 6T 指紋カスタマイズアプリを使用して必要なアイコンを選択して下さい。</string>
-    <!-- FOD pressed color -->
-    <string name="fod_pressed_color_title">指紋認証タッチ時の色</string>
-    <string name="fod_pressed_color_default">既定</string>
-    <string name="fod_pressed_color_white">ホワイト</string>
-    <string name="fod_pressed_color_white_new">ホワイト (新)</string>
-    <string name="fod_pressed_color_green">緑</string>
-    <string name="fod_pressed_color_yellow">イエロー</string>
-    <string name="fod_pressed_color_light_yellow">ライトイエロー</string>
+    <!-- UDFPS pressed color -->
+    <string name="udfps_pressed_color_title">画面内指紋認証タッチ時の色</string>
+    <string name="udfps_pressed_color_default">既定</string>
+    <string name="udfps_pressed_color_white">ホワイト</string>
+    <string name="udfps_pressed_color_white_new">ホワイト (新)</string>
+    <string name="udfps_pressed_color_green">グリーン</string>
+    <string name="udfps_pressed_color_yellow">イエロー</string>
+    <string name="udfps_pressed_color_light_yellow">ライトイエロー</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">ヘッドセット接続時に音楽アプリ起動</string>
     <string name="headset_connect_player_summary">ヘッドセット接続時に既定の音楽アプリを起動する</string>
@@ -750,6 +719,7 @@
     <string name="volume_key_cursor_control_on_reverse">音量 上/下 - カーソル 右/左</string>
     <string name="swap_volume_buttons_title">再配置</string>
     <string name="swap_volume_buttons_summary">画面回転時に音量ボタンを入れ替える</string>
+    <string name="volume_panel_on_left_title">音量パネルの左側表示</string>
     <string name="volume_panel_on_left_summary">画面の左側に音量パネルを表示する</string>
     <string name="extras_title">その他</string>
     <string name="click_partial_screenshot_title">押して部分スクリーンショット</string>
@@ -770,7 +740,6 @@
     <string name="swap_capacitive_keys_title">ハードウェアキーの入れ替え</string>
     <string name="swap_capacitive_keys_summary">アプリ履歴ボタンと戻るボタンの位置を入れ替える</string>
     <!-- Lock screen visualizer -->
-    <string name="enable_visualizer">ビジュアライザーを有効化</string>
     <string name="lockscreen_visualizer_title">ビジュアライザー</string>
     <string name="lockscreen_visualizer_enable">音楽ビジュアライザー</string>
     <string name="lockscreen_visualizer_enable_summary">音楽再生中はビジュアライザーのバーを表示する</string>
@@ -859,9 +828,6 @@
     <string name="theme_navbar_picker_nexus">Nexus</string>
     <string name="theme_navbar_picker_old">旧式</string>
     <string name="theme_navbar_picker_sammy">Samsung</string>
-    <!-- FOD on doze -->
-    <string name="fod_on_doze_title">Doze 時の画面内指紋認証</string>
-    <string name="fod_on_doze_summary">アンビエント画面時又は AOD 時に指紋を画面に表示します。これはアイコンを隠すのみの設定で、指紋認証の機能は無効化されません。</string>
     <!-- Alarm and Wakelock blocker -->
     <string name="blocker_action_reload">再読込</string>
     <string name="blocker_action_save">保存</string>
@@ -898,21 +864,6 @@
     <string name="rounded_style_title">システムダイアログの丸みのスタイル</string>
     <string name="rounded_slight">弱</string>
     <string name="rounded_high">高</string>
-    <!-- Gaming macro QS tile -->
-    <string name="gaming_mode_tile_title">ゲームマクロ</string>
-    <string name="gaming_mode_tile_summary">クイック設定タイルの設定のゲームマクロ</string>
-    <string name="gaming_mode_heads_up_title">Heads Up</string>
-    <string name="gaming_mode_heads_up_summary">Heads Up を無効にする</string>
-    <string name="gaming_mode_zen_title">Do Not Disturb</string>
-    <string name="gaming_mode_zen_summary">Do Not Disturb を有効にする</string>
-    <string name="gaming_mode_brightness_enabled_title">自動明るさ調整</string>
-    <string name="gaming_mode_brightness_enabled_summary">明るさ自動調節を無効にする</string>
-    <string name="gaming_mode_media_enabled_title">メディアの音量</string>
-    <string name="gaming_mode_media_enabled_summary">メディア音量を設定する</string>
-    <string name="gaming_mode_media_title">設定音量</string>
-    <string name="gaming_mode_desc">ゲームマクロは上部であなたが選択した設定を切り替えます。あなたが選択した全ての設定は保存と切り替えが行われ、ゲームマクロを無効にすれば切り替えが元に戻ります。</string>
-    <string name="gaming_mode_screen_off_title">画面消灯時に無効化</string>
-    <string name="gaming_mode_screen_off_summary">画面消灯時はゲームマクロを無効にする</string>
     <!-- OOS style material dismiss all button for notifications -->
     <string name="notification_material_dismiss_button_title">マテリアルの削除ボタン</string>
     <string name="notification_material_dismiss_button_summary">全て終了ボタンをフローティングボタンに置き換える</string>
@@ -1002,13 +953,13 @@
     <string name="monet_engine_linear_lightness_title">線形の明度を使用</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">結合シグナルアイコン</string>
-    <string name="combined_status_bar_signal_icons_summary">ステータスバーで結合された電波アイコンを有効化する。\nシステム UI の再起動が必要です</string>
+    <string name="combined_status_bar_signal_icons_summary">ステータスバーの電波アイコンの強度と種別を結合する</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Bluetooth のバッテリー状態</string>
     <string name="bluetooth_battery_summary">可能な場合は接続している Bluetooth デバイスのバッテリー状態を表示する</string>
-    <!-- Screen off FOD -->
-    <string name="screen_off_fod_title">画面消灯時の画面内指紋認証</string>
-    <string name="screen_off_fod_summary">画面消灯時も画面内指紋認証を使用する</string>
+    <!-- Screen off UDFPS -->
+    <string name="screen_off_udfps_title">画面消灯時の画面内指紋認証</string>
+    <string name="screen_off_udfps_summary">画面消灯時も画面内指紋認証を使用する</string>
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">セキュアなクイック設定</string>
     <string name="qstile_requires_unlocking_summary">以下のクイック設定タイルは使用する前にロック画面の解除が必要になります:\n機内モード・モバイルデータ・NFC・Wi-Fi ホットスポット・USB テザリング・位置情報 </string>
@@ -1018,16 +969,58 @@
     <string name="burn_in_protection_summary">ナビゲーションバーとステータスバーのアイコンをシフトさせて焼き付きを防止する</string>
     <string name="burn_in_protection_interval_title">シフトを行う時間の間隔</string>
     <string name="burn_in_protection_interval_summary">アイコンをシフトさせる頻度を設定する</string>
-    <!-- Udfps Haptic Feedback -->
+    <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">画面内指紋認証の振動の使用</string>
     <string name="udfps_haptic_feedback_summary">画面内指紋認証アイコンに触れた時に振動させる</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">通知の数を表示</string>
     <string name="status_bar_notif_count_summary">保留中の通知の数を表示する</string>
-    <!-- Nightlight Fod -->
-    <string name="fod_night_light_title">画面内指紋認証中は夜間ライト無効化</string>
-    <string name="fod_night_light_summary">画面内指紋認証が有効な場合は夜間ライトを無効化します。このオプションを無効化すると、夜間ライト有効時に指紋認証の正確性に影響する場合があります。</string>
-    <!-- Location Privacy Indicator -->
-    <string name="location_privacy_title"> 位置情報プライバシー表示</string>
-    <string name="location_privacy_summary">クイック設定とステータスバーの位置情報プライバシー表示を切り替える</string>
+    <!-- Night Light UDFPS -->
+    <string name="udfps_night_light_title">画面内指紋認証中は夜間ライト無効化</string>
+    <string name="udfps_night_light_summary">画面内指紋認証が有効な場合は夜間ライトを無効化します。このオプションを無効化すると、夜間ライト有効時に指紋認証の正確性に影響する場合があります。</string>
+    <!-- Privacy indicators -->
+    <string name="mic_camera_privacy_indicator_title">マイクとカメラのプライバシー表示</string>
+    <string name="mic_camera_privacy_indicator_summary">アプリがマイクまたはカメラを使用している時にインジケーターを表示します</string>
+    <string name="location_privacy_indicator_title">位置情報プライバシー表示</string>
+    <string name="location_privacy_indicator_summary">アプリが位置情報を使用した時にインジケーターを表示します</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_category">音楽ビジュアライザーの Pulse</string>
+    <string name="pulse_help_policy_notice_title">Pulse について</string>
+    <string name="pulse_help_policy_notice_summary">Pulse は端末上で音楽を再生した時に表示されるグラフィックイコライザーです。</string>
+    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings_summary">ナビゲーションバーとロック画面に表示されるグラフィックイコライザー</string>
+    <string name="show_navbar_pulse_title">ナビゲーションバーの Pulse</string>
+    <string name="show_navbar_pulse_summary">ナビゲーションバー上のグラフィックイコライザー</string>
+    <string name="show_lockscreen_pulse_title">ロック画面の Pulse</string>
+    <string name="show_lockscreen_pulse_summary">ロック画面のグラフィックイコライザー</string>
+    <string name="show_ambient_pulse_title">アンビエント Pulse</string>
+    <string name="show_ambient_pulse_summary">アンビエント画面のグラフィックイコライザー</string>
+    <string name="pulse_render_mode_title">レンダリングモード</string>
+    <string name="pulse_render_mode_fading_bars">フェーディングブロック</string>
+    <string name="pulse_render_mode_solid_lines">ソリッドライン</string>
+    <string name="pulse_legacy_mode_advanced_category">フェーディングブロックの設定</string>
+    <string name="pulse_custom_fudge_factor">感度レベル</string>
+    <string name="pulse_lavalamp_speed_title">ラーヴァランプ速度</string>
+    <string name="pulse_solid_units_count">ソリッドラインの数</string>
+    <string name="pulse_solid_units_opacity">ソリッドラインの透明度</string>
+    <string name="pulse_solid_units_rounded_title">角の丸み</string>
+    <string name="pulse_solid_units_rounded_summary">丸みを帯びたソリッドライン</string>
+    <string name="pulse_solid_dimen_category">ソリッドラインの設定</string>
+    <string name="pulse_color_mode_title">色</string>
+    <string name="pulse_color_accent">アクセント</string>
+    <string name="pulse_color_custom">カスタム</string>
+    <string name="pulse_color_lava_lamp">ラーヴァランプ</string>
+    <string name="pulse_color_user_title">色の選択</string>
+    <string name="pulse_smoothing_enabled_title">スムージングの有効化</string>
+    <string name="pulse_smoothing_enabled_summary">どちらのバーもよりスムーズに表示されます</string>
+    <string name="pulse_custom_dimen">バーの幅</string>
+    <string name="pulse_custom_div">バーの間隔</string>
+    <string name="pulse_filled_block_size">ブロックの大きさ</string>
+    <string name="pulse_empty_block_size">ブロックの間隔</string>
+    <!-- Keyguard force small clock -->
+    <string name="lockscreen_small_clock_title">小さな時計</string>
+    <string name="lockscreen_small_clock_summary">通知がない時でも大きな時計を表示しない</string>
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">ゲームスペース</string>
+    <string name="gaming_mode_summary">没入型ゲーム体験のための追加機能を設定する</string>
 </resources>
