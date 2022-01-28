@@ -16,7 +16,6 @@
 
 package com.evolution.settings.fragments;
 
-import android.content.Context;
 import android.content.ContentResolver;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -38,7 +37,6 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.SecureSettingSwitchPreference;
-import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
@@ -65,39 +63,11 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mLeftBatteryText;
     private int mBatteryPercentValue;
 
-    private static final String STATUSBAR_LEFT_PADDING = "statusbar_left_padding";
-    private static final String STATUSBAR_RIGHT_PADDING = "statusbar_right_padding";
-
-    private SystemSettingSeekBarPreference mSbLeftPadding;
-    private SystemSettingSeekBarPreference mSbRightPadding;
-
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.evolution_settings_status_bar);
         ContentResolver resolver = getActivity().getContentResolver();
-
-        Resources res = null;
-        Context ctx = getContext();
-        float density = Resources.getSystem().getDisplayMetrics().density;
-
-        try {
-            res = ctx.getPackageManager().getResourcesForApplication("com.android.systemui");
-        } catch (NameNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        mSbLeftPadding = (SystemSettingSeekBarPreference) findPreference(STATUSBAR_LEFT_PADDING);
-        int sbLeftPadding = Settings.System.getIntForUser(ctx.getContentResolver(),
-                Settings.System.LEFT_PADDING, ((int) (res.getIdentifier("com.android.systemui:dimen/status_bar_padding_start", null, null) / density)), UserHandle.USER_CURRENT);
-        mSbLeftPadding.setValue(sbLeftPadding);
-        mSbLeftPadding.setOnPreferenceChangeListener(this);
-
-        mSbRightPadding = (SystemSettingSeekBarPreference) findPreference(STATUSBAR_RIGHT_PADDING);
-        int sbRightPadding = Settings.System.getIntForUser(ctx.getContentResolver(),
-                Settings.System.RIGHT_PADDING, ((int) (res.getIdentifier("com.android.systemui:dimen/status_bar_padding_end", null, null) / density)), UserHandle.USER_CURRENT);
-        mSbRightPadding.setValue(sbRightPadding);
-        mSbRightPadding.setOnPreferenceChangeListener(this);
 
         mCombinedIcons = (SecureSettingSwitchPreference)
                 findPreference(COMBINED_STATUSBAR_ICONS);
@@ -146,29 +116,7 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        Resources res = null;
-        Context ctx = getContext();
-        float density = Resources.getSystem().getDisplayMetrics().density;
-
-        try {
-            res = ctx.getPackageManager().getResourcesForApplication("com.android.systemui");
-        } catch (NameNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        if (preference == mSbLeftPadding) {
-            int leftValue = (Integer) newValue;
-            int sbLeft = ((int) (leftValue / density));
-            Settings.System.putIntForUser(getContext().getContentResolver(),
-                    Settings.System.LEFT_PADDING, sbLeft, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mSbRightPadding) {
-            int rightValue = (Integer) newValue;
-            int sbRight = ((int) (rightValue / density));
-            Settings.System.putIntForUser(getContext().getContentResolver(),
-                    Settings.System.RIGHT_PADDING, sbRight, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mBatteryStyle) {
+        if (preference == mBatteryStyle) {
             int batterystyle = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_BATTERY_STYLE, batterystyle,
