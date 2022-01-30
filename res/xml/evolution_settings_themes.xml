@@ -23,14 +23,15 @@
         android:key="monet_engine"
         android:title="@string/monet_engine_title"
         android:summary="@string/monet_engine_summary"
-        android:fragment="com.evolution.settings.fragments.MonetEngine"/>
+        android:fragment="com.evolution.settings.fragments.MonetEngine" />
 
     <Preference
         android:key="dark_ui_mode"
         android:title="@string/dark_ui_mode"
         android:summary="@string/dark_ui_mode_summary"
         android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
-        settings:controller="com.android.settings.display.DarkUIPreferenceController" />
+        settings:controller="com.android.settings.display.DarkUIPreferenceController"
+        app:allowDividerAbove="true" />
 
     <PreferenceCategory 
         android:title="@string/category_name_general">

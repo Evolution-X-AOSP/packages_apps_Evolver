@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2019-2021 The Evolution X Project
+<!--
+     Copyright (C) 2019-2022 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,6 +16,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/button_pref_title">
 
@@ -27,7 +29,8 @@
             android:title="@string/system_navigation_title"
             android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
             settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController"
-            settings:keywords="@string/keywords_system_navigation" />
+            settings:keywords="@string/keywords_system_navigation"
+            app:allowDividerAbove="true" />
 
         <SwitchPreference
             android:key="force_show_navbar"
