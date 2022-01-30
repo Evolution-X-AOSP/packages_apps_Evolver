@@ -80,6 +80,12 @@
         android:key="lockscreen_fingerprint_category"
         android:title="@string/fingerprint_category">
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="enable_ripple_effect"
+            android:title="@string/enable_fingerprint_ripple_effect_title"
+            android:summary="@string/enable_fingerprint_ripple_effect_summary"
+            android:defaultValue="true" />
+
         <SwitchPreference
             android:key="fingerprint_success_vib"
             android:title="@string/fprint_success_vib_title"
