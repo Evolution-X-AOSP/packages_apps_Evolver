@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.widget.Toast;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -49,14 +50,37 @@ import java.util.List;
 public class MiscellaneousSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_SPOOF = "use_photos_spoof";
+    private static final String SYS_SPOOF = "persist.sys.photo";
+
+    private SwitchPreference mSpoof;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.evolution_settings_miscellaneous);
+
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefSet = getPreferenceScreen();
+
+        final String useSpoof = SystemProperties.get(SYS_SPOOF, "1");
+        mSpoof = (SwitchPreference) findPreference(KEY_SPOOF);
+        mSpoof.setChecked("1".equals(useSpoof));
+        mSpoof.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mSpoof) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.USE_PHOTOS_SPOOF, value ? 1 : 0);
+            SystemProperties.set(SYS_SPOOF, value ? "1" : "0");
+            Toast.makeText(getActivity(),
+                    (R.string.photos_spoof_toast),
+                    Toast.LENGTH_LONG).show();
+            return true;
+        }
         return false;
     }
 
