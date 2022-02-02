@@ -77,28 +77,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="misc_icons_category"
-        android:title="@string/icons_category">
-
-        <!-- Notification count -->
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="status_bar_notif_count"
-            android:title="@string/status_bar_notif_count_title"
-            android:summary="@string/status_bar_notif_count_summary"
-            android:defaultValue="false" />
-
-        <!-- Combined signal icons -->
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="show_combined_status_bar_signal_icons"
-            android:title="@string/combined_status_bar_signal_icons"
-            android:summary="@string/combined_status_bar_signal_icons_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="bluetooth_show_battery"
-            android:title="@string/bluetooth_battery_title"
-            android:summary="@string/bluetooth_battery_summary"
-            android:defaultValue="true"/>
+        android:key="telephony_icons_category"
+        android:title="@string/telephony_icons_title">
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="data_disabled_icon"
@@ -136,6 +116,38 @@
             settings:min="0"
             settings:units="" />
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="roaming_indicator_icon"
+            android:title="@string/roaming_indicator_icon_title"
+            android:summary="@string/roaming_indicator_icon_summary"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="misc_icons_category"
+        android:title="@string/icons_category">
+
+        <!-- Notification count -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="status_bar_notif_count"
+            android:title="@string/status_bar_notif_count_title"
+            android:summary="@string/status_bar_notif_count_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true"/>
+
+        <!-- Combined signal icons -->
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="show_combined_status_bar_signal_icons"
+            android:title="@string/combined_status_bar_signal_icons"
+            android:summary="@string/combined_status_bar_signal_icons_summary"
+            android:defaultValue="false" />
+
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="enable_camera_privacy_indicator"
             android:title="@string/mic_camera_privacy_indicator_title"
@@ -147,12 +159,6 @@
             android:title="@string/location_privacy_indicator_title"
             android:summary="@string/location_privacy_indicator_summary"
             android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="roaming_indicator_icon"
-            android:title="@string/roaming_indicator_icon_title"
-            android:summary="@string/roaming_indicator_icon_summary"
-            android:defaultValue="true"/>
 
     </PreferenceCategory>
 
