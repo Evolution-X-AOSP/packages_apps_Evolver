@@ -2,7 +2,7 @@
  * Copyright (C) 2016 The CyanogenMod project
  * Copyright (C) 2017-2018 The LineageOS project
  * Copyright (C) 2018 The PixelExperience Project
- * Copyright (C) 2019-2021 The Evolution X Project
+ * Copyright (C) 2019-2022 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.evolution.settings.fragments;
 
 import android.app.ActivityManager;
@@ -39,6 +38,7 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
+import com.android.internal.evolution.hardware.LineageHardwareManager;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.internal.util.hwkeys.ActionConstants;
@@ -53,12 +53,14 @@ import com.evolution.settings.preference.ActionFragment;
 import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
+
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String KEY_NAVIGATION_BAR_ENABLED = "force_show_navbar";
     private static final String KEY_LAYOUT_SETTINGS = "layout_settings";
@@ -123,16 +125,16 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             prefScreen.removePreference(hwkeyCat);
         }
 
-         // bits for hardware keys present on device
+        // bits for hardware keys present on device
         final int deviceKeys = getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
-         // read bits for present hardware keys
+        // read bits for present hardware keys
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
         final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
-         // load categories and init/remove preferences based on device
+        // load categories and init/remove preferences based on device
         // configuration
         final PreferenceCategory backCategory = (PreferenceCategory) prefScreen
                 .findPreference(CATEGORY_BACK);
@@ -144,27 +146,27 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                 .findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory = (PreferenceCategory) prefScreen
                 .findPreference(CATEGORY_APPSWITCH);
-         // back key
+        // back key
         if (!hasBackKey) {
             prefScreen.removePreference(backCategory);
         }
-         // home key
+        // home key
         if (!hasHomeKey) {
             prefScreen.removePreference(homeCategory);
         }
-         // App switch key (recents)
+        // App switch key (recents)
         if (!hasAppSwitchKey) {
             prefScreen.removePreference(appSwitchCategory);
         }
-         // menu key
+        // menu key
         if (!hasMenuKey) {
             prefScreen.removePreference(menuCategory);
         }
-         // search/assist key
+        // search/assist key
         if (!hasAssistKey) {
             prefScreen.removePreference(assistCategory);
         }
-         // let super know we can load ActionPreferences
+        // let super know we can load ActionPreferences
         onPreferenceScreenLoaded(ActionConstants.getDefaults(ActionConstants.HWKEYS));
 
         // load preferences first
@@ -251,6 +253,11 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         return false;
     }
 
+    private static boolean isKeyDisablerSupported(Context context) {
+        final LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
+        return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE);
+    }
+
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
@@ -259,7 +266,26 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     /**
      * For Search.
      */
-
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_button);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_button) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(context);
+
+                    if (!isKeyDisablerSupported(context)) {
+                        keys.add(HWKEY_DISABLE);
+                        keys.add(CATEGORY_HWKEY);
+                        keys.add(CATEGORY_BACK);
+                        keys.add(CATEGORY_HOME);
+                        keys.add(CATEGORY_MENU);
+                        keys.add(CATEGORY_ASSIST);
+                        keys.add(CATEGORY_APPSWITCH);
+                    }
+
+                    return keys;
+                }
+            };
 }

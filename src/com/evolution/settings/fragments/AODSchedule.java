@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2021 Yet Another AOSP Project
+ * Copyright (C) 2019-2022 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -181,6 +182,9 @@ public class AODSchedule extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.EVOLVER;
     }
 
+    /**
+     * For Search.
+     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_always_on_display_schedule);
 }

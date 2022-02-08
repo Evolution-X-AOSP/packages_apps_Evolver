@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2021 AospExtended ROM Project
+ * Copyright (C) 2019-2022 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.evolution.settings.fragments;
 
 import static android.os.UserHandle.USER_SYSTEM;

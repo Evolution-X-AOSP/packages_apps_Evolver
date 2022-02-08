@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2019 AospExtended ROM Project
+ * Copyright (C) 2019-2022 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.evolution.settings.fragments;
 
 import static android.view.DisplayCutout.BOUNDS_POSITION_LEFT;
@@ -48,15 +48,15 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
-
-import com.android.settingslib.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class ClockDateSettings extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener, Indexable {
+        implements Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "ClockDateSettings";
 
@@ -328,6 +328,9 @@ public class ClockDateSettings extends SettingsPreferenceFragment
         return MetricsProto.MetricsEvent.EVOLVER;
     }
 
+    /**
+     * For Search.
+     */
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override

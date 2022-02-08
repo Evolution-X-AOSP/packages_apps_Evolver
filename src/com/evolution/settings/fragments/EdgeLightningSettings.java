@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2020 Yet Another AOSP Project
+ * Copyright (C) 2019-2022 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +31,8 @@ import androidx.preference.PreferenceScreen;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingListPreference;
@@ -37,6 +40,7 @@ import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class EdgeLightningSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -169,4 +173,10 @@ public class EdgeLightningSettings extends SettingsPreferenceFragment implements
             mTimeoutPref.setEnabled(false);
         }
     }
+
+    /**
+     * For Search.
+     */
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider(R.xml.evolution_settings_edge_lightning);
 }

@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2015 The Pure Nexus Project
+ * Copyright (C) 2019-2022 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +46,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-@SearchIndexable
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class VolumeStepsFragment extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -201,6 +202,9 @@ public class VolumeStepsFragment extends SettingsPreferenceFragment implements
         return MetricsEvent.EVOLVER;
     }
 
+    /**
+     * For Search.
+     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_volume_steps);
 }

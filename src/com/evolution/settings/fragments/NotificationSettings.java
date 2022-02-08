@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.evolution.settings.fragments;
 
 import android.app.AlertDialog;
@@ -177,7 +176,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     /**
      * For Search.
      */
-
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_notifications);
 }

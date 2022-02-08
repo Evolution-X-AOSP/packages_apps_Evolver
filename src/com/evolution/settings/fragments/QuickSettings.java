@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2021 The Evolution X Project
+ * Copyright (C) 2019-2022 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.evolution.settings.fragments;
 
 import android.os.Bundle;
@@ -205,7 +204,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     /**
      * For Search.
      */
-
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_quicksettings);
 }
