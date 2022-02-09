@@ -36,6 +36,7 @@
     <string name="themes_title">Tema</string>
     <string name="torch_gestures_title">Gestur Senter</string>
     <string name="flashlight_category">Senter</string>
+    <string name="telephony_icons_title">Ikon telepon</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Gestur stok sudah tersedia di Android</string>
     <string name="dark_ui_mode_summary">Jelajahi opsi tema gelap</string>
@@ -448,7 +449,7 @@
     <string name="pulse_ambient_light_layout_title">Tampilan cahaya</string>
     <string name="pulse_ambient_light_layout_solid">Padat</string>
     <string name="pulse_ambient_light_layout_faded">Memudar</string>
-    <string name="pulse_ambient_light_width_title">Lebar terang</string>
+    <string name="pulse_ambient_light_width_title">Lebar cahaya</string>
     <string name="pulse_light_layout_style_title">Gaya Tata Letak Cahaya</string>
     <string name="pulse_light_both">Semua Empat Sisi</string>
     <string name="pulse_light_top_bottom">Hanya Atas-Bawah</string>
@@ -499,14 +500,19 @@
     <string name="theme_customization_category">Tema</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">Bentuk ikon</string>
+    <string name="theme_customization_icon_shape_summary">Setel gaya bentuk ikon sistem</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Font Judul / Isi</string>
+    <string name="theme_customization_font_summary">Setel gaya font sistem</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Paket ikon</string>
+    <string name="theme_customization_icon_pack_summary">Setel gaya paket ikon kustom</string>
     <!-- Custom Signal bar icons -->
-    <string name="theme_customization_icon_signal_bar_title">Sinyal</string>
+    <string name="theme_customization_signal_icon_title">Gaya ikon sinyal</string>
+    <string name="theme_customization_signal_icon_summary">Setel gaya ikon sinyal kustom</string>
     <!-- Custom Wi-Fi bar icons -->
-    <string name="theme_customization_icon_wifi_bar_title">Wi-Fi</string>
+    <string name="theme_customization_wifi_icon_title">Gaya ikon WiFi</string>
+    <string name="theme_customization_wifi_icon_summary">Setel gaya ikon wifi kustom</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">Gaya bingkai QS</string>
     <string name="qstile_circle_trim">Lingkaran dengan trim</string>
@@ -760,8 +766,8 @@
     <string name="heads_up_time_out_10sec">10 detik</string>
     <!-- Heads up snooze -->
     <string name="heads_up_snooze_title">Waktu tunda</string>
-    <string name="heads_up_snooze_summary_one_minute">Menggeser ke atas pemberitahuan akan menunda notifikasi mengambang dari aplikasi tersebut selama 1 menit</string>
-    <string name="heads_up_snooze_summary">Menggeser ke atas pemberitahuan akan menunda notifikasi mengambang dari aplikasi tersebut selama <xliff:g id="number">%d</xliff:g> menit</string>
+    <string name="heads_up_snooze_summary_one_minute">Menggeser ke atas saat mengintip notifikasi akan menunda notifikasi mengambang dari aplikasi tersebut untuk 1 menit</string>
+    <string name="heads_up_snooze_summary">Menggeser ke atas saat mengintip notifikasi akan menunda notifikasi mengambang dari aplikasi tersebut untuk <xliff:g id="number">%d</xliff:g> menit</string>
     <string name="heads_up_snooze_disabled_summary">Waktu tunda dinonaktifkan</string>
     <string name="heads_up_snooze_1min">1 menit</string>
     <string name="heads_up_snooze_5min">5 menit</string>
@@ -887,7 +893,7 @@
     <string name="lockscreen_power_menu_disabled_title">Menonaktifkan menu daya saat layar terkunci</string>
     <string name="lockscreen_power_menu_disabled_summary">Pilihan ini hanya akan menonaktifkan menu daya pada layar kunci aman</string>
     <!-- Toast app icon -->
-    <string name="toast_icon_title">Informasi teks dengan ikon aplikasi</string>
+    <string name="toast_icon_title">Toast dengan ikon aplikasi</string>
     <string name="toast_icon_summary">Tampilkan ikon aplikasi dalam pemberitahuan Toast</string>
     <!-- Running Services button -->
     <string name="qs_running_services_title">Ikon layanan berjalan</string>
@@ -949,6 +955,9 @@
     <string name="monet_engine_accurate_shades_title">Gunakan nuansa yang akurat</string>
     <string name="monet_engine_chroma_factor_title">Faktor kroma</string>
     <string name="monet_engine_linear_lightness_title">Gunakan cahaya linier</string>
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Gunakan tema gelap</string>
+    <string name="system_black_theme_summary">Paksa warna latar belakang hitam</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Ikon sinyal gabungan</string>
     <string name="combined_status_bar_signal_icons_summary">Aktifkan ikon sinyal gabungan di bilah status.\nMemerlukan mulai ulang SistemUI</string>
@@ -995,7 +1004,7 @@
     <string name="show_ambient_pulse_summary">Equalizer grafis audio pada layar ambien</string>
     <string name="pulse_render_mode_title">Mode Render</string>
     <string name="pulse_render_mode_fading_bars">Blok memudar</string>
-    <string name="pulse_render_mode_solid_lines">Garis-garis padat</string>
+    <string name="pulse_render_mode_solid_lines">Garis-garis solid</string>
     <string name="pulse_legacy_mode_advanced_category">Setelan mode blok memudar</string>
     <string name="pulse_custom_fudge_factor">Tingkat kewajaran</string>
     <string name="pulse_lavalamp_speed_title">Kecepatan lampu lava</string>
@@ -1024,4 +1033,12 @@
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Efek riak</string>
     <string name="enable_fingerprint_ripple_effect_summary">Tampilkan efek riak saat membuka kunci dengan sidik jari</string>
+    <!-- Screenshot type -->
+    <string name="screenshot_type_title">Jenis tangkapan layar</string>
+    <string name="screenshot_type_fullscreen">Ambil tangkapan layar penuh</string>
+    <string name="screenshot_type_partial">Tarik pilihan di area yang ingin Anda ambil sebagai tangkapan layar</string>
+    <!-- Unlimited g00gle ph0t0s st0rage -->
+    <string name="use_photos_spoof_title">Penyimpanan Google Foto tanpa batas</string>
+    <string name="use_photos_spoof_summary">Perangkat Anda akan diidentifikasi sebagai Pixel XL oleh aplikasi Google Foto untuk mendapatkan penyimpanan foto tanpa batas dengan kualitas asli</string>
+    <string name="photos_spoof_toast">Mulai ulang aplikasi Foto agar dapat diterapkan</string>
 </resources>

@@ -36,6 +36,7 @@
     <string name="themes_title">Temas</string>
     <string name="torch_gestures_title">Gestos da lanterna</string>
     <string name="flashlight_category">Lanterna</string>
+    <string name="telephony_icons_title">Ícones de rede</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Gestos padrões incluídos no Android</string>
     <string name="dark_ui_mode_summary">Navegue pelas opções de tema escuro</string>
@@ -82,6 +83,11 @@
     <string name="seekbar_default_value_set">Valor definido para o padrão de <xliff:g id="number">%d</xliff:g></string>
     <string name="seekbar_default_value_already_set">O valor padrão já está definido</string>
     <string name="seekbar_default_string">Padrão</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Valor: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">por padrão</string>
+    <string name="custom_seekbar_default_value_to_set">Valor padrão: <xliff:g id="v">%s</xliff:g>\nToque longo para definir</string>
+    <string name="custom_seekbar_default_value_is_set">Valor padrão definido</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">Configuração USB</string>
     <string name="usb_default_config_summary">Escolha o comportamento padrão quando conectado a um dispositivo via USB</string>
@@ -117,9 +123,9 @@
     <string name="evolution_about_team">Equipe Evolution X</string>
     <!-- Battery light -->
     <string name="light_settings_header">Configurações do Led</string>
-    <string name="battery_light_settings">LED da bateria</string>
+    <string name="battery_light_settings">Led da bateria</string>
     <string name="battery_light_summary">Ativar ou desativar o LED da bateria enquanto carrega, quando estiver fraca, no modo Não Perturbe</string>
-    <string name="battery_light_enable">LED da bateria</string>
+    <string name="battery_light_enable">Led da bateria</string>
     <string name="battery_full_light_enabled">Led da bateria quando totalmente carregada</string>
     <string name="battery_light_allow_on_dnd_title">Led da bateria no modo Não Perturbe</string>
     <string name="battery_light_low_blinking_title">Piscar quando a bateria estiver fraca</string>
@@ -155,29 +161,24 @@
     <string name="profile_choose_app">Escolher aplicativo</string>
     <string name="dialog_delete_title">Excluir</string>
     <string name="dialog_delete_message">Remover o item selecionado?</string>
-    <!-- Statusbar net monitor -->
+    <!-- Network Traffic -->
     <string name="traffic_title">Indicadores de tráfego de rede</string>
-    <string name="network_traffic">Tráfego de rede</string>
-    <string name="network_traffic_state_title">Monitor de tráfego de rede</string>
-    <string name="network_traffic_location">Posição do indicador de tráfego</string>
-    <string name="traffic_disabled">Desativado</string>
-    <string name="traffic_status_bar">Barra de status</string>
-    <string name="traffic_expanded_status_bar">Cabeçalho expandido</string>
+    <string name="traffic_summary">Personalize os indicadores de tráfego de rede</string>
     <string name="network_traffic_autohide_threshold_title">Limite de atividade para a ocultação automática (KB/s)</string>
-    <string name="network_traffic_arrow">Mostrar setas</string>
-    <string name="network_traffic_arrow_summary">Mostrar as setas do indicador de tráfego</string>
-    <string name="network_traffic_type">Selecione o tipo de atividade da rede</string>
-    <string name="show_network_traffic_combined">Combinado (Upload + Download)</string>
-    <string name="show_network_traffic_dynamic">Dinâmico</string>
-    <string name="show_network_traffic_up">Upload</string>
-    <string name="show_network_traffic_down">Download</string>
-    <string name="show_network_traffic_all">Ambos</string>
-    <string name="nettraf_font_size">Tamanho da fonte dos indicadores de rede</string>
+    <string name="network_traffic_location_title">Local</string>
+    <string name="network_traffic_disabled">Desativado</string>
+    <string name="network_traffic_statusbar">Barra de status</string>
+    <string name="network_traffic_qs_header">Cabeçalho das configurações rápidas</string>
+    <string name="network_traffic_refresh_interval_title">Intervalo de atualização</string>
+    <string name="network_traffic_mode_title">Modo de exibição</string>
+    <string name="network_traffic_dynamic">Dinâmico</string>
+    <string name="network_traffic_download">Download</string>
+    <string name="network_traffic_upload">Upload</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_error_vib_title">Vibrar no erro da impressão digital</string>
+    <string name="fprint_error_vib_title">Vibrar quando a digital não for reconhecida</string>
     <string name="fprint_error_vib_summary">Vibrar quando o desbloqueio por impressão digital falhar</string>
-    <string name="fprint_success_vib_title">Vibrar na autenticação da impressão digital</string>
-    <string name="fprint_success_vib_summary">Vibrar ao desbloquear usando o leitor de impressão digital</string>
+    <string name="fprint_success_vib_title">Vibrar no desbloqueio por impressão digital</string>
+    <string name="fprint_success_vib_summary">Vibrar quando desbloquear usando o leitor de impressão digital</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">Mostrar 4G em vez de LTE</string>
     <string name="show_fourg_icon_summary">Substituir o indicador de rede LTE por 4G</string>
@@ -460,7 +461,7 @@
     <string name="qs_footer_text_string_summary">Definir como vazio para o padrão</string>
     <!-- UDFPS pressed color -->
     <string name="udfps_pressed_color_title">Cor da impressão digital pressionada</string>
-    <string name="udfps_pressed_color_default">Padrão</string>
+    <string name="udfps_pressed_color_cyan">Ciano</string>
     <string name="udfps_pressed_color_white">Branco</string>
     <string name="udfps_pressed_color_white_new">Branco (Novo)</string>
     <string name="udfps_pressed_color_green">Verde</string>
@@ -499,14 +500,19 @@
     <string name="theme_customization_category">Temas</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">Formato dos ícones</string>
+    <string name="theme_customization_icon_shape_summary">Definir o estilo dos ícones do sistema</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Fontes</string>
+    <string name="theme_customization_font_summary">Definir o estilo da fonte do sistema</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Pacote de ícones</string>
+    <string name="theme_customization_icon_pack_summary">Definir pacote de ícones personalizado</string>
     <!-- Custom Signal bar icons -->
-    <string name="theme_customization_icon_signal_bar_title">Rede Móvel</string>
+    <string name="theme_customization_signal_icon_title">Estilo do ícone de rede</string>
+    <string name="theme_customization_signal_icon_summary">Definir ícone de rede móvel personalizado</string>
     <!-- Custom Wi-Fi bar icons -->
-    <string name="theme_customization_icon_wifi_bar_title">Wi-Fi</string>
+    <string name="theme_customization_wifi_icon_title">Estilo do ícone Wi-Fi</string>
+    <string name="theme_customization_wifi_icon_summary">Definir ícone de wifi personalizado</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">Estilo dos ícones do bloco QS</string>
     <string name="qstile_circle_trim">Círculo com Gradiente</string>
@@ -859,25 +865,6 @@
     <string name="rounded_style_title">Estilo arredondado para diálogos do sistema</string>
     <string name="rounded_slight">Pouco</string>
     <string name="rounded_high">Muito</string>
-    <!-- Gaming macro QS tile -->
-    <string name="gaming_mode_tile_title">Modo Gamer</string>
-    <string name="gaming_mode_tile_summary">Configurações do modo gamer</string>
-    <string name="gaming_mode_heads_up_title">Notificações flutuantes</string>
-    <string name="gaming_mode_heads_up_summary">Desativar notificações flutuantes</string>
-    <string name="gaming_mode_zen_title">Não Perturbe</string>
-    <string name="gaming_mode_zen_summary">Ativar modo Não Pertube</string>
-    <string name="gaming_mode_night_light_title">Modo noturno</string>
-    <string name="gaming_mode_night_light_summary">Desativar o modo noturno</string>
-    <string name="gaming_mode_brightness_enabled_title">Brilho automático</string>
-    <string name="gaming_mode_brightness_enabled_summary">Desativar o brilho automático</string>
-    <string name="gaming_mode_brightness_title">Definir brilho para</string>
-    <string name="gaming_mode_brightness_summary">Defina 0 para manter como está</string>
-    <string name="gaming_mode_media_enabled_title">Volume de mídia</string>
-    <string name="gaming_mode_media_enabled_summary">Definir o volume de mídia</string>
-    <string name="gaming_mode_media_title">Definir volume para</string>
-    <string name="gaming_mode_desc">O modo gamer irá alternar as configurações que você escolheu acima. Todas as configurações selecionadas voltarão ao seu estado anterior quando você desativar o modo gamer</string>
-    <string name="gaming_mode_screen_off_title">Desativar ao desligar a tela</string>
-    <string name="gaming_mode_screen_off_summary">Desativar o modo de jogo quando a tela for apagada</string>
     <!-- OOS style material dismiss all button for notifications -->
     <string name="notification_material_dismiss_button_title">Botão de dispensar (Material)</string>
     <string name="notification_material_dismiss_button_summary">Substituir texto de notificação \"limpar tudo\" pelo botão flutuante</string>
@@ -958,6 +945,9 @@
     <string name="charging_animation_title">Animação de carregamento</string>
     <string name="charging_animation_summary">Exibir uma animação quando o dispositivo for conectado</string>
     <!-- Monet Engine -->
+    <string name="monet_category">Tema Monet</string>
+    <string name="monet_engine_title">Personalização do tema Monet</string>
+    <string name="monet_engine_summary">Personalize os parâmetros do tema Monet</string>
     <string name="monet_engine_custom_color_title">Usar cor personalizada</string>
     <string name="monet_engine_custom_color_summary">Usar cor personalizada para o motor de temas Monet em vez de cores do papel de parede</string>
     <string name="monet_engine_color_override_title">Cor personalizada</string>
@@ -965,6 +955,9 @@
     <string name="monet_engine_accurate_shades_title">Usar tons precisos</string>
     <string name="monet_engine_chroma_factor_title">Fator Cromático</string>
     <string name="monet_engine_linear_lightness_title">Brilho linear</string>
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Usar tema preto (amoled)</string>
+    <string name="system_black_theme_summary">Forçar tema preto para a cor de fundo</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Combinar ícones de sinal</string>
     <string name="combined_status_bar_signal_icons_summary">Ativar ícones de sinal combinados na barra de status.\nNecessário reiniciar a Interface do sistema</string>
@@ -1026,17 +1019,26 @@
     <string name="pulse_color_lava_lamp">Lâmpada de lava</string>
     <string name="pulse_color_user_title">Escolha a cor</string>
     <string name="pulse_smoothing_enabled_title">Ativar suavização</string>
-    <string name="pulse_smoothing_enabled_summary">Cada barra é animada com mais suavidade</string>
+    <string name="pulse_smoothing_enabled_summary">Cada barra é animada mais suavemente</string>
     <string name="pulse_custom_dimen">Largura da barra</string>
     <string name="pulse_custom_div">Espaçamento da barra</string>
     <string name="pulse_filled_block_size">Tamanho do bloco</string>
     <string name="pulse_empty_block_size">Espaçamento do bloco</string>
     <!-- Keyguard force small clock -->
     <string name="lockscreen_small_clock_title">Relógio pequeno na tela de bloqueio</string>
-    <string name="lockscreen_small_clock_summary">Forçar tamanho pequeno para o relógio na tela de bloqueio</string>
-    <!-- Custom UDFPS icon -->
-    <string name="custom_fp_icon_title">Ícone de impressão digital personalizado</string>
-    <string name="custom_fp_icon_summary">Usar ícone de impressão digital personalizado através de um arquivo</string>
-    <string name="custom_fp_select_title">Selecionar ícone de impressão digital personalizado</string>
-    <string name="custom_fp_select_summary">Selecione uma imagem personalizada dos seus arquivos salvos ou galeria</string>
+    <string name="lockscreen_small_clock_summary">Mostrar relógio pequeno na tela de bloqueio mesmo quando não houver notificações</string>
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">Espaço de jogo</string>
+    <string name="gaming_mode_summary">Recursos extras para uma experiência envolvente nos jogos</string>
+    <!-- Fingerprint Ripple Effect -->
+    <string name="enable_fingerprint_ripple_effect_title">Animação de desbloqueio</string>
+    <string name="enable_fingerprint_ripple_effect_summary">Mostrar animação (efeito cascata) ao desbloquear usando a impressão digital</string>
+    <!-- Screenshot type -->
+    <string name="screenshot_type_title">Tipo de captura de tela</string>
+    <string name="screenshot_type_fullscreen">Captura em tela cheia</string>
+    <string name="screenshot_type_partial">Selecionar a área que deseja capturar</string>
+    <!-- Unlimited g00gle ph0t0s st0rage -->
+    <string name="use_photos_spoof_title">Armazenamento de fotos ilimitado</string>
+    <string name="use_photos_spoof_summary">Seu dispositivo será identificado como um Pixel XL pelo aplicativo Fotos para obter armazenamento ilimitado de fotos na qualidade original</string>
+    <string name="photos_spoof_toast">Reinicie o aplicativo de Fotos para que ele entre em vigor</string>
 </resources>
