@@ -24,9 +24,7 @@
         android:key="gaming_mode"
         android:title="@string/gaming_mode_title"
         android:summary="@string/gaming_mode_summary">
-
-        <intent
-            android:action="android.intent.action.MAIN"
+        <intent android:action="android.intent.action.MAIN"
             android:targetPackage="org.exthmui.game"
             android:targetClass="org.exthmui.game.ui.MainActivity" />
     </Preference>
@@ -60,9 +58,11 @@
         android:key="display_cutout_force_fullscreen_settings"
         android:title="@string/display_cutout_force_fullscreen_title"
         android:summary="@string/display_cutout_force_fullscreen_summary"
-        android:fragment="com.evolution.settings.fragments.DisplayCutoutForceFullscreenSettings"
-        settings:controller="com.evolution.settings.fragments.DisplayCutoutForceFullscreenPreferenceController"
-        app:allowDividerAbove="true" />
+        app:allowDividerAbove="true">
+        <intent android:action="android.intent.action.MAIN"
+             android:targetPackage="com.android.settings"
+             android:targetClass="com.evolution.settings.fragments.DisplayCutoutForceFullscreenActivity"/>
+    </Preference>
 
     <PreferenceCategory
         android:key="pulse_category"
