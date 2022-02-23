@@ -54,6 +54,12 @@
                 android:targetClass="com.android.systemui.tuner.NavbarActivity" />
         </Preference>
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="navigation_bar_inverse"
+            android:title="@string/navigation_bar_inverse_title"
+            android:defaultValue="0"
+            settings:controller="com.evolution.settings.fragments.NavBarInversePreferenceController" />
+
         <com.android.settingslib.widget.FooterPreference
             android:key="navigation_bar_footer_preference"
             android:selectable="false"
