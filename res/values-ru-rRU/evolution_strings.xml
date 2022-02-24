@@ -30,12 +30,14 @@
     <string name="powermenu_title">Меню питания</string>
     <string name="powermenu_items_title">Элементы меню питания</string>
     <string name="quicksettings_title">Быстрые настройки</string>
+    <string name="spoof_title">Подмена</string>
     <string name="status_bar_title">Строка состояния</string>
     <string name="swipe_gestures_title">Жесты</string>
     <string name="system_settings_title">Системные настройки</string>
     <string name="themes_title">Темы</string>
     <string name="torch_gestures_title">Жесты для включения фонарика</string>
     <string name="flashlight_category">Фонарик</string>
+    <string name="telephony_icons_title">Иконки телефонии</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Стандартные жесты Android</string>
     <string name="dark_ui_mode_summary">Просмотреть параметры темной темы</string>
@@ -61,6 +63,8 @@
     <string name="led_color_red">Красный</string>
     <string name="edit_hint">Значение</string>
     <string name="seek_value_edit_label">Установка значения</string>
+    <string name="search">Поиск</string>
+    <string name="search_apps">Поиск приложений</string>
     <!-- Units -->
     <string name="unit_milliseconds">миллисекунд</string>
     <string name="unit_seconds">секунд</string>
@@ -160,24 +164,19 @@
     <string name="profile_choose_app">Выберите приложение</string>
     <string name="dialog_delete_title">Удалить</string>
     <string name="dialog_delete_message">Удалить выбранный элемент?</string>
-    <!-- Statusbar net monitor -->
+    <!-- Network Traffic -->
     <string name="traffic_title">Индикаторы трафика</string>
-    <string name="network_traffic">Сетевой трафик</string>
-    <string name="network_traffic_state_title">Отображение индикатора сетевого трафика</string>
-    <string name="network_traffic_location">Расположение индикатора трафика</string>
-    <string name="traffic_disabled">Отключено</string>
-    <string name="traffic_status_bar">Строка состояния</string>
-    <string name="traffic_expanded_status_bar">Заголовок быстрых настроек</string>
+    <string name="traffic_summary">Настройки индикатора трафика</string>
     <string name="network_traffic_autohide_threshold_title">Порог автоскрытия сетевой активности (КБ/с)</string>
-    <string name="network_traffic_arrow">Показывать стрелки</string>
-    <string name="network_traffic_arrow_summary">Показывать стрелки индикатора сетевого трафика</string>
-    <string name="network_traffic_type">Выберите тип отображения сетевой активности</string>
-    <string name="show_network_traffic_combined">Комбинированный (Выгрузка + Загрузка)</string>
-    <string name="show_network_traffic_dynamic">Динамический</string>
-    <string name="show_network_traffic_up">Выгрузка</string>
-    <string name="show_network_traffic_down">Загрузка</string>
-    <string name="show_network_traffic_all">Оба</string>
-    <string name="nettraf_font_size">Размер шрифта</string>
+    <string name="network_traffic_location_title">Расположение</string>
+    <string name="network_traffic_disabled">Отключено</string>
+    <string name="network_traffic_statusbar">Статус-бар</string>
+    <string name="network_traffic_qs_header">Заголовок быстрых настроек</string>
+    <string name="network_traffic_refresh_interval_title">Интервал обновления</string>
+    <string name="network_traffic_mode_title">Режим отображения</string>
+    <string name="network_traffic_dynamic">Динамичный</string>
+    <string name="network_traffic_download">Входящий</string>
+    <string name="network_traffic_upload">Исходящий</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_error_vib_title">Вибрировать при неудачной авторизации отпечатком пальца</string>
     <string name="fprint_error_vib_summary">Вибрировать при ошибке распознавания отпечатка пальца</string>
@@ -465,7 +464,7 @@
     <string name="qs_footer_text_string_summary">Оставьте пустым для значения по умолчанию</string>
     <!-- UDFPS pressed color -->
     <string name="udfps_pressed_color_title">Цвет нажатого UDFPS</string>
-    <string name="udfps_pressed_color_default">По умолчанию</string>
+    <string name="udfps_pressed_color_cyan">Бирюзовый</string>
     <string name="udfps_pressed_color_white">Белый</string>
     <string name="udfps_pressed_color_white_new">Белый (новый)</string>
     <string name="udfps_pressed_color_green">Зеленый</string>
@@ -504,14 +503,19 @@
     <string name="theme_customization_category">Темы</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">Форма иконок</string>
+    <string name="theme_customization_icon_shape_summary">Выберите форму иконок</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Заголовок / Основной шрифт</string>
+    <string name="theme_customization_font_summary">Выберите системный шрифт</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Набор иконок</string>
+    <string name="theme_customization_icon_pack_summary">Установить пользовательский набор иконок</string>
     <!-- Custom Signal bar icons -->
-    <string name="theme_customization_icon_signal_bar_title">Сигнал</string>
+    <string name="theme_customization_signal_icon_title">Вид иконки сети</string>
+    <string name="theme_customization_signal_icon_summary">Установить пользовательскую иконку сети</string>
     <!-- Custom Wi-Fi bar icons -->
-    <string name="theme_customization_icon_wifi_bar_title">WiFi</string>
+    <string name="theme_customization_wifi_icon_title">Вид иконки WiFi</string>
+    <string name="theme_customization_wifi_icon_summary">Установить пользовательскую иконку wifi</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">Стиль элементов быстрых настроек</string>
     <string name="qstile_circle_trim">Круг с окантовкой</string>
@@ -797,6 +801,9 @@
     <string name="stock_statusbar_in_hide_summary">Использовать высоту строки состояния по умолчанию при скрытии выреза</string>
     <string name="display_hide_notch_title">Скрыть вырез дисплея</string>
     <string name="display_hide_notch_summary">Отключить заливку черным цветом для выреза экрана</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
+    <string name="display_cutout_force_fullscreen_summary">Заставить приложения игнорировать вырез экрана</string>
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Бегущая строка</string>
     <string name="ticker_screen_summary">Показывать бегущие уведомления в строке состояния</string>
@@ -911,7 +918,7 @@
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Показывать информацию о CPU</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
-    <string name="show_cpu_info_summary">Наслоение, показывающее текущую информацию о CPU</string>
+    <string name="show_cpu_info_summary">Наложение, показывающее текущую информацию о CPU</string>
     <!-- Volume Steps Fragment -->
     <string name="volume_steps_fragment_title">Шаги громкости</string>
     <string name="volume_steps_summary">Настроить шаги громкости</string>
@@ -944,6 +951,9 @@
     <string name="charging_animation_title">Анимация зарядки</string>
     <string name="charging_animation_summary">Показывать анимацию при подключенном зарядном устройстве</string>
     <!-- Monet Engine -->
+    <string name="monet_category">Monet</string>
+    <string name="monet_engine_title">Monet Engine</string>
+    <string name="monet_engine_summary">Настройка параметров Monet</string>
     <string name="monet_engine_custom_color_title">Использовать свой цвет</string>
     <string name="monet_engine_custom_color_summary">Использовать пользовательский цвет для движка монет вместо цвета обоев</string>
     <string name="monet_engine_color_override_title">Пользовательский цвет</string>
@@ -951,6 +961,9 @@
     <string name="monet_engine_accurate_shades_title">Использовать точные оттенки</string>
     <string name="monet_engine_chroma_factor_title">Фактор интенсивности</string>
     <string name="monet_engine_linear_lightness_title">Использовать линейную легкость</string>
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Чёрная тема</string>
+    <string name="system_black_theme_summary">Принудительный чёрный цвет</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Комбинированные значки сигнала</string>
     <string name="combined_status_bar_signal_icons_summary">Включить комбинированные значки сигнала в строке состояния.\nТребует перезапуска интерфейса</string>
@@ -1023,4 +1036,20 @@
     <!-- Gaming mode -->
     <string name="gaming_mode_title">Игровое пространство</string>
     <string name="gaming_mode_summary">Дополнительные возможности для полноценного погружения в игру</string>
+    <!-- Fingerprint Ripple Effect -->
+    <string name="enable_fingerprint_ripple_effect_title">Эффект пульсации</string>
+    <string name="enable_fingerprint_ripple_effect_summary">Показывать эффект пульсации при разблокировке с помощью отпечатка пальца</string>
+    <!-- Screenshot type -->
+    <string name="screenshot_type_title">Тип скриншота</string>
+    <string name="screenshot_type_fullscreen">Полноэкранный скриншот</string>
+    <string name="screenshot_type_partial">Выделите область которую вы хотите сохранить как скриншот</string>
+    <!-- Unlimited g00gle ph0t0s st0rage -->
+    <string name="use_photos_spoof_title">Безлимитное «Google Фото»</string>
+    <string name="use_photos_spoof_summary">Маскировка устройства под Pixel XL для «Google Фото», чтобы предоставить неограниченное хранилище для резервного копирования фотографий</string>
+    <!-- Unlock FPS for specific games -->
+    <string name="use_games_spoof_title">Разблокировать высокий FPS в играх</string>
+    <string name="use_games_spoof_summary">Маскировка устройства под другую модель для определенных игр, чтобы разблокировать более высокий FPS</string>
+    <!-- Unlock higher quality streams for specific apps -->
+    <string name="use_stream_spoof_title">Разблокировка видео высокого качества</string>
+    <string name="use_stream_spoof_summary">Маскировка устройства под Pixel 6 Pro для разблокировки видео более высокого качества на Amazon Prime, Disney+, Hotstar, и Netflix</string>
 </resources>
