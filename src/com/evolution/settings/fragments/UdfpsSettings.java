@@ -45,24 +45,20 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.preference.SystemSettingListPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class UdfpsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private boolean mShowUdfpsPressedColor;
     private boolean mShowUdfpsScreenOff;
 
     private static final String UDFPS_CUSTOMIZATION = "udfps_customization";
-    private static final String UDFPS_PRESSED_COLOR = "fod_color";
     private static final String UDFPS_SCREEN_OFF = "screen_off_fod";
 
     private static final int REQUEST_PICK_IMAGE = 0;
 
     private PreferenceCategory mUdfpsCustomization;
-    private SystemSettingListPreference mUdfpsPressedColor;
     private SystemSettingSwitchPreference mUdfpsScreenOff;
 
     @Override
@@ -78,12 +74,6 @@ public class UdfpsSettings extends SettingsPreferenceFragment implements
 	mUdfpsCustomization = (PreferenceCategory) findPreference(UDFPS_CUSTOMIZATION);
         if (!udfpsResPkgInstalled) {
             prefSet.removePreference(mUdfpsCustomization);
-        }
-
-        mShowUdfpsPressedColor = getContext().getResources().getBoolean(R.bool.config_show_fod_pressed_color_settings);
-        mUdfpsPressedColor = (SystemSettingListPreference) findPreference(UDFPS_PRESSED_COLOR);
-        if (!mShowUdfpsPressedColor) {
-            prefSet.removePreference(mUdfpsPressedColor);
         }
 
         mShowUdfpsScreenOff = getContext().getResources().getBoolean(R.bool.config_supportScreenOffFod);
