@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2019-2022 The Evolution X Project
+<!--
+     Copyright (C) 2019-2022 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,17 +26,17 @@
         android:defaultValue="true" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="screen_off_fod"
+        android:key="udfps_screen_off"
         android:title="@string/screen_off_udfps_title"
         android:summary="@string/screen_off_udfps_summary"
         android:defaultValue="true" />
 
     <!-- UDFPS Night light -->
     <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="fod_night_light"
+        android:key="udfps_night_light"
         android:title="@string/udfps_night_light_title"
         android:summary="@string/udfps_night_light_summary"
-        android:defaultValue="@*android:bool/disable_fod_night_light" />
+        android:defaultValue="@*android:bool/config_udfpsDisableNightLight" />
 
     <PreferenceCategory
         android:key="udfps_customization"
