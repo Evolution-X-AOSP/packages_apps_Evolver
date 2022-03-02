@@ -61,8 +61,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String CHARGING_LIGHTS_PREF = "charging_light";
     private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
-    private static final String NOTIFICATION_LIGHTS_PREF = "notification_light";
+    private static final String LED_CATEGORY = "led";
     private static final String KEY_EDGE_LIGHTNING = "pulse_ambient_light";
+    private static final String NOTIFICATION_LIGHTS_PREF = "notification_light";
     private static final String PREF_FLASH_ON_CALL = "flashlight_on_call";
     private static final String PREF_FLASH_ON_CALL_DND = "flashlight_on_call_ignore_dnd";
     private static final String PREF_FLASH_ON_CALL_RATE = "flashlight_on_call_rate";
@@ -70,6 +71,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private Preference mAlertSlider;
     private Preference mChargingLeds;
     private Preference mNotLights;
+    private PreferenceCategory mLedCategory;
     private CustomSeekBarPreference mFlashOnCallRate;
     private SystemSettingListPreference mFlashOnCall;
     private SystemSettingMasterSwitchPreference mEdgeLightning;
@@ -115,18 +117,24 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             mFlashOnCall.setOnPreferenceChangeListener(this);
         }
 
-        mNotLights = (Preference) findPreference(NOTIFICATION_LIGHTS_PREF);
-        boolean mNotLightsSupported = res.getBoolean(
-                com.android.internal.R.bool.config_intrusiveNotificationLed);
-        if (!mNotLightsSupported) {
-            prefSet.removePreference(mNotLights);
-        }
-
-        mChargingLeds = (Preference) findPreference(CHARGING_LIGHTS_PREF);
-        if (mChargingLeds != null
-                && !getResources().getBoolean(
-                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-            prefSet.removePreference(mChargingLeds);
+        boolean hasLED = res.getBoolean(
+                com.android.internal.R.bool.config_hasNotificationLed);
+        if (hasLED) {
+            mNotLights = (Preference) findPreference(NOTIFICATION_LIGHTS_PREF);
+            boolean mNotLightsSupported = res.getBoolean(
+                    com.android.internal.R.bool.config_intrusiveNotificationLed);
+            if (!mNotLightsSupported) {
+                prefSet.removePreference(mNotLights);
+            }
+            mChargingLeds = (Preference) findPreference(CHARGING_LIGHTS_PREF);
+            if (mChargingLeds != null
+                    && !getResources().getBoolean(
+                            com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+                prefSet.removePreference(mChargingLeds);
+            }
+        } else {
+            mLedCategory = findPreference(LED_CATEGORY);
+            mLedCategory.setVisible(false);
         }
 
         mEdgeLightning = (SystemSettingMasterSwitchPreference)
