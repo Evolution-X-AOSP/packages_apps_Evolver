@@ -1,5 +1,4 @@
 /*
- * Copyright (C) 2017-2022 The Project-Xtended
  * Copyright (C) 2019-2022 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,28 +37,15 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.evolution.EvolutionUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.preference.SystemSettingSwitchPreference;
-
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class UdfpsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-
-    private boolean mShowUdfpsScreenOff;
-
-    private static final String UDFPS_CUSTOMIZATION = "udfps_customization";
-    private static final String UDFPS_SCREEN_OFF = "udfps_screen_off";
-
-    private static final int REQUEST_PICK_IMAGE = 0;
-
-    private PreferenceCategory mUdfpsCustomization;
-    private SystemSettingSwitchPreference mUdfpsScreenOff;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -68,19 +54,6 @@ public class UdfpsSettings extends SettingsPreferenceFragment implements
 
         final PreferenceScreen prefSet = getPreferenceScreen();
         Resources resources = getResources();
-
-        final boolean udfpsResPkgInstalled = EvolutionUtils.isPackageInstalled(getContext(),
-                "com.evolution.udfps.resources");
-	mUdfpsCustomization = (PreferenceCategory) findPreference(UDFPS_CUSTOMIZATION);
-        if (!udfpsResPkgInstalled) {
-            prefSet.removePreference(mUdfpsCustomization);
-        }
-
-        mShowUdfpsScreenOff = getContext().getResources().getBoolean(R.bool.config_supportScreenOffUdfps);
-        mUdfpsScreenOff = findPreference(UDFPS_SCREEN_OFF);
-        if (!mShowUdfpsScreenOff) {
-            prefSet.removePreference(mUdfpsScreenOff);
-        }
     }
 
     @Override
