@@ -13,7 +13,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/heads_up_notifications">
 
@@ -24,50 +25,10 @@
         android:summaryOff="@string/summary_heads_up_disabled"
         android:defaultValue="true" />
 
-    <ListPreference
-        android:key="heads_up_time_out"
-        android:title="@string/heads_up_time_out_title"
-        android:entries="@array/heads_up_time_out_entries"
-        android:entryValues="@array/heads_up_time_out_values"
-        android:persistent="false" />
-
-    <ListPreference
-        android:key="heads_up_snooze_time"
-        android:title="@string/heads_up_snooze_title"
-        android:entries="@array/heads_up_snooze_entries"
-        android:entryValues="@array/heads_up_snooze_values"
-        android:persistent="false" />
-
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="less_boring_heads_up"
         android:title="@string/less_boring_heads_up_title"
         android:summary="@string/less_boring_heads_up_summary"
         android:defaultValue="false" />
-
-    <PreferenceCategory
-        android:title="@string/heads_up_stoplist_title"
-        android:key="stoplist_applications"
-        android:dependency="heads_up_notifications_enabled">
-
-        <com.evolution.settings.preference.AppListPreference
-            android:key="add_stoplist_packages"
-            android:icon="@drawable/ic_menu_add_activated_tint"
-            android:title="@string/add_heads_up_package"
-            android:summary="@string/add_heads_up_stoplist_summary" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/heads_up_blacklist_title"
-        android:key="blacklist_applications"
-        android:dependency="heads_up_notifications_enabled">
-
-        <com.evolution.settings.preference.AppListPreference
-            android:key="add_blacklist_packages"
-            android:icon="@drawable/ic_menu_add_activated_tint"
-            android:title="@string/add_heads_up_package"
-            android:summary="@string/add_heads_up_blacklist_summary" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>

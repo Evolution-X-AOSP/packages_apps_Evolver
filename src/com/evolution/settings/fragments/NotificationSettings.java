@@ -58,24 +58,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
-    private static final String CHARGING_LIGHTS_PREF = "charging_light";
-    private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
-    private static final String LED_CATEGORY = "led";
-    private static final String KEY_EDGE_LIGHTNING = "pulse_ambient_light";
-    private static final String NOTIFICATION_LIGHTS_PREF = "notification_light";
-    private static final String PREF_FLASH_ON_CALL = "flashlight_on_call";
-    private static final String PREF_FLASH_ON_CALL_DND = "flashlight_on_call_ignore_dnd";
-    private static final String PREF_FLASH_ON_CALL_RATE = "flashlight_on_call_rate";
 
     private Preference mAlertSlider;
-    private Preference mChargingLeds;
-    private Preference mNotLights;
-    private PreferenceCategory mLedCategory;
-    private CustomSeekBarPreference mFlashOnCallRate;
-    private SystemSettingListPreference mFlashOnCall;
-    private SystemSettingMasterSwitchPreference mEdgeLightning;
-    private SystemSettingSwitchPreference mFlashOnCallIgnoreDND;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -92,58 +77,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
                 prefSet.removePreference(incallVibCategory);
         }
 
-        if (!EvolutionUtils.deviceHasFlashlight(mContext)) {
-            final PreferenceCategory flashlightCategory =
-                    (PreferenceCategory) findPreference(FLASHLIGHT_CATEGORY);
-            prefSet.removePreference(flashlightCategory);
-        } else {
-            mFlashOnCallRate = (CustomSeekBarPreference)
-                    findPreference(PREF_FLASH_ON_CALL_RATE);
-            int value = Settings.System.getInt(resolver,
-                    Settings.System.FLASHLIGHT_ON_CALL_RATE, 1);
-            mFlashOnCallRate.setValue(value);
-            mFlashOnCallRate.setOnPreferenceChangeListener(this);
-
-            mFlashOnCallIgnoreDND = (SystemSettingSwitchPreference)
-                    findPreference(PREF_FLASH_ON_CALL_DND);
-            value = Settings.System.getInt(resolver,
-                    Settings.System.FLASHLIGHT_ON_CALL, 0);
-            mFlashOnCallIgnoreDND.setVisible(value > 1);
-            mFlashOnCallRate.setVisible(value != 0);
-
-            mFlashOnCall = (SystemSettingListPreference)
-                    findPreference(PREF_FLASH_ON_CALL);
-            mFlashOnCall.setSummary(mFlashOnCall.getEntries()[value]);
-            mFlashOnCall.setOnPreferenceChangeListener(this);
-        }
-
-        boolean hasLED = res.getBoolean(
-                com.android.internal.R.bool.config_hasNotificationLed);
-        if (hasLED) {
-            mNotLights = (Preference) findPreference(NOTIFICATION_LIGHTS_PREF);
-            boolean mNotLightsSupported = res.getBoolean(
-                    com.android.internal.R.bool.config_intrusiveNotificationLed);
-            if (!mNotLightsSupported) {
-                prefSet.removePreference(mNotLights);
-            }
-            mChargingLeds = (Preference) findPreference(CHARGING_LIGHTS_PREF);
-            if (mChargingLeds != null
-                    && !getResources().getBoolean(
-                            com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-                prefSet.removePreference(mChargingLeds);
-            }
-        } else {
-            mLedCategory = findPreference(LED_CATEGORY);
-            mLedCategory.setVisible(false);
-        }
-
-        mEdgeLightning = (SystemSettingMasterSwitchPreference)
-                findPreference(KEY_EDGE_LIGHTNING);
-        boolean enabled = Settings.System.getIntForUser(resolver,
-                KEY_EDGE_LIGHTNING, 0, UserHandle.USER_CURRENT) == 1;
-        mEdgeLightning.setChecked(enabled);
-        mEdgeLightning.setOnPreferenceChangeListener(this);
-
         mAlertSlider = (Preference) findPreference(ALERT_SLIDER_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
                 com.android.internal.R.bool.config_hasAlertSlider);
@@ -154,25 +87,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mFlashOnCall) {
-            int value = Integer.parseInt((String) newValue);
-            Settings.System.putInt(resolver,
-                    Settings.System.FLASHLIGHT_ON_CALL, value);
-            mFlashOnCall.setSummary(mFlashOnCall.getEntries()[value]);
-            mFlashOnCallIgnoreDND.setVisible(value > 1);
-            mFlashOnCallRate.setVisible(value != 0);
-            return true;
-        } else if (preference == mFlashOnCallRate) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.FLASHLIGHT_ON_CALL_RATE, value);
-            return true;
-        } else if (preference == mEdgeLightning) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver, KEY_EDGE_LIGHTNING,
-                    value ? 1 : 0, UserHandle.USER_CURRENT);
-            return true;
-        }
         return false;
     }
 

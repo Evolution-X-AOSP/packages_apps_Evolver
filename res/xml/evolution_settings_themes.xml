@@ -15,58 +15,14 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_title">
-
-    <Preference
-        android:key="monet_engine"
-        android:title="@string/monet_engine_title"
-        android:summary="@string/monet_engine_summary"
-        android:fragment="com.evolution.settings.fragments.MonetEngine" />
 
     <Preference
         android:key="dark_ui_mode"
         android:title="@string/dark_ui_mode"
         android:summary="@string/dark_ui_mode_summary"
         android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
-        settings:controller="com.android.settings.display.DarkUIPreferenceController"
-        app:allowDividerAbove="true" />
-
-    <PreferenceCategory
-        android:key="theme_customization_category"
-        android:title="@string/theme_customization_category">
-
-        <Preference
-            android:key="android.theme.customization.fonts"
-            android:title="@string/theme_customization_font_title"
-            android:summary="@string/theme_customization_font_summary"
-            android:fragment="com.evolution.settings.fragments.FontsPicker" />
-
-        <Preference
-            android:key="android.theme.customization.icon_pack"
-            android:title="@string/theme_customization_icon_pack_title"
-            android:summary="@string/theme_customization_icon_pack_summary"
-            android:fragment="com.evolution.settings.fragments.StatusbarIcons" />
-
-        <Preference
-            android:key="android.theme.customization.signal_icon"
-            android:title="@string/theme_customization_signal_icon_title"
-            android:summary="@string/theme_customization_signal_icon_summary"
-            android:fragment="com.evolution.settings.fragments.SignalIcons"/>
-
-        <Preference
-            android:key="android.theme.customization.wifi_icon"
-            android:title="@string/theme_customization_wifi_icon_title"
-            android:summary="@string/theme_customization_wifi_icon_summary"
-            android:fragment="com.evolution.settings.fragments.WifiIcons"/>
-
-        <Preference
-            android:key="android.theme.customization.adaptive_icon_shape"
-            android:title="@string/theme_customization_icon_shape_title"
-            android:summary="@string/theme_customization_icon_shape_summary"
-            android:fragment="com.evolution.settings.fragments.IconShapes" />
-
-    </PreferenceCategory>
+        settings:controller="com.android.settings.display.DarkUIPreferenceController" />
 
 </PreferenceScreen>

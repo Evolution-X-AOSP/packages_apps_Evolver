@@ -24,14 +24,6 @@
         android:summary="@string/alert_slider_notifications_summary"
         android:defaultValue="true" />
 
-    <!-- Pulse notifications lightning -->
-    <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
-        android:key="pulse_ambient_light"
-        android:title="@string/pulse_ambient_light_title"
-        android:summary="@string/pulse_ambient_light_summary"
-        android:fragment="com.evolution.settings.fragments.EdgeLightningSettings"
-        android:defaultValue="false" />
-
     <PreferenceCategory
         android:key="headsup_notifications_category"
         android:title="@string/headsup_category">
@@ -55,64 +47,10 @@
             android:defaultValue="true" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="notification_headers"
-            android:title="@string/notification_headers_title"
-            android:summary="@string/notification_headers_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="notification_guts_kill_app_button"
             android:title="@string/notification_guts_kill_app_button_title"
             android:summary="@string/notification_guts_kill_app_button_summary"
             android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="led"
-        android:title="@string/light_settings_header">
-
-        <Preference
-            android:key="notification_light"
-            android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
-            android:title="@string/notification_light_settings">
-            <extra
-                android:name="classname"
-                android:value="com.android.settings.Settings$NotificationAppListActivity" />
-        </Preference>
-
-        <Preference
-            android:key="charging_light"
-            android:title="@string/battery_light_settings"
-            android:summary="@string/battery_light_summary"
-            android:fragment="com.evolution.settings.fragments.BatteryLightSettings" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/flashlight_category">
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="flashlight_on_call"
-            android:title="@string/flashlight_on_call_title"
-            android:entries="@array/flashlight_on_call_entries"
-            android:entryValues="@array/flashlight_on_call_values"
-            android:defaultValue="0" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="flashlight_on_call_ignore_dnd"
-            android:title="@string/flashlight_on_call_ignore_dnd_title"
-            android:summary="@string/flashlight_on_call_ignore_dnd_summary"
-            android:defaultValue="false" /> 
-
-        <com.evolution.settings.preference.CustomSeekBarPreference
-            android:key="flashlight_on_call_rate"
-            android:title="@string/flashlight_on_call_rate_title"
-            android:summary="@string/flashlight_on_call_rate_summary"
-            android:max="5"
-            settings:min="1"
-            settings:defaultValue="1"
-            settings:units="Hz" />
 
     </PreferenceCategory>
 

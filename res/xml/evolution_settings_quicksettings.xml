@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2019-2021 The Evolution X Project
+<!--
+     Copyright (C) 2019-2022 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -28,28 +29,12 @@
             android:summary="@string/qstile_requires_unlocking_summary"
             android:defaultValue="true" />
 
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="quick_settings_vibrate"
-            android:title="@string/quick_settings_vibrate_title"
-            android:summary="@string/quick_settings_vibrate_summary"
-            android:defaultValue="false"/>
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_edit_toggle"
-            android:title="@string/qs_edit_title"
-            android:summary="@string/qs_edit_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_running_services_toggle"
-            android:title="@string/qs_running_services_title"
-            android:summary="@string/qs_running_services_summary"
-            android:defaultValue="false" />
-
+        <!-- QS Battery estimates -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_show_battery_estimate"
             android:title="@string/qs_show_battery_estimate_title"
-            android:summary="@string/qs_show_battery_estimate_summary"
+            android:summaryOn="@string/qs_show_battery_estimate_summary_on"
+            android:summaryOff="@string/qs_show_battery_estimate_summary_off"
             android:defaultValue="false" />
 
         <ListPreference
@@ -58,77 +43,6 @@
             android:entries="@array/quick_pulldown_entries"
             android:entryValues="@array/quick_pulldown_values"
             android:defaultValue="0" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_warnings"
-            android:title="@string/qs_footer_warnings_title"
-            android:summary="@string/qs_footer_warnings_summary"
-            android:defaultValue="true" />
-
-        <ListPreference
-            android:key="smart_pulldown"
-            android:title="@string/smart_pulldown_title"
-            android:entries="@array/smart_pulldown_entries"
-            android:entryValues="@array/smart_pulldown_values"
-            android:persistent="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="quick_settings_brighness_category"
-        android:title="@string/qs_brightness_slider_category">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_show_brightness"
-            android:title="@string/qs_brightness_slider_title"
-            android:summary="@string/qs_brightness_slider_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_brightness_position_bottom"
-            android:title="@string/qs_brightness_position_bottom_title"
-            android:summary="@string/qs_brightness_position_bottom_summary"
-            android:defaultValue="false"
-            android:dependency="qs_show_brightness" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qqs_show_brightness"
-            android:title="@string/quick_qs_brightness_slider_title"
-            android:summary="@string/quick_qs_brightness_slider_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_show_auto_brightness_button"
-            android:title="@string/brightness_icon_title"
-            android:summary="@string/brightness_icon_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="quick_settings_animations"
-        android:title="@string/qs_tile_animation_title">
-
-        <ListPreference
-            android:key="qs_tile_animation_style"
-            android:title="@string/qs_tile_animation_style_title"
-            android:entries="@array/qs_tile_animation_style_entries"
-            android:entryValues="@array/qs_tile_animation_style_values"
-            android:persistent="false" />
-
-        <ListPreference
-            android:key="qs_tile_animation_duration"
-            android:title="@string/qs_tile_animation_duration_title"
-            android:entries="@array/qs_tile_animation_duration_entries"
-            android:entryValues="@array/qs_tile_animation_duration_values"
-            android:persistent="false" />
-
-        <ListPreference
-            android:key="qs_tile_animation_interpolator"
-            android:title="@string/qs_tile_animation_interpolator_title"
-            android:entries="@array/qs_tile_animation_interpolator_entries"
-            android:entryValues="@array/qs_tile_animation_interpolator_values"
-            android:persistent="false" />
 
     </PreferenceCategory>
 

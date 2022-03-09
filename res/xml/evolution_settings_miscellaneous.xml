@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2019-2022 The Evolution X Project
+<!--
+     Copyright (C) 2019-2022 The Evolution X Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,7 +16,6 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
@@ -34,27 +34,14 @@
         android:key="headset_connect_player"
         android:title="@string/headset_connect_player_title"
         android:summary="@string/headset_connect_player_summary"
-        android:defaultValue="false"
-        app:allowDividerAbove="true" />
+        android:defaultValue="false" />
 
     <com.evolution.settings.preference.SystemSettingListPreference
         android:key="screenshot_type"
+        android:title="@string/screenshot_type_title"
         android:entries="@array/screenshot_type_entries"
         android:entryValues="@array/screenshot_type_values"
-        android:title="@string/screenshot_type_title"
-        android:defaultValue="0"
-        app:allowDividerAbove="true" />
-
-    <!-- Display Cutout -->
-    <Preference
-        android:key="display_cutout_force_fullscreen_settings"
-        android:title="@string/display_cutout_force_fullscreen_title"
-        android:summary="@string/display_cutout_force_fullscreen_summary"
-        app:allowDividerAbove="true">
-        <intent android:action="android.intent.action.MAIN"
-             android:targetPackage="com.android.settings"
-             android:targetClass="com.evolution.settings.fragments.DisplayCutoutForceFullscreenActivity"/>
-    </Preference>
+        android:defaultValue="0" />
 
     <PreferenceCategory
         android:key="spoof_category"
@@ -83,58 +70,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="pulse_category"
-        android:title="@string/pulse_category">
-
-        <Preference
-            android:key="pulse_settings"
-            android:title="@string/pulse_settings"
-            android:summary="@string/pulse_settings_summary"
-            android:fragment="com.evolution.settings.fragments.PulseSettings" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="misc_general_category"
-        android:title="@string/general_category">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="toast_icon"
-            android:title="@string/toast_icon_title"
-            android:summary="@string/toast_icon_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="burnin_category"
-        android:title="@string/burnin_category">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="burn_in_protection"
-            android:title="@string/burn_in_protection_title"
-            android:summary="@string/burn_in_protection_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="burn_in_protection_interval"
-            android:title="@string/burn_in_protection_interval_title"
-            android:max="120"
-            android:min="45"
-            settings:units="@string/unit_x1000ms"
-            android:dependency="burn_in_protection"
-            android:defaultValue="60" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/dev_options_title" />
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="show_cpu_overlay"
-            android:title="@string/show_cpu_info"
-            android:summary="@string/show_cpu_info_summary" 
-            android:defaultValue="false" />
 
         <Preference
             android:key="default_usb_configuration"
