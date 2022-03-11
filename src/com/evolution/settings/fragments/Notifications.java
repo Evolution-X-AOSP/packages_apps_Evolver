@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2022 The Evolution X Project
+ * Copyright (C) 2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class NotificationSettings extends SettingsPreferenceFragment implements
+public class Notifications extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
@@ -62,20 +62,22 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String LED_CATEGORY = "led";
-    private static final String KEY_EDGE_LIGHTNING = "pulse_ambient_light";
+    private static final String KEY_EDGE_LIGHTING = "pulse_ambient_light";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_light";
     private static final String PREF_FLASH_ON_CALL = "flashlight_on_call";
     private static final String PREF_FLASH_ON_CALL_DND = "flashlight_on_call_ignore_dnd";
     private static final String PREF_FLASH_ON_CALL_RATE = "flashlight_on_call_rate";
+    private static final String RETICKER_STATUS = "reticker_status";
 
+    private CustomSeekBarPreference mFlashOnCallRate;
     private Preference mAlertSlider;
     private Preference mChargingLeds;
     private Preference mNotLights;
     private PreferenceCategory mLedCategory;
-    private CustomSeekBarPreference mFlashOnCallRate;
     private SystemSettingListPreference mFlashOnCall;
-    private SystemSettingMasterSwitchPreference mEdgeLightning;
+    private SystemSettingMasterSwitchPreference mEdgeLighting;
     private SystemSettingSwitchPreference mFlashOnCallIgnoreDND;
+    private SystemSettingSwitchPreference mRetickerStatus;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -137,18 +139,23 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             mLedCategory.setVisible(false);
         }
 
-        mEdgeLightning = (SystemSettingMasterSwitchPreference)
-                findPreference(KEY_EDGE_LIGHTNING);
+        mEdgeLighting = (SystemSettingMasterSwitchPreference)
+                findPreference(KEY_EDGE_LIGHTING);
         boolean enabled = Settings.System.getIntForUser(resolver,
-                KEY_EDGE_LIGHTNING, 0, UserHandle.USER_CURRENT) == 1;
-        mEdgeLightning.setChecked(enabled);
-        mEdgeLightning.setOnPreferenceChangeListener(this);
+                KEY_EDGE_LIGHTING, 0, UserHandle.USER_CURRENT) == 1;
+        mEdgeLighting.setChecked(enabled);
+        mEdgeLighting.setOnPreferenceChangeListener(this);
 
         mAlertSlider = (Preference) findPreference(ALERT_SLIDER_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
                 com.android.internal.R.bool.config_hasAlertSlider);
         if (!mAlertSliderAvailable)
             prefSet.removePreference(mAlertSlider);
+
+        mRetickerStatus = findPreference(RETICKER_STATUS);
+        mRetickerStatus.setChecked((Settings.System.getInt(resolver,
+                Settings.System.RETICKER_STATUS, 0) == 1));
+        mRetickerStatus.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -167,10 +174,16 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                     Settings.System.FLASHLIGHT_ON_CALL_RATE, value);
             return true;
-        } else if (preference == mEdgeLightning) {
+        } else if (preference == mEdgeLighting) {
             boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver, KEY_EDGE_LIGHTNING,
+            Settings.System.putIntForUser(resolver, KEY_EDGE_LIGHTING,
                     value ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mRetickerStatus) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.RETICKER_STATUS, value ? 1 : 0);
+            EvolutionUtils.showSystemUiRestartDialog(getContext());
             return true;
         }
         return false;

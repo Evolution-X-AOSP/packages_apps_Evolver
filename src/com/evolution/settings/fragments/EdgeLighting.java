@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2020 Yet Another AOSP Project
- * Copyright (C) 2019-2022 The Evolution X Project
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ import com.evolution.settings.preference.SystemSettingSwitchPreference;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class EdgeLightningSettings extends SettingsPreferenceFragment implements
+public class EdgeLighting extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static String KEY_DURATION = "ambient_notification_light_duration";
@@ -59,7 +59,7 @@ public class EdgeLightningSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.evolution_settings_edge_lightning);
+        addPreferencesFromResource(R.xml.evolution_settings_edge_lighting);
         final ContentResolver resolver = getContentResolver();
         final int accentColor = getAccentColor();
 
@@ -178,5 +178,5 @@ public class EdgeLightningSettings extends SettingsPreferenceFragment implements
      * For Search.
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_edge_lightning);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_edge_lighting);
 }
