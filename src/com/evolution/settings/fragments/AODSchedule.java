@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2021 Yet Another AOSP Project
- * Copyright (C) 2019-2022 The Evolution X Project
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
  */
 package com.evolution.settings.fragments;
 
-import static com.evolution.settings.fragments.LockscreenSettings.MODE_DISABLED;
-import static com.evolution.settings.fragments.LockscreenSettings.MODE_NIGHT;
-import static com.evolution.settings.fragments.LockscreenSettings.MODE_TIME;
-import static com.evolution.settings.fragments.LockscreenSettings.MODE_MIXED_SUNSET;
-import static com.evolution.settings.fragments.LockscreenSettings.MODE_MIXED_SUNRISE;
+import static com.evolution.settings.fragments.LockScreen.MODE_DISABLED;
+import static com.evolution.settings.fragments.LockScreen.MODE_NIGHT;
+import static com.evolution.settings.fragments.LockScreen.MODE_TIME;
+import static com.evolution.settings.fragments.LockScreen.MODE_MIXED_SUNSET;
+import static com.evolution.settings.fragments.LockScreen.MODE_MIXED_SUNRISE;
 
 import android.app.TimePickerDialog;
 import android.content.ContentResolver;

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2021 AospExtended ROM Project
- * Copyright (C) 2019-2022 The Evolution X Project
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ import java.util.Arrays;
 import org.json.JSONObject;
 import org.json.JSONException;
 
-public class StatusbarIcons extends SettingsPreferenceFragment {
+public class StatusBarIcons extends SettingsPreferenceFragment {
 
     private RecyclerView mRecyclerView;
     private ThemeUtils mThemeUtils;
@@ -235,7 +235,7 @@ public class StatusbarIcons extends SettingsPreferenceFragment {
     }
 
     public void enableOverlays(int position) {
-        mThemeUtils.setOverlayEnabled(mCategory, mPkgs.get(position));
+        mThemeUtils.setOverlayEnabled(mCategory, mPkgs.get(position), "android");
         String pattern = "android".equals(mPkgs.get(position)) ? ""
                 : mPkgs.get(position).split("\\.")[4];
         for (Map.Entry<String, String> entry : overlayMap.entrySet()) {
@@ -245,12 +245,12 @@ public class StatusbarIcons extends SettingsPreferenceFragment {
 
     public void enableOverlay(String category, String target, String pattern) {
         if (pattern.isEmpty()) {
-            mThemeUtils.setOverlayEnabled(category, "android");
+            mThemeUtils.setOverlayEnabled(category, "android", "android");
             return;
         }
         for (String pkg: mThemeUtils.getOverlayPackagesForCategory(category, target)) {
             if (pkg.contains(pattern)) {
-                mThemeUtils.setOverlayEnabled(category, pkg);
+                mThemeUtils.setOverlayEnabled(category, pkg, target);
             }
         }
     }
