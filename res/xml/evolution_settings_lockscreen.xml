@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 The Evolution X Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     Copyright (C) 2019-2022 Evolution X
+     SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_title">
 
-    <!-- UDFPS options -->
+    <!-- Udfps options -->
     <PreferenceCategory
         android:key="udfps_category"
         android:title="@string/udfps_category">
@@ -29,19 +17,13 @@
             android:key="udfps_settings"
             android:title="@string/udfps_settings_title"
             android:summary="@string/udfps_settings_summary"
-            android:fragment="com.evolution.settings.fragments.UdfpsSettings" />
+            android:fragment="com.evolution.settings.fragments.Udfps" />
 
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_general_category"
         android:title="@string/general_category">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="lockscreen_small_clock"
-            android:title="@string/lockscreen_small_clock_title"
-            android:summary="@string/lockscreen_small_clock_summary"
-            android:defaultValue="false" />
 
         <Preference
             android:key="always_on_display_schedule"
@@ -60,32 +42,34 @@
             android:summary="@string/disable_qs_summary"
             android:defaultValue="false" />
 
-        <!-- Preference
-            android:title="@string/lockscreen_tuner_title">
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
-        </Preference> -->
-
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_media_art_options"
-        android:title="@string/lockscreen_media_art_options_title" >
+        android:title="@string/lockscreen_media_art_options_title">
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="show_lockscreen_media_art"
-            android:title="@string/show_lockscreen_media_art_title"
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="lockscreen_media_metadata"
+            android:title="@string/media_art_title"
+            android:summary="@string/media_art_summary"
             android:defaultValue="true" />
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="lockscreen_albumart_filter"
+            android:title="@string/lockscreen_albumart_filter_title"
+            android:entries="@array/lockscreen_albumart_filter_entries"
+            android:entryValues="@array/lockscreen_albumart_filter_values"
+            android:dependency="lockscreen_media_metadata"
+            android:defaultValue="0" />
 
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="lockscreen_media_blur"
             android:title="@string/lockscreen_media_blur_title"
-            android:dependency="show_lockscreen_media_art"
-            android:max="25"
-            android:min="0"
+            android:dependency="lockscreen_media_metadata"
             android:defaultValue="25"
-            settings:units="dp"/>
+            android:max="25"
+            settings:min="0"
+            settings:units="dp" />
 
     </PreferenceCategory>
 
@@ -99,17 +83,17 @@
             android:summary="@string/enable_fingerprint_ripple_effect_summary"
             android:defaultValue="true" />
 
-        <SwitchPreference
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="fingerprint_success_vib"
             android:title="@string/fprint_success_vib_title"
             android:summary="@string/fprint_success_vib_summary"
-            android:persistent="true" />
+            android:defaultValue="true" />
 
-        <SwitchPreference
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="fingerprint_error_vib"
             android:title="@string/fprint_error_vib_title"
             android:summary="@string/fprint_error_vib_summary"
-            android:persistent="true" />
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 

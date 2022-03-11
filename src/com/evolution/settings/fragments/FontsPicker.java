@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2021 AospExtended ROM Project
- * Copyright (C) 2019-2022 The Evolution X Project
+ *               2022 crDroid Android Project
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +38,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.text.TextUtils;
 import androidx.preference.PreferenceViewHolder;
 import android.view.ViewGroup.LayoutParams;
@@ -47,8 +47,6 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import androidx.recyclerview.widget.RecyclerView;
-import android.net.Uri;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceScreen;
@@ -64,7 +62,6 @@ import com.bumptech.glide.Glide;
 import com.android.internal.util.evolution.ThemeUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Arrays;
 
@@ -86,7 +83,6 @@ public class FontsPicker extends SettingsPreferenceFragment {
 
         mThemeUtils = new ThemeUtils(getActivity());
         mPkgs = mThemeUtils.getOverlayPackagesForCategory(mCategory, "android");
-        Collections.sort(mPkgs);
     }
 
     @Override
@@ -219,6 +215,6 @@ public class FontsPicker extends SettingsPreferenceFragment {
     }
 
     public void enableOverlays(int position) {
-        mThemeUtils.setOverlayEnabled(mCategory, mPkgs.get(position));
+        mThemeUtils.setOverlayEnabled(mCategory, mPkgs.get(position), "android");
     }
 }

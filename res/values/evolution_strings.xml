@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 The Evolution X Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     Copyright (C) 2019-2022 Evolution X
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
     <!-- The Evolver -->
     <string name="evolver_dashboard_title">The Evolver</string>
 
@@ -188,7 +176,7 @@
     <string name="udfps_customization">UDFPS customization</string>
     <string name="udfps_recog_animation">UDFPS animation</string>
     <string name="udfps_recog_animation_summary">Shows an animation while reading your finger</string>
-    <string name="udfps_recog_animation_effect_title">UDFPS animation effect</string>
+    <string name="udfps_recog_animation_effect_title">UDFPS custom animation</string>
     <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
     <string name="udfps_settings_title">UDFPS settings</string>
     <string name="udfps_settings_summary">Settings for customizing the UDFPS</string>
@@ -207,9 +195,9 @@
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
     <string name="add_heads_up_package">Add app</string>
     <string name="add_heads_up_stoplist_summary">Disable heads up notifications in these applications</string>
-    <string name="add_heads_up_blacklist_summary">Disable heads up from these applications</string>
+    <string name="add_heads_up_blocklist_summary">Disable heads up from these applications</string>
     <string name="heads_up_stoplist_title">Stoplist</string>
-    <string name="heads_up_blacklist_title">Blacklist</string>
+    <string name="heads_up_blocklist_title">Blocklist</string>
     <string name="profile_choose_app">Choose app</string>
     <string name="dialog_delete_title">Delete</string>
     <string name="dialog_delete_message">Remove selected item?</string>
@@ -262,61 +250,53 @@
     <string name="torch_long_press_power_timeout_5min">5 minutes</string>
     <string name="torch_long_press_power_timeout_10min">10 minutes</string>
 
-    <!-- Battery Settings -->
-    <string name="battery_settings_title">Battery Settings</string>   
+    <!-- Battery percentage -->
+    <string name="battery_style_category_title">Battery icon</string>
+    <string name="status_bar_battery_percentage_title">Battery percentage</string>
+    <string name="status_bar_battery_percentage_default">Hidden</string>
+    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
+    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
 
-    <!-- Battery Styles -->
-    <string name="battery_style_category_title">Battery styles</string>
-    <string name="battery_percent_title">Battery percent</string>
-
-    <!-- Status bar - Battery -->
+    <!-- Status bar battery style-->
     <string name="status_bar_battery_style_title">Battery style</string>
-    <string name="status_bar_battery_style_icon_portrait">Icon portrait (default)</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Icon landscape (Right)</string>
-    <string name="status_bar_battery_style_icon_landscape">Icon landscape (Left)</string>
+    <string name="status_bar_battery_style_port">Portrait</string>
     <string name="status_bar_battery_style_circle">Circle</string>
     <string name="status_bar_battery_style_dotted_circle">Circle (Dotted)</string>
     <string name="status_bar_battery_style_filled_circle">Circle (Filled)</string>
-    <string name="status_bar_battery_style_big_circle">Big circle</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Big dotted circle</string>
     <string name="status_bar_battery_style_text">Text</string>
-    <string name="status_bar_battery_style_hidden">Hidden</string>
-    <string name="left_battery_text_title">Left battery text</string>
-    <string name="left_battery_text_summary">Put the battery text on left of battery icon</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Icon landscape (Right)</string>
+    <string name="status_bar_battery_style_icon_landscape">Icon landscape (Left)</string>
 
-    <!-- Status bar - Battery percentage -->
-    <string name="status_bar_battery_percentage_title">Battery percentage</string>
-    <string name="status_bar_battery_percentage_default">Hidden (default)</string>
-    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
-    <string name="status_bar_battery_percentage_text_next">Outside</string> 
-
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">Battery estimate</string>
-    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
+    <!-- QS tiles layout direction: vertical or horizontal -->
+    <string name="qs_tile_layout_category_title">Tile layout</string>
+    <string name="qs_tile_layout_title">Vertical layout</string>
+    <string name="qs_tile_layout_summary">Enable for vertical layout. Default is horizontal</string>
 
     <!-- QS rows and columns -->
-    <string name="qs_columns_rows_category_title">Columns and rows</string>
-    <string name="qs_rows_columns_title">QS rows and columns</string>
-    <string name="qs_rows_portrait_title">Tiles rows on portrait</string>
-    <string name="qs_rows_landscape_title">Tiles rows on landscape</string>
-    <string name="qs_columns_portrait_title">Tiles columns on portrait</string>
-    <string name="qs_columns_landscape_title">Tiles columns on landscape</string>
-    <string name="qs_tile_title_visibility_title">Show QS tiles title</string>
+    <string name="qs_layout_category_title">QS Layout</string>
+    <string name="qs_rows_portrait_title">Tile rows on portrait</string>
+    <string name="qs_rows_landscape_title">Tile rows on landscape</string>
+    <string name="qs_columns_portrait_title">Tile columns on portrait</string>
+    <string name="qs_columns_landscape_title">Tile columns on landscape</string>
+
+    <!-- QS tiles title visibility -->
+    <string name="qs_tile_title_visibility_title">Hide tile titles</string>
+    <string name="qs_tile_title_visibility_summary">Toggle to hide tile titles</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Brightness slider</string>
-    <string name="qs_brightness_slider_title">Show brightness slider</string>
-    <string name="qs_brightness_slider_summary">Show a brightness slider in the quick settings panel</string>
-    <string name="qs_brightness_position_bottom_title">Show brightness slider on bottom</string>
-    <string name="qs_brightness_position_bottom_summary">Show a brightness slider on bottom quick settings</string>
+    <string name="qs_show_brightness_slider_title">Brightness slider</string>
+    <string name="qs_show_brightness_slider_never">Never show</string>
+    <string name="qs_show_brightness_slider_expanded">Show when expanded</string>
+    <string name="qs_show_brightness_slider_always">Show always</string>
+    <string name="qs_show_brightness_slider_not_expanded">Show when not expanded</string>
+    <string name="qs_brightness_slider_position_title">Position</string>
+    <string name="qs_brightness_slider_position_top">Top</string>
+    <string name="qs_brightness_slider_position_bottom">Bottom</string>
 
     <!-- Quick Settings brightness icon -->
-    <string name="brightness_icon_title">Adaptive brightness button</string>
-    <string name="brightness_icon_summary">Show adaptive brightness button</string>
-
-    <!-- Quick QS Panel brightness slider -->
-    <string name="quick_qs_brightness_slider_title">Show brightness slider in Quick QS Panel</string>
-    <string name="quick_qs_brightness_slider_summary">Show a brightness slider in the quick qs panel</string>
+    <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
+    <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
 
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Volume rocker wake</string>
@@ -335,7 +315,7 @@
     <string name="qs_column_rows_settings_title">Quick settings</string>
     <string name="qs_edit_title">Edit icon</string>
     <string name="qs_edit_summary">Enable the tile edit icon in the footer</string>
-    <string name="qs_footer_category_title">QS Footer</string>
+    <string name="qs_footer_category">QS Footer</string>
     <string name="qs_header_category_title">QS Header</string>
     <string name="qs_panel_category_title">QS Panel</string>
     <string name="status_bar_quick_qs_pulldown">Quick QS pulldown</string>
@@ -367,45 +347,51 @@
     <string name="lockscreen_charging_animation_stack">Stack</string>
     <string name="lockscreen_charging_animation_wavy">Wavy</string>
 
-    <!-- Status bar clock and date options -->
-    <string name="status_bar_clock_title">Clock &amp; date settings</string>
-    <string name="status_bar_clock">Clock &amp; date</string>
-    <string name="clock_enabled">Enabled</string>
-    <string name="clock_disabled">Disabled</string>
-    <string name="statusbar_clock_style_title">Clock &amp; date position</string>
-    <string name="statusbar_clock_style_right">Right</string>
-    <string name="statusbar_clock_style_centre">Center</string>
-    <string name="statusbar_clock_style_left">Left</string>
-    <string name="status_bar_clock_style_reset">Reset color</string>
-    <string name="status_bar_show_clock_title">Show clock &amp; date</string>
-    <string name="status_bar_am_pm_title">AM/PM</string>
+    <!-- Status bar - Clock -->
+    <string name="status_bar_clock_title">Clock &amp; date</string>
+    <string name="status_bar_clock_summary">Customize clock &amp; date</string>
+    <string name="status_bar_clock_seconds_title">Clock seconds</string>
+    <string name="status_bar_clock_seconds_summary">Display seconds next to clock in status bar</string>
+    <string name="status_bar_clock_position_title">Clock style</string>
+    <string name="status_bar_clock_position_right">Right</string>
+    <string name="status_bar_clock_position_left">Left</string>
+    <string name="status_bar_clock_position_center">Center</string>
+    <string name="status_bar_clock_position_hidden">Hidden</string>
+    <string name="status_bar_clock_auto_hide_title">Auto hide</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Hide clock if launcher is visible</string>
+    <string name="status_bar_clock_auto_hide_summary">Hide clock at regular interval</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Number of seconds to hide clock</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Number of seconds to wait before hiding clock</string>
+    <string name="status_bar_am_pm_title">AM/PM style</string>
     <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
-    <string name="clock_seconds_display">Show seconds</string>
-    <string name="enable_clock_weekday">Day of the week</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
-    <string name="dont_show">Don\'t show</string>
-    <string name="clock_date_display">Date</string>
-    <string name="clock_date_display_summary">Display custom date before the clock</string>
-    <string name="clock_date_style">Date style</string>
-    <string name="clock_date_format">Date format</string>
-    <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
-    <string name="clock_date_string_edittext_summary">Enter string</string>
-    <string name="am_pm_clock_normal">Normal font size</string>
-    <string name="am_pm_clock_small">Small font size</string>
-    <string name="am_pm_clock_none">Don\'t show</string>
-    <string name="clock_date_display_none">Don\'t show</string>
-    <string name="clock_date_display_small">Small font size</string>
-    <string name="clock_date_display_normal">Normal font size</string>
-    <string name="clock_date_style_normal">Normal</string>
-    <string name="clock_date_style_lowercase">Lowercase</string>
-    <string name="clock_date_style_uppercase">Uppercase</string>
+    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_small">Small</string>
+    <string name="status_bar_am_pm_hidden">Hidden</string>
+    <string name="status_bar_date_title">Date</string>
+    <string name="status_bar_date_none">Hidden</string>
+    <string name="status_bar_date_small">Small</string>
+    <string name="status_bar_date_normal">Normal</string>
+    <string name="status_bar_date_format_title">Date format</string>
+    <string name="status_bar_date_style">Date style</string>
+    <string name="status_bar_date_style_normal">Normal</string>
+    <string name="status_bar_date_style_lowercase">Lowercase</string>
+    <string name="status_bar_date_style_uppercase">Uppercase</string>
+    <string name="status_bar_date_format_custom">Custom java format</string>
+    <string name="status_bar_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
+    <string name="status_bar_date_string_edittext_summary">Enter string</string>
+    <string name="clock_date_position">Date position</string>
     <string name="clock_date_right">Right of time</string>
     <string name="clock_date_left">Left of time</string>
-    <string name="clock_date_position">Date position</string>
-    <string name="status_bar_clock_auto_hide_title">Auto-hide clock</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide and show clock at regular intervals of time</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
+
+    <!-- QS clock -->
+    <string name="qs_clock_title">Clock</string>
+    <string name="qs_clock_summary">Display clock in quick status bar header</string>
+
+    <!-- QS date -->
+    <string name="qs_date_title">Date</string>
+    <string name="qs_date_summary">Display date in quick status bar header</string>
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
@@ -451,8 +437,8 @@
     <string name="smart_pulldown_ongoing">no ongoing</string>
 
     <!-- Brightness control -->
-    <string name="status_bar_toggle_brightness">Brightness control</string>
-    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+    <string name="status_bar_brightness_control_title">Brightness control</string>
+    <string name="status_bar_brightness_control_summary">Adjust brightness by sliding across the status bar</string>
 
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">Less boring heads up</string>
@@ -509,11 +495,11 @@
     <string name="lockscreen_lock_icon_title">Lock icon</string>
     <string name="lockscreen_lock_icon_summary">Display lock icon on the lock screen</string>
 
-    <!-- Pulse notifications lightning -->
-    <string name="pulse_ambient_light_title">Ambient edge lightning</string>
+    <!-- Pulse notifications lighting -->
+    <string name="pulse_ambient_light_title">Ambient edge lighting</string>
     <string name="pulse_ambient_light_summary">Light ambient edges for pulsing notifications</string>
     <string name="ambient_notification_light_enabled_title">Show on AOD</string>
-    <string name="ambient_notification_light_enabled_summary">Keep showing edge lightning on AOD</string>
+    <string name="ambient_notification_light_enabled_summary">Keep showing edge lighting on AOD</string>
     <string name="ambient_notification_light_hide_aod_title">Hide AOD content</string>
     <string name="ambient_notification_light_hide_aod_summary">Hide AOD content when edges are lighted</string>
     <string name="ambient_notification_light_duration_title">Duration</string>
@@ -577,6 +563,9 @@
     <string name="powermenu_logout">Logout</string>
     <string name="powermenu_emergency">Emergency</string>
     <string name="powermenu_device_controls">Device controls</string>
+    <string name="powermenu_bugreport">Bug report</string>
+    <string name="powermenu_assist">Assistant</string>
+    <string name="powermenu_voice_assist">Voice assistant</string>
 
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Doze Brightness Config</string>
@@ -682,8 +671,11 @@
 
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Media art blur level</string>
-    <string name="show_lockscreen_media_art_title">Show media art</string>
     <string name="lockscreen_media_art_options_title">Lock screen media art</string>
+
+    <!-- Media art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Display media cover art when available</string>
 
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Sensor block per-package</string>
@@ -853,6 +845,7 @@
     <string name="volume_key_cursor_control_on_reverse">Volume Up/Down - Cursor Right/Left</string>
     <string name="swap_volume_buttons_title">Reorient</string>
     <string name="swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
+    <string name="volume_panel_on_left_title">Show volume panel on left</string>
     <string name="volume_panel_on_left_summary">Display volume panel on the left side of the screen</string>
     <string name="extras_title">Extras</string>
     <string name="click_partial_screenshot_title">Click to partial screenshot</string>
@@ -877,7 +870,7 @@
     <string name="swap_capacitive_keys_summary">Swap the order of recents and back buttons</string>
 
     <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_title">Visualizer</string>
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
     <string name="lockscreen_visualizer_enable">Music visualizer</string>
     <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>
     <string name="lockscreen_autocolor_title">Automatic color</string>
@@ -940,10 +933,6 @@
     <string name="stock_statusbar_in_hide_summary">Use default status bar height while hiding cutout</string>
     <string name="display_hide_notch_title">Hide display cutout</string>
     <string name="display_hide_notch_summary">Disable black fill-in for display cutout</string>
-
-    <!-- Notch: Full screen apps -->
-    <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
-    <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
 
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Ticker</string>
@@ -1009,11 +998,13 @@
     <string name="status_bar_show_lyric_title">Status bar lyric feature</string>
     <string name="status_bar_show_lyric_summary">Show lyrics in status bar (requires app support and a SystemUI restart)</string>
 
-    <!-- Notification Media Options -->
-    <string name="media_category">Media Notification options</string>
+    <!-- Media artwork -->
+    <string name="media_category">Media notification</string>
     <string name="artwork_media_background_title">Artwork media background</string>
-    <string name="artwork_media_background_summary">Set media artwork as notification media background</string>
-    <string name="artwork_media_fade_level_title">Artwork fade level</string>
+    <string name="artwork_media_background_summary">Set media artwork as the notification media background</string>
+    <string name="artwork_media_background_enable_blur_title">Blur media media artwork background</string>
+    <string name="artwork_media_background_blur_radius_title">Blur amount for media artwork</string>
+    <string name="artwork_media_background_alpha_title">Transparency of media artwork</string>
 
     <!-- Rounded styles -->
     <string name="rounded_style_title">Rounded style for system dialogs</string>
@@ -1076,6 +1067,14 @@
     <string name="qs_footer_warnings_title">QS footer warnings</string>
     <string name="qs_footer_warnings_summary">Display a warning at bottom of QS panel when network is monitored by external apps or vpn</string>
 
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">User account icon</string>
+    <string name="qs_footer_users_icon_summary">Display multiuser accessibility icon when available</string>
+    <string name="qs_footer_edit_icon_title">Edit tiles icon</string>
+    <string name="qs_footer_show_power_menu_title">Power menu shortcut</string>
+    <string name="qs_footer_services_icon_title">Running services shortcut</string>
+    <string name="qs_footer_settings_icon_title">Settings shortcut</string>
+
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Show CPU info</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -1095,7 +1094,8 @@
 
     <!-- QS battery estimates -->
     <string name="qs_show_battery_estimate_title">Battery estimates</string>
-    <string name="qs_show_battery_estimate_summary">Show estimated remaining battery life next to the icon</string>
+    <string name="qs_show_battery_estimate_summary_on">Show battery estimates in QS</string>
+    <string name="qs_show_battery_estimate_summary_off">Hide battery estimates in QS</string>
 
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Carrier label</string>
@@ -1262,4 +1262,58 @@
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Ignore window secure flags</string>
     <string name="ignore_window_secure_summary">This removes the screenshots and screenrecords limits for all applications. Normally, special applications are replaced with black areas in records. This can be convenient in some cases but may lead to privacy leaks. After changing this toggle, you may need to restart applications for the change to take effect.</string>
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Logo</string>
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Enable to display logo in the status bar</string>
+    <string name="status_bar_logo_color_title">Color</string>
+    <string name="status_bar_logo_color_accent_title">Use accent Color</string>
+    <string name="status_bar_logo_position_title">Position</string>
+    <string name="status_bar_logo_position_summary">Choose which side to display the logo on, left or right</string>
+    <string name="status_bar_logo_position_right">Right</string>
+    <string name="status_bar_logo_position_left">Left</string>
+    <string name="status_bar_logo_position_right_quick">Right with QS Panel</string>
+    <string name="status_bar_logo_position_left_quick">Left with QS Panel</string>
+    <string name="status_bar_logo_style_title">Style</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">Emoticon</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticon cool</string>
+    <string name="status_bar_logo_style_emoticon_dead">Emoticon dead</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticon devil</string>
+    <string name="status_bar_logo_style_emoticon_happy">Emoticon happy</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Emoticon neutral</string>
+    <string name="status_bar_logo_style_emoticon_poop">Emoticon poop</string>
+    <string name="status_bar_logo_style_emoticon_sad">Emoticon sad</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Emoticon tongue</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Cake</string>
+    <string name="status_bar_logo_style_blogger">Blogger</string>
+    <string name="status_bar_logo_style_biohazard">Biohazard</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_heart">Heart</string>
+    <string name="status_bar_logo_style_flower">Flower</string>
+    <string name="status_bar_logo_style_ghost">Ghost</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_human_male">Man</string>
+    <string name="status_bar_logo_style_human_female">Woman</string>
+    <string name="status_bar_logo_style_human_male_female">Man &amp; woman</string>
+    <string name="status_bar_logo_style_gender_male">Male</string>
+    <string name="status_bar_logo_style_gender_female">Female</string>
+    <string name="status_bar_logo_style_gender_male_female">Male &amp; female</string>
+    <string name="status_bar_logo_style_guitar_electric">Electric guitar</string>
+
+    <!-- reTicker -->
+    <string name="reticker_category" translatable="false">reTicker</string>
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Replace heads-up notification with slim and less invasive version of redesigned ticker</string>
+    <string name="reticker_colored_title">Use app colored background</string>
+    <string name="reticker_colored_summary">Replace reTicker background color using notification app main color</string>
 </resources>

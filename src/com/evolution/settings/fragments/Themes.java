@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2022 The Evolution X Project
+ * Copyright (C) 2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,26 +15,27 @@
  */
 package com.evolution.settings.fragments;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.ContentResolver;
-import android.content.Intent;
-import android.content.pm.UserInfo;
+import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.os.UserManager;
 import android.provider.Settings;
 
-import androidx.annotation.NonNull;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.evolution.EvolutionUtils;
-
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -44,39 +45,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class PowerMenuSettings extends SettingsPreferenceFragment implements
+public class Themes extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-
-    private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
-
-    private SwitchPreference mPowermenuTorch;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_power_menu);
-
-        final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
-        mPowermenuTorch.setOnPreferenceChangeListener(this);
-        if (!EvolutionUtils.deviceHasFlashlight(getActivity())) {
-            prefScreen.removePreference(mPowermenuTorch);
-        } else {
-        mPowermenuTorch.setChecked((Settings.System.getInt(resolver,
-                Settings.System.POWERMENU_TORCH, 0) == 1));
-        }
+        addPreferencesFromResource(R.xml.evolution_settings_themes);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mPowermenuTorch) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWERMENU_TORCH, value ? 1 : 0);
-            return true;
-        }
         return false;
     }
 
@@ -89,5 +68,5 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
      * For Search.
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_power_menu);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_themes);
 }

@@ -1,8 +1,8 @@
 /*
  * Copyright (C) 2016 The CyanogenMod project
- * Copyright (C) 2017-2018 The LineageOS project
- * Copyright (C) 2018 The PixelExperience Project
- * Copyright (C) 2019-2022 The Evolution X Project
+ *               2017-2022 The LineageOS project
+ *               2018 The PixelExperience Project
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,27 +18,25 @@
  */
 package com.evolution.settings.fragments;
 
-import android.app.ActivityManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
-import android.util.Log;
+import android.view.View;
 
-import androidx.fragment.app.DialogFragment;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
-import com.android.internal.evolution.hardware.LineageHardwareManager;
+import com.android.internal.custom.hardware.LineageHardwareManager;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.internal.util.hwkeys.ActionConstants;
@@ -46,25 +44,25 @@ import com.android.internal.util.hwkeys.ActionUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.ActionFragment;
 import com.evolution.settings.preference.CustomSeekBarPreference;
+import com.evolution.settings.preference.SecureSettingSwitchPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
+public class Buttons extends ActionFragment implements
+        Preference.OnPreferenceChangeListener {
 
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
-    private static final String KEY_NAVIGATION_BAR_ENABLED = "force_show_navbar";
-    private static final String KEY_LAYOUT_SETTINGS = "layout_settings";
-    private static final String KEY_NAVIGATION_BAR_ARROWS = "navigation_bar_menu_arrow_keys";
+    private static final String NAVBAR_VISIBILITY = "navbar_visibility";
+    private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -92,11 +90,11 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
 
     private CustomSeekBarPreference mButtonTimoutBar;
     private CustomSeekBarPreference mManualButtonBrightness;
-    private Preference mLayoutSettings;
     private PreferenceCategory mButtonBackLightCategory;
+    private PreferenceCategory mHwKeyCategory;
+    private SecureSettingSwitchPreference mSwapCapacitiveKeys;
     private SwitchPreference mHwKeyDisable;
-    private SwitchPreference mNavigationBar;
-    private SystemSettingSwitchPreference mNavigationArrows;
+    private SwitchPreference mNavbarVisibility;
 
     private boolean mIsNavSwitchingMode = false;
 
@@ -107,11 +105,18 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.evolution_settings_button);
 
+        final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
+        if (mSwapCapacitiveKeys != null && !isKeySwapperSupported(getActivity())) {
+            prefScreen.removePreference(mSwapCapacitiveKeys);
+            mSwapCapacitiveKeys = null;
+        }
+
         final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
-        final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
+        mHwKeyCategory = (PreferenceCategory) prefScreen
                 .findPreference(CATEGORY_HWKEY);
         int keysDisabled = 0;
         if (!needsNavbar) {
@@ -122,7 +127,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             mHwKeyDisable.setChecked(keysDisabled != 0);
             mHwKeyDisable.setOnPreferenceChangeListener(this);
         } else {
-            prefScreen.removePreference(hwkeyCat);
+            prefScreen.removePreference(mHwKeyCategory);
         }
 
         // bits for hardware keys present on device
@@ -196,26 +201,15 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             prefScreen.removePreference(mButtonBackLightCategory);
         }
 
-        final boolean defaultToNavigationBar = getResources().getBoolean(
-                com.android.internal.R.bool.config_showNavigationBar);
-        final boolean navigationBarEnabled = Settings.System.getIntForUser(
-                resolver, Settings.System.FORCE_SHOW_NAVBAR,
-                defaultToNavigationBar ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+        mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
 
-        mNavigationBar = (SwitchPreference) findPreference(KEY_NAVIGATION_BAR_ENABLED);
-        mNavigationBar.setChecked((Settings.System.getInt(getContentResolver(),
+        boolean showing = Settings.System.getIntForUser(resolver,
                 Settings.System.FORCE_SHOW_NAVBAR,
-                defaultToNavigationBar ? 1 : 0) == 1));
-        mNavigationBar.setOnPreferenceChangeListener(this);
-
-        final boolean isThreeButtonNavbarEnabled = EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton");
-        mLayoutSettings = (Preference) findPreference(KEY_LAYOUT_SETTINGS);
-        mLayoutSettings.setEnabled(isThreeButtonNavbarEnabled);
-
-        mNavigationArrows = (SystemSettingSwitchPreference) findPreference(KEY_NAVIGATION_BAR_ARROWS);
+                EvolutionUtils.hasNavbarByDefault(getActivity()) ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+        mNavbarVisibility.setChecked(showing);
+        mNavbarVisibility.setOnPreferenceChangeListener(this);
 
         mHandler = new Handler();
-
     }
 
     @Override
@@ -226,22 +220,26 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             Settings.System.putInt(getContentResolver(), Settings.System.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
+            return true;
         } else if (preference == mButtonTimoutBar) {
             int buttonTimeout = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.BUTTON_BACKLIGHT_TIMEOUT, buttonTimeout);
+            return true;
         } else if (preference == mManualButtonBrightness) {
             int buttonBrightness = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.CUSTOM_BUTTON_BRIGHTNESS, buttonBrightness);
-        } else if (preference == mNavigationBar) {
-            boolean value = (Boolean) newValue;
+            return true;
+        } else if (preference == mNavbarVisibility) {
             if (mIsNavSwitchingMode) {
                 return false;
             }
             mIsNavSwitchingMode = true;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.FORCE_SHOW_NAVBAR, value ? 1 : 0);
+            boolean showing = ((Boolean)newValue);
+            Settings.System.putIntForUser(resolver, Settings.System.FORCE_SHOW_NAVBAR,
+                    showing ? 1 : 0, UserHandle.USER_CURRENT);
+            mNavbarVisibility.setChecked(showing);
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -256,6 +254,11 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private static boolean isKeyDisablerSupported(Context context) {
         final LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
         return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE);
+    }
+
+    private static boolean isKeySwapperSupported(Context context) {
+        final LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
+        return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_SWAP);
     }
 
     @Override
