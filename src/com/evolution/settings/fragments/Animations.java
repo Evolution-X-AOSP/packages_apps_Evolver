@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2022 The Evolution X Project
+ * Copyright (C) 2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class AnimationSettings extends SettingsPreferenceFragment implements
+public class Animations extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     @Override
