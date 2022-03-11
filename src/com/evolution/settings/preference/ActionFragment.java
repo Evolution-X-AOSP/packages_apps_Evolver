@@ -107,6 +107,7 @@ public class ActionFragment extends SettingsPreferenceFragment implements
         }
     }
 
+/*
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -114,9 +115,8 @@ public class ActionFragment extends SettingsPreferenceFragment implements
             outState.putString(KEY_FOCUSED_PREFERENCE, mHolderTag);
         }
     }
-
-    @Override
-    public Dialog onCreateDialog(int dialogId) {
+*/
+    protected void showDialog(int dialogId) {
         switch (dialogId) {
             case DIALOG_CATEGORY: {
                 Dialog dialog;
@@ -133,7 +133,8 @@ public class ActionFragment extends SettingsPreferenceFragment implements
                                 categoryClickListener)
                         .setNegativeButton(getString(android.R.string.cancel), null)
                         .create();
-                return dialog;
+                dialog.show();
+                break;
             }
             case DIALOG_CUSTOM_ACTIONS: {
                 Dialog dialog;
@@ -154,13 +155,12 @@ public class ActionFragment extends SettingsPreferenceFragment implements
                         .setAdapter(adapter, customActionClickListener)
                         .setNegativeButton(getString(android.R.string.cancel), null)
                         .create();
-                return dialog;
+                dialog.show();
+                break;
             }
         }
-        return super.onCreateDialog(dialogId);
     }
 
-    @Override
     public int getDialogMetricsCategory(int dialogId) {
         switch (dialogId) {
             case DIALOG_CATEGORY:
@@ -173,7 +173,7 @@ public class ActionFragment extends SettingsPreferenceFragment implements
 
     // subclass overrides to include back and home actions
     protected boolean usesExtendedActionsList() {
-        return false;
+        return true;
     }
 
     protected void onActionPolicyEnforced(ArrayList<ActionPreference> prefs) {

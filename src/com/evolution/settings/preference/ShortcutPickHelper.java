@@ -22,10 +22,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -40,12 +38,15 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.Fragment;
+
 import com.android.settings.R;
 import com.evolution.settings.preference.ShortcutPickHelper.AppExpandableAdapter.GroupInfo;
 
 public class ShortcutPickHelper {
 
-    private Activity mParent;
+    private FragmentActivity mParent;
     private AlertDialog mAlertDialog;
     private OnPickListener mListener;
     private PackageManager mPackageManager;
@@ -58,14 +59,14 @@ public class ShortcutPickHelper {
         void shortcutPicked(String uri, String friendlyName, boolean isApplication);
     }
 
-    public ShortcutPickHelper(Activity parent, OnPickListener listener) {
+    public ShortcutPickHelper(FragmentActivity parent, OnPickListener listener) {
         mParent = parent;
         mPackageManager = mParent.getPackageManager();
         mListener = listener;
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == Activity.RESULT_OK) {
+        if (resultCode == FragmentActivity.RESULT_OK) {
             switch (requestCode) {
             case REQUEST_PICK_APPLICATION:
                 completeSetCustomApp(data);
@@ -115,7 +116,7 @@ public class ShortcutPickHelper {
         if (lastFragmentId == 0) {
             mParent.startActivityForResult(pickIntent, requestCode);
         } else {
-            Fragment cFrag = mParent.getFragmentManager().findFragmentById(lastFragmentId);
+            Fragment cFrag = mParent.getSupportFragmentManager().findFragmentById(lastFragmentId);
             if (cFrag != null) {
                 mParent.startActivityFromFragment(cFrag, pickIntent, requestCode);
             }

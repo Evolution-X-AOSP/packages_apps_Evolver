@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 The Evolution X Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     Copyright (C) 2019-2022 Evolution X
+     SPDX-License-Identifier: Apache-2.0
 -->
-
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="entries_led_colors" translatable="false">
         <item>@string/led_color_green</item>
@@ -26,60 +14,40 @@
         <item>#FFFF0000</item>
     </string-array>
 
-    <string-array name="torch_long_press_power_timeout_entries" translatable="false">
-        <item>@string/torch_long_press_power_timeout_never</item>
-        <item>@string/torch_long_press_power_timeout_1min</item>
-        <item>@string/torch_long_press_power_timeout_2min</item>
-        <item>@string/torch_long_press_power_timeout_5min</item>
-        <item>@string/torch_long_press_power_timeout_10min</item>
-    </string-array>
-
-    <string-array name="torch_long_press_power_timeout_values" translatable="false">
-        <item>0</item>
-        <item>60</item>
-        <item>120</item>
-        <item>300</item>
-        <item>600</item>
-    </string-array>
-
-    <!-- Battery percent -->
-    <string-array name="battery_percent_entries">
+    <string-array name="status_bar_battery_percentage_entries" translatable="false">
         <item>@string/status_bar_battery_percentage_default</item>
         <item>@string/status_bar_battery_percentage_text_inside</item>
         <item>@string/status_bar_battery_percentage_text_next</item>
     </string-array>
 
-    <string-array name="battery_percent_values" translatable="false">
+    <string-array name="status_bar_battery_percentage_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
     </string-array>
 
-    <!-- Battery -->
-    <string-array name="status_bar_battery_style_entries" translatable="false">
-        <item>@string/status_bar_battery_style_icon_portrait</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape</item>
-        <item>@string/status_bar_battery_style_icon_landscape</item>
+    <string-array name="entries_status_bar_battery" translatable="false">
+        <item>@string/status_bar_battery_style_port</item>
         <item>@string/status_bar_battery_style_circle</item>
         <item>@string/status_bar_battery_style_dotted_circle</item>
         <item>@string/status_bar_battery_style_filled_circle</item>
+        <item>@string/status_bar_battery_style_text</item>
+        <item>@string/status_bar_battery_style_icon_rlandscape</item>
+        <item>@string/status_bar_battery_style_icon_landscape</item>
         <item>@string/status_bar_battery_style_big_circle</item>
         <item>@string/status_bar_battery_style_big_dotted_circle</item>
-        <item>@string/status_bar_battery_style_text</item>
-        <item>@string/status_bar_battery_style_hidden</item>
     </string-array>
 
-    <string-array name="status_bar_battery_style_values" translatable="false">
+    <string-array name="values_status_bar_battery" translatable="false">
         <item>0</item>
-        <item>8</item>
-        <item>9</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>6</item>
-        <item>7</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
     </string-array>
 
     <!--- Volume key cursor control -->
@@ -139,140 +107,106 @@
         <item>@string/none_string</item>
         <item>@string/lockscreen_albumart_filter_grayscale</item>
         <item>@string/lockscreen_albumart_filter_tint</item>
-        <item>@string/lockscreen_albumart_filter_blur</item>
-        <item>@string/lockscreen_albumart_filter_grayblur</item>
     </string-array>
 
     <string-array name="lockscreen_albumart_filter_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3</item>
-        <item>4</item>
     </string-array>
 
-    <!-- Lockscreen Charging Animation -->
-    <string-array name="lockscreen_charging_animation_entries" translatable="false">
-        <item>@string/disabled</item>
-        <item>@string/lockscreen_charging_animation_flash</item>
-        <item>@string/lockscreen_charging_animation_battery</item>
-        <item>@string/lockscreen_charging_animation_drop</item>
-        <item>@string/lockscreen_charging_animation_explosion</item>
-        <item>@string/lockscreen_charging_animation_water</item>
-        <item>@string/lockscreen_charging_animation_phone</item>
-        <item>@string/lockscreen_charging_animation_stack</item>
-        <item>@string/lockscreen_charging_animation_wavy</item>
+    <!-- Status bar - Clock -->
+    <string-array name="status_bar_clock_position_entries" translatable="false">
+        <item>@string/status_bar_clock_position_right</item>
+        <item>@string/status_bar_clock_position_center</item>
+        <item>@string/status_bar_clock_position_left</item>
     </string-array>
 
-    <string-array name="lockscreen_charging_animation_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-    </string-array>
-
-    <!-- SysUI Tuner: Labels for different types of navigation bar layouts [CHAR LIMIT=60] -->
-    <string-array name="navbar_layout_entries">
-        <item>@string/navbar_layout_normal</item>
-        <item>@string/navbar_layout_compact</item>
-        <item>@string/navbar_layout_leftleaning</item>
-        <item>@string/navbar_layout_rightleaning</item>
-    </string-array>
-
-    <string-array name="navbar_layout_values" translatable="false">
-        <item>default</item>
-        <item>left;back,home,recent;right</item>
-        <item>left,back,home,recent,right;space;space</item>
-        <item>space;space;left,back,home,recent,right</item>
-    </string-array>
-
-    <!-- Status bar clock and date options -->
-    <string-array name="statusbar_clock_style_entries" translatable="false">
-        <item>@string/statusbar_clock_style_left</item>
-        <item>@string/statusbar_clock_style_centre</item>
-        <item>@string/statusbar_clock_style_right</item>
-    </string-array>
-
-    <string-array name="statusbar_clock_style_values" translatable="false">
+    <string-array name="status_bar_clock_position_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
     </string-array>
 
-    <string-array name="statusbar_clock_style_entries_rtl" translatable="false">
-        <item>@string/statusbar_clock_style_right</item>
-        <item>@string/statusbar_clock_style_centre</item>
-        <item>@string/statusbar_clock_style_left</item>
+    <string-array name="status_bar_clock_position_entries_rtl" translatable="false">
+        <item>@string/status_bar_clock_position_left</item>
+        <item>@string/status_bar_clock_position_center</item>
+        <item>@string/status_bar_clock_position_right</item>
     </string-array>
 
-    <string-array name="statusbar_clock_style_values_rtl" translatable="false">
+    <string-array name="status_bar_clock_position_values_rtl" translatable="false">
         <item>2</item>
         <item>1</item>
         <item>0</item>
     </string-array>
 
-    <string-array name="statusbar_clock_style_entries_notch" translatable="false">
-        <item>@string/statusbar_clock_style_left</item>
-        <item>@string/statusbar_clock_style_right</item>
+    <string-array name="status_bar_clock_position_entries_notch" translatable="false">
+        <item>@string/status_bar_clock_position_right</item>
+        <item>@string/status_bar_clock_position_left</item>
     </string-array>
 
-    <string-array name="statusbar_clock_style_values_notch" translatable="false">
+    <string-array name="status_bar_clock_position_values_notch" translatable="false">
         <item>0</item>
         <item>2</item>
     </string-array>
 
-    <string-array name="statusbar_clock_style_entries_notch_rtl" translatable="false">
-        <item>@string/statusbar_clock_style_right</item>
-        <item>@string/statusbar_clock_style_left</item>
+    <string-array name="status_bar_clock_position_entries_notch_rtl" translatable="false">
+        <item>@string/status_bar_clock_position_left</item>
+        <item>@string/status_bar_clock_position_right</item>
     </string-array>
 
-    <string-array name="statusbar_clock_style_values_notch_rtl" translatable="false">
+    <string-array name="status_bar_clock_position_values_notch_rtl" translatable="false">
         <item>2</item>
         <item>0</item>
     </string-array>
 
-    <string-array name="entries_status_bar_am_pm">
-        <item>@string/am_pm_clock_none</item>
-        <item>@string/am_pm_clock_small</item>
-        <item>@string/am_pm_clock_normal</item>
+    <string-array name="status_bar_am_pm_entries" translatable="false">
+        <item>@string/status_bar_am_pm_hidden</item>
+        <item>@string/status_bar_am_pm_normal</item>
+        <item>@string/status_bar_am_pm_small</item>
     </string-array>
 
-    <string-array name="values_status_bar_am_pm" translatable="false">
+    <string-array name="status_bar_am_pm_values" translatable="false">
+        <item>2</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="clock_date_position_entries" translatable="false">
+        <item>@string/clock_date_left</item>
+        <item>@string/clock_date_right</item>
+    </string-array>
+
+    <string-array name="clock_date_position_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="status_bar_date_entries">
+        <item>@string/status_bar_date_none</item>
+        <item>@string/status_bar_date_small</item>
+        <item>@string/status_bar_date_normal</item>
+    </string-array>
+
+    <string-array name="status_bar_date_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
     </string-array>
 
-    <string-array name="clock_date_display_entries">
-        <item>@string/clock_date_display_none</item>
-        <item>@string/clock_date_display_small</item>
-        <item>@string/clock_date_display_normal</item>
+    <string-array name="status_bar_date_style_entries">
+        <item>@string/status_bar_date_style_normal</item>
+        <item>@string/status_bar_date_style_lowercase</item>
+        <item>@string/status_bar_date_style_uppercase</item>
     </string-array>
 
-    <string-array name="clock_date_display_values" translatable="false">
+    <string-array name="status_bar_date_style_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
     </string-array>
 
-    <string-array name="clock_date_style_entries">
-        <item>@string/clock_date_style_normal</item>
-        <item>@string/clock_date_style_lowercase</item>
-        <item>@string/clock_date_style_uppercase</item>
-    </string-array>
-
-    <string-array name="clock_date_style_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="clock_date_format_entries_values">
+    <string-array name="status_bar_date_format_entries_values" translatable="false">
         <item>dd/MM/yy</item>
         <item>MM/dd/yy</item>
         <item>yyyy-MM-dd</item>
@@ -290,16 +224,8 @@
         <item>EEE MMM dd</item>
         <item>EEE MMMM dd</item>
         <item>EEEE dd/MM</item>
-    </string-array>
-
-    <string-array name="clock_date_position_entries" translatable="false">
-        <item>@string/clock_date_left</item>
-        <item>@string/clock_date_right</item>
-    </string-array>
-
-    <string-array name="clock_date_position_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
+        <item>EEEE MM/dd</item>
+        <item>@string/status_bar_date_format_custom</item>
     </string-array>
 
     <!-- Tiles animation style -->
@@ -367,22 +293,24 @@
     </string-array>
 
     <!-- Battery bar -->
-    <string-array name="battery_bar_no_navbar_entries">
-        <item>@string/hidden_string</item>
-        <item>@string/battery_bar_status_bar_top</item>
-        <item>@string/battery_bar_status_bar_bot</item>
+    <string-array name="battery_bar_entries" translatable="false">
+        <item>@string/battery_bar_hide</item>
+        <item>@string/battery_bar_statusbar</item>
+        <item>@string/battery_bar_topnav</item>
+        <item>@string/battery_bar_bottomnav</item>
     </string-array>
 
-    <string-array name="battery_bar_no_navbar_values" translatable="false">
+    <string-array name="battery_bar_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <string-array name="battery_bar_style_entries" translatable="false">
-        <item>@string/battery_bar_style_regular</item>
-        <item>@string/battery_bar_style_center_mirrored</item>
-        <item>@string/battery_bar_style_reversed</item>
+        <item>@string/battery_bar_reg</item>
+        <item>@string/battery_bar_center</item>
+        <item>@string/battery_bar_reversed</item>
     </string-array>
 
     <string-array name="battery_bar_style_values" translatable="false">
@@ -406,7 +334,7 @@
         <item>3</item>
     </string-array>
 
-    <!-- Edge lightning timeout -->
+    <!-- Edge lighting timeout -->
     <string-array name="ambient_notification_light_timeout_entries" translatable="false">
         <item>@string/ambient_notification_light_timeout_forever</item>
         <item>@string/ambient_notification_light_timeout_half_minute</item>
@@ -425,7 +353,7 @@
         <item>600</item>
     </string-array>
 
-    <!-- Edge lightning color mode -->
+    <!-- Edge lighting color mode -->
     <string-array name="ambient_notification_color_mode_entries" translatable="false">
         <item>@string/ambient_notification_color_mode_notification</item>
         <item>@string/ambient_notification_color_mode_wall</item>
@@ -439,17 +367,18 @@
         <item>2</item>
         <item>3</item>
     </string-array>
-	
-    <!-- Edge lightning pulse style -->
+
+    <!-- Edge lighting pulse style -->
     <string-array name="pulse_ambient_light_layout_entries">
         <item>@string/pulse_ambient_light_layout_faded</item>
         <item>@string/pulse_ambient_light_layout_solid</item>
     </string-array>
+
     <string-array name="pulse_ambient_light_layout_values" translatable="false">
         <item>0</item>
         <item>1</item>
     </string-array>
-	
+
     <!-- Pulse Light Layout style -->
     <string-array name="pulse_light_layout_style_entries" translatable="false">
         <item>@string/pulse_light_both</item>
@@ -463,11 +392,12 @@
         <item>2</item>
     </string-array>
 
-    <!-- Edge lightning restart/reverse animation mode -->
+    <!-- Edge lighting restart/reverse animation mode -->
     <string-array name="pulse_ambient_light_repeat_direction_entries">
         <item>@string/pulse_ambient_light_repeat_direction_restart</item>
         <item>@string/pulse_ambient_light_repeat_direction_reverse</item>
     </string-array>
+
     <string-array name="pulse_ambient_light_repeat_direction_values" translatable="false">
         <item>0</item>
         <item>1</item>
@@ -575,19 +505,6 @@
         <item>@string/volume_panel_oos_val</item>
         <item>@string/volume_panel_p404_val</item>
         <item>@string/volume_panel_ssos_val</item>
-    </string-array>
-
-    <!-- QS Header data uasge -->
-    <string-array name="qs_datausage_entries" translatable="false">
-        <item>@string/qs_datausage_disabled</item>
-        <item>@string/qs_datausage_daily</item>
-        <item>@string/qs_datausage_monthly</item>
-    </string-array>
-
-    <string-array name="qs_datausage_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
     </string-array>
 
     <!-- Gvisual mod -->
@@ -1040,25 +957,37 @@
 
     <!-- Pulse music visualizer -->
     <string-array name="pulse_render_mode_entries">
-       <item>@string/pulse_render_mode_fading_bars</item>
-       <item>@string/pulse_render_mode_solid_lines</item>
+        <item>@string/pulse_render_mode_fading_bars</item>
+        <item>@string/pulse_render_mode_solid_lines</item>
     </string-array>
 
     <string-array name="pulse_render_mode_values" translatable="false">
-      <item>0</item>
-      <item>1</item>
+        <item>0</item>
+        <item>1</item>
     </string-array>
 
     <string-array name="pulse_color_mode_entries">
-       <item>@string/pulse_color_accent</item>
-       <item>@string/pulse_color_custom</item>
-       <item>@string/pulse_color_lava_lamp</item>
+        <item>@string/pulse_color_accent</item>
+        <item>@string/pulse_color_custom</item>
+        <item>@string/pulse_color_lava_lamp</item>
     </string-array>
 
     <string-array name="pulse_color_mode_values" translatable="false">
-      <item>0</item>
-      <item>1</item>
-      <item>2</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="pulse_custom_gravity_entries">
+        <item>@string/pulse_custom_gravity_bottom</item>
+        <item>@string/pulse_custom_gravity_top</item>
+        <item>@string/pulse_custom_gravity_center</item>
+    </string-array>
+
+    <string-array name="pulse_custom_gravity_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
     <!-- Screenshot type  -->
@@ -1071,5 +1000,4 @@
         <item>0</item>
         <item>1</item>
     </string-array>
-
 </resources>

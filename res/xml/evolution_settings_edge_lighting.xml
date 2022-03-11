@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2020 Yet Another AOSP Project
+     Copyright (C) 2019-2022 Evolution X
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,8 +16,8 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/pulse_ambient_light_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/pulse_ambient_light_title">
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="ambient_notification_light_enabled"
@@ -29,7 +30,7 @@
         android:title="@string/pulse_ambient_light_show_always_title"
         android:summary="@string/pulse_ambient_light_show_always_summary"
         android:defaultValue="false" />
-			
+
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="ambient_notification_light_hide_aod"
         android:title="@string/ambient_notification_light_hide_aod_title"
@@ -100,9 +101,9 @@
         android:key="pulse_ambient_light_width"
         android:title="@string/pulse_ambient_light_width_title"
         android:max="150"
-        android:min="1"
+        settings:min="1"
         settings:unitsLeft=""
         settings:unitsRight="px"
         android:defaultValue="125" />
-			
+
 </PreferenceScreen>
