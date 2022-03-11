@@ -1,5 +1,4 @@
 /*
- * Copyright (C) 2017 AospExtended ROM
  * Copyright (C) 2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,49 +15,47 @@
  */
 package com.evolution.settings.fragments;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.provider.Settings;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceGroup;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.PreferenceViewHolder;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto;
-
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class HeadsUpSettings extends SettingsPreferenceFragment implements
+public class StatusBarLogo extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.evolution_settings_heads_up);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+        addPreferencesFromResource(R.xml.evolution_settings_status_bar_logo);
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.EVOLVER;
     }
 
     @Override
@@ -66,14 +63,9 @@ public class HeadsUpSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVOLVER;
-    }
-
     /**
      * For Search.
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_heads_up);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_status_bar_logo);
 }
