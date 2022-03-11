@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2022 The Evolution X Project
+ * Copyright (C) 2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ import com.android.settingslib.search.SearchIndexable;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class PulseSettings extends SettingsPreferenceFragment implements
+public class Pulse extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = PulseSettings.class.getSimpleName();
+    private static final String TAG = Pulse.class.getSimpleName();
 
     private static final String AMBIENT_PULSE_ENABLED_KEY = "ambient_pulse_enabled";
     private static final String LOCKSCREEN_PULSE_ENABLED_KEY = "lockscreen_pulse_enabled";

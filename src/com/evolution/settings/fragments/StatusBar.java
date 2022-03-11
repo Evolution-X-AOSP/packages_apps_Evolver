@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2022 The Evolution X Project
+ * Copyright (C) 2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.view.View;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
@@ -38,47 +39,35 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.fragments.Clock;
 import com.evolution.settings.preference.SecureSettingSwitchPreference;
+import com.evolution.settings.preference.SystemSettingListPreference;
 import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class StatusbarSettings extends SettingsPreferenceFragment implements
+public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String COMBINED_STATUSBAR_ICONS = "show_combined_status_bar_signal_icons";
     private static final String CONFIG_RESOURCE_NAME = "flag_combined_status_bar_signal_icons";
-    private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
-    private static final String KEY_VOWIFI_ICON_STYLE = "vowifi_icon_style";
-    private static final String KEY_VOLTE_VOWIFI_OVERRIDE = "volte_vowifi_override";
+    private static final String KEY_SHOW_VOLTE = "show_volte_icon";
+    private static final String KEY_SHOW_VOWIFI = "show_vowifi_icon";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
     private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
     private static final String KEY_USE_OLD_MOBILETYPE = "use_old_mobiletype";
+    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
-    private static final String PREF_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-    private static final String PREF_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-    private static final String LEFT_BATTERY_TEXT = "do_left_battery_text";
 
-    private static final int BATTERY_STYLE_PORTRAIT = 0;
-    private static final int BATTERY_STYLE_TEXT = 4;
-    private static final int BATTERY_STYLE_HIDDEN = 5;
-    private static final int BATTERY_PERCENT_HIDDEN = 0;
-    //private static final int BATTERY_PERCENT_SHOW_INSIDE = 1;
-    //private static final int BATTERY_PERCENT_SHOW_OUTSIDE = 2;
-
-    private ListPreference mBatteryPercent;
-    private ListPreference mBatteryStyle;
-    private SwitchPreference mOverride;
+    private SecureSettingSwitchPreference mCombinedIcons;
     private SwitchPreference mShowRoaming;
     private SwitchPreference mShowFourg;
     private SwitchPreference mDataDisabled;
     private SwitchPreference mOldMobileType;
-    private SystemSettingSeekBarPreference mVolteIconStyle;
-    private SystemSettingSeekBarPreference mVowifiIconStyle;
-    private SecureSettingSwitchPreference mCombinedIcons;
-    private SystemSettingSwitchPreference mLeftBatteryText;
-    private int mBatteryPercentValue;
+    private SwitchPreference mShowVolte;
+    private SwitchPreference mShowVowifi;
+    private SystemSettingListPreference mStatusBarClock;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -110,77 +99,36 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
         mCombinedIcons.setChecked(enabled);
         mCombinedIcons.setOnPreferenceChangeListener(this);
 
-        int batterystyle = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
-
-        mBatteryStyle = (ListPreference) findPreference(PREF_STATUS_BAR_BATTERY_STYLE);
-        mBatteryStyle.setValue(String.valueOf(batterystyle));
-        mBatteryStyle.setSummary(mBatteryStyle.getEntry());
-        mBatteryStyle.setOnPreferenceChangeListener(this);
-
-        mBatteryPercentValue = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, BATTERY_PERCENT_HIDDEN, UserHandle.USER_CURRENT);
-        mBatteryPercent = (ListPreference) findPreference(PREF_STATUS_BAR_SHOW_BATTERY_PERCENT);
-        mBatteryPercent.setValue(String.valueOf(mBatteryPercentValue));
-        mBatteryPercent.setSummary(mBatteryPercent.getEntry());
-        mBatteryPercent.setOnPreferenceChangeListener(this);
-        mBatteryPercent.setEnabled(
-                batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
-
-        mLeftBatteryText = (SystemSettingSwitchPreference) findPreference(LEFT_BATTERY_TEXT);
-        mLeftBatteryText.setEnabled(
-                batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
-
-        mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
-        mVowifiIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOWIFI_ICON_STYLE);
-        mOverride = (SwitchPreference) findPreference(KEY_VOLTE_VOWIFI_OVERRIDE);
+        mShowVolte = (SwitchPreference) findPreference(KEY_SHOW_VOLTE);
+        mShowVowifi = (SwitchPreference) findPreference(KEY_SHOW_VOWIFI);
         mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
         mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
         mDataDisabled = (SwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
         mOldMobileType = (SwitchPreference) findPreference(KEY_USE_OLD_MOBILETYPE);
 
         if (!EvolutionUtils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(mVolteIconStyle);
-            prefScreen.removePreference(mVowifiIconStyle);
-            prefScreen.removePreference(mOverride);
+            prefScreen.removePreference(mShowVolte);
+            prefScreen.removePreference(mShowVowifi);
             prefScreen.removePreference(mShowRoaming);
             prefScreen.removePreference(mShowFourg);
             prefScreen.removePreference(mDataDisabled);
             prefScreen.removePreference(mOldMobileType);
-        } else {
-            boolean mConfigUseOldMobileType = mContext.getResources().getBoolean(
-                    com.android.internal.R.bool.config_useOldMobileIcons);
-            boolean showing = Settings.System.getIntForUser(resolver,
-                    Settings.System.USE_OLD_MOBILETYPE,
-                    mConfigUseOldMobileType ? 1 : 0, UserHandle.USER_CURRENT) != 0;
-            mOldMobileType.setChecked(showing);
+        }
+
+        mStatusBarClock =
+                (SystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
+
+        // Adjust status bar preferences for RTL
+        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
+            mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
         }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mBatteryStyle) {
-            int batterystyle = Integer.parseInt((String) newValue);
-            Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, batterystyle,
-                UserHandle.USER_CURRENT);
-            int index = mBatteryStyle.findIndexOfValue((String) newValue);
-            mBatteryStyle.setSummary(mBatteryStyle.getEntries()[index]);
-            mBatteryPercent.setEnabled(
-                    batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
-            mLeftBatteryText.setEnabled(
-                    batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
-            return true;
-        } else if (preference == mBatteryPercent) {
-            mBatteryPercentValue = Integer.parseInt((String) newValue);
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, mBatteryPercentValue,
-                    UserHandle.USER_CURRENT);
-            int index = mBatteryPercent.findIndexOfValue((String) newValue);
-            mBatteryPercent.setSummary(mBatteryPercent.getEntries()[index]);
-            return true;
-        } else if (preference == mCombinedIcons) {
+        if (preference == mCombinedIcons) {
             boolean enabled = (boolean) newValue;
             Settings.Secure.putInt(resolver,
                     COMBINED_STATUSBAR_ICONS, enabled ? 1 : 0);
