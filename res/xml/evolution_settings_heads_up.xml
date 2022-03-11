@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2014 The CyanogenMod Project
+     Copyright (C) 2019-2022 Evolution X
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,7 +14,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/heads_up_notifications">
 
@@ -58,7 +60,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/heads_up_blacklist_title"
+        android:title="@string/heads_up_blocklist_title"
         android:key="blacklist_applications"
         android:dependency="heads_up_notifications_enabled">
 
@@ -66,7 +68,7 @@
             android:key="add_blacklist_packages"
             android:icon="@drawable/ic_menu_add_activated_tint"
             android:title="@string/add_heads_up_package"
-            android:summary="@string/add_heads_up_blacklist_summary" />
+            android:summary="@string/add_heads_up_blocklist_summary" />
 
     </PreferenceCategory>
 
