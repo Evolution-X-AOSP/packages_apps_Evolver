@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2022 The Evolution X Project
+ * Copyright (C) 2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,20 +49,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class LockscreenSettings extends SettingsPreferenceFragment implements
+public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String FINGERPRINT_CATEGORY = "lockscreen_fingerprint_category";
-    private static final String FINGERPRINT_SUCCESS_VIB = "fingerprint_success_vib";
-    private static final String FINGERPRINT_ERROR_VIB = "fingerprint_error_vib";
     private static final String UDFPS_CATEGORY = "udfps_category";
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFingerprintCategory;
     private PreferenceCategory mUdfpsCategory;
-    private SwitchPreference mFingerprintSuccessVib;
-    private SwitchPreference mFingerprintErrorVib;
 
     static final int MODE_DISABLED = 0;
     static final int MODE_NIGHT = 1;
@@ -83,22 +79,11 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
         mFingerprintCategory = (PreferenceCategory) findPreference(FINGERPRINT_CATEGORY);
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mFingerprintSuccessVib = (SwitchPreference) findPreference(FINGERPRINT_SUCCESS_VIB);
-        mFingerprintErrorVib = (SwitchPreference) findPreference(FINGERPRINT_ERROR_VIB);
         if (mPm.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT) &&
                  mFingerprintManager != null) {
-            if (!mFingerprintManager.isHardwareDetected()){
+            if (!mFingerprintManager.isHardwareDetected()) {
                 prefSet.removePreference(mFingerprintCategory);
-            } else {
-                mFingerprintSuccessVib.setChecked((Settings.System.getInt(getContentResolver(),
-                        Settings.System.FP_SUCCESS_VIBRATE, 1) == 1));
-                mFingerprintSuccessVib.setOnPreferenceChangeListener(this);
-                mFingerprintErrorVib.setChecked((Settings.System.getInt(getContentResolver(),
-                        Settings.System.FP_ERROR_VIBRATE, 1) == 1));
-                mFingerprintErrorVib.setOnPreferenceChangeListener(this);
             }
-        } else {
-            prefSet.removePreference(mFingerprintCategory);
         }
 
         mUdfpsCategory = findPreference(UDFPS_CATEGORY);
@@ -142,17 +127,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mFingerprintSuccessVib) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.FP_SUCCESS_VIBRATE, value ? 1 : 0);
-            return true;
-        } else if (preference == mFingerprintErrorVib) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.FP_ERROR_VIBRATE, value ? 1 : 0);
-            return true;
-        }
+        ContentResolver resolver = getActivity().getContentResolver();
         return false;
     }
 

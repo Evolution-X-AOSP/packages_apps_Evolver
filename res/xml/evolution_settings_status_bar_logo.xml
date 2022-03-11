@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2017, 2018, 2019 AICP
+     Copyright (C) 2019-2022 Evolution X
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/status_bar_logo_title">
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="status_bar_logo"
+        android:title="@string/status_bar_logo_title"
+        android:summary="@string/status_bar_logo_summary"
+        android:defaultValue="false" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="status_bar_logo_color_accent"
+        android:title="@string/status_bar_logo_color_accent_title"
+        android:disableDependentsState="true"
+        android:dependency="status_bar_logo"
+        android:defaultValue="true" />
+
+    <com.evolution.settings.preference.SystemSettingIntListPreference
+        android:key="status_bar_logo_position"
+        android:title="@string/status_bar_logo_position_title"
+        android:entries="@array/status_bar_logo_position_entries"
+        android:entryValues="@array/status_bar_logo_position_values"
+        android:dependency="status_bar_logo"
+        android:defaultValue="0" />
+
+    <com.evolution.settings.preference.SystemSettingIntListPreference
+        android:key="status_bar_logo_style"
+        android:title="@string/status_bar_logo_style_title"
+        android:entries="@array/status_bar_logo_style_entries"
+        android:entryValues="@array/status_bar_logo_style_values"
+        android:dependency="status_bar_logo"
+        android:defaultValue="0" />
+</PreferenceScreen>
