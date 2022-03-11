@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2017 AospExtended ROM
- * Copyright (C) 2019-2022 The Evolution X Project
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,8 @@ import java.util.List;
 import java.util.Map;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class HeadsUpSettings extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
+public class HeadsUpSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
 
     private static final int DIALOG_STOPLIST_APPS = 0;
     private static final int DIALOG_BLACKLIST_APPS = 1;
@@ -81,8 +81,6 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Get launch-able applications
         addPreferencesFromResource(R.xml.evolution_settings_heads_up);
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
@@ -169,11 +167,6 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
     public void onResume() {
         super.onResume();
         refreshCustomApplicationPrefs();
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVOLVER;
     }
 
     @Override
@@ -415,6 +408,11 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
         }
         Settings.System.putString(getContentResolver(),
                 setting, value);
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.EVOLVER;
     }
 
     /**
