@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 The Evolution X Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     Copyright (C) 2019-2022 Evolution X
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- The Evolver -->
@@ -191,6 +180,8 @@
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">VoWiFi アイコン</string>
     <string name="vowifi_icon_summary">利用可能な場合に VoWiFi アイコンを表示する</string>
+    <string name="volte_vowifi_override_title">VoWiFi の上書き</string>
+    <string name="volte_vowifi_override_summary">VoWiFi が利用可能な場合は VoLTE を非表示にする</string>
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">古いモバイルアイコンを使用</string>
     <string name="use_old_mobiletype_summary">電波強度表示の上に通信種別を表示する</string>
@@ -203,33 +194,18 @@
     <string name="torch_long_press_power_timeout_2min">2分</string>
     <string name="torch_long_press_power_timeout_5min">5分</string>
     <string name="torch_long_press_power_timeout_10min">10分</string>
-    <!-- Battery Settings -->
-    <string name="battery_settings_title">バッテリー設定</string>
-    <!-- Battery Styles -->
+    <!-- Battery percentage -->
     <string name="battery_style_category_title">バッテリースタイル</string>
-    <string name="battery_percent_title">バッテリー残量</string>
-    <!-- Status bar - Battery -->
-    <string name="status_bar_battery_style_title">バッテリーのスタイル</string>
-    <string name="status_bar_battery_style_icon_portrait">縦アイコン (既定)</string>
-    <string name="status_bar_battery_style_icon_rlandscape">水平アイコン (右)</string>
-    <string name="status_bar_battery_style_icon_landscape">水平アイコン (左)</string>
-    <string name="status_bar_battery_style_circle">円</string>
-    <string name="status_bar_battery_style_dotted_circle">円 (点線)</string>
-    <string name="status_bar_battery_style_filled_circle">円 (塗り潰し)</string>
-    <string name="status_bar_battery_style_big_circle">大きな円</string>
-    <string name="status_bar_battery_style_big_dotted_circle">大きな点線の円</string>
-    <string name="status_bar_battery_style_text">文字</string>
-    <string name="status_bar_battery_style_hidden">非表示</string>
-    <string name="left_battery_text_title">左側にバッテリー残量</string>
-    <string name="left_battery_text_summary">バッテリーアイコンの左側に文字を表示する</string>
-    <!-- Status bar - Battery percentage -->
     <string name="status_bar_battery_percentage_title">バッテリー残量</string>
     <string name="status_bar_battery_percentage_default">非表示 (既定)</string>
-    <string name="status_bar_battery_percentage_text_inside">アイコンの中</string>
     <string name="status_bar_battery_percentage_text_next">外側</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">バッテリーの予想残り時間</string>
-    <string name="battery_estimate_summary">利用可能な場合はバッテリーの予想残り時間を表示する</string>
+    <string name="status_bar_battery_percentage_text_inside">アイコンの中</string>
+    <!-- Status bar battery style-->
+    <string name="status_bar_battery_style_title">バッテリーのスタイル</string>
+    <string name="status_bar_battery_style_port">縦</string>
+    <string name="status_bar_battery_style_circle">円</string>
+    <string name="status_bar_battery_style_dotted_circle">円 (点線)</string>
+    <string name="status_bar_battery_style_text">文字</string>
     <!-- QS rows and columns -->
     <string name="qs_columns_rows_category_title">列数と行数</string>
     <string name="qs_rows_columns_title">クイック設定の行数と列数</string>
@@ -482,6 +458,7 @@
     <string name="powermenu_users">ユーザー</string>
     <string name="powermenu_logout">ログアウト</string>
     <string name="powermenu_emergency">緊急通報</string>
+    <string name="powermenu_device_controls">端末の制御</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Doze の明るさ設定</string>
     <string name="doze_brightness_force_title">強制的な明るさの値</string>
@@ -923,7 +900,8 @@
     <string name="volume_steps_reset">リセット</string>
     <!-- QS battery estimates -->
     <string name="qs_show_battery_estimate_title">予想稼働時間</string>
-    <string name="qs_show_battery_estimate_summary">アイコンの横にバッテリーの予想稼働時間を表示する</string>
+    <string name="qs_show_battery_estimate_summary_on">バッテリー予想稼働時間をクイック設定パネルに表示する</string>
+    <string name="qs_show_battery_estimate_summary_off">バッテリー予想稼働時間をクイック設定パネルに表示しない</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">キャリアラベル</string>
     <string name="carrier_label_settings_summary">キャリアラベルを編集する</string>
@@ -1043,4 +1021,6 @@
     <!-- Unlock higher quality streams for specific apps -->
     <string name="use_stream_spoof_title">高品質ストリーム</string>
     <string name="use_stream_spoof_summary">お使いの端末は Pixel 6 Pro として認識され、Amazon Prime、Disney+、Hotstar、Netflix をより高品質にストリーミングできるようになります。</string>
+    <!-- NavBar Inverse -->
+    <string name="navigation_bar_inverse_title">3ボタンナビゲーションバーの反転</string>
 </resources>

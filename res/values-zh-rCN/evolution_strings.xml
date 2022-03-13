@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 The Evolution X Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     Copyright (C) 2019-2022 Evolution X
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- The Evolver -->
@@ -191,6 +180,8 @@
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">VoWiFi 图标</string>
     <string name="vowifi_icon_summary">当 VoWiFi 可用时显示该图标</string>
+    <string name="volte_vowifi_override_title">VoWiFi 覆盖</string>
+    <string name="volte_vowifi_override_summary">当 VoWiFi 可用时隐藏 VoLTE</string>
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">使用旧式移动数据图标</string>
     <string name="use_old_mobiletype_summary">在信号指示器顶部显示移动数据图标</string>
@@ -203,33 +194,18 @@
     <string name="torch_long_press_power_timeout_2min">2 分钟</string>
     <string name="torch_long_press_power_timeout_5min">5 分钟</string>
     <string name="torch_long_press_power_timeout_10min">10 分钟</string>
-    <!-- Battery Settings -->
-    <string name="battery_settings_title">电池设置选项</string>
-    <!-- Battery Styles -->
-    <string name="battery_style_category_title">电池样式</string>
-    <string name="battery_percent_title">电量百分比</string>
-    <!-- Status bar - Battery -->
+    <!-- Battery percentage -->
+    <string name="battery_style_category_title">电池图标</string>
+    <string name="status_bar_battery_percentage_title">电量百分比</string>
+    <string name="status_bar_battery_percentage_default">隐藏</string>
+    <string name="status_bar_battery_percentage_text_next">图标旁</string>
+    <string name="status_bar_battery_percentage_text_inside">图标内</string>
+    <!-- Status bar battery style-->
     <string name="status_bar_battery_style_title">电池样式</string>
-    <string name="status_bar_battery_style_icon_portrait">竖置图标 (默认)</string>
-    <string name="status_bar_battery_style_icon_rlandscape">横向图标 (右侧)</string>
-    <string name="status_bar_battery_style_icon_landscape">横向图标 (左侧)</string>
+    <string name="status_bar_battery_style_port">纵向</string>
     <string name="status_bar_battery_style_circle">圆环</string>
     <string name="status_bar_battery_style_dotted_circle">虚线圆环</string>
-    <string name="status_bar_battery_style_filled_circle">实心圆环</string>
-    <string name="status_bar_battery_style_big_circle">大圆环</string>
-    <string name="status_bar_battery_style_big_dotted_circle">大虚线圆环</string>
     <string name="status_bar_battery_style_text">文本</string>
-    <string name="status_bar_battery_style_hidden">隐藏</string>
-    <string name="left_battery_text_title">电量左侧文本</string>
-    <string name="left_battery_text_summary">将电池文本放在电池图标左上</string>
-    <!-- Status bar - Battery percentage -->
-    <string name="status_bar_battery_percentage_title">电量百分比</string>
-    <string name="status_bar_battery_percentage_default">隐藏 (默认值)</string>
-    <string name="status_bar_battery_percentage_text_inside">图标内</string>
-    <string name="status_bar_battery_percentage_text_next">外部</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">电量预估</string>
-    <string name="battery_estimate_summary">显示电量可用时间</string>
     <!-- QS rows and columns -->
     <string name="qs_columns_rows_category_title">快速设置列和行</string>
     <string name="qs_rows_columns_title">快速设置行和列</string>
@@ -482,6 +458,7 @@
     <string name="powermenu_users">用户</string>
     <string name="powermenu_logout">注销</string>
     <string name="powermenu_emergency">紧急情况</string>
+    <string name="powermenu_device_controls">设备控制</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Doze 亮度配置</string>
     <string name="doze_brightness_force_title">强制亮度值</string>
@@ -923,7 +900,8 @@
     <string name="volume_steps_reset">重置</string>
     <!-- QS battery estimates -->
     <string name="qs_show_battery_estimate_title">电量预估</string>
-    <string name="qs_show_battery_estimate_summary">在图标旁边显示预计剩余电量使用时间</string>
+    <string name="qs_show_battery_estimate_summary_on">在快速设置中显示电池电量估计</string>
+    <string name="qs_show_battery_estimate_summary_off">在快速设置中隐藏电池估计值</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">运营商名称</string>
     <string name="carrier_label_settings_summary">自定义运营商名称</string>
@@ -1043,4 +1021,6 @@
     <!-- Unlock higher quality streams for specific apps -->
     <string name="use_stream_spoof_title">解锁更高质量的流</string>
     <string name="use_stream_spoof_summary">将您的设备标为 Pixel 6 Pro 来解锁亚马逊 Prime、Disney+、Hotstar 和 Netflix 上更高质量的流</string>
+    <!-- NavBar Inverse -->
+    <string name="navigation_bar_inverse_title">反转三按钮导航栏</string>
 </resources>

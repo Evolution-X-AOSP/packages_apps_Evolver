@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 The Evolution X Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     Copyright (C) 2019-2022 Evolution X
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- The Evolver -->
@@ -191,6 +180,8 @@
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">Ícone VoWiFi</string>
     <string name="vowifi_icon_summary">Mostrar ícone VoWIFI quando disponível</string>
+    <string name="volte_vowifi_override_title">Sobrepor VoWiFi</string>
+    <string name="volte_vowifi_override_summary">Ocultar VoLTE quando o VoWiFi estiver disponível</string>
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Usar ícones de dados móveis no estilo antigo</string>
     <string name="use_old_mobiletype_summary">Mostrar o indicador de rede móvel no topo da barra de sinal</string>
@@ -203,33 +194,18 @@
     <string name="torch_long_press_power_timeout_2min">2 minutos</string>
     <string name="torch_long_press_power_timeout_5min">5 minutos</string>
     <string name="torch_long_press_power_timeout_10min">10 minutos</string>
-    <!-- Battery Settings -->
-    <string name="battery_settings_title">Configurações da Bateria</string>
-    <!-- Battery Styles -->
-    <string name="battery_style_category_title">Opções da bateria</string>
-    <string name="battery_percent_title">Porcentagem da bateria</string>
-    <!-- Status bar - Battery -->
-    <string name="status_bar_battery_style_title">Estilo do ícone da bateria</string>
-    <string name="status_bar_battery_style_icon_portrait">Ícone retrato (padrão)</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Ícone paisagem (direita)</string>
-    <string name="status_bar_battery_style_icon_landscape">Ícone paisagem (esquerda)</string>
-    <string name="status_bar_battery_style_circle">Círculo</string>
-    <string name="status_bar_battery_style_dotted_circle">Círculo (pontilhado)</string>
-    <string name="status_bar_battery_style_filled_circle">Círculo (preenchido)</string>
-    <string name="status_bar_battery_style_big_circle">Círculo grande</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Círculo grande pontilhado</string>
-    <string name="status_bar_battery_style_text">Texto</string>
-    <string name="status_bar_battery_style_hidden">Oculto</string>
-    <string name="left_battery_text_title">Texto da bateria no lado esquerdo</string>
-    <string name="left_battery_text_summary">Mostrar a porcentagem da bateria à esquerda do ícone</string>
-    <!-- Status bar - Battery percentage -->
+    <!-- Battery percentage -->
+    <string name="battery_style_category_title">Ícone da bateria</string>
     <string name="status_bar_battery_percentage_title">Porcentagem da bateria</string>
     <string name="status_bar_battery_percentage_default">Oculto (padrão)</string>
+    <string name="status_bar_battery_percentage_text_next">Ao lado do ícone</string>
     <string name="status_bar_battery_percentage_text_inside">Dentro do ícone</string>
-    <string name="status_bar_battery_percentage_text_next">Fora do ícone</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">Estimativa de bateria</string>
-    <string name="battery_estimate_summary">Mostrar estimativas de duração restante da bateria quando disponível</string>
+    <!-- Status bar battery style-->
+    <string name="status_bar_battery_style_title">Estilo do ícone da bateria</string>
+    <string name="status_bar_battery_style_port">Retrato</string>
+    <string name="status_bar_battery_style_circle">Círculo</string>
+    <string name="status_bar_battery_style_dotted_circle">Círculo (pontilhado)</string>
+    <string name="status_bar_battery_style_text">Texto</string>
     <!-- QS rows and columns -->
     <string name="qs_columns_rows_category_title">Colunas e linhas das configurações rápidas</string>
     <string name="qs_rows_columns_title">Linhas e colunas das configurações rápidas</string>
@@ -423,7 +399,7 @@
     <string name="pulse_ambient_light_title">Iluminação nas bordas da tela ambiente</string>
     <string name="pulse_ambient_light_summary">Pulso de luz nas bordas da tela ambiente ao receber novas notificações</string>
     <string name="ambient_notification_light_enabled_title">Mostrar na tela ambiente</string>
-    <string name="ambient_notification_light_enabled_summary">Sempre mostrar na tela ambiente</string>
+    <string name="ambient_notification_light_enabled_summary">Mostrar iluminação na tela ambiente sempre ativa</string>
     <string name="ambient_notification_light_hide_aod_title">Ocultar outros conteúdos na tela ambiente</string>
     <string name="ambient_notification_light_hide_aod_summary">Ocultar outros conteúdos na tela ambiente quando o pulso de luz é mostrado</string>
     <string name="ambient_notification_light_duration_title">Duração</string>
@@ -441,7 +417,7 @@
     <string name="ambient_notification_color_mode_title">Modo de cor</string>
     <string name="ambient_notification_color_mode_accent">Cor de destaque</string>
     <string name="ambient_notification_color_mode_wall">Cor de destaque do papel de parede</string>
-    <string name="ambient_notification_color_mode_notification">Cor do ícone da notificação</string>
+    <string name="ambient_notification_color_mode_notification">Cor do ícone de notificação</string>
     <string name="ambient_notification_color_mode_custom">Cor personalizada</string>
     <string name="ambient_notification_light_color_title">Cor personalizada</string>
     <string name="pulse_ambient_light_show_always_title">Sempre mostrar</string>
@@ -482,6 +458,7 @@
     <string name="powermenu_users">Usuários</string>
     <string name="powermenu_logout">Sair</string>
     <string name="powermenu_emergency">Emergência</string>
+    <string name="powermenu_device_controls">Controle do dispositivo</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Configuração de brilho da tela ambiente</string>
     <string name="doze_brightness_force_title">Forçar valores de brilho</string>
@@ -592,7 +569,7 @@
     <string name="always_on_display_schedule_title">Cronograma da tela ambiente sempre ativa</string>
     <string name="always_on_display_schedule_sunset">Pôr do sol</string>
     <string name="always_on_display_schedule_sunrise">Nascer do sol</string>
-    <string name="always_on_display_schedule_mixed_sunset">Ativado do anoitecer ao amanhecer</string>
+    <string name="always_on_display_schedule_mixed_sunset">Ativado do anoitecer até um tempo específico</string>
     <string name="always_on_display_schedule_mixed_sunrise">Ativado do tempo específico até o amanhecer</string>
     <!-- Settings dashboard icon style -->
     <string name="theming_settings_dashboard_icons_title">Ícones do painel de configurações</string>
@@ -923,7 +900,8 @@
     <string name="volume_steps_reset">Redefinir</string>
     <!-- QS battery estimates -->
     <string name="qs_show_battery_estimate_title">Estimativa de bateria</string>
-    <string name="qs_show_battery_estimate_summary">Mostrar a duração estimada da bateria ao lado do ícone</string>
+    <string name="qs_show_battery_estimate_summary_on">Mostrar estimativa da bateria</string>
+    <string name="qs_show_battery_estimate_summary_off">Ocultar estimativa da bateria</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Rótulo da operadora</string>
     <string name="carrier_label_settings_summary">Personalizar o texto da operadora</string>
@@ -948,7 +926,7 @@
     <string name="monet_engine_custom_color_title">Usar cor personalizada</string>
     <string name="monet_engine_custom_color_summary">Usar cor personalizada para o motor de temas Monet em vez de cores do papel de parede</string>
     <string name="monet_engine_color_override_title">Cor personalizada</string>
-    <string name="monet_engine_white_luminance_user_title">Tonalidade clara</string>
+    <string name="monet_engine_white_luminance_user_title">Escala de luz</string>
     <string name="monet_engine_accurate_shades_title">Usar tons precisos</string>
     <string name="monet_engine_chroma_factor_title">Fator Cromático</string>
     <string name="monet_engine_linear_lightness_title">Brilho linear</string>
@@ -1043,4 +1021,6 @@
     <!-- Unlock higher quality streams for specific apps -->
     <string name="use_stream_spoof_title">Streaming com maior qualidade</string>
     <string name="use_stream_spoof_summary">Mascare seu dispositivo como Pixel 6 Pro para desbloquear streaming com maior qualidade no Amazon Prime, Dysney+, Hotstar e Netflix</string>
+    <!-- NavBar Inverse -->
+    <string name="navigation_bar_inverse_title">Inverter a ordem da barra de navegação</string>
 </resources>
