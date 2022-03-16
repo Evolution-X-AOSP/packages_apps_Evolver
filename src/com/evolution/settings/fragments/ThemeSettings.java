@@ -36,10 +36,14 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
+
+import com.evolution.settings.preference.SecureSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,14 +52,33 @@ import java.util.List;
 public class ThemeSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String SYSTEM_BLACK_THEME = "system_black_theme";
+
+    private SecureSettingSwitchPreference mBlackTheme;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.evolution_settings_themes);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mBlackTheme = findPreference(SYSTEM_BLACK_THEME);
+        mBlackTheme.setChecked((Settings.Secure.getInt(resolver,
+                Settings.Secure.SYSTEM_BLACK_THEME, 0) == 1));
+        mBlackTheme.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mBlackTheme) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.Secure.SYSTEM_BLACK_THEME, value ? 1 : 0);
+            EvolutionUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
         return false;
     }
 
