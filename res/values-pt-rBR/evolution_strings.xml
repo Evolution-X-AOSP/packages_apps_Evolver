@@ -30,7 +30,7 @@
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Gestos padrões incluídos no Android</string>
     <string name="dark_ui_mode_summary">Navegue pelas opções de tema escuro</string>
-    <string name="theme_summary">Ajustes no tema Monet</string>
+    <string name="theme_summary">Configurações do tema Monet</string>
     <string name="unsupported_gestures">Habilite a navegação de dois ou três botões para usar este recurso</string>
     <!-- General strings -->
     <string name="ok">Ok</string>
@@ -131,7 +131,7 @@
     <string name="udfps_customization">Personalização da impressão digital</string>
     <string name="udfps_recog_animation">Animação da impressão digital</string>
     <string name="udfps_recog_animation_summary">Exibe uma animação durante a leitura da impressão digital</string>
-    <string name="udfps_recog_animation_effect_title">Efeito de animação da impressão digital</string>
+    <string name="udfps_recog_animation_effect_title">Animação da impressão digital</string>
     <string name="udfps_recog_animation_effect_summary">Escolher efeito de animação</string>
     <string name="udfps_settings_title">Configurações da impressão digital</string>
     <string name="udfps_settings_summary">Configurações para personalizar a impressão digital</string>
@@ -205,15 +205,21 @@
     <string name="status_bar_battery_style_port">Retrato</string>
     <string name="status_bar_battery_style_circle">Círculo</string>
     <string name="status_bar_battery_style_dotted_circle">Círculo (pontilhado)</string>
+    <string name="status_bar_battery_style_filled_circle">Círculo (preenchido)</string>
     <string name="status_bar_battery_style_text">Texto</string>
+    <!-- QS tiles layout direction: vertical or horizontal -->
+    <string name="qs_tile_layout_category_title">Estilo dos blocos</string>
+    <string name="qs_tile_layout_title">Estilo vertical</string>
+    <string name="qs_tile_layout_summary">Mudar para o estilo vertical. O padrão é horizontal</string>
     <!-- QS rows and columns -->
-    <string name="qs_columns_rows_category_title">Colunas e linhas das configurações rápidas</string>
-    <string name="qs_rows_columns_title">Linhas e colunas das configurações rápidas</string>
+    <string name="qs_layout_category_title">Estilo do painel de configurações rápidas</string>
     <string name="qs_rows_portrait_title">Linhas em modo retrato</string>
     <string name="qs_rows_landscape_title">Linhas em modo paisagem</string>
     <string name="qs_columns_portrait_title">Colunas em modo retrato</string>
     <string name="qs_columns_landscape_title">Colunas em modo paisagem</string>
-    <string name="qs_tile_title_visibility_title">Exibir o título do bloco</string>
+    <!-- QS tiles title visibility -->
+    <string name="qs_tile_title_visibility_title">Ocultar títulos dos blocos</string>
+    <string name="qs_tile_title_visibility_summary">Mude para ocultar os títulos dos blocos</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Controle de brilho</string>
     <string name="qs_brightness_slider_title">Mostrar o controle deslizante de brilho</string>
@@ -240,7 +246,7 @@
     <string name="qs_column_rows_settings_title">Painel de configurações rápidas</string>
     <string name="qs_edit_title">Ícone de edição</string>
     <string name="qs_edit_summary">Ativar o ícone de edição no cabeçalho</string>
-    <string name="qs_footer_category_title">Rodapé das configurações rápidas</string>
+    <string name="qs_footer_category">Alertas no rodapé</string>
     <string name="qs_header_category_title">Cabeçalho das configurações rápidas</string>
     <string name="qs_panel_category_title">Painel de configurações rápidas</string>
     <string name="status_bar_quick_qs_pulldown">Mostrar configurações rápidas ao deslizar rápido para baixo</string>
@@ -268,45 +274,49 @@
     <string name="lockscreen_charging_animation_phone">Telefone</string>
     <string name="lockscreen_charging_animation_stack">Pilha</string>
     <string name="lockscreen_charging_animation_wavy">Onda</string>
-    <!-- Status bar clock and date options -->
+    <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Configurações de relógio e data</string>
-    <string name="status_bar_clock">Relógio e data</string>
-    <string name="clock_enabled">Ativado</string>
-    <string name="clock_disabled">Desativado</string>
-    <string name="statusbar_clock_style_title">Posição do relógio e data</string>
-    <string name="statusbar_clock_style_right">Direita</string>
-    <string name="statusbar_clock_style_centre">Centro</string>
-    <string name="statusbar_clock_style_left">Esquerda</string>
-    <string name="status_bar_clock_style_reset">Redefenir cor</string>
-    <string name="status_bar_show_clock_title">Mostrar relógio e data</string>
-    <string name="status_bar_am_pm_title">AM/PM</string>
-    <string name="status_bar_am_pm_info">O relógio estilo 24 horas está ativado</string>
-    <string name="clock_seconds_display">Mostrar segundos</string>
-    <string name="enable_clock_weekday">Dia da semana</string>
-    <string name="enable_clock_weekday_summary">Abreviar dia da semana antes do relógio</string>
-    <string name="dont_show">Não mostrar</string>
-    <string name="clock_date_display">Data</string>
-    <string name="clock_date_display_summary">Exibir data personalizada antes do relógio</string>
-    <string name="clock_date_style">Estilo da data</string>
-    <string name="clock_date_format">Formato da data</string>
-    <string name="clock_date_string_edittext_title">Deve estar em formato de data, por exemplo: DD/MM/AA</string>
-    <string name="clock_date_string_edittext_summary">Insira o texto</string>
-    <string name="am_pm_clock_normal">Tamanho da fonte normal</string>
-    <string name="am_pm_clock_small">Tamanho da fonte pequena</string>
-    <string name="am_pm_clock_none">Não mostrar</string>
-    <string name="clock_date_display_none">Não mostrar</string>
-    <string name="clock_date_display_small">Tamanho de fonte pequeno</string>
-    <string name="clock_date_display_normal">Tamanho de fonte normal</string>
-    <string name="clock_date_style_normal">Normal</string>
-    <string name="clock_date_style_lowercase">Letras minúsculas</string>
-    <string name="clock_date_style_uppercase">Letras maiúsculas</string>
-    <string name="clock_date_right">À direita do relógio</string>
-    <string name="clock_date_left">À esquerda do relógio</string>
-    <string name="clock_date_position">Posição da data</string>
+    <string name="status_bar_clock_summary">Personalize o relógio e a data</string>
+    <string name="status_bar_clock_seconds_title">Mostrar segundos</string>
+    <string name="status_bar_clock_seconds_summary">Mostrar segundos ao lado do relógio na barra de status</string>
+    <string name="status_bar_clock_position_title">Posição do relógio</string>
+    <string name="status_bar_clock_position_right">Direita</string>
+    <string name="status_bar_clock_position_left">Esquerda</string>
+    <string name="status_bar_clock_position_center">Centro</string>
+    <string name="status_bar_clock_position_hidden">Oculto</string>
     <string name="status_bar_clock_auto_hide_title">Ocultar relógio automaticamente</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Ocultar relógio quando na tela inicial</string>
     <string name="status_bar_clock_auto_hide_summary">Ocultar e mostrar o relógio em intervalos de tempo regulares</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Duração do ocultamento</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Segundos para manter o relógio oculto</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Duração da exibição</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Segundos antes de ocultar o relógio</string>
+    <string name="status_bar_am_pm_title">AM/PM</string>
+    <string name="status_bar_am_pm_info">O relógio estilo 24 horas está ativado</string>
+    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_small">Pequeno</string>
+    <string name="status_bar_am_pm_hidden">Oculto</string>
+    <string name="status_bar_date_title">Data</string>
+    <string name="status_bar_date_none">Oculto</string>
+    <string name="status_bar_date_small">Pequeno</string>
+    <string name="status_bar_date_normal">Normal</string>
+    <string name="status_bar_date_format_title">Formato da data</string>
+    <string name="status_bar_date_style">Estilo da data</string>
+    <string name="status_bar_date_style_normal">Normal</string>
+    <string name="status_bar_date_style_lowercase">Letras minúsculas</string>
+    <string name="status_bar_date_style_uppercase">Letras maiúsculas</string>
+    <string name="status_bar_date_format_custom">Formato java personalizado</string>
+    <string name="status_bar_date_string_edittext_title">Deve estar em formato de data, por exemplo: DD/MM/AA</string>
+    <string name="status_bar_date_string_edittext_summary">Insira o texto</string>
+    <string name="clock_date_position">Posição da data</string>
+    <string name="clock_date_right">À direita do relógio</string>
+    <string name="clock_date_left">À esquerda do relógio</string>
+    <!-- QS clock -->
+    <string name="qs_clock_title">Relógio</string>
+    <string name="qs_clock_summary">Mostrar relógio no cabeçalho das configurações rápidas</string>
+    <!-- QS date -->
+    <string name="qs_date_title">Data</string>
+    <string name="qs_date_summary">Mostrar data no cabeçalho das configurações rápidas</string>
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrar ao tocar</string>
     <string name="quick_settings_vibrate_summary">Vibrar ao tocar nas configurações rápidas</string>
@@ -459,6 +469,9 @@
     <string name="powermenu_logout">Sair</string>
     <string name="powermenu_emergency">Emergência</string>
     <string name="powermenu_device_controls">Controle do dispositivo</string>
+    <string name="powermenu_bugreport">Relatório de bugs</string>
+    <string name="powermenu_assist">Assistente</string>
+    <string name="powermenu_voice_assist">Assistente de voz</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Configuração de brilho da tela ambiente</string>
     <string name="doze_brightness_force_title">Forçar valores de brilho</string>
@@ -543,8 +556,10 @@
     <string name="qs_datausage_monthly">Uso mensal</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Nível de desfoque da capa do álbum</string>
-    <string name="show_lockscreen_media_art_title">Mostrar arte da mídia</string>
     <string name="lockscreen_media_art_options_title">Arte do álbum na tela de bloqueio</string>
+    <!-- Media art -->
+    <string name="media_art_title">Arte de mídia</string>
+    <string name="media_art_summary">Mostrar capa do álbum quando disponível</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Bloquear sensores por pacote</string>
     <string name="sensor_block_summary">Bloquear o acesso de alguns apps a certos sensores para poupar bateria</string>
@@ -692,6 +707,7 @@
     <string name="volume_key_cursor_control_on_reverse">Tecla de volume para Cima/Baixo move o cursor para Direita/Esquerda</string>
     <string name="swap_volume_buttons_title">Reorientar</string>
     <string name="swap_volume_buttons_summary">Inverter os botões de volume quando virar a tela</string>
+    <string name="volume_panel_on_left_title">Mostrar painel de volume à esquerda</string>
     <string name="volume_panel_on_left_summary">Mostrar o painel de volume no lado esquerdo da tela</string>
     <string name="extras_title">Extras</string>
     <string name="click_partial_screenshot_title">Clique para captura parcial de tela</string>
@@ -769,9 +785,6 @@
     <string name="stock_statusbar_in_hide_summary">Usar a altura padrão da barra de status ao esconder recorte</string>
     <string name="display_hide_notch_title">Ocultar recorte da tela</string>
     <string name="display_hide_notch_summary">Desativar preenchimento preto para o corte de tela (notch)</string>
-    <!-- Notch: Full screen apps -->
-    <string name="display_cutout_force_fullscreen_title">Aplicativos em tela cheia</string>
-    <string name="display_cutout_force_fullscreen_summary">Forçar aplicativos a ignorar o espaço do notch</string>
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Ticker</string>
     <string name="ticker_screen_summary">Mostrar notificações estilo ticker na barra de status</string>
@@ -830,11 +843,13 @@
     <!-- Status Bar Lyric -->
     <string name="status_bar_show_lyric_title">Recurso de letras na barra de status</string>
     <string name="status_bar_show_lyric_summary">Mostrar letras na barra de status (requer suporte ao aplicativo e reinicialização da SystemUI)</string>
-    <!-- Notification Media Options -->
-    <string name="media_category">Editar opções de notificação</string>
+    <!-- Media artwork -->
+    <string name="media_category">Player de mídia</string>
     <string name="artwork_media_background_title">Arte de fundo do player de mídia</string>
-    <string name="artwork_media_background_summary">Definir arte de mídia como fundo do player</string>
-    <string name="artwork_media_fade_level_title">Nível do desvanecimento da arte</string>
+    <string name="artwork_media_background_summary">Definir a capa do álbum como fundo do player de mídia</string>
+    <string name="artwork_media_background_enable_blur_title">Desfocar o fundo do player de mídia</string>
+    <string name="artwork_media_background_blur_radius_title">Nível de desfoque do player de mídia</string>
+    <string name="artwork_media_background_alpha_title">Transparência do player de mídia</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">Estilo arredondado para diálogos do sistema</string>
     <string name="rounded_slight">Pouco</string>
@@ -883,6 +898,13 @@
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Avisos no rodapé das configurações rápidas</string>
     <string name="qs_footer_warnings_summary">Exibir um aviso na parte inferior do painel de configurações rápidas quando a rede é monitorada por aplicativos externos ou vpn</string>
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">Ícone da conta de usuário</string>
+    <string name="qs_footer_users_icon_summary">Mostrar ícone de usuário quando disponível</string>
+    <string name="qs_footer_edit_icon_title">Ícone editar (lápis)</string>
+    <string name="qs_footer_show_power_menu_title">Atalho do menu de energia</string>
+    <string name="qs_footer_services_icon_title">Atalho de serviços em execução</string>
+    <string name="qs_footer_settings_icon_title">Atalho para as configurações</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Mostrar informações da CPU</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -926,9 +948,9 @@
     <string name="monet_engine_custom_color_title">Usar cor personalizada</string>
     <string name="monet_engine_custom_color_summary">Usar cor personalizada para o motor de temas Monet em vez de cores do papel de parede</string>
     <string name="monet_engine_color_override_title">Cor personalizada</string>
-    <string name="monet_engine_white_luminance_user_title">Escala de luz</string>
+    <string name="monet_engine_white_luminance_user_title">Tonalidade clara</string>
     <string name="monet_engine_accurate_shades_title">Usar tons precisos</string>
-    <string name="monet_engine_chroma_factor_title">Fator Cromático</string>
+    <string name="monet_engine_chroma_factor_title">Coloração</string>
     <string name="monet_engine_linear_lightness_title">Brilho linear</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Usar tema preto (amoled)</string>
@@ -941,7 +963,7 @@
     <string name="bluetooth_battery_summary">Mostrar a porcentagem da bateria do dispositivo bluetooth conectado, se disponível</string>
     <!-- Screen off UDFPS -->
     <string name="screen_off_udfps_title">Impressão digital com a tela apagada</string>
-    <string name="screen_off_udfps_summary">Permitir o uso do desbloqueio por impressão digital com a tela apagada</string>
+    <string name="screen_off_udfps_summary">Permitir o desbloqueio por impressão digital quando a tela estiver apagada</string>
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Blocos QS seguros na tela de bloqueio</string>
     <string name="qstile_requires_unlocking_summary">Os seguintes blocos no painel de configurações rápidas requerem o desbloqueio antes de poder ativar/desativar a partir da tela de bloqueio:\nModo Avião, Dados Móveis, NFC, Ponto de Acesso WiFi, Compartilhamento de Internet por USB e Localização</string>
@@ -1023,4 +1045,55 @@
     <string name="use_stream_spoof_summary">Mascare seu dispositivo como Pixel 6 Pro para desbloquear streaming com maior qualidade no Amazon Prime, Dysney+, Hotstar e Netflix</string>
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">Inverter a ordem da barra de navegação</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Logotipo</string>
+    <string name="status_bar_logo_title">Logotipo</string>
+    <string name="status_bar_logo_summary">Mostrar logotipo na barra de status</string>
+    <string name="status_bar_logo_color_title">Cor</string>
+    <string name="status_bar_logo_color_accent_title">Usar cor de destaque</string>
+    <string name="status_bar_logo_position_title">Posição</string>
+    <string name="status_bar_logo_position_summary">Escolher o lado para exibir o logotipo, à esquerda ou direita</string>
+    <string name="status_bar_logo_position_right">Direita</string>
+    <string name="status_bar_logo_position_left">Esquerda</string>
+    <string name="status_bar_logo_position_right_quick">Direita com Painel de Configurações Rápidas</string>
+    <string name="status_bar_logo_position_left_quick">À esquerda, também no painel de configurações rapidas</string>
+    <string name="status_bar_logo_style_title">Estilo</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">Emoticon</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticon legal</string>
+    <string name="status_bar_logo_style_emoticon_dead">Emoticon morto</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticon demônio</string>
+    <string name="status_bar_logo_style_emoticon_happy">Emoticon feliz</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Emoticon neutro</string>
+    <string name="status_bar_logo_style_emoticon_poop">Emoticon cocô</string>
+    <string name="status_bar_logo_style_emoticon_sad">Emoticon triste</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Emoticon língua</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Bolo</string>
+    <string name="status_bar_logo_style_blogger">Blogueiro</string>
+    <string name="status_bar_logo_style_biohazard">Radioativo</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Robô</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_heart">Coração</string>
+    <string name="status_bar_logo_style_flower">Flor</string>
+    <string name="status_bar_logo_style_ghost">Fantasma</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_human_male">Homem</string>
+    <string name="status_bar_logo_style_human_female">Mulher</string>
+    <string name="status_bar_logo_style_human_male_female">Homem e mulher</string>
+    <string name="status_bar_logo_style_gender_male">Masculino</string>
+    <string name="status_bar_logo_style_gender_female">Feminino</string>
+    <string name="status_bar_logo_style_gender_male_female">Masculino e feminino</string>
+    <string name="status_bar_logo_style_guitar_electric">Guitarra</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Substitua suas notificações por uma versão redesenhada de tickers. \nSlim e menos invasivo do que uma notificação padrão</string>
+    <string name="reticker_colored_title">Usar fundo colorido do aplicativo</string>
+    <string name="reticker_colored_summary">Substitua a cor de fundo do reTicker usando a cor principal do aplicativo de notificação</string>
 </resources>
