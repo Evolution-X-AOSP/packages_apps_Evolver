@@ -205,15 +205,21 @@
     <string name="status_bar_battery_style_port">縦</string>
     <string name="status_bar_battery_style_circle">円</string>
     <string name="status_bar_battery_style_dotted_circle">円 (点線)</string>
+    <string name="status_bar_battery_style_filled_circle">円 (塗り潰し)</string>
     <string name="status_bar_battery_style_text">文字</string>
+    <!-- QS tiles layout direction: vertical or horizontal -->
+    <string name="qs_tile_layout_category_title">タイルのレイアウト</string>
+    <string name="qs_tile_layout_title">縦方向レイアウト</string>
+    <string name="qs_tile_layout_summary">垂直のレイアウトを有効化します。既定では水平です。</string>
     <!-- QS rows and columns -->
-    <string name="qs_columns_rows_category_title">列数と行数</string>
-    <string name="qs_rows_columns_title">クイック設定の行数と列数</string>
+    <string name="qs_layout_category_title">クイック設定のレイアウト</string>
     <string name="qs_rows_portrait_title">縦向き時の行数</string>
     <string name="qs_rows_landscape_title">横向き時の行数</string>
     <string name="qs_columns_portrait_title">縦向き時の列数</string>
     <string name="qs_columns_landscape_title">横向き時の列数</string>
+    <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">タイルのタイトルを表示</string>
+    <string name="qs_tile_title_visibility_summary">タイルのタイトルを非表示にする</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">明るさスライダー</string>
     <string name="qs_brightness_slider_title">明るさスライダーを表示</string>
@@ -240,7 +246,7 @@
     <string name="qs_column_rows_settings_title">クイック設定</string>
     <string name="qs_edit_title">編集アイコン</string>
     <string name="qs_edit_summary">フッターのタイル編集アイコンを有効化する</string>
-    <string name="qs_footer_category_title">クイック設定フッター</string>
+    <string name="qs_footer_category">クイック設定フッター</string>
     <string name="qs_header_category_title">クイック設定ヘッダー</string>
     <string name="qs_panel_category_title">クイック設定パネル</string>
     <string name="status_bar_quick_qs_pulldown">クイック設定プルダウン</string>
@@ -268,45 +274,49 @@
     <string name="lockscreen_charging_animation_phone">電話</string>
     <string name="lockscreen_charging_animation_stack">積み重ね</string>
     <string name="lockscreen_charging_animation_wavy">波打ち</string>
-    <!-- Status bar clock and date options -->
+    <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">時計と日付の設定</string>
-    <string name="status_bar_clock">時計と日付</string>
-    <string name="clock_enabled">有効</string>
-    <string name="clock_disabled">無効</string>
-    <string name="statusbar_clock_style_title">時計と日付の位置</string>
-    <string name="statusbar_clock_style_right">右</string>
-    <string name="statusbar_clock_style_centre">中央</string>
-    <string name="statusbar_clock_style_left">左</string>
-    <string name="status_bar_clock_style_reset">色のリセット</string>
-    <string name="status_bar_show_clock_title">日付と時刻を表示</string>
-    <string name="status_bar_am_pm_title">AM/PM</string>
-    <string name="status_bar_am_pm_info">24時間表示が有効です</string>
-    <string name="clock_seconds_display">秒を表示</string>
-    <string name="enable_clock_weekday">曜日</string>
-    <string name="enable_clock_weekday_summary">時刻の前の曜日を省略する</string>
-    <string name="dont_show">非表示</string>
-    <string name="clock_date_display">日付</string>
-    <string name="clock_date_display_summary">時計の前にカスタムの日付を表示する</string>
-    <string name="clock_date_style">日付のスタイル</string>
-    <string name="clock_date_format">日付の形式</string>
-    <string name="clock_date_string_edittext_title">DateFormat 形式で入力して下さい 例. MM/dd/yy</string>
-    <string name="clock_date_string_edittext_summary">文字列を入力</string>
-    <string name="am_pm_clock_normal">通常のフォントサイズ</string>
-    <string name="am_pm_clock_small">小さいフォントサイズ</string>
-    <string name="am_pm_clock_none">非表示</string>
-    <string name="clock_date_display_none">非表示</string>
-    <string name="clock_date_display_small">小さいフォントサイズ</string>
-    <string name="clock_date_display_normal">通常のフォントサイズ</string>
-    <string name="clock_date_style_normal">標準</string>
-    <string name="clock_date_style_lowercase">小文字</string>
-    <string name="clock_date_style_uppercase">大文字</string>
-    <string name="clock_date_right">時刻の右</string>
-    <string name="clock_date_left">時刻の左</string>
-    <string name="clock_date_position">日付の位置</string>
+    <string name="status_bar_clock_summary">時計と日付を編集する</string>
+    <string name="status_bar_clock_seconds_title">時計の秒</string>
+    <string name="status_bar_clock_seconds_summary">ステータスバーの時刻の隣に秒を表示する</string>
+    <string name="status_bar_clock_position_title">時計のスタイル</string>
+    <string name="status_bar_clock_position_right">右</string>
+    <string name="status_bar_clock_position_left">左</string>
+    <string name="status_bar_clock_position_center">中央</string>
+    <string name="status_bar_clock_position_hidden">非表示</string>
     <string name="status_bar_clock_auto_hide_title">時計を自動で隠す</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">ホームアプリ表示時は時計を隠す</string>
     <string name="status_bar_clock_auto_hide_summary">一定時間の間隔で時計の表示と非表示を切り替える</string>
     <string name="status_bar_clock_auto_hide_hdur_title">非表示時間</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">時計を非表示にする秒数の長さを指定する</string>
     <string name="status_bar_clock_auto_hide_sdur_title">表示時間</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">時計を非表示にする前の秒数の長さを指定する</string>
+    <string name="status_bar_am_pm_title">AM/PM</string>
+    <string name="status_bar_am_pm_info">24時間表示が有効です</string>
+    <string name="status_bar_am_pm_normal">標準</string>
+    <string name="status_bar_am_pm_small">小</string>
+    <string name="status_bar_am_pm_hidden">非表示</string>
+    <string name="status_bar_date_title">日付</string>
+    <string name="status_bar_date_none">非表示</string>
+    <string name="status_bar_date_small">小</string>
+    <string name="status_bar_date_normal">標準</string>
+    <string name="status_bar_date_format_title">日付の形式</string>
+    <string name="status_bar_date_style">日付のスタイル</string>
+    <string name="status_bar_date_style_normal">標準</string>
+    <string name="status_bar_date_style_lowercase">小文字</string>
+    <string name="status_bar_date_style_uppercase">大文字</string>
+    <string name="status_bar_date_format_custom">カスタム java 形式</string>
+    <string name="status_bar_date_string_edittext_title">DateFormat 形式で入力して下さい（例: yy/MM/dd）</string>
+    <string name="status_bar_date_string_edittext_summary">文字列を入力</string>
+    <string name="clock_date_position">日付の位置</string>
+    <string name="clock_date_right">時刻の右</string>
+    <string name="clock_date_left">時刻の左</string>
+    <!-- QS clock -->
+    <string name="qs_clock_title">時計</string>
+    <string name="qs_clock_summary">クイックステータスバーのヘッダーに時計を表示する</string>
+    <!-- QS date -->
+    <string name="qs_date_title">日付</string>
+    <string name="qs_date_summary">クイックステータスバーのヘッダーに日付を表示する</string>
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">タッチで振動</string>
     <string name="quick_settings_vibrate_summary">タイルに触れた時に振動させる</string>
@@ -395,7 +405,7 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">ロックアイコン</string>
     <string name="lockscreen_lock_icon_summary">ロック画面にロックアイコンを表示する</string>
-    <!-- Pulse notifications lightning -->
+    <!-- Pulse notifications lighting -->
     <string name="pulse_ambient_light_title">アンビエントエッジライト</string>
     <string name="pulse_ambient_light_summary">通知のパルスにアンビエントライトエッジを使用する</string>
     <string name="ambient_notification_light_enabled_title">Always On Display で表示</string>
@@ -431,7 +441,7 @@
     <string name="pulse_ambient_light_width_title">ライトの幅</string>
     <string name="pulse_light_layout_style_title">ライトのレイアウトスタイル</string>
     <string name="pulse_light_both">4サイド全て</string>
-    <string name="pulse_light_top_bottom">上部と下部のみ</string>
+    <string name="pulse_light_top_bottom">上下のみ</string>
     <string name="pulse_light_left_right">左右のみ</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">フッターのテキスト</string>
@@ -459,6 +469,9 @@
     <string name="powermenu_logout">ログアウト</string>
     <string name="powermenu_emergency">緊急通報</string>
     <string name="powermenu_device_controls">端末の制御</string>
+    <string name="powermenu_bugreport">バグを報告</string>
+    <string name="powermenu_assist">アシスタント</string>
+    <string name="powermenu_voice_assist">音声アシスタント</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Doze の明るさ設定</string>
     <string name="doze_brightness_force_title">強制的な明るさの値</string>
@@ -543,8 +556,10 @@
     <string name="qs_datausage_monthly">毎月の使用量</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">メディアアートのぼかしレベル</string>
-    <string name="show_lockscreen_media_art_title">メディアアートを表示</string>
     <string name="lockscreen_media_art_options_title">ロック画面のメディアアート</string>
+    <!-- Media art -->
+    <string name="media_art_title">メディアカバーアート</string>
+    <string name="media_art_summary">利用可能な場合はカバーアートを表示する</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">パッケージごとのセンサーの無効化</string>
     <string name="sensor_block_summary">バッテリーの節約のためアプリから特定のセンサーへのアクセスを無効化する</string>
@@ -692,6 +707,7 @@
     <string name="volume_key_cursor_control_on_reverse">音量 上/下 - カーソル 右/左</string>
     <string name="swap_volume_buttons_title">再配置</string>
     <string name="swap_volume_buttons_summary">画面回転時に音量ボタンを入れ替える</string>
+    <string name="volume_panel_on_left_title">音量パネルの左側表示</string>
     <string name="volume_panel_on_left_summary">画面の左側に音量パネルを表示する</string>
     <string name="extras_title">その他</string>
     <string name="click_partial_screenshot_title">押して部分スクリーンショット</string>
@@ -769,9 +785,6 @@
     <string name="stock_statusbar_in_hide_summary">非表示時は既定のステータスバーの高さを使う</string>
     <string name="display_hide_notch_title">画面の切り欠きを隠す</string>
     <string name="display_hide_notch_summary">画面の切り欠きを黒く塗り潰す機能を無効化する</string>
-    <!-- Notch: Full screen apps -->
-    <string name="display_cutout_force_fullscreen_title">全画面表示のアプリ</string>
-    <string name="display_cutout_force_fullscreen_summary">強制的にアプリのノッチ領域を無視する</string>
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">ティッカー</string>
     <string name="ticker_screen_summary">ステータスバーにティッカーのスタイルの通知を表示する</string>
@@ -830,11 +843,13 @@
     <!-- Status Bar Lyric -->
     <string name="status_bar_show_lyric_title">ステータスバーの歌詞機能</string>
     <string name="status_bar_show_lyric_summary">ステータスバーに歌詞を表示する (アプリの対応とシステム UI の再起動が必要)</string>
-    <!-- Notification Media Options -->
+    <!-- Media artwork -->
     <string name="media_category">メディア通知のオプション</string>
     <string name="artwork_media_background_title">メディアアートワークの背景</string>
     <string name="artwork_media_background_summary">メディアアートワークをメディア通知の背景に設定する</string>
-    <string name="artwork_media_fade_level_title">アートワークのフェードレベル</string>
+    <string name="artwork_media_background_enable_blur_title">メディアアートワークの背景をぼかす</string>
+    <string name="artwork_media_background_blur_radius_title">メディアアートワークのぼかし量</string>
+    <string name="artwork_media_background_alpha_title">メディアアートワークの透明度</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">システムダイアログの丸みのスタイル</string>
     <string name="rounded_slight">弱</string>
@@ -883,6 +898,13 @@
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">クイック設定フッターの警告</string>
     <string name="qs_footer_warnings_summary">ネットワークが外部アプリや VPN で監視されている時の警告をクイック設定の下部に表示する</string>
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">ユーザーアカウントのアイコン</string>
+    <string name="qs_footer_users_icon_summary">利用可能な場合にマルチユーザーの切り替えアイコンを表示する</string>
+    <string name="qs_footer_edit_icon_title">タイルの編集アイコン</string>
+    <string name="qs_footer_show_power_menu_title">電源メニューのショートカット</string>
+    <string name="qs_footer_services_icon_title">実行中のサービスのショートカット</string>
+    <string name="qs_footer_settings_icon_title">設定のショートカット</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">CPU 情報を表示</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -1023,4 +1045,55 @@
     <string name="use_stream_spoof_summary">お使いの端末は Pixel 6 Pro として認識され、Amazon Prime、Disney+、Hotstar、Netflix をより高品質にストリーミングできるようになります。</string>
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">3ボタンナビゲーションバーの反転</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">ロゴ</string>
+    <string name="status_bar_logo_title">ロゴ</string>
+    <string name="status_bar_logo_summary">ステータスバーにロゴを表示する</string>
+    <string name="status_bar_logo_color_title">色</string>
+    <string name="status_bar_logo_color_accent_title">アクセントの色を使用</string>
+    <string name="status_bar_logo_position_title">位置</string>
+    <string name="status_bar_logo_position_summary">どこにロゴを表示するか選択する</string>
+    <string name="status_bar_logo_position_right">右</string>
+    <string name="status_bar_logo_position_left">左</string>
+    <string name="status_bar_logo_position_right_quick">クイック設定パネルの右</string>
+    <string name="status_bar_logo_position_left_quick">クイック設定パネルの左</string>
+    <string name="status_bar_logo_style_title">スタイル</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">絵文字</string>
+    <string name="status_bar_logo_style_emoticon_cool">Cool 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_dead">Dead 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_devil">Devil 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_happy">Happy 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Neutral 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_poop">Poop 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_sad">Sad 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Tongue 絵文字</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">ケーキ</string>
+    <string name="status_bar_logo_style_blogger">Blogger</string>
+    <string name="status_bar_logo_style_biohazard">バイオハザード</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">陰陽</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">ロボット</string>
+    <string name="status_bar_logo_style_ninja">忍者</string>
+    <string name="status_bar_logo_style_heart">ハート</string>
+    <string name="status_bar_logo_style_flower">花</string>
+    <string name="status_bar_logo_style_ghost">ゴースト</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_human_male">男</string>
+    <string name="status_bar_logo_style_human_female">女</string>
+    <string name="status_bar_logo_style_human_male_female">男女</string>
+    <string name="status_bar_logo_style_gender_male">男性</string>
+    <string name="status_bar_logo_style_gender_female">女性</string>
+    <string name="status_bar_logo_style_gender_male_female">男性と女性</string>
+    <string name="status_bar_logo_style_guitar_electric">エレキギター</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">再デザインされたバージョンの通知ティッカーに置き換えます。\n標準の通知よりスリムで優しい雰囲気です。</string>
+    <string name="reticker_colored_title">アプリに色付きの背景を使用</string>
+    <string name="reticker_colored_summary">reTicker の背景の色を通知アプリのメインの色で置き換える</string>
 </resources>
