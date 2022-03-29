@@ -205,15 +205,21 @@
     <string name="status_bar_battery_style_port">Портретный</string>
     <string name="status_bar_battery_style_circle">Круг</string>
     <string name="status_bar_battery_style_dotted_circle">Круг (Точечный)</string>
+    <string name="status_bar_battery_style_filled_circle">Круг (Заполняющийся)</string>
     <string name="status_bar_battery_style_text">Текст</string>
+    <!-- QS tiles layout direction: vertical or horizontal -->
+    <string name="qs_tile_layout_category_title">Расположение плиток</string>
+    <string name="qs_tile_layout_title">Вертикальное расположение</string>
+    <string name="qs_tile_layout_summary">Включите для вертикального отображения. По умолчанию горизонтально</string>
     <!-- QS rows and columns -->
-    <string name="qs_columns_rows_category_title">Колонки и строки быстрых настроек</string>
-    <string name="qs_rows_columns_title">Строки и столбцы панели быстрых настроек</string>
+    <string name="qs_layout_category_title">Разметка QS</string>
     <string name="qs_rows_portrait_title">Строки в портретной ориентации</string>
     <string name="qs_rows_landscape_title">Строки в ландшафтной ориентации</string>
     <string name="qs_columns_portrait_title">Столбцы плиток в портретной ориентации</string>
     <string name="qs_columns_landscape_title">Столбцы плиток в альбомной ориентации</string>
+    <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Показывать названия плиток</string>
+    <string name="qs_tile_title_visibility_summary">Скрыть названия плиток</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Ползунок яркости</string>
     <string name="qs_brightness_slider_title">Показывать ползунок управления яркостью</string>
@@ -240,7 +246,7 @@
     <string name="qs_column_rows_settings_title">Настройки панели быстрых настроек</string>
     <string name="qs_edit_title">Значок редактирования</string>
     <string name="qs_edit_summary">Включить значок редактирования плитки в нижнем колонтитуле</string>
-    <string name="qs_footer_category_title">Параметры нижнего колонтитула</string>
+    <string name="qs_footer_category">Нижняя часть панели быстрых настроек</string>
     <string name="qs_header_category_title">Настройки заголовка</string>
     <string name="qs_panel_category_title">Панель быстрых настроек</string>
     <string name="status_bar_quick_qs_pulldown">Быстрый доступ к панели быстрых настроек</string>
@@ -268,45 +274,49 @@
     <string name="lockscreen_charging_animation_phone">Телефон</string>
     <string name="lockscreen_charging_animation_stack">Стопка</string>
     <string name="lockscreen_charging_animation_wavy">Волны</string>
-    <!-- Status bar clock and date options -->
-    <string name="status_bar_clock_title">Настройки часов и даты</string>
-    <string name="status_bar_clock">Часы и дата</string>
-    <string name="clock_enabled">Включено</string>
-    <string name="clock_disabled">Отключено</string>
-    <string name="statusbar_clock_style_title">Позиция даты и часов</string>
-    <string name="statusbar_clock_style_right">Справа</string>
-    <string name="statusbar_clock_style_centre">По центру</string>
-    <string name="statusbar_clock_style_left">Слева</string>
-    <string name="status_bar_clock_style_reset">Сбросить цвет</string>
-    <string name="status_bar_show_clock_title">Показывать часы и дату</string>
-    <string name="status_bar_am_pm_title">12-часовой (AM/PM)</string>
-    <string name="status_bar_am_pm_info">24-часовой формат включен</string>
-    <string name="clock_seconds_display">Показывать секунды</string>
-    <string name="enable_clock_weekday">День недели</string>
-    <string name="enable_clock_weekday_summary">Сокращенное название дня недели перед часами</string>
-    <string name="dont_show">Не показывать</string>
-    <string name="clock_date_display">Дата</string>
-    <string name="clock_date_display_summary">Отображать дату перед часами</string>
-    <string name="clock_date_style">Стиль даты</string>
-    <string name="clock_date_format">Формат даты</string>
-    <string name="clock_date_string_edittext_title">Должен быть в формате даты, например. ММ/дд/гг</string>
-    <string name="clock_date_string_edittext_summary">Введите строку</string>
-    <string name="am_pm_clock_normal">Обычный размер шрифта</string>
-    <string name="am_pm_clock_small">Маленький размер шрифта</string>
-    <string name="am_pm_clock_none">Не показывать</string>
-    <string name="clock_date_display_none">Не отображать</string>
-    <string name="clock_date_display_small">Маленький размер шрифта</string>
-    <string name="clock_date_display_normal">Обычный размер шрифта</string>
-    <string name="clock_date_style_normal">Обычный</string>
-    <string name="clock_date_style_lowercase">В нижнем регистре</string>
-    <string name="clock_date_style_uppercase">В верхнем регистре</string>
-    <string name="clock_date_right">Справа от времени</string>
-    <string name="clock_date_left">Слева от времени</string>
-    <string name="clock_date_position">Расположение даты</string>
+    <!-- Status bar - Clock -->
+    <string name="status_bar_clock_title">Настройки часов &amp; даты</string>
+    <string name="status_bar_clock_summary">Пользовательские настройки часов &amp; даты</string>
+    <string name="status_bar_clock_seconds_title">Показывать секунды</string>
+    <string name="status_bar_clock_seconds_summary">Отображать секунды рядом с часами в строке состояния</string>
+    <string name="status_bar_clock_position_title">Расположение часов</string>
+    <string name="status_bar_clock_position_right">Справа</string>
+    <string name="status_bar_clock_position_left">Слева</string>
+    <string name="status_bar_clock_position_center">По центру</string>
+    <string name="status_bar_clock_position_hidden">Скрыть</string>
     <string name="status_bar_clock_auto_hide_title">Автоскрытие часов</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Скрывать часы, если открыт рабочий стол</string>
     <string name="status_bar_clock_auto_hide_summary">Скрывать и показывать часы через регулярные интервалы времени</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Продолжительность скрытия</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Количество секунд для скрытия часов</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Продолжительность отображения</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Количество секунд ожидания перед скрытием часов</string>
+    <string name="status_bar_am_pm_title">12-часовой (AM/PM)</string>
+    <string name="status_bar_am_pm_info">24-часовой формат включен</string>
+    <string name="status_bar_am_pm_normal">Обычный</string>
+    <string name="status_bar_am_pm_small">Маленький</string>
+    <string name="status_bar_am_pm_hidden">Скрытый</string>
+    <string name="status_bar_date_title">Дата</string>
+    <string name="status_bar_date_none">Скрыть</string>
+    <string name="status_bar_date_small">Маленький</string>
+    <string name="status_bar_date_normal">Обычный</string>
+    <string name="status_bar_date_format_title">Формат даты</string>
+    <string name="status_bar_date_style">Стиль даты</string>
+    <string name="status_bar_date_style_normal">Нормальный</string>
+    <string name="status_bar_date_style_lowercase">Строчные буквы</string>
+    <string name="status_bar_date_style_uppercase">Прописные буквы</string>
+    <string name="status_bar_date_format_custom">Пользовательский java формат</string>
+    <string name="status_bar_date_string_edittext_title">Значение должно соответствовать формату, например: ММ/дд/гг</string>
+    <string name="status_bar_date_string_edittext_summary">Ввести значение</string>
+    <string name="clock_date_position">Расположение даты</string>
+    <string name="clock_date_right">Справа от времени</string>
+    <string name="clock_date_left">Слева от времени</string>
+    <!-- QS clock -->
+    <string name="qs_clock_title">Часы</string>
+    <string name="qs_clock_summary">Отображать часы в заголовке строки состояния</string>
+    <!-- QS date -->
+    <string name="qs_date_title">Дата</string>
+    <string name="qs_date_summary">Отображать дату в заголовке строки состояния</string>
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Вибрировать при касании</string>
     <string name="quick_settings_vibrate_summary">Вибрировать при касании плиток быстрых настроек</string>
@@ -395,7 +405,7 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Значок блокировки</string>
     <string name="lockscreen_lock_icon_summary">Показывать значок блокировки на экране блокировки</string>
-    <!-- Pulse notifications lightning -->
+    <!-- Pulse notifications lighting -->
     <string name="pulse_ambient_light_title">Свечение по бокам экрана</string>
     <string name="pulse_ambient_light_summary">Подсвечивать края экрана для пульсирующих уведомлений</string>
     <string name="ambient_notification_light_enabled_title">Отображать на AOD</string>
@@ -459,6 +469,9 @@
     <string name="powermenu_logout">Выйти</string>
     <string name="powermenu_emergency">Экстренный вызов</string>
     <string name="powermenu_device_controls">Управление устройством</string>
+    <string name="powermenu_bugreport">Отчёт об ошибке</string>
+    <string name="powermenu_assist">Ассистент</string>
+    <string name="powermenu_voice_assist">Голосовой ассистент</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Настройка яркости Doze</string>
     <string name="doze_brightness_force_title">Принудительные значения яркости</string>
@@ -543,8 +556,10 @@
     <string name="qs_datausage_monthly">Ежемесячное использование</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Уровень размытия обложки</string>
-    <string name="show_lockscreen_media_art_title">Показать обложку медиа</string>
     <string name="lockscreen_media_art_options_title">Обложка медиа на экране блокировки</string>
+    <!-- Media art -->
+    <string name="media_art_title">Обложка мультимедиа</string>
+    <string name="media_art_summary">Показывать обложку мультимедиа, если доступно</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Блокировка сенсоров по-пакетно</string>
     <string name="sensor_block_summary">Заблокировать доступ к датчикам для некоторых приложений для экономии заряда батареи</string>
@@ -692,6 +707,7 @@
     <string name="volume_key_cursor_control_on_reverse">Громкость вверх/вниз перемещает курсор вправо/влево</string>
     <string name="swap_volume_buttons_title">Автопереопределение</string>
     <string name="swap_volume_buttons_summary">Поменять местами кнопки громкости при повороте экрана</string>
+    <string name="volume_panel_on_left_title">Показывать панель громкости слева</string>
     <string name="volume_panel_on_left_summary">Отображение панели громкости в левой части экрана</string>
     <string name="extras_title">Дополнения</string>
     <string name="click_partial_screenshot_title">Частичный скриншот</string>
@@ -712,7 +728,7 @@
     <string name="swap_capacitive_keys_title">Поменять местами емкостные кнопки</string>
     <string name="swap_capacitive_keys_summary">Поменять местами кнопки назад и недвание</string>
     <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_title">Визуализатор</string>
+    <string name="lockscreen_visualizer_title">Визуализатор музыки на экране блокировки</string>
     <string name="lockscreen_visualizer_enable">Музыкальный визуализатор</string>
     <string name="lockscreen_visualizer_enable_summary">Показывать визуализацию во время воспроизведения музыки</string>
     <string name="lockscreen_autocolor_title">Автоматический цвет</string>
@@ -769,9 +785,6 @@
     <string name="stock_statusbar_in_hide_summary">Использовать высоту строки состояния по умолчанию при скрытии выреза</string>
     <string name="display_hide_notch_title">Скрыть вырез дисплея</string>
     <string name="display_hide_notch_summary">Отключить заливку черным цветом для выреза экрана</string>
-    <!-- Notch: Full screen apps -->
-    <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
-    <string name="display_cutout_force_fullscreen_summary">Заставить приложения игнорировать вырез экрана</string>
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Бегущая строка</string>
     <string name="ticker_screen_summary">Показывать бегущие уведомления в строке состояния</string>
@@ -830,11 +843,13 @@
     <!-- Status Bar Lyric -->
     <string name="status_bar_show_lyric_title">Текст песни в строке состояния</string>
     <string name="status_bar_show_lyric_summary">Показывать текст песни в строке состояния (требуется поддержка приложения и перезапуск SystemUI)</string>
-    <!-- Notification Media Options -->
+    <!-- Media artwork -->
     <string name="media_category">Параметры медиа уведомлений</string>
     <string name="artwork_media_background_title">Фон медиа-обложкой</string>
     <string name="artwork_media_background_summary">Установить медиа-обложку в качестве фона уведомления</string>
-    <string name="artwork_media_fade_level_title">Уровень тусклости обложки</string>
+    <string name="artwork_media_background_enable_blur_title">Размытие фона медиа-обложки</string>
+    <string name="artwork_media_background_blur_radius_title">Степень размытия фона обложки</string>
+    <string name="artwork_media_background_alpha_title">Прозрачность обложки</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">Скругленный стиль для системных диалогов</string>
     <string name="rounded_slight">Слегка</string>
@@ -883,6 +898,13 @@
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Предупреждение в нижней части быстрых настроек</string>
     <string name="qs_footer_warnings_summary">Показывать предупреждение в нижней панели быстрых настроек, когда сеть контролируется посторонними приложениями или VPN</string>
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">Значок учетной записи пользователя</string>
+    <string name="qs_footer_users_icon_summary">Показывать иконку многопользовательского доступа, если доступно</string>
+    <string name="qs_footer_edit_icon_title">Изменить иконку плитки</string>
+    <string name="qs_footer_show_power_menu_title">Ярлык меню питания</string>
+    <string name="qs_footer_services_icon_title">Ярлык запущенных служб</string>
+    <string name="qs_footer_settings_icon_title">Ярлык настроек</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Показывать информацию о CPU</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -1023,4 +1045,55 @@
     <string name="use_stream_spoof_summary">Маскировка устройства под Pixel 6 Pro для разблокировки видео более высокого качества на Amazon Prime, Disney+, Hotstar, и Netflix</string>
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">Инвертировать 3-х кнопочную панель навигации</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Логотип</string>
+    <string name="status_bar_logo_title">Логотип</string>
+    <string name="status_bar_logo_summary">Включите для отображения логотипа в строке состояния</string>
+    <string name="status_bar_logo_color_title">Цвет</string>
+    <string name="status_bar_logo_color_accent_title">Использовать акцентный цвет</string>
+    <string name="status_bar_logo_position_title">Расположение</string>
+    <string name="status_bar_logo_position_summary">Выберите, с какой стороны отображать логотип</string>
+    <string name="status_bar_logo_position_right">Справа</string>
+    <string name="status_bar_logo_position_left">Слева</string>
+    <string name="status_bar_logo_position_right_quick">Справа и в QS панели</string>
+    <string name="status_bar_logo_position_left_quick">Слева и в QS панели</string>
+    <string name="status_bar_logo_style_title">Стиль</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">Смайлик</string>
+    <string name="status_bar_logo_style_emoticon_cool">Смайлик: крутой</string>
+    <string name="status_bar_logo_style_emoticon_dead">Смайлик: мертвый</string>
+    <string name="status_bar_logo_style_emoticon_devil">Смайлик: демон</string>
+    <string name="status_bar_logo_style_emoticon_happy">Смайлик: счастливый</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Смайлик: нейтральный</string>
+    <string name="status_bar_logo_style_emoticon_poop">Смайлик: какашка</string>
+    <string name="status_bar_logo_style_emoticon_sad">Смайлик: грустный</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Смайлик: язык</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Торт</string>
+    <string name="status_bar_logo_style_blogger">Блогер</string>
+    <string name="status_bar_logo_style_biohazard">Биологическая угроза</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Инь-Янь</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Робот</string>
+    <string name="status_bar_logo_style_ninja">Ниндзя</string>
+    <string name="status_bar_logo_style_heart">Сердце</string>
+    <string name="status_bar_logo_style_flower">Цветок</string>
+    <string name="status_bar_logo_style_ghost">Призрак</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_human_male">Мужчина</string>
+    <string name="status_bar_logo_style_human_female">Женщина</string>
+    <string name="status_bar_logo_style_human_male_female">Мужчина и женщина</string>
+    <string name="status_bar_logo_style_gender_male">Мужской символ</string>
+    <string name="status_bar_logo_style_gender_female">Женский символ</string>
+    <string name="status_bar_logo_style_gender_male_female">Мужской и женский символы</string>
+    <string name="status_bar_logo_style_guitar_electric">Электрогитара</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Замените ваши уведомления переработанной версией тикеров! \nТонкие и менее функциональные, чем стандартные уведомления</string>
+    <string name="reticker_colored_title">Использовать цвет приложений для фона</string>
+    <string name="reticker_colored_summary">Заменить цвет фона reTicker используя цвета основного приложения уведомления</string>
 </resources>
