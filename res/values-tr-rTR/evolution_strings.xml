@@ -195,10 +195,10 @@
     <string name="torch_long_press_power_timeout_5min">5 dakika</string>
     <string name="torch_long_press_power_timeout_10min">10 dakika</string>
     <!-- Battery percentage -->
-    <string name="battery_style_category_title">Pil stilleri</string>
+    <string name="battery_style_category_title">Pil simgesi</string>
     <string name="status_bar_battery_percentage_title">Pil yüzdesi</string>
-    <string name="status_bar_battery_percentage_default">Gizli (varsayılan)</string>
-    <string name="status_bar_battery_percentage_text_next">Dışında</string>
+    <string name="status_bar_battery_percentage_default">Gizli</string>
+    <string name="status_bar_battery_percentage_text_next">Simgenin yanında</string>
     <string name="status_bar_battery_percentage_text_inside">Simgenin içinde</string>
     <!-- Status bar battery style-->
     <string name="status_bar_battery_style_title">Pil stili</string>
@@ -207,14 +207,19 @@
     <string name="status_bar_battery_style_dotted_circle">Daire (Noktalı)</string>
     <string name="status_bar_battery_style_filled_circle">Daire (Dolu)</string>
     <string name="status_bar_battery_style_text">Metin</string>
+    <!-- QS tiles layout direction: vertical or horizontal -->
+    <string name="qs_tile_layout_category_title">Kare düzeni</string>
+    <string name="qs_tile_layout_title">Dikey Düzen</string>
+    <string name="qs_tile_layout_summary">Dikey düzeni etkinleştir. Varsayılan yataydır</string>
     <!-- QS rows and columns -->
-    <string name="qs_columns_rows_category_title">Sütunlar ve satırlar</string>
-    <string name="qs_rows_columns_title">Hızlı ayarlar satırları ve sütunları</string>
+    <string name="qs_layout_category_title">Hızlı ayar paneli düzeni</string>
     <string name="qs_rows_portrait_title">Dikey modda satırlar</string>
     <string name="qs_rows_landscape_title">Yatay modda satırlar</string>
     <string name="qs_columns_portrait_title">Dikey modda sütunlar</string>
     <string name="qs_columns_landscape_title">Yatay modda sütunlar</string>
+    <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Kare başlıklarını göster</string>
+    <string name="qs_tile_title_visibility_summary">Kare başlıklarını gizle veya göster</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Parlaklık kaydırıcısı</string>
     <string name="qs_brightness_slider_title">Parlaklık kaydırıcısını göster</string>
@@ -241,7 +246,7 @@
     <string name="qs_column_rows_settings_title">Hızlı ayarlar</string>
     <string name="qs_edit_title">Düzenle simgesi</string>
     <string name="qs_edit_summary">Alt tarafta kare düzenleme simgesini etkinleştirir</string>
-    <string name="qs_footer_category_title">Hızlı ayarlar alt bilgisi</string>
+    <string name="qs_footer_category">Hızlı ayarlar alt bilgisi</string>
     <string name="qs_header_category_title">Hızlı ayarlar başlığı</string>
     <string name="qs_panel_category_title">Hızlı ayarlar paneli</string>
     <string name="status_bar_quick_qs_pulldown">Hızlı aşağı çekme</string>
@@ -269,45 +274,49 @@
     <string name="lockscreen_charging_animation_phone">Telefon</string>
     <string name="lockscreen_charging_animation_stack">Yığın</string>
     <string name="lockscreen_charging_animation_wavy">Dalgalı</string>
-    <!-- Status bar clock and date options -->
-    <string name="status_bar_clock_title">Saat ve tarih ayarları</string>
-    <string name="status_bar_clock">Saat ve tarih</string>
-    <string name="clock_enabled">Etkin</string>
-    <string name="clock_disabled">Devre dışı</string>
-    <string name="statusbar_clock_style_title">Saat ve tarih konumu</string>
-    <string name="statusbar_clock_style_right">Sağ</string>
-    <string name="statusbar_clock_style_centre">Orta</string>
-    <string name="statusbar_clock_style_left">Sol</string>
-    <string name="status_bar_clock_style_reset">Rengi sıfırla</string>
-    <string name="status_bar_show_clock_title">Saati ve tarihi göster</string>
+    <!-- Status bar - Clock -->
+    <string name="status_bar_clock_title">Saat ve tarih</string>
+    <string name="status_bar_clock_summary">Saati &amp; tarihi özelleştir</string>
+    <string name="status_bar_clock_seconds_title">Saniye göster</string>
+    <string name="status_bar_clock_seconds_summary">Durum çubuğunda saatin yanında saniye göster</string>
+    <string name="status_bar_clock_position_title">Saat stili</string>
+    <string name="status_bar_clock_position_right">Sağ</string>
+    <string name="status_bar_clock_position_left">Sol</string>
+    <string name="status_bar_clock_position_center">Orta</string>
+    <string name="status_bar_clock_position_hidden">Gizli</string>
+    <string name="status_bar_clock_auto_hide_title">Saati otomatik olarak gizle</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Başlatıcı görünürse saati gizle</string>
+    <string name="status_bar_clock_auto_hide_summary">Saati düzenli aralıklarla gizle</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Gizleme süresi</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Saatin gizlenmesi için gereken saniye süresi</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Gösterme süresi</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Saatin gizlenmeden önceki beklenmesi gereken saniye süresi</string>
     <string name="status_bar_am_pm_title">ÖÖ/ÖS</string>
     <string name="status_bar_am_pm_info">24 saat görünümü etkin</string>
-    <string name="clock_seconds_display">Saniyeyi göster</string>
-    <string name="enable_clock_weekday">Haftanın günü</string>
-    <string name="enable_clock_weekday_summary">Haftanın ilk gününü kısaltılmış olarak saatten önce göster</string>
-    <string name="dont_show">Gösterme</string>
-    <string name="clock_date_display">Tarih</string>
-    <string name="clock_date_display_summary">Saatten önce özel tarihi göster</string>
-    <string name="clock_date_style">Tarih stili</string>
-    <string name="clock_date_format">Tarih biçimi</string>
-    <string name="clock_date_string_edittext_title">Tarih biçimi AA/gg/yy şeklinde olmalıdır</string>
-    <string name="clock_date_string_edittext_summary">Dize girin</string>
-    <string name="am_pm_clock_normal">Normal yazı tipi boyutu</string>
-    <string name="am_pm_clock_small">Küçük yazı tipi boyutu</string>
-    <string name="am_pm_clock_none">Gösterme</string>
-    <string name="clock_date_display_none">Gösterme</string>
-    <string name="clock_date_display_small">Küçük yazı tipi boyutu</string>
-    <string name="clock_date_display_normal">Normal yazı tipi boyutu</string>
-    <string name="clock_date_style_normal">Normal</string>
-    <string name="clock_date_style_lowercase">Küçük harf</string>
-    <string name="clock_date_style_uppercase">Büyük harf</string>
+    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_small">Küçük</string>
+    <string name="status_bar_am_pm_hidden">Gizli</string>
+    <string name="status_bar_date_title">Tarih</string>
+    <string name="status_bar_date_none">Gizli</string>
+    <string name="status_bar_date_small">Küçük</string>
+    <string name="status_bar_date_normal">Normal</string>
+    <string name="status_bar_date_format_title">Tarih biçimi</string>
+    <string name="status_bar_date_style">Tarih stili</string>
+    <string name="status_bar_date_style_normal">Normal</string>
+    <string name="status_bar_date_style_lowercase">Küçük harf</string>
+    <string name="status_bar_date_style_uppercase">Büyük harf</string>
+    <string name="status_bar_date_format_custom">Özel java biçimi</string>
+    <string name="status_bar_date_string_edittext_title">Tarih biçimi AA/gg/yy şeklinde olmalıdır</string>
+    <string name="status_bar_date_string_edittext_summary">Dize girin</string>
+    <string name="clock_date_position">Tarih konumu</string>
     <string name="clock_date_right">Saatin sağında</string>
     <string name="clock_date_left">Saatin solunda</string>
-    <string name="clock_date_position">Tarih konumu</string>
-    <string name="status_bar_clock_auto_hide_title">Saati otomatik olarak gizle</string>
-    <string name="status_bar_clock_auto_hide_summary">Saati düzenli aralıklarla gizle ve göster</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Gizleme süresi</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Gösterme süresi</string>
+    <!-- QS clock -->
+    <string name="qs_clock_title">Saat</string>
+    <string name="qs_clock_summary">Saati hızlı durum çubuğu başlığında görüntüle</string>
+    <!-- QS date -->
+    <string name="qs_date_title">Tarih</string>
+    <string name="qs_date_summary">Hızlı ayarlar durum çubuğu başlığında tarihi göster</string>
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Dokunulduğunda titret</string>
     <string name="quick_settings_vibrate_summary">Hızlı ayarlar karelerine dokunulduğunda titret</string>
@@ -396,7 +405,7 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Kilit simgesi</string>
     <string name="lockscreen_lock_icon_summary">Kilit ekranında kilit simgesini göster</string>
-    <!-- Pulse notifications lightning -->
+    <!-- Pulse notifications lighting -->
     <string name="pulse_ambient_light_title">Ortam kenarı aydınlatması</string>
     <string name="pulse_ambient_light_summary">Bildirimler için ortam ekranı kenarlarını aydınlat</string>
     <string name="ambient_notification_light_enabled_title">Daima açık ekranı göster</string>
@@ -460,6 +469,9 @@
     <string name="powermenu_logout">Oturumu kapat</string>
     <string name="powermenu_emergency">Acil durum</string>
     <string name="powermenu_device_controls">Cihaz denetimleri</string>
+    <string name="powermenu_bugreport">Hata raporu</string>
+    <string name="powermenu_assist">Asistan</string>
+    <string name="powermenu_voice_assist">Sesli asistan</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Ortam ekranı parlaklığı yapılandırması</string>
     <string name="doze_brightness_force_title">Parlaklık değerlerini zorla</string>
@@ -544,8 +556,10 @@
     <string name="qs_datausage_monthly">Aylık kullanım</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Medya resmi bulanıklık seviyesi</string>
-    <string name="show_lockscreen_media_art_title">Medya resmini göster</string>
     <string name="lockscreen_media_art_options_title">Kilit ekranı medya resmi</string>
+    <!-- Media art -->
+    <string name="media_art_title">Medya kapak görüntüsü</string>
+    <string name="media_art_summary">Kilit ekranında medya kapak görüntüsünü göster</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Uygulama başına sensör engelleme</string>
     <string name="sensor_block_summary">Pil tasarrufu için bazı uygulamaların belirli sensörlere erişimini engelle</string>
@@ -693,6 +707,7 @@
     <string name="volume_key_cursor_control_on_reverse">Ses arttırma/azaltma imleci sağa/sola kaydırır</string>
     <string name="swap_volume_buttons_title">Yerini değiştir</string>
     <string name="swap_volume_buttons_summary">Ekran döndürüldüğünde ses tuşlarının yerini değiştir</string>
+    <string name="volume_panel_on_left_title">Ses panelini solda göster</string>
     <string name="volume_panel_on_left_summary">Ses panelini ekranın sol tarafında görüntüle</string>
     <string name="extras_title">Ekstralar</string>
     <string name="click_partial_screenshot_title">Kısmi ekran görüntüsü için tıklayın</string>
@@ -770,9 +785,6 @@
     <string name="stock_statusbar_in_hide_summary">Kesmeyi gizlerken varsayılan durum çubuğu yüksekliğini kullanın</string>
     <string name="display_hide_notch_title">Ekran kesmesini gizle</string>
     <string name="display_hide_notch_summary">Ekran kesmesi için siyah dolguyu devre dışı bırak</string>
-    <!-- Notch: Full screen apps -->
-    <string name="display_cutout_force_fullscreen_title">Tam ekran uygulamaları</string>
-    <string name="display_cutout_force_fullscreen_summary">Uygulamaları çentik alanını yoksaymaya zorla</string>
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Şerit</string>
     <string name="ticker_screen_summary">Durum çubuğunda şerit bildirim stilini göster</string>
@@ -831,11 +843,13 @@
     <!-- Status Bar Lyric -->
     <string name="status_bar_show_lyric_title">Durum çubuğu şarkı sözü özelliği</string>
     <string name="status_bar_show_lyric_summary">Durum çubuğunda şarkı sözlerini göster (uygulama desteği ve Sistem arayüzünün yeniden başlatılması gerekir)</string>
-    <!-- Notification Media Options -->
+    <!-- Media artwork -->
     <string name="media_category">Medya bildirimi seçenekleri</string>
     <string name="artwork_media_background_title">Medya resmi arka planı</string>
     <string name="artwork_media_background_summary">Medya resmini bildirim medyası arka planı olarak ayarla</string>
-    <string name="artwork_media_fade_level_title">Medya resmi karartma seviyesi</string>
+    <string name="artwork_media_background_enable_blur_title">Medya resmi arka planını bulanıklaştırın</string>
+    <string name="artwork_media_background_blur_radius_title">Medya resmi için bulanıklık miktarı</string>
+    <string name="artwork_media_background_alpha_title">Medya resmi şeffaflığı</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">Sistem diyalogları için yuvarlak stil</string>
     <string name="rounded_slight">Hafif</string>
@@ -884,6 +898,13 @@
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Hızlı ayarlar alt bilgi uyarıları</string>
     <string name="qs_footer_warnings_summary">Ağ harici uygulamalar veya VPN tarafından izlendiğinde hızlı ayarlar panelinin altına bir uyarı gösterir</string>
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">Kullanıcı hesabı simgesi</string>
+    <string name="qs_footer_users_icon_summary">Mevcut olduğunda çoklu kullanıcı erişilebilirlik simgesini görüntüle</string>
+    <string name="qs_footer_edit_icon_title">Kare düzenleme simgesi</string>
+    <string name="qs_footer_show_power_menu_title">Güç menüsü kısayolu</string>
+    <string name="qs_footer_services_icon_title">Çalışan hizmetler kısayolu</string>
+    <string name="qs_footer_settings_icon_title">Ayarlar kısayolu</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">İşlemci bilgisini göster</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -1024,4 +1045,55 @@
     <string name="use_stream_spoof_summary">Amazon Prime, Disney+, Hotstar, and Netflix ugyulamalarında daha kaliteli yayınlar için cihazınızı Pixel 6 Pro olarak tanımlayın</string>
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">Gezinme tuşlarının yerini değiştir</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Logo</string>
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Durum çubuğunda logo göstermeyi etkinleştir</string>
+    <string name="status_bar_logo_color_title">Renk</string>
+    <string name="status_bar_logo_color_accent_title">Vurgu rengini kullan</string>
+    <string name="status_bar_logo_position_title">Konum</string>
+    <string name="status_bar_logo_position_summary">Logonun hangi tarafta görüntüleneceğini seçin, sağ veya sol</string>
+    <string name="status_bar_logo_position_right">Sağ</string>
+    <string name="status_bar_logo_position_left">Sol</string>
+    <string name="status_bar_logo_position_right_quick">Hızlı ayarlar panelinin sağında</string>
+    <string name="status_bar_logo_position_left_quick">Hızlı ayarlar panelinin solunda</string>
+    <string name="status_bar_logo_style_title">Stil</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">İfade</string>
+    <string name="status_bar_logo_style_emoticon_cool">Havalı ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_dead">Ölü ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_devil">Şeytan ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_happy">Mutluluk ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Nötr ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_poop">Dışkı ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_sad">Üzüntü ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Dil ifadesi</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Kek</string>
+    <string name="status_bar_logo_style_blogger">Blogger</string>
+    <string name="status_bar_logo_style_biohazard">Biohazard</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_heart">Kalp</string>
+    <string name="status_bar_logo_style_flower">Çiçek</string>
+    <string name="status_bar_logo_style_ghost">Hayalet</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_human_male">Erkek</string>
+    <string name="status_bar_logo_style_human_female">Kadın</string>
+    <string name="status_bar_logo_style_human_male_female">Adam ve kadın</string>
+    <string name="status_bar_logo_style_gender_male">Erkek</string>
+    <string name="status_bar_logo_style_gender_female">Kadın</string>
+    <string name="status_bar_logo_style_gender_male_female">Erkek ve kadın</string>
+    <string name="status_bar_logo_style_guitar_electric">Elektrogitar</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Bildirimlerinizi, bildirim çubuğu yazılarının yeniden tasarlanmış haliyle değiştirin!\nStandart bildirimlerden daha zarif ve daha az dikkat dağıtıcıdır</string>
+    <string name="reticker_colored_title">Uygulama rengine göre arkaplan</string>
+    <string name="reticker_colored_summary">reTicker arkaplan rengini uygulamanın ana rengine göre değiştir</string>
 </resources>
