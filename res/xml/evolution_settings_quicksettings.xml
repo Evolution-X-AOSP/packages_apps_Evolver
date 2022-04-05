@@ -48,6 +48,32 @@
             android:defaultValue="0" />
 
     </PreferenceCategory>
+     
+     <PreferenceCategory
+        android:key="qs_layout_category"
+        android:title="@string/qs_layout_category_title">
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_layout_columns"
+            android:title="@string/qs_columns_portrait_title"
+            android:max="4"
+            android:min="2"
+            android:defaultValue="2" />
+
+        <!--<com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_layout_columns_landscape"
+            android:title="@string/qs_columns_landscape_title"
+            android:max="8"
+            android:min="4"
+            android:defaultValue="4" />-->
+          
+          <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_tile_vertical_layout"
+            android:title="@string/qs_tile_layout_title"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+     
+     
 
     <PreferenceCategory
         android:title="@string/media_category">
