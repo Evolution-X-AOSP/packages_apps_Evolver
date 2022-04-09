@@ -44,6 +44,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.SystemSettingListPreference;
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,11 +55,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String FINGERPRINT_CATEGORY = "lockscreen_fingerprint_category";
+    private static final String KEY_FP_WAKE_UNLOCK = "fp_wake_unlock";
     private static final String UDFPS_CATEGORY = "udfps_category";
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFingerprintCategory;
     private PreferenceCategory mUdfpsCategory;
+    private SystemSettingSwitchPreference mFingerprintWakeUnlock;
 
     static final int MODE_DISABLED = 0;
     static final int MODE_NIGHT = 1;
@@ -79,10 +82,22 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
         mFingerprintCategory = (PreferenceCategory) findPreference(FINGERPRINT_CATEGORY);
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintWakeUnlock = (SystemSettingSwitchPreference) findPreference(KEY_FP_WAKE_UNLOCK);
         if (mPm.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT) &&
                  mFingerprintManager != null) {
             if (!mFingerprintManager.isHardwareDetected()) {
                 prefSet.removePreference(mFingerprintCategory);
+            }
+        } else {
+            if (!mFingerprintManager.isPowerbuttonFps()) {
+                prefSet.removePreference(mFingerprintWakeUnlock);
+            } else {
+                boolean fpWakeUnlockEnabledDef = getContext().getResources().getBoolean(
+                        com.android.internal.R.bool.config_fingerprintWakeAndUnlock);
+                boolean fpWakeUnlockEnabled = Settings.System.getIntForUser(
+                        getContext().getContentResolver(), Settings.System.FP_WAKE_UNLOCK,
+                        fpWakeUnlockEnabledDef ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+                mFingerprintWakeUnlock.setChecked(fpWakeUnlockEnabled);
             }
         }
 
