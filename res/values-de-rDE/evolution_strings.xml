@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 The Evolution X Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     Copyright (C) 2019-2022 Evolution X
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- The Evolver -->
@@ -30,6 +19,7 @@
     <string name="powermenu_title">Ein/Aus-Menü</string>
     <string name="powermenu_items_title">Ein/Aus-Menü Konfigurieren</string>
     <string name="quicksettings_title">Schnelleinstellungen</string>
+    <string name="spoof_title">Signatur vortäuschen (Spoofing)</string>
     <string name="status_bar_title">Statusleiste</string>
     <string name="swipe_gestures_title">Wischgesten</string>
     <string name="system_settings_title">Systemeinstellungen</string>
@@ -62,6 +52,8 @@
     <string name="led_color_red">Rot</string>
     <string name="edit_hint">Wert</string>
     <string name="seek_value_edit_label">Wert setzen</string>
+    <string name="search">Suche</string>
+    <string name="search_apps">Anwendungen suchen</string>
     <!-- Units -->
     <string name="unit_milliseconds">Millisekunden</string>
     <string name="unit_seconds">Sekunden</string>
@@ -188,6 +180,8 @@
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">VoWiFi-Symbol</string>
     <string name="vowifi_icon_summary">VoWiFi-Symbol anzeigen, wenn verfügbar</string>
+    <string name="volte_vowifi_override_title">VoWiFi überschreiben</string>
+    <string name="volte_vowifi_override_summary">VoLTE-Symbol ausblenden, wenn VoWiFi verfügbar ist</string>
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Altes Symbol für mobile Daten verwenden</string>
     <string name="use_old_mobiletype_summary">Symbol des Mobilfunk-Typs oberhalb des Signalstärke-Symbols anzeigen</string>
@@ -200,53 +194,45 @@
     <string name="torch_long_press_power_timeout_2min">2 Minuten</string>
     <string name="torch_long_press_power_timeout_5min">5 Minuten</string>
     <string name="torch_long_press_power_timeout_10min">10 Minuten</string>
-    <!-- Battery Settings -->
-    <string name="battery_settings_title">Akku-Einstellungen</string>
-    <!-- Battery Styles -->
+    <!-- Battery percentage -->
     <string name="battery_style_category_title">Stil des Akkusymbols</string>
-    <string name="battery_percent_title">Akkuanzeige in Prozent</string>
-    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_percentage_title">Akku-Prozentzahl</string>
+    <string name="status_bar_battery_percentage_default">Ausgeblendet (Standard)</string>
+    <string name="status_bar_battery_percentage_text_next">Außerhalb</string>
+    <string name="status_bar_battery_percentage_text_inside">Innerhalb des Symbols</string>
+    <!-- Status bar battery style-->
     <string name="status_bar_battery_style_title">Stil des Akkusymbols</string>
-    <string name="status_bar_battery_style_icon_portrait">Hochformat-Symbol (Standard)</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Querformat-Symbol (Rechts)</string>
-    <string name="status_bar_battery_style_icon_landscape">Querformat-Symbol (Links)</string>
+    <string name="status_bar_battery_style_port">Hochformat</string>
     <string name="status_bar_battery_style_circle">Kreis</string>
     <string name="status_bar_battery_style_dotted_circle">Kreis (gepunktet)</string>
     <string name="status_bar_battery_style_filled_circle">Kreis (gefüllt)</string>
-    <string name="status_bar_battery_style_big_circle">Großer Kreis</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Großer gepunkteter Kreis</string>
     <string name="status_bar_battery_style_text">Text</string>
-    <string name="status_bar_battery_style_hidden">Ausgeblendet</string>
-    <string name="left_battery_text_title">Linker Batterietext</string>
-    <string name="left_battery_text_summary">Batterietext links neben das Batteriesymbol setzen</string>
-    <!-- Status bar - Battery percentage -->
-    <string name="status_bar_battery_percentage_title">Akku-Prozentzahl</string>
-    <string name="status_bar_battery_percentage_default">Ausgeblendet (Standard)</string>
-    <string name="status_bar_battery_percentage_text_inside">Innerhalb des Symbols</string>
-    <string name="status_bar_battery_percentage_text_next">Außerhalb</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">Akku-Schätzung</string>
-    <string name="battery_estimate_summary">Geschätzte verbleibende Akkulaufzeit anzeigen, wenn verfügbar</string>
+    <!-- QS tiles layout direction: vertical or horizontal -->
+    <string name="qs_tile_layout_category_title">Kachel Layout</string>
+    <string name="qs_tile_layout_title">Vertikales Layout</string>
+    <string name="qs_tile_layout_summary">Option für das vertikale Layout aktivieren. Standard ist horizontal</string>
     <!-- QS rows and columns -->
-    <string name="qs_columns_rows_category_title">Spalten und Zeilen</string>
-    <string name="qs_rows_columns_title">Spalten und Zeilen in den Schnelleinstellungen</string>
+    <string name="qs_layout_category_title">Layout der Schnelleinstellungen</string>
     <string name="qs_rows_portrait_title">Schaltflächen Zeilen im Querformat</string>
     <string name="qs_rows_landscape_title">Kachel-Zeilen im Querformat</string>
     <string name="qs_columns_portrait_title">Spalten im Hochformat</string>
     <string name="qs_columns_landscape_title">Kachel-Spalten im Querformat</string>
+    <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Namen der Kacheln anzeigen</string>
+    <string name="qs_tile_title_visibility_summary">Schalter, um Kacheltitel auszublenden</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Helligkeitsregler</string>
-    <string name="qs_brightness_slider_title">Helligkeitsregler anzeigen</string>
-    <string name="qs_brightness_slider_summary">Helligkeitsregler in den Schnelleinstellungen anzeigen</string>
-    <string name="qs_brightness_position_bottom_title">Schieberegler nach unten verschieben, wenn erweitert</string>
-    <string name="qs_brightness_position_bottom_summary">Helligkeitsregler unten in den Schnelleinstellungen anzeigen</string>
+    <string name="qs_show_brightness_slider_title">Helligkeitsregler</string>
+    <string name="qs_show_brightness_slider_never">Niemals anzeigen</string>
+    <string name="qs_show_brightness_slider_expanded">Anzeigen wenn erweitert</string>
+    <string name="qs_show_brightness_slider_always">Immer anzeigen</string>
+    <string name="qs_show_brightness_slider_not_expanded">Anzeigen, wenn nicht aufgeklappt</string>
+    <string name="qs_brightness_slider_position_title">Position</string>
+    <string name="qs_brightness_slider_position_top">Oben</string>
+    <string name="qs_brightness_slider_position_bottom">Unten</string>
     <!-- Quick Settings brightness icon -->
-    <string name="brightness_icon_title">Schaltfläche \"Adaptive Helligkeit\"</string>
-    <string name="brightness_icon_summary">Schaltfläche \"Adaptive Helligkeit\" anzeigen</string>
-    <!-- Quick QS Panel brightness slider -->
-    <string name="quick_qs_brightness_slider_title">Helligkeitsregler in den Schnelleinstellungen anzeigen</string>
-    <string name="quick_qs_brightness_slider_summary">Helligkeitsregler in den Schnelleinstellungen anzeigen</string>
+    <string name="qs_show_auto_brightness_title">Automatische Helligkeit Symbol</string>
+    <string name="qs_show_auto_brightness_summary">Schalter für adaptive Helligkeit neben dem Schieberegler anzeigen</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Mit den Lautstärketasten aufwecken</string>
     <string name="volume_rocker_wake_summary">Das drücken der Lautstärketasten weckt das Gerät</string>
@@ -261,7 +247,7 @@
     <string name="qs_column_rows_settings_title">Schnelleinstellungen</string>
     <string name="qs_edit_title">Symbol bearbeiten</string>
     <string name="qs_edit_summary">Symbol für die Kachelbearbeitung in der Fußzeile anzeigen</string>
-    <string name="qs_footer_category_title">Fußzeile in den Schnelleinstellungen</string>
+    <string name="qs_footer_category">Fußzeile der Schnelleinstellungen</string>
     <string name="qs_header_category_title">Kopfzeile in den Schnelleinstellungen</string>
     <string name="qs_panel_category_title">Schnelleinstellungen</string>
     <string name="status_bar_quick_qs_pulldown">Schnelles Herunterziehen</string>
@@ -289,45 +275,49 @@
     <string name="lockscreen_charging_animation_phone">Telefon</string>
     <string name="lockscreen_charging_animation_stack">Stapel</string>
     <string name="lockscreen_charging_animation_wavy">Wellig</string>
-    <!-- Status bar clock and date options -->
+    <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Datum &amp; Uhrzeit Einstellungen</string>
-    <string name="status_bar_clock">Datum &amp; Uhrzeit</string>
-    <string name="clock_enabled">Aktiviert</string>
-    <string name="clock_disabled">Deaktiviert</string>
-    <string name="statusbar_clock_style_title">Datum &amp; Uhrzeit Position</string>
-    <string name="statusbar_clock_style_right">Rechts</string>
-    <string name="statusbar_clock_style_centre">Zentriert</string>
-    <string name="statusbar_clock_style_left">Links</string>
-    <string name="status_bar_clock_style_reset">Farbe zurücksetzen</string>
-    <string name="status_bar_show_clock_title">Datum &amp; Uhrzeit anzeigen</string>
-    <string name="status_bar_am_pm_title">AM/PM-Format</string>
-    <string name="status_bar_am_pm_info">24-Stunden-Format ist aktiviert</string>
-    <string name="clock_seconds_display">Sekunden anzeigen</string>
-    <string name="enable_clock_weekday">Wochentag</string>
-    <string name="enable_clock_weekday_summary">Abgekürzter Wochentag vor der Uhrzeit</string>
-    <string name="dont_show">Nicht anzeigen</string>
-    <string name="clock_date_display">Datum</string>
-    <string name="clock_date_display_summary">Zeige benutzerdefiniertes Datum vor der Uhr</string>
-    <string name="clock_date_style">Datums-Stil</string>
-    <string name="clock_date_format">Datumsformat</string>
-    <string name="clock_date_string_edittext_title">Muss im Datumsformat sein, z. B. MM/dd/yy</string>
-    <string name="clock_date_string_edittext_summary">Format eingeben</string>
-    <string name="am_pm_clock_normal">Normale Schriftgröße</string>
-    <string name="am_pm_clock_small">Kleine Schriftgröße</string>
-    <string name="am_pm_clock_none">Nicht anzeigen</string>
-    <string name="clock_date_display_none">Nicht anzeigen</string>
-    <string name="clock_date_display_small">Kleine Schriftgröße</string>
-    <string name="clock_date_display_normal">Normale Schriftgröße</string>
-    <string name="clock_date_style_normal">Normal</string>
-    <string name="clock_date_style_lowercase">Kleinschreibung</string>
-    <string name="clock_date_style_uppercase">Großschreibung</string>
-    <string name="clock_date_right">Rechts neben der Uhr</string>
-    <string name="clock_date_left">Links neben der Uhr</string>
-    <string name="clock_date_position">Position des Datums</string>
+    <string name="status_bar_clock_summary">Uhr &amp; Datum anpassen</string>
+    <string name="status_bar_clock_seconds_title">Sekundenanzeige</string>
+    <string name="status_bar_clock_seconds_summary">Sekunden neben der Uhr in der Statusleiste anzeigen</string>
+    <string name="status_bar_clock_position_title">Uhrenstil</string>
+    <string name="status_bar_clock_position_right">Rechts</string>
+    <string name="status_bar_clock_position_left">Links</string>
+    <string name="status_bar_clock_position_center">Zentriert</string>
+    <string name="status_bar_clock_position_hidden">Ausgeblendet</string>
     <string name="status_bar_clock_auto_hide_title">Uhr automatisch ausblenden</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Uhr auf dem Startbildschirm ausblenden</string>
     <string name="status_bar_clock_auto_hide_summary">Uhr in regelmäßigen Abständen ausblenden und anzeigen</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Ausblendedauer</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Wie lange die Uhr ausgeblendet bleiben soll</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Anzeigedauer</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Anzahl der Sekunden bevor Uhr ausgeblendet wird</string>
+    <string name="status_bar_am_pm_title">AM/PM-Format</string>
+    <string name="status_bar_am_pm_info">24-Stunden-Format ist aktiviert</string>
+    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_small">Klein</string>
+    <string name="status_bar_am_pm_hidden">Ausgeblendet</string>
+    <string name="status_bar_date_title">Datum</string>
+    <string name="status_bar_date_none">Ausgeblendet</string>
+    <string name="status_bar_date_small">Klein</string>
+    <string name="status_bar_date_normal">Normal</string>
+    <string name="status_bar_date_format_title">Datumsformat</string>
+    <string name="status_bar_date_style">Datums-Stil</string>
+    <string name="status_bar_date_style_normal">Normal</string>
+    <string name="status_bar_date_style_lowercase">Kleinschreibung</string>
+    <string name="status_bar_date_style_uppercase">Großschreibung</string>
+    <string name="status_bar_date_format_custom">Benutzerdefiniertes Java Format</string>
+    <string name="status_bar_date_string_edittext_title">Muss im Datumsformat sein z. B. MM/dd/yy</string>
+    <string name="status_bar_date_string_edittext_summary">Zeichenfolge eingeben</string>
+    <string name="clock_date_position">Position des Datums</string>
+    <string name="clock_date_right">Rechts neben der Uhr</string>
+    <string name="clock_date_left">Links neben der Uhr</string>
+    <!-- QS clock -->
+    <string name="qs_clock_title">Uhr</string>
+    <string name="qs_clock_summary">Uhr im Benachrichtigungsbereich anzeigen</string>
+    <!-- QS date -->
+    <string name="qs_date_title">Datum</string>
+    <string name="qs_date_summary">Datum im Benachrichtigungsbereich anzeigen</string>
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Bei Berührung vibrieren</string>
     <string name="quick_settings_vibrate_summary">Beim Berühren von Schnelleinstellungs-Kacheln vibrieren</string>
@@ -416,7 +406,7 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Schlosssymbol ausblenden</string>
     <string name="lockscreen_lock_icon_summary">Sperr-Symbol (Schloss) auf dem Sperrbildschirm anzeigen</string>
-    <!-- Pulse notifications lightning -->
+    <!-- Pulse notifications lighting -->
     <string name="pulse_ambient_light_title">Bildschirm-Seitenbeleuchtung bei Inaktivität</string>
     <string name="pulse_ambient_light_summary">Leuchtende Bildschirmkanten für pulsierende Benachrichtigungen</string>
     <string name="ambient_notification_light_enabled_title">Auf AOD anzeigen</string>
@@ -459,14 +449,6 @@
     <string name="qs_footer_text_summary">Text am unteren Rand der Schnelleinstellungen anzeigen</string>
     <string name="qs_footer_text_string_title">Text der Fußzeile anpassen</string>
     <string name="qs_footer_text_string_summary">Standardmäßig leer setzen</string>
-    <!-- UDFPS pressed color -->
-    <string name="udfps_pressed_color_title">Farbe beim drücken des In-Display-Fingerabdrucks</string>
-    <string name="udfps_pressed_color_cyan">Türkis</string>
-    <string name="udfps_pressed_color_white">Weiß</string>
-    <string name="udfps_pressed_color_white_new">Weiß (Neu)</string>
-    <string name="udfps_pressed_color_green">Grün</string>
-    <string name="udfps_pressed_color_yellow">Gelb</string>
-    <string name="udfps_pressed_color_light_yellow">Hellgelb</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Musik-App beim Anschließen eines Kopfhörers starten</string>
     <string name="headset_connect_player_summary">Beim Verbinden eines Kopfhörers die Standard-Musik-App starten</string>
@@ -487,6 +469,10 @@
     <string name="powermenu_users">Benutzer</string>
     <string name="powermenu_logout">Abmelden</string>
     <string name="powermenu_emergency">Notfall</string>
+    <string name="powermenu_device_controls">Gerätesteuerung</string>
+    <string name="powermenu_bugreport">Fehlerbericht</string>
+    <string name="powermenu_assist">Assistent</string>
+    <string name="powermenu_voice_assist">Sprachassistent</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Doze-Helligkeit konfigurieren</string>
     <string name="doze_brightness_force_title">Helligkeitswerte erzwingen</string>
@@ -571,8 +557,10 @@
     <string name="qs_datausage_monthly">Monatlicher Datenverbrauch</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Unschärfegrad für Mediencover</string>
-    <string name="show_lockscreen_media_art_title">Mediencover anzeigen</string>
     <string name="lockscreen_media_art_options_title">Sperrbildschirm Mediencover</string>
+    <!-- Media art -->
+    <string name="media_art_title">Albumcover</string>
+    <string name="media_art_summary">Albumcover bei Verfügbarkeit anzeigen</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Sensorblockierung pro Paket</string>
     <string name="sensor_block_summary">Den Zugriff auf bestimmte Sensoren für ausgewählte Apps blockieren, um Akku zu sparen</string>
@@ -856,11 +844,13 @@
     <!-- Status Bar Lyric -->
     <string name="status_bar_show_lyric_title">Songtext-Funktion in der Statusleiste</string>
     <string name="status_bar_show_lyric_summary">Songtexte in der Statusleiste anzeigen (erfordert eine App-Unterstützung und ein System-UI Neustart)</string>
-    <!-- Notification Media Options -->
+    <!-- Media artwork -->
     <string name="media_category">Optionen für Medienbenachrichtigungen</string>
     <string name="artwork_media_background_title">Medienhintergrund des Artworks</string>
     <string name="artwork_media_background_summary">Mediencover als Hintergrund für Benachrichtigungsmedien festlegen</string>
-    <string name="artwork_media_fade_level_title">Überblendungsgrad des Artworks</string>
+    <string name="artwork_media_background_enable_blur_title">Albumcover Hintergrund unschärfe</string>
+    <string name="artwork_media_background_blur_radius_title">Unschärfe für Albumcover</string>
+    <string name="artwork_media_background_alpha_title">Transparenz für Albumcover</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">Abrundungsstil für Systemdialoge</string>
     <string name="rounded_slight">Schwach</string>
@@ -909,6 +899,13 @@
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Schnelleinstellungs-Warnung (Fußzeile)</string>
     <string name="qs_footer_warnings_summary">Zeigt eine Warnung in der Fußzeile der Schnelleinstellungen, wenn das Netzwerk von einer externen App oder VPN überwacht wird</string>
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">Benutzerkonto-Symbol</string>
+    <string name="qs_footer_users_icon_summary">Symbol für Mehrbenutzerzugriff anzeigen, falls verfügbar</string>
+    <string name="qs_footer_edit_icon_title">Kacheln-Symbol bearbeiten</string>
+    <string name="qs_footer_show_power_menu_title">Verknüpfung zum Ein-/Aus-Menü</string>
+    <string name="qs_footer_services_icon_title">Verknüpfung zu aktiven Diensten</string>
+    <string name="qs_footer_settings_icon_title">Einstellungsverknüpfung</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">CPU-Informationen anzeigen</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -926,7 +923,8 @@
     <string name="volume_steps_reset">Zurücksetzen</string>
     <!-- QS battery estimates -->
     <string name="qs_show_battery_estimate_title">Verbleibende Akkulaufzeit schätzen</string>
-    <string name="qs_show_battery_estimate_summary">Geschätzte verbleibende Akkulaufzeit neben dem Symbol anzeigen</string>
+    <string name="qs_show_battery_estimate_summary_on">Geschätze verbleibende Akkulaufzeit anzeigen</string>
+    <string name="qs_show_battery_estimate_summary_off">Geschätze verbleibende Akkulaufzeit anzeigen</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Netzbetreiber-Bezeichnung</string>
     <string name="carrier_label_settings_summary">Netzbetreiber-Anzeige anpassen</string>
@@ -1041,5 +1039,69 @@ ein Entsperren des Gerätes</string>
     <!-- Unlimited g00gle ph0t0s st0rage -->
     <string name="use_photos_spoof_title">Unbegrenzter Fotospeicher</string>
     <string name="use_photos_spoof_summary">Ihr Gerät wird von der Fotos-App als Pixel XL identifiziert, damit Sie unbegrenzt Fotos in Originalqualität speichern können</string>
-    <string name="photos_spoof_toast">Starte die Fotos-App neu, damit es wirksam wird</string>
+    <!-- Unlock FPS for specific games -->
+    <string name="use_games_spoof_title">Höhere FPS in Spielen freischalten</string>
+    <string name="use_games_spoof_summary">Das Gerät als ein anderes Modell ausgeben (nur für ausgewählte Spiele), um höhere FPS freizuschalten</string>
+    <!-- Unlock higher quality streams for specific apps -->
+    <string name="use_stream_spoof_title">Höhere Qualität für Streams</string>
+    <string name="use_stream_spoof_summary">Täusche dein Gerät als Pixel 6 Pro vor, um Streams in höherer Qualität bei Amazon Prime, Disney+, Hotstar und Netflix freizuschalten</string>
+    <!-- NavBar Inverse -->
+    <string name="navigation_bar_inverse_title">3-Tasten-Navigationsleiste invertieren</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Logo</string>
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Logo in der Statusleiste anzeigen aktivieren</string>
+    <string name="status_bar_logo_color_title">Farbe</string>
+    <string name="status_bar_logo_color_accent_title">Akzentfarbe benutzen</string>
+    <string name="status_bar_logo_position_title">Position</string>
+    <string name="status_bar_logo_position_summary">Wählen Sie die Seite zum Anzeigen des Symbols, links oder rechts</string>
+    <string name="status_bar_logo_position_right">Rechts</string>
+    <string name="status_bar_logo_position_left">Links</string>
+    <string name="status_bar_logo_position_right_quick">Rechts bei geöffneten Schnelleinstellungen</string>
+    <string name="status_bar_logo_position_left_quick">Links bei geöffneten Schnelleinstellungen</string>
+    <string name="status_bar_logo_style_title">Stil</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">Emoticon</string>
+    <string name="status_bar_logo_style_emoticon_cool">Smiley (Cool)</string>
+    <string name="status_bar_logo_style_emoticon_dead">Smiley (Tod)</string>
+    <string name="status_bar_logo_style_emoticon_devil">Smiley (Teufel)</string>
+    <string name="status_bar_logo_style_emoticon_happy">Smiley (Glücklich)</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Smiley (Neutral)</string>
+    <string name="status_bar_logo_style_emoticon_poop">Smiley (Poop)</string>
+    <string name="status_bar_logo_style_emoticon_sad">Smiley (Unglücklich)</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Smiley (Zunge)</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Kuchen</string>
+    <string name="status_bar_logo_style_blogger">Blogger</string>
+    <string name="status_bar_logo_style_biohazard">Biologische Gefahr</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Roboter</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_heart">Herz</string>
+    <string name="status_bar_logo_style_flower">Blume</string>
+    <string name="status_bar_logo_style_ghost">Geist</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_human_male">Mann</string>
+    <string name="status_bar_logo_style_human_female">Frau</string>
+    <string name="status_bar_logo_style_human_male_female">Mann &amp; Frau</string>
+    <string name="status_bar_logo_style_gender_male">Männlich</string>
+    <string name="status_bar_logo_style_gender_female">Weiblich</string>
+    <string name="status_bar_logo_style_gender_male_female">Männlich &amp; Weiblich</string>
+    <string name="status_bar_logo_style_guitar_electric">Elektrische Gitarre</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Benachrichtigungen durch eine neu gestaltete Version von Tickern ersetzen. \nSchlank und weniger invasiv als eine Standardbenachrichtigung</string>
+    <string name="reticker_colored_title">Farbigen Hintergrund der Anwendung verwenden</string>
+    <string name="reticker_colored_summary">Hintergrundfarbe von reTicker durch die Hauptfarbe der Benachrichtigungs-App ersetzen</string>
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">Versteckte Apps</string>
+    <string name="hidden_apps_summary">Anwendungen, die aus dem Launcher ausgeblendet werden sollen. Erfordert einen Neustart des Launcher, damit die Änderungen wirksam werden</string>
+    <!-- Hide Status bar on lock screen -->
+    <string name="hide_lockscreen_status_bar_title">Statusleiste ausblenden</string>
+    <string name="hide_lockscreen_status_bar_summary">Statusleiste berühren, um die Sichtbarekeit zu wechseln</string>
 </resources>
