@@ -16,6 +16,8 @@
 
 package com.evolution.settings.fragments
 
+import android.content.Intent
+import android.os.Bundle
 import android.os.UserHandle
 import android.provider.Settings
 
@@ -23,6 +25,16 @@ import com.android.settings.R
 import com.evolution.settings.fragment.AppListFragment
 
 class HiddenAppSettingsFragment : AppListFragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setDisplayCategory(CATEGORY_BOTH)
+        val pm = requireContext().packageManager
+        setCustomFilter {
+            val intent = pm.getLaunchIntentForPackage(it.packageName)
+            intent != null && intent.categories.contains(Intent.CATEGORY_LAUNCHER)
+        }
+    }
 
     override protected fun getTitle(): Int = R.string.hidden_apps_title
 
