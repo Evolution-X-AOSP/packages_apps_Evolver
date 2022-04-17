@@ -16,7 +16,7 @@
 
 package com.evolution.settings.fragment
 
-import android.content.Context
+import android.annotation.IntDef
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
@@ -35,6 +35,7 @@ import android.widget.TextView
 
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
@@ -43,8 +44,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.settings.R
 import com.google.android.material.appbar.AppBarLayout
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
@@ -57,38 +56,29 @@ import kotlinx.coroutines.withContext
  * and package name of the application, along with a [CheckBox]
  * indicating whether the item is selected or not.
  */
-abstract class AppListFragment: Fragment(R.layout.app_list_layout), MenuItem.OnActionExpandListener {
+abstract class AppListFragment : Fragment(R.layout.app_list_layout),
+    MenuItem.OnActionExpandListener {
 
     private val mutex = Mutex()
 
-    private lateinit var fragmentScope: CoroutineScope
-    private lateinit var progressBar: ProgressBar
-    private lateinit var appBarLayout: AppBarLayout
-    private lateinit var packageManager: PackageManager
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var pm: PackageManager
     private lateinit var adapter: AppListAdapter
 
-    private val packageList = mutableListOf<PackageInfo>()
+    private var appBarLayout: AppBarLayout? = null
+    private var recyclerView: RecyclerView? = null
+    private var progressBar: ProgressBar? = null
 
     private var searchText = ""
     private var displayCategory: Int = CATEGORY_USER_ONLY
-    private var packageFilter: ((PackageInfo) -> Boolean) = { true }
-    private var packageComparator: ((PackageInfo, PackageInfo) -> Int) = { a, b ->
-        getLabel(a).compareTo(getLabel(b))
-    }
-
-    private var needsToHideProgressBar = false
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        fragmentScope = CoroutineScope(Dispatchers.Main)
+    private var packageFilter: (PackageInfo) -> Boolean = { true }
+    private var packageComparator: (PackageInfo, PackageInfo) -> Int = { first, second ->
+        getLabel(first).compareTo(getLabel(second))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        packageManager = requireContext().packageManager
-        packageList.addAll(packageManager.getInstalledPackages(0))
+        pm = requireContext().packageManager
     }
 
     /**
@@ -97,15 +87,19 @@ abstract class AppListFragment: Fragment(R.layout.app_list_layout), MenuItem.OnA
     abstract protected fun getTitle(): Int
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        requireActivity().setTitle(getTitle())
-        appBarLayout = requireActivity().findViewById(R.id.app_bar)
+        val activity = requireActivity()
+        activity.setTitle(getTitle())
+        appBarLayout = activity.findViewById(R.id.app_bar)
         progressBar = view.findViewById(R.id.loading_progress)
-        adapter = AppListAdapter()
-        recyclerView = view.findViewById<RecyclerView>(R.id.apps_list).also {
+        adapter = AppListAdapter(getInitialCheckedList(), layoutInflater).apply {
+            setOnAppSelectListener { onAppSelected(it) }
+            setOnAppDeselectListener { onAppDeselected(it) }
+            setOnListUpdateListener { onListUpdate(it) }
+        }
+        recyclerView = view.findViewById<RecyclerView>(R.id.apps_list)?.also {
             it.layoutManager = LinearLayoutManager(context)
             it.adapter = adapter
         }
-        needsToHideProgressBar = true
         refreshList()
     }
 
@@ -118,19 +112,21 @@ abstract class AppListFragment: Fragment(R.layout.app_list_layout), MenuItem.OnA
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.app_list_menu, menu)
         val searchItem = menu.findItem(R.id.search).also {
-            it.setOnActionExpandListener(this)
+            if (appBarLayout != null) {
+                it.setOnActionExpandListener(this)
+            }
         }
         val searchView = searchItem.actionView as SearchView
-        searchView.setQueryHint(getString(R.string.search_apps));
-        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+        searchView.setQueryHint(getString(R.string.search_apps))
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String) = false
 
             override fun onQueryTextChange(newText: String): Boolean {
-                fragmentScope.launch {
+                lifecycleScope.launch {
                     mutex.withLock {
                         searchText = newText
                     }
-                    refreshList()
+                    refreshListInternal()
                 }
                 return true
             }
@@ -139,23 +135,18 @@ abstract class AppListFragment: Fragment(R.layout.app_list_layout), MenuItem.OnA
 
     override fun onMenuItemActionExpand(item: MenuItem): Boolean {
         // To prevent a large space on tool bar.
-        appBarLayout.setExpanded(false /*expanded*/, false /*animate*/)
+        appBarLayout?.setExpanded(false /*expanded*/, false /*animate*/)
         // To prevent user expanding the collapsing tool bar view.
-        ViewCompat.setNestedScrollingEnabled(recyclerView, false)
+        recyclerView?.let { ViewCompat.setNestedScrollingEnabled(it, false) }
         return true
     }
 
     override fun onMenuItemActionCollapse(item: MenuItem): Boolean {
         // We keep the collapsed status after user cancel the search function.
-        appBarLayout.setExpanded(false /*expanded*/, false /*animate*/)
+        appBarLayout?.setExpanded(false /*expanded*/, false /*animate*/)
         // Allow user to expande the tool bar view.
-        ViewCompat.setNestedScrollingEnabled(recyclerView, true)
+        recyclerView?.let { ViewCompat.setNestedScrollingEnabled(it, true) }
         return true
-    }
-
-    override fun onDetach() {
-        fragmentScope.cancel()
-        super.onDetach()
     }
 
     /**
@@ -163,10 +154,10 @@ abstract class AppListFragment: Fragment(R.layout.app_list_layout), MenuItem.OnA
      * Defaults to [CATEGORY_USER_ONLY].
      *
      * @param category one of [CATEGORY_SYSTEM_ONLY],
-     * [CATEGORY_USER_ONLY], [CATEGORY_BOTH]
+     *      [CATEGORY_USER_ONLY], [CATEGORY_BOTH]
      */
-    fun setDisplayCategory(category: Int) {
-        fragmentScope.launch {
+    fun setDisplayCategory(@Category category: Int) {
+        lifecycleScope.launch {
             mutex.withLock {
                 displayCategory = category
             }
@@ -177,10 +168,10 @@ abstract class AppListFragment: Fragment(R.layout.app_list_layout), MenuItem.OnA
      * Set a custom filter to filter out items from the list.
      *
      * @param customFilter a function that takes a [PackageInfo] and
-     * returns a [Boolean] indicating whether to show the item or not. 
+     *      returns a [Boolean] indicating whether to show the item or not.
      */
-    fun setCustomFilter(customFilter: ((packageInfo: PackageInfo) -> Boolean)) {
-        fragmentScope.launch {
+    fun setCustomFilter(customFilter: (PackageInfo) -> Boolean) {
+        lifecycleScope.launch {
             mutex.withLock {
                 packageFilter = customFilter
             }
@@ -188,13 +179,13 @@ abstract class AppListFragment: Fragment(R.layout.app_list_layout), MenuItem.OnA
     }
 
     /**
-     * Set a [Comparator] for sorting the elements in the list..
+     * Set a [Comparator] for sorting the elements in the list.
      *
      * @param comparator a function that takes two [PackageInfo]'s and returns
-     * an [Int] representing their relative priority.
+     *      an [Int] representing their relative priority.
      */
-    fun setComparator(comparator: ((a: PackageInfo, b: PackageInfo) -> Int)) {
-        fragmentScope.launch {
+    fun setComparator(comparator: (PackageInfo, PackageInfo) -> Int) {
+        lifecycleScope.launch {
             mutex.withLock {
                 packageComparator = comparator
             }
@@ -222,75 +213,111 @@ abstract class AppListFragment: Fragment(R.layout.app_list_layout), MenuItem.OnA
      */
     open protected fun onAppDeselected(packageName: String) {}
 
-    protected fun refreshList() {
-        fragmentScope.launch {
-            val list = withContext(Dispatchers.Default) {
-                mutex.withLock {
-                    packageList.filter {
-                        when (displayCategory) {
-                            CATEGORY_SYSTEM_ONLY -> it.applicationInfo.isSystemApp()
-                            CATEGORY_USER_ONLY -> !it.applicationInfo.isSystemApp()
-                            else -> true
-                        } &&
-                        getLabel(it).contains(searchText, true) &&
-                        packageFilter(it)
-                    }.sortedWith(packageComparator).map { appInfofromPackage(it) }
-                }
-            }
-            adapter.submitList(list)
-            if (needsToHideProgressBar) {
-                progressBar.visibility = View.GONE
-                needsToHideProgressBar = false
-            }
+    fun refreshList() {
+        lifecycleScope.launch {
+            refreshListInternal()
         }
     }
 
-    private fun appInfofromPackage(packageInfo: PackageInfo): AppInfo =
-        AppInfo(
-            packageInfo.packageName,
-            getLabel(packageInfo),
-            packageInfo.applicationInfo.loadIcon(packageManager),
-        )
+    private suspend fun refreshListInternal() {
+        val list = withContext(Dispatchers.Default) {
+            val sortedList = mutex.withLock {
+                pm.getInstalledPackages(PackageManager.MATCH_ALL).filter {
+                    val categoryMatches = when (displayCategory) {
+                        CATEGORY_SYSTEM_ONLY -> it.applicationInfo.isSystemApp()
+                        CATEGORY_USER_ONLY -> !it.applicationInfo.isSystemApp()
+                        else -> true
+                    }
+                    categoryMatches && packageFilter(it) &&
+                        getLabel(it).contains(searchText, true)
+                }.sortedWith(packageComparator)
+            }
+            sortedList.map {
+                AppInfo(
+                    it.packageName,
+                    getLabel(it),
+                    it.applicationInfo.loadIcon(pm),
+                )
+            }
+        }
+        adapter.submitList(list)
+        progressBar?.visibility = View.GONE
+    }
 
     private fun getLabel(packageInfo: PackageInfo) =
-        packageInfo.applicationInfo.loadLabel(packageManager).toString()
+        packageInfo.applicationInfo.loadLabel(pm).toString()
 
-    private inner class AppListAdapter :
-            ListAdapter<AppInfo, AppListViewHolder>(itemCallback)
-    {
-        private val checkedList = getInitialCheckedList().toMutableList()
+    private class AppListAdapter(
+        initialCheckedList: List<String>,
+        private val layoutInflater: LayoutInflater
+    ) : ListAdapter<AppInfo, AppListViewHolder>(itemCallback) {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-            AppListViewHolder(layoutInflater.inflate(
-                R.layout.app_list_item, parent, false))
+        private val checkedList = initialCheckedList.toMutableList()
+        private var appSelectListener: (String) -> Unit = {}
+        private var appDeselectListener: (String) -> Unit = {}
+        private var listUpdateListener: (List<String>) -> Unit = {}
+
+        override fun onCreateViewHolder(
+            parent: ViewGroup,
+            viewType: Int
+        ) = AppListViewHolder(
+                layoutInflater.inflate(
+                    R.layout.app_list_item,
+                    parent,
+                    false /* attachToParent */
+                )
+            )
 
         override fun onBindViewHolder(holder: AppListViewHolder, position: Int) {
             val item = getItem(position)
-            val pkg = item.packageName
-            holder.label.setText(item.label)
-            holder.packageName.setText(pkg)
+            holder.label.text = item.label
+            holder.packageName.text = item.packageName
             holder.icon.setImageDrawable(item.icon)
-            holder.checkBox.setChecked(checkedList.contains(pkg))
+            holder.checkBox.isChecked = checkedList.contains(item.packageName)
             holder.itemView.setOnClickListener {
-                if (checkedList.contains(pkg)){
-                    checkedList.remove(pkg)
-                    onAppDeselected(pkg)
+                if (checkedList.contains(item.packageName)) {
+                    checkedList.remove(item.packageName)
+                    appDeselectListener(item.packageName)
                 } else {
-                    checkedList.add(pkg)
-                    onAppSelected(pkg)
+                    checkedList.add(item.packageName)
+                    appSelectListener(item.packageName)
                 }
                 notifyItemChanged(position)
-                onListUpdate(checkedList.toList())
+                listUpdateListener(checkedList.toList())
+            }
+        }
+
+        fun setOnAppSelectListener(listener: (String) -> Unit) {
+            appSelectListener = listener
+        }
+
+        fun setOnAppDeselectListener(listener: (String) -> Unit) {
+            appDeselectListener = listener
+        }
+
+        fun setOnListUpdateListener(listener: (List<String>) -> Unit) {
+            listUpdateListener = listener
+        }
+
+        companion object {
+            private val itemCallback = object : DiffUtil.ItemCallback<AppInfo>() {
+                override fun areItemsTheSame(oldInfo: AppInfo, newInfo: AppInfo) =
+                    oldInfo.packageName == newInfo.packageName
+
+                override fun areContentsTheSame(oldInfo: AppInfo, newInfo: AppInfo) =
+                    oldInfo == newInfo
             }
         }
     }
 
-    private class AppListViewHolder(itemView: View) :
-            RecyclerView.ViewHolder(itemView) {
+    private class AppListViewHolder(
+        itemView: View
+    ) : RecyclerView.ViewHolder(itemView) {
+
         val icon: ImageView = itemView.findViewById(R.id.icon)
         val label: TextView = itemView.findViewById(R.id.label)
-        val packageName: TextView = itemView.findViewById(R.id.packageName)
-        val checkBox: CheckBox = itemView.findViewById(R.id.checkBox)
+        val packageName: TextView = itemView.findViewById(R.id.package_name)
+        val checkBox: CheckBox = itemView.findViewById(R.id.check_box)
     }
 
     private data class AppInfo(
@@ -300,18 +327,16 @@ abstract class AppListFragment: Fragment(R.layout.app_list_layout), MenuItem.OnA
     )
 
     companion object {
-        private const val TAG = "AppListFragment"
-
         const val CATEGORY_SYSTEM_ONLY = 0
         const val CATEGORY_USER_ONLY = 1
         const val CATEGORY_BOTH = 2
 
-        private val itemCallback = object : DiffUtil.ItemCallback<AppInfo>() {
-            override fun areItemsTheSame(oldInfo: AppInfo, newInfo: AppInfo) =
-                oldInfo.packageName == newInfo.packageName
-
-            override fun areContentsTheSame(oldInfo: AppInfo, newInfo: AppInfo) =
-                oldInfo == newInfo
-        }
+        @IntDef(value = intArrayOf(
+            CATEGORY_SYSTEM_ONLY,
+            CATEGORY_USER_ONLY,
+            CATEGORY_BOTH
+        ))
+        @Retention(AnnotationRetention.SOURCE)
+        annotation class Category
     }
 }
