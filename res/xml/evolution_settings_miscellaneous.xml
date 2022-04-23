@@ -91,6 +91,12 @@
     <PreferenceCategory
         android:title="@string/dev_options_title" />
 
+        <com.evolution.settings.preference.GlobalSettingSwitchPreference
+            android:key="pm_downgrade_allowed"
+            android:title="@string/app_downgrade_title"
+            android:summary="@string/app_downgrade_summary"
+            android:defaultValue="false"/>
+
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="show_cpu_overlay"
             android:title="@string/show_cpu_info"
