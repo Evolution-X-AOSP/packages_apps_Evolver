@@ -38,6 +38,14 @@
         android:max="10"
         android:dependency="heads_up_notifications_enabled" />
 
+    <com.evolution.settings.preference.SystemSettingIntListPreference
+        android:key="heads_up_notifications_threshold"
+        android:title="@string/hun_importance_title"
+        android:summary="%s"
+        android:entries="@array/hun_importance_entries"
+        android:entryValues="@array/hun_importance_values"
+        android:defaultValue="4" />
+
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="less_boring_heads_up"
         android:title="@string/less_boring_heads_up_title"
