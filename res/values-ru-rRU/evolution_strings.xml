@@ -147,9 +147,9 @@
     <string name="summary_heads_up_disabled">Всплывающие уведомления выключены</string>
     <string name="add_heads_up_package">Добавить приложение</string>
     <string name="add_heads_up_stoplist_summary">Отключить всплывающие уведомления в этих приложениях</string>
-    <string name="add_heads_up_blacklist_summary">Отключить всплывающие уведомления от этих приложений</string>
+    <string name="add_heads_up_blocklist_summary">Отключить всплывающие уведомления из этих приложений</string>
     <string name="heads_up_stoplist_title">Стоплист</string>
-    <string name="heads_up_blacklist_title">Черный список</string>
+    <string name="heads_up_blocklist_title">Черный список</string>
     <string name="profile_choose_app">Выберите приложение</string>
     <string name="dialog_delete_title">Удалить</string>
     <string name="dialog_delete_message">Удалить выбранный элемент?</string>
@@ -276,8 +276,8 @@
     <string name="lockscreen_charging_animation_stack">Стопка</string>
     <string name="lockscreen_charging_animation_wavy">Волны</string>
     <!-- Status bar - Clock -->
-    <string name="status_bar_clock_title">Настройки часов &amp; даты</string>
-    <string name="status_bar_clock_summary">Пользовательские настройки часов &amp; даты</string>
+    <string name="status_bar_clock_title">Настройки часов и даты</string>
+    <string name="status_bar_clock_summary">Пользовательские настройки часов и даты</string>
     <string name="status_bar_clock_seconds_title">Показывать секунды</string>
     <string name="status_bar_clock_seconds_summary">Отображать секунды рядом с часами в строке состояния</string>
     <string name="status_bar_clock_position_title">Расположение часов</string>
@@ -357,8 +357,8 @@
     <string name="smart_pulldown_dismissable">нет удаляемых</string>
     <string name="smart_pulldown_ongoing">нет текущих</string>
     <!-- Brightness control -->
-    <string name="status_bar_toggle_brightness">Управление яркостью</string>
-    <string name="status_bar_toggle_brightness_summary">Регулировка яркости движением по строке состояния</string>
+    <string name="status_bar_brightness_control_title">Управление яркостью</string>
+    <string name="status_bar_brightness_control_summary">Регулировать яркость экрана движением пальца по строке состояния</string>
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">Меньше надоедливых всплывающих уведомлений</string>
     <string name="less_boring_heads_up_summary">Показывать всплывающие уведомления только для телефона, сообщений и будильника</string>
@@ -407,7 +407,7 @@
     <string name="lockscreen_lock_icon_title">Значок блокировки</string>
     <string name="lockscreen_lock_icon_summary">Показывать значок блокировки на экране блокировки</string>
     <!-- Pulse notifications lighting -->
-    <string name="pulse_ambient_light_title">Свечение по бокам экрана</string>
+    <string name="pulse_ambient_light_title">Свечение по краям экрана</string>
     <string name="pulse_ambient_light_summary">Подсвечивать края экрана для пульсирующих уведомлений</string>
     <string name="ambient_notification_light_enabled_title">Отображать на AOD</string>
     <string name="ambient_notification_light_enabled_summary">Показывать подсветку краёв на AOD</string>
@@ -1032,9 +1032,9 @@
     <string name="enable_fingerprint_ripple_effect_title">Эффект пульсации</string>
     <string name="enable_fingerprint_ripple_effect_summary">Показывать эффект пульсации при разблокировке с помощью отпечатка пальца</string>
     <!-- Screenshot type -->
-    <string name="screenshot_type_title">Тип скриншота</string>
-    <string name="screenshot_type_fullscreen">Полноэкранный скриншот</string>
-    <string name="screenshot_type_partial">Выделите область которую вы хотите сохранить как скриншот</string>
+    <string name="screenshot_type_title">Тип снимка экрана</string>
+    <string name="screenshot_type_fullscreen">Полноэкранный снимок экрана</string>
+    <string name="screenshot_type_partial">Выделите область которую вы хотите сохранить как снимок экрана</string>
     <!-- Unlimited g00gle ph0t0s st0rage -->
     <string name="use_photos_spoof_title">Безлимитное «Google Фото»</string>
     <string name="use_photos_spoof_summary">Маскировка устройства под Pixel XL для «Google Фото», чтобы предоставить неограниченное хранилище для резервного копирования фотографий</string>
@@ -1046,6 +1046,17 @@
     <string name="use_stream_spoof_summary">Маскировка устройства под Pixel 6 Pro для разблокировки видео более высокого качества на Amazon Prime, Disney+, Hotstar, и Netflix</string>
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">Инвертировать 3-х кнопочную панель навигации</string>
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">Скрыть приложения</string>
+    <string name="hidden_apps_summary">Приложения, которые должны быть скрыты из лаунчера. Требуется перезагрузка лаунчера, чтобы изменения вступили в силу</string>
+    <!-- Hide Status bar on lock screen -->
+    <string name="hide_lockscreen_status_bar_title">Скрыть строку состояния</string>
+    <string name="hide_lockscreen_status_bar_summary">Коснитесь строки состояния для переключения видимости</string>
+    <!-- Material dismiss all button for notifications -->
+    <string name="notification_material_dismiss_title">Кнопка очистки всех уведомлений</string>
+    <string name="notification_material_dismiss_summary">Заменяет текст \"Очистить все\" на плавающую кнопку</string>
+    <string name="notification_material_dismiss_style_title">Стиль кнопки</string>
+    <string name="notification_material_dismiss_bgstyle_title">Фон кнопки</string>
     <!-- Statusbar logo -->
     <string name="status_bar_logo_category_title">Логотип</string>
     <string name="status_bar_logo_title">Логотип</string>
@@ -1097,10 +1108,10 @@
     <string name="reticker_summary">Замените ваши уведомления переработанной версией тикеров! \nТонкие и менее функциональные, чем стандартные уведомления</string>
     <string name="reticker_colored_title">Использовать цвет приложений для фона</string>
     <string name="reticker_colored_summary">Заменить цвет фона reTicker используя цвета основного приложения уведомления</string>
-    <!-- Hidden apps -->
-    <string name="hidden_apps_title">Скрыть приложения</string>
-    <string name="hidden_apps_summary">Приложения, которые должны быть скрыты из лаунчера. Требуется перезагрузка лаунчера, чтобы изменения вступили в силу</string>
-    <!-- Hide Status bar on lock screen -->
-    <string name="hide_lockscreen_status_bar_title">Скрыть строку состояния</string>
-    <string name="hide_lockscreen_status_bar_summary">Коснитесь строки состояния для переключения видимости</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Разрешить понижение версии приложения</string>
+    <string name="app_downgrade_summary">Это позволит вам понизить версию приложений. Обратите внимание, что это может привести к сбоям и повреждению данных.</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Игнорировать флаги безопасности</string>
+    <string name="ignore_window_secure_summary">Убирает ограничения скриншотов и записей для всех приложений, когда они заменяются черными областями в записях. Это может быть удобным в некоторых случаях, но может привести к утечке конфиденциальной информации. После изменения этого переключателя может потребоваться перезапустить приложения, чтобы изменения вступили в силу.</string>
 </resources>

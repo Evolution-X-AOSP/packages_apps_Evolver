@@ -111,7 +111,7 @@
     <string name="evolution_twitter_summary">こちらをタップして私たちの Twitter をご覧下さい!</string>
     <string name="evolution_telegram_summary">ここをタップして素晴らしいコミュニティを訪れましょう!</string>
     <string name="evolution_github_summary">ここをタップして GitHub を開きます!</string>
-    <string name="evolution_about_info_summary">Evolution X は AOSP ベースのカスタム ROM で、多くのカスタマイズ機能を持つピクセルライクな感触を提供することを目的としています。Android Pie 以来、私たちは独自の Android ブランドをお使いのデバイスにもたらしてきました。安定した機能豊富なアップデートを、忠実なユーザーに提供し続けます。</string>
+    <string name="evolution_about_info_summary">Evolution X はまるで Pixel デバイスを使っているように感じさせることを目的としているカスタム ROM です。豊富な追加の設定と共に、私達は Android ソースコードから最新のマンスリーセキュリティパッチを適用したビルドを提供します。</string>
     <string name="evolution_about_team">チーム Evolution X</string>
     <!-- Battery light -->
     <string name="light_settings_header">ライトの設定</string>
@@ -147,9 +147,9 @@
     <string name="summary_heads_up_disabled">ポップアップ通知は無効です</string>
     <string name="add_heads_up_package">アプリを追加</string>
     <string name="add_heads_up_stoplist_summary">これらのアプリ起動中には Heads Up を無効化する</string>
-    <string name="add_heads_up_blacklist_summary">これらのアプリの Heads Up を無効化する</string>
+    <string name="add_heads_up_blocklist_summary">これらのアプリの Heads Up を無効化する</string>
     <string name="heads_up_stoplist_title">ストップリスト</string>
-    <string name="heads_up_blacklist_title">ブラックリスト</string>
+    <string name="heads_up_blocklist_title">ブロックリスト</string>
     <string name="profile_choose_app">アプリを選択</string>
     <string name="dialog_delete_title">削除</string>
     <string name="dialog_delete_message">選択した項目を削除しますか?</string>
@@ -207,6 +207,8 @@
     <string name="status_bar_battery_style_dotted_circle">円 (点線)</string>
     <string name="status_bar_battery_style_filled_circle">円 (塗り潰し)</string>
     <string name="status_bar_battery_style_text">文字</string>
+    <string name="status_bar_battery_style_icon_rlandscape">水平アイコン (右)</string>
+    <string name="status_bar_battery_style_icon_landscape">水平アイコン (左)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">タイルのレイアウト</string>
     <string name="qs_tile_layout_title">縦方向レイアウト</string>
@@ -357,8 +359,8 @@
     <string name="smart_pulldown_dismissable">消せる通知が無い場合</string>
     <string name="smart_pulldown_ongoing">実行中の通知が無い場合</string>
     <!-- Brightness control -->
-    <string name="status_bar_toggle_brightness">明るさコントロール</string>
-    <string name="status_bar_toggle_brightness_summary">ステータスバーの上をスライドして明るさを調整する</string>
+    <string name="status_bar_brightness_control_title">明るさコントロール</string>
+    <string name="status_bar_brightness_control_summary">ステータスバーの上をスライドして明るさを調整する</string>
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">邪魔な Heads Up を減らす</string>
     <string name="less_boring_heads_up_summary">ダイアラー、アラーム、メッセージアプリのみ Heads Up を表示する</string>
@@ -1046,6 +1048,23 @@
     <string name="use_stream_spoof_summary">お使いの端末は Pixel 6 Pro として認識され、Amazon Prime、Disney+、Hotstar、Netflix をより高品質にストリーミングできるようになります。</string>
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">3ボタンナビゲーションバーの反転</string>
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">非表示のアプリ</string>
+    <string name="hidden_apps_summary">ランチャーアプリから非表示になるアプリです。変更を反映させるにはランチャーの再起動が必要です。</string>
+    <!-- Hide Status bar on lock screen -->
+    <string name="hide_lockscreen_status_bar_title">ステータスバーを隠す</string>
+    <string name="hide_lockscreen_status_bar_summary">ステータスバーのタップで表示を切り替える</string>
+    <!-- Material dismiss all button for notifications -->
+    <string name="notification_material_dismiss_title">全ての通知を消去ボタン</string>
+    <string name="notification_material_dismiss_summary">全ての通知を消去ボタンをマテリアルスタイルのフローティングボタンに置き換える</string>
+    <string name="notification_material_dismiss_style_title">ボタンのスタイル</string>
+    <string name="notification_material_dismiss_bgstyle_title">ボタンの背景</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">アプリのダウングレードを許可</string>
+    <string name="app_downgrade_summary">アプリのダウングレードを許可します。クラッシュやデータの破損に繋がる可能性があることに注意して下さい。</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">ウィンドウのセキュアフラグを無視</string>
+    <string name="ignore_window_secure_summary">全てのアプリへのスクリーンショットや画面録画の制限を解除します。基本的に録画では特別なアプリは黒く領域が塗り潰されます。いくつかの場合で便利になることがありますが、プライバシー保護が脆弱になる可能性があります。この設定切り替えの後、効果を反映させるにはアプリの再起動が必要になる可能性があります。</string>
     <!-- Statusbar logo -->
     <string name="status_bar_logo_category_title">ロゴ</string>
     <string name="status_bar_logo_title">ロゴ</string>
@@ -1097,10 +1116,7 @@
     <string name="reticker_summary">再デザインされたバージョンの通知ティッカーに置き換えます。\n標準の通知よりスリムで優しい雰囲気です。</string>
     <string name="reticker_colored_title">アプリに色付きの背景を使用</string>
     <string name="reticker_colored_summary">reTicker の背景の色を通知アプリのメインの色で置き換える</string>
-    <!-- Hidden apps -->
-    <string name="hidden_apps_title">非表示のアプリ</string>
-    <string name="hidden_apps_summary">ランチャーアプリから非表示になるアプリです。変更を反映させるにはランチャーの再起動が必要です。</string>
-    <!-- Hide Status bar on lock screen -->
-    <string name="hide_lockscreen_status_bar_title">ステータスバーを隠す</string>
-    <string name="hide_lockscreen_status_bar_summary">ステータスバーのタップで表示を切り替える</string>
+    <!-- Colorful battery icon -->
+    <string name="battery_level_colors_title">バッテリーアイコンの色</string>
+    <string name="battery_level_colors_summary">各バッテリーレベルの低下は色分けされます (システム UI の再起動が必要です)</string>
 </resources>
