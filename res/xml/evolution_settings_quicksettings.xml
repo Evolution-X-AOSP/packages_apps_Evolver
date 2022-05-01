@@ -12,6 +12,16 @@
         android:key="quick_settings_general_category"
         android:title="@string/general_category">
 
+        <!-- QS transparency -->
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_transparency"
+            android:title="@string/qs_transparency_title"
+            android:summary="@string/qs_transparency_summary"
+            android:defaultValue="10"
+            settings:interval="1"
+            android:max="10"
+            settings:min="1" />
+
         <!-- QS date -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="show_qs_date"
