@@ -87,18 +87,10 @@
     <string name="navigation_bar_category">Панель навигации</string>
     <string name="navigation_bar_title">Наэкранная панель навигации</string>
     <string name="navigation_bar_summary">Включить наэкранную панель навигации</string>
-    <string name="navigation_bar_layout_title">Расположение</string>
-    <string name="navigation_bar_layout_summary">Настройка расположения панели навигации</string>
     <string name="navigation_bar_arrow_keys_title">Показывать клавиши со стрелками во время набора текста</string>
     <string name="navigation_bar_arrow_keys_summary">Отображать кнопки перемещения курсора влево или вправо на панели навигации при вводе</string>
-    <string name="navigation_bar_help_text">Эти настройки относятся в основном к 3-кнопочной панели навигации. Если вы используете жестовую навигацию и хотите настроить ее, например, скрыть ручку жеста, посетите раздел: Настройки &gt; Система &gt; Жесты.</string>
-    <string name="nav_bar_tuner_title">Настройки навигационной панели</string>
-    <string name="nav_bar_tuner_summary">Изменить расположение панели навигации</string>
-    <string name="navbar_layout_title">Расположение</string>
-    <string name="navbar_layout_normal">Обычный</string>
-    <string name="navbar_layout_compact">Компактный</string>
-    <string name="navbar_layout_leftleaning">Со сдвигом влево</string>
-    <string name="navbar_layout_rightleaning">Со сдвигом вправо</string>
+    <string name="navigation_bar_compact_layout_title">Компактное размещение</string>
+    <string name="navigation_bar_compact_layout_summary">Использовать компактное размещение для панели навигации</string>
     <string name="system_navigation_summary">Выберите вариант навигации в системе</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Анимация Pixel</string>
@@ -207,6 +199,8 @@
     <string name="status_bar_battery_style_dotted_circle">Круг (Точечный)</string>
     <string name="status_bar_battery_style_filled_circle">Круг (Заполняющийся)</string>
     <string name="status_bar_battery_style_text">Текст</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Горизонтальная иконка (справа)</string>
+    <string name="status_bar_battery_style_icon_landscape">Горизонтальная иконка (слева)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">Расположение плиток</string>
     <string name="qs_tile_layout_title">Вертикальное расположение</string>
@@ -265,16 +259,6 @@
     <string name="lockscreen_albumart_filter_tint">Масштабирование с акцентом системы</string>
     <string name="lockscreen_albumart_filter_blur">Размытие</string>
     <string name="lockscreen_albumart_filter_grayblur">Оттенки серого и размытые</string>
-    <!-- Charging animation -->
-    <string name="lockscreen_charging_animation_title">Анимация зарядки</string>
-    <string name="lockscreen_charging_animation_flash">Молния</string>
-    <string name="lockscreen_charging_animation_battery">Батарея</string>
-    <string name="lockscreen_charging_animation_drop">Бросок</string>
-    <string name="lockscreen_charging_animation_explosion">Взрыв</string>
-    <string name="lockscreen_charging_animation_water">Вода</string>
-    <string name="lockscreen_charging_animation_phone">Телефон</string>
-    <string name="lockscreen_charging_animation_stack">Стопка</string>
-    <string name="lockscreen_charging_animation_wavy">Волны</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Настройки часов и даты</string>
     <string name="status_bar_clock_summary">Пользовательские настройки часов и даты</string>
@@ -939,9 +923,6 @@
     <!-- Double Tap on Doze to wake -->
     <string name="double_tap_on_doze_to_wake_title">Нажмите для пробуждения в режиме Doze</string>
     <string name="double_tap_on_doze_to_wake_summary">Дважды коснитесь экрана для пробуждения, когда устройство находится в режиме сна</string>
-    <!-- Charging animation -->
-    <string name="charging_animation_title">Анимация зарядки</string>
-    <string name="charging_animation_summary">Показывать анимацию при подключенном зарядном устройстве</string>
     <!-- Monet Engine -->
     <string name="monet_category">Monet</string>
     <string name="monet_engine_title">Monet Engine</string>
@@ -1022,12 +1003,6 @@
     <string name="pulse_custom_div">Расстояние между столбцами</string>
     <string name="pulse_filled_block_size">Размер блока</string>
     <string name="pulse_empty_block_size">Расстояние между блоками</string>
-    <!-- Keyguard force small clock -->
-    <string name="lockscreen_small_clock_title">Принудительные небольшие часы</string>
-    <string name="lockscreen_small_clock_summary">Не переключаться на большие часы, когда нет уведомлений</string>
-    <!-- Gaming mode -->
-    <string name="gaming_mode_title">Игровое пространство</string>
-    <string name="gaming_mode_summary">Дополнительные возможности для полноценного погружения в игру</string>
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Эффект пульсации</string>
     <string name="enable_fingerprint_ripple_effect_summary">Показывать эффект пульсации при разблокировке с помощью отпечатка пальца</string>
@@ -1057,6 +1032,12 @@
     <string name="notification_material_dismiss_summary">Заменяет текст \"Очистить все\" на плавающую кнопку</string>
     <string name="notification_material_dismiss_style_title">Стиль кнопки</string>
     <string name="notification_material_dismiss_bgstyle_title">Фон кнопки</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Разрешить понижение версии приложения</string>
+    <string name="app_downgrade_summary">Это позволит вам понизить версию приложений. Обратите внимание, что это может привести к сбоям и повреждению данных.</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Игнорировать флаги безопасности</string>
+    <string name="ignore_window_secure_summary">Убирает ограничения скриншотов и записей для всех приложений, когда они заменяются черными областями в записях. Это может быть удобным в некоторых случаях, но может привести к утечке конфиденциальной информации. После изменения этого переключателя может потребоваться перезапустить приложения, чтобы изменения вступили в силу.</string>
     <!-- Statusbar logo -->
     <string name="status_bar_logo_category_title">Логотип</string>
     <string name="status_bar_logo_title">Логотип</string>
@@ -1108,10 +1089,7 @@
     <string name="reticker_summary">Замените ваши уведомления переработанной версией тикеров! \nТонкие и менее функциональные, чем стандартные уведомления</string>
     <string name="reticker_colored_title">Использовать цвет приложений для фона</string>
     <string name="reticker_colored_summary">Заменить цвет фона reTicker используя цвета основного приложения уведомления</string>
-    <!-- Application downgrade -->
-    <string name="app_downgrade_title">Разрешить понижение версии приложения</string>
-    <string name="app_downgrade_summary">Это позволит вам понизить версию приложений. Обратите внимание, что это может привести к сбоям и повреждению данных.</string>
-    <!-- Ignore window secure -->
-    <string name="ignore_window_secure_title">Игнорировать флаги безопасности</string>
-    <string name="ignore_window_secure_summary">Убирает ограничения скриншотов и записей для всех приложений, когда они заменяются черными областями в записях. Это может быть удобным в некоторых случаях, но может привести к утечке конфиденциальной информации. После изменения этого переключателя может потребоваться перезапустить приложения, чтобы изменения вступили в силу.</string>
+    <!-- Colorful battery icon -->
+    <string name="battery_level_colors_title">Переключение цветного значка батареи</string>
+    <string name="battery_level_colors_summary">Каждое снижение уровня заряда батареи обозначается цветом (требуется перезагрузка SystemUI)</string>
 </resources>
