@@ -87,18 +87,10 @@
     <string name="navigation_bar_category">Gezinme çubuğu</string>
     <string name="navigation_bar_title">Gezinme çubuğu</string>
     <string name="navigation_bar_summary">Gezinme tuşlarını etkinleştir</string>
-    <string name="navigation_bar_layout_title">Düzen</string>
-    <string name="navigation_bar_layout_summary">Gezinme çubuğu düzenini özelleştirin</string>
     <string name="navigation_bar_arrow_keys_title">Yazı yazarken ok tuşlarını göster</string>
     <string name="navigation_bar_arrow_keys_summary">Yazarken gezinme çubuğunda sol ve sağ imleç tuşlarını göster</string>
-    <string name="navigation_bar_help_text">Bu ayarlar genel olarak 3 düğmeli gezinme çubuğu ile ilgilidir. Eğer hareketle gezinme kullanıyorsanız ve özelleştirmek istiyorsanız, örn. gezinme çubuğunu gizleme, lütfen Ayarlar &gt; Sistem &gt; Hareketler yolunu ziyaret edin.</string>
-    <string name="nav_bar_tuner_title">Gezinme çubuğu düzenleyicisi</string>
-    <string name="nav_bar_tuner_summary">Gezinme çubuğu düzenini değiştir</string>
-    <string name="navbar_layout_title">Düzen</string>
-    <string name="navbar_layout_normal">Normal</string>
-    <string name="navbar_layout_compact">Kompakt</string>
-    <string name="navbar_layout_leftleaning">Sola yaslanmış</string>
-    <string name="navbar_layout_rightleaning">Sağa yaslanmış</string>
+    <string name="navigation_bar_compact_layout_title">Sıkışık düzen</string>
+    <string name="navigation_bar_compact_layout_summary">Gezinme çubuğunda sıkışık düzeni kullan</string>
     <string name="system_navigation_summary">Hangi sistem gezinme stilini kullanacağınızı seçin</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel animasyonu</string>
@@ -207,6 +199,10 @@
     <string name="status_bar_battery_style_dotted_circle">Daire (Noktalı)</string>
     <string name="status_bar_battery_style_filled_circle">Daire (Dolu)</string>
     <string name="status_bar_battery_style_text">Metin</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Yatay simge (Sağ)</string>
+    <string name="status_bar_battery_style_icon_landscape">Yatay simge (Sol)</string>
+    <string name="status_bar_battery_style_big_circle">Daire (Büyük)</string>
+    <string name="status_bar_battery_style_big_dotted_circle">Daire (Büyük noktalı)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">Kare düzeni</string>
     <string name="qs_tile_layout_title">Dikey Düzen</string>
@@ -220,17 +216,11 @@
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Kare başlıklarını göster</string>
     <string name="qs_tile_title_visibility_summary">Kare başlıklarını gizle veya göster</string>
-    <!-- Quick Settings brightness slider -->
-    <string name="qs_brightness_slider_category">Parlaklık kaydırıcısı</string>
-    <string name="qs_show_brightness_slider_title">Parlaklık kaydırıcısı</string>
-    <string name="qs_show_brightness_slider_never">Asla gösterme</string>
-    <string name="qs_show_brightness_slider_expanded">Genişletildiğinde göster</string>
-    <string name="qs_show_brightness_slider_always">Her zaman göster</string>
-    <string name="qs_show_brightness_slider_not_expanded">Genişletilmediğinde göster</string>
-    <string name="qs_brightness_slider_position_title">Konum</string>
-    <string name="qs_brightness_slider_position_top">Üst</string>
-    <string name="qs_brightness_slider_position_bottom">Alt</string>
-    <!-- Quick Settings brightness icon -->
+    <!-- Brightness slider -->
+    <string name="qs_show_brightness_title">Parlaklık kaydırıcısı</string>
+    <string name="qs_show_brightness_summary">Parlaklık kaydırıcısı görünürlüğü ve ayarları</string>
+    <string name="qs_brightness_position_bottom_title">Alt parlaklık kaydırıcısı</string>
+    <string name="qs_brightness_position_bottom_summary">Hızlı ayarlar paneli altında parlaklık kaydırıcısını göster</string>
     <string name="qs_show_auto_brightness_title">Otomatik parlaklık simgesi</string>
     <string name="qs_show_auto_brightness_summary">Kaydırma çubuğunun yanında otomatik parlaklık tuşunu göster</string>
     <!-- Volume rocker wake -->
@@ -265,16 +255,6 @@
     <string name="lockscreen_albumart_filter_tint">Vurgu renkli</string>
     <string name="lockscreen_albumart_filter_blur">Bulanık</string>
     <string name="lockscreen_albumart_filter_grayblur">Gri tonlama ve bulanık</string>
-    <!-- Charging animation -->
-    <string name="lockscreen_charging_animation_title">Şarj animasyonu</string>
-    <string name="lockscreen_charging_animation_flash">Yıldırım</string>
-    <string name="lockscreen_charging_animation_battery">Pil</string>
-    <string name="lockscreen_charging_animation_drop">Damla</string>
-    <string name="lockscreen_charging_animation_explosion">Patlama</string>
-    <string name="lockscreen_charging_animation_water">Su</string>
-    <string name="lockscreen_charging_animation_phone">Telefon</string>
-    <string name="lockscreen_charging_animation_stack">Yığın</string>
-    <string name="lockscreen_charging_animation_wavy">Dalgalı</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Saat ve tarih</string>
     <string name="status_bar_clock_summary">Saati ve tarihi özelleştir</string>
@@ -365,28 +345,28 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Uygulama sonlandırma tuşu</string>
     <string name="notification_guts_kill_app_button_summary">Bildirimlere uzun basma menüsünde uygulama sonlandırma tuşunu göster</string>
-    <!-- Battery Bar -->
+    <!-- Battery bar -->
     <string name="battery_bar_title">Pil çubuğu</string>
     <string name="battery_bar_summary">Durum çubuğunun yanında pil çubuğunu görüntüleyin ve özelleştirin</string>
-    <string name="battery_bar_no_navbar">Pil çubuğu konumu</string>
-    <string name="battery_bar_status_bar_top">Durum çubuğunun üstü</string>
-    <string name="battery_bar_status_bar_bot">Durum çubuğunun altı</string>
+    <string name="battery_bar_location">Pil çubuğu konumu</string>
     <string name="battery_bar_color">Pil çubuğu rengi</string>
-    <string name="battery_bar_charging_color">Pil çubuğu şarj rengi</string>
-    <string name="battery_bar_battery_low_color">Pil çubuğu düşük pil rengi</string>
-    <string name="battery_bar_cat">Pil çubuğu stili</string>
     <string name="battery_bar_style_title">Pil çubuğu hizalama</string>
     <string name="battery_bar_thickness_title">Pil çubuğu kalınlığı</string>
     <string name="battery_bar_animate_title">Şarj animasyonu</string>
-    <string name="battery_bar_style_regular">Düzenli</string>
-    <string name="battery_bar_style_center_mirrored">Ortalanmış</string>
-    <string name="battery_bar_style_reversed">Ters</string>
-    <string name="battery_bar_use_charging_color">Özel şarj rengi</string>
-    <string name="battery_bar_blend_color_title">Renkleri karıştır</string>
-    <string name="battery_bar_blend_color_summary">Pil yüzdesine karşılık gelen dolu/boş renkleri karıştırır</string>
-    <string name="battery_bar_blend_color_reverse_title">Renk yönünü tersine çevir</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">Dolu &#8594; boş: kırmızı &#8592; yeşil &#8592; mavi &#8592; kırmızı</string>
-    <string name="battery_bar_blend_color_reverse_summary_on">Dolu &#8594; boş: kırmızı &#8594; yeşil &#8594; mavi &#8594; kırmızı</string>
+    <string name="battery_bar_animate_summary">Şarj animasyonu kötü bir kullanıcı deneyimine neden olabilir. Kendi takdirinize bağlı olarak etkinleştirin.</string>
+    <string name="battery_bar_hide">Gizle</string>
+    <string name="battery_bar_statusbar">Durum çubuğu</string>
+    <string name="battery_bar_topnav">Gezinti çubuğunun üstü</string>
+    <string name="battery_bar_bottomnav">Gezinti çubuğunun altı</string>
+    <string name="battery_bar_reg">Normal</string>
+    <string name="battery_bar_center">Merkez-yansıtmalı</string>
+    <string name="battery_bar_charging_color">Pil çubuğu şarj rengi</string>
+    <string name="battery_bar_battery_low_color">Pil çubuğu düşük pil rengi</string>
+    <string name="battery_bar_reversed">Ters</string>
+    <string name="battery_bar_use_gradient_color">Gradyan rengi kullan</string>
+    <string name="battery_bar_gradient_color_summary">Pil seviyesine bir ölçek olarak gradyan renk kullan</string>
+    <string name="battery_bar_high_color">Yüksek düzeyde renk\"</string>
+    <string name="battery_bar_low_color">Düşük düzeyde renk\"</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Kaydırma önbelleği</string>
     <string name="pref_scrollingcache_summary">Kaydırma önbelleği fazla bellek kullanımı olsa dahi performansı arttırabilir</string>
@@ -939,9 +919,6 @@
     <!-- Double Tap on Doze to wake -->
     <string name="double_tap_on_doze_to_wake_title">Ortam ekranında uyandırmak için dokun</string>
     <string name="double_tap_on_doze_to_wake_summary">Derin uykudayken cihazı uyandırmak için iki kez dokunun</string>
-    <!-- Charging animation -->
-    <string name="charging_animation_title">Şarj animasyonu</string>
-    <string name="charging_animation_summary">Cihaz şarja takıldığında bir animasyon göster</string>
     <!-- Monet Engine -->
     <string name="monet_category">Monet</string>
     <string name="monet_engine_title">Monet ayarları</string>
@@ -1022,12 +999,21 @@
     <string name="pulse_custom_div">Çubuk aralığı</string>
     <string name="pulse_filled_block_size">Blok boyutu</string>
     <string name="pulse_empty_block_size">Blok aralığı</string>
-    <!-- Keyguard force small clock -->
-    <string name="lockscreen_small_clock_title">Küçük saat kullanmaya zorla</string>
-    <string name="lockscreen_small_clock_summary">Bildirim yoksa büyük saate geçme</string>
-    <!-- Gaming mode -->
-    <string name="gaming_mode_title">Oyun alanı</string>
-    <string name="gaming_mode_summary">Tam ekran oyun deneyimi için ekstra özellikler</string>
+    <!-- QS Pulse -->
+    <string name="show_qs_pulse_title">Hızlı ayarlarda Pulse</string>
+    <string name="show_qs_pulse_summary">Hızlı ayarlarda ses görselleştirici</string>
+    <!-- Pulse Gravity and mirror options -->
+    <string name="pulse_custom_gravity_title">Yerçekimi</string>
+    <string name="pulse_custom_gravity_bottom">Alt</string>
+    <string name="pulse_custom_gravity_top">Üst</string>
+    <string name="pulse_custom_gravity_center">Orta</string>
+    <string name="visualizer_center_mirrored_title">Ortalanmış</string>
+    <string name="visualizer_center_mirrored_summary">Görselleştiriciyi ortalanmış moda ayarlayın</string>
+    <string name="pulse_vertical_mirror_title">Dikey ayna</string>
+    <string name="pulse_vertical_mirror_summary">Başka bir pulse oluşturun ve dikey olarak çevirin</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Oyun alanı</string>
+    <string name="game_space_summary">Oyun deneyiminizi geliştirin</string>
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Dalga etkisi</string>
     <string name="enable_fingerprint_ripple_effect_summary">Parmak izi ile kilit açma sırasında dalgalanma efekti göster</string>
@@ -1057,6 +1043,12 @@
     <string name="notification_material_dismiss_summary">Tümünü temizleme bildirim metnini materyal stili kayan tuş ile değiştirin</string>
     <string name="notification_material_dismiss_style_title">Tuş stili</string>
     <string name="notification_material_dismiss_bgstyle_title">Tuş arka planı</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Sürüm düşürmeye izin ver</string>
+    <string name="app_downgrade_summary">Uygulamaların eski sürümüne geri dönmenizi sağlar. Veri kaybına ve çökmelere neden olabilir.</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Pencere güvenli işaretlerini yok say</string>
+    <string name="ignore_window_secure_summary">Ekran görüntüsü ve ekran kaydının limitlerini tüm uygulamalar için kaldırır. Normalde, kayıtlardaki siyah alanlarla özel uygulamalar değiştirilir. Bu bazı durumlarda uygun olabilir fakat güvenlik açıklarına neden olabilir. Bu ayarı değiştirdikten sonra, değişikliklerin etkili olması için uygulamaları yeniden başlatmanız gerekebilir.</string>
     <!-- Statusbar logo -->
     <string name="status_bar_logo_category_title">Logo</string>
     <string name="status_bar_logo_title">Logo</string>
@@ -1105,13 +1097,13 @@
     <string name="status_bar_logo_style_guitar_electric">Elektrogitar</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Bildirimlerinizi, bildirim çubuğu yazılarının yeniden tasarlanmış haliyle değiştirin!\nStandart bildirimlerden daha zarif ve daha az dikkat dağıtıcıdır</string>
+    <string name="reticker_summary">Bildirim pencerelerini, bildirim çubuğu yazılarının yeniden tasarlanmış haliyle değiştirin</string>
     <string name="reticker_colored_title">Uygulama rengine göre arkaplan</string>
     <string name="reticker_colored_summary">reTicker arkaplan rengini uygulamanın ana rengine göre değiştir</string>
-    <!-- Application downgrade -->
-    <string name="app_downgrade_title">Sürüm düşürmeye izin ver</string>
-    <string name="app_downgrade_summary">Uygulamaların eski sürümüne geri dönmenizi sağlar. Veri kaybına ve çökmelere neden olabilir.</string>
-    <!-- Ignore window secure -->
-    <string name="ignore_window_secure_title">Pencere güvenli işaretlerini yok say</string>
-    <string name="ignore_window_secure_summary">Ekran görüntüsü ve ekran kaydının limitlerini tüm uygulamalar için kaldırır. Normalde, kayıtlardaki siyah alanlarla özel uygulamalar değiştirilir. Bu bazı durumlarda uygun olabilir fakat güvenlik açıklarına neden olabilir. Bu ayarı değiştirdikten sonra, değişikliklerin etkili olması için uygulamaları yeniden başlatmanız gerekebilir.</string>
+    <!-- Temperature warning -->
+    <string name="show_temperature_warning_title">Sıcaklık uyarısı göster</string>
+    <string name="show_temperature_warning_summary">Cihaz belli bir sıcaklık seviyesi eşiğini geçince bir uyarı göster</string>
+    <!-- Colorful battery icon -->
+    <string name="battery_level_colors_title">Renkli pil simgesi</string>
+    <string name="battery_level_colors_summary">Her pil seviyesi düşüşü renkli kodlanır (sistem arayüzünün yeniden başlatılması gerekir)</string>
 </resources>
