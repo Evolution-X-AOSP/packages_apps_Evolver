@@ -201,6 +201,8 @@
     <string name="status_bar_battery_style_text">كتابة</string>
     <string name="status_bar_battery_style_icon_rlandscape">أيقونة أفقية (يمين)</string>
     <string name="status_bar_battery_style_icon_landscape">أيقونة أفقية (يسار)</string>
+    <string name="status_bar_battery_style_big_circle">دائرة (كبير)</string>
+    <string name="status_bar_battery_style_big_dotted_circle">دائرة (نقطة كبيرة)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">تخطيط اللوحة</string>
     <string name="qs_tile_layout_title">تنسيق عمودي</string>
@@ -343,28 +345,28 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">زر قتل التطبيق</string>
     <string name="notification_guts_kill_app_button_summary">أظهار زر قتل التطبيق في قائمة الضغط المطول على التنبيهات</string>
-    <!-- Battery Bar -->
+    <!-- Battery bar -->
     <string name="battery_bar_title">شريط البطارية</string>
     <string name="battery_bar_summary">عرض وتخصيص شريط البطارية بالقرب من شريط الحالة أو شريط التنقل</string>
-    <string name="battery_bar_no_navbar">مكان شريط البطارية</string>
-    <string name="battery_bar_status_bar_top">أعلى شريط الحالة</string>
-    <string name="battery_bar_status_bar_bot">أسفل شريط الحالة</string>
+    <string name="battery_bar_location">موقع شريط البطارية</string>
     <string name="battery_bar_color">لون شريط البطارية</string>
-    <string name="battery_bar_charging_color">لون شريط البطارية اثناء الشحن</string>
-    <string name="battery_bar_battery_low_color">لون شريط البطارية عندما تكون البطارية منخفضة</string>
-    <string name="battery_bar_cat">نمط شريط البطارية</string>
     <string name="battery_bar_style_title">محاذاة شريط البطارية</string>
     <string name="battery_bar_thickness_title">سُمك شريط البطارية</string>
     <string name="battery_bar_animate_title">المؤثرات أثناء الشحن</string>
-    <string name="battery_bar_style_regular">العادية</string>
-    <string name="battery_bar_style_center_mirrored">مركزي عاكس</string>
-    <string name="battery_bar_style_reversed">العكس</string>
-    <string name="battery_bar_use_charging_color">لون شحن البطارية المخصص</string>
-    <string name="battery_bar_blend_color_title">مزج الألوان</string>
-    <string name="battery_bar_blend_color_summary">مزج الألوان الكاملة/الفارغة المقابلة لنسبة البطارية</string>
-    <string name="battery_bar_blend_color_reverse_title">عكس اتجاه اللون</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">ممتلئ &#8594; فارغ: أحمر &#8592; أخضر &#8592; أزرق &#8592; أحمر</string>
-    <string name="battery_bar_blend_color_reverse_summary_on">ممتلئ &#8594; فارغ: أحمر &#8594; أخضر &#8594; أزرق &#8594; أحمر</string>
+    <string name="battery_bar_animate_summary">قد تؤدي حركة الشحن الرسومية إلى تجربة مستخدم غير مستقرة. تمكين حسب مسؤوليتك الخاصة.</string>
+    <string name="battery_bar_hide">إخفاء</string>
+    <string name="battery_bar_statusbar">شريط الحالة</string>
+    <string name="battery_bar_topnav">أعلى شريط التنقل</string>
+    <string name="battery_bar_bottomnav">أسفل شريط التنقل</string>
+    <string name="battery_bar_reg">عادي</string>
+    <string name="battery_bar_center">مركزي عاكس</string>
+    <string name="battery_bar_charging_color">لون شريط البطارية اثناء الشحن</string>
+    <string name="battery_bar_battery_low_color">لون شريط البطارية عندما تكون البطارية منخفضة</string>
+    <string name="battery_bar_reversed">معكوس</string>
+    <string name="battery_bar_use_gradient_color">استخدام التدرج اللوني</string>
+    <string name="battery_bar_gradient_color_summary">استخدام التدرج اللوني كمقياس لمستوى البطارية</string>
+    <string name="battery_bar_high_color">لون عالي المستوى\"</string>
+    <string name="battery_bar_low_color">لون منخفض المستوى\"</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">ذاكرة التخزين المؤقت للتمرير</string>
     <string name="pref_scrollingcache_summary">ذاكرة التخزين المؤقت للتمرير تحسن أداء التمرير على حساب الذاكرة</string>
@@ -1098,6 +1100,9 @@
     <string name="reticker_summary">استبدل إشعاراتك بإصدار مُعاد تصميمه من المؤشرات.\n نحيف وأقل توغلاً من الإخطار القياسي</string>
     <string name="reticker_colored_title">استخدام خلفية ملونة للتطبيق</string>
     <string name="reticker_colored_summary">استبدل لون خلفية reTicker باستخدام اللون الرئيسي لتطبيق الإشعارات</string>
+    <!-- Temperature warning -->
+    <string name="show_temperature_warning_title">إظهار تحذير درجة الحرارة</string>
+    <string name="show_temperature_warning_summary">عرض تحذير عندما يتجاوز الجهاز عتبة درجة حرارة معينة</string>
     <!-- Colorful battery icon -->
     <string name="battery_level_colors_title">تبديل أيقونة البطارية الملونة</string>
     <string name="battery_level_colors_summary">يتم ترميز كل انخفاض في مستوى البطارية بالألوان (يتطلب واجهة النظام)</string>
