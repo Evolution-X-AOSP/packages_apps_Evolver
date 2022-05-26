@@ -87,18 +87,10 @@
     <string name="navigation_bar_category">导航栏</string>
     <string name="navigation_bar_title">屏幕导航栏</string>
     <string name="navigation_bar_summary">启用屏幕导航栏</string>
-    <string name="navigation_bar_layout_title">布局</string>
-    <string name="navigation_bar_layout_summary">自定义导航栏布局</string>
     <string name="navigation_bar_arrow_keys_title">键入时显示方向键</string>
     <string name="navigation_bar_arrow_keys_summary">输入时，在导航栏显示左右光标按钮</string>
-    <string name="navigation_bar_help_text">这些设置主要与三按钮导航栏相关。如果您使用手势导航并想自定义它，例如：隐藏手势处理，请访问：设置 &gt; 系统 &gt; 手势。</string>
-    <string name="nav_bar_tuner_title">导航栏调节器</string>
-    <string name="nav_bar_tuner_summary">更改导航栏布局</string>
-    <string name="navbar_layout_title">布局</string>
-    <string name="navbar_layout_normal">正常</string>
-    <string name="navbar_layout_compact">紧凑</string>
-    <string name="navbar_layout_leftleaning">靠左</string>
-    <string name="navbar_layout_rightleaning">靠右</string>
+    <string name="navigation_bar_compact_layout_title">紧凑布局</string>
+    <string name="navigation_bar_compact_layout_summary">在导航栏中使用紧凑布局</string>
     <string name="system_navigation_summary">选择要使用的系统导航样式</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel 动画</string>
@@ -207,6 +199,10 @@
     <string name="status_bar_battery_style_dotted_circle">虚线圆环</string>
     <string name="status_bar_battery_style_filled_circle">实心圆环</string>
     <string name="status_bar_battery_style_text">文本</string>
+    <string name="status_bar_battery_style_icon_rlandscape">横向图标 (右侧)</string>
+    <string name="status_bar_battery_style_icon_landscape">横向图标 (左侧)</string>
+    <string name="status_bar_battery_style_big_circle">大圆环</string>
+    <string name="status_bar_battery_style_big_dotted_circle">大虚线圆环</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">卡片布局</string>
     <string name="qs_tile_layout_title">垂直布局</string>
@@ -220,17 +216,11 @@
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">隐藏磁贴标题</string>
     <string name="qs_tile_title_visibility_summary">切换以隐藏磁贴标题</string>
-    <!-- Quick Settings brightness slider -->
-    <string name="qs_brightness_slider_category">亮度条</string>
-    <string name="qs_show_brightness_slider_title">亮度滑块</string>
-    <string name="qs_show_brightness_slider_never">从不显示</string>
-    <string name="qs_show_brightness_slider_expanded">控制中心展开时显示</string>
-    <string name="qs_show_brightness_slider_always">总是显示</string>
-    <string name="qs_show_brightness_slider_not_expanded">控制中心未展开时显示</string>
-    <string name="qs_brightness_slider_position_title">位置</string>
-    <string name="qs_brightness_slider_position_top">顶部</string>
-    <string name="qs_brightness_slider_position_bottom">底部</string>
-    <!-- Quick Settings brightness icon -->
+    <!-- Brightness slider -->
+    <string name="qs_show_brightness_title">亮度滑块</string>
+    <string name="qs_show_brightness_summary">亮度滑块可见性和设置</string>
+    <string name="qs_brightness_position_bottom_title">底部亮度滑块</string>
+    <string name="qs_brightness_position_bottom_summary">在快捷开关面板底部显示亮度滑块</string>
     <string name="qs_show_auto_brightness_title">自动亮度图标</string>
     <string name="qs_show_auto_brightness_summary">在亮度滑块旁显示自动亮度开关</string>
     <!-- Volume rocker wake -->
@@ -265,16 +255,6 @@
     <string name="lockscreen_albumart_filter_tint">主题色</string>
     <string name="lockscreen_albumart_filter_blur">模糊</string>
     <string name="lockscreen_albumart_filter_grayblur">灰度和模糊</string>
-    <!-- Charging animation -->
-    <string name="lockscreen_charging_animation_title">充电动画</string>
-    <string name="lockscreen_charging_animation_flash">闪电</string>
-    <string name="lockscreen_charging_animation_battery">电池</string>
-    <string name="lockscreen_charging_animation_drop">下降</string>
-    <string name="lockscreen_charging_animation_explosion">爆炸</string>
-    <string name="lockscreen_charging_animation_water">水花</string>
-    <string name="lockscreen_charging_animation_phone">手机</string>
-    <string name="lockscreen_charging_animation_stack">堆叠</string>
-    <string name="lockscreen_charging_animation_wavy">波浪</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">时钟和日期设置</string>
     <string name="status_bar_clock_summary">自定义时钟和日期</string>
@@ -365,28 +345,28 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">强制关闭应用按钮</string>
     <string name="notification_guts_kill_app_button_summary">在通知长按菜单中显示强行停止应用按钮</string>
-    <!-- Battery Bar -->
+    <!-- Battery bar -->
     <string name="battery_bar_title">电量条</string>
     <string name="battery_bar_summary">显示和自定义在状态栏或导航栏附近的电量条</string>
-    <string name="battery_bar_no_navbar">电量条位置</string>
-    <string name="battery_bar_status_bar_top">状态栏顶部</string>
-    <string name="battery_bar_status_bar_bot">状态栏底部</string>
+    <string name="battery_bar_location">电量条位置</string>
     <string name="battery_bar_color">电量条颜色</string>
-    <string name="battery_bar_charging_color">电量条颜色 (充电时)</string>
-    <string name="battery_bar_battery_low_color">电量条颜色 (低电量时)</string>
-    <string name="battery_bar_cat">电量条样式</string>
     <string name="battery_bar_style_title">电池图标对齐方式</string>
     <string name="battery_bar_thickness_title">电量条厚度</string>
     <string name="battery_bar_animate_title">充电动画</string>
-    <string name="battery_bar_style_regular">常规</string>
-    <string name="battery_bar_style_center_mirrored">中心镜像</string>
-    <string name="battery_bar_style_reversed">反转</string>
-    <string name="battery_bar_use_charging_color">自定义充电时颜色</string>
-    <string name="battery_bar_blend_color_title">混合颜色</string>
-    <string name="battery_bar_blend_color_summary">基于电池的百分比颜色渐变</string>
-    <string name="battery_bar_blend_color_reverse_title">反转颜色方向</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">完整 &#8594; 空：红色 &#8592; 绿色 &#8592; 蓝色 &#8592; 红色</string>
-    <string name="battery_bar_blend_color_reverse_summary_on">完整 &#8594; 空：红色 &#8594; 绿色 &#8594; 蓝色 &#8594; 红色</string>
+    <string name="battery_bar_animate_summary">充电动画可能会降低用户体验，请酌情使用。</string>
+    <string name="battery_bar_hide">隐藏</string>
+    <string name="battery_bar_statusbar">状态栏</string>
+    <string name="battery_bar_topnav">导航栏顶部</string>
+    <string name="battery_bar_bottomnav">导航栏底部</string>
+    <string name="battery_bar_reg">常规</string>
+    <string name="battery_bar_center">居中</string>
+    <string name="battery_bar_charging_color">电量条颜色 (充电时)</string>
+    <string name="battery_bar_battery_low_color">电量条颜色 (低电量时)</string>
+    <string name="battery_bar_reversed">反转</string>
+    <string name="battery_bar_use_gradient_color">使用渐变颜色</string>
+    <string name="battery_bar_gradient_color_summary">使用渐变颜色显示电池电量</string>
+    <string name="battery_bar_high_color">高电量颜色</string>
+    <string name="battery_bar_low_color">低电量颜色</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">滚动缓存</string>
     <string name="pref_scrollingcache_summary">滚动缓存可以提高滚动性能，但消耗更多内存。</string>
@@ -939,9 +919,6 @@
     <!-- Double Tap on Doze to wake -->
     <string name="double_tap_on_doze_to_wake_title">点按即可唤醒熄屏显示</string>
     <string name="double_tap_on_doze_to_wake_summary">当设备正在睡眠时双击唤醒</string>
-    <!-- Charging animation -->
-    <string name="charging_animation_title">充电动画</string>
-    <string name="charging_animation_summary">设备插入电源时显示动画</string>
     <!-- Monet Engine -->
     <string name="monet_category">Monet</string>
     <string name="monet_engine_title">Monet 引擎</string>
@@ -1022,12 +999,21 @@
     <string name="pulse_custom_div">脉冲条间距</string>
     <string name="pulse_filled_block_size">色块大小</string>
     <string name="pulse_empty_block_size">色块间距</string>
-    <!-- Keyguard force small clock -->
-    <string name="lockscreen_small_clock_title">强制小时钟</string>
-    <string name="lockscreen_small_clock_summary">当没有通知时，不要切换到大时钟</string>
-    <!-- Gaming mode -->
-    <string name="gaming_mode_title">游戏空间</string>
-    <string name="gaming_mode_summary">沉浸式游戏体验的额外功能</string>
+    <!-- QS Pulse -->
+    <string name="show_qs_pulse_title">脉冲快速设置</string>
+    <string name="show_qs_pulse_summary">快速设置上的音频可视化</string>
+    <!-- Pulse Gravity and mirror options -->
+    <string name="pulse_custom_gravity_title">重力感应</string>
+    <string name="pulse_custom_gravity_bottom">底部</string>
+    <string name="pulse_custom_gravity_top">顶部</string>
+    <string name="pulse_custom_gravity_center">居中</string>
+    <string name="visualizer_center_mirrored_title">镜像居中</string>
+    <string name="visualizer_center_mirrored_summary">将可视化器设置为中心镜像模式</string>
+    <string name="pulse_vertical_mirror_title">垂直镜像</string>
+    <string name="pulse_vertical_mirror_summary">创建其他脉冲并垂直翻转</string>
+    <!-- Game Space -->
+    <string name="game_space_title">游戏空间</string>
+    <string name="game_space_summary">提升您的游戏体验</string>
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">波纹效果</string>
     <string name="enable_fingerprint_ripple_effect_summary">使用指纹解锁时显示波纹效果</string>
@@ -1057,6 +1043,12 @@
     <string name="notification_material_dismiss_summary">用 material 样式浮动按钮替换清除所有通知文本</string>
     <string name="notification_material_dismiss_style_title">按钮样式</string>
     <string name="notification_material_dismiss_bgstyle_title">按钮背景</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">允许应用程序降级</string>
+    <string name="app_downgrade_summary">这允许您降级应用程序。 请注意，这可能会导致崩溃和数据损坏</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">忽略窗口安全标志</string>
+    <string name="ignore_window_secure_summary">这将删除所有应用程序的屏幕截图和屏幕记录限制。 通常，特殊应用程序会替换为记录中的黑色区域。 在某些情况下这可能很方便，但可能会导致隐私泄露。 更改此切换后，您可能需要重新启动</string>
     <!-- Statusbar logo -->
     <string name="status_bar_logo_category_title">Logo</string>
     <string name="status_bar_logo_title">Logo</string>
@@ -1108,10 +1100,10 @@
     <string name="reticker_summary">用重新设计的tickers版本替换您的通知，\n苗条且不像标准通知那样具有侵入性</string>
     <string name="reticker_colored_title">使用应用程序色彩背景</string>
     <string name="reticker_colored_summary">使用通知应用主颜色替换 reTicker 背景颜色</string>
-    <!-- Application downgrade -->
-    <string name="app_downgrade_title">允许应用程序降级</string>
-    <string name="app_downgrade_summary">这允许您降级应用程序。 请注意，这可能会导致崩溃和数据损坏</string>
-    <!-- Ignore window secure -->
-    <string name="ignore_window_secure_title">忽略窗口安全标志</string>
-    <string name="ignore_window_secure_summary">这将删除所有应用程序的屏幕截图和屏幕记录限制。 通常，特殊应用程序会替换为记录中的黑色区域。 在某些情况下这可能很方便，但可能会导致隐私泄露。 更改此切换后，您可能需要重新启动</string>
+    <!-- Temperature warning -->
+    <string name="show_temperature_warning_title">显示温度警告</string>
+    <string name="show_temperature_warning_summary">当设备超过某个温度阈值时显示警告</string>
+    <!-- Colorful battery icon -->
+    <string name="battery_level_colors_title">切换多彩电池图标</string>
+    <string name="battery_level_colors_summary">每次电池电量下降都有颜色代码 (需要 SystemUI 重启)</string>
 </resources>
