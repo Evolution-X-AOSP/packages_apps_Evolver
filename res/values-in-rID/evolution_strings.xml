@@ -201,6 +201,8 @@
     <string name="status_bar_battery_style_text">Teks</string>
     <string name="status_bar_battery_style_icon_rlandscape">Ikon mendatar (Kanan)</string>
     <string name="status_bar_battery_style_icon_landscape">Ikon mendatar (Kiri)</string>
+    <string name="status_bar_battery_style_big_circle">Lingkaran (Besar)</string>
+    <string name="status_bar_battery_style_big_dotted_circle">Lingkaran (Besar bertitik)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">Tata letak ubin</string>
     <string name="qs_tile_layout_title">Tata letak vertikal</string>
@@ -214,17 +216,11 @@
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Sembunyikan judul ubin</string>
     <string name="qs_tile_title_visibility_summary">Tombol untuk menyembunyikan judul ubin</string>
-    <!-- Quick Settings brightness slider -->
-    <string name="qs_brightness_slider_category">Slider kecerahan</string>
-    <string name="qs_show_brightness_slider_title">Slider kecerahan</string>
-    <string name="qs_show_brightness_slider_never">Jangan tampilkan</string>
-    <string name="qs_show_brightness_slider_expanded">Tampilkan ketika diperluas</string>
-    <string name="qs_show_brightness_slider_always">Selalu tampilkan</string>
-    <string name="qs_show_brightness_slider_not_expanded">Tampilkan ketika tidak diperluas</string>
-    <string name="qs_brightness_slider_position_title">Posisi</string>
-    <string name="qs_brightness_slider_position_top">Atas</string>
-    <string name="qs_brightness_slider_position_bottom">Bawah</string>
-    <!-- Quick Settings brightness icon -->
+    <!-- Brightness slider -->
+    <string name="qs_show_brightness_title">Slider kecerahan</string>
+    <string name="qs_show_brightness_summary">Visibilitas dan pengaturan slider kecerahan</string>
+    <string name="qs_brightness_position_bottom_title">Slider kecerahan di bawah</string>
+    <string name="qs_brightness_position_bottom_summary">Tampilkan slider kecerahan di bagian bawah Setelan Cepat</string>
     <string name="qs_show_auto_brightness_title">Ikon Kecerahan Otomatis</string>
     <string name="qs_show_auto_brightness_summary">Tampilkan tombol kecerahan adaptif di dekat slider</string>
     <!-- Volume rocker wake -->
@@ -349,28 +345,28 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Tombol matikan aplikasi</string>
     <string name="notification_guts_kill_app_button_summary">Tampilkan tombol matikan aplikasi setelah menekan lama tombol menu di notifikasi</string>
-    <!-- Battery Bar -->
+    <!-- Battery bar -->
     <string name="battery_bar_title">Bilah baterai</string>
     <string name="battery_bar_summary">Tampilkan dan sesuaikan bilah baterai di dekat bilah status atau bilah navigasi</string>
-    <string name="battery_bar_no_navbar">Lokasi bilah baterai</string>
-    <string name="battery_bar_status_bar_top">Atas bilah status</string>
-    <string name="battery_bar_status_bar_bot">Bawah bilah status</string>
+    <string name="battery_bar_location">Lokasi bilah baterai</string>
     <string name="battery_bar_color">Warna bilah baterai</string>
-    <string name="battery_bar_charging_color">Warna pengisian bilah baterai</string>
-    <string name="battery_bar_battery_low_color">Bilah baterai warna baterai rendah</string>
-    <string name="battery_bar_cat">Gaya bilah baterai</string>
-    <string name="battery_bar_style_title">Penempatan bilah baterai</string>
+    <string name="battery_bar_style_title">Gaya bilah baterai</string>
     <string name="battery_bar_thickness_title">Ketebalan bilah baterai</string>
     <string name="battery_bar_animate_title">Animasi pengisian</string>
-    <string name="battery_bar_style_regular">Reguler</string>
-    <string name="battery_bar_style_center_mirrored">Tengah-dicerminkan</string>
-    <string name="battery_bar_style_reversed">Terbalik</string>
-    <string name="battery_bar_use_charging_color">Sesuaikan warna pengisian</string>
-    <string name="battery_bar_blend_color_title">Warna campuran</string>
-    <string name="battery_bar_blend_color_summary">Perpaduan warna penuh/kosong yang sesuai dengan persentase baterai</string>
-    <string name="battery_bar_blend_color_reverse_title">Arah warna terbalik</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">Penuh &#8594; Kosong: Merah &#8592; Hijau &#8592; Biru &#8592; Merah</string>
-    <string name="battery_bar_blend_color_reverse_summary_on">Penuh &#8594; Kosong: Merah &#8594; Hijau &#8594; Biru &#8594; Merah</string>
+    <string name="battery_bar_animate_summary">Animasi pengisian daya dapat mengakibatkan pengalaman pengguna yang buruk. Aktifkan atas kebijakan Anda sendiri.</string>
+    <string name="battery_bar_hide">Sembunyikan</string>
+    <string name="battery_bar_statusbar">Bilah status</string>
+    <string name="battery_bar_topnav">Atas bilah navigasi</string>
+    <string name="battery_bar_bottomnav">Bawah bilah navigasi</string>
+    <string name="battery_bar_reg">Reguler</string>
+    <string name="battery_bar_center">Tengah-dicerminkan</string>
+    <string name="battery_bar_charging_color">Warna pengisian bilah baterai</string>
+    <string name="battery_bar_battery_low_color">Bilah baterai warna baterai rendah</string>
+    <string name="battery_bar_reversed">Terbalik</string>
+    <string name="battery_bar_use_gradient_color">Gunakan warna gradien</string>
+    <string name="battery_bar_gradient_color_summary">Gunakan warna gradien sebagai skala untuk level baterai</string>
+    <string name="battery_bar_high_color">Warna tingkat tinggi\"</string>
+    <string name="battery_bar_low_color">Warna tingkat rendah\"</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Menggulir cache</string>
     <string name="pref_scrollingcache_summary">Menggulir cache dapat meningkatkan kinerja pengguliran dengan mengorbankan memori</string>
@@ -1003,6 +999,21 @@
     <string name="pulse_custom_div">Jarak bilah</string>
     <string name="pulse_filled_block_size">Ukuran blok</string>
     <string name="pulse_empty_block_size">Jarak blok</string>
+    <!-- QS Pulse -->
+    <string name="show_qs_pulse_title">Visual Setelan Cepat</string>
+    <string name="show_qs_pulse_summary">Visualisasi audio pada setelan cepat</string>
+    <!-- Pulse Gravity and mirror options -->
+    <string name="pulse_custom_gravity_title">Gravitasi</string>
+    <string name="pulse_custom_gravity_bottom">Bawah</string>
+    <string name="pulse_custom_gravity_top">Atas</string>
+    <string name="pulse_custom_gravity_center">Tengah</string>
+    <string name="visualizer_center_mirrored_title">Tengah dicerminkan</string>
+    <string name="visualizer_center_mirrored_summary">Atur visualisasi dalam mode tengah dicerminkan</string>
+    <string name="pulse_vertical_mirror_title">Cermin Vertikal</string>
+    <string name="pulse_vertical_mirror_summary">Buat visual lain dan balik secara vertikal</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Ruang Game</string>
+    <string name="game_space_summary">Tingkatkan pengalaman bermain game Anda</string>
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Efek riak</string>
     <string name="enable_fingerprint_ripple_effect_summary">Tampilkan efek riak saat membuka kunci dengan sidik jari</string>
@@ -1089,6 +1100,9 @@
     <string name="reticker_summary">Ganti notifikasi mengambang dengan versi ticker yang didesain ulang yang ramping dan tidak terlalu invasif</string>
     <string name="reticker_colored_title">Gunakan latar belakang berwarna aplikasi</string>
     <string name="reticker_colored_summary">Ganti warna latar belakang reTicker menggunakan warna utama notifikasi aplikasi</string>
+    <!-- Temperature warning -->
+    <string name="show_temperature_warning_title">Tampilkan peringatan suhu</string>
+    <string name="show_temperature_warning_summary">Tampilkan peringatan saat perangkat melebihi ambang suhu tertentu</string>
     <!-- Colorful battery icon -->
     <string name="battery_level_colors_title">Tombol ikon baterai berwarna-warni</string>
     <string name="battery_level_colors_summary">Setiap penurunan level baterai diberi kode warna (membutuhkan mulai ulang SistemUI)</string>
