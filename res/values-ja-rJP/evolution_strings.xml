@@ -177,15 +177,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">古いモバイルアイコンを使用</string>
     <string name="use_old_mobiletype_summary">電波強度表示の上に通信種別を表示する</string>
-    <!-- Long press power for torch -->
-    <string name="torch_long_press_power_gesture_title">画面消灯時のライト点灯</string>
-    <string name="torch_long_press_power_gesture_desc">画面消灯時に電源ボタンを長押ししてライトを点灯する</string>
-    <string name="torch_long_press_power_timeout_title">ライトの自動消灯</string>
-    <string name="torch_long_press_power_timeout_never">なし</string>
-    <string name="torch_long_press_power_timeout_1min">1分</string>
-    <string name="torch_long_press_power_timeout_2min">2分</string>
-    <string name="torch_long_press_power_timeout_5min">5分</string>
-    <string name="torch_long_press_power_timeout_10min">10分</string>
     <!-- Battery percentage -->
     <string name="battery_style_category_title">バッテリースタイル</string>
     <string name="status_bar_battery_percentage_title">バッテリー残量</string>
@@ -201,6 +192,8 @@
     <string name="status_bar_battery_style_text">文字</string>
     <string name="status_bar_battery_style_icon_rlandscape">水平アイコン (右)</string>
     <string name="status_bar_battery_style_icon_landscape">水平アイコン (左)</string>
+    <string name="status_bar_battery_style_big_circle">円 (大)</string>
+    <string name="status_bar_battery_style_big_dotted_circle">円 (大/点線)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">タイルのレイアウト</string>
     <string name="qs_tile_layout_title">縦方向レイアウト</string>
@@ -343,28 +336,28 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">アプリ終了ボタン</string>
     <string name="notification_guts_kill_app_button_summary">通知の長押しメニューにアプリ終了ボタンを表示する</string>
-    <!-- Battery Bar -->
+    <!-- Battery bar -->
     <string name="battery_bar_title">バッテリーバー</string>
     <string name="battery_bar_summary">ステータスバー又はナビゲーションバー付近のバッテリーバーの表示や編集をする</string>
-    <string name="battery_bar_no_navbar">バッテリーバーの位置</string>
-    <string name="battery_bar_status_bar_top">ステータスバー上部</string>
-    <string name="battery_bar_status_bar_bot">ステータスバー下部</string>
+    <string name="battery_bar_location">バッテリーバーの位置</string>
     <string name="battery_bar_color">色</string>
-    <string name="battery_bar_charging_color">充電時の色</string>
-    <string name="battery_bar_battery_low_color">残量低下時の色</string>
-    <string name="battery_bar_cat">スタイル</string>
     <string name="battery_bar_style_title">配置</string>
     <string name="battery_bar_thickness_title">太さ</string>
     <string name="battery_bar_animate_title">充電アニメーション</string>
-    <string name="battery_bar_style_regular">通常</string>
-    <string name="battery_bar_style_center_mirrored">中央</string>
-    <string name="battery_bar_style_reversed">反転</string>
-    <string name="battery_bar_use_charging_color">カスタムの充電時の色</string>
-    <string name="battery_bar_blend_color_title">色のブレンド</string>
-    <string name="battery_bar_blend_color_summary">バッテリー残量に応じて フル/残量低下時 の色をブレンドする</string>
-    <string name="battery_bar_blend_color_reverse_title">色の順番を反転</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">フル &#8594; 残量低下: 赤 &#8592; 緑 &#8592; 青 &#8592; 赤</string>
-    <string name="battery_bar_blend_color_reverse_summary_on">フル &#8594; 残量低下: 赤 &#8594; 緑 &#8594; 青 &#8594; 赤</string>
+    <string name="battery_bar_animate_summary">有効にすると動作が遅くなる可能性があります。ご自身で判断して下さい。</string>
+    <string name="battery_bar_hide">非表示</string>
+    <string name="battery_bar_statusbar">ステータスバー</string>
+    <string name="battery_bar_topnav">ナビゲーションバー上部</string>
+    <string name="battery_bar_bottomnav">ナビゲーションバー下部</string>
+    <string name="battery_bar_reg">通常</string>
+    <string name="battery_bar_center">中央</string>
+    <string name="battery_bar_charging_color">充電時の色</string>
+    <string name="battery_bar_battery_low_color">残量低下時の色</string>
+    <string name="battery_bar_reversed">反転</string>
+    <string name="battery_bar_use_gradient_color">グラデーションを使用</string>
+    <string name="battery_bar_gradient_color_summary">バッテリー残量の目盛りにグラデーションを使用する</string>
+    <string name="battery_bar_high_color">高残量時の色</string>
+    <string name="battery_bar_low_color">低残量時の色</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">スクロールキャッシュ</string>
     <string name="pref_scrollingcache_summary">スクロールキャッシュはメモリを消費しますがスクロールのパフォーマンスが向上します</string>
@@ -851,7 +844,7 @@
     <!-- Double tap status bar to sleep -->
     <string name="double_tap_to_sleep_title">ステータスバーをタップ</string>
     <string name="double_tap_to_sleep_summary">ステータスバーをダブルタップして端末をスリープする</string>
-    <!-- Torch Power button gestures -->
+    <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">画面消灯時ライトを切り替え</string>
     <string name="torch_power_button_gesture_none">無効</string>
     <string name="torch_power_button_gesture_dt">電源ボタンを2回押し (1回押しの反応が遅れます)。電源ボタンをを2回押してカメラ起動は無効になります。</string>
@@ -1047,57 +1040,14 @@
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">ウィンドウのセキュアフラグを無視</string>
     <string name="ignore_window_secure_summary">全てのアプリへのスクリーンショットや画面録画の制限を解除します。基本的に録画では特別なアプリは黒く領域が塗り潰されます。いくつかの場合で便利になることがありますが、プライバシー保護が脆弱になる可能性があります。この設定切り替えの後、効果を反映させるにはアプリの再起動が必要になる可能性があります。</string>
-    <!-- Statusbar logo -->
-    <string name="status_bar_logo_category_title">ロゴ</string>
-    <string name="status_bar_logo_title">ロゴ</string>
-    <string name="status_bar_logo_summary">ステータスバーにロゴを表示する</string>
-    <string name="status_bar_logo_color_title">色</string>
-    <string name="status_bar_logo_color_accent_title">アクセントの色を使用</string>
-    <string name="status_bar_logo_position_title">位置</string>
-    <string name="status_bar_logo_position_summary">どこにロゴを表示するか選択する</string>
-    <string name="status_bar_logo_position_right">右</string>
-    <string name="status_bar_logo_position_left">左</string>
-    <string name="status_bar_logo_position_right_quick">クイック設定パネルの右</string>
-    <string name="status_bar_logo_position_left_quick">クイック設定パネルの左</string>
-    <string name="status_bar_logo_style_title">スタイル</string>
-    <string name="status_bar_logo_style_evolution">Evolution X</string>
-    <string name="status_bar_logo_style_android">Android</string>
-    <string name="status_bar_logo_style_apple">Apple</string>
-    <string name="status_bar_logo_style_ios">iOS</string>
-    <string name="status_bar_logo_style_emoticon">絵文字</string>
-    <string name="status_bar_logo_style_emoticon_cool">Cool 絵文字</string>
-    <string name="status_bar_logo_style_emoticon_dead">Dead 絵文字</string>
-    <string name="status_bar_logo_style_emoticon_devil">Devil 絵文字</string>
-    <string name="status_bar_logo_style_emoticon_happy">Happy 絵文字</string>
-    <string name="status_bar_logo_style_emoticon_neutral">Neutral 絵文字</string>
-    <string name="status_bar_logo_style_emoticon_poop">Poop 絵文字</string>
-    <string name="status_bar_logo_style_emoticon_sad">Sad 絵文字</string>
-    <string name="status_bar_logo_style_emoticon_tongue">Tongue 絵文字</string>
-    <string name="status_bar_logo_style_blackberry">Blackberry</string>
-    <string name="status_bar_logo_style_cake">ケーキ</string>
-    <string name="status_bar_logo_style_blogger">Blogger</string>
-    <string name="status_bar_logo_style_biohazard">バイオハザード</string>
-    <string name="status_bar_logo_style_linux">Linux</string>
-    <string name="status_bar_logo_style_yin_yang">陰陽</string>
-    <string name="status_bar_logo_style_windows">Windows</string>
-    <string name="status_bar_logo_style_robot">ロボット</string>
-    <string name="status_bar_logo_style_ninja">忍者</string>
-    <string name="status_bar_logo_style_heart">ハート</string>
-    <string name="status_bar_logo_style_flower">花</string>
-    <string name="status_bar_logo_style_ghost">ゴースト</string>
-    <string name="status_bar_logo_style_google">Google</string>
-    <string name="status_bar_logo_style_human_male">男</string>
-    <string name="status_bar_logo_style_human_female">女</string>
-    <string name="status_bar_logo_style_human_male_female">男女</string>
-    <string name="status_bar_logo_style_gender_male">男性</string>
-    <string name="status_bar_logo_style_gender_female">女性</string>
-    <string name="status_bar_logo_style_gender_male_female">男性と女性</string>
-    <string name="status_bar_logo_style_guitar_electric">エレキギター</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">再デザインされたバージョンの通知ティッカーに置き換えます。\n標準の通知よりスリムで優しい雰囲気です。</string>
     <string name="reticker_colored_title">アプリに色付きの背景を使用</string>
     <string name="reticker_colored_summary">reTicker の背景の色を通知アプリのメインの色で置き換える</string>
+    <!-- Temperature warning -->
+    <string name="show_temperature_warning_title">温度警告を表示</string>
+    <string name="show_temperature_warning_summary">端末の温度が特定のしきい値を超えた時に警告を表示する</string>
     <!-- Colorful battery icon -->
     <string name="battery_level_colors_title">バッテリーアイコンの色</string>
     <string name="battery_level_colors_summary">各バッテリーレベルの低下は色分けされます (システム UI の再起動が必要です)</string>
