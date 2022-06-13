@@ -46,6 +46,16 @@
     <PreferenceCategory
         android:title="@string/general_category">
 
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_transparency"
+            android:title="@string/qs_transparency_title"
+            android:summary="@string/qs_transparency_summary"
+            android:defaultValue="100"
+            settings:interval="1"
+            settings:units="%"
+            android:max="100"
+            android:min="1" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="music_tile_title"
             android:title="@string/qs_music_tile_track_optional_title"
