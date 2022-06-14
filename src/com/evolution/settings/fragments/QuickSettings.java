@@ -58,10 +58,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
 
     public static final String TAG = "QuickSettings";
 
-    private static final String BRIGHTNESS_SLIDER = "qs_show_brightness";
-
     private ListPreference mQuickPulldown;
-    private SecureSettingMasterSwitchPreference mBrightnessSlider;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -71,13 +68,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
-
-        mBrightnessSlider = (SecureSettingMasterSwitchPreference)
-                findPreference(BRIGHTNESS_SLIDER);
-        mBrightnessSlider.setOnPreferenceChangeListener(this);
-        boolean enabled = Settings.Secure.getInt(resolver,
-                BRIGHTNESS_SLIDER, 1) == 1;
-        mBrightnessSlider.setChecked(enabled);
 
         int qpmode = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
@@ -90,12 +80,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mBrightnessSlider) {
-            Boolean value = (Boolean) newValue;
-            Settings.Secure.putInt(resolver,
-                    BRIGHTNESS_SLIDER, value ? 1 : 0);
-            return true;
-        } else if (preference == mQuickPulldown) {
+        if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(resolver,
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, value,
