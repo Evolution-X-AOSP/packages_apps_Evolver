@@ -21,6 +21,7 @@
     <string name="quicksettings_title">クイック設定</string>
     <string name="spoof_title">偽装</string>
     <string name="status_bar_title">ステータスバー</string>
+    <string name="status_bar_battery_category_title">バッテリー編集</string>
     <string name="swipe_gestures_title">スワイプジェスチャー</string>
     <string name="system_settings_title">システムオプション</string>
     <string name="themes_title">テーマ</string>
@@ -177,23 +178,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">古いモバイルアイコンを使用</string>
     <string name="use_old_mobiletype_summary">電波強度表示の上に通信種別を表示する</string>
-    <!-- Battery percentage -->
-    <string name="battery_style_category_title">バッテリースタイル</string>
-    <string name="status_bar_battery_percentage_title">バッテリー残量</string>
-    <string name="status_bar_battery_percentage_default">非表示 (既定)</string>
-    <string name="status_bar_battery_percentage_text_next">外側</string>
-    <string name="status_bar_battery_percentage_text_inside">アイコンの中</string>
-    <!-- Status bar battery style-->
-    <string name="status_bar_battery_style_title">バッテリーのスタイル</string>
-    <string name="status_bar_battery_style_port">縦</string>
-    <string name="status_bar_battery_style_circle">円</string>
-    <string name="status_bar_battery_style_dotted_circle">円 (点線)</string>
-    <string name="status_bar_battery_style_filled_circle">円 (塗り潰し)</string>
-    <string name="status_bar_battery_style_text">文字</string>
-    <string name="status_bar_battery_style_icon_rlandscape">水平アイコン (右)</string>
-    <string name="status_bar_battery_style_icon_landscape">水平アイコン (左)</string>
-    <string name="status_bar_battery_style_big_circle">円 (大)</string>
-    <string name="status_bar_battery_style_big_dotted_circle">円 (大/点線)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">タイルのレイアウト</string>
     <string name="qs_tile_layout_title">縦方向レイアウト</string>
@@ -207,11 +191,16 @@
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">タイルのタイトルを表示</string>
     <string name="qs_tile_title_visibility_summary">タイルのタイトルを非表示にする</string>
-    <!-- Brightness slider -->
-    <string name="qs_show_brightness_title">明るさスライダー</string>
-    <string name="qs_show_brightness_summary">明るさスライダーの表示を設定する</string>
-    <string name="qs_brightness_position_bottom_title">下部の明るさスライダー</string>
-    <string name="qs_brightness_position_bottom_summary">クイック設定パネルの下部に明るさスライダーを表示する</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">明るさスライダー</string>
+    <string name="qs_show_brightness_slider_never">非表示</string>
+    <string name="qs_show_brightness_slider_expanded">展開時に表示</string>
+    <string name="qs_show_brightness_slider_always">常に表示</string>
+    <string name="qs_show_brightness_slider_not_expanded">未展開時に表示</string>
+    <string name="qs_brightness_slider_position_title">位置</string>
+    <string name="qs_brightness_slider_position_top">上部</string>
+    <string name="qs_brightness_slider_position_bottom">下部</string>
+    <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">自動明るさ調整アイコン</string>
     <string name="qs_show_auto_brightness_summary">スライダーの近くに明るさ自動調節のトグルを表示する</string>
     <!-- Volume rocker wake -->
@@ -521,11 +510,9 @@
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">通知時の振動</string>
     <string name="vibrate_on_notifications_summary">切り替えて通知の振動を無効にする</string>
-    <!-- QS DataUsage Toggle -->
-    <string name="qs_datausage_title">データ使用量の表示</string>
-    <string name="qs_datausage_disabled">無効</string>
-    <string name="qs_datausage_daily">毎日の使用量</string>
-    <string name="qs_datausage_monthly">毎月の使用量</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">データ使用量</string>
+    <string name="qs_footer_datausage_summary">クイック設定のフッターにデータ使用量を表示する</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">メディアアートのぼかしレベル</string>
     <string name="lockscreen_media_art_options_title">ロック画面のメディアアート</string>
@@ -892,10 +879,6 @@
     <string name="volume_steps_system_title">音量レベル: システム</string>
     <string name="volume_steps_voice_call_title">音量レベル: 音声通話</string>
     <string name="volume_steps_reset">リセット</string>
-    <!-- QS battery estimates -->
-    <string name="qs_show_battery_estimate_title">予想稼働時間</string>
-    <string name="qs_show_battery_estimate_summary_on">バッテリー予想稼働時間をクイック設定パネルに表示する</string>
-    <string name="qs_show_battery_estimate_summary_off">バッテリー予想稼働時間をクイック設定パネルに表示しない</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">キャリアラベル</string>
     <string name="carrier_label_settings_summary">キャリアラベルを編集する</string>
@@ -1048,7 +1031,75 @@
     <!-- Temperature warning -->
     <string name="show_temperature_warning_title">温度警告を表示</string>
     <string name="show_temperature_warning_summary">端末の温度が特定のしきい値を超えた時に警告を表示する</string>
-    <!-- Colorful battery icon -->
-    <string name="battery_level_colors_title">バッテリーアイコンの色</string>
-    <string name="battery_level_colors_summary">各バッテリーレベルの低下は色分けされます (システム UI の再起動が必要です)</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_warning_text">スマートピクセルはバッテリー節約機能です。ピクセルを遮断する数によってはバッテリー持続時間を改善できることがあります。タッチ画面に反応しない範囲が発生する可能性があることに注意して下さい。</string>
+    <string name="smart_pixels_title">スマートピクセル</string>
+    <string name="smart_pixels_summary">余分な画素を停止させてバッテリーを節約する</string>
+    <string name="smart_pixels_enable_title">スマートピクセルを有効化</string>
+    <string name="smart_pixels_enable_summary">消費電力を削減するため画素を遮断する</string>
+    <string name="smart_pixels_on_power_save_title">自動有効</string>
+    <string name="smart_pixels_on_power_save_summary">バッテリーセーバー起動時は自動的に有効にする</string>
+    <string name="smart_pixels_percent">無効にする画素の割合</string>
+    <string name="smart_pixels_shift_title">焼き付き保護</string>
+    <string name="smart_pixels_shift_summary">使う画素を遷移させ有機 EL 画面の焼付きを避ける</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">ロゴ</string>
+    <string name="status_bar_logo_title">ロゴ</string>
+    <string name="status_bar_logo_summary">ステータスバーにロゴを表示する</string>
+    <string name="status_bar_logo_position_title">位置</string>
+    <string name="status_bar_logo_position_summary">どこにロゴを表示するか選択する</string>
+    <string name="status_bar_logo_position_right">右</string>
+    <string name="status_bar_logo_position_left">左</string>
+    <string name="status_bar_logo_style_title">スタイル</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">絵文字</string>
+    <string name="status_bar_logo_style_emoticon_cool">Cool 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_dead">Dead 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_devil">Devil 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_happy">Happy 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Neutral 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_poop">Poop 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_sad">Sad 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Tongue 絵文字</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">ケーキ</string>
+    <string name="status_bar_logo_style_blogger">Blogger</string>
+    <string name="status_bar_logo_style_biohazard">バイオハザード</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">陰陽</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">ロボット</string>
+    <string name="status_bar_logo_style_ninja">忍者</string>
+    <string name="status_bar_logo_style_heart">ハート</string>
+    <string name="status_bar_logo_style_flower">花</string>
+    <string name="status_bar_logo_style_ghost">ゴースト</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_guitar_electric">エレキギター</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">バッテリーのスタイル</string>
+    <string name="status_bar_battery_style_icon_portrait">縦アイコン</string>
+    <string name="status_bar_battery_style_icon_rlandscape">水平アイコン (右)</string>
+    <string name="status_bar_battery_style_icon_landscape">水平アイコン (左)</string>
+    <string name="status_bar_battery_style_circle">円</string>
+    <string name="status_bar_battery_style_dotted_circle">円 (点線)</string>
+    <string name="status_bar_battery_style_big_circle">円 (大)</string>
+    <string name="status_bar_battery_style_big_dotted_circle">円 (大/点線)</string>
+    <string name="status_bar_battery_style_filled_circle">円 (塗り潰し)</string>
+    <string name="status_bar_battery_style_text">文字</string>
+    <string name="status_bar_battery_style_hidden">非表示</string>
+    <string name="status_bar_battery_percent_title">バッテリー残量</string>
+    <string name="status_bar_battery_percent_hidden">非表示</string>
+    <string name="status_bar_battery_percent_text_inside">アイコンの中</string>
+    <string name="status_bar_battery_percent_text_next_right">アイコンの隣 (右)</string>
+    <string name="status_bar_battery_percent_text_next_left">アイコンの隣 (左)</string>
+    <string name="status_bar_battery_text_charging_title">充電中のバッテリー残量</string>
+    <string name="status_bar_battery_text_charging_summary">充電中は常に残量を表示する</string>
+    <!-- QS battery -->
+    <string name="qs_use_status_bar_battery_style">ステータスバーのスタイルに従う</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">予想残り時間</string>
+    <string name="battery_estimate_summary">利用可能な場合はバッテリーの予想残り時間を表示する</string>
 </resources>
