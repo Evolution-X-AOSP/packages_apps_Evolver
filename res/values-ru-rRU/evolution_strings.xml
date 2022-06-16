@@ -21,6 +21,7 @@
     <string name="quicksettings_title">Быстрые настройки</string>
     <string name="spoof_title">Подмена</string>
     <string name="status_bar_title">Строка состояния</string>
+    <string name="status_bar_battery_category_title">Настройки аккумулятора</string>
     <string name="swipe_gestures_title">Жесты</string>
     <string name="system_settings_title">Системные настройки</string>
     <string name="themes_title">Темы</string>
@@ -177,23 +178,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Использовать старый стиль значков сети</string>
     <string name="use_old_mobiletype_summary">Показывать значок мобильной сети над индикатором сигнала</string>
-    <!-- Battery percentage -->
-    <string name="battery_style_category_title">Стили батареи</string>
-    <string name="status_bar_battery_percentage_title">Процент заряда батареи</string>
-    <string name="status_bar_battery_percentage_default">Не отображать (по умолчанию)</string>
-    <string name="status_bar_battery_percentage_text_next">Рядом с иконкой</string>
-    <string name="status_bar_battery_percentage_text_inside">Внутри иконки</string>
-    <!-- Status bar battery style-->
-    <string name="status_bar_battery_style_title">Стиль батареи</string>
-    <string name="status_bar_battery_style_port">Портретный</string>
-    <string name="status_bar_battery_style_circle">Круг</string>
-    <string name="status_bar_battery_style_dotted_circle">Круг (Точечный)</string>
-    <string name="status_bar_battery_style_filled_circle">Круг (Заполняющийся)</string>
-    <string name="status_bar_battery_style_text">Текст</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Горизонтальная иконка (справа)</string>
-    <string name="status_bar_battery_style_icon_landscape">Горизонтальная иконка (слева)</string>
-    <string name="status_bar_battery_style_big_circle">Круг (Большой)</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Круг из точек</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">Расположение плиток</string>
     <string name="qs_tile_layout_title">Вертикальное расположение</string>
@@ -207,11 +191,16 @@
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Показывать названия плиток</string>
     <string name="qs_tile_title_visibility_summary">Скрыть названия плиток</string>
-    <!-- Brightness slider -->
-    <string name="qs_show_brightness_title">Ползунок яркости</string>
-    <string name="qs_show_brightness_summary">Видимость и настройки ползунка яркости</string>
-    <string name="qs_brightness_position_bottom_title">Ползунок яркости снизу</string>
-    <string name="qs_brightness_position_bottom_summary">Отображать ползунок яркости в нижней части панели быстрых настроек</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">Ползунок яркости</string>
+    <string name="qs_show_brightness_slider_never">Не показывать никогда</string>
+    <string name="qs_show_brightness_slider_expanded">Показать при раскрытии</string>
+    <string name="qs_show_brightness_slider_always">Всегда показывать</string>
+    <string name="qs_show_brightness_slider_not_expanded">Показывать в свёрнутом виде</string>
+    <string name="qs_brightness_slider_position_title">Расположение</string>
+    <string name="qs_brightness_slider_position_top">Сверху</string>
+    <string name="qs_brightness_slider_position_bottom">Внизу</string>
+    <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Значок автояркости</string>
     <string name="qs_show_auto_brightness_summary">Показывать переключатель адаптивной яркости рядом со слайдером</string>
     <!-- Volume rocker wake -->
@@ -521,11 +510,9 @@
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">Вибрация для уведомлений</string>
     <string name="vibrate_on_notifications_summary">Вкл/Выкл вибрация уведомлений</string>
-    <!-- QS DataUsage Toggle -->
-    <string name="qs_datausage_title">Статистика использования трафика в заголовке быстрых настроек</string>
-    <string name="qs_datausage_disabled">Отключено</string>
-    <string name="qs_datausage_daily">Ежедневное использование</string>
-    <string name="qs_datausage_monthly">Ежемесячное использование</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Использование данных</string>
+    <string name="qs_footer_datausage_summary">Отображение сводки об использовании данных в нижнем колонтитуле быстрых настроек</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Уровень размытия обложки</string>
     <string name="lockscreen_media_art_options_title">Обложка медиа на экране блокировки</string>
@@ -892,10 +879,6 @@
     <string name="volume_steps_system_title">Шаги громкости: Система</string>
     <string name="volume_steps_voice_call_title">Шаги громкости: Голосовой вызов</string>
     <string name="volume_steps_reset">Сбросить</string>
-    <!-- QS battery estimates -->
-    <string name="qs_show_battery_estimate_title">Оценочное время работы</string>
-    <string name="qs_show_battery_estimate_summary_on">Показывать остаточное время работы на панели QS</string>
-    <string name="qs_show_battery_estimate_summary_off">Скрывать остаточное время работы на панели QS</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Имя оператора</string>
     <string name="carrier_label_settings_summary">Настроить имя оператора</string>
@@ -1048,7 +1031,75 @@
     <!-- Temperature warning -->
     <string name="show_temperature_warning_title">Предупреждение о высокой температуре</string>
     <string name="show_temperature_warning_summary">Показывать предупреждение, когда устройство превышает определенный температурный порог</string>
-    <!-- Colorful battery icon -->
-    <string name="battery_level_colors_title">Переключение цветного значка батареи</string>
-    <string name="battery_level_colors_summary">Каждое снижение уровня заряда батареи обозначается цветом (требуется перезагрузка SystemUI)</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_warning_text">Умные пиксели - это функция энергосбережения. В зависимости от количества пикселей, которые вы решили выключить, вы можете видеть улучшения в жизни батареи. Заметьте, что в некоторых случаях это может привести к нереагирующим областям при сенсорном экране</string>
+    <string name="smart_pixels_title">Умные пиксели</string>
+    <string name="smart_pixels_summary">Экономьте батарею, отключая лишние пиксели</string>
+    <string name="smart_pixels_enable_title">Включить умные пиксели</string>
+    <string name="smart_pixels_enable_summary">Выключить пиксели для снижения энергопотребления</string>
+    <string name="smart_pixels_on_power_save_title">Автоматическое включение при активации экономии зарядка батареи</string>
+    <string name="smart_pixels_on_power_save_summary">Включить умные пиксели, когда включена заставка</string>
+    <string name="smart_pixels_percent">Процент выключаемых пикселей</string>
+    <string name="smart_pixels_shift_title">Защита от выгорания экрана</string>
+    <string name="smart_pixels_shift_summary">Предотвращение выгорания на OLED устройствах благодаря перемещению пикселей с такой частотой</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Логотип</string>
+    <string name="status_bar_logo_title">Логотип</string>
+    <string name="status_bar_logo_summary">Включите для отображения логотипа в строке состояния</string>
+    <string name="status_bar_logo_position_title">Расположение</string>
+    <string name="status_bar_logo_position_summary">Выберите, с какой стороны отображать логотип</string>
+    <string name="status_bar_logo_position_right">Справа</string>
+    <string name="status_bar_logo_position_left">Слева</string>
+    <string name="status_bar_logo_style_title">Стиль</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">Смайлик</string>
+    <string name="status_bar_logo_style_emoticon_cool">Смайлик: крутой</string>
+    <string name="status_bar_logo_style_emoticon_dead">Смайлик: мертвый</string>
+    <string name="status_bar_logo_style_emoticon_devil">Смайлик: демон</string>
+    <string name="status_bar_logo_style_emoticon_happy">Смайлик: счастливый</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Смайлик: нейтральный</string>
+    <string name="status_bar_logo_style_emoticon_poop">Смайлик: какашка</string>
+    <string name="status_bar_logo_style_emoticon_sad">Смайлик: грустный</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Смайлик: язык</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Торт</string>
+    <string name="status_bar_logo_style_blogger">Блогер</string>
+    <string name="status_bar_logo_style_biohazard">Биологическая угроза</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Инь-Янь</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Робот</string>
+    <string name="status_bar_logo_style_ninja">Ниндзя</string>
+    <string name="status_bar_logo_style_heart">Сердце</string>
+    <string name="status_bar_logo_style_flower">Цветок</string>
+    <string name="status_bar_logo_style_ghost">Призрак</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_guitar_electric">Электрогитара</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Стиль батареи</string>
+    <string name="status_bar_battery_style_icon_portrait">Портрет</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Горизонтальная иконка (справа)</string>
+    <string name="status_bar_battery_style_icon_landscape">Горизонтальная иконка (слева)</string>
+    <string name="status_bar_battery_style_circle">Круг</string>
+    <string name="status_bar_battery_style_dotted_circle">Круг (Точечный)</string>
+    <string name="status_bar_battery_style_big_circle">Круг (Большой)</string>
+    <string name="status_bar_battery_style_big_dotted_circle">Круг из точек</string>
+    <string name="status_bar_battery_style_filled_circle">Круг (Заполняющийся)</string>
+    <string name="status_bar_battery_style_text">Текст</string>
+    <string name="status_bar_battery_style_hidden">Скрыто</string>
+    <string name="status_bar_battery_percent_title">Процент батареи</string>
+    <string name="status_bar_battery_percent_hidden">Скрыт</string>
+    <string name="status_bar_battery_percent_text_inside">Внутри иконки</string>
+    <string name="status_bar_battery_percent_text_next_right">Рядом со значком (справа)</string>
+    <string name="status_bar_battery_percent_text_next_left">Рядом со значком (слева)</string>
+    <string name="status_bar_battery_text_charging_title">Проценты батареи при зарядке</string>
+    <string name="status_bar_battery_text_charging_summary">Всегда показывать проценты батареи при зарядке</string>
+    <!-- QS battery -->
+    <string name="qs_use_status_bar_battery_style">Как в строке состояния</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Оценка батареи</string>
+    <string name="battery_estimate_summary">Показывать ожидаемое время работы от аккумулятора, если доступно</string>
 </resources>
