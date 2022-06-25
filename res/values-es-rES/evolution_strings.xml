@@ -21,6 +21,7 @@
     <string name="quicksettings_title">Ajustes rápidos</string>
     <string name="spoof_title">Suplantación</string>
     <string name="status_bar_title">Barra de estado</string>
+    <string name="status_bar_battery_category_title">Personalizar batería</string>
     <string name="swipe_gestures_title">Navegación por gestos</string>
     <string name="system_settings_title">Opciones del sistema</string>
     <string name="themes_title">Temas</string>
@@ -177,23 +178,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Usar antiguos iconos de datos móviles</string>
     <string name="use_old_mobiletype_summary">Mostrar icono del tipo de señal en la parte superior del indicador de señal</string>
-    <!-- Battery percentage -->
-    <string name="battery_style_category_title">Estilos de batería</string>
-    <string name="status_bar_battery_percentage_title">Porcentaje de batería</string>
-    <string name="status_bar_battery_percentage_default">Oculto</string>
-    <string name="status_bar_battery_percentage_text_next">Junto al icono</string>
-    <string name="status_bar_battery_percentage_text_inside">Dentro del icono</string>
-    <!-- Status bar battery style-->
-    <string name="status_bar_battery_style_title">Estilo de la batería</string>
-    <string name="status_bar_battery_style_port">Vertical</string>
-    <string name="status_bar_battery_style_circle">Círculo</string>
-    <string name="status_bar_battery_style_dotted_circle">Círculo punteado</string>
-    <string name="status_bar_battery_style_filled_circle">Círculo (lleno)</string>
-    <string name="status_bar_battery_style_text">Texto</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Ícono horizontal (Derecha)</string>
-    <string name="status_bar_battery_style_icon_landscape">Ícono horizontal (Izquierda)</string>
-    <string name="status_bar_battery_style_big_circle">Círculo (Grande)</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Círculo (Punteado)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">Distribución de ajustes rápidos</string>
     <string name="qs_tile_layout_title">Distribución vertical</string>
@@ -207,11 +191,16 @@
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Mostrar texto del icono</string>
     <string name="qs_tile_title_visibility_summary">Alternar para ocultar los títulos de los ajustes rápidos</string>
-    <!-- Brightness slider -->
-    <string name="qs_show_brightness_title">Barra de brillo</string>
-    <string name="qs_show_brightness_summary">Visibilidad y configuración de la barra de brillo</string>
-    <string name="qs_brightness_position_bottom_title">Mostrar la barra de brillo abajo</string>
-    <string name="qs_brightness_position_bottom_summary">Mostrar la barra de brillo en la parte inferior de ajustes rápidos</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">Control de brillo</string>
+    <string name="qs_show_brightness_slider_never">No mostrar nunca</string>
+    <string name="qs_show_brightness_slider_expanded">Mostrar al expandir</string>
+    <string name="qs_show_brightness_slider_always">Mostrar siempre</string>
+    <string name="qs_show_brightness_slider_not_expanded">Mostrar cuando no se expanda</string>
+    <string name="qs_brightness_slider_position_title">Posición</string>
+    <string name="qs_brightness_slider_position_top">Arriba</string>
+    <string name="qs_brightness_slider_position_bottom">Inferior</string>
+    <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Icono de brillo automático</string>
     <string name="qs_show_auto_brightness_summary">Mostrar icono de brillo automático al lado de la barra de brillo</string>
     <!-- Volume rocker wake -->
@@ -292,16 +281,15 @@
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrar al tocar</string>
     <string name="quick_settings_vibrate_summary">Vibrar al tocar los ajustes de Ajustes Rápidos</string>
-    <!-- Tiles animation style  -->
+    <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Animaciones</string>
     <string name="qs_tile_animation_style_title">Estilo de animación</string>
     <string name="qs_tile_animation_duration_title">Duración de la animación</string>
     <string name="qs_tile_animation_interpolator_title">Interpolar animación de los ajustes</string>
     <string name="qs_tile_animation_style_off">Sin animación</string>
-    <string name="qs_tile_animation_style_flip">Voltear</string>
     <string name="qs_tile_animation_style_rotate">Rotar</string>
-    <string name="qs_tile_animation_duration_low">Baja</string>
-    <string name="qs_tile_animation_duration_fast">Rápido</string>
+    <string name="qs_tile_animation_style_flipx">Invertir X</string>
+    <string name="qs_tile_animation_style_flipy">Invertir Y</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Lineal</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Acelerado</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Desacelerado</string>
@@ -310,9 +298,6 @@
     <string name="qs_tile_animation_interpolator_overshootInterpolator">Adelantarse</string>
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipado</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipo adelantado</string>
-    <string name="qs_set_animation_style">%1$s</string>
-    <string name="qs_set_animation_duration">%1$s</string>
-    <string name="qs_set_animation_interpolator">%1$s</string>
     <!-- Disable QS -->
     <string name="disable_qs_title">Ocultar Ajustes Rápidos en la pantalla de bloqueo</string>
     <string name="disable_qs_summary">Oculta los Ajustes Rápidos si el dispositivo está bloqueado. No desactiva la zona de notificaciones</string>
@@ -521,11 +506,9 @@
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">Vibrar al recibir notificaciones</string>
     <string name="vibrate_on_notifications_summary">Alternar para desactivar la vibración de notificaciones</string>
-    <!-- QS DataUsage Toggle -->
-    <string name="qs_datausage_title">Uso de datos en la cabecera de ajustes rápidos</string>
-    <string name="qs_datausage_disabled">Desactivado</string>
-    <string name="qs_datausage_daily">Uso diario</string>
-    <string name="qs_datausage_monthly">Uso mensual</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Uso de datos</string>
+    <string name="qs_footer_datausage_summary">Mostrar uso de datos al pie de los ajustes rápidos</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Nivel de desenfoque de carátula multimedia</string>
     <string name="lockscreen_media_art_options_title">Carátula multimedia en pantalla de bloqueo</string>
@@ -821,6 +804,7 @@
     <string name="artwork_media_background_summary">Establecer carátula multimedia como fondo de notificación</string>
     <string name="artwork_media_background_enable_blur_title">Desenfocar fondo de carátula multimedia</string>
     <string name="artwork_media_background_blur_radius_title">Cantidad de desenfoque para la carátula multimedia</string>
+    <string name="artwork_media_background_fade_filter_title">Nivel de desenfoque en carátula de multimedia</string>
     <string name="artwork_media_background_alpha_title">Transparencia de carátula multimedia</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">Estilo redondeado para diálogos del sistema</string>
@@ -892,10 +876,6 @@
     <string name="volume_steps_system_title">Niveles de volumen: Sistema</string>
     <string name="volume_steps_voice_call_title">Niveles de volumen: Llamada de voz</string>
     <string name="volume_steps_reset">Restablecer</string>
-    <!-- QS battery estimates -->
-    <string name="qs_show_battery_estimate_title">Batería estimada</string>
-    <string name="qs_show_battery_estimate_summary_on">Mostrar estimación de batería en QS</string>
-    <string name="qs_show_battery_estimate_summary_off">Ocultar estimación de batería en QS</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Nombre del operador</string>
     <string name="carrier_label_settings_summary">Personaliza el nombre del operador</string>
@@ -1048,7 +1028,80 @@
     <!-- Temperature warning -->
     <string name="show_temperature_warning_title">Mostrar advertencia de temperatura</string>
     <string name="show_temperature_warning_summary">Muestra una advertencia cuando el dispositivo supera un cierto umbral de temperatura</string>
-    <!-- Colorful battery icon -->
-    <string name="battery_level_colors_title">Alternar icono de batería colorido</string>
-    <string name="battery_level_colors_summary">Cada caída del nivel de la batería está codificada por colores (requiere reiniciar SystemUI)</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_warning_text">Los píxeles inteligentes son una opción de ahorro de batería. Dependiendo de cuantos pixeles decidas apagar, tal vez veas mejoras en la duración de la batería</string>
+    <string name="smart_pixels_title">Píxeles Inteligentes</string>
+    <string name="smart_pixels_summary">Ahorra batería apagando píxeles adicionales</string>
+    <string name="smart_pixels_enable_title">Habilitar Píxeles Inteligentes</string>
+    <string name="smart_pixels_enable_summary">Apaga los píxeles para reducir el consumo de energía</string>
+    <string name="smart_pixels_on_power_save_title">Activación automática en ahorro de batería</string>
+    <string name="smart_pixels_on_power_save_summary">Habilitar Píxeles Inteligentes cuando el ahorro de batería esté habilitado</string>
+    <string name="smart_pixels_percent">Porcentaje de píxeles para deshabilitar</string>
+    <string name="smart_pixels_shift_title">Protección contra el quemado de pantalla</string>
+    <string name="smart_pixels_shift_summary">Previene el quemado de la pantalla en dispositivos con tecnología OLED alternando píxeles de vez en cuando</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Logo</string>
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Activar para mostrar logo en la barra de estado</string>
+    <string name="status_bar_logo_position_title">Posición</string>
+    <string name="status_bar_logo_position_summary">Elige en que lado quieres ver el logo, izquierda o derecha</string>
+    <string name="status_bar_logo_position_right">Derecha</string>
+    <string name="status_bar_logo_position_left">Izquierda</string>
+    <string name="status_bar_logo_style_title">Estilo</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">Emoticón</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticón cool</string>
+    <string name="status_bar_logo_style_emoticon_dead">Emoticón muerto</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticón diabólico</string>
+    <string name="status_bar_logo_style_emoticon_happy">Emoticón feliz</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Emoticón neutro</string>
+    <string name="status_bar_logo_style_emoticon_poop">Emoticón mierda</string>
+    <string name="status_bar_logo_style_emoticon_sad">Emoticón triste</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Emoticón con lengua</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Pastel</string>
+    <string name="status_bar_logo_style_blogger">Blogger</string>
+    <string name="status_bar_logo_style_biohazard">Riesgo biológico</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_heart">Corazón</string>
+    <string name="status_bar_logo_style_flower">Flor</string>
+    <string name="status_bar_logo_style_ghost">Fantasma</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_guitar_electric">Guitarra eléctrica</string>
+    <string name="status_bar_logo_style_amogus">Amogus</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Estilo de la batería</string>
+    <string name="status_bar_battery_style_icon_portrait">Icono vertical</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Ícono horizontal (Derecha)</string>
+    <string name="status_bar_battery_style_icon_landscape">Ícono horizontal (Izquierda)</string>
+    <string name="status_bar_battery_style_circle">Círculo</string>
+    <string name="status_bar_battery_style_dotted_circle">Círculo punteado</string>
+    <string name="status_bar_battery_style_big_circle">Círculo (Grande)</string>
+    <string name="status_bar_battery_style_big_dotted_circle">Círculo (Punteado)</string>
+    <string name="status_bar_battery_style_filled_circle">Círculo (lleno)</string>
+    <string name="status_bar_battery_style_text">Texto</string>
+    <string name="status_bar_battery_style_hidden">Oculto</string>
+    <string name="status_bar_battery_percent_title">Porcentaje de batería</string>
+    <string name="status_bar_battery_percent_hidden">Oculto</string>
+    <string name="status_bar_battery_percent_text_inside">Dentro del icono</string>
+    <string name="status_bar_battery_percent_text_next_right">Junto al icono (derecha)</string>
+    <string name="status_bar_battery_percent_text_next_left">Junto al icono (izquierda)</string>
+    <string name="status_bar_battery_text_charging_title">Porcentaje de batería al cargar</string>
+    <string name="status_bar_battery_text_charging_summary">Mostrar siempre porcentaje de batería al cargar</string>
+    <!-- QS battery -->
+    <string name="qs_use_status_bar_battery_style">Seguir estilo de la barra de estado</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Estimación de batería</string>
+    <string name="battery_estimate_summary">Mostrar duración estimada de la batería cuando esté disponible</string>
+    <!-- UiBench -->
+    <string name="category_uibench">UiBench</string>
+    <string name="jitter_test_title">Jitter</string>
+    <string name="jitter_test_summary">Calcular jitter de renderizado</string>
 </resources>
