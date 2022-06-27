@@ -21,6 +21,7 @@
     <string name="quicksettings_title">快速设置</string>
     <string name="spoof_title">伪装</string>
     <string name="status_bar_title">状态栏</string>
+    <string name="status_bar_battery_category_title">电池自定义</string>
     <string name="swipe_gestures_title">滑动手势</string>
     <string name="system_settings_title">系统选项</string>
     <string name="themes_title">主题</string>
@@ -177,23 +178,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">使用旧式移动数据图标</string>
     <string name="use_old_mobiletype_summary">在信号指示器顶部显示移动数据图标</string>
-    <!-- Battery percentage -->
-    <string name="battery_style_category_title">电池图标</string>
-    <string name="status_bar_battery_percentage_title">电量百分比</string>
-    <string name="status_bar_battery_percentage_default">隐藏</string>
-    <string name="status_bar_battery_percentage_text_next">图标旁</string>
-    <string name="status_bar_battery_percentage_text_inside">图标内</string>
-    <!-- Status bar battery style-->
-    <string name="status_bar_battery_style_title">电池样式</string>
-    <string name="status_bar_battery_style_port">纵向</string>
-    <string name="status_bar_battery_style_circle">圆环</string>
-    <string name="status_bar_battery_style_dotted_circle">虚线圆环</string>
-    <string name="status_bar_battery_style_filled_circle">实心圆环</string>
-    <string name="status_bar_battery_style_text">文本</string>
-    <string name="status_bar_battery_style_icon_rlandscape">横向图标 (右侧)</string>
-    <string name="status_bar_battery_style_icon_landscape">横向图标 (左侧)</string>
-    <string name="status_bar_battery_style_big_circle">大圆环</string>
-    <string name="status_bar_battery_style_big_dotted_circle">大虚线圆环</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">卡片布局</string>
     <string name="qs_tile_layout_title">垂直布局</string>
@@ -207,11 +191,16 @@
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">隐藏磁贴标题</string>
     <string name="qs_tile_title_visibility_summary">切换以隐藏磁贴标题</string>
-    <!-- Brightness slider -->
-    <string name="qs_show_brightness_title">亮度滑块</string>
-    <string name="qs_show_brightness_summary">亮度滑块可见性和设置</string>
-    <string name="qs_brightness_position_bottom_title">底部亮度滑块</string>
-    <string name="qs_brightness_position_bottom_summary">在快捷开关面板底部显示亮度滑块</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">亮度滑块</string>
+    <string name="qs_show_brightness_slider_never">从不显示</string>
+    <string name="qs_show_brightness_slider_expanded">展开时显示</string>
+    <string name="qs_show_brightness_slider_always">始终显示</string>
+    <string name="qs_show_brightness_slider_not_expanded">未展开时显示</string>
+    <string name="qs_brightness_slider_position_title">位置</string>
+    <string name="qs_brightness_slider_position_top">顶部</string>
+    <string name="qs_brightness_slider_position_bottom">底部</string>
+    <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">自动亮度图标</string>
     <string name="qs_show_auto_brightness_summary">在亮度滑块旁显示自动亮度开关</string>
     <!-- Volume rocker wake -->
@@ -292,16 +281,15 @@
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">触摸时振动</string>
     <string name="quick_settings_vibrate_summary">触摸快速设置磁贴时振动</string>
-    <!-- Tiles animation style  -->
+    <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">动画</string>
     <string name="qs_tile_animation_style_title">动画样式</string>
     <string name="qs_tile_animation_duration_title">动画持续时间</string>
     <string name="qs_tile_animation_interpolator_title">磁铁动画插值</string>
     <string name="qs_tile_animation_style_off">无动画</string>
-    <string name="qs_tile_animation_style_flip">翻转</string>
     <string name="qs_tile_animation_style_rotate">旋转</string>
-    <string name="qs_tile_animation_duration_low">慢速</string>
-    <string name="qs_tile_animation_duration_fast">快速</string>
+    <string name="qs_tile_animation_style_flipx">翻转 X</string>
+    <string name="qs_tile_animation_style_flipy">翻转 Y</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">线性</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">加速</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">减速</string>
@@ -310,9 +298,6 @@
     <string name="qs_tile_animation_interpolator_overshootInterpolator">越界</string>
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">先加速后减速</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">预留和越界</string>
-    <string name="qs_set_animation_style">%1$s</string>
-    <string name="qs_set_animation_duration">%1$s</string>
-    <string name="qs_set_animation_interpolator">%1$s</string>
     <!-- Disable QS -->
     <string name="disable_qs_title">锁屏隐藏控制中心</string>
     <string name="disable_qs_summary">如果设备被锁定，则隐藏控制中心，但不禁用通知阴影</string>
@@ -521,11 +506,9 @@
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">通知振动</string>
     <string name="vibrate_on_notifications_summary">切换以禁用通知振动</string>
-    <!-- QS DataUsage Toggle -->
-    <string name="qs_datausage_title">在控制中心顶部显示流量使用情况</string>
-    <string name="qs_datausage_disabled">已禁用</string>
-    <string name="qs_datausage_daily">每日用量</string>
-    <string name="qs_datausage_monthly">每月用量</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">流量使用情况</string>
+    <string name="qs_footer_datausage_summary">在快速设置页脚显示数据使用情况摘要</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">专辑封面模糊度</string>
     <string name="lockscreen_media_art_options_title">锁屏专辑封面</string>
@@ -821,6 +804,7 @@
     <string name="artwork_media_background_summary">设置媒体图稿为通知媒体背景</string>
     <string name="artwork_media_background_enable_blur_title">模糊媒体艺术背景</string>
     <string name="artwork_media_background_blur_radius_title">媒体作品的模糊量</string>
+    <string name="artwork_media_background_fade_filter_title">媒体作品的淡入淡出量</string>
     <string name="artwork_media_background_alpha_title">媒体艺术品的透明度</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">系统对话框的圆角样式</string>
@@ -892,10 +876,6 @@
     <string name="volume_steps_system_title">音量调整级别: 系统</string>
     <string name="volume_steps_voice_call_title">音量调整级别: 通话</string>
     <string name="volume_steps_reset">重置</string>
-    <!-- QS battery estimates -->
-    <string name="qs_show_battery_estimate_title">电量预估</string>
-    <string name="qs_show_battery_estimate_summary_on">在快速设置中显示电池电量估计</string>
-    <string name="qs_show_battery_estimate_summary_off">在快速设置中隐藏电池估计值</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">运营商名称</string>
     <string name="carrier_label_settings_summary">自定义运营商名称</string>
@@ -1048,7 +1028,79 @@
     <!-- Temperature warning -->
     <string name="show_temperature_warning_title">显示温度警告</string>
     <string name="show_temperature_warning_summary">当设备超过某个温度阈值时显示警告</string>
-    <!-- Colorful battery icon -->
-    <string name="battery_level_colors_title">切换多彩电池图标</string>
-    <string name="battery_level_colors_summary">每次电池电量下降都有颜色代码 (需要 SystemUI 重启)</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_warning_text">智能像素是一种节电功能。根据你决定关闭多少像素，你可以看到电池寿命的改善。注意，在某些情况下，它可能会导致触摸屏上的无响应区域</string>
+    <string name="smart_pixels_title">智能像素</string>
+    <string name="smart_pixels_summary">通过关闭额外的像素来节省电量</string>
+    <string name="smart_pixels_enable_title">启用智能像素</string>
+    <string name="smart_pixels_enable_summary">关闭像素以降低功耗</string>
+    <string name="smart_pixels_on_power_save_title">省电模式时自动启用</string>
+    <string name="smart_pixels_on_power_save_summary">开启省电模式时自动启用智能像素</string>
+    <string name="smart_pixels_percent">禁用的像素数量</string>
+    <string name="smart_pixels_shift_title">烧屏保护</string>
+    <string name="smart_pixels_shift_summary">通过经常移动像素来防止 OLED 屏幕的设备发生烧屏</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Logo</string>
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">启用在状态栏中显示 logo</string>
+    <string name="status_bar_logo_position_title">位置</string>
+    <string name="status_bar_logo_position_summary">选择左侧或右侧显示 Logo</string>
+    <string name="status_bar_logo_position_right">右侧</string>
+    <string name="status_bar_logo_position_left">左侧</string>
+    <string name="status_bar_logo_style_title">样式</string>
+    <string name="status_bar_logo_style_evolution">进化 X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">苹果</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">表情</string>
+    <string name="status_bar_logo_style_emoticon_cool">表情扮酷</string>
+    <string name="status_bar_logo_style_emoticon_dead">表情死亡</string>
+    <string name="status_bar_logo_style_emoticon_devil">表情魔鬼</string>
+    <string name="status_bar_logo_style_emoticon_happy">表情愉快</string>
+    <string name="status_bar_logo_style_emoticon_neutral">表情中性</string>
+    <string name="status_bar_logo_style_emoticon_poop">表情便便</string>
+    <string name="status_bar_logo_style_emoticon_sad">表情悲伤</string>
+    <string name="status_bar_logo_style_emoticon_tongue">表情吐舌</string>
+    <string name="status_bar_logo_style_blackberry">黑莓</string>
+    <string name="status_bar_logo_style_cake">蛋糕</string>
+    <string name="status_bar_logo_style_blogger">博主</string>
+    <string name="status_bar_logo_style_biohazard">生化</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">太极</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">机器人</string>
+    <string name="status_bar_logo_style_ninja">忍者</string>
+    <string name="status_bar_logo_style_heart">心形</string>
+    <string name="status_bar_logo_style_flower">鲜花</string>
+    <string name="status_bar_logo_style_ghost">幽灵</string>
+    <string name="status_bar_logo_style_google">谷歌</string>
+    <string name="status_bar_logo_style_guitar_electric">电吉他</string>
+    <string name="status_bar_logo_style_amogus">Amogus</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">电池样式</string>
+    <string name="status_bar_battery_style_icon_portrait">纵向图标</string>
+    <string name="status_bar_battery_style_icon_rlandscape">横向图标 (右侧)</string>
+    <string name="status_bar_battery_style_icon_landscape">横向图标 (左侧)</string>
+    <string name="status_bar_battery_style_circle">圆环</string>
+    <string name="status_bar_battery_style_dotted_circle">虚线圆环</string>
+    <string name="status_bar_battery_style_big_circle">大圆环</string>
+    <string name="status_bar_battery_style_big_dotted_circle">大虚线圆环</string>
+    <string name="status_bar_battery_style_filled_circle">实心圆环</string>
+    <string name="status_bar_battery_style_text">文本</string>
+    <string name="status_bar_battery_style_hidden">隐藏</string>
+    <string name="status_bar_battery_percent_title">电量百分比</string>
+    <string name="status_bar_battery_percent_hidden">隐藏</string>
+    <string name="status_bar_battery_percent_text_inside">图标内</string>
+    <string name="status_bar_battery_percent_text_next">图标旁</string>
+    <string name="status_bar_battery_text_charging_title">充电时电池百分比</string>
+    <string name="status_bar_battery_text_charging_summary">充电时总是显示电池百分比</string>
+    <!-- QS battery -->
+    <string name="qs_use_status_bar_battery_style">跟随状态栏样式</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">电量预估</string>
+    <string name="battery_estimate_summary">显示电量可用时间</string>
+    <!-- UiBench -->
+    <string name="category_uibench">UiBech</string>
+    <string name="jitter_test_title">抖动</string>
+    <string name="jitter_test_summary">计算渲染抖动</string>
 </resources>
