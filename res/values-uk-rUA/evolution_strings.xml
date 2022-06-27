@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2021 The Evolution X Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     Copyright (C) 2019-2022 Evolution X
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- The Evolver -->
@@ -30,12 +19,15 @@
     <string name="powermenu_title">Меню кнопки блокування</string>
     <string name="powermenu_items_title">Опції меню кнопки блокування</string>
     <string name="quicksettings_title">Швидкі налаштування</string>
+    <string name="spoof_title">Підміна</string>
     <string name="status_bar_title">Рядок стану</string>
+    <string name="status_bar_battery_category_title">Кастомізація значку батареї</string>
     <string name="swipe_gestures_title">Свайп-жести</string>
     <string name="system_settings_title">Системні параметри</string>
     <string name="themes_title">Теми</string>
     <string name="torch_gestures_title">Жести ліхтарика</string>
     <string name="flashlight_category">Ліхтарик</string>
+    <string name="telephony_icons_title">Значки телефонії</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Стокові жести включені в Android</string>
     <string name="dark_ui_mode_summary">Переглянути параметри темної теми</string>
@@ -61,6 +53,8 @@
     <string name="led_color_red">Червоний</string>
     <string name="edit_hint">Значення</string>
     <string name="seek_value_edit_label">Встановити значення</string>
+    <string name="search">Пошук</string>
+    <string name="search_apps">Пошук додатків</string>
     <!-- Units -->
     <string name="unit_milliseconds">мілісекунди</string>
     <string name="unit_seconds">секунди</string>
@@ -82,6 +76,11 @@
     <string name="seekbar_default_value_set">Значення встановлено за замовчуванням <xliff:g id="number">%d</xliff:g></string>
     <string name="seekbar_default_value_already_set">Значення за замовчуванням вже встановлено</string>
     <string name="seekbar_default_string">За замовчуванням</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Значення: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">за замовчанням</string>
+    <string name="custom_seekbar_default_value_to_set">Значення за замовчанням: <xliff:g id="v">%s</xliff:g>\nДовге натискання для встановлення</string>
+    <string name="custom_seekbar_default_value_is_set">Значення за замовчуванням встановлено</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">Конфігурація USB</string>
     <string name="usb_default_config_summary">Вибрати поведінку за замовчуванням під час підключення пристрою через USB</string>
@@ -89,17 +88,10 @@
     <string name="navigation_bar_category">Панель навігації</string>
     <string name="navigation_bar_title">Панель навігації</string>
     <string name="navigation_bar_summary">Показувати наекранні клавіші навігації</string>
-    <string name="navigation_bar_layout_title">Зовнішній вигляд</string>
-    <string name="navigation_bar_layout_summary">Налаштування розміщення панелі навігації</string>
     <string name="navigation_bar_arrow_keys_title">Показувати стрілки під час введення тексту</string>
     <string name="navigation_bar_arrow_keys_summary">Відображати кнопки переміщення курсору вліво або вправо в панелі навігації при введенні тексту</string>
-    <string name="nav_bar_tuner_title">Налаштування навігаційної панелі</string>
-    <string name="nav_bar_tuner_summary">Змінити макет панелі навігації</string>
-    <string name="navbar_layout_title">Зовнішній вигляд</string>
-    <string name="navbar_layout_normal">Звичайний</string>
-    <string name="navbar_layout_compact">Компактний</string>
-    <string name="navbar_layout_leftleaning">Панель ліворуч</string>
-    <string name="navbar_layout_rightleaning">Панель праворуч</string>
+    <string name="navigation_bar_compact_layout_title">Компактний макет</string>
+    <string name="navigation_bar_compact_layout_summary">Використовувати компактний макет у панелі навігації</string>
     <string name="system_navigation_summary">Виберіть системний стиль навігації</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Анімація Pixel</string>
@@ -112,8 +104,8 @@
     <string name="evolution_twitter_summary">Натисніть тут, щоб відвідати наш Твіттер!</string>
     <string name="evolution_telegram_summary">Натисніть тут, щоб відвідати нашу спільноту!</string>
     <string name="evolution_github_summary">Натисніть тут, щоб відкрити наш GitHub!</string>
-    <string name="evolution_about_info_summary">Еволюція X - це користувацька прошивка, заснована на AOSP, з метою забезпечити відчуття, що така як у пікселях. Оскільки Android Pie, ми приносили наш власний бренд Android на ваші пристрої. Ми будемо продовжувати надавати стабільні та багаті на функціональність оновлення для наших лояльних користувачів.</string>
-    <string name="evolution_about_team">Командна Еволюшн X</string>
+    <string name="evolution_about_info_summary">Evolution X - це користувацька прошивка, заснована на AOSP, з метою забезпечити відчуття як у телефонах Pixel. Маючи у вашому розпорядженні додаткові конфігурації, ми надаємо збірки з щомісячними патчами безпеки з останніх джерел Android.</string>
+    <string name="evolution_about_team">Учасники</string>
     <!-- Battery light -->
     <string name="light_settings_header">Налаштування індикатора</string>
     <string name="battery_light_settings">Індикація заряджання акумулятора</string>
@@ -127,47 +119,18 @@
     <string name="battery_light_medium_color">Середній заряд батареї</string>
     <string name="battery_light_full_color">Майже повний заряд акумулятора</string>
     <string name="battery_light_reallyfull_color">Повний (100) заряд</string>
-    <!-- FOD icon picker -->
-    <string name="fod_icon_picker_category_title">Налаштування FOD</string>
-    <!-- FOD animations -->
-    <string name="fod_recog_animation_category">Анімації FOD</string>
-    <string name="fod_recog_animation_title">Анімація розпізнавання відбитку пальця</string>
-    <string name="fod_recog_animation_summary">Показує анімацію під час розпізнавання вашого пальця</string>
-    <string name="fod_recog_animation_effect_title">Виберіть ефект анімації розпізнавання відбитка пальця</string>
-    <string name="fod_recog_animation_miui_aurora_old">Аврора (старий)</string>
-    <string name="fod_recog_animation_miui_aurora">Aurora (K30 Pro)</string>
-    <string name="fod_recog_animation_miui_light">Легка</string>
-    <string name="fod_recog_animation_miui_neon">Неон</string>
-    <string name="fod_recog_animation_miui_neon_blue">Неон (Синій)</string>
-    <string name="fod_recog_animation_miui_pop">Поп</string>
-    <string name="fod_recog_animation_miui_pulse">Пульс</string>
-    <string name="fod_recog_animation_miui_pulse_white">Пульс (білий)</string>
-    <string name="fod_recog_animation_miui_rhythm">Ритм</string>
-    <string name="fod_recog_animation_miui_star_cas">Зоряний</string>
-    <string name="fod_recog_animation_op_cosmos">Космос</string>
-    <string name="fod_recog_animation_op_energy">Енергія</string>
-    <string name="fod_recog_animation_op_mclaren">Макларен</string>
-    <string name="fod_recog_animation_op_ripple">Пульсація</string>
-    <string name="fod_recog_animation_op_scanning">Сканування</string>
-    <string name="fod_recog_animation_op_stripe">Смуга</string>
-    <string name="fod_recog_animation_op_wave">Хвиля</string>
-    <string name="fod_recog_animation_pureview_dna">ДНК</string>
-    <string name="fod_recog_animation_pureview_future">Майбутнє</string>
-    <string name="fod_recog_animation_pureview_halo_ring">Кільце Halo</string>
-    <string name="fod_recog_animation_pureview_molecular">Молекулярна</string>
-    <string name="fod_recog_animation_rog_fusion">Ф\'южн</string>
-    <string name="fod_recog_animation_rog_pulsar">Пульсар</string>
-    <string name="fod_recog_animation_rog_supernova">Наднова</string>
-    <string name="fod_recog_animation_oppo_shine">Блиск</string>
-    <string name="fod_recog_animation_realme_quantum">Квантум</string>
-    <string name="fod_recog_animation_realme_smoke">Дим</string>
-    <string name="fod_recog_animation_realme_strings">Стрічки</string>
-    <!-- FOD icon animation -->
-    <string name="fod_icon_animation">Анімовані іконки</string>
-    <string name="fod_icon_animation_effect_title">Виберіть ефект анімації розпізнавання відбитка пальця</string>
-    <string name="fod_icon_animation_summary">Відображати індикатор FOD при перемиканні на екран</string>
-    <string name="fod_icon_animation_oneui1">OneUI 1</string>
-    <string name="fod_icon_animation_oneui2">OneUI 2</string>
+    <!-- UDFPS settings -->
+    <string name="udfps_category">UDFPS</string>
+    <string name="udfps_customization">Налаштування UDFPS</string>
+    <string name="udfps_recog_animation">Анімації відбитка пальця</string>
+    <string name="udfps_recog_animation_summary">Показує анімацію під час розпізнавання вашого пальця</string>
+    <string name="udfps_recog_animation_effect_title">Користувацька анімація FOD</string>
+    <string name="udfps_recog_animation_effect_summary">Виберіть ефект анімації</string>
+    <string name="udfps_settings_title">Налаштування UDFPS</string>
+    <string name="udfps_settings_summary">Налаштування відбитка пальця</string>
+    <!-- UDFPS icon picker -->
+    <string name="udfps_icon_picker_title">Вибір іконки FOD</string>
+    <string name="udfps_icon_picker_summary">Оберіть улюблену піктограму відбитка пальця</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Індикатор сповіщень</string>
     <!-- Heads up -->
@@ -177,30 +140,25 @@
     <string name="summary_heads_up_disabled">Спливаючі сповіщення вимкнені</string>
     <string name="add_heads_up_package">Додати програму</string>
     <string name="add_heads_up_stoplist_summary">Вимкнути спливаючі сповіщення з цих додатків</string>
-    <string name="add_heads_up_blacklist_summary">Вимкнути сповіщення від цих додатків</string>
+    <string name="add_heads_up_blocklist_summary">Вимкнути сповіщення від цих додатків</string>
     <string name="heads_up_stoplist_title">Призупинення сповіщень</string>
-    <string name="heads_up_blacklist_title">Чорний список</string>
+    <string name="heads_up_blocklist_title">Чорний список</string>
     <string name="profile_choose_app">Оберіть додаток</string>
     <string name="dialog_delete_title">Видалити</string>
     <string name="dialog_delete_message">Видалити вибраний елемент?</string>
-    <!-- Statusbar net monitor -->
+    <!-- Network Traffic -->
     <string name="traffic_title">Індикатор трафіку</string>
-    <string name="network_traffic">Мережевий трафік</string>
-    <string name="network_traffic_state_title">Індикатор мережевого трафіку</string>
-    <string name="network_traffic_location">Розташування індикатора трафіку</string>
-    <string name="traffic_disabled">Вимкнено</string>
-    <string name="traffic_status_bar">Стасус бар</string>
-    <string name="traffic_expanded_status_bar">Заголовок швидких налаштувань</string>
+    <string name="traffic_summary">Налаштування індикатора трафіку</string>
     <string name="network_traffic_autohide_threshold_title">Автоматичне приховування індикатора мережевої активності (KB/с)</string>
-    <string name="network_traffic_arrow">Показувати стрілки</string>
-    <string name="network_traffic_arrow_summary">Показувати стрілки індикатора мережевого трафіку</string>
-    <string name="network_traffic_type">Оберіть тип мережевої активності</string>
-    <string name="show_network_traffic_combined">Комбіновані (Вивантаження + Завантаження)</string>
-    <string name="show_network_traffic_dynamic">Динамічний</string>
-    <string name="show_network_traffic_up">Вихідний</string>
-    <string name="show_network_traffic_down">Завантаження</string>
-    <string name="show_network_traffic_all">Вихідний і вхідний</string>
-    <string name="nettraf_font_size">Розмір одного шрифта</string>
+    <string name="network_traffic_location_title">Місцезнаходження</string>
+    <string name="network_traffic_disabled">Вимкнено</string>
+    <string name="network_traffic_statusbar">Рядок стану</string>
+    <string name="network_traffic_qs_header">Заголовок швидких налаштувань</string>
+    <string name="network_traffic_refresh_interval_title">Інтервал оновлення</string>
+    <string name="network_traffic_mode_title">Режим відображення</string>
+    <string name="network_traffic_dynamic">Динамічний</string>
+    <string name="network_traffic_download">Завантажити</string>
+    <string name="network_traffic_upload">Вивантажити</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_error_vib_title">Вібрувати при невдалій авторизації відбитком пальця</string>
     <string name="fprint_error_vib_summary">Вібрувати при невдалій аутентифікації відбитку пальця</string>
@@ -215,71 +173,39 @@
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">Значок VoWiFi</string>
     <string name="vowifi_icon_summary">Показувати значок VoWiFi при можливості</string>
+    <string name="volte_vowifi_override_title">Заміна VoWiFi</string>
+    <string name="volte_vowifi_override_summary">Приховати VoLTE при наявності VoWiFi</string>
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Використовувати старий стиль значків мережі</string>
     <string name="use_old_mobiletype_summary">Відображати значок типу мережі над індикатором сигналу</string>
-    <!-- Long press power for torch -->
-    <string name="torch_long_press_power_gesture_title">Увімкнення ліхтарика довгим натисканням кнопки включення</string>
-    <string name="torch_long_press_power_gesture_desc">Утримуйте кнопку живлення, коли пристрій заблоковано, щоб увімкнути ліхтарик</string>
-    <string name="torch_long_press_power_timeout_title">Автоматичне вимикання ліхтарика</string>
-    <string name="torch_long_press_power_timeout_never">Ніколи</string>
-    <string name="torch_long_press_power_timeout_1min">1 хвилина</string>
-    <string name="torch_long_press_power_timeout_2min">2 хвилини</string>
-    <string name="torch_long_press_power_timeout_5min">5 хвилин</string>
-    <string name="torch_long_press_power_timeout_10min">10 хвилин</string>
-    <!-- Battery Settings -->
-    <string name="battery_settings_title">Параметри батареї </string>
-    <!-- Battery Styles -->
-    <string name="battery_style_category_title">Стиль значка акумулятора</string>
-    <string name="battery_percent_title">Відсоток заряду батареї</string>
-    <!-- Status bar - Battery -->
-    <string name="status_bar_battery_style_title">Стиль іконки батареї</string>
-    <string name="status_bar_battery_style_icon_portrait">Вертикальний значок (типово)</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Горизонтальна іконка (праворуч)</string>
-    <string name="status_bar_battery_style_icon_landscape">Горизонтальна іконка (ліворуч)</string>
-    <string name="status_bar_battery_style_circle">Кільце</string>
-    <string name="status_bar_battery_style_dotted_circle">Пунктирне коло</string>
-    <string name="status_bar_battery_style_filled_circle">Пунктирне коло</string>
-    <string name="status_bar_battery_style_big_circle">Велике коло</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Велике пунктирне коло</string>
-    <string name="status_bar_battery_style_text">Текст</string>
-    <string name="status_bar_battery_style_hidden">Приховано</string>
-    <string name="left_battery_text_title">Відображення текста зліва</string>
-    <string name="left_battery_text_summary">Відображати текст батареї ліворуч від значка акумулятора</string>
-    <!-- Status bar - Battery percentage -->
-    <string name="status_bar_battery_percentage_title">Відсоток заряду батареї</string>
-    <string name="status_bar_battery_percentage_default">Приховано (за замовчуванням)</string>
-    <string name="status_bar_battery_percentage_text_inside">Всередині іконки</string>
-    <string name="status_bar_battery_percentage_text_next">За межами</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">Оцінка залишку батареї</string>
-    <string name="battery_estimate_summary">Відображати передбачуваний ресурс акумулятора, якщо доступно</string>
+    <!-- QS tiles layout direction: vertical or horizontal -->
+    <string name="qs_tile_layout_category_title">Розташування плиток</string>
+    <string name="qs_tile_layout_title">Вертикальне розташування</string>
+    <string name="qs_tile_layout_summary">Увімкнути для вертикального макета. За замовчуванням горизонтально</string>
     <!-- QS rows and columns -->
-    <string name="qs_columns_rows_category_title">Стовпці та рядки швидких налаштувань</string>
-    <string name="qs_rows_columns_title">Рядки та стовпці швидких налаштувань</string>
+    <string name="qs_layout_category_title">Стиль QS</string>
     <string name="qs_rows_portrait_title">Плитки на портретному режимі</string>
     <string name="qs_rows_landscape_title">Кількість рядків (ландшафт)</string>
     <string name="qs_columns_portrait_title">Кількість стовпців (портрет)</string>
     <string name="qs_columns_landscape_title">Кількість стовпців (ландшафт)</string>
+    <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Показувати назву плитки</string>
-    <!-- Status bar - Brightness -->
-    <string name="status_bar_brightness_category">Повзунок яскравості</string>
-    <string name="qs_show_brightness_slider_expanded_title">Повзунок яскравості в розгорнутих швидких настройках</string>
-    <string name="qs_show_brightness_slider_expanded_summary">Показувати повзунок яскравості при розкритті</string>
+    <string name="qs_tile_title_visibility_summary">Увімкніть для приховування заголовків плиток</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">Повзунок яскравості</string>
+    <string name="qs_show_brightness_slider_never">Ніколи не відображати</string>
+    <string name="qs_show_brightness_slider_expanded">Відображати, коли розгорнуто</string>
+    <string name="qs_show_brightness_slider_always">Завжди відображати</string>
+    <string name="qs_show_brightness_slider_not_expanded">Відображати, коли не розгорнуто</string>
+    <string name="qs_brightness_slider_position_title">Положення</string>
+    <string name="qs_brightness_slider_position_top">Зверху</string>
+    <string name="qs_brightness_slider_position_bottom">Знизу</string>
+    <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Значок автояскравості</string>
     <string name="qs_show_auto_brightness_summary">Показувати перемикач для адаптивного регулювання яскравості</string>
-    <string name="qs_brightness_position_bottom_title">Повзунок яскравості внизу (працює тільки для розширеної панелі швидких налаштувань)</string>
-    <!-- QQS brightness slider -->
-    <string name="qqs_brightness_slider_title">Показувати повзунок яскравості</string>
-    <string name="qs_brightness_slider_bottom">Внизу</string>
-    <string name="qs_brightness_slider_top">Вверху</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Пробудження клавішами гучності</string>
     <string name="volume_rocker_wake_summary">Натискання будь-якої кнопки гучності пробудить Ваш пристрій</string>
-    <!-- Media art -->
-    <string name="lockscreen_media_category">Музика</string>
-    <string name="media_art_title">Обкладинка медіа</string>
-    <string name="media_art_summary">Увімкнути обкладинки альбомів на екрані блокування</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Анімація вимкнення екрану</string>
     <string name="screen_off_animation_crt">Ефект старого телевізора</string>
@@ -291,7 +217,7 @@
     <string name="qs_column_rows_settings_title">Налаштування панелі швидких налаштувань</string>
     <string name="qs_edit_title">Значок редагування</string>
     <string name="qs_edit_summary">Включити значок редагування плиток Швидких Налаштувань</string>
-    <string name="qs_footer_category_title">Параметри нижнього рядка</string>
+    <string name="qs_footer_category">Нижній рядок панелі швидких налаштувань</string>
     <string name="qs_header_category_title">Параметри заголовку</string>
     <string name="qs_panel_category_title">Панель швидких налаштувань</string>
     <string name="status_bar_quick_qs_pulldown">Швидке розгортання швидких налаштувань</string>
@@ -309,68 +235,61 @@
     <string name="lockscreen_albumart_filter_tint">У колір акценту</string>
     <string name="lockscreen_albumart_filter_blur">Розмиття</string>
     <string name="lockscreen_albumart_filter_grayblur">Розмиті відтінки сірого</string>
-    <!-- Charging animation -->
-    <string name="lockscreen_charging_animation_title">Анімація заряджання</string>
-    <string name="lockscreen_charging_animation_flash">Блискавка</string>
-    <string name="lockscreen_charging_animation_battery">Акумулятор</string>
-    <string name="lockscreen_charging_animation_drop">Крапля</string>
-    <string name="lockscreen_charging_animation_explosion">Вибух</string>
-    <string name="lockscreen_charging_animation_water">Вода</string>
-    <string name="lockscreen_charging_animation_phone">Телефон</string>
-    <string name="lockscreen_charging_animation_stack">Стопка</string>
-    <string name="lockscreen_charging_animation_wavy">Хвилі</string>
-    <!-- Status bar clock and date options -->
+    <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Налаштування годинника та налаштування дати</string>
-    <string name="status_bar_clock">Годинник &amp; Дата</string>
-    <string name="clock_enabled">Увімкнено</string>
-    <string name="clock_disabled">Вимкнено</string>
-    <string name="statusbar_clock_style_title">Годинник &amp; позиція дати</string>
-    <string name="statusbar_clock_style_right">Праворуч</string>
-    <string name="statusbar_clock_style_centre">Центр</string>
-    <string name="statusbar_clock_style_left">Ліворуч</string>
-    <string name="status_bar_clock_style_reset">Скинути колір</string>
-    <string name="status_bar_show_clock_title">Показати час &amp;amp і дату</string>
-    <string name="status_bar_am_pm_title">До обіду / після обіду</string>
-    <string name="status_bar_am_pm_info">24-годинний формат часу</string>
-    <string name="clock_seconds_display">Показувати секунди</string>
-    <string name="enable_clock_weekday">День тижня</string>
-    <string name="enable_clock_weekday_summary">Скорочений день тижня перед часом</string>
-    <string name="dont_show">Не показувати</string>
-    <string name="clock_date_display">Дата</string>
-    <string name="clock_date_display_summary">Відображати власний формат дати перед годинником</string>
-    <string name="clock_date_style">Стиль дати</string>
-    <string name="clock_date_format">Формат дати</string>
-    <string name="clock_date_string_edittext_title">Має бути в форматі ММ/ДД/РР</string>
-    <string name="clock_date_string_edittext_summary">Введіть значення</string>
-    <string name="am_pm_clock_normal">Стандартний розмір шрифту</string>
-    <string name="am_pm_clock_small">Малий розмір шрифта</string>
-    <string name="am_pm_clock_none">Не показувати</string>
-    <string name="clock_date_display_none">Не показувати</string>
-    <string name="clock_date_display_small">Малий розмір шрифту</string>
-    <string name="clock_date_display_normal">Стандартний розмір шрифту</string>
-    <string name="clock_date_style_normal">Нормальний</string>
-    <string name="clock_date_style_lowercase">Малі літери</string>
-    <string name="clock_date_style_uppercase">Великі літери</string>
-    <string name="clock_date_right">Праворуч від годинника</string>
-    <string name="clock_date_left">Ліворуч від годинника</string>
-    <string name="clock_date_position">Розташування дати</string>
+    <string name="status_bar_clock_summary">Налаштування години і дати</string>
+    <string name="status_bar_clock_seconds_title">Показувати секунди</string>
+    <string name="status_bar_clock_seconds_summary">Відображати секунди поруч із годинником у рядку стану</string>
+    <string name="status_bar_clock_position_title">Стиль годинника</string>
+    <string name="status_bar_clock_position_right">Праворуч</string>
+    <string name="status_bar_clock_position_left">Ліворуч</string>
+    <string name="status_bar_clock_position_center">По центру</string>
+    <string name="status_bar_clock_position_hidden">Приховано</string>
     <string name="status_bar_clock_auto_hide_title">Автоматично приховувати годинник</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Приховати годинник, якщо панель запуску видима</string>
     <string name="status_bar_clock_auto_hide_summary">Приховати і відображати годинник через регулярні проміжки часу</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Тривалість приховування</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">На яку кількість секунд приховувати годинник</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Тривалість відображення</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Кількість секунд очікування до приховання годинника</string>
+    <string name="status_bar_am_pm_title">До обіду / після обіду</string>
+    <string name="status_bar_am_pm_info">24-годинний формат часу</string>
+    <string name="status_bar_am_pm_normal">Звичайний</string>
+    <string name="status_bar_am_pm_small">Малий</string>
+    <string name="status_bar_am_pm_hidden">Приховано</string>
+    <string name="status_bar_date_title">Дата</string>
+    <string name="status_bar_date_none">Приховано</string>
+    <string name="status_bar_date_small">Мала</string>
+    <string name="status_bar_date_normal">Нормальна</string>
+    <string name="status_bar_date_format_title">Формат дати</string>
+    <string name="status_bar_date_style">Стиль дати</string>
+    <string name="status_bar_date_style_normal">Нормальний</string>
+    <string name="status_bar_date_style_lowercase">Малі літери</string>
+    <string name="status_bar_date_style_uppercase">Великі літери</string>
+    <string name="status_bar_date_format_custom">Власний Java формат</string>
+    <string name="status_bar_date_string_edittext_title">Має бути в форматі ММ/ДД/РР</string>
+    <string name="status_bar_date_string_edittext_summary">Введіть значення</string>
+    <string name="clock_date_position">Розташування дати</string>
+    <string name="clock_date_right">Праворуч від годинника</string>
+    <string name="clock_date_left">Ліворуч від годинника</string>
+    <!-- QS clock -->
+    <string name="qs_clock_title">Годинник</string>
+    <string name="qs_clock_summary">Показувати годинник в заголовку швидкого рядка стану</string>
+    <!-- QS date -->
+    <string name="qs_date_title">Дата</string>
+    <string name="qs_date_summary">Показувати дату в заголовку швидкого рядка стану</string>
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Вібрація при дотику</string>
     <string name="quick_settings_vibrate_summary">Вібрація при дотику до плитки швидких налаштувань</string>
-    <!-- Tiles animation style  -->
+    <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Анімації</string>
     <string name="qs_tile_animation_style_title">Стиль анімації</string>
     <string name="qs_tile_animation_duration_title">Тривалість анімації</string>
     <string name="qs_tile_animation_interpolator_title">Інтерполяція анімації плиток швидких налаштувань</string>
     <string name="qs_tile_animation_style_off">Без анімації</string>
-    <string name="qs_tile_animation_style_flip">Переворот</string>
     <string name="qs_tile_animation_style_rotate">Обертання</string>
-    <string name="qs_tile_animation_duration_low">Низька</string>
-    <string name="qs_tile_animation_duration_fast">Швидка</string>
+    <string name="qs_tile_animation_style_flipx">Віддзеркалити X</string>
+    <string name="qs_tile_animation_style_flipy">Віддзеркалити Y</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Лінійна</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Прискорення</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Уповільнення</string>
@@ -379,12 +298,9 @@
     <string name="qs_tile_animation_interpolator_overshootInterpolator">Промах</string>
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">Прискорення</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Прискорити та проскочити</string>
-    <string name="qs_set_animation_style">%1$s</string>
-    <string name="qs_set_animation_duration">%1$s</string>
-    <string name="qs_set_animation_interpolator">%1$s</string>
-    <!-- Quick Settings -->
-    <string name="lockscreen_qs_disabled_title">Вимкнути швидкі налаштування на екрані блокування</string>
-    <string name="lockscreen_qs_disabled_summary">Вимкнути швидкі налаштування на захищеному екрані блокування</string>
+    <!-- Disable QS -->
+    <string name="disable_qs_title">Приховати швидкі налаштування на захищеному екрані блокування</string>
+    <string name="disable_qs_summary">Приховує швидкі налаштування на заблокованому екрані. Не вимикає показ сповіщень</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Індикатор роумінгу</string>
     <string name="roaming_indicator_icon_summary">Відображати індикатор роумінгу на іконці сигналу коли у роумінгу</string>
@@ -397,36 +313,36 @@
     <string name="smart_pulldown_dismissable">не видаляються</string>
     <string name="smart_pulldown_ongoing">без постійних</string>
     <!-- Brightness control -->
-    <string name="status_bar_toggle_brightness">Керування яскравістю</string>
-    <string name="status_bar_toggle_brightness_summary">Регулювати яскравість екрану рухом пальця по рядку стану</string>
+    <string name="status_bar_brightness_control_title">Керування яскравістю</string>
+    <string name="status_bar_brightness_control_summary">Регулювати яскравість екрану рухом пальця по рядку стану</string>
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">Менше нудних спливаючих сповіщень</string>
     <string name="less_boring_heads_up_summary">Відображати спливаючі сповіщення лише для дзвінків, повідомлень і будильника</string>
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Кнопка завершення додатків</string>
     <string name="notification_guts_kill_app_button_summary">Показувати кнопку закриття програми при довгому натисненні на сповіщення</string>
-    <!-- Battery Bar -->
+    <!-- Battery bar -->
     <string name="battery_bar_title">Індикатор батареї</string>
     <string name="battery_bar_summary">Показ та налаштування індикатора батареї в рядку стану або панелі навігації</string>
-    <string name="battery_bar_no_navbar">Розташування індикатора батареї</string>
-    <string name="battery_bar_status_bar_top">Зверху рядка стану</string>
-    <string name="battery_bar_status_bar_bot">Знизу рядка стану</string>
+    <string name="battery_bar_location">Розташування індикатора батареї</string>
     <string name="battery_bar_color">Колір смужки батареї</string>
-    <string name="battery_bar_charging_color">Колір смужки при заряджанні</string>
-    <string name="battery_bar_battery_low_color">Колір смужки батареї при низькому заряді</string>
-    <string name="battery_bar_cat">Стиль іконки батареї</string>
     <string name="battery_bar_style_title">Вирівнювання значка акумулятора</string>
     <string name="battery_bar_thickness_title">Товщина індикатора батареї</string>
     <string name="battery_bar_animate_title">Анімація заряджання</string>
-    <string name="battery_bar_style_regular">Звичайний</string>
-    <string name="battery_bar_style_center_mirrored">Дзеркально від центра</string>
-    <string name="battery_bar_style_reversed">У зворотньому порядку</string>
-    <string name="battery_bar_use_charging_color">Інший колір при заряджанні</string>
-    <string name="battery_bar_blend_color_title">Змішування кольорів</string>
-    <string name="battery_bar_blend_color_summary">Змішати кольори, відповідні відсотку заряду батареї</string>
-    <string name="battery_bar_blend_color_reverse_title">Зворотній напрямок кольорів</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">Повний &#8594; пустий: червоний &#8592; зелений &#8592; блакитний &#8592; червоний</string>
-    <string name="battery_bar_blend_color_reverse_summary_on">Повний &#8594; пустий: червоний &#8594; зелений &#8594; блакитний &#8594; червоний</string>
+    <string name="battery_bar_animate_summary">Анімація зарядки може призвести до негативних вражень від використання. Використовуйте на власний розсуд.</string>
+    <string name="battery_bar_hide">Приховати</string>
+    <string name="battery_bar_statusbar">Рядок стану</string>
+    <string name="battery_bar_topnav">Зверху панелі навігації</string>
+    <string name="battery_bar_bottomnav">Знизу панелі навігації</string>
+    <string name="battery_bar_reg">Звичайний</string>
+    <string name="battery_bar_center">Дзеркально від центра</string>
+    <string name="battery_bar_charging_color">Колір смужки при заряджанні</string>
+    <string name="battery_bar_battery_low_color">Колір смужки батареї при низькому заряді</string>
+    <string name="battery_bar_reversed">У зворотньому порядку</string>
+    <string name="battery_bar_use_gradient_color">Використовувати градієнт кольору</string>
+    <string name="battery_bar_gradient_color_summary">Використовувати градієнт в якості шкали для рівня акумулятора</string>
+    <string name="battery_bar_high_color">Колір високого рівня заряду</string>
+    <string name="battery_bar_low_color">Колір низького рівня заряду</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Кеш прокручування</string>
     <string name="pref_scrollingcache_summary">Кеш прокручування може підвищити плавність прокручування за рахунок використання пам\'яті</string>
@@ -446,7 +362,7 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Приховати значок блокування</string>
     <string name="lockscreen_lock_icon_summary">Показувати іконку блокування на екрані блокування</string>
-    <!-- Pulse notifications lightning -->
+    <!-- Pulse notifications lighting -->
     <string name="pulse_ambient_light_title">Яскравість підсвітки екрана</string>
     <string name="pulse_ambient_light_summary">Світло-освітлення для пульсуючих сповіщень</string>
     <string name="ambient_notification_light_enabled_title">Показати на AOD</string>
@@ -489,17 +405,6 @@
     <string name="qs_footer_text_summary">Показувати текст в нижній частині панелі швидких налаштувань</string>
     <string name="qs_footer_text_string_title">Налаштувати текст нижнього колонтитула</string>
     <string name="qs_footer_text_string_summary">Встановіть або залиште порожнім за замовчуванням</string>
-    <!-- FOD icon picker -->
-    <string name="fod_icon_picker_title">Значок відбитка пальця</string>
-    <string name="fod_icon_picker_summary">Виберіть бажаний символ відбитків пальців</string>
-    <string name="fod_icon_picker_footer">Для того, щоб додати власну іконку, виберіть ліву іконку та скористайтеся додатком OnePlus через 6T FP для вибору бажаної піктограми.</string>
-    <!-- FOD pressed color -->
-    <string name="fod_pressed_color_title">Ефект натиснення відбитку пальця</string>
-    <string name="fod_pressed_color_white">Білий</string>
-    <string name="fod_pressed_color_cyan">Блакитний</string>
-    <string name="fod_pressed_color_green">Зелений</string>
-    <string name="fod_pressed_color_yellow">Жовтий</string>
-    <string name="fod_pressed_color_light_yellow">Світло-жовтий</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Запуск музичного додатку при підключенні гарнітури</string>
     <string name="headset_connect_player_summary">Запуск музичного програвача за замовчуванням, коли підключена гарнітура</string>
@@ -510,7 +415,9 @@
     <string name="powermenu_screenshot">Знімок екрану</string>
     <string name="powermenu_onthego">Режим «На ходу»</string>
     <string name="powermenu_torch">Ліхтарик</string>
+    <string name="powermenu_power">Живлення</string>
     <string name="powermenu_advanced">Розширене меню перезавантаження</string>
+    <string name="powermenu_restart">Перезавантажити</string>
     <string name="powermenu_airplane">Політ</string>
     <string name="powermenu_settings">Налаштування</string>
     <string name="powermenu_lockdown">Блокування</string>
@@ -518,6 +425,10 @@
     <string name="powermenu_users">Користувачі</string>
     <string name="powermenu_logout">Вихід із системи</string>
     <string name="powermenu_emergency">Екстрений виклик</string>
+    <string name="powermenu_device_controls">Команди пристрою</string>
+    <string name="powermenu_bugreport">Звіт про помилку</string>
+    <string name="powermenu_assist">Помічник</string>
+    <string name="powermenu_voice_assist">Голосовий помічник</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Налаштування яскравості Енергозбереження</string>
     <string name="doze_brightness_force_title">Примусові значення яскравості</string>
@@ -529,10 +440,21 @@
     <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Теми</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Форма значків</string>
+    <string name="theme_customization_icon_shape_summary">Задати форму піктограми</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Заголовки / Шрифт</string>
+    <string name="theme_customization_font_summary">Задати шрифт системи</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Набір іконок</string>
+    <string name="theme_customization_icon_pack_summary">Встановити власний стиль пакету значків</string>
+    <!-- Custom Signal bar icons -->
+    <string name="theme_customization_signal_icon_title">Стиль індикатора сигналу</string>
+    <string name="theme_customization_signal_icon_summary">Встановити користувацький стиль іконки сигналу</string>
+    <!-- Custom Wi-Fi bar icons -->
+    <string name="theme_customization_wifi_icon_title">Стиль значка WiFi</string>
+    <string name="theme_customization_wifi_icon_summary">Встановити власний стиль значка Wi-Fi</string>
     <!-- QS tile icon styles -->
     <string name="qs_tile_style_title">Стиль плиток Швидких налаштувань</string>
     <string name="qstile_circle_trim">Штриховане коло</string>
@@ -584,15 +506,15 @@
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">Вібрація для сповіщень</string>
     <string name="vibrate_on_notifications_summary">Перемкніть, щоб вимкнути вібрацію сповіщень</string>
-    <!-- QS DataUsage Toggle -->
-    <string name="qs_datausage_title">Статистика використання трафіку в заголовку швидких налаштувань</string>
-    <string name="qs_datausage_disabled">Вимкнено</string>
-    <string name="qs_datausage_daily">Щоденне використання</string>
-    <string name="qs_datausage_monthly">Щомісячне використання</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Використання даних</string>
+    <string name="qs_footer_datausage_summary">Показувати інформацію про використання у нижньому колонтитулі швидких налаштувань</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Рівень розмитості медіа</string>
-    <string name="show_lockscreen_media_art_title">Показувати обкладинку</string>
     <string name="lockscreen_media_art_options_title">Обкладинка на екрані блокування</string>
+    <!-- Media art -->
+    <string name="media_art_title">Обкладинка медіа</string>
+    <string name="media_art_summary">Увімкнути обкладинки альбомів на екрані блокування</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Блокування датчиків попакетно</string>
     <string name="sensor_block_summary">Блокуйте доступ до певних датчиків для деяких програм, щоб заощадити заряд акумулятора</string>
@@ -740,6 +662,7 @@
     <string name="volume_key_cursor_control_on_reverse">Гучність вверx/вниз переміщує курсор праворуч/ліворуч</string>
     <string name="swap_volume_buttons_title">Змінити орієнтацію кнопок регулювання гучності</string>
     <string name="swap_volume_buttons_summary">Змінювати призначення кнопок регулювання гучності відповідно до орієнтації екрану</string>
+    <string name="volume_panel_on_left_title">Панель гучності ліворуч</string>
     <string name="volume_panel_on_left_summary">Змінити розташування панелі регулювання гучності з правого боку на лівий</string>
     <string name="extras_title">Додаткові можливості</string>
     <string name="click_partial_screenshot_title">Натисніть для часткового знімку екрану</string>
@@ -760,7 +683,6 @@
     <string name="swap_capacitive_keys_title">Поміняти місцями фізичні кнопки</string>
     <string name="swap_capacitive_keys_summary">Поміняти місцями кнопки \"Нещодавні\" та \"Назад\"</string>
     <!-- Lock screen visualizer -->
-    <string name="enable_visualizer">Увімкнути візуальні підказки</string>
     <string name="lockscreen_visualizer_title">Візуалізатор</string>
     <string name="lockscreen_visualizer_enable">Візуалізація музики</string>
     <string name="lockscreen_visualizer_enable_summary">Показувати візуалізацію під час програвання музики</string>
@@ -849,9 +771,6 @@
     <string name="theme_navbar_picker_nexus">Нексус</string>
     <string name="theme_navbar_picker_old">Старий</string>
     <string name="theme_navbar_picker_sammy">Samsung</string>
-    <!-- FOD on doze -->
-    <string name="fod_on_doze_title">FOD у Doze</string>
-    <string name="fod_on_doze_summary">Показувати відбиток пальця при Ambient Display і AoD. Це приховує лише значок і не вимкне функціональність</string>
     <!-- Alarm and Wakelock blocker -->
     <string name="blocker_action_reload">Перезапустити</string>
     <string name="blocker_action_save">Зберегти</string>
@@ -879,58 +798,18 @@
     <!-- Status Bar Lyric -->
     <string name="status_bar_show_lyric_title">Ліричні риси рядка стану</string>
     <string name="status_bar_show_lyric_summary">Показувати тексти пісень в рядку стану (потрібен підтримка додатку і перезапуск SystemUI)</string>
-    <!-- Notification Media Options -->
+    <!-- Media artwork -->
     <string name="media_category">Параметри сповіщень</string>
     <string name="artwork_media_background_title">Додати форму фону альбому</string>
     <string name="artwork_media_background_summary">Встановити медіа-файл як фон сповіщень</string>
-    <string name="artwork_media_fade_level_title">Рівень зникнення фарб</string>
+    <string name="artwork_media_background_enable_blur_title">Розмиття медіа фону обкладинки</string>
+    <string name="artwork_media_background_blur_radius_title">Розмір розмиття для медіа-файлу</string>
+    <string name="artwork_media_background_fade_filter_title">Рівень затемнення медіафайлу</string>
+    <string name="artwork_media_background_alpha_title">Прозорість медіа-мистецтва</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">Стиль округлення для системних діалогів</string>
     <string name="rounded_slight">Слабкий</string>
     <string name="rounded_high">Високий рівень</string>
-    <!-- Brightness slider styles -->
-    <string name="slider_styles_title">Стиль повзунка яскравості</string>
-    <string name="slider_rui">RUI</string>
-    <!-- Gaming mode -->
-    <string name="gaming_title">Ігровий режим</string>
-    <string name="gaming_title_summary">Додаткові можливості для поглибленого ігрового досвіду</string>
-    <string name="gaming_mode_enabled_title">Увімкнути ігровий режим</string>
-    <string name="gaming_mode_disable_auto_brightness_title">Вимкнути автоматичну яскравість</string>
-    <string name="gaming_mode_disable_auto_brightness_summary">Вимкнути автоматичну яскравість при вході в режим гри</string>
-    <string name="gaming_mode_notification_danmaku_title">Сповіщення від Danmaku</string>
-    <string name="gaming_mode_notification_danmaku_summary">Відображати вміст сповіщення у вигляді danmaku в грі</string>
-    <string name="gaming_mode_quick_start_apps_title">Швидкий запуск програми</string>
-    <string name="gaming_mode_quick_start_apps_summary">Виберіть додаток, що запускається у плаваючому м\'ячі</string>
-    <string name="gaming_mode_menu_opacity_title">Рівень непрозорості меню</string>
-    <string name="gaming_mode_use_menu_overlay_title">Показувати меню поверх програми</string>
-    <string name="gaming_mode_use_menu_overlay_summary">Показувати спливаюче меню, коли гра запущена. Якщо цей параметр вимкнено, деякі функції режиму гри будуть відключені, наприклад сповіщення Danmaku</string>
-    <string name="gaming_mode_performance">Продуктивність</string>
-    <string name="gaming_mode_use_game_driver_title">Використовувати ігровий драйвер</string>
-    <string name="gaming_mode_use_game_driver_summary">Використовувати підходящий драйвер для ігри</string>
-    <string name="gaming_mode_change_performance_title">Налаштування продуктивності</string>
-    <string name="gaming_mode_change_performance_summary">Налаштування рівня продуктивності під час старту ігри</string>
-    <string name="gaming_mode_performance_title">Рівень продуктивності</string>
-    <string name="gaming_mode_dnd">Не турбувати</string>
-    <string name="gaming_mode_disable_notification_alert_title">Відключити сповіщення</string>
-    <string name="gaming_mode_disable_notification_alert_summary">Не дозволяти плаваючі сповіщення та повідомлення відмінні від вхідних дзвінків та будильників</string>
-    <string name="gaming_mode_disable_ringtone_title">Без дзвінка</string>
-    <string name="gaming_mode_disable_ringtone_summary">Вимкнути звук викликів і сповіщень в ігровому режимі</string>
-    <string name="gaming_mode_auto_answer_call_title">Відповідати на дзвінки автоматично</string>
-    <string name="gaming_mode_auto_answer_call_summary">Відповідати на дзвінки автоматично в грі у гучному режимі, коли не підключено навушників</string>
-    <string name="gaming_mode_prevent_accidental_touch">Запобігати довільному включенню екрану</string>
-    <string name="gaming_mode_disable_gesture_title">Вимкнути жести</string>
-    <string name="gaming_mode_apps">Список ігор</string>
-    <string name="gaming_mode_dynamic_add_title">Динамічний режим</string>
-    <string name="gaming_mode_dynamic_add_summary">Спробувати автоматично виявляти і додавати ігрові додатки</string>
-    <string name="gaming_mode_show_danmaku_title">Показати danmaku</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">Динамічне фільтрування сповіщень</string>
-    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">Автоматично фільтруйте сповіщення, такі як хід завантаження</string>
-    <string name="gaming_mode_danmaku_size_horizontal_title">Розмір Danmaku (горизонтально)</string>
-    <string name="gaming_mode_danmaku_size_vertical_title">Розмір Danmaku (вертикально)</string>
-    <string name="gaming_mode_danmaku_speed_horizontal_title">Швидкість Danmaku (горизонтально)</string>
-    <string name="gaming_mode_danmaku_speed_vertical_title">Швидкість Danmaku (вертикально)</string>
-    <string name="gaming_mode_danmaku_blacklist">Чорний список</string>
-    <string name="add_package_to_title">Додати додаток</string>
     <!-- OOS style material dismiss all button for notifications -->
     <string name="notification_material_dismiss_button_title">Кнопка очищення сповіщень</string>
     <string name="notification_material_dismiss_button_summary">Замінити текст \"Очистити все\" плаваючою кнопкою</string>
@@ -949,7 +828,7 @@
     <!-- Double tap status bar to sleep -->
     <string name="double_tap_to_sleep_title">Показати в рядку стану</string>
     <string name="double_tap_to_sleep_summary">Двічі торкніться панелі навігації, щоб перевести пристрій в режим сну</string>
-    <!-- Torch Power button gestures -->
+    <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Увімкніть ліхтарик, коли екран вимкнено</string>
     <string name="torch_power_button_gesture_none">Вимкнено</string>
     <string name="torch_power_button_gesture_dt">Подвійне натискання кнопки живлення (при натисканні на кнопку) вимикає подвійне натискання для сенсорної камери.</string>
@@ -975,6 +854,13 @@
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Попередження знизу панелі швидких налаштувань</string>
     <string name="qs_footer_warnings_summary">Відображати попередження в нижній частині панелі налаштувань, коли мережа контролюється зовнішніми додатками або vpn</string>
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">Піктограма облікового запису користувача</string>
+    <string name="qs_footer_users_icon_summary">Відображати піктограму, за можливістю, багатокористувацької доступності</string>
+    <string name="qs_footer_edit_icon_title">Піктограма редагування плиток</string>
+    <string name="qs_footer_show_power_menu_title">Меню живлення</string>
+    <string name="qs_footer_services_icon_title">Піктограма запущених служб</string>
+    <string name="qs_footer_settings_icon_title">Ярлик налаштувань</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Показати інформацію про процесор</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -990,9 +876,6 @@
     <string name="volume_steps_system_title">Рівень гучності: Системи</string>
     <string name="volume_steps_voice_call_title">Рівень гучності: Голосових викликів</string>
     <string name="volume_steps_reset">Скинути</string>
-    <!-- QS battery estimates -->
-    <string name="qs_show_battery_estimate_title">Оцінка залишку заряду</string>
-    <string name="qs_show_battery_estimate_summary">Відображати приблизний залишок часу роботи від акумулятора</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Ім\'я оператора</string>
     <string name="carrier_label_settings_summary">Змінити назву оператора</string>
@@ -1007,10 +890,10 @@
     <!-- Double Tap on Doze to wake -->
     <string name="double_tap_on_doze_to_wake_title">Торкніться, щоб активувати з режиму Doze</string>
     <string name="double_tap_on_doze_to_wake_summary">Подвійний дотик для активації, коли пристрій у режимі сну</string>
-    <!-- Charging animation -->
-    <string name="charging_animation_title">Анімація заряджання</string>
-    <string name="charging_animation_summary">Показувати анімацію при підключенні зарядного пристрою</string>
     <!-- Monet Engine -->
+    <string name="monet_category">Функція \"Monet\"</string>
+    <string name="monet_engine_title">Налаштування Monet</string>
+    <string name="monet_engine_summary">Налаштування параметрів Monet</string>
     <string name="monet_engine_custom_color_title">Використовувати свій колір</string>
     <string name="monet_engine_custom_color_summary">Використовувати для користувацького кольору двигуна замість кольору шпалер</string>
     <string name="monet_engine_color_override_title">Користувацький колір</string>
@@ -1018,28 +901,206 @@
     <string name="monet_engine_accurate_shades_title">Використовувати точно відтінки</string>
     <string name="monet_engine_chroma_factor_title">Хромовий фактор</string>
     <string name="monet_engine_linear_lightness_title">Використовувати лінійну яскравість</string>
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Використовувати чорну тему</string>
+    <string name="system_black_theme_summary">Примусово чорний колір фону</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Комбіновані значки сигналу</string>
     <string name="combined_status_bar_signal_icons_summary">Увімкнути комбіновані піктограми сигналів в рядку стану.\nПотрібне перезавантаження системного інтерфейсу</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Показати заряд Bluetooth-пристрою</string>
     <string name="bluetooth_battery_summary">Показувати заряд батареї під\'єднаних в даний час bluetooth-пристроїв, якщо можливо</string>
-    <!-- Screen off FOD -->
-    <string name="screen_off_fod_title">FOD з вимкненим екраном</string>
-    <string name="screen_off_fod_summary">Розпізнавати FOD з вимкненим екраном</string>
+    <!-- Screen off UDFPS -->
+    <string name="screen_off_udfps_title">Вимкнути UDFPS</string>
+    <string name="screen_off_udfps_summary">Тримати UDFPS включеним при вимкненому екрані</string>
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Безпечні плитки швидких налаштувань потребують розблокування</string>
     <string name="qstile_requires_unlocking_summary">Ці плитки швидких налаштувань потребують розблокування, перш ніж ви зможете надіслати їх на доступ із екрану блокування:\nРежим у Літаку, Мобільна Мережа, NFC, точка доступу, USB-модем і місцезнаходження</string>
-    <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Підсвічувати музику</string>
-    <string name="pulse_on_new_tracks_summary">Показувати музичну візуалізацію на AOD під час зміни треку</string>
     <!-- Burn-in Protection -->
     <string name="burnin_category">Захист від вигоряння</string>
     <string name="burn_in_protection_title">Використовувати захист від вигорання</string>
     <string name="burn_in_protection_summary">Переміщувати значки рядка навігації і в статус барі для запобігання вигорання екрану</string>
     <string name="burn_in_protection_interval_title">Інтервал зміни</string>
     <string name="burn_in_protection_interval_summary">Як часто потрібно перемикати значки</string>
-    <!-- Udfps Haptic Feedback -->
+    <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">FOD Вібровідгук</string>
     <string name="udfps_haptic_feedback_summary">Вібрація при дотику до FOD</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Кількість сповіщень</string>
+    <string name="status_bar_notif_count_summary">Показувати кількість очікуючих сповіщень</string>
+    <!-- Night Light UDFPS -->
+    <string name="udfps_night_light_title">Вимкнути нічний режим при увімкненому сканері на екрані блокування (FOD)</string>
+    <string name="udfps_night_light_summary">Вимкніть нічне світло на екрані блокування, якщо він активний. Вимкнення цього параметру може вплинути на точність відбитка пальця при нічному світлі.</string>
+    <!-- Privacy indicators -->
+    <string name="mic_camera_privacy_indicator_title">Індикатор конфіденційності мікрофона та камери</string>
+    <string name="mic_camera_privacy_indicator_summary">Відображати окремий індикатор при використанні додатків з мікрофону чи камери</string>
+    <string name="location_privacy_indicator_title">Індикатор конфіденційності місцезнаходження</string>
+    <string name="location_privacy_indicator_summary">Відображати окремий індикатор коли програма використовує місцезнаходження</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_category">Відображати візуалізатор музики</string>
+    <string name="pulse_help_policy_notice_title">Про Pulse</string>
+    <string name="pulse_help_policy_notice_summary">Пульсація - це яскравий графічний аудіо еквалайзер музики, яка грає на пристрої</string>
+    <string name="pulse_settings">Пульс</string>
+    <string name="pulse_settings_summary">Графічний аудіо еквалайзер для панелі навігації та екрану блокування</string>
+    <string name="show_navbar_pulse_title">Пульсація на панелі навігації</string>
+    <string name="show_navbar_pulse_summary">Ввімкнути аудіовізуалізацію в панелі навігації</string>
+    <string name="show_lockscreen_pulse_title">Пульсація екрану блокування</string>
+    <string name="show_lockscreen_pulse_summary">Графічний еквалайзер аудіо на екрані блокування</string>
+    <string name="show_ambient_pulse_title">Ambient Pulse</string>
+    <string name="show_ambient_pulse_summary">Графічний еквалайзер на завжди ввімкненому екрані</string>
+    <string name="pulse_render_mode_title">Режим візуалізації</string>
+    <string name="pulse_render_mode_fading_bars">Згасаючі блоки</string>
+    <string name="pulse_render_mode_solid_lines">Суцільні лінії</string>
+    <string name="pulse_legacy_mode_advanced_category">Налаштування згасаючих блоків</string>
+    <string name="pulse_custom_fudge_factor">Рівень чутливості</string>
+    <string name="pulse_lavalamp_speed_title">Швидкість лавової лампи</string>
+    <string name="pulse_solid_units_count">Кількість суцільних ліній</string>
+    <string name="pulse_solid_units_opacity">Прозорість суцільних ліній</string>
+    <string name="pulse_solid_units_rounded_title">Закруглені кути</string>
+    <string name="pulse_solid_units_rounded_summary">Суцільні лінії з закругленими кінчиками</string>
+    <string name="pulse_solid_dimen_category">Налаштування вигляду суцільних ліній</string>
+    <string name="pulse_color_mode_title">Колір</string>
+    <string name="pulse_color_accent">Відтінок</string>
+    <string name="pulse_color_custom">Персоналізація</string>
+    <string name="pulse_color_lava_lamp">Лавова лампа</string>
+    <string name="pulse_color_user_title">Обрати колір</string>
+    <string name="pulse_smoothing_enabled_title">Увімкнути згладжування</string>
+    <string name="pulse_smoothing_enabled_summary">Кожна панель анімована плавніше</string>
+    <string name="pulse_custom_dimen">Ширина панелі</string>
+    <string name="pulse_custom_div">Відстань між панелями</string>
+    <string name="pulse_filled_block_size">Розмір блоку</string>
+    <string name="pulse_empty_block_size">Відстань між блоками</string>
+    <!-- QS Pulse -->
+    <string name="show_qs_pulse_title">Кольори панелі швидких налаштувань</string>
+    <string name="show_qs_pulse_summary">Візуалізація аудіо у швидких налаштуваннях</string>
+    <!-- Pulse Gravity and mirror options -->
+    <string name="pulse_custom_gravity_title">Гравітація</string>
+    <string name="pulse_custom_gravity_bottom">Знизу</string>
+    <string name="pulse_custom_gravity_top">Зверху</string>
+    <string name="pulse_custom_gravity_center">По центру</string>
+    <string name="visualizer_center_mirrored_title">Дзеркально від центра</string>
+    <string name="visualizer_center_mirrored_summary">Встановити візуалізатор дзеркально від центра</string>
+    <string name="pulse_vertical_mirror_title">Вертикально віддзеркалено</string>
+    <string name="pulse_vertical_mirror_summary">Створити інший імпульс та перевернути вертикально</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Game Space</string>
+    <string name="game_space_summary">Покращіть свій ігровий досвід</string>
+    <!-- Fingerprint Ripple Effect -->
+    <string name="enable_fingerprint_ripple_effect_title">Ефект пульсації</string>
+    <string name="enable_fingerprint_ripple_effect_summary">Показувати ефект пульсації під час розблокування відбитком пальця</string>
+    <!-- Screenshot type -->
+    <string name="screenshot_type_title">Тип знімку екрану</string>
+    <string name="screenshot_type_fullscreen">Знімок усього екрану</string>
+    <string name="screenshot_type_partial">Оберіть область, знімок екрану якої треба зробити</string>
+    <!-- Unlimited g00gle ph0t0s st0rage -->
+    <string name="use_photos_spoof_title">Необмежена пам\'ять для фотографій</string>
+    <string name="use_photos_spoof_summary">Підробіть свій пристрій як Pixel XL лише для програми Google Фото, щоб забезпечити необмежену пам’ять для резервного копіювання</string>
+    <!-- Unlock FPS for specific games -->
+    <string name="use_games_spoof_title">Розблокування вищого FPS в іграх</string>
+    <string name="use_games_spoof_summary">Підробіть ваш пристрій як іншу модель для використання вищих FPS для конкретних ігор</string>
+    <!-- Unlock higher quality streams for specific apps -->
+    <string name="use_stream_spoof_title">Розблокувати якісніші потоки</string>
+    <string name="use_stream_spoof_summary">Підробіть свій пристрій як Pixel 6 Pro для розблокування вищої якості потоків на Amazon Prime, Disney+, Hotstar, та Netflix</string>
+    <!-- NavBar Inverse -->
+    <string name="navigation_bar_inverse_title">Інвертувати 3 кнопки навігаційної панелі</string>
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">Приховані додатки</string>
+    <string name="hidden_apps_summary">Додатки, які повинні бути приховані з лаунчера</string>
+    <!-- Hide Status bar on lock screen -->
+    <string name="hide_lockscreen_status_bar_title">Приховати панель стану</string>
+    <string name="hide_lockscreen_status_bar_summary">Торкніться рядка стану для перемикання видимості</string>
+    <!-- Material dismiss all button for notifications -->
+    <string name="notification_material_dismiss_title">Кнопка \"Очистити всі сповіщення\"</string>
+    <string name="notification_material_dismiss_summary">Замінити текст \"Очистити все\" плаваючою кнопкою стилю material</string>
+    <string name="notification_material_dismiss_style_title">Стиль кнопок</string>
+    <string name="notification_material_dismiss_bgstyle_title">Фон кнопки</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Дозволити пониження версії додатка</string>
+    <string name="app_downgrade_summary">Це дозволяє знизити версію додатків. Зверніть увагу: це може призвести до збоїв і пошкодження даних.</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Ігнорувати прапори безпеки вікон</string>
+    <string name="ignore_window_secure_summary">Це видаляє ліміти даних з екрану та записи екрану для всіх програм. Зазвичай такі програми замінюються чорними зонами в записах. Це може бути зручним у деяких випадках, але може призвести до витоку конфіденційності. Після зміни цього перемикача, вам може знадобитися перезапуск програм, щоб зміни набрали сили.</string>
+    <!-- reTicker -->
+    <string name="reticker_title">повторний тікер</string>
+    <string name="reticker_summary">Замініть головне сповіщення тонкою та менш інвазивною версією оновленого тікера</string>
+    <string name="reticker_colored_title">Використовувати кольоровий фон додатка</string>
+    <string name="reticker_colored_summary">Замініть колір фону оновленого тікера за допомогою основного кольору програми сповіщень</string>
+    <!-- Temperature warning -->
+    <string name="show_temperature_warning_title">Показувати попередження про температуру</string>
+    <string name="show_temperature_warning_summary">Виводити попередження при перевищенні певного порогу температури</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_warning_text">Розумні пікселі - це функція економії заряду. В залежності від того, скільки пікселів ви вирішили вимкнути, це може збільшити час роботи батареї. Зверніть увагу, в деяких випадках це може призвести до того, що на сенсорному екрані будуть зони, які не відповідають</string>
+    <string name="smart_pixels_title">Розумні пікселі</string>
+    <string name="smart_pixels_summary">Збережіть акумулятор, вимкнувши додаткові пікселі</string>
+    <string name="smart_pixels_enable_title">Увімкнути \"Розумні пікселі\"</string>
+    <string name="smart_pixels_enable_summary">Вимкнути пікселі, щоб зменшити споживання енергії</string>
+    <string name="smart_pixels_on_power_save_title">Автоматичне увімкнення в режимі збереження енергії</string>
+    <string name="smart_pixels_on_power_save_summary">Увімкнути розумні пікселі, коли ввімкнено збереження акумулятора</string>
+    <string name="smart_pixels_percent">Відсоток пікселів для вимкнення</string>
+    <string name="smart_pixels_shift_title">Захист від вигорання</string>
+    <string name="smart_pixels_shift_summary">Запобігає вигоранню на пристроях з OLED екраном, періодично змінюючи пікселі</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Логотип</string>
+    <string name="status_bar_logo_title">Логотип</string>
+    <string name="status_bar_logo_summary">Увімкнути задля відображення логотипу у рядку стану</string>
+    <string name="status_bar_logo_position_title">Положення</string>
+    <string name="status_bar_logo_position_summary">Вибрати, з якого боку показувати логотип, праворуч чи ліворуч</string>
+    <string name="status_bar_logo_position_right">Праворуч</string>
+    <string name="status_bar_logo_position_left">Ліворуч</string>
+    <string name="status_bar_logo_style_title">Стиль</string>
+    <string name="status_bar_logo_style_evolution">Логотип Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">Смайлики</string>
+    <string name="status_bar_logo_style_emoticon_cool">Смайлик крутий</string>
+    <string name="status_bar_logo_style_emoticon_dead">Смайлик мертвий</string>
+    <string name="status_bar_logo_style_emoticon_devil">Смайлик лихий</string>
+    <string name="status_bar_logo_style_emoticon_happy">Смайлик щасливий</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Смайлик нейтральний</string>
+    <string name="status_bar_logo_style_emoticon_poop">Смайлик лайно</string>
+    <string name="status_bar_logo_style_emoticon_sad">Смайлик сумний</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Смайлик язик</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Торт</string>
+    <string name="status_bar_logo_style_blogger">Блогер</string>
+    <string name="status_bar_logo_style_biohazard">Біозагроза</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Інь і янь</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Робот</string>
+    <string name="status_bar_logo_style_ninja">Ніндзя</string>
+    <string name="status_bar_logo_style_heart">Серце</string>
+    <string name="status_bar_logo_style_flower">Квітка</string>
+    <string name="status_bar_logo_style_ghost">Привид</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_guitar_electric">Електрогітара</string>
+    <string name="status_bar_logo_style_amogus">Амогус</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Стиль іконки батареї</string>
+    <string name="status_bar_battery_style_icon_portrait">Вертикальний значок (типово)</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Горизонтальна іконка (праворуч)</string>
+    <string name="status_bar_battery_style_icon_landscape">Горизонтальна іконка (ліворуч)</string>
+    <string name="status_bar_battery_style_circle">Кільце</string>
+    <string name="status_bar_battery_style_dotted_circle">Пунктирне коло</string>
+    <string name="status_bar_battery_style_big_circle">Велике коло</string>
+    <string name="status_bar_battery_style_big_dotted_circle">Велике пунктирне коло</string>
+    <string name="status_bar_battery_style_filled_circle">Пунктирне коло</string>
+    <string name="status_bar_battery_style_text">Текст</string>
+    <string name="status_bar_battery_style_hidden">Приховано</string>
+    <string name="status_bar_battery_percent_title">Відсоток заряду батареї</string>
+    <string name="status_bar_battery_percent_hidden">Приховано</string>
+    <string name="status_bar_battery_percent_text_inside">Всередині іконки</string>
+    <string name="status_bar_battery_percent_text_next">Поруч зі значком</string>
+    <string name="status_bar_battery_text_charging_title">Відсоток заряду акумулятора під час заряджання</string>
+    <string name="status_bar_battery_text_charging_summary">Завжди показувати відсотки акумулятора під час заряджання</string>
+    <!-- QS battery -->
+    <string name="qs_use_status_bar_battery_style">Дотримуватись стилю рядка стану</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Оцінка залишку батареї</string>
+    <string name="battery_estimate_summary">Відображати передбачуваний ресурс акумулятора, якщо доступно</string>
+    <!-- UiBench -->
+    <string name="category_uibench">UiBench</string>
+    <string name="jitter_test_title">Тремтіння</string>
+    <string name="jitter_test_summary">Розрахувати тремтіння візуалізації</string>
 </resources>
