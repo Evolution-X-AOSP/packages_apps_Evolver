@@ -21,6 +21,7 @@
     <string name="quicksettings_title">Hızlı ayarlar</string>
     <string name="spoof_title">Sahte imza</string>
     <string name="status_bar_title">Durum çubuğu</string>
+    <string name="status_bar_battery_category_title">Pil özelleştirmeleri</string>
     <string name="swipe_gestures_title">Kaydırma hareketleri</string>
     <string name="system_settings_title">Sistem seçenekleri</string>
     <string name="themes_title">Temalar</string>
@@ -177,23 +178,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Eski stil mobil veri simgelerini kullan</string>
     <string name="use_old_mobiletype_summary">Mobil gösterge simgesini sinyal göstergesinin üstünde göster</string>
-    <!-- Battery percentage -->
-    <string name="battery_style_category_title">Pil simgesi</string>
-    <string name="status_bar_battery_percentage_title">Pil yüzdesi</string>
-    <string name="status_bar_battery_percentage_default">Gizli</string>
-    <string name="status_bar_battery_percentage_text_next">Simgenin yanında</string>
-    <string name="status_bar_battery_percentage_text_inside">Simgenin içinde</string>
-    <!-- Status bar battery style-->
-    <string name="status_bar_battery_style_title">Pil stili</string>
-    <string name="status_bar_battery_style_port">Dikey</string>
-    <string name="status_bar_battery_style_circle">Daire</string>
-    <string name="status_bar_battery_style_dotted_circle">Daire (Noktalı)</string>
-    <string name="status_bar_battery_style_filled_circle">Daire (Dolu)</string>
-    <string name="status_bar_battery_style_text">Metin</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Yatay simge (Sağ)</string>
-    <string name="status_bar_battery_style_icon_landscape">Yatay simge (Sol)</string>
-    <string name="status_bar_battery_style_big_circle">Daire (Büyük)</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Daire (Büyük noktalı)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">Kare düzeni</string>
     <string name="qs_tile_layout_title">Dikey Düzen</string>
@@ -207,11 +191,16 @@
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Kare başlıklarını göster</string>
     <string name="qs_tile_title_visibility_summary">Kare başlıklarını gizle veya göster</string>
-    <!-- Brightness slider -->
-    <string name="qs_show_brightness_title">Parlaklık kaydırıcısı</string>
-    <string name="qs_show_brightness_summary">Parlaklık kaydırıcısı görünürlüğü ve ayarları</string>
-    <string name="qs_brightness_position_bottom_title">Alt parlaklık kaydırıcısı</string>
-    <string name="qs_brightness_position_bottom_summary">Hızlı ayarlar paneli altında parlaklık kaydırıcısını göster</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">Parlaklık kaydırıcısı</string>
+    <string name="qs_show_brightness_slider_never">Asla gösterme</string>
+    <string name="qs_show_brightness_slider_expanded">Genişletildiğinde göster</string>
+    <string name="qs_show_brightness_slider_always">Her zaman göster</string>
+    <string name="qs_show_brightness_slider_not_expanded">Genişletilmediğinde göster</string>
+    <string name="qs_brightness_slider_position_title">Konum</string>
+    <string name="qs_brightness_slider_position_top">Üst</string>
+    <string name="qs_brightness_slider_position_bottom">Alt</string>
+    <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Otomatik parlaklık simgesi</string>
     <string name="qs_show_auto_brightness_summary">Kaydırma çubuğunun yanında otomatik parlaklık tuşunu göster</string>
     <!-- Volume rocker wake -->
@@ -292,16 +281,15 @@
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Dokunulduğunda titret</string>
     <string name="quick_settings_vibrate_summary">Hızlı ayarlar karelerine dokunulduğunda titret</string>
-    <!-- Tiles animation style  -->
+    <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Animasyonlar</string>
     <string name="qs_tile_animation_style_title">Animasyon stili</string>
     <string name="qs_tile_animation_duration_title">Animasyon süresi</string>
     <string name="qs_tile_animation_interpolator_title">Kare animasyon efekti</string>
     <string name="qs_tile_animation_style_off">Animasyon yok</string>
-    <string name="qs_tile_animation_style_flip">Çevir</string>
     <string name="qs_tile_animation_style_rotate">Döndür</string>
-    <string name="qs_tile_animation_duration_low">Yavaş</string>
-    <string name="qs_tile_animation_duration_fast">Hızlı</string>
+    <string name="qs_tile_animation_style_flipx">Çevir X</string>
+    <string name="qs_tile_animation_style_flipy">Çevir Y</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Çizgisel</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Hızlandır</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Yavaşlat</string>
@@ -310,9 +298,6 @@
     <string name="qs_tile_animation_interpolator_overshootInterpolator">İlerlet</string>
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">Beklet</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">İlerlet ve beklet</string>
-    <string name="qs_set_animation_style">%1$s</string>
-    <string name="qs_set_animation_duration">%1$s</string>
-    <string name="qs_set_animation_interpolator">%1$s</string>
     <!-- Disable QS -->
     <string name="disable_qs_title">Güvenli kilit ekranında hızlı ayarları gizle</string>
     <string name="disable_qs_summary">Cihaz kilitlendiğinde hızlı ayarları gizler. Bildirim gölgelerini devre dışı bırakmaz</string>
@@ -521,11 +506,9 @@
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">Bildirimler için titret</string>
     <string name="vibrate_on_notifications_summary">Bildirim titreşimini devre dışı bırakmak için kapatın</string>
-    <!-- QS DataUsage Toggle -->
-    <string name="qs_datausage_title">Veri kullanımını göster</string>
-    <string name="qs_datausage_disabled">Devre dışı</string>
-    <string name="qs_datausage_daily">Günlük kullanım</string>
-    <string name="qs_datausage_monthly">Aylık kullanım</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Veri kullanımı</string>
+    <string name="qs_footer_datausage_summary">Hızlı ayarlar alt bilgisinde veri kullanım özetini göster</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Medya resmi bulanıklık seviyesi</string>
     <string name="lockscreen_media_art_options_title">Kilit ekranı medya resmi</string>
@@ -821,6 +804,7 @@
     <string name="artwork_media_background_summary">Medya resmini bildirim medyası arka planı olarak ayarla</string>
     <string name="artwork_media_background_enable_blur_title">Medya resmi arka planını bulanıklaştırın</string>
     <string name="artwork_media_background_blur_radius_title">Medya resmi için bulanıklık miktarı</string>
+    <string name="artwork_media_background_fade_filter_title">Medya resmi için bulanıklık miktarı</string>
     <string name="artwork_media_background_alpha_title">Medya resmi şeffaflığı</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">Sistem diyalogları için yuvarlak stil</string>
@@ -892,10 +876,6 @@
     <string name="volume_steps_system_title">Ses seviyesi: Sistem</string>
     <string name="volume_steps_voice_call_title">Ses seviyesi: Sesli arama</string>
     <string name="volume_steps_reset">Sıfırla</string>
-    <!-- QS battery estimates -->
-    <string name="qs_show_battery_estimate_title">Tahmini pil süresi</string>
-    <string name="qs_show_battery_estimate_summary_on">Tahmini pil ömrünü hızlı ayarlarda göster</string>
-    <string name="qs_show_battery_estimate_summary_off">Tahmini pil ömrünü hızlı ayarlarda gizle</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Operatör etiketi</string>
     <string name="carrier_label_settings_summary">Operatör etiketini özelleştir</string>
@@ -1048,7 +1028,79 @@
     <!-- Temperature warning -->
     <string name="show_temperature_warning_title">Sıcaklık uyarısı göster</string>
     <string name="show_temperature_warning_summary">Cihaz belli bir sıcaklık seviyesi eşiğini geçince bir uyarı göster</string>
-    <!-- Colorful battery icon -->
-    <string name="battery_level_colors_title">Renkli pil simgesi</string>
-    <string name="battery_level_colors_summary">Her pil seviyesi düşüşü renkli kodlanır (sistem arayüzünün yeniden başlatılması gerekir)</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_warning_text">Akıllı pikseller bir güç tasarrufu özelliğidir. Kaç piksele karar verdiğinize bağlı olarak pil ömründe iyileşme görebilirsiniz</string>
+    <string name="smart_pixels_title">Akıllı Pikseller</string>
+    <string name="smart_pixels_summary">Fazladan pikselleri kapatarak pil tasarrufu sağlayın</string>
+    <string name="smart_pixels_enable_title">Akıllı pikselleri etkinleştir</string>
+    <string name="smart_pixels_enable_summary">Güç tüketimini azaltmak için pikselleri kapatın</string>
+    <string name="smart_pixels_on_power_save_title">Pil tasarrufunda otomatik etkinleştir</string>
+    <string name="smart_pixels_on_power_save_summary">Pil tasarrufu etkinleştirildiğinde Akıllı Pikselleri etkinleştirin</string>
+    <string name="smart_pixels_percent">Devre dışı bırakılacak piksel yüzdesi</string>
+    <string name="smart_pixels_shift_title">Yanma koruması</string>
+    <string name="smart_pixels_shift_summary">Amoled cihazlarda sık sık pikselleri kaydırarak yanmaları önler</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">Logo</string>
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Durum çubuğunda logo göstermeyi etkinleştir</string>
+    <string name="status_bar_logo_position_title">Konum</string>
+    <string name="status_bar_logo_position_summary">Logonun hangi tarafta görüntüleneceğini seçin, sağ veya sol</string>
+    <string name="status_bar_logo_position_right">Sağ</string>
+    <string name="status_bar_logo_position_left">Sol</string>
+    <string name="status_bar_logo_style_title">Stil</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">İfade</string>
+    <string name="status_bar_logo_style_emoticon_cool">Havalı ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_dead">Ölü ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_devil">Şeytan ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_happy">Mutluluk ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Nötr ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_poop">Dışkı ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_sad">Üzüntü ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Dil ifadesi</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cake">Kek</string>
+    <string name="status_bar_logo_style_blogger">Blogger</string>
+    <string name="status_bar_logo_style_biohazard">Biohazard</string>
+    <string name="status_bar_logo_style_linux">Linux</string>
+    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_heart">Kalp</string>
+    <string name="status_bar_logo_style_flower">Çiçek</string>
+    <string name="status_bar_logo_style_ghost">Hayalet</string>
+    <string name="status_bar_logo_style_google">Google</string>
+    <string name="status_bar_logo_style_guitar_electric">Elektrogitar</string>
+    <string name="status_bar_logo_style_amogus">Amogus</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Pil stili</string>
+    <string name="status_bar_battery_style_icon_portrait">Dikey simge</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Yatay simge (Sağ)</string>
+    <string name="status_bar_battery_style_icon_landscape">Yatay simge (Sol)</string>
+    <string name="status_bar_battery_style_circle">Daire</string>
+    <string name="status_bar_battery_style_dotted_circle">Daire (Noktalı)</string>
+    <string name="status_bar_battery_style_big_circle">Daire (Büyük)</string>
+    <string name="status_bar_battery_style_big_dotted_circle">Daire (Büyük noktalı)</string>
+    <string name="status_bar_battery_style_filled_circle">Daire (Dolu)</string>
+    <string name="status_bar_battery_style_text">Metin</string>
+    <string name="status_bar_battery_style_hidden">Gizli</string>
+    <string name="status_bar_battery_percent_title">Pil yüzdesi</string>
+    <string name="status_bar_battery_percent_hidden">Gizli</string>
+    <string name="status_bar_battery_percent_text_inside">Simgenin içinde</string>
+    <string name="status_bar_battery_percent_text_next">Simgenin yanında</string>
+    <string name="status_bar_battery_text_charging_title">Şarj olurken pil yüzdesi</string>
+    <string name="status_bar_battery_text_charging_summary">Şarj olurken her zaman pil yüzdesini göster</string>
+    <!-- QS battery -->
+    <string name="qs_use_status_bar_battery_style">Durum çubuğu stilini takip et</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Tahmini pil süresi</string>
+    <string name="battery_estimate_summary">Mümkün olduğunda tahmini kalan pil ömrünü görüntüleyin</string>
+    <!-- UiBench -->
+    <string name="category_uibench">Kullanıcı arabirimi sıralaması</string>
+    <string name="jitter_test_title">Seğirme</string>
+    <string name="jitter_test_summary">Seyirme oluşumunu ölç</string>
 </resources>
