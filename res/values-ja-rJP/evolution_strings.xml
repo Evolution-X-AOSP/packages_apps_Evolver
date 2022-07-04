@@ -233,8 +233,6 @@
     <string name="lockscreen_albumart_filter_title">メディアカバーアートのフィルター</string>
     <string name="lockscreen_albumart_filter_grayscale">グレースケール</string>
     <string name="lockscreen_albumart_filter_tint">アクセント色</string>
-    <string name="lockscreen_albumart_filter_blur">ぼかし</string>
-    <string name="lockscreen_albumart_filter_grayblur">グレースケールとぼかし</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">時計と日付の設定</string>
     <string name="status_bar_clock_summary">時計と日付を編集する</string>
@@ -281,16 +279,15 @@
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">タッチで振動</string>
     <string name="quick_settings_vibrate_summary">タイルに触れた時に振動させる</string>
-    <!-- Tiles animation style  -->
+    <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">アニメーション</string>
     <string name="qs_tile_animation_style_title">アニメーションスタイル</string>
     <string name="qs_tile_animation_duration_title">アニメーション速度</string>
     <string name="qs_tile_animation_interpolator_title">タイルアニメーションの補間</string>
     <string name="qs_tile_animation_style_off">なし</string>
-    <string name="qs_tile_animation_style_flip">反転</string>
     <string name="qs_tile_animation_style_rotate">回転</string>
-    <string name="qs_tile_animation_duration_low">低速</string>
-    <string name="qs_tile_animation_duration_fast">高速</string>
+    <string name="qs_tile_animation_style_flipx">X軸で反転</string>
+    <string name="qs_tile_animation_style_flipy">Y軸で反転</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">等速</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">加速</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">減速</string>
@@ -299,9 +296,6 @@
     <string name="qs_tile_animation_interpolator_overshootInterpolator">通過</string>
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">先取り</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">先取りと通過</string>
-    <string name="qs_set_animation_style">%1$s</string>
-    <string name="qs_set_animation_duration">%1$s</string>
-    <string name="qs_set_animation_interpolator">%1$s</string>
     <!-- Disable QS -->
     <string name="disable_qs_title">ロック画面でクイック設定非表示</string>
     <string name="disable_qs_summary">保護されたロック画面でクイック設定をロックします。通知のシェードは無効にしません。</string>
@@ -514,7 +508,6 @@
     <string name="qs_footer_datausage_title">データ使用量</string>
     <string name="qs_footer_datausage_summary">クイック設定のフッターにデータ使用量を表示する</string>
     <!-- Lock screen media artwork -->
-    <string name="lockscreen_media_blur_title">メディアアートのぼかしレベル</string>
     <string name="lockscreen_media_art_options_title">ロック画面のメディアアート</string>
     <!-- Media art -->
     <string name="media_art_title">メディアカバーアート</string>
@@ -762,8 +755,6 @@
     <string name="ticker_animation_mode_alpha_fade">フェード</string>
     <string name="ticker_animation_mode_scroll">スクロール</string>
     <string name="ticker_tick_duration_title">ティッカーの動作時間</string>
-    <!-- Lockscreen blur -->
-    <string name="lockscreen_blur_title">背景のぼかし</string>
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">ナビゲーションバーのスタイル (3ボタン用)</string>
     <string name="theme_navbar_picker_summary">ナビゲーションバーのスタイルを選択する</string>
@@ -808,6 +799,7 @@
     <string name="artwork_media_background_summary">メディアアートワークをメディア通知の背景に設定する</string>
     <string name="artwork_media_background_enable_blur_title">メディアアートワークの背景をぼかす</string>
     <string name="artwork_media_background_blur_radius_title">メディアアートワークのぼかし量</string>
+    <string name="artwork_media_background_fade_filter_title">メディアアートワークのフェード量</string>
     <string name="artwork_media_background_alpha_title">メディアアートワークの透明度</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">システムダイアログの丸みのスタイル</string>
@@ -928,9 +920,6 @@
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">画面内指紋認証の振動の使用</string>
     <string name="udfps_haptic_feedback_summary">画面内指紋認証アイコンに触れた時に振動させる</string>
-    <!-- Notification count -->
-    <string name="status_bar_notif_count_title">通知の数を表示</string>
-    <string name="status_bar_notif_count_summary">保留中の通知の数を表示する</string>
     <!-- Night Light UDFPS -->
     <string name="udfps_night_light_title">画面内指紋認証中は夜間ライト無効化</string>
     <string name="udfps_night_light_summary">画面内指紋認証が有効な場合は夜間ライトを無効化します。このオプションを無効化すると、夜間ライト有効時に指紋認証の正確性に影響する場合があります。</string>
@@ -1078,6 +1067,7 @@
     <string name="status_bar_logo_style_ghost">ゴースト</string>
     <string name="status_bar_logo_style_google">Google</string>
     <string name="status_bar_logo_style_guitar_electric">エレキギター</string>
+    <string name="status_bar_logo_style_amogus">Amogus</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">バッテリーのスタイル</string>
     <string name="status_bar_battery_style_icon_portrait">縦アイコン</string>
@@ -1093,8 +1083,7 @@
     <string name="status_bar_battery_percent_title">バッテリー残量</string>
     <string name="status_bar_battery_percent_hidden">非表示</string>
     <string name="status_bar_battery_percent_text_inside">アイコンの中</string>
-    <string name="status_bar_battery_percent_text_next_right">アイコンの隣 (右)</string>
-    <string name="status_bar_battery_percent_text_next_left">アイコンの隣 (左)</string>
+    <string name="status_bar_battery_percent_text_next">アイコンの外</string>
     <string name="status_bar_battery_text_charging_title">充電中のバッテリー残量</string>
     <string name="status_bar_battery_text_charging_summary">充電中は常に残量を表示する</string>
     <!-- QS battery -->
@@ -1102,4 +1091,11 @@
     <!-- Battery estimate -->
     <string name="battery_estimate_title">予想残り時間</string>
     <string name="battery_estimate_summary">利用可能な場合はバッテリーの予想残り時間を表示する</string>
+    <!-- UiBench -->
+    <string name="category_uibench">UIBench</string>
+    <string name="jitter_test_title">ジッター</string>
+    <string name="jitter_test_summary">レンダリングジッターを計算する</string>
+    <!-- Lock screen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">ロック画面での充電情報</string>
+    <string name="lockscreen_battery_info_summary">充電中はロック画面に充電器の最大電流/電圧/バッテリー温度を表示する</string>
 </resources>
