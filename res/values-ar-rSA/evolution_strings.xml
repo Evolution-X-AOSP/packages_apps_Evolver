@@ -21,6 +21,7 @@
     <string name="quicksettings_title">قائمة الإعدادات السريعة</string>
     <string name="spoof_title">محاكاة</string>
     <string name="status_bar_title">شريط الحالة</string>
+    <string name="status_bar_battery_category_title">تخصيص البطارية</string>
     <string name="swipe_gestures_title">إيماءات السحب</string>
     <string name="system_settings_title">خيارات النظام</string>
     <string name="themes_title">السمات</string>
@@ -177,23 +178,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">استخدام أيقونات بيانات الجوال القديمة</string>
     <string name="use_old_mobiletype_summary">إظهار رمز نوع الجوال في أعلى مؤشر الإشارة</string>
-    <!-- Battery percentage -->
-    <string name="battery_style_category_title">أيقونة البطارية</string>
-    <string name="status_bar_battery_percentage_title">النسبة المئوية للبطارية</string>
-    <string name="status_bar_battery_percentage_default">مخفي</string>
-    <string name="status_bar_battery_percentage_text_next">بجانب الأيقونة</string>
-    <string name="status_bar_battery_percentage_text_inside">داخل الأيقونة</string>
-    <!-- Status bar battery style-->
-    <string name="status_bar_battery_style_title">شكل حالة البطارية</string>
-    <string name="status_bar_battery_style_port">عمودي</string>
-    <string name="status_bar_battery_style_circle">دائرة</string>
-    <string name="status_bar_battery_style_dotted_circle">دائرة (منقطة)</string>
-    <string name="status_bar_battery_style_filled_circle">دائرة (ممتلئة)</string>
-    <string name="status_bar_battery_style_text">كتابة</string>
-    <string name="status_bar_battery_style_icon_rlandscape">أيقونة أفقية (يمين)</string>
-    <string name="status_bar_battery_style_icon_landscape">أيقونة أفقية (يسار)</string>
-    <string name="status_bar_battery_style_big_circle">دائرة (كبير)</string>
-    <string name="status_bar_battery_style_big_dotted_circle">دائرة (نقطة كبيرة)</string>
     <!-- QS tiles layout direction: vertical or horizontal -->
     <string name="qs_tile_layout_category_title">تخطيط اللوحة</string>
     <string name="qs_tile_layout_title">تنسيق عمودي</string>
@@ -207,11 +191,16 @@
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">إخفاء العناوين</string>
     <string name="qs_tile_title_visibility_summary">التبديل لإخفاء العناوين</string>
-    <!-- Brightness slider -->
-    <string name="qs_show_brightness_title">شريط السطوع</string>
-    <string name="qs_show_brightness_summary">رؤية شريط السطوع والإعدادات</string>
-    <string name="qs_brightness_position_bottom_title">شريط السطوع السفلي</string>
-    <string name="qs_brightness_position_bottom_summary">إظهار شريط السطوع في الجزء السفلي من لوحة الإعدادات السريعة</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">شريط السطوع</string>
+    <string name="qs_show_brightness_slider_never">لا تُظهر أبداً</string>
+    <string name="qs_show_brightness_slider_expanded">إظهار عند التوسيع</string>
+    <string name="qs_show_brightness_slider_always">إظهار دائماً</string>
+    <string name="qs_show_brightness_slider_not_expanded">إظهار عند عدم التوسيع</string>
+    <string name="qs_brightness_slider_position_title">موضع</string>
+    <string name="qs_brightness_slider_position_top">الأعلى</string>
+    <string name="qs_brightness_slider_position_bottom">الأسفل</string>
+    <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">أيقونة السطوع التلقائي</string>
     <string name="qs_show_auto_brightness_summary">إظهار مؤشر تبديل للسطوع التكيفي بالقرب من شريط التمرير</string>
     <!-- Volume rocker wake -->
@@ -244,8 +233,6 @@
     <string name="lockscreen_albumart_filter_title">عرض غلاف الألبوم على الشاشة</string>
     <string name="lockscreen_albumart_filter_grayscale">تدرج الرمادي</string>
     <string name="lockscreen_albumart_filter_tint">لون المظهر</string>
-    <string name="lockscreen_albumart_filter_blur">طمس</string>
-    <string name="lockscreen_albumart_filter_grayblur">تدرج رمادي مع التعتيم</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">الساعة والتاريخ</string>
     <string name="status_bar_clock_summary">تخصيص الساعة و التاريخ</string>
@@ -292,16 +279,15 @@
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">%1$s</string>
     <string name="quick_settings_vibrate_summary">الإهتزاز عند لمس مربعات الإعدادات السريعة</string>
-    <!-- Tiles animation style  -->
+    <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">المؤثرات المتحركة</string>
     <string name="qs_tile_animation_style_title">نمط الرسوم المتحركة</string>
     <string name="qs_tile_animation_duration_title">مدة المؤثرات</string>
     <string name="qs_tile_animation_interpolator_title">مستقطب مؤثرات حركة البلاط</string>
     <string name="qs_tile_animation_style_off">بلا رسوم متحركة</string>
-    <string name="qs_tile_animation_style_flip">مدة حركة الأيقونات</string>
     <string name="qs_tile_animation_style_rotate">تدوير</string>
-    <string name="qs_tile_animation_duration_low">تدوير</string>
-    <string name="qs_tile_animation_duration_fast">سريع</string>
+    <string name="qs_tile_animation_style_flipx">قلب X</string>
+    <string name="qs_tile_animation_style_flipy">قلب X</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">خطي</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">تسريع</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">تباطىء</string>
@@ -310,9 +296,6 @@
     <string name="qs_tile_animation_interpolator_overshootInterpolator">ترتد</string>
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">توقع</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">توقع</string>
-    <string name="qs_set_animation_style">%1$s</string>
-    <string name="qs_set_animation_duration">%1$s</string>
-    <string name="qs_set_animation_interpolator">%1$s</string>
     <!-- Disable QS -->
     <string name="disable_qs_title">إخفاء الإعدادات السريعة على شاشة القفل</string>
     <string name="disable_qs_summary">إخفاء الإعدادات السريعة إذا تم قفل الجهاز. لا يعطل مركز الإشعارات</string>
@@ -521,13 +504,10 @@
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">اهتزاز عند تلقي الإشعارات</string>
     <string name="vibrate_on_notifications_summary">تبديل لتعطيل اهتزاز الإشعار</string>
-    <!-- QS DataUsage Toggle -->
-    <string name="qs_datausage_title">رؤية استخدام البيانات</string>
-    <string name="qs_datausage_disabled">معطل</string>
-    <string name="qs_datausage_daily">الاستخدام اليومي</string>
-    <string name="qs_datausage_monthly">الاستخدام الشهري</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">استهلاك البيانات</string>
+    <string name="qs_footer_datausage_summary">عرض ملخص استخدام البيانات في تذييل الإعدادات السريعة</string>
     <!-- Lock screen media artwork -->
-    <string name="lockscreen_media_blur_title">مستوى ضبابية الصور الفنية للوسائط</string>
     <string name="lockscreen_media_art_options_title">غلاف الألبوم علي شاشة القفل</string>
     <!-- Media art -->
     <string name="media_art_title">Media cover art</string>
@@ -775,8 +755,6 @@
     <string name="ticker_animation_mode_alpha_fade">تلاشي</string>
     <string name="ticker_animation_mode_scroll">التمرير</string>
     <string name="ticker_tick_duration_title">مدة المؤشر</string>
-    <!-- Lockscreen blur -->
-    <string name="lockscreen_blur_title">ضبابية الخلفية</string>
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">نمط شريط التنقل (التنقل بثلاثة أزرار)</string>
     <string name="theme_navbar_picker_summary">حدد نمط شريط التنقل</string>
@@ -821,6 +799,7 @@
     <string name="artwork_media_background_summary">قم بتعيين العمل الفني للوسائط كخلفية لوسائط الإشعارات</string>
     <string name="artwork_media_background_enable_blur_title">ضبابية الخلفية الفنية للوسائط</string>
     <string name="artwork_media_background_blur_radius_title">مقدار الضبابية للوسائط الفنية</string>
+    <string name="artwork_media_background_fade_filter_title">مقدار الضبابية للوسائط الفنية</string>
     <string name="artwork_media_background_alpha_title">الشفافية الفنية للوسائط</string>
     <!-- Rounded styles -->
     <string name="rounded_style_title">نمط مدور لمربعات حوار النظام</string>
@@ -892,10 +871,6 @@
     <string name="volume_steps_system_title">درجات الصوت: النظام</string>
     <string name="volume_steps_voice_call_title">درجات صوت: المكالمة</string>
     <string name="volume_steps_reset">إعادة ضبط</string>
-    <!-- QS battery estimates -->
-    <string name="qs_show_battery_estimate_title">تقديرات البطارية</string>
-    <string name="qs_show_battery_estimate_summary_on">إظهار تقديرات البطارية في الإعدادات السريعة</string>
-    <string name="qs_show_battery_estimate_summary_off">إخفاء تقديرات البطارية في الإعدادات السريعة</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">علامة مشغل الشبكة</string>
     <string name="carrier_label_settings_summary">تخصيص علامة مشغل الشبكة</string>
@@ -945,9 +920,6 @@
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">UDFPS ردود الفعل اللمسية</string>
     <string name="udfps_haptic_feedback_summary">اهتزاز عند لمس أيقونة UDFPS</string>
-    <!-- Notification count -->
-    <string name="status_bar_notif_count_title">إظهار عدد الإشعارات</string>
-    <string name="status_bar_notif_count_summary">عرض عدد الإشعارات المعلقة</string>
     <!-- Night Light UDFPS -->
     <string name="udfps_night_light_title">تعطيل الضوء الليلي عند عرض UDFPS</string>
     <string name="udfps_night_light_summary">تعطيل الإضاءة الليلية على شاشة القُفْل إذا كان UDFPS نشيطٌ. تعطيل هذا الخِيار قد يؤثر على دِقَّة بصمة الإصبع في ضوء الليل.</string>
@@ -1048,7 +1020,82 @@
     <!-- Temperature warning -->
     <string name="show_temperature_warning_title">إظهار تحذير درجة الحرارة</string>
     <string name="show_temperature_warning_summary">عرض تحذير عندما يتجاوز الجهاز عتبة درجة حرارة معينة</string>
-    <!-- Colorful battery icon -->
-    <string name="battery_level_colors_title">تبديل أيقونة البطارية الملونة</string>
-    <string name="battery_level_colors_summary">يتم ترميز كل انخفاض في مستوى البطارية بالألوان (يتطلب واجهة النظام)</string>
+    <!-- Smart Pixels -->
+    <string name="smart_pixels_warning_text">الدقة الذكية هي ميزة توفير الطاقة. استنادًا إلى عدد وحدات البكسل التي تقرر إيقاف تشغيلها</string>
+    <string name="smart_pixels_title">الدقة الذكية</string>
+    <string name="smart_pixels_summary">حفظ البطارية عن طريق إيقاف تشغيل بكسلات إضافية</string>
+    <string name="smart_pixels_enable_title">تمكين الدقة الذكية</string>
+    <string name="smart_pixels_enable_summary">إيقاف الدقة لتقليل أستهلاك الطاقة</string>
+    <string name="smart_pixels_on_power_save_title">تشغيل تلقائي في وضع توفير الطاقة</string>
+    <string name="smart_pixels_on_power_save_summary">تمكين الدقة الذكية في وضع توفير الطاقة</string>
+    <string name="smart_pixels_percent">نسبة الدقة لايقافها</string>
+    <string name="smart_pixels_shift_title">الحماية من الاحتراق</string>
+    <string name="smart_pixels_shift_summary">تمنع الحماية من الإحتراق Burn-in على أجهزة OLED عن طريق تحويل وحدات البكسل بين الحين و الآخر</string>
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">الشعار</string>
+    <string name="status_bar_logo_title">الشعار</string>
+    <string name="status_bar_logo_summary">تمكين عرض الشعار في شريط الحالة</string>
+    <string name="status_bar_logo_position_title">الموضع</string>
+    <string name="status_bar_logo_position_summary">اختر أي جانب لعرض الشعار، في اليسار أو اليمين</string>
+    <string name="status_bar_logo_position_right">اليمين</string>
+    <string name="status_bar_logo_position_left">اليسار</string>
+    <string name="status_bar_logo_style_title">النمط</string>
+    <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">أندرويد</string>
+    <string name="status_bar_logo_style_apple">أبل</string>
+    <string name="status_bar_logo_style_ios">iOS</string>
+    <string name="status_bar_logo_style_emoticon">تعبيرات</string>
+    <string name="status_bar_logo_style_emoticon_cool">تعبير بارد</string>
+    <string name="status_bar_logo_style_emoticon_dead">تعبير الميت</string>
+    <string name="status_bar_logo_style_emoticon_devil">تعبير الشرير</string>
+    <string name="status_bar_logo_style_emoticon_happy">تعبير السعيد</string>
+    <string name="status_bar_logo_style_emoticon_neutral">تعبير محايد</string>
+    <string name="status_bar_logo_style_emoticon_poop">تعبير الفضلات</string>
+    <string name="status_bar_logo_style_emoticon_sad">تعبير الحزين</string>
+    <string name="status_bar_logo_style_emoticon_tongue">تعبير اللسان</string>
+    <string name="status_bar_logo_style_blackberry">بلاك بيري</string>
+    <string name="status_bar_logo_style_cake">كعكة</string>
+    <string name="status_bar_logo_style_blogger">بلوجر</string>
+    <string name="status_bar_logo_style_biohazard">المخاطر الحيوية</string>
+    <string name="status_bar_logo_style_linux">لينكس</string>
+    <string name="status_bar_logo_style_yin_yang">ين-يانغ</string>
+    <string name="status_bar_logo_style_windows">ويندوز</string>
+    <string name="status_bar_logo_style_robot">روبوت</string>
+    <string name="status_bar_logo_style_ninja">نينجا</string>
+    <string name="status_bar_logo_style_heart">قلب</string>
+    <string name="status_bar_logo_style_flower">زهرة</string>
+    <string name="status_bar_logo_style_ghost">شبح</string>
+    <string name="status_bar_logo_style_google">جوجل</string>
+    <string name="status_bar_logo_style_guitar_electric">جيتار كهربائي</string>
+    <string name="status_bar_logo_style_amogus">Amogus</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">شكل حالة البطارية</string>
+    <string name="status_bar_battery_style_icon_portrait">أيقونة رأسية</string>
+    <string name="status_bar_battery_style_icon_rlandscape">أيقونة أفقية (يمين)</string>
+    <string name="status_bar_battery_style_icon_landscape">أيقونة أفقية (يسار)</string>
+    <string name="status_bar_battery_style_circle">دائرة</string>
+    <string name="status_bar_battery_style_dotted_circle">دائرة (منقطة)</string>
+    <string name="status_bar_battery_style_big_circle">دائرة (كبير)</string>
+    <string name="status_bar_battery_style_big_dotted_circle">دائرة (نقطة كبيرة)</string>
+    <string name="status_bar_battery_style_filled_circle">دائرة (ممتلئة)</string>
+    <string name="status_bar_battery_style_text">كتابة</string>
+    <string name="status_bar_battery_style_hidden">مخفي</string>
+    <string name="status_bar_battery_percent_title">نسبة البطارية</string>
+    <string name="status_bar_battery_percent_hidden">مخفي</string>
+    <string name="status_bar_battery_percent_text_inside">داخل الأيقونة</string>
+    <string name="status_bar_battery_percent_text_next">بجانب الأيقونة</string>
+    <string name="status_bar_battery_text_charging_title">نسبة البطارية عند الشحن</string>
+    <string name="status_bar_battery_text_charging_summary">عرض نسبة البطارية دائماً عند الشحن</string>
+    <!-- QS battery -->
+    <string name="qs_use_status_bar_battery_style">اتبع نمط شريط الحالة</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">تقدير البطارية</string>
+    <string name="battery_estimate_summary">عرض العمر التقديري المتبقي للبطارية عند توفرها</string>
+    <!-- UiBench -->
+    <string name="category_uibench">UiBench</string>
+    <string name="jitter_test_title">Jitter</string>
+    <string name="jitter_test_summary">حساب عملية التقديم</string>
+    <!-- Lock screen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">معلومات الشحن على شاشة القفل</string>
+    <string name="lockscreen_battery_info_summary">عرض الحد الأقصى للفولتية وتيار الشاحن وحرارة البطارية على شاشة القفل أثناء الشحن</string>
 </resources>
