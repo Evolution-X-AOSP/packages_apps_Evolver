@@ -9,8 +9,7 @@
     android:title="@string/quicksettings_title">
 
     <PreferenceCategory
-        android:key="quick_settings_general_category"
-        android:title="@string/general_category">
+        android:title="@string/qs_header_category_title">
 
         <!-- QS date -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
@@ -40,6 +39,17 @@
             android:key="qs_show_battery_estimate"
             android:title="@string/battery_estimate_title"
             android:summary="@string/battery_estimate_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/general_category">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="music_tile_title"
+            android:title="@string/qs_music_tile_track_optional_title"
+            android:summary="@string/qs_music_tile_track_optional_summary"
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
