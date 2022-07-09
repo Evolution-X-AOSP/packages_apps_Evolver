@@ -184,7 +184,6 @@ public class AlarmBlocker extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "running");
         getActivity().setTitle(getString(R.string.alarm_blocker_title));
     }
 
@@ -230,7 +229,6 @@ public class AlarmBlocker extends SettingsPreferenceFragment implements
 
     private void updateSeenAlarmsList() {
         AlarmManager pm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
-        Log.d(TAG, pm.getSeenAlarms());
 
         String seenAlarms =  pm.getSeenAlarms();
         mSeenAlarms = new ArrayList<String>();

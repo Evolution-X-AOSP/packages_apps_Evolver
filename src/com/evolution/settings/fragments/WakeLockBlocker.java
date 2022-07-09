@@ -183,7 +183,6 @@ public class WakeLockBlocker extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "running");
         getActivity().setTitle(getString(R.string.wakelock_blocker_title));
     }
 
@@ -229,7 +228,6 @@ public class WakeLockBlocker extends SettingsPreferenceFragment implements
 
     private void updateSeenWakeLocksList() {
         PowerManager pm = (PowerManager) getActivity().getSystemService(Context.POWER_SERVICE);
-        Log.d(TAG, pm.getSeenWakeLocks());
 
         String seenWakeLocks =  pm.getSeenWakeLocks();
         mSeenWakeLocks = new ArrayList<String>();
