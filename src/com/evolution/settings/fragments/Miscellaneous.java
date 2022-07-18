@@ -53,16 +53,13 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     private static final String KEY_GAMES_SPOOF = "use_games_spoof";
     private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
-    private static final String KEY_STREAM_SPOOF = "use_stream_spoof";
     private static final String SMART_PIXELS = "smart_pixels";
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
-    private static final String SYS_STREAM_SPOOF = "persist.sys.pixelprops.streaming";
 
     private Preference mSmartPixels;
     private SwitchPreference mGamesSpoof;
     private SwitchPreference mPhotosSpoof;
-    private SwitchPreference mStreamSpoof;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -80,10 +77,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         mPhotosSpoof.setChecked(SystemProperties.getBoolean(SYS_PHOTOS_SPOOF, true));
         mPhotosSpoof.setOnPreferenceChangeListener(this);
 
-        mStreamSpoof = (SwitchPreference) findPreference(KEY_STREAM_SPOOF);
-        mStreamSpoof.setChecked(SystemProperties.getBoolean(SYS_STREAM_SPOOF, true));
-        mStreamSpoof.setOnPreferenceChangeListener(this);
-
         mSmartPixels = (Preference) findPreference(SMART_PIXELS);
         boolean mSmartPixelsSupported = getResources().getBoolean(
                 com.android.internal.R.bool.config_supportSmartPixels);
@@ -100,10 +93,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         } else if (preference == mPhotosSpoof) {
             boolean value = (Boolean) newValue;
             SystemProperties.set(SYS_PHOTOS_SPOOF, value ? "true" : "false");
-            return true;
-        } else if (preference == mStreamSpoof) {
-            boolean value = (Boolean) newValue;
-            SystemProperties.set(SYS_STREAM_SPOOF, value ? "true" : "false");
             return true;
         }
         return false;
