@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
+
 <PreferenceScreen 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/pulse_settings" >
+    android:title="@string/pulse_settings">
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="navbar_pulse_enabled"
         android:title="@string/show_navbar_pulse_title"
         android:summary="@string/show_navbar_pulse_summary" />
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="lockscreen_pulse_enabled"
         android:title="@string/show_lockscreen_pulse_title"
         android:summary="@string/show_lockscreen_pulse_summary" />
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="ambient_pulse_enabled"
         android:title="@string/show_ambient_pulse_title"
         android:summary="@string/show_ambient_pulse_summary" />
 
+    <!--
     <com.evolution.settings.preference.SecureSettingSwitchPreference
         android:key="qs_pulse_enabled"
         android:title="@string/show_qs_pulse_title"
         android:summary="@string/show_qs_pulse_summary"
         android:defaultValue="false" />
+    -->
 
     <com.evolution.settings.preference.SecureSettingListPreference
         android:key="pulse_render_style"
@@ -69,7 +72,7 @@
         android:entryValues="@array/pulse_color_mode_values"
         android:defaultValue="2" />
 
-    <net.margaritov.preference.colorpicker.SecureSettingColorPickerPreference
+    <com.evolution.settings.preference.colorpicker.SecureSettingColorPickerPreference
         android:key="pulse_color_user"
         android:title="@string/pulse_color_user_title"
         android:defaultValue="0x92FFFFFF" />
@@ -81,7 +84,7 @@
         android:max="30000"
         settings:min="200"
         settings:interval="200"
-        settings:units="@string/unit_milliseconds" />
+        settings:units="@string/unit_ms" />
 
     <PreferenceCategory
         android:key="pulse_fading_bars_category"
@@ -131,6 +134,7 @@
             android:max="6"
             settings:min="2"
             android:dependency="pulse_fading_bars_category" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -168,10 +172,12 @@
             android:max="6"
             settings:min="2"
             android:dependency="pulse_2" />
+
     </PreferenceCategory>
 
     <com.android.settingslib.widget.FooterPreference
         android:key="pulse_settings_footer"
         android:selectable="false"
         settings:searchable="false" />
+
 </PreferenceScreen>

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2017 AICP
- * Copyright (C) 2019-2020 The Evolution X Project
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,4 +69,7 @@ public class SystemSettingListPreference extends ListPreference {
         setValue(restoreValue ? getPersistedString((String) defaultValue) : (String) defaultValue);
     }
 
+    public int getIntValue(int defValue) {
+        return getValue() == null ? defValue : Integer.valueOf(getValue());
+    }
 }
