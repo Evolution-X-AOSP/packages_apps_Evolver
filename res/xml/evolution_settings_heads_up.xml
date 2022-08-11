@@ -19,11 +19,9 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/heads_up_notifications">
 
-    <com.evolution.settings.preference.GlobalSettingSwitchPreference
+    <com.evolution.settings.preference.GlobalSettingMainSwitchPreference
         android:key="heads_up_notifications_enabled"
-        android:title="@string/heads_up_notifications"
-        android:summaryOn="@string/summary_heads_up_enabled"
-        android:summaryOff="@string/summary_heads_up_disabled"
+        android:title="@string/heads_up_notifications_master_switch_title"
         android:defaultValue="true" />
 
     <ListPreference
@@ -31,19 +29,22 @@
         android:title="@string/heads_up_time_out_title"
         android:entries="@array/heads_up_time_out_entries"
         android:entryValues="@array/heads_up_time_out_values"
-        android:persistent="false" />
+        android:persistent="false"
+        android:dependency="heads_up_notifications_enabled" />
 
     <ListPreference
         android:key="heads_up_snooze_time"
         android:title="@string/heads_up_snooze_title"
         android:entries="@array/heads_up_snooze_entries"
         android:entryValues="@array/heads_up_snooze_values"
-        android:persistent="false" />
+        android:persistent="false"
+        android:dependency="heads_up_notifications_enabled" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="less_boring_heads_up"
         android:title="@string/less_boring_heads_up_title"
         android:summary="@string/less_boring_heads_up_summary"
+        android:dependency="heads_up_notifications_enabled"
         android:defaultValue="false" />
 
     <PreferenceCategory
