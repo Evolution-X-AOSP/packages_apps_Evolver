@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
+
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_title">
-
-    <com.evolution.settings.preference.SecureSettingSwitchPreference
-        android:key="system_black_theme"
-        android:title="@string/system_black_theme_title"
-        android:summary="@string/system_black_theme_summary"
-        android:defaultValue="false" />
-
-    <Preference
-        android:key="monet_engine"
-        android:title="@string/monet_engine_title"
-        android:summary="@string/monet_engine_summary"
-        android:fragment="com.evolution.settings.fragments.MonetEngine" />
 
     <Preference
         android:key="dark_ui_mode"
@@ -29,44 +18,81 @@
 
     <PreferenceCategory
         android:key="theme_customization_category"
-        android:title="@string/theme_customization_category">
+        android:title="@string/themes_fonts_category">
 
+        <!-- Font style -->
         <Preference
             android:key="android.theme.customization.fonts"
             android:title="@string/theme_customization_font_title"
             android:summary="@string/theme_customization_font_summary"
-            android:fragment="com.evolution.settings.fragments.FontsPicker" />
+            android:fragment="com.evolution.settings.fragments.themes.Fonts" />
 
+        <!-- Lockscreen Clock Font style -->
         <Preference
-            android:key="android.theme.customization.icon_pack"
-            android:title="@string/theme_customization_icon_pack_title"
-            android:summary="@string/theme_customization_icon_pack_summary"
-            android:fragment="com.evolution.settings.fragments.StatusBarIcons" />
+            android:key="android.theme.customization.lockscreen_clock_font"
+            android:title="@string/lockscreen_clock_font_title"
+            android:summary="@string/lockscreen_clock_font_summary"
+            android:fragment="com.evolution.settings.fragments.themes.LockScreenClockFont" />
 
-        <Preference
-            android:key="android.theme.customization.signal_icon"
-            android:title="@string/theme_customization_signal_icon_title"
-            android:summary="@string/theme_customization_signal_icon_summary"
-            android:fragment="com.evolution.settings.fragments.SignalIcons" />
+    </PreferenceCategory>
 
-        <Preference
-            android:key="android.theme.customization.wifi_icon"
-            android:title="@string/theme_customization_wifi_icon_title"
-            android:summary="@string/theme_customization_wifi_icon_summary"
-            android:fragment="com.evolution.settings.fragments.WifiIcons" />
-
-        <Preference
-            android:key="android.theme.customization.adaptive_icon_shape"
-            android:title="@string/theme_customization_icon_shape_title"
-            android:summary="@string/theme_customization_icon_shape_summary"
-            android:fragment="com.evolution.settings.fragments.IconShapes" />
+    <PreferenceCategory
+        android:key="themes_navbar_category"
+        android:title="@string/themes_navbar_category">
 
         <!-- Navbar Style -->
         <Preference
             android:key="android.theme.customization.navbar"
             android:title="@string/theme_customization_navbar_title"
             android:summary="@string/theme_customization_navbar_summary"
-            android:fragment="com.evolution.settings.fragments.NavbarStyles" />
+            android:fragment="com.evolution.settings.fragments.themes.NavBar" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="themes_icons_category"
+        android:title="@string/themes_icons_category">
+
+        <!-- Icon pack -->
+        <Preference
+            android:key="android.theme.customization.icon_pack"
+            android:title="@string/theme_customization_icon_pack_title"
+            android:summary="@string/theme_customization_icon_pack_summary"
+            android:fragment="com.evolution.settings.fragments.themes.SystemIcons" />
+
+        <!-- Adaptive icon pack -->
+        <Preference
+            android:key="android.theme.customization.adaptive_icon_shape"
+            android:title="@string/theme_customization_icon_shape_title"
+            android:summary="@string/theme_customization_icon_shape_summary"
+            android:fragment="com.evolution.settings.fragments.themes.IconShapes" />
+
+        <!-- Wifi icon style -->
+        <Preference
+            android:key="android.theme.customization.wifi_icon"
+            android:title="@string/theme_customization_wifi_icon_title"
+            android:summary="@string/theme_customization_wifi_icon_summary"
+            android:fragment="com.evolution.settings.fragments.themes.WifiIcons" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="status_bar_signal_category"
+        android:title="@string/themes_statusbar_icons_category">
+
+        <!-- Signal icon style -->
+        <Preference
+            android:key="android.theme.customization.signal_icon"
+            android:title="@string/theme_customization_signal_icon_title"
+            android:summary="@string/theme_customization_signal_icon_summary"
+            android:fragment="com.evolution.settings.fragments.themes.SignalIcons" />
+
+        <!-- Data icon style -->
+        <Preference
+            android:key="android.customization.sb_data"
+            android:title="@string/theme_customization_data_icon_title"
+            android:summary="@string/theme_customization_data_icon_summary"
+            android:fragment="com.evolution.settings.fragments.themes.DataIcons" />
 
     </PreferenceCategory>
 

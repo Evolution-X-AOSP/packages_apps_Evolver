@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
+
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/evolution_about_title">
 
     <!-- Evolution X logo -->
-    <PreferenceScreen
+    <com.android.settingslib.widget.LayoutPreference
         android:key="evolution_logo"
+        android:layout="@layout/evolution_logo"
         android:clickable="true"
-        android:layout="@layout/evolution_logo">
-        <intent
-            android:targetPackage="org.evolution.easteregg"
-            android:targetClass="org.evolution.easteregg.EasterEgg" />
-    </PreferenceScreen>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EvolutionXLogoPreferenceController"/>
 
     <!-- About Evolution X -->
     <PreferenceCategory
@@ -28,6 +26,17 @@
             settings:searchable="false"
             android:summary="@string/evolution_about_info_summary" />
 
+        <!-- Evolution X Changelog -->
+        <Preference
+            android:key="evolution_changelog"
+            android:icon="@drawable/ic_changelog"
+            android:title="@string/changelog_evolution_title"
+            android:summary="@string/changelog_evolution_summary">
+            <intent android:action="android.intent.action.MAIN"
+                 android:targetPackage="com.android.settings"
+                 android:targetClass="com.evolution.settings.fragments.about.ChangelogActivity"/>
+        </Preference>
+
         <Preference
             android:title="@string/evolution_website_title"
             android:icon="@drawable/ic_settings_evolution_about"
@@ -38,12 +47,12 @@
         </Preference>
 
         <Preference
-            android:title="@string/evolution_telegram_title"
-            android:icon="@drawable/ic_telegram"
-            android:summary="@string/evolution_telegram_summary">
+            android:title="@string/evolution_discord_title"
+            android:icon="@drawable/ic_discord"
+            android:summary="@string/evolution_discord_summary">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/EvolutionX" />
+                android:data="https://discord.gg/evolution-x-670512508871639041" />
         </Preference>
 
         <Preference
@@ -56,7 +65,16 @@
         </Preference>
 
         <Preference
-            android:title="@string/evolution_github_title"
+            android:title="@string/evolution_github_1_title"
+            android:icon="@drawable/ic_github"
+            android:summary="@string/evolution_github_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/Evolution-XYZ" />
+        </Preference>
+
+        <Preference
+            android:title="@string/evolution_github_2_title"
             android:icon="@drawable/ic_github"
             android:summary="@string/evolution_github_summary">
             <intent
@@ -70,75 +88,27 @@
         android:title="@string/evolution_about_team" />
 
         <Preference
-            android:title="@string/evolution_about_stallix"
-            android:summary="@string/evolution_about_stallix_summary">
+            android:title="@string/about_contributor_1_title"
+            android:summary="@string/about_contributor_1_summary">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://twitter.com/Stallix_" />
+                android:data="https://linktr.ee/joeyhuab" />
         </Preference>
 
         <Preference
-            android:title="@string/evolution_about_akito"
-            android:summary="@string/evolution_about_akito_summary">
+            android:title="@string/about_contributor_2_title"
+            android:summary="@string/about_contributor_2_summary">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://twitter.com/RAkitoHaruka" />
+                android:data="https://t.me/AnierinB" />
         </Preference>
 
         <Preference
-            android:title="@string/evolution_about_chenyang"
-            android:summary="@string/evolution_about_chenyang_summary">
+            android:title="@string/about_contributor_3_title"
+            android:summary="@string/about_contributor_3_summary">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://jjpprrrr.com" />
-        </Preference>
-
-        <Preference
-            android:title="@string/evolution_about_anierin"
-            android:summary="@string/evolution_about_anierin_summary">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://twitter.com/AnierinB" />
-        </Preference>
-
-        <Preference
-            android:title="@string/evolution_about_justin"
-            android:summary="@string/evolution_about_justin_summary">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://github.com/Justasic" />
-        </Preference>
-
-        <Preference
-            android:title="@string/evolution_about_raph"
-            android:summary="@string/evolution_about_raph_summary">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://twitter.com/raphielscape" />
-        </Preference>
-
-        <Preference
-            android:title="@string/evolution_about_aggelos"
-            android:summary="@string/evolution_about_aggelos_summary">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://forum.xda-developers.com/member.php?u=8065843" />
-        </Preference>
-
-        <Preference
-            android:title="@string/evolution_about_vince"
-            android:summary="@string/evolution_about_vince_summary">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://twitter.com/ecnivtwelve" />
-        </Preference>
-
-        <Preference
-            android:title="@string/evolution_about_marton"
-            android:summary="@string/evolution_about_marton_summary">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://twitter.com/martonlederer" />
+                android:data="https://t.me/RealAkito" />
         </Preference>
 
 </PreferenceScreen>
