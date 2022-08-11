@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2019-2020 The Evolution X Project
+ * Copyright (C) 2012-2014 The CyanogenMod Project
+ *               2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +24,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -32,25 +34,37 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.TreeSet;
-
 import com.android.settings.R;
 
-public class PackageListAdapter extends BaseAdapter implements Runnable {
-    private PackageManager mPm;
-    private LayoutInflater mInflater;
-    private final List<PackageItem> mInstalledPackages = new LinkedList<PackageItem>();
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
-    private final Handler mHandler = new Handler() {
+public class PackageListAdapter extends BaseAdapter implements Runnable {
+    private final PackageManager mPm;
+    private final LayoutInflater mInflater;
+    private final List<PackageItem> mInstalledPackages = new LinkedList<>();
+    private Set<String> mExcludedPackages = new HashSet<>();
+
+    // Packages which don't have launcher icons, but which we want to show nevertheless
+    private static final String[] PACKAGE_WHITELIST = new String[] {
+        "android",                          /* system server */
+        "com.android.systemui",             /* system UI */
+        "com.android.providers.downloads"   /* download provider */
+    };
+
+    private final Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
             PackageItem item = (PackageItem) msg.obj;
             int index = Collections.binarySearch(mInstalledPackages, item);
             if (index < 0) {
                 mInstalledPackages.add(-index - 1, item);
+            } else {
+                mInstalledPackages.get(index).activityTitles.addAll(item.activityTitles);
             }
             notifyDataSetChanged();
         }
@@ -59,6 +73,7 @@ public class PackageListAdapter extends BaseAdapter implements Runnable {
     public static class PackageItem implements Comparable<PackageItem> {
         public final String packageName;
         public final CharSequence title;
+        private final TreeSet<CharSequence> activityTitles = new TreeSet<>();
         public final Drawable icon;
 
         PackageItem(String packageName, CharSequence title, Drawable icon) {
@@ -111,13 +126,28 @@ public class PackageListAdapter extends BaseAdapter implements Runnable {
             convertView = mInflater.inflate(R.layout.applist_preference_icon, null, false);
             holder = new ViewHolder();
             convertView.setTag(holder);
-            holder.title = (TextView) convertView.findViewById(com.android.internal.R.id.title);
-            holder.icon = (ImageView) convertView.findViewById(R.id.icon);
+            holder.title = convertView.findViewById(com.android.internal.R.id.title);
+            holder.summary = convertView.findViewById(com.android.internal.R.id.summary);
+            holder.icon = convertView.findViewById(com.android.internal.R.id.icon);
         }
 
         PackageItem applicationInfo = getItem(position);
         holder.title.setText(applicationInfo.title);
         holder.icon.setImageDrawable(applicationInfo.icon);
+
+        boolean needSummary = applicationInfo.activityTitles.size() > 0;
+        if (applicationInfo.activityTitles.size() == 1) {
+            if (TextUtils.equals(applicationInfo.title, applicationInfo.activityTitles.first())) {
+                needSummary = false;
+            }
+        }
+
+        if (needSummary) {
+            holder.summary.setText(TextUtils.join(", ", applicationInfo.activityTitles));
+            holder.summary.setVisibility(View.VISIBLE);
+        } else {
+            holder.summary.setVisibility(View.GONE);
+        }
 
         return convertView;
     }
@@ -129,18 +159,45 @@ public class PackageListAdapter extends BaseAdapter implements Runnable {
 
     @Override
     public void run() {
-        List<ApplicationInfo> installedAppsInfo = mPm.getInstalledApplications(PackageManager.GET_META_DATA);
-        for (ApplicationInfo appInfo : installedAppsInfo) {
-            if (appInfo.icon != 0) {
+        final Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        List<ResolveInfo> installedAppsInfo = mPm.queryIntentActivities(mainIntent, 0);
+
+        for (ResolveInfo info : installedAppsInfo) {
+            ApplicationInfo appInfo = info.activityInfo.applicationInfo;
+            if (mExcludedPackages.contains(appInfo.packageName)) {
+                continue;
+            }
+
+            final PackageItem item = new PackageItem(appInfo.packageName,
+                    appInfo.loadLabel(mPm), appInfo.loadIcon(mPm));
+            item.activityTitles.add(info.loadLabel(mPm));
+            mHandler.obtainMessage(0, item).sendToTarget();
+        }
+
+        for (String packageName : PACKAGE_WHITELIST) {
+            if (mExcludedPackages.contains(packageName)) {
+                continue;
+            }
+            try {
+                ApplicationInfo appInfo = mPm.getApplicationInfo(packageName, 0);
                 final PackageItem item = new PackageItem(appInfo.packageName,
                         appInfo.loadLabel(mPm), appInfo.loadIcon(mPm));
                 mHandler.obtainMessage(0, item).sendToTarget();
+            } catch (PackageManager.NameNotFoundException ignored) {
+                // package not present, so nothing to add -> ignore it
             }
         }
     }
 
+    public void setExcludedPackages(HashSet<String> packages) {
+        mExcludedPackages = packages;
+        reloadList();
+    }
+
     private static class ViewHolder {
         TextView title;
+        TextView summary;
         ImageView icon;
     }
 }

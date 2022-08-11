@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2022 FlamingoOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/default_padding"
+    android:paddingBottom="@dimen/default_padding">
+
+    <View
+        android:id="@+id/color_preview"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/color_picker_preview_height"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/color_picker_preview_background"
+        settings:layout_constraintEnd_toEndOf="parent"
+        settings:layout_constraintStart_toStartOf="parent"
+        settings:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/color_input"
+        style="@style/ColorPickerEditTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        settings:layout_constraintStart_toStartOf="@id/color_preview"
+        settings:layout_constraintTop_toTopOf="@id/color_preview"
+        settings:layout_constraintEnd_toEndOf="@id/color_preview"
+        settings:layout_constraintBottom_toBottomOf="@id/color_preview" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        style="@style/ColorPickerSeekBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        settings:layout_constraintBottom_toTopOf="@id/seekBar2"
+        settings:layout_constraintEnd_toEndOf="parent"
+        settings:layout_constraintStart_toStartOf="parent"
+        settings:layout_constraintTop_toBottomOf="@id/color_preview" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        style="@style/ColorPickerSeekBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        settings:layout_constraintBottom_toTopOf="@id/seekBar3"
+        settings:layout_constraintEnd_toEndOf="parent"
+        settings:layout_constraintStart_toStartOf="parent"
+        settings:layout_constraintTop_toBottomOf="@id/seekBar1" />
+
+    <SeekBar
+        android:id="@+id/seekBar3"
+        style="@style/ColorPickerSeekBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin"
+        settings:layout_constraintBottom_toTopOf="@id/barrier"
+        settings:layout_constraintEnd_toEndOf="parent"
+        settings:layout_constraintStart_toStartOf="parent"
+        settings:layout_constraintTop_toBottomOf="@id/seekBar2" />
+
+    <RadioGroup
+        android:id="@+id/color_model_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:orientation="horizontal"
+        settings:layout_constraintBottom_toBottomOf="@id/confirm_button"
+        settings:layout_constraintStart_toStartOf="parent"
+        settings:layout_constraintTop_toTopOf="@id/confirm_button">
+
+        <RadioButton
+            android:id="@+id/rgb_button"
+            style="@style/ColorPickerRadioButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/rgb" />
+
+        <RadioButton
+            android:id="@+id/hsl_button"
+            style="@style/ColorPickerRadioButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hsl" />
+
+        <RadioButton
+            android:id="@+id/hsv_button"
+            style="@style/ColorPickerRadioButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hsv" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/cancel_button"
+        style="@style/ColorPickerButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="@string/cancel"
+        settings:layout_constraintBottom_toBottomOf="@id/confirm_button"
+        settings:layout_constraintEnd_toStartOf="@id/confirm_button"
+        settings:layout_constraintTop_toTopOf="@id/confirm_button" />
+
+    <Button
+        android:id="@+id/confirm_button"
+        style="@style/ColorPickerButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:text="@string/confirm"
+        settings:layout_constraintBottom_toBottomOf="parent"
+        settings:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        settings:barrierDirection="top"
+        settings:constraint_referenced_ids="color_model_group, confirm_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>

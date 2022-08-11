@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
+
 <resources>
     <!-- Base attributes available to CustomSeekBarPreference. -->
     <declare-styleable name="CustomSeekBarPreference">
         <attr name="defaultValueText" format="string" />
         <attr name="interval" format="integer" />
-        <attr name="showSign" format="boolean" />
         <attr name="units" format="string|reference" />
+        <attr name="showSign" format="boolean" />
         <attr name="continuousUpdates" format="boolean" />
+        <attr name="allowEditText" format="boolean" />
     </declare-styleable>
 
     <!-- Value to pass to callback when restore button is pressed -->
@@ -33,5 +35,17 @@
         <attr name="ledPreview" format="boolean" />
         <attr name="multiColor" format="boolean" />
         <attr name="withAlpha" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="lineage_SelfRemovingPreference">
+        <attr name="requiresPackage" format="string" />
+        <attr name="requiresFeature" format="string" />
+        <attr name="requiresConfig" format="string" />
+        <attr name="requiresConfigMask" format="integer" />
+        <attr name="requiresProperty" format="string" />
+        <attr name="requiresOwner" format="boolean" />
+        <attr name="requiresAction" format="string" />
+        <attr name="replacesKey" format="string" />
+        <attr name="minSummaryLines" format="integer" />
     </declare-styleable>
 </resources>

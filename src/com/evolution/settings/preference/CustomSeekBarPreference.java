@@ -1,13 +1,11 @@
 /*
- * Copyright (C) 2016-2020 crDroid Android Project
- * Copyright (C) 2016-2017 The Dirty Unicorns Project
- * Copyright (C) 2019-2022 The Evolution X Project
+ * Copyright (C) 2016-2023 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.evolution.settings.preference;
 
 import android.content.Context;
@@ -35,6 +32,7 @@ import androidx.core.content.res.TypedArrayUtils;
 import androidx.preference.*;
 
 import com.android.settings.R;
+import com.android.settings.Utils;
 
 public class CustomSeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
     protected final String TAG = getClass().getName();
@@ -104,6 +102,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         }
 
         mSeekBar = new SeekBar(context, attrs);
+        mSeekBar.setMax(mMaxValue);
         setLayoutResource(R.layout.preference_custom_seekbar);
     }
 
@@ -113,8 +112,8 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
 
     public CustomSeekBarPreference(Context context, AttributeSet attrs) {
         this(context, attrs, TypedArrayUtils.getAttr(context,
-                androidx.preference.R.attr.preferenceStyle,
-                android.R.attr.preferenceStyle));
+                        androidx.preference.R.attr.seekBarPreferenceStyle,
+                        com.android.internal.R.attr.seekBarPreferenceStyle));
     }
 
     public CustomSeekBarPreference(Context context) {
@@ -215,6 +214,16 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         return v < mMinValue ? mMinValue : (v > mMaxValue ? mMaxValue : v);
     }
 
+    public void setMax(int max) {
+        mMaxValue = max;
+        mSeekBar.setMax(mMaxValue);
+    }
+
+    public void setMin(int min) {
+        mMinValue = min;
+        mSeekBar.setMax(mMaxValue - mMinValue);
+    }
+
     protected int getSeekValue(int v) {
         return 0 - Math.floorDiv(mMinValue - v, mInterval);
     }
@@ -254,8 +263,8 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         if (mMinusImageView != null) {
             if (mValue == mMinValue || mTrackingTouch) {
                 mMinusImageView.setClickable(false);
-                mMinusImageView.setColorFilter(getContext().getColor(R.color.disabled_text_color),
-                    PorterDuff.Mode.MULTIPLY);
+                mMinusImageView.setColorFilter(Utils.getColorAttrDefaultColor(getContext(), android.R.attr.textColorTertiary),
+                    PorterDuff.Mode.SRC_IN);
             } else {
                 mMinusImageView.setClickable(true);
                 mMinusImageView.clearColorFilter();
@@ -264,7 +273,8 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         if (mPlusImageView != null) {
             if (mValue == mMaxValue || mTrackingTouch) {
                 mPlusImageView.setClickable(false);
-                mPlusImageView.setColorFilter(getContext().getColor(R.color.disabled_text_color), PorterDuff.Mode.MULTIPLY);
+                mPlusImageView.setColorFilter(Utils.getColorAttrDefaultColor(getContext(), android.R.attr.textColorTertiary),
+                    PorterDuff.Mode.SRC_IN);
             } else {
                 mPlusImageView.setClickable(true);
                 mPlusImageView.clearColorFilter();
