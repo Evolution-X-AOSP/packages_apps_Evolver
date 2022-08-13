@@ -136,6 +136,7 @@
     <!-- Heads up -->
     <string name="heads_up_notifications">Thông báo nổi</string>
     <string name="heads_up_notifications_summary">Thông báo nổi trên thanh trạng thái</string>
+    <string name="heads_up_notifications_master_switch_title">Sử dụng Heads Up</string>
     <string name="summary_heads_up_enabled">Thông báo nổi đã được bật</string>
     <string name="summary_heads_up_disabled">Thông báo nổi đã bị tắt</string>
     <string name="add_heads_up_package">Thêm ứng dụng</string>
@@ -187,7 +188,6 @@
     <string name="qs_rows_portrait_title">Số hàng theo chiều dọc</string>
     <string name="qs_rows_landscape_title">Số hàng theo chiều ngang</string>
     <string name="qs_columns_portrait_title">Số cột theo chiều dọc</string>
-    <string name="qs_columns_landscape_title">Số cột theo chiều ngang</string>
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">Ẩn ô tiêu đề</string>
     <string name="qs_tile_title_visibility_summary">Công tắc ẩnn ô tiêu đề</string>
@@ -517,6 +517,7 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Khối cảm biến trên mỗi gói</string>
     <string name="sensor_block_summary">Chặn quyền truy cập vào một số cảm biến nhất định đối với một số ứng dụng để tiết kiệm pin</string>
+    <string name="sensor_block_master_switch_title">Sử dụng Chặn cảm biến cho từng ứng dụng</string>
     <string name="sensor_block_app_picker_title">Chặn cảm biến cho các ứng dụng này</string>
     <string name="add_sensor_block_package_title">Thêm ứng dụng cho khối cảm biến</string>
     <string name="add_sensor_block_package_summary">Các cảm biến chuyển động, gia tốc kế, cảm biến gia tốc tuyến tính quan trọng sẽ bị chặn đối với các ứng dụng này</string>
@@ -925,6 +926,9 @@
     <!-- Night Light UDFPS -->
     <string name="udfps_night_light_title">Tắt ánh sáng chạm khi hiển thị FOD</string>
     <string name="udfps_night_light_summary">Tắt đèn ngủ trên màn hình khóa nếu UDFPS đang hoạt động. Tắt tùy chọn này có thể ảnh hưởng đến độ chính xác của vân tay khi bật đèn ngủ.</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Hiện số thông báo</string>
+    <string name="status_bar_notif_count_summary">Hiển thị số lượng thông báo đang chờ</string>
     <!-- Privacy indicators -->
     <string name="mic_camera_privacy_indicator_title">Biểu tượng sử dụng mic và camera</string>
     <string name="mic_camera_privacy_indicator_summary">Hiện thị biểu tượng tách biệt khi một app nào đó sử dụng mic và camera</string>
@@ -1005,15 +1009,9 @@
     <string name="notification_material_dismiss_summary">Thay thế xóa tất cả thông báo bằng nút nổi</string>
     <string name="notification_material_dismiss_style_title">Kiểu nút</string>
     <string name="notification_material_dismiss_bgstyle_title">Nền phím</string>
-    <!-- Application downgrade -->
-    <string name="app_downgrade_title">Cho phép hạ cấp ứng dụng</string>
-    <string name="app_downgrade_summary">Điều này cho phép bạn hạ cấp các ứng dụng. Lưu ý rằng điều này có thể dẫn đến sự cố và hỏng dữ liệu.</string>
-    <!-- Ignore window secure -->
-    <string name="ignore_window_secure_title">Bỏ qua cửa sổ bảo mật</string>
-    <string name="ignore_window_secure_summary">Điều này loại bỏ các ảnh chụp màn hình và giới hạn ghi lại màn hình cho tất cả các ứng dụng. Thông thường, các ứng dụng đặc biệt được thay thế bằng các vùng đen trong hồ sơ. Điều này có thể thuận tiện trong một số trường hợp nhưng có thể dẫn đến rò rỉ quyền riêng tư. Sau khi thay đổi công tắc này, bạn có thể phải khởi động lại ứng dụng để thay đổi có hiệu lực.</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Thay thế thông báo nổi bằng thông báo kiểu mới được thiết kế lại mỏng và ít xâm lấn hơn</string>
+    <string name="reticker_summary">Thay thế thông báo nổi bằng thông báo kiểu mới được thiết kế mỏng và chiếm ít diện tích hơn</string>
     <string name="reticker_colored_title">Sử dụng nền màu ứng dụng</string>
     <string name="reticker_colored_summary">Thay thế màu nền reTicker bằng màu chính của ứng dụng thông báo</string>
     <!-- Temperature warning -->
@@ -1031,9 +1029,9 @@
     <string name="smart_pixels_shift_title">Bảo vệ lỗi lưu ảnh</string>
     <string name="smart_pixels_shift_summary">Tránh lỗi bóng mờ trên màn hình OLED bằng cách di chuyển các điểm ảnh thường xuyên</string>
     <!-- Statusbar logo -->
-    <string name="status_bar_logo_category_title">Biểu tượng</string>
     <string name="status_bar_logo_title">Biểu tượng</string>
     <string name="status_bar_logo_summary">Hiển thị biểu tượng trên thanh trạng thái</string>
+    <string name="status_bar_logo_master_switch_title">Hiển thị biểu tượng</string>
     <string name="status_bar_logo_position_title">Vị trí</string>
     <string name="status_bar_logo_position_summary">Chọn vị trí hiển thị biểu tượng trên thanh trạng thái, trái hoặc phải</string>
     <string name="status_bar_logo_position_right">Bên phải</string>
@@ -1072,6 +1070,15 @@
     <string name="status_bar_battery_style_icon_portrait">Biểu tượng dọc</string>
     <string name="status_bar_battery_style_icon_rlandscape">Biểu tượng nằm ngang (Phải)</string>
     <string name="status_bar_battery_style_icon_landscape">Biểu tượng nằm ngang (Trái)</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_a">Nằm ngang phải kiểu A</string>
+    <string name="status_bar_battery_style_icon_landscape_style_a">Nằm ngang trái kiểu A</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_b">Nằm ngang phải kiểu B</string>
+    <string name="status_bar_battery_style_icon_landscape_style_b">Nằm ngang trái kiểu B</string>
+    <string name="status_bar_battery_style_icon_landscape_pill">Dọc Mx</string>
+    <string name="status_bar_battery_style_icon_landscape_line">Lorn ngang</string>
+    <string name="status_bar_battery_style_icon_landscape_musku">IOS đứng</string>
+    <string name="status_bar_battery_style_icon_landscape_signal">Airoo ngang</string>
+    <string name="status_bar_battery_style_icon_landscape_buddy">Viên thuốc ngang</string>
     <string name="status_bar_battery_style_circle">Vòng tròn</string>
     <string name="status_bar_battery_style_dotted_circle">Vòng tròn chấm</string>
     <string name="status_bar_battery_style_big_circle">Tròn (To)</string>
@@ -1100,4 +1107,13 @@
     <!-- Disable music track title in QS tile -->
     <string name="qs_music_tile_track_optional_title">Ô tiêu đề bài hát</string>
     <string name="qs_music_tile_track_optional_summary">Hiển thị ô tên bài hát trên ô cài đặt nhanh</string>
+    <!-- Charging animation -->
+    <string name="charging_animation_title">Hiệu ứng sạc</string>
+    <string name="charging_animation_summary">Hiển thị hiệu ứng khi thiết bị được cắm sạc</string>
+    <!-- Lockscreen clock color -->
+    <string name="lockscreen_clock_color_title">Màu đồng hồ màn hình khóa</string>
+    <string name="lockscreen_clock_color_summary">Sử dụng màu phụ cho đồng hồ màn hình khóa, nếu bị tắt sẽ sử dụng màu nhấn</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Màu biểu tượng</string>
+    <string name="statusbar_colored_icons_summary">Hiển thị đúng màu biểu tượng ứng dụng cho thông báo trên thanh trạng thái</string>
 </resources>
