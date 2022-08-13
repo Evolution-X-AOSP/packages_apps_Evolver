@@ -136,6 +136,7 @@
     <!-- Heads up -->
     <string name="heads_up_notifications">Heads Up</string>
     <string name="heads_up_notifications_summary">ステータスバーに通知を表示する</string>
+    <string name="heads_up_notifications_master_switch_title">Heads Up を使用</string>
     <string name="summary_heads_up_enabled">ポップアップ通知は有効です</string>
     <string name="summary_heads_up_disabled">ポップアップ通知は無効です</string>
     <string name="add_heads_up_package">アプリを追加</string>
@@ -187,7 +188,6 @@
     <string name="qs_rows_portrait_title">縦向き時の行数</string>
     <string name="qs_rows_landscape_title">横向き時の行数</string>
     <string name="qs_columns_portrait_title">縦向き時の列数</string>
-    <string name="qs_columns_landscape_title">横向き時の列数</string>
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">タイルのタイトルを表示</string>
     <string name="qs_tile_title_visibility_summary">タイルのタイトルを非表示にする</string>
@@ -517,6 +517,7 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">パッケージごとのセンサーの無効化</string>
     <string name="sensor_block_summary">バッテリーの節約のためアプリから特定のセンサーへのアクセスを無効化する</string>
+    <string name="sensor_block_master_switch_title">パッケージごとのセンサーのブロックを使用</string>
     <string name="sensor_block_app_picker_title">アプリへのセンサーをブロック</string>
     <string name="add_sensor_block_package_title">センサーをブロックするアプリを追加</string>
     <string name="add_sensor_block_package_summary">大きな動き、加速度センサー、線形加速度センサーがこれらのアプリでブロックされます。</string>
@@ -925,6 +926,9 @@
     <!-- Night Light UDFPS -->
     <string name="udfps_night_light_title">画面内指紋認証中は夜間ライト無効化</string>
     <string name="udfps_night_light_summary">画面内指紋認証が有効な場合は夜間ライトを無効化します。このオプションを無効化すると、夜間ライト有効時に指紋認証の正確性に影響する場合があります。</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">通知の数を表示</string>
+    <string name="status_bar_notif_count_summary">保留中の通知の数を表示する</string>
     <!-- Privacy indicators -->
     <string name="mic_camera_privacy_indicator_title">マイクとカメラのプライバシー表示</string>
     <string name="mic_camera_privacy_indicator_summary">アプリがマイクまたはカメラを使用している時にインジケーターを表示します</string>
@@ -1031,9 +1035,9 @@
     <string name="smart_pixels_shift_title">焼き付き保護</string>
     <string name="smart_pixels_shift_summary">使う画素を遷移させ有機 EL 画面の焼付きを避ける</string>
     <!-- Statusbar logo -->
-    <string name="status_bar_logo_category_title">ロゴ</string>
     <string name="status_bar_logo_title">ロゴ</string>
     <string name="status_bar_logo_summary">ステータスバーにロゴを表示する</string>
+    <string name="status_bar_logo_master_switch_title">ロゴを使用する</string>
     <string name="status_bar_logo_position_title">位置</string>
     <string name="status_bar_logo_position_summary">どこにロゴを表示するか選択する</string>
     <string name="status_bar_logo_position_right">右</string>
@@ -1072,6 +1076,15 @@
     <string name="status_bar_battery_style_icon_portrait">縦アイコン</string>
     <string name="status_bar_battery_style_icon_rlandscape">水平アイコン (右)</string>
     <string name="status_bar_battery_style_icon_landscape">水平アイコン (左)</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_a">右横向きスタイル A</string>
+    <string name="status_bar_battery_style_icon_landscape_style_a">左横向きスタイル A</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_b">右横向きスタイル B</string>
+    <string name="status_bar_battery_style_icon_landscape_style_b">左横向きスタイル B</string>
+    <string name="status_bar_battery_style_icon_landscape_pill">縦向き Mx</string>
+    <string name="status_bar_battery_style_icon_landscape_line">横向き Lorn</string>
+    <string name="status_bar_battery_style_icon_landscape_musku">縦向き IOS</string>
+    <string name="status_bar_battery_style_icon_landscape_signal">横向き Airoo</string>
+    <string name="status_bar_battery_style_icon_landscape_buddy">横向き Capsule</string>
     <string name="status_bar_battery_style_circle">円</string>
     <string name="status_bar_battery_style_dotted_circle">円 (点線)</string>
     <string name="status_bar_battery_style_big_circle">円 (大)</string>
@@ -1100,4 +1113,16 @@
     <!-- Disable music track title in QS tile -->
     <string name="qs_music_tile_track_optional_title">音楽タイルに曲名を表示</string>
     <string name="qs_music_tile_track_optional_summary">音楽タイルに再生中のタイトルを表示する</string>
+    <!-- Charging animation -->
+    <string name="charging_animation_title">充電アニメーション</string>
+    <string name="charging_animation_summary">電源接続時にアニメーションを表示する</string>
+    <!-- Lockscreen clock color -->
+    <string name="lockscreen_clock_color_title">ロック画面の時計の色</string>
+    <string name="lockscreen_clock_color_summary">色のアクセントが無効な場合はセカンダリの色をロック画面の時計に使用する</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Wi-Fi 標準アイコンを表示</string>
+    <string name="show_wifi_standard_icon_summary">Wi-Fi 電波表示に Wi-Fi の種類を表示する</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">色付きのアイコン</string>
+    <string name="statusbar_colored_icons_summary">ステータスバーの通知アイコンに適切なアプリアイコンを使用します</string>
 </resources>
