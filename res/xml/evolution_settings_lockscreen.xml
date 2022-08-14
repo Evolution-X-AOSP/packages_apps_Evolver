@@ -80,6 +80,13 @@
             android:dependency="lockscreen_media_metadata"
             android:defaultValue="0" />
 
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="ls_media_filter_blur_radius"
+            android:title="@string/lockscreen_albumart_filter_blur_radius_title"
+            android:defaultValue="10"
+            android:max="25"
+            settings:min="1" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
