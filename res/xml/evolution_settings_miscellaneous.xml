@@ -8,7 +8,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
-    <!-- Game Space -->
+    <Preference
+        android:key="always_on_display_schedule"
+        android:title="@string/always_on_display_schedule_title"
+        android:fragment="com.evolution.settings.fragments.AODSchedule" />
+
     <Preference
         android:key="game_settings"
         android:title="@string/game_space_title"
@@ -18,50 +22,37 @@
             android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
     </Preference>
 
-    <!-- Hidden apps -->
     <Preference
-        android:key="hidden_apps"
-        android:title="@string/hidden_apps_title"
-        android:summary="@string/hidden_apps_summary"
-        android:persistent="false"
-        android:fragment="com.evolution.settings.fragments.HiddenAppSettingsFragment" />
+        android:key="app_lock"
+        android:title="@string/app_lock_title"
+        android:summary="@string/app_lock_summary"
+        android:fragment="com.evolution.settings.security.applock.AppLockSettingsFragment"
+        settings:controller="com.evolution.settings.security.applock.AppLockSettingsPreferenceController" />
 
-    <!-- Smart Pixels -->
-    <Preference
+    <!-- Preference
         android:key="smart_pixels"
         android:title="@string/smart_pixels_title" 
         android:summary="@string/smart_pixels_summary" 
-        android:fragment="com.evolution.settings.fragments.SmartPixels" />
+        android:fragment="com.evolution.settings.fragments.SmartPixels" />-->
 
-    <!-- Launch music player when headset is connected -->
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="headset_connect_player"
         android:title="@string/headset_connect_player_title"
         android:summary="@string/headset_connect_player_summary"
         android:defaultValue="false" />
 
-    <com.evolution.settings.preference.SystemSettingListPreference
+    <!-- com.evolution.settings.preference.SystemSettingListPreference
         android:key="screenshot_type"
         android:title="@string/screenshot_type_title"
         android:entries="@array/screenshot_type_entries"
         android:entryValues="@array/screenshot_type_values"
         android:defaultValue="0" />
 
-    <!-- Charging animation -->
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="charging_animation"
         android:title="@string/charging_animation_title"
         android:summary="@string/charging_animation_summary"
-        android:defaultValue="true" />
-
-    <!-- Screen Off animation -->
-    <com.evolution.settings.preference.SystemSettingListPreference
-        android:key="screen_off_animation"
-        android:title="@string/screen_off_animation_title"
-        android:entries="@array/screen_off_animation_entries"
-        android:entryValues="@array/screen_off_animation_values"
-        android:summary="%s"
-        android:defaultValue="0" />
+        android:defaultValue="true" />-->
 
     <PreferenceCategory
         android:key="spoof_category"
@@ -83,7 +74,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!-- PreferenceCategory
         android:key="pulse_category"
         android:title="@string/pulse_category">
 
@@ -93,7 +84,7 @@
             android:summary="@string/pulse_settings_summary"
             android:fragment="com.evolution.settings.fragments.Pulse" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="uibench"
@@ -113,32 +104,37 @@
     <PreferenceCategory
         android:title="@string/dev_options_title" />
 
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="window_ignore_secure"
+            android:title="@string/ignore_window_secure_title"
+            android:summary="@string/ignore_window_secure_summary"
+            android:defaultValue="false" />
+
         <com.evolution.settings.preference.GlobalSettingSwitchPreference
             android:key="show_temperature_warning"
             android:title="@string/show_temperature_warning_title"
             android:summary="@string/show_temperature_warning_summary"
             android:defaultValue="true" />
 
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
+        <!-- com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="show_cpu_overlay"
             android:title="@string/show_cpu_info"
             android:summary="@string/show_cpu_info_summary" 
-            android:defaultValue="false" />
+            android:defaultValue="false" />-->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="toast_icon"
             android:title="@string/toast_icon_title"
             android:summary="@string/toast_icon_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
-        <!-- Sensor Block -->
         <Preference
             android:key="sensor_block_settings"
             android:title="@string/sensor_block_title"
             android:summary="@string/sensor_block_summary"
             android:fragment="com.evolution.settings.fragments.SensorBlockSettings"/>
 
-        <Preference
+        <!-- Preference
             android:key="wakelock_blocker"
             android:title="@string/wakelock_blocker_title"
             android:summary="@string/wakelock_blocker_summary"
@@ -148,7 +144,7 @@
             android:key="alarm_blocker"
             android:title="@string/alarm_blocker_title"
             android:summary="@string/alarm_blocker_summary"
-            android:fragment="com.evolution.settings.fragments.AlarmBlocker" />
+            android:fragment="com.evolution.settings.fragments.AlarmBlocker" />-->
 
         <Preference
             android:key="default_usb_configuration"
