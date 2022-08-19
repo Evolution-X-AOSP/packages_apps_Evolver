@@ -5,12 +5,16 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:key="status_bar_logo"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/status_bar_logo_title">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="status_bar_logo_intro"
+        android:title="@string/status_bar_logo_summary" />
 
     <com.evolution.settings.preference.SystemSettingMainSwitchPreference
         android:key="status_bar_logo"
-        android:title="@string/status_bar_logo_master_switch_title"
+        android:title="@string/status_bar_logo_primary_switch_title"
         android:defaultValue="false" />
 
     <com.evolution.settings.preference.SystemSettingListPreference

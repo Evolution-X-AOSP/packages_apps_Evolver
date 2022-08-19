@@ -16,42 +16,42 @@
  */
 package com.evolution.settings.fragments;
 
-import android.app.Activity;
-import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
-import android.hardware.fingerprint.FingerprintManager;
-import android.net.Uri;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.view.View;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragment;
-import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+import java.util.ArrayList;
+import java.util.List;
+
+@SearchIndexable
 public class Udfps extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String UDFPS_CUSTOMIZATION = "udfps_customization";
-
-    private static final int REQUEST_PICK_IMAGE = 0;
 
     private PreferenceCategory mUdfpsCustomization;
 
@@ -79,12 +79,9 @@ public class Udfps extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVOLVER;
+        return MetricsEvent.EVOLVER;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_udfps);
 }
