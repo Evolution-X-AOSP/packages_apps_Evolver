@@ -21,11 +21,11 @@
         android:summary="@string/status_bar_brightness_control_summary"
         android:defaultValue="false" />
 
-    <!-- ListPreference
+    <ListPreference
         android:key="torch_power_button_gesture"
         android:title="@string/torch_power_button_gesture_title"
         android:entries="@array/torch_power_button_gesture_entries"
-        android:entryValues="@array/torch_power_button_gesture_values" />-->
+        android:entryValues="@array/torch_power_button_gesture_values" />
 
     <PreferenceCategory
         android:key="lockscreen_ui_gestures_category"
@@ -41,12 +41,6 @@
             android:key="double_tap_sleep_gesture"
             android:title="@string/double_tap_to_sleep_title"
             android:summary="@string/double_tap_to_sleep_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="doze_pulse_on_double_tap"
-            android:title="@string/double_tap_on_doze_to_wake_title"
-            android:summary="@string/double_tap_on_doze_to_wake_summary"
             android:defaultValue="true" />
 
     </PreferenceCategory>
