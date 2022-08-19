@@ -28,6 +28,16 @@
             settings:searchable="false"
             android:summary="@string/evolution_about_info_summary" />
 
+        <!-- Evolution X Changelog -->
+        <Preference
+            android:key="evolution_changelog"
+            android:title="@string/changelog_evolution_title"
+            android:summary="@string/changelog_evolution_summary">
+            <intent android:action="android.intent.action.MAIN"
+                 android:targetPackage="com.android.settings"
+                 android:targetClass="com.evolution.settings.about.ChangelogActivity"/>
+        </Preference>
+
         <Preference
             android:title="@string/evolution_website_title"
             android:icon="@drawable/ic_settings_evolution_about"
@@ -74,7 +84,7 @@
             android:summary="@string/evolution_about_stallix_summary">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://twitter.com/Stallix_" />
+                android:data="https://linktr.ee/Stallix" />
         </Preference>
 
         <Preference
