@@ -54,13 +54,13 @@ public class Animations extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.EVOLVER;
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
+    public int getMetricsCategory() {
+        return MetricsEvent.EVOLVER;
     }
 
     /**
