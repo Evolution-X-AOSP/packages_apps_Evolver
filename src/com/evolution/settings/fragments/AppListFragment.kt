@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2022 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package com.evolution.settings.fragment
+package com.evolution.settings.fragments
 
 import android.annotation.IntDef
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.content.pm.PackageManager.PackageInfoFlags
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -222,7 +223,9 @@ abstract class AppListFragment : Fragment(R.layout.app_list_layout),
     private suspend fun refreshListInternal() {
         val list = withContext(Dispatchers.Default) {
             val sortedList = mutex.withLock {
-                pm.getInstalledPackages(PackageManager.MATCH_ALL).filter {
+                pm.getInstalledPackages(
+                    PackageInfoFlags.of(PackageManager.MATCH_ALL.toLong())
+                ).filter {
                     val categoryMatches = when (displayCategory) {
                         CATEGORY_SYSTEM_ONLY -> it.applicationInfo.isSystemApp()
                         CATEGORY_USER_ONLY -> !it.applicationInfo.isSystemApp()
