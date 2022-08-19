@@ -8,6 +8,12 @@
     android:key="status_bar_logo"
     android:title="@string/status_bar_logo_title">
 
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="status_bar_logo_intro"
+        android:title="@string/status_bar_logo_summary"
+        android:selectable="false"
+        android:persistent="false" />
+
     <com.evolution.settings.preference.SystemSettingMainSwitchPreference
         android:key="status_bar_logo"
         android:title="@string/status_bar_logo_master_switch_title"
