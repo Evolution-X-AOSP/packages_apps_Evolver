@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class VolumeStepsFragment extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -202,9 +202,6 @@ public class VolumeStepsFragment extends SettingsPreferenceFragment implements
         return MetricsEvent.EVOLVER;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_volume_steps);
 }
