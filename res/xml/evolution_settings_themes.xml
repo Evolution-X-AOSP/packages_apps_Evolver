@@ -27,7 +27,7 @@
         android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
         settings:controller="com.android.settings.display.DarkUIPreferenceController" />
 
-    <!-- PreferenceCategory
+    <PreferenceCategory
         android:key="theme_customization_category"
         android:title="@string/theme_customization_category">
 
@@ -61,12 +61,12 @@
             android:summary="@string/theme_customization_icon_shape_summary"
             android:fragment="com.evolution.settings.fragments.IconShapes" />
 
-        <Preference
+        <!-- Preference
             android:key="android.theme.customization.navbar"
             android:title="@string/theme_customization_navbar_title"
             android:summary="@string/theme_customization_navbar_summary"
-            android:fragment="com.evolution.settings.fragments.NavbarStyles" />
+            android:fragment="com.evolution.settings.fragments.NavbarStyles" />-->
 
-    </PreferenceCategory>-->
+    </PreferenceCategory>
 
 </PreferenceScreen>
