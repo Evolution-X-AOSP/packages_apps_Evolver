@@ -8,4 +8,37 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/animation_title">
 
+    <!-- Charging animation -->
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="charging_animation"
+        android:title="@string/charging_animation_title"
+        android:summary="@string/charging_animation_summary"
+        android:defaultValue="true" />
+
+    <!-- Screen Off animation -->
+    <com.evolution.settings.preference.SystemSettingListPreference
+        android:key="screen_off_animation"
+        android:title="@string/screen_off_animation_title"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values"
+        android:summary="%s"
+        android:defaultValue="0" />
+
+    <!-- Squiggle animation -->
+    <com.evolution.settings.preference.SecureSettingSwitchPreference
+        android:key="show_media_squiggle_animation"
+        android:title="@string/show_squiggle_animation_title"
+        android:summary="@string/show_squiggle_animation_summary"
+        android:defaultValue="true" />
+
+    <ListPreference
+        android:key="power_menu_animations"
+        android:title="@string/power_menu_animation_title"
+        android:dialogTitle="@string/power_menu_animation_dialog_title"
+        android:entries="@array/power_menu_animations_entries"
+        android:entryValues="@array/power_menu_animations_values"
+        android:summary="%s"
+        android:persistent="false"
+        android:defaultValue="0" />
+
 </PreferenceScreen>

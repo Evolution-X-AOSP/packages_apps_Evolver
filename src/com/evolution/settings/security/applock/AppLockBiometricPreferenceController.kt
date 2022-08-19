@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,37 +19,60 @@ package com.evolution.settings.security.applock
 import android.app.AppLockManager
 import android.content.Context
 import android.hardware.biometrics.BiometricManager
-import android.hardware.biometrics.BiometricManager.Authenticators
+import android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_STRONG
 
 import androidx.preference.Preference
-import androidx.preference.SwitchPreference
+import androidx.preference.PreferenceScreen
 
-import com.android.settings.core.BasePreferenceController
+import com.evolution.settings.EvolutionTogglePreferenceController
+
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+private const val KEY = "app_lock_biometrics_allowed"
 
 class AppLockBiometricPreferenceController(
     context: Context,
-    key: String,
-) : BasePreferenceController(context, key),
-        Preference.OnPreferenceChangeListener {
+    private val coroutineScope: CoroutineScope
+) : EvolutionTogglePreferenceController(context, KEY) {
 
     private val appLockManager = context.getSystemService(AppLockManager::class.java)
     private val biometricManager = context.getSystemService(BiometricManager::class.java)
 
+    private var preference: Preference? = null
+    private var isBiometricsAllowed = false
+
+    init {
+        coroutineScope.launch {
+            isBiometricsAllowed = withContext(Dispatchers.Default) {
+                appLockManager.isBiometricsAllowed()
+            }
+            preference?.let {
+                updateState(it)
+            }
+        }
+    }
+
     override fun getAvailabilityStatus(): Int {
-        val biometricsAllowed = biometricManager.canAuthenticate(
-            Authenticators.BIOMETRIC_STRONG) == BiometricManager.BIOMETRIC_SUCCESS
-        return if (biometricsAllowed)
-            AVAILABLE
-        else
-            UNSUPPORTED_ON_DEVICE
+        val result = biometricManager.canAuthenticate(BIOMETRIC_STRONG)
+        return if (result == BiometricManager.BIOMETRIC_SUCCESS) AVAILABLE else CONDITIONALLY_UNAVAILABLE
     }
 
-    override fun updateState(preference: Preference) {
-        (preference as SwitchPreference).setChecked(appLockManager.isBiometricsAllowed())
-    }
+    override fun isChecked() = isBiometricsAllowed
 
-    override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
-        appLockManager.setBiometricsAllowed(newValue as Boolean)
+    override fun setChecked(checked: Boolean): Boolean {
+        if (isBiometricsAllowed == checked) return false
+        isBiometricsAllowed = checked
+        coroutineScope.launch(Dispatchers.Default) {
+            appLockManager.setBiometricsAllowed(isBiometricsAllowed)
+        }
         return true
+    }
+
+    override fun displayPreference(screen: PreferenceScreen) {
+        super.displayPreference(screen)
+        preference = screen.findPreference(preferenceKey)
     }
 }
