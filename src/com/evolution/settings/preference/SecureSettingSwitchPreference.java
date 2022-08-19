@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2014 The CyanogenMod project
- * Copyright (C) 2017 AICP
- * Copyright (C) 2019-2020 The Evolution X Project
+ *               2017 AICP
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
