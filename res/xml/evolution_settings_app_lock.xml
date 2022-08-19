@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2021 AOSP-Krypton Project
+<!-- Copyright (C) 2022 FlamingoOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -33,20 +33,10 @@
         android:persistent="false"
         settings:controller="com.evolution.settings.security.applock.AppLockTimeoutPreferenceController" />
 
-    <Preference
-        android:key="app_lock_notifications"
-        android:title="@string/app_lock_notifications_title"
-        android:fragment="com.evolution.settings.security.applock.AppLockNotificationListFragment"
-        settings:controller="com.evolution.settings.security.applock.AppLockNotificationPreferenceController" />
-
     <SwitchPreference
         android:key="app_lock_biometrics_allowed"
         android:title="@string/app_lock_biometrics_allowed_title"
         android:persistent="false"
         settings:controller="com.evolution.settings.security.applock.AppLockBiometricPreferenceController" />
 
-    <com.android.settingslib.widget.FooterPreference
-        android:title="@string/app_lock_footer_text"
-        android:selectable="false"
-        settings:searchable="false" />
 </PreferenceScreen>
