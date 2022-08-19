@@ -34,46 +34,63 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.preference.SystemSettingSwitchPreference;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
+import com.evolution.settings.preference.SystemSettingMainSwitchPreference;
+
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class Buttons extends SettingsPreferenceFragment implements
+public class NetworkTrafficSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_NAVBAR_INVERSE = "navigation_bar_inverse";
-    private static final String KEY_NAVIGATION_COMPACT_LAYOUT = "navigation_bar_compact_layout";
-
-    private SystemSettingSwitchPreference mNavbarInverse;
-    private SystemSettingSwitchPreference mNavigationCompactLayout;
+    private SystemSettingSwitchPreference mThreshold;
+    private SystemSettingMainSwitchPreference mNetMonitor;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_buttons);
+        addPreferencesFromResource(R.xml.evolution_settings_network_traffic);
 
-        final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        final boolean isThreeButtonNavbarEnabled = EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton");
-        mNavbarInverse = (SystemSettingSwitchPreference) findPreference(KEY_NAVBAR_INVERSE);
-        mNavbarInverse.setEnabled(isThreeButtonNavbarEnabled);
-        mNavigationCompactLayout = (SystemSettingSwitchPreference) findPreference(KEY_NAVIGATION_COMPACT_LAYOUT);
-        mNavigationCompactLayout.setEnabled(isThreeButtonNavbarEnabled);
+        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
+        mNetMonitor = (SystemSettingMainSwitchPreference) findPreference("network_traffic_state");
+        mNetMonitor.setChecked(isNetMonitorEnabled);
+        mNetMonitor.setOnPreferenceChangeListener(this);
+
+        boolean isThresholdEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 0, UserHandle.USER_CURRENT) == 1;
+        mThreshold = (SystemSettingSwitchPreference) findPreference("network_traffic_autohide_threshold");
+        mThreshold.setChecked(isThresholdEnabled);
+        mThreshold.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mNetMonitor) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mNetMonitor.setChecked(value);
+            mThreshold.setChecked(value);
+            return true;
+        } else if (preference == mThreshold) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            return true;
+        }
         return false;
     }
 
@@ -86,5 +103,5 @@ public class Buttons extends SettingsPreferenceFragment implements
      * For Search.
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_buttons);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_network_traffic);
 }
