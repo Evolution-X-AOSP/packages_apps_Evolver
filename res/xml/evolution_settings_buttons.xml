@@ -10,12 +10,12 @@
 
     <SwitchPreference
         android:key="navbar_visibility"
-        android:title="@string/navigation_bar_title"
-        android:summary="@string/navigation_bar_summary" />
+        android:title="@string/navbar_visibility_title"
+        android:summary="@string/navbar_visibility_summary" />
 
     <PreferenceCategory
-        android:key="navigation_keys"
-        android:title="@string/navigation_bar_category"
+        android:key="navbar_layout_category"
+        android:title="@string/navbar_layout_category_title"
         android:dependency="navbar_visibility">
 
         <Preference
@@ -25,23 +25,24 @@
             settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController"
             settings:keywords="@string/keywords_system_navigation" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
+        <!-- com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="navigation_bar_menu_arrow_keys"
-            android:title="@string/navigation_bar_arrow_keys_title"
-            android:summary="@string/navigation_bar_arrow_keys_summary"
-            android:defaultValue="false" />
+            android:title="@string/navbar_arrow_keys_title"
+            android:summary="@string/navbar_arrow_keys_summary"
+            android:defaultValue="false" />-->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="navigation_bar_compact_layout"
-            android:title="@string/navigation_bar_compact_layout_title"
-            android:summary="@string/navigation_bar_compact_layout_summary"
+            android:title="@string/navbar_compact_layout_title"
+            android:summary="@string/navbar_compact_layout_summary"
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="navigation_bar_inverse"
-            android:title="@string/navigation_bar_inverse_title"
+            android:title="@string/navbar_invert_layout_title"
+            android:summary="@string/navbar_invert_layout_summary"
             android:defaultValue="0"
-            settings:controller="com.evolution.settings.fragments.NavBarInversePreferenceController" />
+            settings:controller="com.evolution.settings.gestures.NavBarInversePreferenceController" />
 
     </PreferenceCategory>
 
@@ -49,7 +50,6 @@
         android:key="volume_category"
         android:title="@string/volume_category">
 
-        <!-- Volume panel to left -->
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="volume_panel_on_left"
             android:title="@string/volume_panel_on_left_title"
@@ -101,7 +101,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!-- PreferenceCategory
         android:key="button_backlight_options_category"
         android:title="@string/button_backlight_options_category">
 
@@ -141,7 +141,7 @@
             android:defaultValue="false"
             android:dependency="button_backlight_enable" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="back_key"
@@ -260,6 +260,31 @@
             android:summary="@string/hardware_keys_double_tap_summary"
             android:title="@string/hardware_keys_double_tap_title">
         </com.evolution.settings.preference.ActionPreference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="alert_slider_cat"
+        android:title="@string/alert_slider_cat_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="alert_slider_notifications"
+            android:title="@string/alert_slider_notifications_title"
+            android:summary="@string/alert_slider_notifications_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="alert_slider_pulse"
+            android:title="@string/alert_slider_pulse_title"
+            android:summary="@string/alert_slider_pulse_summary"
+            android:defaultValue="true"
+            android:dependency="alert_slider_notifications" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+           android:key="block_alert"
+           android:title="@string/block_alert_title"
+           android:summary="@string/block_alert_summary"
+           android:defaultValue="true" />
 
     </PreferenceCategory>
 
