@@ -10,7 +10,8 @@
 
     <Preference
         android:key="gesture_power_menu_summary"
-        android:title="@string/aosp_setting_title"
+        android:title="@string/aosp_options_title"
+        android:summary="@string/aosp_options_summary"
         android:fragment="com.android.settings.gestures.PowerMenuSettings"
         settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
 
@@ -43,10 +44,10 @@
             android:title="@string/powermenu_screenshot"
             android:defaultValue="false" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
+        <!--com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="powermenu_onthego"
             android:title="@string/powermenu_onthego"
-            android:defaultValue="false" />
+            android:defaultValue="false" />-->
 
         <SwitchPreference
             android:key="powermenu_torch"
@@ -68,10 +69,10 @@
             android:title="@string/powermenu_emergency"
             android:defaultValue="false" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
+        <!-- com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="powermenu_devicecontrols"
             android:title="@string/powermenu_device_controls"
-            android:defaultValue="false" />
+            android:defaultValue="false" />-->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="powermenu_users"

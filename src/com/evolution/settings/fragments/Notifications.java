@@ -15,66 +15,58 @@
  */
 package com.evolution.settings.fragments;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Color;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
+import android.view.View;
 
 import androidx.preference.ListPreference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.PreferenceViewHolder;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
-
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.CustomSeekBarPreference;
 import com.evolution.settings.preference.SystemSettingListPreference;
-import com.evolution.settings.preference.SystemSettingMasterSwitchPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class Notifications extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String CHARGING_LIGHTS_PREF = "charging_light";
     private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String LED_CATEGORY = "led";
-    private static final String KEY_EDGE_LIGHTING = "pulse_ambient_light";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_light";
     private static final String PREF_FLASH_ON_CALL = "flashlight_on_call";
     private static final String PREF_FLASH_ON_CALL_DND = "flashlight_on_call_ignore_dnd";
     private static final String PREF_FLASH_ON_CALL_RATE = "flashlight_on_call_rate";
 
     private CustomSeekBarPreference mFlashOnCallRate;
-    private Preference mAlertSlider;
     private Preference mChargingLeds;
     private Preference mNotLights;
     private PreferenceCategory mLedCategory;
     private SystemSettingListPreference mFlashOnCall;
-    private SystemSettingMasterSwitchPreference mEdgeLighting;
     private SystemSettingSwitchPreference mFlashOnCallIgnoreDND;
 
     @Override
@@ -136,19 +128,6 @@ public class Notifications extends SettingsPreferenceFragment implements
             mLedCategory = findPreference(LED_CATEGORY);
             mLedCategory.setVisible(false);
         }
-
-        mEdgeLighting = (SystemSettingMasterSwitchPreference)
-                findPreference(KEY_EDGE_LIGHTING);
-        boolean enabled = Settings.System.getIntForUser(resolver,
-                KEY_EDGE_LIGHTING, 0, UserHandle.USER_CURRENT) == 1;
-        mEdgeLighting.setChecked(enabled);
-        mEdgeLighting.setOnPreferenceChangeListener(this);
-
-        mAlertSlider = (Preference) findPreference(ALERT_SLIDER_PREF);
-        boolean mAlertSliderAvailable = res.getBoolean(
-                com.android.internal.R.bool.config_hasAlertSlider);
-        if (!mAlertSliderAvailable)
-            prefSet.removePreference(mAlertSlider);
     }
 
     @Override
@@ -167,11 +146,6 @@ public class Notifications extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                     Settings.System.FLASHLIGHT_ON_CALL_RATE, value);
             return true;
-        } else if (preference == mEdgeLighting) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver, KEY_EDGE_LIGHTING,
-                    value ? 1 : 0, UserHandle.USER_CURRENT);
-            return true;
         }
         return false;
     }
@@ -181,9 +155,6 @@ public class Notifications extends SettingsPreferenceFragment implements
         return MetricsEvent.EVOLVER;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_notifications);
 }

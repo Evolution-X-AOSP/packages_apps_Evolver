@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,9 +41,10 @@ import com.android.settings.core.BasePreferenceController
 
 class AppLockSettingsPreferenceController(
     context: Context,
+    preferenceKey: String,
     private val host: SecuritySettings?,
     lifecycle: Lifecycle?,
-) : BasePreferenceController(context, KEY),
+) : BasePreferenceController(context, preferenceKey),
         LifecycleEventObserver {
 
     private val lockPatternUtils = LockPatternUtils(context)
@@ -90,24 +91,26 @@ class AppLockSettingsPreferenceController(
     }
 
     override fun updateState(preference: Preference) {
-        if (getAvailabilityStatus() == AVAILABLE) {
-            preference.setEnabled(true)
-            preference.summary = getSummaryForListSize(appLockManager.getPackages().size)
-        } else {
-            preference.setEnabled(false)
-            preference.summary = mContext.getString(R.string.disabled_because_no_backup_security)
+        preference.apply {
+            if (getAvailabilityStatus() == AVAILABLE) {
+                setEnabled(true)
+                summary = getSummaryForListSize(appLockManager.packageData.size)
+            } else {
+                setEnabled(false)
+                summary = mContext.getString(R.string.disabled_because_no_backup_security)
+            }
         }
     }
 
     private fun getSummaryForListSize(size: Int): CharSequence? =
-        when {
-            size == 0 -> null
-            size == 1 -> mContext.getString(R.string.app_lock_summary_singular)
-            else -> mContext.getString(R.string.app_lock_summary_plural, size)
+        if (size == 0) {
+            null
+        } else {
+            mContext.resources.getQuantityString(R.plurals.app_lock_summary, size, size)
         }
 
     override fun handlePreferenceTreeClick(preference: Preference): Boolean {
-        if (preference.key == KEY && securityPromptLauncher != null) {
+        if (preference.key == preferenceKey && securityPromptLauncher != null) {
             securityPromptLauncher.launch(
                 ConfirmDeviceCredentialActivity.createIntent(
                     mContext.getString(R.string.app_lock_authentication_dialog_title),
@@ -117,9 +120,5 @@ class AppLockSettingsPreferenceController(
             return true
         }
         return super.handlePreferenceTreeClick(preference)
-    }
-
-    companion object {
-        private const val KEY = "app_lock"
     }
 }
