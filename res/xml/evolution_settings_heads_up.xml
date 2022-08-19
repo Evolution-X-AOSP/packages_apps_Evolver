@@ -17,27 +17,27 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/heads_up_notifications">
+    android:title="@string/notification_heads_up_title">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="heads_up_notifications_intro"
+        android:title="@string/notification_heads_up_summary"
+        android:selectable="false"
+        android:persistent="false" />
 
     <com.evolution.settings.preference.GlobalSettingMainSwitchPreference
         android:key="heads_up_notifications_enabled"
-        android:title="@string/heads_up_notifications_master_switch_title"
+        android:title="@string/notification_heads_up_primary_switch_title"
         android:defaultValue="true" />
 
-    <ListPreference
-        android:key="heads_up_time_out"
-        android:title="@string/heads_up_time_out_title"
-        android:entries="@array/heads_up_time_out_entries"
-        android:entryValues="@array/heads_up_time_out_values"
-        android:persistent="false"
-        android:dependency="heads_up_notifications_enabled" />
-
-    <ListPreference
-        android:key="heads_up_snooze_time"
-        android:title="@string/heads_up_snooze_title"
-        android:entries="@array/heads_up_snooze_entries"
-        android:entryValues="@array/heads_up_snooze_values"
-        android:persistent="false"
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="heads_up_timeout"
+        android:title="@string/notification_heads_up_timeout_title"
+        android:summary="@string/notification_heads_up_timeout_summary"
+        settings:units="@string/unit_seconds"
+        android:defaultValue="5"
+        settings:min="1"
+        android:max="10"
         android:dependency="heads_up_notifications_enabled" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
