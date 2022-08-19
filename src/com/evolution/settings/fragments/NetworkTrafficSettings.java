@@ -35,8 +35,6 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.evolution.EvolutionUtils;
-
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -46,32 +44,54 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
+import com.evolution.settings.preference.SystemSettingMainSwitchPreference;
+
 @SearchIndexable
-public class Udfps extends SettingsPreferenceFragment implements
+public class NetworkTrafficSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String UDFPS_CUSTOMIZATION = "udfps_customization";
-
-    private PreferenceCategory mUdfpsCustomization;
+    private SystemSettingSwitchPreference mThreshold;
+    private SystemSettingMainSwitchPreference mNetMonitor;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_udfps);
+        addPreferencesFromResource(R.xml.evolution_settings_network_traffic);
 
-        final PreferenceScreen prefSet = getPreferenceScreen();
-        Resources resources = getResources();
+        final ContentResolver resolver = getActivity().getContentResolver();
 
-        final boolean udfpsResPkgInstalled = EvolutionUtils.isPackageInstalled(getContext(),
-                "com.evolution.udfps.resources");
-	mUdfpsCustomization = (PreferenceCategory) findPreference(UDFPS_CUSTOMIZATION);
-        if (!udfpsResPkgInstalled) {
-            prefSet.removePreference(mUdfpsCustomization);
-        }
+        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
+        mNetMonitor = (SystemSettingMainSwitchPreference) findPreference("network_traffic_state");
+        mNetMonitor.setChecked(isNetMonitorEnabled);
+        mNetMonitor.setOnPreferenceChangeListener(this);
+
+        boolean isThresholdEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 0, UserHandle.USER_CURRENT) == 1;
+        mThreshold = (SystemSettingSwitchPreference) findPreference("network_traffic_autohide_threshold");
+        mThreshold.setChecked(isThresholdEnabled);
+        mThreshold.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mNetMonitor) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mNetMonitor.setChecked(value);
+            mThreshold.setChecked(value);
+            return true;
+        } else if (preference == mThreshold) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            return true;
+        }
         return false;
     }
 
@@ -81,5 +101,5 @@ public class Udfps extends SettingsPreferenceFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_udfps);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_network_traffic);
 }
