@@ -43,61 +43,54 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
+import com.evolution.settings.preference.SystemSettingMainSwitchPreference;
+
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class Miscellaneous extends SettingsPreferenceFragment implements
+public class NetworkTrafficSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
-
-    static final int MODE_DISABLED = 0;
-    static final int MODE_NIGHT = 1;
-    static final int MODE_TIME = 2;
-    static final int MODE_MIXED_SUNSET = 3;
-    static final int MODE_MIXED_SUNRISE = 4;
-
-    Preference mAODPref;
+    private SystemSettingSwitchPreference mThreshold;
+    private SystemSettingMainSwitchPreference mNetMonitor;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_miscellaneous);
+        addPreferencesFromResource(R.xml.evolution_settings_network_traffic);
 
-        mAODPref = findPreference(AOD_SCHEDULE_KEY);
-        updateAlwaysOnSummary();
-    }
+        final ContentResolver resolver = getActivity().getContentResolver();
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        updateAlwaysOnSummary();
-    }
+        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
+        mNetMonitor = (SystemSettingMainSwitchPreference) findPreference("network_traffic_state");
+        mNetMonitor.setChecked(isNetMonitorEnabled);
+        mNetMonitor.setOnPreferenceChangeListener(this);
 
-    private void updateAlwaysOnSummary() {
-        if (mAODPref == null) return;
-        int mode = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
-                Settings.Secure.DOZE_ALWAYS_ON_AUTO_MODE, 0, UserHandle.USER_CURRENT);
-        switch (mode) {
-            default:
-            case MODE_DISABLED:
-                mAODPref.setSummary(R.string.disabled);
-                break;
-            case MODE_NIGHT:
-                mAODPref.setSummary(R.string.night_display_auto_mode_twilight);
-                break;
-            case MODE_TIME:
-                mAODPref.setSummary(R.string.night_display_auto_mode_custom);
-                break;
-            case MODE_MIXED_SUNSET:
-                mAODPref.setSummary(R.string.always_on_display_schedule_mixed_sunset);
-                break;
-            case MODE_MIXED_SUNRISE:
-                mAODPref.setSummary(R.string.always_on_display_schedule_mixed_sunrise);
-                break;
-        }
+        boolean isThresholdEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 0, UserHandle.USER_CURRENT) == 1;
+        mThreshold = (SystemSettingSwitchPreference) findPreference("network_traffic_autohide_threshold");
+        mThreshold.setChecked(isThresholdEnabled);
+        mThreshold.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mNetMonitor) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mNetMonitor.setChecked(value);
+            mThreshold.setChecked(value);
+            return true;
+        } else if (preference == mThreshold) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            return true;
+        }
         return false;
     }
 
@@ -110,5 +103,5 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
      * For Search.
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_miscellaneous);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_network_traffic);
 }
