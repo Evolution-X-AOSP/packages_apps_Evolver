@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -49,6 +50,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.widget.FooterPreference;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.AppListPreference;
 import com.evolution.settings.preference.PackageListAdapter;
@@ -59,6 +61,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@SearchIndexable
 public class SensorBlockSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceClickListener {
 
@@ -76,8 +79,8 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
     private Context mContext;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         // Get launch-able applications
         addPreferencesFromResource(R.xml.evolution_settings_sensor_block);
 
@@ -322,10 +325,6 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
         Settings.System.putString(getContentResolver(),
                 setting, value);
     }
-
-    /**
-     * For Search.
-     */
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_sensor_block);

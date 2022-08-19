@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 
 import androidx.preference.ListPreference;
@@ -36,43 +37,43 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.evolution.settings.preference.colorpicker.SystemSettingColorPickerPreference;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class BatteryLight extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private ColorPickerPreference mLowColor;
-    private ColorPickerPreference mMediumColor;
-    private ColorPickerPreference mFullColor;
-    private ColorPickerPreference mReallyFullColor;
+    private SystemSettingColorPickerPreference mLowColor;
+    private SystemSettingColorPickerPreference mMediumColor;
+    private SystemSettingColorPickerPreference mFullColor;
+    private SystemSettingColorPickerPreference mReallyFullColor;
     private SystemSettingSwitchPreference mLowBatteryBlinking;
 
     private PreferenceCategory mColorCategory;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         addPreferencesFromResource(R.xml.evolution_settings_battery_light);
 
-        PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceScreen prefScreen = getPreferenceScreen();
         mColorCategory = (PreferenceCategory) findPreference("battery_light_cat");
 
-        mLowBatteryBlinking = (SystemSettingSwitchPreference)prefSet.findPreference("battery_light_low_blinking");
+        mLowBatteryBlinking = (SystemSettingSwitchPreference)prefScreen.findPreference("battery_light_low_blinking");
         if (getResources().getBoolean(
                         com.android.internal.R.bool.config_ledCanPulse)) {
             mLowBatteryBlinking.setChecked(Settings.System.getIntForUser(getContentResolver(),
                             Settings.System.BATTERY_LIGHT_LOW_BLINKING, 0, UserHandle.USER_CURRENT) == 1);
             mLowBatteryBlinking.setOnPreferenceChangeListener(this);
         } else {
-            prefSet.removePreference(mLowBatteryBlinking);
+            prefScreen.removePreference(mLowBatteryBlinking);
         }
 
         if (getResources().getBoolean(com.android.internal.R.bool.config_multiColorBatteryLed)) {
             int color = Settings.System.getIntForUser(getContentResolver(),
                     Settings.System.BATTERY_LIGHT_LOW_COLOR, 0xFFFF0000,
                             UserHandle.USER_CURRENT);
-            mLowColor = (ColorPickerPreference) findPreference("battery_light_low_color");
+            mLowColor = (SystemSettingColorPickerPreference) findPreference("battery_light_low_color");
             mLowColor.setAlphaSliderEnabled(false);
             mLowColor.setNewPreviewColor(color);
             mLowColor.setOnPreferenceChangeListener(this);
@@ -80,7 +81,7 @@ public class BatteryLight extends SettingsPreferenceFragment implements
             color = Settings.System.getIntForUser(getContentResolver(),
                     Settings.System.BATTERY_LIGHT_MEDIUM_COLOR, 0xFFFFFF00,
                             UserHandle.USER_CURRENT);
-            mMediumColor = (ColorPickerPreference) findPreference("battery_light_medium_color");
+            mMediumColor = (SystemSettingColorPickerPreference) findPreference("battery_light_medium_color");
             mMediumColor.setAlphaSliderEnabled(false);
             mMediumColor.setNewPreviewColor(color);
             mMediumColor.setOnPreferenceChangeListener(this);
@@ -88,7 +89,7 @@ public class BatteryLight extends SettingsPreferenceFragment implements
             color = Settings.System.getIntForUser(getContentResolver(),
                     Settings.System.BATTERY_LIGHT_FULL_COLOR, 0xFFFFFF00,
                             UserHandle.USER_CURRENT);
-            mFullColor = (ColorPickerPreference) findPreference("battery_light_full_color");
+            mFullColor = (SystemSettingColorPickerPreference) findPreference("battery_light_full_color");
             mFullColor.setAlphaSliderEnabled(false);
             mFullColor.setNewPreviewColor(color);
             mFullColor.setOnPreferenceChangeListener(this);
@@ -96,18 +97,13 @@ public class BatteryLight extends SettingsPreferenceFragment implements
             color = Settings.System.getIntForUser(getContentResolver(),
                     Settings.System.BATTERY_LIGHT_REALLYFULL_COLOR, 0xFF00FF00,
                             UserHandle.USER_CURRENT);
-            mReallyFullColor = (ColorPickerPreference) findPreference("battery_light_reallyfull_color");
+            mReallyFullColor = (SystemSettingColorPickerPreference) findPreference("battery_light_reallyfull_color");
             mReallyFullColor.setAlphaSliderEnabled(false);
             mReallyFullColor.setNewPreviewColor(color);
             mReallyFullColor.setOnPreferenceChangeListener(this);
         } else {
-            prefSet.removePreference(mColorCategory);
+            prefScreen.removePreference(mColorCategory);
         }
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVOLVER;
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -146,9 +142,11 @@ public class BatteryLight extends SettingsPreferenceFragment implements
         return false;
     }
 
-    /**
-     * For Search.
-     */
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.EVOLVER;
+    }
+
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_battery_light);
 }

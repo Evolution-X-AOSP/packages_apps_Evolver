@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2023 Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/network_traffic_title">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="network_traffic_intro"
+        android:title="@string/network_traffic_intro_text" />
+
+    <com.evolution.settings.preference.SystemSettingMainSwitchPreference
+        android:key="network_traffic_state"
+        android:title="@string/network_traffic_primary_switch_title"
+        android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:title="@string/network_options_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="network_traffic_autohide_threshold"
+            android:title="@string/network_traffic_autohide_title"
+            android:summary="@string/network_traffic_autohide_summary"
+            android:dependency="network_traffic_state"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
