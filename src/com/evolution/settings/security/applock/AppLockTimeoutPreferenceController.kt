@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ class AppLockTimeoutPreferenceController(
     context: Context,
     key: String,
 ) : BasePreferenceController(context, key),
-        Preference.OnPreferenceChangeListener {
+    Preference.OnPreferenceChangeListener {
 
     private val appLockManager = context.getSystemService(AppLockManager::class.java)
 
