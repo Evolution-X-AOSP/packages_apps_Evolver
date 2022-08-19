@@ -360,31 +360,6 @@
         <item>1</item>
     </string-array>
 
-    <!-- Network traffic location -->
-    <string-array name="network_traffic_location_entries" translatable="false">
-        <item>@string/network_traffic_disabled</item>
-        <item>@string/network_traffic_statusbar</item>
-        <item>@string/network_traffic_qs_header</item>
-    </string-array>
-
-    <string-array name="network_traffic_location_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="network_traffic_mode_entries" translatable="false">
-        <item>@string/network_traffic_dynamic</item>
-        <item>@string/network_traffic_download</item>
-        <item>@string/network_traffic_upload</item>
-    </string-array>
-
-    <string-array name="network_traffic_mode_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <!-- QS tile styles -->
     <string-array name="qs_selector_entries" translatable="false">
         <item>@string/default_string</item>
@@ -1003,6 +978,27 @@
         <item>8</item>
     </string-array>
 
+    <!-- App lock timeout -->
+    <string-array name="app_lock_timeout_entries">
+        <item>@string/custom_timeout_summary_5secs</item>
+        <item>@string/custom_timeout_summary_10secs</item>
+        <item>@string/custom_timeout_summary_30secs</item>
+        <item>@string/custom_timeout_summary_1min</item>
+        <item>@string/custom_timeout_summary_5mins</item>
+        <item>@string/custom_timeout_summary_10mins</item>
+        <item>@string/custom_timeout_summary_30mins</item>
+    </string-array>
+
+    <string-array name="app_lock_timeout_values" translatable="false">
+        <item>5000</item>
+        <item>10000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1800000</item>
+    </string-array>
+
     <!-- Quick Settings brightness slider -->
     <string-array name="qs_show_brightness_slider_entries" translatable="false">
         <item>@string/qs_show_brightness_slider_never</item>
@@ -1105,15 +1101,6 @@
         <item>@string/status_bar_battery_style_icon_portrait</item> 
         <item>@string/status_bar_battery_style_icon_rlandscape</item> 
         <item>@string/status_bar_battery_style_icon_landscape</item> 
-        <item>@string/status_bar_battery_style_icon_landscape_buddy</item>
-        <item>@string/status_bar_battery_style_icon_landscape_line</item>
-        <item>@string/status_bar_battery_style_icon_landscape_musku</item>
-        <item>@string/status_bar_battery_style_icon_landscape_pill</item>
-        <item>@string/status_bar_battery_style_icon_landscape_signal</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape_style_a</item>
-        <item>@string/status_bar_battery_style_icon_landscape_style_a</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape_style_b</item>
-        <item>@string/status_bar_battery_style_icon_landscape_style_b</item>
         <item>@string/status_bar_battery_style_circle</item>
         <item>@string/status_bar_battery_style_dotted_circle</item>
         <item>@string/status_bar_battery_style_filled_circle</item>
@@ -1125,22 +1112,13 @@
 
     <string-array name="status_bar_battery_style_values" translatable="false">
         <item>0</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
+        <item>6</item>
+        <item>7</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>6</item>
-        <item>7</item>
+        <item>8</item>
+        <item>9</item>
         <item>4</item>
         <item>5</item>
     </string-array>
@@ -1163,15 +1141,6 @@
         <item>@string/status_bar_battery_style_icon_portrait</item>
         <item>@string/status_bar_battery_style_icon_rlandscape</item>
         <item>@string/status_bar_battery_style_icon_landscape</item>
-        <item>@string/status_bar_battery_style_icon_landscape_buddy</item>
-        <item>@string/status_bar_battery_style_icon_landscape_line</item>
-        <item>@string/status_bar_battery_style_icon_landscape_musku</item>
-        <item>@string/status_bar_battery_style_icon_landscape_pill</item>
-        <item>@string/status_bar_battery_style_icon_landscape_signal</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape_style_a</item>
-        <item>@string/status_bar_battery_style_icon_landscape_style_a</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape_style_b</item>
-        <item>@string/status_bar_battery_style_icon_landscape_style_b</item>
         <item>@string/status_bar_battery_style_circle</item>
         <item>@string/status_bar_battery_style_dotted_circle</item>
         <item>@string/status_bar_battery_style_filled_circle</item>
@@ -1184,22 +1153,13 @@
     <string-array name="qs_battery_style_values" translatable="false">
         <item>-1</item>
         <item>0</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
+        <item>6</item>
+        <item>7</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>6</item>
-        <item>7</item>
+        <item>8</item>
+        <item>9</item>
         <item>4</item>
         <item>5</item>
     </string-array>
