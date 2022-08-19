@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,18 +33,23 @@ import androidx.preference.PreferenceScreen
 import com.android.internal.widget.LockPatternUtils
 import com.android.settings.R
 import com.android.settings.core.SubSettingLauncher
+import com.android.settings.dashboard.DashboardFragment
 import com.android.settings.password.ConfirmDeviceCredentialActivity
-import com.android.settings.security.SecuritySettings
 import com.android.settingslib.core.lifecycle.Lifecycle
-import com.android.settingslib.transition.SettingsTransitionHelper.TransitionType
+import com.android.settingslib.transition.SettingsTransitionHelper.TransitionType.TRANSITION_SLIDE
 import com.android.settings.core.BasePreferenceController
+
+import com.android.settings.SettingsActivity
+import com.android.settings.core.SettingsBaseActivity
+import com.android.settingslib.core.instrumentation.MetricsFeatureProvider
 
 class AppLockSettingsPreferenceController(
     context: Context,
-    private val host: SecuritySettings?,
+    preferenceKey: String,
     lifecycle: Lifecycle?,
-) : BasePreferenceController(context, KEY),
-        LifecycleEventObserver {
+    private val host: DashboardFragment?
+) : BasePreferenceController(context, preferenceKey),
+    LifecycleEventObserver {
 
     private val lockPatternUtils = LockPatternUtils(context)
     private val appLockManager = context.getSystemService(AppLockManager::class.java)
@@ -57,15 +62,13 @@ class AppLockSettingsPreferenceController(
             StartActivityForResult()
         ) {
             if (it?.resultCode == Activity.RESULT_OK) {
-                SubSettingLauncher(mContext)
+                val intent = SubSettingLauncher(mContext)
                     .setDestination(AppLockSettingsFragment::class.qualifiedName)
                     .setSourceMetricsCategory(host.metricsCategory)
-                    .setTransitionType(TransitionType.TRANSITION_SLIDE)
-                    .addFlags(
-                        Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS or
-                            Intent.FLAG_ACTIVITY_NEW_TASK
-                    )
-                    .launch()
+                    .setTransitionType(TRANSITION_SLIDE)
+                    .toIntent()
+                intent.setClass(mContext, AppLockSubSettings::class.java)
+                mContext.startActivity(intent)
             }
         }
     }
@@ -90,24 +93,26 @@ class AppLockSettingsPreferenceController(
     }
 
     override fun updateState(preference: Preference) {
-        if (getAvailabilityStatus() == AVAILABLE) {
-            preference.setEnabled(true)
-            preference.summary = getSummaryForListSize(appLockManager.getPackages().size)
-        } else {
-            preference.setEnabled(false)
-            preference.summary = mContext.getString(R.string.disabled_because_no_backup_security)
+        preference.apply {
+            if (getAvailabilityStatus() == AVAILABLE) {
+                setEnabled(true)
+                summary = getSummaryForListSize(appLockManager.packageData.size)
+            } else {
+                setEnabled(false)
+                summary = mContext.getString(R.string.disabled_because_no_backup_security)
+            }
         }
     }
 
     private fun getSummaryForListSize(size: Int): CharSequence? =
-        when {
-            size == 0 -> null
-            size == 1 -> mContext.getString(R.string.app_lock_summary_singular)
-            else -> mContext.getString(R.string.app_lock_summary_plural, size)
+        if (size == 0) {
+            null
+        } else {
+            mContext.resources.getQuantityString(R.plurals.app_lock_summary, size, size)
         }
 
     override fun handlePreferenceTreeClick(preference: Preference): Boolean {
-        if (preference.key == KEY && securityPromptLauncher != null) {
+        if (preference.key == preferenceKey && securityPromptLauncher != null) {
             securityPromptLauncher.launch(
                 ConfirmDeviceCredentialActivity.createIntent(
                     mContext.getString(R.string.app_lock_authentication_dialog_title),
@@ -117,9 +122,5 @@ class AppLockSettingsPreferenceController(
             return true
         }
         return super.handlePreferenceTreeClick(preference)
-    }
-
-    companion object {
-        private const val KEY = "app_lock"
     }
 }
