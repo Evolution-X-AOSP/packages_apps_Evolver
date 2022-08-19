@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2016-2020 crDroid Android Project
  * Copyright (C) 2016-2017 The Dirty Unicorns Project
- * Copyright (C) 2019-2022 The Evolution X Project
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
