@@ -30,4 +30,46 @@
         <item name="android:lineHeight">15sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+
+    <style name="ColorPickerStyle" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="colorPrimary">@*android:color/primary_device_default_settings_light</item>
+        <item name="colorPrimaryDark">@*android:color/primary_device_default_settings</item>
+        <item name="colorAccent">@*android:color/accent_device_default_light</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamilyMedium</item>
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
+
+    <style name="ColorPickerSeekBarStyle" parent="Widget.AppCompat.SeekBar">
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:maxHeight">8dp</item>
+        <item name="android:progressDrawable">@drawable/color_picker_seekbar_background</item>
+        <item name="android:thumb">@drawable/color_picker_seekbar_thumb</item>
+        <item name="android:splitTrack">false</item>
+    </style>
+
+     <style name="ColorPickerRadioButtonStyle">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:buttonTint">?android:attr/colorAccent</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="ColorPickerButtonStyle">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">?android:attr/colorAccent</item>
+    </style>
+
+    <style name="ColorPickerEditTextStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">textCapCharacters|textNoSuggestions</item>
+        <item name="android:importantForAutofill">no</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:singleLine">true</item>
+    </style>
 </resources>
