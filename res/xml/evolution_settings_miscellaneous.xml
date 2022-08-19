@@ -8,6 +8,21 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
+    <Preference
+        android:key="always_on_display_schedule"
+        android:title="@string/always_on_display_schedule_title"
+        android:fragment="com.evolution.settings.fragments.AODSchedule" />
+
+    <!-- Parallel Space -->
+    <Preference
+        android:key="parallel_space"
+        android:title="@string/laboratory_parallel_space_title"
+        android:summary="@string/laboratory_parallel_space_summary">
+        <intent
+            android:targetPackage="ink.kscope.parallelspace"
+            android:targetClass="ink.kscope.parallelspace.MainActivity" />
+    </Preference>
+
     <!-- Game Space -->
     <Preference
         android:key="game_settings"
@@ -17,14 +32,6 @@
             android:targetPackage="io.chaldeaprjkt.gamespace"
             android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
     </Preference>
-
-    <!-- Hidden apps -->
-    <Preference
-        android:key="hidden_apps"
-        android:title="@string/hidden_apps_title"
-        android:summary="@string/hidden_apps_summary"
-        android:persistent="false"
-        android:fragment="com.evolution.settings.fragments.HiddenAppSettingsFragment" />
 
     <!-- Smart Pixels -->
     <Preference
@@ -40,29 +47,6 @@
         android:summary="@string/headset_connect_player_summary"
         android:defaultValue="false" />
 
-    <com.evolution.settings.preference.SystemSettingListPreference
-        android:key="screenshot_type"
-        android:title="@string/screenshot_type_title"
-        android:entries="@array/screenshot_type_entries"
-        android:entryValues="@array/screenshot_type_values"
-        android:defaultValue="0" />
-
-    <!-- Charging animation -->
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="charging_animation"
-        android:title="@string/charging_animation_title"
-        android:summary="@string/charging_animation_summary"
-        android:defaultValue="true" />
-
-    <!-- Screen Off animation -->
-    <com.evolution.settings.preference.SystemSettingListPreference
-        android:key="screen_off_animation"
-        android:title="@string/screen_off_animation_title"
-        android:entries="@array/screen_off_animation_entries"
-        android:entryValues="@array/screen_off_animation_values"
-        android:summary="%s"
-        android:defaultValue="0" />
-
     <PreferenceCategory
         android:key="spoof_category"
         android:title="@string/spoof_title">
@@ -70,15 +54,22 @@
         <!-- Unlimited Photos storage -->
         <com.evolution.settings.preference.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.gphotos"
-            android:title="@string/use_photos_spoof_title"
-            android:summary="@string/use_photos_spoof_summary"
+            android:title="@string/photos_spoof_title"
+            android:summary="@string/photos_spoof_summary"
             android:defaultValue="true" />
 
         <!-- Unlock FPS for specific games -->
         <com.evolution.settings.preference.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.games"
-            android:title="@string/use_games_spoof_title"
-            android:summary="@string/use_games_spoof_summary"
+            android:title="@string/games_spoof_title"
+            android:summary="@string/games_spoof_summary"
+            android:defaultValue="false" />
+
+        <!-- Netflix -->
+        <com.evolution.settings.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.netflix"
+            android:title="@string/netflix_spoof_title"
+            android:summary="@string/netflix_spoof_summary"
             android:defaultValue="false" />
 
     </PreferenceCategory>
@@ -93,6 +84,20 @@
             android:summary="@string/pulse_settings_summary"
             android:fragment="com.evolution.settings.fragments.Pulse" />
 
+    </PreferenceCategory>
+
+    <!-- Volume panel -->
+    <PreferenceCategory
+        android:key="volume_panel"
+        android:title="@string/volume_panel_category" >
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="volume_dialog_timeout"
+            android:title="@string/volume_dialog_timeout_title"
+            android:defaultValue="3"
+            android:max="10"
+            settings:min="1"
+            settings:units="@string/unit_seconds" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -113,11 +118,11 @@
     <PreferenceCategory
         android:title="@string/dev_options_title" />
 
-        <com.evolution.settings.preference.GlobalSettingSwitchPreference
-            android:key="show_temperature_warning"
-            android:title="@string/show_temperature_warning_title"
-            android:summary="@string/show_temperature_warning_summary"
-            android:defaultValue="true" />
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="window_ignore_secure"
+            android:title="@string/ignore_window_secure_title"
+            android:summary="@string/ignore_window_secure_summary"
+            android:defaultValue="false" />
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="show_cpu_overlay"
@@ -129,14 +134,16 @@
             android:key="toast_icon"
             android:title="@string/toast_icon_title"
             android:summary="@string/toast_icon_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <!-- Sensor Block -->
-        <Preference
-            android:key="sensor_block_settings"
+        <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
+            android:key="sensor_block"
             android:title="@string/sensor_block_title"
             android:summary="@string/sensor_block_summary"
-            android:fragment="com.evolution.settings.fragments.SensorBlockSettings"/>
+            android:defaultValue="false"
+            android:fragment="com.evolution.settings.fragments.SensorBlockSettings"
+            settings:observe="true" />
 
         <Preference
             android:key="wakelock_blocker"

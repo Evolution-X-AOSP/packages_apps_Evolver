@@ -19,10 +19,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/smart_pixels_title" >
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="smart_pixels_intro"
+        android:title="@string/smart_pixels_intro_text" />
+
+    <com.evolution.settings.preference.SystemSettingMainSwitchPreference
         android:key="smart_pixels_enable"
-        android:title="@string/smart_pixels_enable_title"
-        android:summary="@string/smart_pixels_enable_summary"
+        android:title="@string/smart_pixels_primary_switch_title"
         android:defaultValue="false" />
 
     <com.evolution.settings.preference.SystemSettingListPreference
