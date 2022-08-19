@@ -105,11 +105,6 @@ public class BatteryLight extends SettingsPreferenceFragment implements
         }
     }
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVOLVER;
-    }
-
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference.equals(mLowColor)) {
             int color = ((Integer) newValue).intValue();
@@ -144,6 +139,11 @@ public class BatteryLight extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.EVOLVER;
     }
 
     /**
