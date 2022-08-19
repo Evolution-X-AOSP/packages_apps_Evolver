@@ -34,8 +34,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;;
-import com.android.internal.util.evolution.EvolutionUtils;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -45,39 +44,52 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
+import com.evolution.settings.preference.SystemSettingMainSwitchPreference;
+
 @SearchIndexable
-public class PowerMenu extends SettingsPreferenceFragment implements
+public class NetworkTrafficSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
-
-    private SwitchPreference mPowermenuTorch;
+    private SystemSettingSwitchPreference mThreshold;
+    private SystemSettingMainSwitchPreference mNetMonitor;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_power_menu);
+        addPreferencesFromResource(R.xml.evolution_settings_network_traffic);
 
         final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
-        mPowermenuTorch.setOnPreferenceChangeListener(this);
-        if (!EvolutionUtils.deviceHasFlashlight(getActivity())) {
-            prefScreen.removePreference(mPowermenuTorch);
-        } else {
-        mPowermenuTorch.setChecked((Settings.System.getInt(resolver,
-                Settings.System.POWERMENU_TORCH, 0) == 1));
-        }
+        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
+        mNetMonitor = (SystemSettingMainSwitchPreference) findPreference("network_traffic_state");
+        mNetMonitor.setChecked(isNetMonitorEnabled);
+        mNetMonitor.setOnPreferenceChangeListener(this);
+
+        boolean isThresholdEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 0, UserHandle.USER_CURRENT) == 1;
+        mThreshold = (SystemSettingSwitchPreference) findPreference("network_traffic_autohide_threshold");
+        mThreshold.setChecked(isThresholdEnabled);
+        mThreshold.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mPowermenuTorch) {
+        if (preference == mNetMonitor) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.POWERMENU_TORCH, value ? 1 : 0);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mNetMonitor.setChecked(value);
+            mThreshold.setChecked(value);
+            return true;
+        } else if (preference == mThreshold) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
             return true;
         }
         return false;
@@ -89,5 +101,5 @@ public class PowerMenu extends SettingsPreferenceFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_power_menu);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_network_traffic);
 }
