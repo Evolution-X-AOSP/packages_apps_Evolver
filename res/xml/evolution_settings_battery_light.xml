@@ -42,29 +42,25 @@
     <PreferenceCategory
         android:key="battery_light_cat"
         android:title="@string/battery_light_cat">
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.evolution.settings.preference.colorpicker.SystemSettingColorPickerPreference
             android:key="battery_light_low_color"
             android:title="@string/battery_light_low_color"
-            ledPreview="true"
-            android:defaultValue="0xFFFF0000" />
+            android:defaultValue="0xffff0000" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.evolution.settings.preference.colorpicker.SystemSettingColorPickerPreference
             android:key="battery_light_medium_color"
             android:title="@string/battery_light_medium_color"
-            ledPreview="true"
-            android:defaultValue="0xFFFFFF00" />
+            android:defaultValue="0xffffff00" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.evolution.settings.preference.colorpicker.SystemSettingColorPickerPreference
             android:key="battery_light_full_color"
             android:title="@string/battery_light_full_color"
-            ledPreview="true"
-            android:defaultValue="0xFFFFFF00" />
+            android:defaultValue="0xffffff00" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.evolution.settings.preference.colorpicker.SystemSettingColorPickerPreference
             android:key="battery_light_reallyfull_color"
             android:title="@string/battery_light_reallyfull_color"
-            ledPreview="true"
-            android:defaultValue="0xFF00FF00" />
+            android:defaultValue="0xff00ff00" />
     </PreferenceCategory>
 
 </PreferenceScreen>

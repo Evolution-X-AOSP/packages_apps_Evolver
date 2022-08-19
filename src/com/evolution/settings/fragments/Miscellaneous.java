@@ -15,19 +15,17 @@
  */
 package com.evolution.settings.fragments;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.content.Context;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.widget.Toast;
+import android.view.View;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -39,6 +37,7 @@ import androidx.preference.SwitchPreference;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -47,7 +46,7 @@ import com.evolution.settings.fragments.SmartPixels;
 import java.util.ArrayList;
 import java.util.List;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -61,13 +60,13 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.evolution_settings_miscellaneous);
 
         final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefSet = getPreferenceScreen();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mSmartPixels = (Preference) findPreference(SMART_PIXELS);
         boolean mSmartPixelsSupported = getResources().getBoolean(
                 com.android.internal.R.bool.config_supportSmartPixels);
         if (!mSmartPixelsSupported)
-            prefSet.removePreference(mSmartPixels);
+            prefScreen.removePreference(mSmartPixels);
     }
 
     @Override
@@ -80,9 +79,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         return MetricsEvent.EVOLVER;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_miscellaneous) {
                 @Override

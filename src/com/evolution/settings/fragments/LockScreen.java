@@ -15,40 +15,40 @@
  */
 package com.evolution.settings.fragments;
 
-import android.app.Activity;
-import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.hardware.fingerprint.FingerprintManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.ParcelFileDescriptor;
+import android.os.Handler;
+import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.view.View;
 
 import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.udfps.UdfpsUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
-
-import com.evolution.settings.preference.SystemSettingListPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -74,7 +74,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.evolution_settings_lockscreen);
 
         final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefSet = getPreferenceScreen();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
         final PackageManager mPm = getActivity().getPackageManager();
 
         mFingerprintCategory = (PreferenceCategory) findPreference(FINGERPRINT_CATEGORY);
@@ -82,13 +82,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
         if (mPm.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT) &&
                  mFingerprintManager != null) {
             if (!mFingerprintManager.isHardwareDetected()) {
-                prefSet.removePreference(mFingerprintCategory);
+                prefScreen.removePreference(mFingerprintCategory);
             }
         }
 
         mUdfpsCategory = findPreference(UDFPS_CATEGORY);
         if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
-            prefSet.removePreference(mUdfpsCategory);
+            prefScreen.removePreference(mUdfpsCategory);
         }
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
@@ -136,9 +136,6 @@ public class LockScreen extends SettingsPreferenceFragment implements
         return MetricsEvent.EVOLVER;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_lockscreen);
 }
