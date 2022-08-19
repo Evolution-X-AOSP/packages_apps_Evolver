@@ -23,6 +23,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.provider.SearchIndexableResource;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
@@ -31,16 +32,16 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.evolution.settings.preference.colorpicker.ColorPickerPreference;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class Pulse extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -218,12 +219,9 @@ public class Pulse extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVOLVER;
+        return MetricsEvent.EVOLVER;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_pulse);
 }
