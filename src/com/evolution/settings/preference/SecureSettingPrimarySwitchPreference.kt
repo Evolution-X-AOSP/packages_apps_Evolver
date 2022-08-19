@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,29 +14,19 @@
  * limitations under the License.
  */
 
-package com.evolution.settings.fragments
+package com.evolution.settings.preference
 
 import android.content.Context
-import android.os.UserHandle
 import android.provider.Settings
+import android.util.AttributeSet
 
-import com.evolution.settings.EvolutionBasePreferenceController
-
-class NavBarInversePreferenceController(
+class SecureSettingPrimarySwitchPreference @JvmOverloads constructor(
     context: Context,
-    key: String,
-): EvolutionBasePreferenceController(context, key) {
-
-    override fun getAvailabilityStatus(): Int {
-        val threeButtonMode = Settings.Secure.getIntForUser(
-            mContext.contentResolver,
-            Settings.Secure.NAVIGATION_MODE,
-            0,
-            UserHandle.USER_CURRENT,
-        ) == 0
-        return if (threeButtonMode)
-            AVAILABLE
-        else
-            DISABLED_DEPENDENT_SETTING
+    attrs: AttributeSet? = null,
+): SettingPrimarySwitchPreference(context, attrs) {
+    init {
+        setPreferenceDataStore(SecureSettingsStore(context.contentResolver))
     }
+
+    override fun getUri() = Settings.Secure.getUriFor(key)
 }
