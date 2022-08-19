@@ -16,11 +16,11 @@
  */
 package com.evolution.settings.fragments;
 
-import static com.evolution.settings.fragments.LockScreen.MODE_DISABLED;
-import static com.evolution.settings.fragments.LockScreen.MODE_NIGHT;
-import static com.evolution.settings.fragments.LockScreen.MODE_TIME;
-import static com.evolution.settings.fragments.LockScreen.MODE_MIXED_SUNSET;
-import static com.evolution.settings.fragments.LockScreen.MODE_MIXED_SUNRISE;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_DISABLED;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_NIGHT;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_TIME;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_MIXED_SUNSET;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_MIXED_SUNRISE;
 
 import android.app.TimePickerDialog;
 import android.content.ContentResolver;
