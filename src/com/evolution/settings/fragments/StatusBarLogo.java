@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.View;
 
@@ -43,7 +44,7 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.List;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class StatusBarLogo extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -63,9 +64,6 @@ public class StatusBarLogo extends SettingsPreferenceFragment implements
         return false;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_status_bar_logo);
 }

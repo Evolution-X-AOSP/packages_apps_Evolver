@@ -6,11 +6,12 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/powermenu_title">
+    android:title="@string/power_menu_title">
 
     <Preference
         android:key="gesture_power_menu_summary"
-        android:title="@string/aosp_setting_title"
+        android:title="@string/aosp_options_title"
+        android:summary="@string/aosp_options_summary"
         android:fragment="com.android.settings.gestures.PowerMenuSettings"
         settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
 
@@ -20,72 +21,86 @@
         android:summary="@string/lockscreen_power_menu_disabled_summary"
         android:defaultValue="true" />
 
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="transparent_power_menu"
+        android:title="@string/power_menu_transparency"
+        android:max="100"
+        android:min="0"
+        android:defaultValue="100" />
+
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="transparent_power_dialog_dim"
+        android:title="@string/power_menu_dialog_dim"
+        android:max="100"
+        android:min="0"
+        android:defaultValue="50" />
+
     <PreferenceCategory
-        android:title="@string/powermenu_items_title">
+        android:title="@string/global_actions_title">
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_power"
-            android:title="@string/powermenu_power"
+            android:key="global_actions_power"
+            android:title="@string/global_actions_power"
             android:defaultValue="true" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_restart"
-            android:title="@string/powermenu_restart"
+            android:key="global_actions_restart"
+            android:title="@string/global_actions_restart"
             android:defaultValue="true" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_advanced"
-            android:title="@string/powermenu_advanced"
+            android:key="global_actions_advanced"
+            android:title="@string/global_actions_advanced"
             android:defaultValue="true" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_screenshot"
-            android:title="@string/powermenu_screenshot"
-            android:defaultValue="false" />
+            android:key="global_actions_screenshot"
+            android:title="@string/global_actions_screenshot"
+            android:defaultValue="true" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_onthego"
-            android:title="@string/powermenu_onthego"
+            android:key="global_actions_on_the_go"
+            android:title="@string/global_actions_on_the_go"
             android:defaultValue="false" />
 
         <SwitchPreference
-            android:key="powermenu_torch"
-            android:title="@string/powermenu_torch"
+            android:key="global_actions_flashlight"
+            android:title="@string/global_actions_flashlight"
             android:persistent="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_settings"
-            android:title="@string/powermenu_settings"
+            android:key="global_actions_settings"
+            android:title="@string/global_actions_settings"
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_lockdown"
-            android:title="@string/powermenu_lockdown"
+            android:key="global_actions_lockdown"
+            android:title="@string/global_actions_lockdown"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="global_actions_emergency"
+            android:title="@string/global_actions_emergency"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="global_actions_device_controls"
+            android:title="@string/global_actions_device_controls"
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_emergency"
-            android:title="@string/powermenu_emergency"
+            android:key="global_actions_users"
+            android:title="@string/global_actions_users"
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_devicecontrols"
-            android:title="@string/powermenu_device_controls"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_users"
-            android:title="@string/powermenu_users"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="powermenu_logout"
-            android:title="@string/powermenu_logout"
+            android:key="global_actions_logout"
+            android:title="@string/global_actions_logout"
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.GlobalSettingSwitchPreference
             android:key="bugreport_in_power_menu"
-            android:title="@string/powermenu_bugreport"
+            android:title="@string/global_actions_bugreport"
             android:defaultValue="false" />
 
     </PreferenceCategory>
