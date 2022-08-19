@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 Evolution X
+     Copyright (C) 2019-2023 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
@@ -8,17 +8,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_title">
 
-    <com.evolution.settings.preference.SecureSettingSwitchPreference
-        android:key="system_black_theme"
-        android:title="@string/system_black_theme_title"
-        android:summary="@string/system_black_theme_summary"
-        android:defaultValue="false" />
-
-    <Preference
-        android:key="monet_engine"
-        android:title="@string/monet_engine_title"
-        android:summary="@string/monet_engine_summary"
-        android:fragment="com.evolution.settings.fragments.MonetEngine" />
+    <!-- Preference
+        android:key="monet_engine_settings"
+        android:title="@string/monet_engine_settings_title"
+        android:summary="@string/monet_engine_settings_summary"
+        android:fragment="com.evolution.settings.theme.MonetEngineSettings" />-->
 
     <Preference
         android:key="dark_ui_mode"

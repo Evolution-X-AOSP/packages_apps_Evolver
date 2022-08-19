@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 Evolution X
+     Copyright (C) 2019-2023 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
@@ -10,8 +10,8 @@
 
     <Preference
         android:key="gesture_settings"
-        android:title="@string/aosp_setting_title"
-        android:summary="@string/aosp_gesture_summary"
+        android:title="@string/aosp_options_title"
+        android:summary="@string/aosp_options_summary"
         android:fragment="com.android.settings.gestures.GestureSettings"
         settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController" />
 
@@ -42,12 +42,6 @@
             android:key="double_tap_sleep_gesture"
             android:title="@string/double_tap_to_sleep_title"
             android:summary="@string/double_tap_to_sleep_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="doze_pulse_on_double_tap"
-            android:title="@string/double_tap_on_doze_to_wake_title"
-            android:summary="@string/double_tap_on_doze_to_wake_summary"
             android:defaultValue="true" />
 
     </PreferenceCategory>

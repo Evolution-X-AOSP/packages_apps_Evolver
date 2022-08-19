@@ -48,8 +48,8 @@ public abstract class CustomSettingsPreferenceFragment extends SettingsPreferenc
     private HashMap<Preference, ArrayList<Integer>> mCustomPreferences;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         mCustomPreferences = new HashMap<>();
     }
 

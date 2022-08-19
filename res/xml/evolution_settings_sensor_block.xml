@@ -20,10 +20,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/sensor_block_title">
 
-    <!-- Master switch -->
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="sensor_block_intro"
+        android:title="@string/sensor_block_summary" />
+
+    <!-- Primary switch -->
     <com.evolution.settings.preference.SystemSettingMainSwitchPreference
         android:key="sensor_block"
-        android:title="@string/sensor_block_master_switch_title"
+        android:title="@string/sensor_block_primary_switch_title"
         android:defaultValue="false" />
 
     <!-- App picker activity for sensor block -->
@@ -36,6 +40,7 @@
             android:key="add_sensor_block_packages"
             android:icon="@drawable/ic_menu_add_white"
             android:title="@string/add_sensor_block_package_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

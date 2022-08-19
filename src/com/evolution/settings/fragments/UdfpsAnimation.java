@@ -87,8 +87,8 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
     private UdfpsAnimAdapter mUdfpsAnimAdapter;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         getActivity().setTitle(R.string.udfps_recog_animation_effect_title);
 
         loadResources();
@@ -112,7 +112,7 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-            @Nullable Bundle savedInstanceState) {
+            @Nullable Bundle icicle) {
         View view = inflater.inflate(
                 R.layout.item_view, container, false);
 
@@ -125,8 +125,8 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onActivityCreated(Bundle icicle) {
+        super.onActivityCreated(icicle);
         final SettingsActivity activity = (SettingsActivity) getActivity();
         final SettingsMainSwitchBar switchBar = activity.getSwitchBar();
         mSwitch = switchBar.getSwitch();
