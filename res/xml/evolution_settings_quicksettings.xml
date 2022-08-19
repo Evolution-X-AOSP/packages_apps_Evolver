@@ -8,17 +8,15 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title">
 
-    <PreferenceCategory
+    <!-- PreferenceCategory
         android:title="@string/qs_header_category_title">
 
-        <!-- QS date -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="show_qs_date"
             android:title="@string/qs_date_title"
             android:summary="@string/qs_date_summary"
             android:defaultValue="true" />
 
-        <!-- Battery styles -->
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="qs_battery_style"
             android:title="@string/status_bar_battery_style_title"
@@ -26,7 +24,6 @@
             android:entryValues="@array/qs_battery_style_values"
             android:defaultValue="-1" />
 
-        <!-- Battery location -->
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="qs_show_battery_percent"
             android:title="@string/status_bar_battery_percent_title"
@@ -34,19 +31,18 @@
             android:entryValues="@array/status_bar_battery_percent_values"
             android:defaultValue="2" />
 
-        <!-- Battery estimate -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_show_battery_estimate"
             android:title="@string/battery_estimate_title"
             android:summary="@string/battery_estimate_summary"
             android:defaultValue="false" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:title="@string/general_category">
 
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        <!-- com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="qs_transparency"
             android:title="@string/qs_transparency_title"
             android:summary="@string/qs_transparency_summary"
@@ -60,7 +56,7 @@
             android:key="music_tile_title"
             android:title="@string/qs_music_tile_track_optional_title"
             android:summary="@string/qs_music_tile_track_optional_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false" />-->
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="disable_secure_tiles_on_lockscreen"
@@ -77,7 +73,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!-- PreferenceCategory
         android:title="@string/media_category">
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
@@ -114,7 +110,6 @@
         android:key="quick_settings_brighness_category"
         android:title="@string/qs_show_brightness_slider_title">
 
-        <!-- Brightness slider -->
         <com.evolution.settings.preference.SecureSettingListPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_show_brightness_slider_title"
@@ -265,6 +260,6 @@
             android:max="4"
             settings:min="0" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
 </PreferenceScreen>
