@@ -26,9 +26,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.View;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -36,7 +38,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
-import com.android.internal.custom.hardware.LineageHardwareManager;
+import com.android.internal.lineage.hardware.LineageHardwareManager;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.internal.util.hwkeys.ActionConstants;
@@ -49,23 +51,28 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.ActionFragment;
-import com.evolution.settings.preference.CustomSeekBarPreference;
+import com.evolution.settings.preference.ButtonBacklightBrightness;
+import com.evolution.settings.preference.CustomDialogPreference;
 import com.evolution.settings.preference.SecureSettingSwitchPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
+import com.evolution.settings.utils.ButtonSettingsUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class Buttons extends ActionFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String ALERT_SLIDER_CAT = "alert_slider_cat";
+    private static final String BLOCK_ALERT = "block_alert";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
-    private static final String NAVBAR_VISIBILITY = "navbar_visibility";
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_NAVBAR_INVERSE = "navigation_bar_inverse";
-    private static final String KEY_NAVIGATION_BAR_ARROWS = "navigation_bar_menu_arrow_keys";
     private static final String KEY_NAVIGATION_COMPACT_LAYOUT = "navigation_bar_compact_layout";
     private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
+    private static final String NAVBAR_VISIBILITY = "navbar_visibility";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -76,10 +83,7 @@ public class Buttons extends ActionFragment implements
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_POWER = "power_key";
-
-    private static final String KEY_BUTTON_MANUAL_BRIGHTNESS_NEW = "button_manual_brightness_new";
-    private static final String KEY_BUTTON_TIMEOUT = "button_timeout";
-    private static final String KEY_BUTON_BACKLIGHT_OPTIONS = "button_backlight_options_category";
+    private static final String CATEGORY_BACKLIGHT = "key_backlight";
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -91,15 +95,13 @@ public class Buttons extends ActionFragment implements
     public static final int KEY_MASK_CAMERA = 0x20;
     public static final int KEY_MASK_VOLUME = 0x40;
 
-    private CustomSeekBarPreference mButtonTimoutBar;
-    private CustomSeekBarPreference mManualButtonBrightness;
     private PreferenceCategory mButtonBackLightCategory;
     private PreferenceCategory mHwKeyCategory;
     private SecureSettingSwitchPreference mSwapCapacitiveKeys;
     private SwitchPreference mHwKeyDisable;
     private SwitchPreference mNavbarVisibility;
+    private SystemSettingSwitchPreference mAlertBlock;
     private SystemSettingSwitchPreference mNavbarInverse;
-    private SystemSettingSwitchPreference mNavigationArrows;
     private SystemSettingSwitchPreference mNavigationCompactLayout;
 
     private boolean mIsNavSwitchingMode = false;
@@ -109,11 +111,13 @@ public class Buttons extends ActionFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_button);
+        addPreferencesFromResource(R.xml.evolution_settings_buttons);
 
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mHandler = new Handler();
 
         mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
         if (mSwapCapacitiveKeys != null && !isKeySwapperSupported(getActivity())) {
@@ -183,47 +187,35 @@ public class Buttons extends ActionFragment implements
         // load preferences first
         setActionPreferencesEnabled(keysDisabled == 0);
 
-        mManualButtonBrightness = (CustomSeekBarPreference) findPreference(
-                KEY_BUTTON_MANUAL_BRIGHTNESS_NEW);
-        final int customButtonBrightness = getResources().getInteger(
-                com.android.internal.R.integer.config_button_brightness_default);
-        final int currentBrightness = Settings.System.getInt(resolver,
-                Settings.System.CUSTOM_BUTTON_BRIGHTNESS, customButtonBrightness);
-        mManualButtonBrightness.setValue(currentBrightness);
-        mManualButtonBrightness.setOnPreferenceChangeListener(this);
-
-        mButtonTimoutBar = (CustomSeekBarPreference) findPreference(KEY_BUTTON_TIMEOUT);
-        int currentTimeout = Settings.System.getInt(resolver,
-                Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 0);
-        mButtonTimoutBar.setValue(currentTimeout);
-        mButtonTimoutBar.setOnPreferenceChangeListener(this);
-
-        final boolean enableBacklightOptions = getResources().getBoolean(
-                com.android.internal.R.bool.config_button_brightness_support);
-
-        mButtonBackLightCategory = (PreferenceCategory) findPreference(KEY_BUTON_BACKLIGHT_OPTIONS);
-
-        if (!enableBacklightOptions) {
-            prefScreen.removePreference(mButtonBackLightCategory);
+        final ButtonBacklightBrightness backlight = findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!ButtonSettingsUtils.hasButtonBacklightSupport(getActivity())
+                && !ButtonSettingsUtils.hasKeyboardBacklightSupport(getActivity())) {
+            prefScreen.removePreference(backlight);
         }
 
         mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
 
         boolean showing = Settings.System.getIntForUser(resolver,
                 Settings.System.FORCE_SHOW_NAVBAR,
-                EvolutionUtils.hasNavbarByDefault(getActivity()) ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+                ActionUtils.hasNavbarByDefault(getActivity()) ? 1 : 0, UserHandle.USER_CURRENT) != 0;
         mNavbarVisibility.setChecked(showing);
         mNavbarVisibility.setOnPreferenceChangeListener(this);
 
         final boolean isThreeButtonNavbarEnabled = EvolutionUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton");
         mNavbarInverse = (SystemSettingSwitchPreference) findPreference(KEY_NAVBAR_INVERSE);
         mNavbarInverse.setEnabled(isThreeButtonNavbarEnabled);
-        mNavigationArrows = (SystemSettingSwitchPreference) findPreference(KEY_NAVIGATION_BAR_ARROWS);
-        mNavigationArrows.setEnabled(isThreeButtonNavbarEnabled);
         mNavigationCompactLayout = (SystemSettingSwitchPreference) findPreference(KEY_NAVIGATION_COMPACT_LAYOUT);
         mNavigationCompactLayout.setEnabled(isThreeButtonNavbarEnabled);
 
-        mHandler = new Handler();
+        final PreferenceCategory alertSliderCat =
+        (PreferenceCategory) findPreference(ALERT_SLIDER_CAT);
+        mAlertBlock = (SystemSettingSwitchPreference) findPreference(BLOCK_ALERT);
+        boolean mAlertSliderAvailable = res.getBoolean(
+            com.android.internal.R.bool.config_hasAlertSlider);
+        boolean isPocketEnabled = Settings.System.getInt(resolver, Settings.System.POCKET_JUDGE, 0) == 1;
+        mAlertBlock.setEnabled(isPocketEnabled);
+        if (!mAlertSliderAvailable && alertSliderCat != null)
+            prefScreen.removePreference(alertSliderCat);
     }
 
     @Override
@@ -234,16 +226,6 @@ public class Buttons extends ActionFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
-            return true;
-        } else if (preference == mButtonTimoutBar) {
-            int buttonTimeout = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, buttonTimeout);
-            return true;
-        } else if (preference == mManualButtonBrightness) {
-            int buttonBrightness = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.CUSTOM_BUTTON_BRIGHTNESS, buttonBrightness);
             return true;
         } else if (preference == mNavbarVisibility) {
             if (mIsNavSwitchingMode) {
@@ -276,15 +258,31 @@ public class Buttons extends ActionFragment implements
     }
 
     @Override
+    public void onDisplayPreferenceDialog(Preference preference) {
+        if (preference.getKey() == null) {
+            // Auto-key preferences that don't have a key, so the dialog can find them.
+            preference.setKey(UUID.randomUUID().toString());
+        }
+        DialogFragment f = null;
+        if (preference instanceof CustomDialogPreference) {
+            f = CustomDialogPreference.CustomPreferenceDialogFragment
+                    .newInstance(preference.getKey());
+        } else {
+            super.onDisplayPreferenceDialog(preference);
+            return;
+        }
+        f.setTargetFragment(this, 0);
+        f.show(getFragmentManager(), "dialog_preference");
+        onDialogShowing();
+    }
+
+    @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_button) {
+            new BaseSearchIndexProvider(R.xml.evolution_settings_buttons) {
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {

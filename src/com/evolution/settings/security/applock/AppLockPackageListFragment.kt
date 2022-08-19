@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,41 +17,123 @@
 package com.evolution.settings.security.applock
 
 import android.app.AppLockManager
+import android.content.Context
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
+import android.content.pm.PackageManager.PackageInfoFlags
 import android.os.Bundle
 import android.view.View
 
-import com.android.settings.R
-import com.evolution.settings.fragment.AppListFragment
+import androidx.lifecycle.lifecycleScope
+import androidx.preference.Preference
+import androidx.preference.forEach
 
-class AppLockPackageListFragment : AppListFragment() {
+import com.android.settings.R
+import com.android.settings.core.SubSettingLauncher
+import com.android.settingslib.PrimarySwitchPreference
+import com.android.settingslib.widget.TwoTargetPreference.ICON_SIZE_SMALL
+import com.evolution.settings.EvolutionDashboardFragment
+
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+private val TAG = AppLockPackageListFragment::class.simpleName
+internal const val PACKAGE_INFO = "package_info"
+
+class AppLockPackageListFragment : EvolutionDashboardFragment() {
 
     private lateinit var appLockManager: AppLockManager
+    private lateinit var pm: PackageManager
     private lateinit var whiteListedPackages: Array<String>
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        appLockManager = requireContext().getSystemService(AppLockManager::class.java)
-        whiteListedPackages = requireContext().resources.getStringArray(
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        appLockManager = context.getSystemService(AppLockManager::class.java)
+        pm = context.packageManager
+        whiteListedPackages = resources.getStringArray(
             com.android.internal.R.array.config_appLockAllowedSystemApps)
     }
 
-    override protected fun getTitle(): Int = R.string.app_lock_packages_title
-
-    override protected fun getInitialCheckedList(): List<String> = appLockManager.packages
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        setDisplayCategory(CATEGORY_BOTH)
-        setCustomFilter {
-            !it.applicationInfo.isSystemApp() || whiteListedPackages.contains(it.packageName)
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        super.onCreatePreferences(savedInstanceState, rootKey)
+        lifecycleScope.launch {
+            val selectedPackages = getSelectedPackages()
+            val preferences = withContext(Dispatchers.Default) {
+                pm.getInstalledPackages(
+                    PackageInfoFlags.of(PackageManager.MATCH_ALL.toLong())
+                ).filter {
+                    !it.applicationInfo.isSystemApp() || whiteListedPackages.contains(it.packageName)
+                }.sortedWith { first, second ->
+                    getLabel(first).compareTo(getLabel(second))
+                }
+            }.map { packageInfo ->
+                createPreference(packageInfo, selectedPackages.contains(packageInfo.packageName))
+            }
+            preferenceScreen?.let {
+                preferences.forEach { pref ->
+                    it.addPreference(pref)
+                }
+            }
         }
-        super.onViewCreated(view, savedInstanceState)
     }
 
-    override protected fun onAppSelected(packageName: String) {
-        appLockManager.addPackage(packageName)
+    override fun onResume() {
+        super.onResume()
+        lifecycleScope.launch {
+            val selectedPackages = getSelectedPackages()
+            preferenceScreen?.forEach {
+                if (it is PrimarySwitchPreference) {
+                    it.isChecked = selectedPackages.contains(it.key)
+                }
+            }
+        }
     }
 
-    override protected fun onAppDeselected(packageName: String) {
-        appLockManager.removePackage(packageName)
+    private suspend fun getSelectedPackages(): Set<String> {
+        return withContext(Dispatchers.IO) {
+            appLockManager.packageData.map { it.packageName }.toSet()
+        }
     }
+
+    private fun getLabel(packageInfo: PackageInfo) =
+        packageInfo.applicationInfo.loadLabel(pm).toString()
+
+    private fun createPreference(packageInfo: PackageInfo, isProtected: Boolean): Preference {
+        val label = getLabel(packageInfo)
+        return PrimarySwitchPreference(requireContext()).apply {
+            key = packageInfo.packageName
+            title = label
+            icon = packageInfo.applicationInfo.loadIcon(pm)
+            setIconSize(ICON_SIZE_SMALL)
+            isChecked = isProtected
+            setOnPreferenceChangeListener { _, newValue ->
+                lifecycleScope.launch(Dispatchers.IO) {
+                    if (newValue as Boolean) {
+                        appLockManager.addPackage(packageInfo.packageName)
+                    } else {
+                        appLockManager.removePackage(packageInfo.packageName)
+                    }
+                }
+                return@setOnPreferenceChangeListener true
+            }
+            setOnPreferenceClickListener {
+                SubSettingLauncher(requireContext())
+                    .setDestination(AppLockPackageConfigFragment::class.qualifiedName)
+                    .setSourceMetricsCategory(metricsCategory)
+                    .setTitleText(label)
+                    .setArguments(
+                        Bundle(1).apply {
+                            putParcelable(PACKAGE_INFO, packageInfo)
+                        }
+                    )
+                    .launch()
+                true
+            }
+        }
+    }
+
+    override protected fun getPreferenceScreenResId() = R.xml.app_lock_package_list_settings
+
+    override protected fun getLogTag() = TAG
 }
