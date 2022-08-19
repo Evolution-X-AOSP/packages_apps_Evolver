@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,32 @@
  * limitations under the License.
  */
 
-package com.evolution.settings.fragment
+package com.evolution.settings
 
 import androidx.preference.Preference
 
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.dashboard.DashboardFragment
+import com.evolution.settings.fragments.ColorPickerFragment
+import com.evolution.settings.preference.ColorPickerPreference
 
-abstract class EvolutionDashboardFragment: DashboardFragment() {
+abstract class EvolutionDashboardFragment : DashboardFragment() {
+
     override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.EVOLVER
 
     override fun onDisplayPreferenceDialog(preference: Preference) {
-        super.onDisplayPreferenceDialog(preference)
+        if (preference is ColorPickerPreference) {
+            ColorPickerFragment(preference.color).apply {
+                setOnConfirmListener {
+                    preference.setColor(it)
+                }
+            }.show(childFragmentManager, COLOR_PICKER_DIALOG_KEY)
+        } else {
+            super.onDisplayPreferenceDialog(preference)
+        }
     }
 
     companion object {
-        const val REQUEST_KEY = "EvolutionDashboardFragment#RequestKey"
+        const val COLOR_PICKER_DIALOG_KEY = "color_picker_dialog"
     }
 }

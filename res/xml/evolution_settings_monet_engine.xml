@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2022 Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/monet_engine_settings_title">
+
+    <com.evolution.settings.preference.SecureSettingSwitchPreference
+        android:key="monet_engine_accurate_shades"
+        android:title="@string/accurate_shades_title"
+        android:defaultValue="true" />
+
+    <com.evolution.settings.preference.SecureSettingColorPickerPreference
+        android:key="monet_engine_color_override"
+        android:title="@string/color_override_title"
+        settings:controller="com.evolution.settings.theme.MonetCustomColorPreferenceController" />
+
+    <com.evolution.settings.preference.CustomSeekBarPreference
+        android:key="chroma_factor"
+        android:title="@string/chroma_factor_title"
+        android:defaultValue="100"
+        android:max="100"
+        android:persistent="false"
+        settings:min="0"
+        settings:interval="10"
+        settings:controller="com.evolution.settings.theme.MonetChromaFactorPreferenceController" />
+
+    <com.evolution.settings.preference.SecureSettingSwitchPreference
+        android:key="monet_engine_linear_lightness"
+        android:title="@string/linear_lightness_title"
+        android:defaultValue="0" />
+
+    <com.evolution.settings.preference.SecureSettingSeekBarPreference
+        android:key="monet_engine_white_luminance"
+        android:title="@string/white_luminance_title"
+        android:defaultValue="425"
+        android:max="1000"
+        settings:min="1"
+        settings:interval="100" />
+
+</PreferenceScreen>

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The Android Open Source Project
- * Copyright (C) 2022 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,18 +26,26 @@ import android.hardware.biometrics.BiometricConstants
 import android.hardware.biometrics.BiometricManager.Authenticators
 import android.hardware.biometrics.BiometricPrompt
 import android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
+import android.hardware.biometrics.PromptInfo
 import android.os.Bundle
-import android.os.CancellationSignal
+import android.os.Handler
+import android.os.Looper
 import android.os.UserHandle.USER_NULL
 import android.os.UserManager
 import android.util.Log
 import android.view.WindowManager
 
+import androidx.fragment.app.commit
+import androidx.fragment.app.FragmentActivity
+
 import com.android.internal.widget.LockPatternUtils
 import com.android.settings.R
+import com.android.settings.password.BiometricFragment
 import com.android.settings.password.ConfirmDeviceCredentialUtils
 
-class AppLockCredentialActivity : Activity() {
+class AppLockCredentialActivity : FragmentActivity() {
+
+    private val handler = Handler(Looper.getMainLooper())
 
     private lateinit var lockPatternUtils: LockPatternUtils
     private lateinit var userManager: UserManager
@@ -46,6 +54,7 @@ class AppLockCredentialActivity : Activity() {
     private var packageName: String? = null
     private var title: String? = null
     private var userId: Int = USER_NULL
+    private var biometricFragment: BiometricFragment? = null
     private var goingToBackground = false
     private var waitingForBiometricCallback = false
 
@@ -119,13 +128,16 @@ class AppLockCredentialActivity : Activity() {
             authenticators = authenticators or Authenticators.BIOMETRIC_STRONG
         }
 
+        val promptInfo = PromptInfo().also {
+            it.title = getString(com.android.internal.R.string.unlock_application, title)
+            it.isDisallowBiometricsIfPolicyExists = true
+            it.authenticators = authenticators
+        }
+
         if (isBiometricAllowed()) {
             // Don't need to check if biometrics / pin/pattern/pass are enrolled. It will go to
             // onAuthenticationError and do the right thing automatically.
-            showBiometricPrompt(
-                getString(com.android.internal.R.string.unlock_application, title),
-                authenticators
-            )
+            showBiometricPrompt(promptInfo)
             waitingForBiometricCallback = true
         } else {
             finish()
@@ -162,23 +174,31 @@ class AppLockCredentialActivity : Activity() {
     private fun isBiometricAllowed() =
         !isStrongAuthRequired() && !lockPatternUtils.hasPendingEscrowToken(userId)
 
-    private fun showBiometricPrompt(title: String, authenticators: Int) {
-        val biometricPrompt = BiometricPrompt.Builder(this)
-            .setTitle(title)
-            .setUseDefaultTitle()
-            .setAllowedAuthenticators(authenticators)
-            .setDisallowBiometricsIfPolicyExists(true)
-            .setReceiveSystemEvents(true)
-            .build()
-        biometricPrompt.authenticateUser(
-            CancellationSignal(),
-            mainExecutor,
-            authenticationCallback,
-            userId
-        )
+    private fun showBiometricPrompt(promptInfo: PromptInfo) {
+        biometricFragment = supportFragmentManager.findFragmentByTag(TAG_BIOMETRIC_FRAGMENT)
+            as? BiometricFragment
+        var newFragment = false
+        if (biometricFragment == null) {
+            biometricFragment = BiometricFragment.newInstance(promptInfo)
+            newFragment = true
+        }
+        biometricFragment?.also {
+            it.setCallbacks({
+                handler.post(it)
+            }, authenticationCallback)
+            it.setUser(userId)
+        }
+        if (newFragment) {
+            biometricFragment?.let {
+                supportFragmentManager.commit {
+                    add(it, TAG_BIOMETRIC_FRAGMENT)
+                }
+            }
+        }
     }
 
     companion object {
         private const val TAG = "AppLockCredentialActivity"
+        private const val TAG_BIOMETRIC_FRAGMENT = "fragment"
     }
 }
