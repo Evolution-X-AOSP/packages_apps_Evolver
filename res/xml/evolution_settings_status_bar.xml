@@ -8,13 +8,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/status_bar_title">
 
-    <Preference
-        android:key="systemui_tuner_statusbar"
-        android:title="@string/statusbar_items_category">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="com.android.systemui"
-            android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
-    </Preference>
+    <com.evolution.settings.preference.SecureSettingPrimarySwitchPreference
+        android:key="status_bar_show_lyric"
+        android:title="@string/status_bar_lyric_title"
+        android:summary="@string/status_bar_lyric_summary"
+        android:defaultValue="false"
+        android:fragment="com.evolution.settings.fragments.StatusBarLyricSettings"
+        settings:observe="true" />
 
     <com.evolution.settings.preference.SystemSettingListPreference
         android:key="status_bar_clock"
@@ -32,22 +32,26 @@
         android:fragment="com.evolution.settings.fragments.Clock" />
 
     <!-- Show logo on Statusbar -->
-    <Preference
+    <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
         android:key="status_bar_logo"
         android:title="@string/status_bar_logo_title"
         android:summary="@string/status_bar_logo_summary"
-        android:fragment="com.evolution.settings.fragments.StatusBarLogo" />
+        android:defaultValue="false"
+        android:fragment="com.evolution.settings.fragments.StatusBarLogo"
+        settings:observe="true" />
 
     <!-- Network traffic -->
-    <Preference
-        android:key="traffic"
-        android:title="@string/traffic_title"
-        android:summary="@string/traffic_summary"
-        android:fragment="com.evolution.settings.fragments.Traffic" />
+    <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
+        android:key="network_traffic_state"
+        android:title="@string/network_traffic_title"
+        android:summary="@string/network_traffic_summary"
+        android:defaultValue="false"
+        android:fragment="com.evolution.settings.fragments.NetworkTrafficSettings"
+        settings:observe="true" />
 
     <!-- Status bar battery customizations -->
     <PreferenceCategory
-        android:title="@string/status_bar_battery_category_title">
+        android:title="@string/battery_title">
 
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="status_bar_battery_style"
@@ -69,18 +73,26 @@
             android:summary="@string/status_bar_battery_text_charging_summary"
             android:defaultValue="true" />
 
+        <!-- Battery bar settings -->
+        <Preference
+            android:key="batterybar"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary"
+            android:fragment="com.evolution.settings.fragments.BatteryBar" />
+
     </PreferenceCategory>
 
-    <!-- Battery bar settings -->
-    <Preference
-        android:key="battery_bar_settings"
-        android:title="@string/battery_bar_title"
-        android:summary="@string/battery_bar_summary"
-        android:fragment="com.evolution.settings.fragments.BatteryBar" />
-
     <PreferenceCategory
-        android:key="telephony_icons_category"
-        android:title="@string/telephony_icons_title">
+        android:title="@string/status_bar_icons_category_title">
+
+        <Preference
+            android:key="status_bar_icons"
+            android:title="@string/status_bar_icons_title"
+            android:summary="@string/status_bar_icons_summary">
+            <intent android:action="android.intent.action.MAIN"
+                 android:targetPackage="com.android.systemui"
+                 android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
+        </Preference>
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="data_disabled_icon"
@@ -102,7 +114,7 @@
             android:summary="@string/show_fourg_icon_summary"
             android:defaultValue="false" />
 
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        <!-- com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="volte_icon_style"
             android:title="@string/volte_icon_title"
             android:summary="@string/volte_icon_summary"
@@ -124,13 +136,13 @@
             android:key="volte_vowifi_override"
             android:title="@string/volte_vowifi_override_title"
             android:summary="@string/volte_vowifi_override_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true" />-->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="roaming_indicator_icon"
             android:title="@string/roaming_indicator_icon_title"
             android:summary="@string/roaming_indicator_icon_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
@@ -144,11 +156,10 @@
             android:summary="@string/statusbar_colored_icons_summary"
             android:defaultValue="false" />
 
-        <!-- Notification Counter -->
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="statusbar_notif_count"
-            android:title="@string/status_bar_notif_count_title"
-            android:summary="@string/status_bar_notif_count_summary"
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="show_wifi_standard_icon"
+            android:title="@string/show_wifi_standard_icon_title"
+            android:summary="@string/show_wifi_standard_icon_summary"
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
@@ -158,11 +169,11 @@
             android:defaultValue="true" />
 
         <!-- Combined signal icons -->
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
+        <!-- com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="combined_status_bar_signal_icons"
             android:title="@string/combined_status_bar_signal_icons"
             android:summary="@string/combined_status_bar_signal_icons_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false" />-->
 
         <!-- Mic/Camera privacy indicator -->
         <com.evolution.settings.preference.SecureSettingSwitchPreference
@@ -176,7 +187,14 @@
             android:key="enable_location_privacy_indicator"
             android:title="@string/location_privacy_indicator_title"
             android:summary="@string/location_privacy_indicator_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
+
+        <!-- Projection privacy indicator -->
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="enable_projection_privacy_indicator"
+            android:title="@string/projection_privacy_indicator_title"
+            android:summary="@string/projection_privacy_indicator_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
