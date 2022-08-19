@@ -27,7 +27,6 @@
         android:max="300"
         settings:min="5"
         settings:interval="5"
-        android:dependency="status_bar_clock_auto_hide"
         android:defaultValue="60"
         settings:units="@string/unit_seconds" />
 
@@ -38,7 +37,6 @@
         android:max="300"
         settings:min="5"
         settings:interval="5"
-        android:dependency="status_bar_clock_auto_hide"
         android:defaultValue="5"
         settings:units="@string/unit_seconds" />
 
@@ -46,6 +44,12 @@
         android:key="status_bar_clock_seconds"
         android:title="@string/status_bar_clock_seconds_title"
         android:summary="@string/status_bar_clock_seconds_summary"
+        android:defaultValue="false" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="status_bar_clock_chip"
+        android:title="@string/status_bar_clock_chip_title"
+        android:summary="@string/status_bar_clock_chip_summary"
         android:defaultValue="false" />
 
     <com.evolution.settings.preference.SystemSettingListPreference
@@ -56,6 +60,15 @@
         android:entries="@array/status_bar_am_pm_entries"
         android:entryValues="@array/status_bar_am_pm_values"
         android:defaultValue="2" />
+
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="status_bar_clock_size"
+        android:title="@string/clock_font_size_title"
+        android:max="20"
+        settings:min="4"
+        settings:interval="1"
+        android:defaultValue="14"
+        settings:units="@string/unit_pixels" />
 
     <com.evolution.settings.preference.SystemSettingListPreference
         android:key="status_bar_clock_date_display"
