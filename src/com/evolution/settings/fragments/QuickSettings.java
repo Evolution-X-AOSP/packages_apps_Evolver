@@ -15,63 +15,45 @@
  */
 package com.evolution.settings.fragments;
 
-import android.os.Bundle;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.database.ContentObserver;
-import android.os.Handler;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.os.SystemProperties;
-import android.os.UserHandle;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Color;
+import android.database.ContentObserver;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.provider.Settings;
-import android.text.TextUtils;
 import android.view.View;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
-
-import com.evolution.settings.preference.SecureSettingMasterSwitchPreference;
-import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class QuickSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
-
-    public static final String TAG = "QuickSettings";
+public class QuickSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
-    private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
-    private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
-    private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
 
-    private ListPreference mTileAnimationInterpolator;
-    private ListPreference mTileAnimationStyle;
-    private SystemSettingSeekBarPreference mTileAnimationDuration;
-    private ListPreference mShowBrightnessSlider;
-    private ListPreference mBrightnessSliderPosition;
     private ListPreference mQuickPulldown;
+    private ListPreference mBrightnessSliderPosition;
+    private ListPreference mShowBrightnessSlider;
     private SwitchPreference mShowAutoBrightness;
 
     @Override
@@ -82,6 +64,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = mContext.getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
+
+        int qpmode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        mQuickPulldown = (ListPreference) findPreference("status_bar_quick_qs_pulldown");
+        mQuickPulldown.setValue(String.valueOf(qpmode));
+        mQuickPulldown.setSummary(mQuickPulldown.getEntry());
+        mQuickPulldown.setOnPreferenceChangeListener(this);
 
         mShowBrightnessSlider = findPreference(KEY_SHOW_BRIGHTNESS_SLIDER);
         mShowBrightnessSlider.setOnPreferenceChangeListener(this);
@@ -99,35 +88,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         } else {
             prefSet.removePreference(mShowAutoBrightness);
         }
-
-        int qpmode = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
-        mQuickPulldown = (ListPreference) findPreference("status_bar_quick_qs_pulldown");
-        mQuickPulldown.setValue(String.valueOf(qpmode));
-        mQuickPulldown.setSummary(mQuickPulldown.getEntry());
-        mQuickPulldown.setOnPreferenceChangeListener(this);
-
-        mTileAnimationStyle = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_STYLE);
-        mTileAnimationDuration = (SystemSettingSeekBarPreference) findPreference(KEY_PREF_TILE_ANIM_DURATION);
-        mTileAnimationInterpolator = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_INTERPOLATOR);
-
-        mTileAnimationStyle.setOnPreferenceChangeListener(this);
-
-        int tileAnimationStyle = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
-        updateAnimTileStyle(tileAnimationStyle);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mShowBrightnessSlider) {
-            int value = Integer.parseInt((String) newValue);
-            mBrightnessSliderPosition.setEnabled(value > 0);
-            if (mShowAutoBrightness != null)
-                mShowAutoBrightness.setEnabled(value > 0);
-            return true;
-        } else if (preference == mQuickPulldown) {
+        if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(resolver,
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, value,
@@ -136,17 +102,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             mQuickPulldown.setSummary(
                     mQuickPulldown.getEntries()[index]);
             return true;
-        } else if (preference == mTileAnimationStyle) {
+        } else if (preference == mShowBrightnessSlider) {
             int value = Integer.parseInt((String) newValue);
-            updateAnimTileStyle(value);
+            mBrightnessSliderPosition.setEnabled(value > 0);
+            if (mShowAutoBrightness != null)
+                mShowAutoBrightness.setEnabled(value > 0);
             return true;
         }
         return false;
-    }
-
-    private void updateAnimTileStyle(int tileAnimationStyle) {
-        mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
-        mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
     }
 
     @Override
