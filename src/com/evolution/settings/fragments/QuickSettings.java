@@ -15,24 +15,16 @@
  */
 package com.evolution.settings.fragments;
 
-import android.os.Bundle;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.database.ContentObserver;
-import android.os.Handler;
-import android.os.RemoteException;
-import android.os.ServiceManager;
-import android.os.SystemProperties;
-import android.os.UserHandle;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Color;
+import android.database.ContentObserver;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemProperties;
+import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.text.TextUtils;
 import android.view.View;
 
 import androidx.preference.ListPreference;
@@ -43,35 +35,34 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.preference.SecureSettingMasterSwitchPreference;
-import com.evolution.settings.preference.SystemSettingSeekBarPreference;
+import com.evolution.settings.preference.SystemSettingListPreference;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class QuickSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+@SearchIndexable
+public class QuickSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "QuickSettings";
 
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
+    private static final String KEY_PREF_BATTERY_ESTIMATE = "qs_show_battery_estimate";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
-    private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
-    private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
-    private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String QUICK_PULLDOWN = "status_bar_quick_qs_pulldown";
 
-    private ListPreference mTileAnimationInterpolator;
-    private ListPreference mTileAnimationStyle;
-    private SystemSettingSeekBarPreference mTileAnimationDuration;
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
     private ListPreference mQuickPulldown;
+    private SwitchPreference mBatteryEstimate;
     private SwitchPreference mShowAutoBrightness;
 
     @Override
@@ -81,7 +72,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
 
         final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = mContext.getContentResolver();
-        final PreferenceScreen prefSet = getPreferenceScreen();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mShowBrightnessSlider = findPreference(KEY_SHOW_BRIGHTNESS_SLIDER);
         mShowBrightnessSlider.setOnPreferenceChangeListener(this);
@@ -97,25 +88,21 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         if (automaticAvailable) {
             mShowAutoBrightness.setEnabled(showSlider);
         } else {
-            prefSet.removePreference(mShowAutoBrightness);
+            prefScreen.removePreference(mShowAutoBrightness);
         }
 
         int qpmode = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
-        mQuickPulldown = (ListPreference) findPreference("status_bar_quick_qs_pulldown");
+        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
         mQuickPulldown.setValue(String.valueOf(qpmode));
         mQuickPulldown.setSummary(mQuickPulldown.getEntry());
         mQuickPulldown.setOnPreferenceChangeListener(this);
 
-        mTileAnimationStyle = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_STYLE);
-        mTileAnimationDuration = (SystemSettingSeekBarPreference) findPreference(KEY_PREF_TILE_ANIM_DURATION);
-        mTileAnimationInterpolator = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_INTERPOLATOR);
-
-        mTileAnimationStyle.setOnPreferenceChangeListener(this);
-
-        int tileAnimationStyle = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
-        updateAnimTileStyle(tileAnimationStyle);
+        boolean turboInstalled = EvolutionUtils.isPackageInstalled(getContext(),
+                "com.google.android.apps.turbo");
+        mBatteryEstimate = findPreference(KEY_PREF_BATTERY_ESTIMATE);
+        if (!turboInstalled)
+            prefScreen.removePreference(mBatteryEstimate);
     }
 
     @Override
@@ -136,17 +123,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             mQuickPulldown.setSummary(
                     mQuickPulldown.getEntries()[index]);
             return true;
-        } else if (preference == mTileAnimationStyle) {
-            int value = Integer.parseInt((String) newValue);
-            updateAnimTileStyle(value);
-            return true;
         }
         return false;
-    }
-
-    private void updateAnimTileStyle(int tileAnimationStyle) {
-        mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
-        mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
     }
 
     @Override
@@ -154,9 +132,20 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         return MetricsEvent.EVOLVER;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_quicksettings);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_quicksettings) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    boolean turboInstalled = EvolutionUtils.isPackageInstalled(context,
+                            "com.google.android.apps.turbo");
+
+                    if (!turboInstalled)
+                        keys.add(KEY_PREF_BATTERY_ESTIMATE);
+
+                    return keys;
+                }
+            };
 }
