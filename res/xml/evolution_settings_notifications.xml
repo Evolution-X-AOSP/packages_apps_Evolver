@@ -14,7 +14,7 @@
         android:summary="@string/alert_slider_notifications_summary"
         android:defaultValue="true" />
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
+    <!-- com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="reticker_status"
         android:title="@string/reticker_title"
         android:summary="@string/reticker_summary"
@@ -27,13 +27,12 @@
         android:summary="@string/reticker_colored_summary"
         android:defaultValue="false" />
 
-    <!-- Pulse notifications lighting -->
     <com.evolution.settings.preference.SystemSettingMasterSwitchPreference
         android:key="pulse_ambient_light"
         android:title="@string/pulse_ambient_light_title"
         android:summary="@string/pulse_ambient_light_summary"
         android:fragment="com.evolution.settings.fragments.EdgeLighting"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
 
     <PreferenceCategory
         android:key="headsup_notifications_category"
@@ -47,7 +46,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!-- PreferenceCategory
         android:key="notifications_general_category"
         android:title="@string/general_title">
 
@@ -69,7 +68,7 @@
             android:summary="@string/notification_guts_kill_app_button_summary"
             android:defaultValue="false" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="led"
@@ -84,15 +83,15 @@
                 android:value="com.android.settings.Settings$NotificationAppListActivity" />
         </Preference>
 
-        <Preference
+        <!-- Preference
             android:key="charging_light"
             android:title="@string/battery_light_settings"
             android:summary="@string/battery_light_summary"
-            android:fragment="com.evolution.settings.fragments.BatteryLight" />
+            android:fragment="com.evolution.settings.fragments.BatteryLight" />-->
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!-- PreferenceCategory
         android:title="@string/flashlight_category">
 
         <com.evolution.settings.preference.SystemSettingListPreference
@@ -138,6 +137,6 @@
             android:title="@string/incall_vibrate_disconnect_title"
             android:defaultValue="false" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
 </PreferenceScreen>
