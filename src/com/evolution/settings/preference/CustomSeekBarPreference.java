@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2016-2020 crDroid Android Project
  * Copyright (C) 2016-2017 The Dirty Unicorns Project
- * Copyright (C) 2019-2022 The Evolution X Project
+ *               2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,6 +104,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         }
 
         mSeekBar = new SeekBar(context, attrs);
+        mSeekBar.setMax(mMaxValue);
         setLayoutResource(R.layout.preference_custom_seekbar);
     }
 
@@ -213,6 +214,11 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
 
     protected int getLimitedValue(int v) {
         return v < mMinValue ? mMinValue : (v > mMaxValue ? mMaxValue : v);
+    }
+
+    public void setMax(int max) {
+        mMaxValue = max;
+        mSeekBar.setMax(mMaxValue);
     }
 
     protected int getSeekValue(int v) {

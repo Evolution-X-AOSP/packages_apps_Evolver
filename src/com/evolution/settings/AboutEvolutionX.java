@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2020 The Evolution X Project
+ * Copyright (C) 2019-2022 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,8 @@ public class AboutEvolutionX extends SettingsPreferenceFragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         addPreferencesFromResource(R.xml.evolution_settings_about);
     }
 

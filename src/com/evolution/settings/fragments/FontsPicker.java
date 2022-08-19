@@ -77,8 +77,8 @@ public class FontsPicker extends SettingsPreferenceFragment {
     private List<String> mPkgs;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         getActivity().setTitle(R.string.theme_customization_font_title);
 
         mThemeUtils = new ThemeUtils(getActivity());
@@ -87,7 +87,7 @@ public class FontsPicker extends SettingsPreferenceFragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-            @Nullable Bundle savedInstanceState) {
+            @Nullable Bundle icicle) {
         View view = inflater.inflate(
                 R.layout.item_view, container, false);
 

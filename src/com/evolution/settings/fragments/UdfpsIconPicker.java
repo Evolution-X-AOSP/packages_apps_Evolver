@@ -75,8 +75,8 @@ public class UdfpsIconPicker extends SettingsPreferenceFragment {
     private String[] mIcons;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         getActivity().setTitle(R.string.udfps_icon_picker_title);
 
         loadResources();
@@ -96,7 +96,7 @@ public class UdfpsIconPicker extends SettingsPreferenceFragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-            @Nullable Bundle savedInstanceState) {
+            @Nullable Bundle icicle) {
         View view = inflater.inflate(
                 R.layout.item_view, container, false);
 
