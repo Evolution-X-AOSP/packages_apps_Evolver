@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.View;
 
@@ -43,7 +44,7 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.List;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class Animations extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -54,18 +55,15 @@ public class Animations extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.EVOLVER;
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
     }
 
-    /**
-     * For Search.
-     */
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.EVOLVER;
+    }
+
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_animations);
 }

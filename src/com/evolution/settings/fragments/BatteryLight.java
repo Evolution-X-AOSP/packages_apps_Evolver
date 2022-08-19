@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 
 import androidx.preference.ListPreference;
@@ -38,7 +39,7 @@ import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+@SearchIndexable
 public class BatteryLight extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -105,11 +106,6 @@ public class BatteryLight extends SettingsPreferenceFragment implements
         }
     }
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.EVOLVER;
-    }
-
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference.equals(mLowColor)) {
             int color = ((Integer) newValue).intValue();
@@ -146,9 +142,11 @@ public class BatteryLight extends SettingsPreferenceFragment implements
         return false;
     }
 
-    /**
-     * For Search.
-     */
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.EVOLVER;
+    }
+
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_battery_light);
 }
