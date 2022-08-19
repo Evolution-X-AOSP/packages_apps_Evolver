@@ -20,6 +20,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/sensor_block_title">
 
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="sensor_block_intro"
+        android:title="@string/sensor_block_summary"
+        android:selectable="false"
+        android:persistent="false" />
+
     <!-- Master switch -->
     <com.evolution.settings.preference.SystemSettingMainSwitchPreference
         android:key="sensor_block"
