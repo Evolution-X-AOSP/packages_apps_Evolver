@@ -16,17 +16,18 @@
  */
 package com.evolution.settings.fragments;
 
-import static com.evolution.settings.fragments.LockScreen.MODE_DISABLED;
-import static com.evolution.settings.fragments.LockScreen.MODE_NIGHT;
-import static com.evolution.settings.fragments.LockScreen.MODE_TIME;
-import static com.evolution.settings.fragments.LockScreen.MODE_MIXED_SUNSET;
-import static com.evolution.settings.fragments.LockScreen.MODE_MIXED_SUNRISE;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_DISABLED;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_NIGHT;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_TIME;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_MIXED_SUNSET;
+import static com.evolution.settings.fragments.Miscellaneous.MODE_MIXED_SUNRISE;
 
 import android.app.TimePickerDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 import android.widget.TimePicker;
@@ -182,9 +183,6 @@ public class AODSchedule extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.EVOLVER;
     }
 
-    /**
-     * For Search.
-     */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.evolution_settings_always_on_display_schedule);
 }
