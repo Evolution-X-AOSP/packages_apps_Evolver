@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,9 +41,10 @@ import com.android.settings.core.BasePreferenceController
 
 class AppLockSettingsPreferenceController(
     context: Context,
+    preferenceKey: String,
     private val host: SecuritySettings?,
     lifecycle: Lifecycle?,
-) : BasePreferenceController(context, KEY),
+) : BasePreferenceController(context, preferenceKey),
         LifecycleEventObserver {
 
     private val lockPatternUtils = LockPatternUtils(context)
@@ -107,7 +108,7 @@ class AppLockSettingsPreferenceController(
         }
 
     override fun handlePreferenceTreeClick(preference: Preference): Boolean {
-        if (preference.key == KEY && securityPromptLauncher != null) {
+        if (preference.key == preferenceKey && securityPromptLauncher != null) {
             securityPromptLauncher.launch(
                 ConfirmDeviceCredentialActivity.createIntent(
                     mContext.getString(R.string.app_lock_authentication_dialog_title),
@@ -117,9 +118,5 @@ class AppLockSettingsPreferenceController(
             return true
         }
         return super.handlePreferenceTreeClick(preference)
-    }
-
-    companion object {
-        private const val KEY = "app_lock"
     }
 }

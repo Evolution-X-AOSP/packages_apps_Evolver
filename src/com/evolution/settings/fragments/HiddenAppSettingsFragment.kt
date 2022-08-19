@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2022 AOSP-Krypton Project
+ * Copyright (C) 2022 FlamingoOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import android.os.UserHandle
 import android.provider.Settings
 
 import com.android.settings.R
-import com.evolution.settings.fragment.AppListFragment
+import com.evolution.settings.fragments.AppListFragment
 
 class HiddenAppSettingsFragment : AppListFragment() {
 
