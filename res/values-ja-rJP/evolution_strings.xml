@@ -27,7 +27,6 @@
     <string name="themes_title">テーマ</string>
     <string name="torch_gestures_title">タッチジェスチャー</string>
     <string name="flashlight_category">フラッシュライト</string>
-    <string name="telephony_icons_title">通話アイコン</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Android に含まれる標準のジェスチャー</string>
     <string name="dark_ui_mode_summary">ダークテーマのオプションを参照する</string>
@@ -147,19 +146,13 @@
     <string name="profile_choose_app">アプリを選択</string>
     <string name="dialog_delete_title">削除</string>
     <string name="dialog_delete_message">選択した項目を削除しますか?</string>
-    <!-- Network Traffic -->
-    <string name="traffic_title">通信速度</string>
-    <string name="traffic_summary">通信速度表示を編集する</string>
-    <string name="network_traffic_autohide_threshold_title">自動非表示にするしきい値 (KB/s)</string>
-    <string name="network_traffic_location_title">位置</string>
-    <string name="network_traffic_disabled">無効</string>
-    <string name="network_traffic_statusbar">ステータスバー</string>
-    <string name="network_traffic_qs_header">クイック設定ヘッダー</string>
-    <string name="network_traffic_refresh_interval_title">更新間隔</string>
-    <string name="network_traffic_mode_title">表示モード</string>
-    <string name="network_traffic_dynamic">ダイナミック</string>
-    <string name="network_traffic_download">受信</string>
-    <string name="network_traffic_upload">送信</string>
+    <!-- Network traffic -->
+    <string name="network_traffic_title">通信速度の表示</string>
+    <string name="network_traffic_summary">ステータスバーのネットワーク速度の表示を切り替える</string>
+    <string name="network_traffic_master_switch_title">通信速度の表示を使用</string>
+    <string name="network_options_title">オプション</string>
+    <string name="network_traffic_autohide_title">非動作時は通信量モニターを隠す</string>
+    <string name="network_traffic_autohide_summary">1 KB/s未満の場合は通信料モニターを非表示にする</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_error_vib_title">指紋認証失敗時の振動</string>
     <string name="fprint_error_vib_summary">指紋認証が失敗した時に振動させる</string>
@@ -233,6 +226,9 @@
     <string name="lockscreen_albumart_filter_title">メディアカバーアートのフィルター</string>
     <string name="lockscreen_albumart_filter_grayscale">グレースケール</string>
     <string name="lockscreen_albumart_filter_tint">アクセント色</string>
+    <string name="lockscreen_albumart_filter_blur">ぼかし</string>
+    <string name="lockscreen_albumart_filter_grayblur">グレースケールとぼかし</string>
+    <string name="lockscreen_albumart_filter_blur_radius_title">ロック画面のメディアアートワークのぼかし量</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">時計と日付の設定</string>
     <string name="status_bar_clock_summary">時計と日付を編集する</string>
@@ -816,8 +812,11 @@
     <string name="fingerprint_category">指紋</string>
     <string name="headsup_category">Heads Up の設定</string>
     <string name="icons_category">アイコン</string>
-    <string name="statusbar_items_category">ステータスバーのアイコン</string>
+    <string name="status_bar_icons_category_title">アイコン</string>
     <string name="volume_category">音量ボタン</string>
+    <!-- Status bar - icon blocklist -->
+    <string name="status_bar_icons_title">ステータスバーのアイコン</string>
+    <string name="status_bar_icons_summary">ステータスバーに表示するアイコンを選択する</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">ロック画面のショートカット</string>
     <!-- Double Tap Lock screen to Sleep -->
@@ -885,9 +884,6 @@
     <string name="show_carrier_keyguard">ロック画面</string>
     <string name="show_carrier_statusbar">ステータスバー</string>
     <string name="show_carrier_enabled">両方</string>
-    <!-- Double Tap on Doze to wake -->
-    <string name="double_tap_on_doze_to_wake_title">Doze 時にタップで復帰</string>
-    <string name="double_tap_on_doze_to_wake_summary">端末が Doze 中にダブルタップでスリープ解除する</string>
     <!-- Monet Engine -->
     <string name="monet_category">Monet</string>
     <string name="monet_engine_title">Monet エンジン</string>
@@ -920,12 +916,6 @@
     <string name="burn_in_protection_summary">ナビゲーションバーとステータスバーのアイコンをシフトさせて焼き付きを防止する</string>
     <string name="burn_in_protection_interval_title">シフトを行う時間の間隔</string>
     <string name="burn_in_protection_interval_summary">アイコンをシフトさせる頻度を設定する</string>
-    <!-- UDFPS Haptic Feedback -->
-    <string name="udfps_haptic_feedback_title">画面内指紋認証の振動の使用</string>
-    <string name="udfps_haptic_feedback_summary">画面内指紋認証アイコンに触れた時に振動させる</string>
-    <!-- Night Light UDFPS -->
-    <string name="udfps_night_light_title">画面内指紋認証中は夜間ライト無効化</string>
-    <string name="udfps_night_light_summary">画面内指紋認証が有効な場合は夜間ライトを無効化します。このオプションを無効化すると、夜間ライト有効時に指紋認証の正確性に影響する場合があります。</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">通知の数を表示</string>
     <string name="status_bar_notif_count_summary">保留中の通知の数を表示する</string>
@@ -1116,4 +1106,41 @@
     <!-- Statusbar colored icons -->
     <string name="statusbar_colored_icons_title">色付きのアイコン</string>
     <string name="statusbar_colored_icons_summary">ステータスバーの通知アイコンに適切なアプリアイコンを使用します</string>
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">背景の透明度</string>
+    <string name="qs_transparency_summary">クイック設定の背景の透明度を設定する</string>
+    <!--  screen, setting option summary to change custom timeout -->
+    <string name="custom_timeout_summary_never">なし</string>
+    <string name="custom_timeout_summary_5secs">5秒</string>
+    <string name="custom_timeout_summary_10secs">10秒</string>
+    <string name="custom_timeout_summary_15secs">15秒</string>
+    <string name="custom_timeout_summary_30secs">30秒</string>
+    <string name="custom_timeout_summary_1min">1分</string>
+    <string name="custom_timeout_summary_2mins">2分</string>
+    <string name="custom_timeout_summary_5mins">5分</string>
+    <string name="custom_timeout_summary_10mins">10分</string>
+    <string name="custom_timeout_summary_20mins">20分</string>
+    <string name="custom_timeout_summary_30mins">30分</string>
+    <string name="custom_timeout_summary_1hour">1時間</string>
+    <string name="custom_timeout_summary_2hours">2時間</string>
+    <string name="custom_timeout_summary_4hours">4時間</string>
+    <string name="custom_timeout_summary_8hours">8時間</string>
+    <!-- App lock -->
+    <string name="app_lock_title">アプリロック</string>
+    <string name="app_lock_summary_singular">1個のアプリが保護されています</string>
+    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g>個のアプリが保護されています</string>
+    <string name="app_lock_authentication_dialog_title">ロック解除</string>
+    <string name="enable_debugging">デバッグを有効化</string>
+    <string name="disable_debugging">デバッグを無効化</string>
+    <string name="app_lock_packages_title">アプリの保護</string>
+    <string name="app_lock_packages_summary">生体認証や端末認証で保護するアプリを選択する</string>
+    <string name="app_lock_timeout_title">自動ロックの時間</string>
+    <string name="app_lock_timeout_summary">バックグラウンドのアプリがロック解除されてからの時間の長さです</string>
+    <string name="app_lock_notifications_title">通知を消去</string>
+    <string name="app_lock_notifications_summary">         選択されたアプリがロックされると、通知の内容は非表示になり破棄されます。
+          Heads Up 通知は自動的に無効化されます。
+    </string>
+    <string name="app_lock_notifications_disabled_summary">アプリを最初に保護する</string>
+    <string name="app_lock_biometrics_allowed_title">生体認証でのロック解除を有効化</string>
+    <string name="app_lock_footer_text">制限時間後にバブルは自動的に解除されます</string>
 </resources>

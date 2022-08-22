@@ -21,13 +21,12 @@
     <string name="quicksettings_title">快速设置</string>
     <string name="spoof_title">伪装</string>
     <string name="status_bar_title">状态栏</string>
-    <string name="status_bar_battery_category_title">电池自定义</string>
+    <string name="battery_title">电池自定义</string>
     <string name="swipe_gestures_title">滑动手势</string>
     <string name="system_settings_title">系统选项</string>
     <string name="themes_title">主题</string>
     <string name="torch_gestures_title">手电筒手势</string>
     <string name="flashlight_category">手电筒</string>
-    <string name="telephony_icons_title">电话图标</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Android 中包含的常用手势</string>
     <string name="dark_ui_mode_summary">浏览黑暗主题选项</string>
@@ -136,6 +135,7 @@
     <!-- Heads up -->
     <string name="heads_up_notifications">浮动通知</string>
     <string name="heads_up_notifications_summary">弹出状态栏通知</string>
+    <string name="heads_up_notifications_master_switch_title">使用浮动通知</string>
     <string name="summary_heads_up_enabled">浮动通知已启用</string>
     <string name="summary_heads_up_disabled">浮动通知已禁用</string>
     <string name="add_heads_up_package">添加应用程序</string>
@@ -146,19 +146,13 @@
     <string name="profile_choose_app">选择应用程序</string>
     <string name="dialog_delete_title">删除</string>
     <string name="dialog_delete_message">删除所选中的项目？</string>
-    <!-- Network Traffic -->
-    <string name="traffic_title">流量指示器</string>
-    <string name="traffic_summary">自定义流量指示器</string>
-    <string name="network_traffic_autohide_threshold_title">自动隐藏阈值</string>
-    <string name="network_traffic_location_title">位置</string>
-    <string name="network_traffic_disabled">已禁用</string>
-    <string name="network_traffic_statusbar">状态栏</string>
-    <string name="network_traffic_qs_header">扩展状态栏</string>
-    <string name="network_traffic_refresh_interval_title">刷新间隔</string>
-    <string name="network_traffic_mode_title">显示模式</string>
-    <string name="network_traffic_dynamic">动态</string>
-    <string name="network_traffic_download">下载</string>
-    <string name="network_traffic_upload">上传</string>
+    <!-- Network traffic -->
+    <string name="network_traffic_title">网络流量监视器</string>
+    <string name="network_traffic_summary">在状态栏中启用或禁用网络流量监视器</string>
+    <string name="network_traffic_master_switch_title">使用网络流量监视器</string>
+    <string name="network_options_title">选项</string>
+    <string name="network_traffic_autohide_title">当网络处于非活动状态时隐藏网络流量监视器</string>
+    <string name="network_traffic_autohide_summary">当网络流量监视小于 1 KB/s 时隐藏</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_error_vib_title">指纹错误振动</string>
     <string name="fprint_error_vib_summary">指纹认证错误时振动</string>
@@ -187,7 +181,6 @@
     <string name="qs_rows_portrait_title">行数 (纵向)</string>
     <string name="qs_rows_landscape_title">行数 (横向)</string>
     <string name="qs_columns_portrait_title">列数 (纵向)</string>
-    <string name="qs_columns_landscape_title">列数 (横向)</string>
     <!-- QS tiles title visibility -->
     <string name="qs_tile_title_visibility_title">隐藏磁贴标题</string>
     <string name="qs_tile_title_visibility_summary">切换以隐藏磁贴标题</string>
@@ -233,6 +226,9 @@
     <string name="lockscreen_albumart_filter_title">媒体封面滤镜</string>
     <string name="lockscreen_albumart_filter_grayscale">灰度</string>
     <string name="lockscreen_albumart_filter_tint">主题色</string>
+    <string name="lockscreen_albumart_filter_blur">模糊</string>
+    <string name="lockscreen_albumart_filter_grayblur">灰度和模糊</string>
+    <string name="lockscreen_albumart_filter_blur_radius_title">媒体封面的模糊程度</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">时钟和日期设置</string>
     <string name="status_bar_clock_summary">自定义时钟和日期</string>
@@ -270,6 +266,7 @@
     <string name="clock_date_position">日期位置</string>
     <string name="clock_date_right">时间右侧</string>
     <string name="clock_date_left">时间左侧</string>
+    <string name="clock_font_size_title">时钟字体大小</string>
     <!-- QS clock -->
     <string name="qs_clock_title">时钟</string>
     <string name="qs_clock_summary">在快速状态栏标题中显示时钟</string>
@@ -517,6 +514,7 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">阻止某些应用访问传感器</string>
     <string name="sensor_block_summary">阻止某些应用访问特定的传感器以节省电池电量。</string>
+    <string name="sensor_block_master_switch_title">每个包使用传感器块</string>
     <string name="sensor_block_app_picker_title">屏蔽这些应用的传感器</string>
     <string name="add_sensor_block_package_title">添加将被屏蔽传感器的应用</string>
     <string name="add_sensor_block_package_summary">这些应用程序将阻止重大运动，加速计，线性加速度传感器</string>
@@ -815,8 +813,11 @@
     <string name="fingerprint_category">指纹</string>
     <string name="headsup_category">浮动通知设置</string>
     <string name="icons_category">图标</string>
-    <string name="statusbar_items_category">状态栏图标</string>
+    <string name="status_bar_icons_category_title">图标</string>
     <string name="volume_category">音量键</string>
+    <!-- Status bar - icon blocklist -->
+    <string name="status_bar_icons_title">状态栏图标</string>
+    <string name="status_bar_icons_summary">选择在状态栏显示的图标</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">锁屏界面快捷方式</string>
     <!-- Double Tap Lock screen to Sleep -->
@@ -884,9 +885,6 @@
     <string name="show_carrier_keyguard">锁屏界面</string>
     <string name="show_carrier_statusbar">状态栏</string>
     <string name="show_carrier_enabled">上传和下载</string>
-    <!-- Double Tap on Doze to wake -->
-    <string name="double_tap_on_doze_to_wake_title">点按即可唤醒熄屏显示</string>
-    <string name="double_tap_on_doze_to_wake_summary">当设备正在睡眠时双击唤醒</string>
     <!-- Monet Engine -->
     <string name="monet_category">Monet</string>
     <string name="monet_engine_title">Monet 引擎</string>
@@ -899,8 +897,8 @@
     <string name="monet_engine_chroma_factor_title">Chroma 因子</string>
     <string name="monet_engine_linear_lightness_title">使用线性亮度</string>
     <!-- Black theme -->
-    <string name="system_black_theme_title">使用暗色主题</string>
-    <string name="system_black_theme_summary">强制黑色背景颜色</string>
+    <string name="system_black_theme_title">生动颜色</string>
+    <string name="system_black_theme_summary">使用更深邃、更多彩的 Monet 色调</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">组合信号图标</string>
     <string name="combined_status_bar_signal_icons_summary">在状态栏中实现组合信号图标</string>
@@ -919,12 +917,9 @@
     <string name="burn_in_protection_summary">调整导航栏和状态栏图标，以防止烧屏</string>
     <string name="burn_in_protection_interval_title">切换时间间隔</string>
     <string name="burn_in_protection_interval_summary">图标切换频率</string>
-    <!-- UDFPS Haptic Feedback -->
-    <string name="udfps_haptic_feedback_title">屏下指纹触觉反馈</string>
-    <string name="udfps_haptic_feedback_summary">触摸屏下指纹时振动</string>
-    <!-- Night Light UDFPS -->
-    <string name="udfps_night_light_title">显示屏下指纹时禁用小夜灯</string>
-    <string name="udfps_night_light_summary">如果屏下指纹已激活，请在锁定屏幕上禁用夜灯。 禁用此选项可能会在夜灯开启时影响您的指纹准确性。</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">显示通知计数</string>
+    <string name="status_bar_notif_count_summary">显示待处理的通知数量</string>
     <!-- Privacy indicators -->
     <string name="mic_camera_privacy_indicator_title">麦克风和相机隐私指示器</string>
     <string name="mic_camera_privacy_indicator_summary">当任何应用使用麦克风或相机时显示单独的指示器</string>
@@ -1005,9 +1000,6 @@
     <string name="notification_material_dismiss_summary">用 material 样式浮动按钮替换清除所有通知文本</string>
     <string name="notification_material_dismiss_style_title">按钮样式</string>
     <string name="notification_material_dismiss_bgstyle_title">按钮背景</string>
-    <!-- Application downgrade -->
-    <string name="app_downgrade_title">允许应用程序降级</string>
-    <string name="app_downgrade_summary">这允许您降级应用程序。 请注意，这可能会导致崩溃和数据损坏</string>
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">忽略窗口安全标志</string>
     <string name="ignore_window_secure_summary">这将删除所有应用程序的屏幕截图和屏幕记录限制。 通常，特殊应用程序会替换为记录中的黑色区域。 在某些情况下这可能很方便，但可能会导致隐私泄露。 更改此切换后，您可能需要重新启动</string>
@@ -1031,9 +1023,9 @@
     <string name="smart_pixels_shift_title">烧屏保护</string>
     <string name="smart_pixels_shift_summary">通过经常移动像素来防止 OLED 屏幕的设备发生烧屏</string>
     <!-- Statusbar logo -->
-    <string name="status_bar_logo_category_title">Logo</string>
     <string name="status_bar_logo_title">Logo</string>
     <string name="status_bar_logo_summary">启用在状态栏中显示 logo</string>
+    <string name="status_bar_logo_master_switch_title">使用 Logo</string>
     <string name="status_bar_logo_position_title">位置</string>
     <string name="status_bar_logo_position_summary">选择左侧或右侧显示 Logo</string>
     <string name="status_bar_logo_position_right">右侧</string>
@@ -1072,6 +1064,15 @@
     <string name="status_bar_battery_style_icon_portrait">纵向图标</string>
     <string name="status_bar_battery_style_icon_rlandscape">横向图标 (右侧)</string>
     <string name="status_bar_battery_style_icon_landscape">横向图标 (左侧)</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_a">右侧横向图标 (风格 A)</string>
+    <string name="status_bar_battery_style_icon_landscape_style_a">左侧横向图标 (风格 B)</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_b">右侧横向图标 (风格 B)</string>
+    <string name="status_bar_battery_style_icon_landscape_style_b">左侧横向图标 (风格 B)</string>
+    <string name="status_bar_battery_style_icon_landscape_pill">纵向 (Mx)</string>
+    <string name="status_bar_battery_style_icon_landscape_line">横向 (Lorn)</string>
+    <string name="status_bar_battery_style_icon_landscape_musku">纵向 (IOS)</string>
+    <string name="status_bar_battery_style_icon_landscape_signal">横向 (Airoo)</string>
+    <string name="status_bar_battery_style_icon_landscape_buddy">横向胶囊</string>
     <string name="status_bar_battery_style_circle">圆环</string>
     <string name="status_bar_battery_style_dotted_circle">虚线圆环</string>
     <string name="status_bar_battery_style_big_circle">大圆环</string>
@@ -1100,4 +1101,50 @@
     <!-- Disable music track title in QS tile -->
     <string name="qs_music_tile_track_optional_title">音乐磁贴曲目标题</string>
     <string name="qs_music_tile_track_optional_summary">将音乐曲目标题显示为快速设置磁贴标题</string>
+    <!-- Charging animation -->
+    <string name="charging_animation_title">充电动画</string>
+    <string name="charging_animation_summary">设备接入电源时显示动画</string>
+    <!-- Lockscreen clock color -->
+    <string name="lockscreen_clock_color_title">锁屏时钟颜色</string>
+    <string name="lockscreen_clock_color_summary">锁屏时钟使用次强调色，禁用则使用强调色</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">彩色图标</string>
+    <string name="statusbar_colored_icons_summary">使用适当的应用程序图标作为状态栏中的通知图标</string>
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">背景透明度</string>
+    <string name="qs_transparency_summary">设置快速设置背景透明度级别</string>
+    <!--  screen, setting option summary to change custom timeout -->
+    <string name="custom_timeout_summary_never">永不</string>
+    <string name="custom_timeout_summary_5secs">5 秒</string>
+    <string name="custom_timeout_summary_10secs">10 秒</string>
+    <string name="custom_timeout_summary_15secs">15 秒</string>
+    <string name="custom_timeout_summary_30secs">30 秒</string>
+    <string name="custom_timeout_summary_1min">1分钟</string>
+    <string name="custom_timeout_summary_2mins">2 分钟</string>
+    <string name="custom_timeout_summary_5mins">5 分钟</string>
+    <string name="custom_timeout_summary_10mins">10 分钟</string>
+    <string name="custom_timeout_summary_20mins">20 分钟</string>
+    <string name="custom_timeout_summary_30mins">30 分钟</string>
+    <string name="custom_timeout_summary_1hour">1 小时</string>
+    <string name="custom_timeout_summary_2hours">2 小时</string>
+    <string name="custom_timeout_summary_4hours">4 小时</string>
+    <string name="custom_timeout_summary_8hours">8 小时</string>
+    <!-- App lock -->
+    <string name="app_lock_title">应用锁</string>
+    <string name="app_lock_summary_singular">1 个应用程序受到保护</string>
+    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> 应用程序受到保护</string>
+    <string name="app_lock_authentication_dialog_title">解锁</string>
+    <string name="enable_debugging">启用调试</string>
+    <string name="disable_debugging">禁用调试</string>
+    <string name="app_lock_packages_title">受保护的应用</string>
+    <string name="app_lock_packages_summary">选择要使用生物识别或设备凭据保护的应用</string>
+    <string name="app_lock_timeout_title">自动锁定超时</string>
+    <string name="app_lock_timeout_summary">后台解锁应用的持续时间</string>
+    <string name="app_lock_notifications_title">折叠通知</string>
+    <string name="app_lock_notifications_summary">          当锁定时，将为所选应用程序隐藏并折叠通知内容。
+          浮动通知将被自动禁用
+    </string>
+    <string name="app_lock_notifications_disabled_summary">首先保护应用程序</string>
+    <string name="app_lock_biometrics_allowed_title">启用生物识别解锁</string>
+    <string name="app_lock_footer_text">超时后气泡会自动消失</string>
 </resources>

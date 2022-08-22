@@ -21,13 +21,12 @@
     <string name="quicksettings_title">Configurações rápidas</string>
     <string name="spoof_title">Mascarar dispositivo</string>
     <string name="status_bar_title">Barra de status</string>
-    <string name="status_bar_battery_category_title">Personalizações da bateria</string>
+    <string name="battery_title">Personalizações da bateria</string>
     <string name="swipe_gestures_title">Gestos de deslizar</string>
     <string name="system_settings_title">Opções do sistema</string>
     <string name="themes_title">Temas</string>
     <string name="torch_gestures_title">Gestos da lanterna</string>
     <string name="flashlight_category">Lanterna</string>
-    <string name="telephony_icons_title">Ícones de rede</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Gestos padrões incluídos no Android</string>
     <string name="dark_ui_mode_summary">Navegue pelas opções de tema escuro</string>
@@ -147,19 +146,13 @@
     <string name="profile_choose_app">Escolher aplicativo</string>
     <string name="dialog_delete_title">Excluir</string>
     <string name="dialog_delete_message">Remover o item selecionado?</string>
-    <!-- Network Traffic -->
-    <string name="traffic_title">Indicadores de tráfego de rede</string>
-    <string name="traffic_summary">Personalize os indicadores de tráfego de rede</string>
-    <string name="network_traffic_autohide_threshold_title">Limite de atividade para a ocultação automática (KB/s)</string>
-    <string name="network_traffic_location_title">Local</string>
-    <string name="network_traffic_disabled">Desativado</string>
-    <string name="network_traffic_statusbar">Barra de status</string>
-    <string name="network_traffic_qs_header">Cabeçalho das configurações rápidas</string>
-    <string name="network_traffic_refresh_interval_title">Intervalo de atualização</string>
-    <string name="network_traffic_mode_title">Modo de exibição</string>
-    <string name="network_traffic_dynamic">Dinâmico</string>
-    <string name="network_traffic_download">Download</string>
-    <string name="network_traffic_upload">Upload</string>
+    <!-- Network traffic -->
+    <string name="network_traffic_title">Indicador de tráfego de rede</string>
+    <string name="network_traffic_summary">Ativar ou desativar os indicadores de tráfego de rede</string>
+    <string name="network_traffic_master_switch_title">Mostrar indicador de tráfego de rede</string>
+    <string name="network_options_title">Opções</string>
+    <string name="network_traffic_autohide_title">Ocultar indicadores de tráfego rede automaticamente</string>
+    <string name="network_traffic_autohide_summary">Ocultar quando o indicador de tráfego de rede estiver abaixo de 1 KB/s</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_error_vib_title">Vibrar quando a digital não for reconhecida</string>
     <string name="fprint_error_vib_summary">Vibrar quando o desbloqueio por impressão digital falhar</string>
@@ -233,6 +226,9 @@
     <string name="lockscreen_albumart_filter_title">Filtro de arte da capa de mídia</string>
     <string name="lockscreen_albumart_filter_grayscale">Tons de cinza</string>
     <string name="lockscreen_albumart_filter_tint">Tom da cor de destaque</string>
+    <string name="lockscreen_albumart_filter_blur">Desfoque</string>
+    <string name="lockscreen_albumart_filter_grayblur">Tons de cinza desfocado</string>
+    <string name="lockscreen_albumart_filter_blur_radius_title">Nível de desfoque do player de mídia na tela de bloqueio</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Configurações de relógio e data</string>
     <string name="status_bar_clock_summary">Personalize o relógio e a data</string>
@@ -270,6 +266,7 @@
     <string name="clock_date_position">Posição da data</string>
     <string name="clock_date_right">À direita do relógio</string>
     <string name="clock_date_left">À esquerda do relógio</string>
+    <string name="clock_font_size_title">Tamanho da fonte do relógio</string>
     <!-- QS clock -->
     <string name="qs_clock_title">Relógio</string>
     <string name="qs_clock_summary">Mostrar relógio no cabeçalho das configurações rápidas</string>
@@ -816,8 +813,11 @@
     <string name="fingerprint_category">Impressão digital</string>
     <string name="headsup_category">Configurações das notificações flutuantes</string>
     <string name="icons_category">Ícones</string>
-    <string name="statusbar_items_category">Itens da barra de status</string>
+    <string name="status_bar_icons_category_title">Ícones</string>
     <string name="volume_category">Botões de volume</string>
+    <!-- Status bar - icon blocklist -->
+    <string name="status_bar_icons_title">Ícones da barra de status</string>
+    <string name="status_bar_icons_summary">Escolha quais ícones serão exibidos na barra de status</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Atalhos na tela de bloqueio</string>
     <!-- Double Tap Lock screen to Sleep -->
@@ -885,9 +885,6 @@
     <string name="show_carrier_keyguard">Tela de bloqueio</string>
     <string name="show_carrier_statusbar">Barra de status</string>
     <string name="show_carrier_enabled">Ambos</string>
-    <!-- Double Tap on Doze to wake -->
-    <string name="double_tap_on_doze_to_wake_title">Toque para despertar do sono</string>
-    <string name="double_tap_on_doze_to_wake_summary">Toque duas vezes para acordar quando o dispositivo estiver inativo</string>
     <!-- Monet Engine -->
     <string name="monet_category">Tema Monet</string>
     <string name="monet_engine_title">Tema Monet</string>
@@ -900,8 +897,8 @@
     <string name="monet_engine_chroma_factor_title">Coloração</string>
     <string name="monet_engine_linear_lightness_title">Brilho linear</string>
     <!-- Black theme -->
-    <string name="system_black_theme_title">Usar tema preto (amoled)</string>
-    <string name="system_black_theme_summary">Forçar tema preto para a cor de fundo</string>
+    <string name="system_black_theme_title">Cores vívidas</string>
+    <string name="system_black_theme_summary">Colorir e realçar as cores do tema monet</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Combinar ícones de sinal</string>
     <string name="combined_status_bar_signal_icons_summary">Mostrar ícones de sinal combinados na barra de status.\nNecessário reiniciar a Interface do sistema</string>
@@ -920,12 +917,6 @@
     <string name="burn_in_protection_summary">Altere a posição dos ícones da barra de navegação e barra de status durante intervalos para evitar o efeito Burn-in</string>
     <string name="burn_in_protection_interval_title">Intervalo de ação</string>
     <string name="burn_in_protection_interval_summary">Com que frequência os ícones se deslocam</string>
-    <!-- UDFPS Haptic Feedback -->
-    <string name="udfps_haptic_feedback_title">Resposta tátil na impressão digital</string>
-    <string name="udfps_haptic_feedback_summary">Vibrar ao tocar no ícone de impressão digital</string>
-    <!-- Night Light UDFPS -->
-    <string name="udfps_night_light_title">Desativar o modo noturno ao usar a impressão digital</string>
-    <string name="udfps_night_light_summary">Desativar o modo noturno na tela de bloqueio quando o desbloqueio por impressão digital estiver ativado. O modo noturno quando ativo pode diminuir a precisão do desbloqueio por impressão digital na tela.</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Mostrar contador de notificações</string>
     <string name="status_bar_notif_count_summary">Exibe o número de notificações pendentes</string>
@@ -1009,6 +1000,9 @@
     <string name="notification_material_dismiss_summary">Substitua o texto \"limpar tudo\" pelo botão flutuante</string>
     <string name="notification_material_dismiss_style_title">Estilo do botão</string>
     <string name="notification_material_dismiss_bgstyle_title">Fundo do botão</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Remover restrição de captura de tela</string>
+    <string name="ignore_window_secure_summary">Isso remove as restrições de captura e gravação de tela para todos os aplicativos. Normalmente, aplicativos protegidos não permitem e emitem uma tela preta nos registros. Remover essa restrição pode ser conveniente em alguns casos, mas pode facilitar o furto de dados. Após alterar este botão, pode ser necessário reiniciar o aplicativo para que a alteração tenha efeito.</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">Substitua suas notificações por uma versão redesenhada de tickers. \nSlim e menos invasivo do que uma notificação padrão</string>
@@ -1116,4 +1110,41 @@
     <!-- Statusbar colored icons -->
     <string name="statusbar_colored_icons_title">Ícones coloridos</string>
     <string name="statusbar_colored_icons_summary">Colorir ícones de notificações na barra de status</string>
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">Transparência do fundo</string>
+    <string name="qs_transparency_summary">Defina o nível de transparência para o fundo do painel de configurações rápidas</string>
+    <!--  screen, setting option summary to change custom timeout -->
+    <string name="custom_timeout_summary_never">Nunca</string>
+    <string name="custom_timeout_summary_5secs">5 segundos</string>
+    <string name="custom_timeout_summary_10secs">10 segundos</string>
+    <string name="custom_timeout_summary_15secs">15 segundos</string>
+    <string name="custom_timeout_summary_30secs">30 segundos</string>
+    <string name="custom_timeout_summary_1min">1 minuto</string>
+    <string name="custom_timeout_summary_2mins">2 minutos</string>
+    <string name="custom_timeout_summary_5mins">5 minutos</string>
+    <string name="custom_timeout_summary_10mins">10 minutos</string>
+    <string name="custom_timeout_summary_20mins">20 minutos</string>
+    <string name="custom_timeout_summary_30mins">30 minutos</string>
+    <string name="custom_timeout_summary_1hour">1 hora</string>
+    <string name="custom_timeout_summary_2hours">2 horas</string>
+    <string name="custom_timeout_summary_4hours">4 horas</string>
+    <string name="custom_timeout_summary_8hours">8 horas</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Bloqueio de aplicativos</string>
+    <string name="app_lock_summary_singular">1 aplicativo protegido</string>
+    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> aplicativos estão protegidos</string>
+    <string name="app_lock_authentication_dialog_title">Desbloquear</string>
+    <string name="enable_debugging">Ativar depuração</string>
+    <string name="disable_debugging">Desativar depuração</string>
+    <string name="app_lock_packages_title">Aplicativos protegidos</string>
+    <string name="app_lock_packages_summary">Selecione os aplicativos que serão protegidos por senha</string>
+    <string name="app_lock_timeout_title">Tempo de bloqueio automático</string>
+    <string name="app_lock_timeout_summary">Tempo previsto para bloquear um aplicativo em segundo plano</string>
+    <string name="app_lock_notifications_title">Ocultar notificações</string>
+    <string name="app_lock_notifications_summary">          O conteúdo das notificações serão ocultadas e recolhidas quando os aplicativos selecionados forem bloqueados.
+          Notificações flutuantes serão desativadas automaticamente.
+    </string>
+    <string name="app_lock_notifications_disabled_summary">Primeiro proteja um aplicativo</string>
+    <string name="app_lock_biometrics_allowed_title">Habilitar biometria para desbloquear</string>
+    <string name="app_lock_footer_text">Balões de notificações serão automaticamente dispersos após o tempo limite</string>
 </resources>
