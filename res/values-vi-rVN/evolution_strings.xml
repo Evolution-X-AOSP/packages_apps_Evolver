@@ -27,7 +27,6 @@
     <string name="themes_title">Giao diện</string>
     <string name="torch_gestures_title">Điều hướng đèn flash</string>
     <string name="flashlight_category">Đèn pin</string>
-    <string name="telephony_icons_title">Biểu tượng điện thoại</string>
     <!-- Summaries -->
     <string name="aosp_gesture_summary">Cử chỉ gốc có sẵn của Android</string>
     <string name="dark_ui_mode_summary">Duyệt qua các tùy chọn chủ đề tối</string>
@@ -147,19 +146,13 @@
     <string name="profile_choose_app">Chọn ứng dụng</string>
     <string name="dialog_delete_title">Xoá</string>
     <string name="dialog_delete_message">Xoá các mục đã chọn?</string>
-    <!-- Network Traffic -->
-    <string name="traffic_title">Tốc độ mạng</string>
-    <string name="traffic_summary">Tùy chỉnh chỉ số lưu lượng mạng</string>
-    <string name="network_traffic_autohide_threshold_title">Ngưỡng tự động ẩn</string>
-    <string name="network_traffic_location_title">Vị trí</string>
-    <string name="network_traffic_disabled">Tắt</string>
-    <string name="network_traffic_statusbar">Thanh trạng thái</string>
-    <string name="network_traffic_qs_header">Thanh trạng thái mở rộng</string>
-    <string name="network_traffic_refresh_interval_title">Thời gian làm mới</string>
-    <string name="network_traffic_mode_title">Chế độ hiển thị</string>
-    <string name="network_traffic_dynamic">Động (dynamic)</string>
-    <string name="network_traffic_download">Tải xuống</string>
-    <string name="network_traffic_upload">Tải lên</string>
+    <!-- Network traffic -->
+    <string name="network_traffic_title">Lưu lượng mạng</string>
+    <string name="network_traffic_summary">Bật hoặc tắt hiển thị tốc độ mạng trên thanh trạng thái</string>
+    <string name="network_traffic_master_switch_title">Hiển thị tốc độ mạng</string>
+    <string name="network_options_title">Tùy chọn</string>
+    <string name="network_traffic_autohide_title">Tự động ẩn tốc độ mạng khi không dùng</string>
+    <string name="network_traffic_autohide_summary">Ẩn lưu lượng mạng khi tốc độ mạng dưới 1KB/s</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fprint_error_vib_title">Rung khi lỗi vân tay</string>
     <string name="fprint_error_vib_summary">Rung khi xác thực dấu vân tay lỗi</string>
@@ -233,6 +226,9 @@
     <string name="lockscreen_albumart_filter_title">Bộ lọc ảnh bìa đa phương tiện</string>
     <string name="lockscreen_albumart_filter_grayscale">Trắng đen</string>
     <string name="lockscreen_albumart_filter_tint">Đồng bộ màu chủ đề</string>
+    <string name="lockscreen_albumart_filter_blur">Làm mờ</string>
+    <string name="lockscreen_albumart_filter_grayblur">Trắng đen và làm mờ</string>
+    <string name="lockscreen_albumart_filter_blur_radius_title">Độ mờ cho ảnh bìa tác phẩm trên màn hình khóa</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Ngày &amp; giờ</string>
     <string name="status_bar_clock_summary">Tùy chỉnh đồng hồ &amp; ngày</string>
@@ -816,8 +812,11 @@
     <string name="fingerprint_category">Vân tay</string>
     <string name="headsup_category">cài đặt Heads up</string>
     <string name="icons_category">Biểu tượng</string>
-    <string name="statusbar_items_category">Những biểu tượng thanh thông báo</string>
+    <string name="status_bar_icons_category_title">Biểu tượng</string>
     <string name="volume_category">Nút âm lượng</string>
+    <!-- Status bar - icon blocklist -->
+    <string name="status_bar_icons_title">Biểu tượng thanh trạng thái</string>
+    <string name="status_bar_icons_summary">Điều chỉnh biểu tượng được hiển thị trên thanh trạng thái</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Phím tắt màn hình khoá</string>
     <!-- Double Tap Lock screen to Sleep -->
@@ -885,9 +884,6 @@
     <string name="show_carrier_keyguard">Màn hình khóa</string>
     <string name="show_carrier_statusbar">Thanh trạng thái</string>
     <string name="show_carrier_enabled">Cả hai</string>
-    <!-- Double Tap on Doze to wake -->
-    <string name="double_tap_on_doze_to_wake_title">Nhấn để đánh thức khi ngủ gật</string>
-    <string name="double_tap_on_doze_to_wake_summary">Nhấn đúp để đánh thức khi thiết bị đang ngủ</string>
     <!-- Monet Engine -->
     <string name="monet_category">Monet</string>
     <string name="monet_engine_title">Công cụ Monet</string>
@@ -920,12 +916,6 @@
     <string name="burn_in_protection_summary">Chuyển các biểu tượng trên thanh điều hướng và thanh trạng thái để ngăn cháy</string>
     <string name="burn_in_protection_interval_title">Khoảng thời gian thay đổi</string>
     <string name="burn_in_protection_interval_summary">Tần suất thay đổi biểu tượng</string>
-    <!-- UDFPS Haptic Feedback -->
-    <string name="udfps_haptic_feedback_title">Phản hồi xúc giác Udfps</string>
-    <string name="udfps_haptic_feedback_summary">Rung khi chạm các icon FOD</string>
-    <!-- Night Light UDFPS -->
-    <string name="udfps_night_light_title">Tắt ánh sáng chạm khi hiển thị FOD</string>
-    <string name="udfps_night_light_summary">Tắt đèn ngủ trên màn hình khóa nếu UDFPS đang hoạt động. Tắt tùy chọn này có thể ảnh hưởng đến độ chính xác của vân tay khi bật đèn ngủ.</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Hiện số thông báo</string>
     <string name="status_bar_notif_count_summary">Hiển thị số lượng thông báo đang chờ</string>
@@ -1064,7 +1054,7 @@
     <string name="status_bar_logo_style_ghost">Bóng ma</string>
     <string name="status_bar_logo_style_google">Google</string>
     <string name="status_bar_logo_style_guitar_electric">Ghi-ta điện</string>
-    <string name="status_bar_logo_style_amogus">Sú</string>
+    <string name="status_bar_logo_style_amogus">Sú (Amogus)</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Kiểu pin</string>
     <string name="status_bar_battery_style_icon_portrait">Biểu tượng dọc</string>
@@ -1116,4 +1106,40 @@
     <!-- Statusbar colored icons -->
     <string name="statusbar_colored_icons_title">Màu biểu tượng</string>
     <string name="statusbar_colored_icons_summary">Hiển thị đúng màu biểu tượng ứng dụng cho thông báo trên thanh trạng thái</string>
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">Độ trong suốt nền</string>
+    <string name="qs_transparency_summary">Đặt mức độ trong suốt cho nền cài đặt nhanh</string>
+    <!--  screen, setting option summary to change custom timeout -->
+    <string name="custom_timeout_summary_never">Không bao giờ</string>
+    <string name="custom_timeout_summary_5secs">5 giây</string>
+    <string name="custom_timeout_summary_10secs">10 giây</string>
+    <string name="custom_timeout_summary_15secs">15 giây</string>
+    <string name="custom_timeout_summary_30secs">30 giây</string>
+    <string name="custom_timeout_summary_1min">1 phút</string>
+    <string name="custom_timeout_summary_2mins">2 phút</string>
+    <string name="custom_timeout_summary_5mins">5 phút</string>
+    <string name="custom_timeout_summary_10mins">10 phút</string>
+    <string name="custom_timeout_summary_20mins">20 phút</string>
+    <string name="custom_timeout_summary_30mins">30 phút</string>
+    <string name="custom_timeout_summary_1hour">1 giờ</string>
+    <string name="custom_timeout_summary_2hours">2 giờ</string>
+    <string name="custom_timeout_summary_4hours">4 giờ</string>
+    <string name="custom_timeout_summary_8hours">8 giờ</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Khoá ứng dụng</string>
+    <string name="app_lock_summary_singular">1 ứng dụng được bảo vệ</string>
+    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g>ứng dụng được bảo vệ</string>
+    <string name="app_lock_authentication_dialog_title">Mở khóa</string>
+    <string name="enable_debugging">Bật chế độ gỡ lỗi</string>
+    <string name="disable_debugging">Vô hiệu gỡ lỗi</string>
+    <string name="app_lock_packages_title">Các ứng dụng được bảo vệ</string>
+    <string name="app_lock_packages_summary">Chọn các ứng dụng để bảo vệ bằng sinh trắc học hoặc thông tin đăng nhập thiết bị</string>
+    <string name="app_lock_timeout_title">Hẹn giờ tự động khóa</string>
+    <string name="app_lock_timeout_summary">Khoảng thời gian mà sau đó ứng dụng đã mở khóa trong nền sẽ bị khóa</string>
+    <string name="app_lock_notifications_title">Thu gọn thông báo</string>
+    <string name="app_lock_notifications_summary">Nội dung thông báo sẽ bị ẩn và thu gọn đối với các ứng dụng đã chọn khi chúng bị khóa.
+           Thông báo cảnh báo sẽ tự động bị tắt.    </string>
+    <string name="app_lock_notifications_disabled_summary">Bảo vệ một ứng dụng trước tiên</string>
+    <string name="app_lock_biometrics_allowed_title">Bật sinh trắc học để mở khóa</string>
+    <string name="app_lock_footer_text">Bong bóng sẽ tự động bị loại bỏ sau khi hết thời gian chờ</string>
 </resources>
