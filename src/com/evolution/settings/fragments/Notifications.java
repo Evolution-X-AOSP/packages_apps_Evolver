@@ -53,6 +53,7 @@ public class Notifications extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+    private static final String ALERT_SLIDER_PULSE_PREF = "alert_slider_pulse";
     private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String PREF_FLASH_ON_CALL = "flashlight_on_call";
@@ -61,6 +62,7 @@ public class Notifications extends SettingsPreferenceFragment implements
 
     private CustomSeekBarPreference mFlashOnCallRate;
     private Preference mAlertSlider;
+    private Preference mAlertSliderPulse;
     private SystemSettingListPreference mFlashOnCall;
     private SystemSettingSwitchPreference mFlashOnCallIgnoreDND;
 
@@ -105,10 +107,13 @@ public class Notifications extends SettingsPreferenceFragment implements
         }
 
         mAlertSlider = (Preference) findPreference(ALERT_SLIDER_PREF);
+        mAlertSliderPulse = (Preference) findPreference(ALERT_SLIDER_PULSE_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
                 com.android.internal.R.bool.config_hasAlertSlider);
-        if (!mAlertSliderAvailable)
+        if (!mAlertSliderAvailable) {
             prefSet.removePreference(mAlertSlider);
+            prefSet.removePreference(mAlertSliderPulse);
+        }
     }
 
     @Override
