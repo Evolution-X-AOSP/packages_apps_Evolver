@@ -56,6 +56,8 @@ import java.util.List;
 public class Buttons extends ActionFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String ALERT_SLIDER_CAT = "alert_slider_cat";
+    private static final String BLOCK_ALERT= "block_alert";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String KEY_NAVBAR_INVERSE = "navigation_bar_inverse";
     private static final String KEY_NAVIGATION_COMPACT_LAYOUT = "navigation_bar_compact_layout";
@@ -85,6 +87,7 @@ public class Buttons extends ActionFragment implements
     private PreferenceCategory mHwKeyCategory;
     private SecureSettingSwitchPreference mSwapCapacitiveKeys;
     private SwitchPreference mHwKeyDisable;
+    private SystemSettingSwitchPreference mAlertBlock;
     private SystemSettingSwitchPreference mNavbarInverse;
     private SystemSettingSwitchPreference mNavigationCompactLayout;
 
@@ -170,6 +173,16 @@ public class Buttons extends ActionFragment implements
         mNavbarInverse.setEnabled(isThreeButtonNavbarEnabled);
         mNavigationCompactLayout = (SystemSettingSwitchPreference) findPreference(KEY_NAVIGATION_COMPACT_LAYOUT);
         mNavigationCompactLayout.setEnabled(isThreeButtonNavbarEnabled);
+
+        final PreferenceCategory alertSliderCat =
+        (PreferenceCategory) findPreference(ALERT_SLIDER_CAT);
+        mAlertBlock = (SystemSettingSwitchPreference) findPreference(BLOCK_ALERT);
+        boolean mAlertSliderAvailable = res.getBoolean(
+            com.android.internal.R.bool.config_hasAlertSlider);
+        boolean isPocketEnabled = Settings.System.getInt(resolver, Settings.System.POCKET_JUDGE, 0) == 1;
+        mAlertBlock.setEnabled(isPocketEnabled);
+        if (!mAlertSliderAvailable && alertSliderCat != null)
+            prefScreen.removePreference(alertSliderCat);
     }
 
     private static boolean isKeyDisablerSupported(Context context) {
