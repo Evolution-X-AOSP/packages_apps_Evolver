@@ -262,6 +262,31 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="alert_slider_cat"
+        android:title="@string/alert_slider_cat_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="alert_slider_notifications"
+            android:title="@string/alert_slider_notifications_title"
+            android:summary="@string/alert_slider_notifications_summary"
+            android:defaultValue="true" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="alert_slider_pulse"
+            android:title="@string/alert_slider_pulse_title"
+            android:summary="@string/alert_slider_pulse_summary"
+            android:defaultValue="true"
+            android:dependency="alert_slider_notifications" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+           android:key="block_alert"
+           android:title="@string/block_alert_title"
+           android:summary="@string/block_alert_summary"
+           android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="extras_category"
         android:title="@string/extras_title">
 
