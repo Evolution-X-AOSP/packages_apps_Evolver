@@ -21,7 +21,7 @@
     <string name="quicksettings_title">クイック設定</string>
     <string name="spoof_title">偽装</string>
     <string name="status_bar_title">ステータスバー</string>
-    <string name="status_bar_battery_category_title">バッテリー編集</string>
+    <string name="battery_title">バッテリー編集</string>
     <string name="swipe_gestures_title">スワイプジェスチャー</string>
     <string name="system_settings_title">システムオプション</string>
     <string name="themes_title">テーマ</string>
@@ -266,6 +266,7 @@
     <string name="clock_date_position">日付の位置</string>
     <string name="clock_date_right">時刻の右</string>
     <string name="clock_date_left">時刻の左</string>
+    <string name="clock_font_size_title">時計のフォントサイズ</string>
     <!-- QS clock -->
     <string name="qs_clock_title">時計</string>
     <string name="qs_clock_summary">クイックステータスバーのヘッダーに時計を表示する</string>
@@ -273,17 +274,22 @@
     <string name="qs_date_title">日付</string>
     <string name="qs_date_summary">クイックステータスバーのヘッダーに日付を表示する</string>
     <!-- QuickSettings haptic feedback -->
+    <string name="qs_tile_vibration_title">振動</string>
     <string name="quick_settings_vibrate_title">タッチで振動</string>
     <string name="quick_settings_vibrate_summary">タイルに触れた時に振動させる</string>
+    <string name="quick_settings_vibrate_duration_title">振動時間</string>
+    <string name="quick_settings_vibrate_duration_summary">振動させる時間をミリ秒で設定する</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">アニメーション</string>
     <string name="qs_tile_animation_style_title">アニメーションスタイル</string>
     <string name="qs_tile_animation_duration_title">アニメーション速度</string>
     <string name="qs_tile_animation_interpolator_title">タイルアニメーションの補間</string>
     <string name="qs_tile_animation_style_off">なし</string>
+    <string name="qs_tile_animation_style_flip">反転</string>
     <string name="qs_tile_animation_style_rotate">回転</string>
-    <string name="qs_tile_animation_style_flipx">X軸で反転</string>
-    <string name="qs_tile_animation_style_flipy">Y軸で反転</string>
+    <string name="qs_tile_animation_duration_low">低速</string>
+    <string name="qs_tile_animation_duration_default">既定</string>
+    <string name="qs_tile_animation_duration_fast">高速</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">等速</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">加速</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">減速</string>
@@ -356,44 +362,21 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">ロックアイコン</string>
     <string name="lockscreen_lock_icon_summary">ロック画面にロックアイコンを表示する</string>
-    <!-- Pulse notifications lighting -->
-    <string name="pulse_ambient_light_title">アンビエントエッジライト</string>
-    <string name="pulse_ambient_light_summary">通知のパルスにアンビエントライトエッジを使用する</string>
-    <string name="ambient_notification_light_enabled_title">Always On Display で表示</string>
-    <string name="ambient_notification_light_enabled_summary">Always On Display でもエッジライト表示を維持する</string>
-    <string name="ambient_notification_light_hide_aod_title">Always On Display の内容を隠す</string>
-    <string name="ambient_notification_light_hide_aod_summary">エッジが光っている時は Always On Display を隠す</string>
-    <string name="ambient_notification_light_duration_title">表示時間</string>
-    <string name="ambient_notification_light_duration_summary">それぞれのアニメーションが終了するまでにかかる時間です</string>
-    <string name="ambient_notification_light_repeats_title">繰り返し</string>
-    <string name="ambient_notification_light_repeats_summary">アニメーションが表示される回数です。\n0にすると無制限になります</string>
-    <string name="ambient_notification_light_timeout_title">点灯時間</string>
-    <string name="ambient_notification_light_timeout_forever">無期限</string>
-    <string name="ambient_notification_light_timeout_half_minute">30秒</string>
-    <string name="ambient_notification_light_timeout_minute">1分</string>
-    <string name="ambient_notification_light_timeout_three_minutes">3分</string>
-    <string name="ambient_notification_light_timeout_five_minutes">5分</string>
-    <string name="ambient_notification_light_timeout_ten_minutes">10分</string>
-    <string name="set_to_zero">有効にするには繰り返しを0に設定して下さい</string>
-    <string name="ambient_notification_color_mode_title">色のモード</string>
-    <string name="ambient_notification_color_mode_accent">アクセントの色</string>
-    <string name="ambient_notification_color_mode_wall">壁紙のおおまかな色</string>
-    <string name="ambient_notification_color_mode_notification">通知アイコンの色</string>
-    <string name="ambient_notification_color_mode_custom">@string/ambient_notification_light_color_title</string>
-    <string name="ambient_notification_light_color_title">カスタムの色</string>
-    <string name="pulse_ambient_light_show_always_title">常に表示</string>
-    <string name="pulse_ambient_light_show_always_summary">通知だけでなく全ての Doze イベントにライトを表示する</string>
-    <string name="pulse_ambient_light_repeat_direction_title">ライトの繰り返しモード</string>
-    <string name="pulse_ambient_light_repeat_direction_restart">再起動</string>
-    <string name="pulse_ambient_light_repeat_direction_reverse">反転</string>
-    <string name="pulse_ambient_light_layout_title">ライト表示</string>
-    <string name="pulse_ambient_light_layout_solid">ソリッド</string>
-    <string name="pulse_ambient_light_layout_faded">フェード</string>
-    <string name="pulse_ambient_light_width_title">ライトの幅</string>
-    <string name="pulse_light_layout_style_title">ライトのレイアウトスタイル</string>
-    <string name="pulse_light_both">4サイド全て</string>
-    <string name="pulse_light_top_bottom">上下のみ</string>
-    <string name="pulse_light_left_right">左右のみ</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">エッジライト</string>
+    <string name="enable_edge_light">エッジライトを有効化</string>
+    <string name="edge_light_intro_text">パルス時に画面の端に沿ってアニメーションを表示する</string>
+    <string name="edge_light_always_trigger_on_pulse_title">パルスで常に起動</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">通知だけではなくアンビエント画面が表示されればいつでもエッジライトを表示する</string>
+    <string name="edge_light_repeat_animation_title">アニメーションの繰り返し</string>
+    <string name="edge_light_repeat_animation_summary_on">指定時間まで繰り返す</string>
+    <string name="edge_light_repeat_animation_summary_off">1度だけ表示</string>
+    <string name="edge_light_color_mode_title">エッジライトの色のモード</string>
+    <string name="accent_color">アクセントの色 (既定)</string>
+    <string name="notification_color">通知の色</string>
+    <string name="wallpaper_color">壁紙の色</string>
+    <string name="custom_color">カスタムの色</string>
+    <string name="edge_light_custom_color_title">カスタムの色</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">フッターのテキスト</string>
     <string name="qs_footer_text_summary">クイック設定パネルの下部にテキストを表示する</string>
@@ -916,6 +899,9 @@
     <string name="burn_in_protection_summary">ナビゲーションバーとステータスバーのアイコンをシフトさせて焼き付きを防止する</string>
     <string name="burn_in_protection_interval_title">シフトを行う時間の間隔</string>
     <string name="burn_in_protection_interval_summary">アイコンをシフトさせる頻度を設定する</string>
+    <!-- UDFPS Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">画面内指紋認証の触覚の使用</string>
+    <string name="udfps_haptic_feedback_summary">画面内指紋認証アイコンに触れた時に振動させる</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">通知の数を表示</string>
     <string name="status_bar_notif_count_summary">保留中の通知の数を表示する</string>
@@ -999,6 +985,9 @@
     <string name="notification_material_dismiss_summary">全ての通知を消去ボタンをマテリアルスタイルのフローティングボタンに置き換える</string>
     <string name="notification_material_dismiss_style_title">ボタンのスタイル</string>
     <string name="notification_material_dismiss_bgstyle_title">ボタンの背景</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">ウィンドウのセキュアフラグを無視</string>
+    <string name="ignore_window_secure_summary">全てのアプリへのスクリーンショットや画面録画の制限を解除します。基本的に録画では特別なアプリは黒く領域が塗り潰されます。いくつかの場合で便利になることがありますが、プライバシー保護が脆弱になる可能性があります。この設定切り替えの後、効果を反映させるにはアプリの再起動が必要になる可能性があります。</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">再デザインされたバージョンの通知ティッカーに置き換えます。\n標準の通知よりスリムで優しい雰囲気です。</string>
@@ -1143,4 +1132,12 @@
     <string name="app_lock_notifications_disabled_summary">アプリを最初に保護する</string>
     <string name="app_lock_biometrics_allowed_title">生体認証でのロック解除を有効化</string>
     <string name="app_lock_footer_text">制限時間後にバブルは自動的に解除されます</string>
+    <!-- Alert Slider category (OnePlus devices) -->
+    <string name="alert_slider_cat_title">Alert Slider</string>
+    <!-- Alert Slider Pulse (OnePlus devices) -->
+    <string name="alert_slider_pulse_title">アラートスライダーの Pulse</string>
+    <string name="alert_slider_pulse_summary">Alert Slider の位置を変更した時にアンビエント画面を点滅させる</string>
+    <!-- Alert Slider block -->
+    <string name="block_alert_title">Alert Slider をブロック</string>
+    <string name="block_alert_summary">ポケットモード有効時は Alert Slider をブロックする</string>
 </resources>
