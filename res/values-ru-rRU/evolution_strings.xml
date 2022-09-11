@@ -274,17 +274,22 @@
     <string name="qs_date_title">Дата</string>
     <string name="qs_date_summary">Отображать дату в заголовке строки состояния</string>
     <!-- QuickSettings haptic feedback -->
+    <string name="qs_tile_vibration_title">Вибрация</string>
     <string name="quick_settings_vibrate_title">Вибрировать при касании</string>
     <string name="quick_settings_vibrate_summary">Вибрировать при касании плиток быстрых настроек</string>
+    <string name="quick_settings_vibrate_duration_title">Продолжительность вибрации</string>
+    <string name="quick_settings_vibrate_duration_summary">Время вибрации</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Анимации</string>
     <string name="qs_tile_animation_style_title">Стиль анимации</string>
     <string name="qs_tile_animation_duration_title">Длительность анимации</string>
     <string name="qs_tile_animation_interpolator_title">Интерполятор анимации плиток</string>
     <string name="qs_tile_animation_style_off">Без анимации</string>
+    <string name="qs_tile_animation_style_flip">Переворот</string>
     <string name="qs_tile_animation_style_rotate">Вращение</string>
-    <string name="qs_tile_animation_style_flipx">Отразить по X</string>
-    <string name="qs_tile_animation_style_flipy">Отразить по Y</string>
+    <string name="qs_tile_animation_duration_low">Медленная</string>
+    <string name="qs_tile_animation_duration_default">По умолчанию</string>
+    <string name="qs_tile_animation_duration_fast">Быстрая</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Линейная</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Ускоренная</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Замедленная</string>
@@ -357,44 +362,21 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Значок блокировки</string>
     <string name="lockscreen_lock_icon_summary">Показывать значок блокировки на экране блокировки</string>
-    <!-- Pulse notifications lighting -->
-    <string name="pulse_ambient_light_title">Свечение по краям экрана</string>
-    <string name="pulse_ambient_light_summary">Подсвечивать края экрана для пульсирующих уведомлений</string>
-    <string name="ambient_notification_light_enabled_title">Отображать на Всегда включенном экране</string>
-    <string name="ambient_notification_light_enabled_summary">Показывать подсветку краёв на Всегда включенном экране</string>
-    <string name="ambient_notification_light_hide_aod_title">Скрывать контент на Всегда включенном экране</string>
-    <string name="ambient_notification_light_hide_aod_summary">Скрывать содержимое Всегда включенном экрана, когда края подсвечиваются</string>
-    <string name="ambient_notification_light_duration_title">Длительность</string>
-    <string name="ambient_notification_light_duration_summary">Время отображения каждой анимации</string>
-    <string name="ambient_notification_light_repeats_title">Повторы</string>
-    <string name="ambient_notification_light_repeats_summary">Количество раз, которое анимация должна показывать\n0 для бесконечного</string>
-    <string name="ambient_notification_light_timeout_title">Задержка</string>
-    <string name="ambient_notification_light_timeout_forever">Всегда</string>
-    <string name="ambient_notification_light_timeout_half_minute">30 секунд</string>
-    <string name="ambient_notification_light_timeout_minute">1 минута</string>
-    <string name="ambient_notification_light_timeout_three_minutes">3 минуты</string>
-    <string name="ambient_notification_light_timeout_five_minutes">5 минут</string>
-    <string name="ambient_notification_light_timeout_ten_minutes">10 минут</string>
-    <string name="set_to_zero">Установить повторы на 0 для включения</string>
-    <string name="ambient_notification_color_mode_title">Цветовой режим</string>
-    <string name="ambient_notification_color_mode_accent">Цвет акцента</string>
-    <string name="ambient_notification_color_mode_wall">Фоновый цвет обоев</string>
-    <string name="ambient_notification_color_mode_notification">Цвет значков уведомлений</string>
-    <string name="ambient_notification_color_mode_custom">@string/ambient_notification_light_color_title</string>
-    <string name="ambient_notification_light_color_title">Пользовательский цвет</string>
-    <string name="pulse_ambient_light_show_always_title">Всегда показывать</string>
-    <string name="pulse_ambient_light_show_always_summary">Показывать уведомление индикатором для всех событий Doze, а не только для уведомлений</string>
-    <string name="pulse_ambient_light_repeat_direction_title">Количество повторов подсветки</string>
-    <string name="pulse_ambient_light_repeat_direction_restart">Перезагрузка</string>
-    <string name="pulse_ambient_light_repeat_direction_reverse">Инвертировать</string>
-    <string name="pulse_ambient_light_layout_title">Стиль подсветки</string>
-    <string name="pulse_ambient_light_layout_solid">Сплошной</string>
-    <string name="pulse_ambient_light_layout_faded">Затухание</string>
-    <string name="pulse_ambient_light_width_title">Ширина подсветки</string>
-    <string name="pulse_light_layout_style_title">Светлый стиль</string>
-    <string name="pulse_light_both">Все четыре стороны</string>
-    <string name="pulse_light_top_bottom">Только сверху внизу</string>
-    <string name="pulse_light_left_right">Только слева направо</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Подсветка краёв экрана</string>
+    <string name="enable_edge_light">Включить подсветку краев экрана</string>
+    <string name="edge_light_intro_text">Отображение анимации по краям экрана при уведомлении</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Всегда запускать при уведомлениях</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Воспроизводить анимацию даже когда Всегда включенный экран включён и не только для уведомлений</string>
+    <string name="edge_light_repeat_animation_title">Повтор анимации</string>
+    <string name="edge_light_repeat_animation_summary_on">Повторить несколько раз</string>
+    <string name="edge_light_repeat_animation_summary_off">Показать только один раз</string>
+    <string name="edge_light_color_mode_title">Цвет подсветки краёв экрана</string>
+    <string name="accent_color">Акцентный цвет (по умолчанию)</string>
+    <string name="notification_color">Цвет уведомлений</string>
+    <string name="wallpaper_color">Цвет обоев</string>
+    <string name="custom_color">Пользовательский цвет</string>
+    <string name="edge_light_custom_color_title">Пользовательский цвет</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">Текст нижнего колонтитула</string>
     <string name="qs_footer_text_summary">Отображать текст внизу панели быстрых настроек</string>
@@ -917,6 +899,9 @@
     <string name="burn_in_protection_summary">Сдвигать значки навигационной панели и строки состояния для защиты от выгорания экрана</string>
     <string name="burn_in_protection_interval_title">Интервал сдвига</string>
     <string name="burn_in_protection_interval_summary">Насколько часто сдвигать значки</string>
+    <!-- UDFPS Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">Использовать виброотклик для FOD</string>
+    <string name="udfps_haptic_feedback_summary">Вибрировать при нажатии на иконку FOD</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Показывать счетчик уведомлений</string>
     <string name="status_bar_notif_count_summary">Показывать количество не просмотренных уведомлений</string>
@@ -1147,4 +1132,12 @@
     <string name="app_lock_notifications_disabled_summary">Сначала выберите приложение для защиты</string>
     <string name="app_lock_biometrics_allowed_title">Включить биометрию для разблокировки</string>
     <string name="app_lock_footer_text">Всплывающие уведомления будут автоматически удалены по истечении таймаута</string>
+    <!-- Alert Slider category (OnePlus devices) -->
+    <string name="alert_slider_cat_title">Слайдер оповещений</string>
+    <!-- Alert Slider Pulse (OnePlus devices) -->
+    <string name="alert_slider_pulse_title">Пульс слайдера оповещения</string>
+    <string name="alert_slider_pulse_summary">Активация Всегда включенного экрана при изменении положения слайдера</string>
+    <!-- Alert Slider block -->
+    <string name="block_alert_title">Заблокировать слайдер оповещения</string>
+    <string name="block_alert_summary">Карманный режим блокирует ползунок оповещений</string>
 </resources>
