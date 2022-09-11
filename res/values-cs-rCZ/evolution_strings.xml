@@ -274,17 +274,22 @@
     <string name="qs_date_title">Datum</string>
     <string name="qs_date_summary">Zobrazit datum v\u00a0záhlaví stavového řádku Rychlého nastavení</string>
     <!-- QuickSettings haptic feedback -->
+    <string name="qs_tile_vibration_title">Vibrace</string>
     <string name="quick_settings_vibrate_title">Vibrace při dotyku</string>
     <string name="quick_settings_vibrate_summary">Vibrovat při dotyku QS dlaždice</string>
+    <string name="quick_settings_vibrate_duration_title">Trvání vibrací</string>
+    <string name="quick_settings_vibrate_duration_summary">Kolik milisekund má vibrovat</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Animace</string>
     <string name="qs_tile_animation_style_title">Styl animace</string>
     <string name="qs_tile_animation_duration_title">Délka animace</string>
     <string name="qs_tile_animation_interpolator_title">Interpolace animace dlaždice</string>
     <string name="qs_tile_animation_style_off">Bez animace</string>
+    <string name="qs_tile_animation_style_flip">Překlopení</string>
     <string name="qs_tile_animation_style_rotate">Otočení</string>
-    <string name="qs_tile_animation_style_flipx">Překlopení X</string>
-    <string name="qs_tile_animation_style_flipy">Překlopení Y</string>
+    <string name="qs_tile_animation_duration_low">Pomalá</string>
+    <string name="qs_tile_animation_duration_default">Výchozí</string>
+    <string name="qs_tile_animation_duration_fast">Rychlá</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Lineární</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Zrychlení</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Zpomalení</string>
@@ -357,44 +362,21 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Ikona zámku</string>
     <string name="lockscreen_lock_icon_summary">Zobrazit ikonu zámku na obrazovce uzamčení</string>
-    <!-- Pulse notifications lighting -->
-    <string name="pulse_ambient_light_title">Ambientní nasvícení okrajů</string>
-    <string name="pulse_ambient_light_summary">Ambientní nasvícení okrajů pro pulzující oznámení</string>
-    <string name="ambient_notification_light_enabled_title">Zobrazit na AOD</string>
-    <string name="ambient_notification_light_enabled_summary">Ponechat zobrazování nasvícení okrajů na AOD</string>
-    <string name="ambient_notification_light_hide_aod_title">Skrýt obsah na AOD</string>
-    <string name="ambient_notification_light_hide_aod_summary">Skrýt AOD obsah, když jsou okreje nasvíceny</string>
-    <string name="ambient_notification_light_duration_title">Doba trvání</string>
-    <string name="ambient_notification_light_duration_summary">Čas potřebný k dokončení každé animace</string>
-    <string name="ambient_notification_light_repeats_title">Opakování</string>
-    <string name="ambient_notification_light_repeats_summary">Kolikrát by se měla animace zobrazit\n0 pro nekonečno</string>
-    <string name="ambient_notification_light_timeout_title">Časový limit</string>
-    <string name="ambient_notification_light_timeout_forever">Navždy</string>
-    <string name="ambient_notification_light_timeout_half_minute">30 vteřin</string>
-    <string name="ambient_notification_light_timeout_minute">1 minuta</string>
-    <string name="ambient_notification_light_timeout_three_minutes">3 minuty</string>
-    <string name="ambient_notification_light_timeout_five_minutes">5 minut</string>
-    <string name="ambient_notification_light_timeout_ten_minutes">10 minut</string>
-    <string name="set_to_zero">Pro zapnutí nastavit opakování na 0</string>
-    <string name="ambient_notification_color_mode_title">Barevný režim</string>
-    <string name="ambient_notification_color_mode_accent">Barva zvýraznění</string>
-    <string name="ambient_notification_color_mode_wall">Dominantní barva tapety</string>
-    <string name="ambient_notification_color_mode_notification">Barva ikon oznámení</string>
-    <string name="ambient_notification_color_mode_custom">@string/ambient_notification_light_color_title</string>
-    <string name="ambient_notification_light_color_title">Vlastní barva</string>
-    <string name="pulse_ambient_light_show_always_title">Zobrazit vždy</string>
-    <string name="pulse_ambient_light_show_always_summary">Zobrazit efekty pro všechny události doze a nejen oznámení</string>
-    <string name="pulse_ambient_light_repeat_direction_title">Režim opakování světla</string>
-    <string name="pulse_ambient_light_repeat_direction_restart">Restartovat</string>
-    <string name="pulse_ambient_light_repeat_direction_reverse">Obrátit</string>
-    <string name="pulse_ambient_light_layout_title">Zobrazení světla</string>
-    <string name="pulse_ambient_light_layout_solid">Plné</string>
-    <string name="pulse_ambient_light_layout_faded">Tlumené</string>
-    <string name="pulse_ambient_light_width_title">Šířka nasvícení</string>
-    <string name="pulse_light_layout_style_title">Styl rozložení nasvícení</string>
-    <string name="pulse_light_both">Všechny čtyři strany</string>
-    <string name="pulse_light_top_bottom">Pouze nahoře/dole</string>
-    <string name="pulse_light_left_right">Pouze vlevo/vpravo</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Nasvícení okrajů</string>
+    <string name="enable_edge_light">Zapnout nasvícení okrajů</string>
+    <string name="edge_light_intro_text">Zobrazení animace podél okrajů obrazovky při pulzování</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Vždy spouštět při pulsování</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Zobrazovat nasvícení okrajů vždy, když je zobrazen ambientní displej a nikoli jen pro oznámení</string>
+    <string name="edge_light_repeat_animation_title">Opakování animace</string>
+    <string name="edge_light_repeat_animation_summary_on">Opakovat do časového limitu</string>
+    <string name="edge_light_repeat_animation_summary_off">Zobrazit pouze jednou</string>
+    <string name="edge_light_color_mode_title">Režim barev nasvícení okrajů</string>
+    <string name="accent_color">Barva zvýraznění (výchozí)</string>
+    <string name="notification_color">Barva oznámení</string>
+    <string name="wallpaper_color">Barva tapety</string>
+    <string name="custom_color">Vlastní barva</string>
+    <string name="edge_light_custom_color_title">Vlastní barva</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">Text záhlaví</string>
     <string name="qs_footer_text_summary">Zobrazit text ve spodní části panelu QS</string>
@@ -917,6 +899,9 @@
     <string name="burn_in_protection_summary">Přesunovat ikony stavového řádku a navigačního panelu pro zabránění vypálení</string>
     <string name="burn_in_protection_interval_title">Interval přesunu</string>
     <string name="burn_in_protection_interval_summary">Jak často se ikony posouvají</string>
+    <!-- UDFPS Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">Hmatová odezva UDFPS</string>
+    <string name="udfps_haptic_feedback_summary">Vibrovat při dotyku ikony UDFPS</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Zobrazit počet oznámení</string>
     <string name="status_bar_notif_count_summary">Zobrazí počet nezobrazených oznámení v oznamovací oblasti</string>
@@ -1147,4 +1132,12 @@
     <string name="app_lock_notifications_disabled_summary">Nejprve chránit aplikaci</string>
     <string name="app_lock_biometrics_allowed_title">Povolit biometriku pro odemykání</string>
     <string name="app_lock_footer_text">Bubliny se po uplynutí časového limitu automaticky zruší</string>
+    <!-- Alert Slider category (OnePlus devices) -->
+    <string name="alert_slider_cat_title">Posuvník oznámení</string>
+    <!-- Alert Slider Pulse (OnePlus devices) -->
+    <string name="alert_slider_pulse_title">Vizualizace posuvníku oznámení</string>
+    <string name="alert_slider_pulse_summary">Zobrazit vizualizaci na AOD při změně pozice posuvníku oznámení</string>
+    <!-- Alert Slider block -->
+    <string name="block_alert_title">Blokovat posuvník oznámení</string>
+    <string name="block_alert_summary">Režim v kapse zablokuje posuvník oznámení</string>
 </resources>
