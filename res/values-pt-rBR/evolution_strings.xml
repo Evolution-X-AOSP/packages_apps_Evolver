@@ -274,17 +274,22 @@
     <string name="qs_date_title">Data</string>
     <string name="qs_date_summary">Mostrar data no cabeçalho das configurações rápidas</string>
     <!-- QuickSettings haptic feedback -->
+    <string name="qs_tile_vibration_title">Vibração</string>
     <string name="quick_settings_vibrate_title">Vibrar ao tocar</string>
     <string name="quick_settings_vibrate_summary">Vibrar ao tocar nas configurações rápidas</string>
+    <string name="quick_settings_vibrate_duration_title">Duração da vibração</string>
+    <string name="quick_settings_vibrate_duration_summary">Quantos milissegundos para vibrar</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Animação dos blocos</string>
     <string name="qs_tile_animation_style_title">Estilo de animação</string>
     <string name="qs_tile_animation_duration_title">Duração da animação</string>
     <string name="qs_tile_animation_interpolator_title">Interpolador de animação dos blocos</string>
     <string name="qs_tile_animation_style_off">Sem animação</string>
+    <string name="qs_tile_animation_style_flip">Girar</string>
     <string name="qs_tile_animation_style_rotate">Rotacionar</string>
-    <string name="qs_tile_animation_style_flipx">Inverter X</string>
-    <string name="qs_tile_animation_style_flipy">Inverter Y</string>
+    <string name="qs_tile_animation_duration_low">Lento</string>
+    <string name="qs_tile_animation_duration_default">Padrão</string>
+    <string name="qs_tile_animation_duration_fast">Rápido</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Acelerar</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Desacelerar</string>
@@ -357,44 +362,21 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Ícone de bloqueio</string>
     <string name="lockscreen_lock_icon_summary">Mostrar ícone do cadeado na tela de bloqueio</string>
-    <!-- Pulse notifications lighting -->
-    <string name="pulse_ambient_light_title">Iluminação nas bordas da tela</string>
-    <string name="pulse_ambient_light_summary">Pulso de luz nas bordas da tela ambiente ao receber novas notificações</string>
-    <string name="ambient_notification_light_enabled_title">Mostrar na tela ambiente</string>
-    <string name="ambient_notification_light_enabled_summary">Mostrar iluminação na tela ambiente sempre ativa</string>
-    <string name="ambient_notification_light_hide_aod_title">Ocultar outros conteúdos na tela ambiente</string>
-    <string name="ambient_notification_light_hide_aod_summary">Ocultar outros conteúdos na tela ambiente quando o pulso de luz é mostrado</string>
-    <string name="ambient_notification_light_duration_title">Duração</string>
-    <string name="ambient_notification_light_duration_summary">O tempo que leva para cada animação ser concluída</string>
-    <string name="ambient_notification_light_repeats_title">Repetições</string>
-    <string name="ambient_notification_light_repeats_summary">Quantidade de vezes que a animação deve ser exibida\n0 para infinito</string>
-    <string name="ambient_notification_light_timeout_title">Tempo limite</string>
-    <string name="ambient_notification_light_timeout_forever">Permanente</string>
-    <string name="ambient_notification_light_timeout_half_minute">30 segundos</string>
-    <string name="ambient_notification_light_timeout_minute">1 minuto</string>
-    <string name="ambient_notification_light_timeout_three_minutes">3 minutos</string>
-    <string name="ambient_notification_light_timeout_five_minutes">5 minutos</string>
-    <string name="ambient_notification_light_timeout_ten_minutes">10 minutos</string>
-    <string name="set_to_zero">Defina repetições como 0 para ativar</string>
-    <string name="ambient_notification_color_mode_title">Modo de cor</string>
-    <string name="ambient_notification_color_mode_accent">Cor de destaque</string>
-    <string name="ambient_notification_color_mode_wall">Cor de destaque do papel de parede</string>
-    <string name="ambient_notification_color_mode_notification">Cor do ícone de notificação</string>
-    <string name="ambient_notification_color_mode_custom">Cor personalizada</string>
-    <string name="ambient_notification_light_color_title">Cor personalizada</string>
-    <string name="pulse_ambient_light_show_always_title">Sempre mostrar</string>
-    <string name="pulse_ambient_light_show_always_summary">Mostrar luzes para todos os eventos que despertem a tela ambiente e não apenas notificações</string>
-    <string name="pulse_ambient_light_repeat_direction_title">Modo de repetição das luzes</string>
-    <string name="pulse_ambient_light_repeat_direction_restart">Reiniciar</string>
-    <string name="pulse_ambient_light_repeat_direction_reverse">Inverter</string>
-    <string name="pulse_ambient_light_layout_title">Modo de exibição das luzes</string>
-    <string name="pulse_ambient_light_layout_solid">Sólido</string>
-    <string name="pulse_ambient_light_layout_faded">Desvanecer</string>
-    <string name="pulse_ambient_light_width_title">Largura da faixa iluminada</string>
-    <string name="pulse_light_layout_style_title">Onde mostrar as luzes</string>
-    <string name="pulse_light_both">Todos os quatro lados</string>
-    <string name="pulse_light_top_bottom">Apenas nas partes inferior e superior</string>
-    <string name="pulse_light_left_right">Apenas nos lados esquerdo e direito</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Iluminação nas bordas da tela</string>
+    <string name="enable_edge_light">Ativar luz na borda</string>
+    <string name="edge_light_intro_text">Exibir uma animação ao longo das bordas da tela quando pulsando</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Sempre disparar no pulso</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Mostrar a luz de borda sempre que a tela ambiente é exibida e não apenas para notificações</string>
+    <string name="edge_light_repeat_animation_title">Repetir animação</string>
+    <string name="edge_light_repeat_animation_summary_on">Repetir até o tempo limite</string>
+    <string name="edge_light_repeat_animation_summary_off">Mostrar apenas uma vez</string>
+    <string name="edge_light_color_mode_title">Modo de cor leve da borda</string>
+    <string name="accent_color">Cor de realce (Padrão)</string>
+    <string name="notification_color">Cor da notificação</string>
+    <string name="wallpaper_color">Cores do papel de parede</string>
+    <string name="custom_color">Cor personalizada</string>
+    <string name="edge_light_custom_color_title">Cor personalizada</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">Texto do rodapé das configurações rápidas</string>
     <string name="qs_footer_text_summary">Exibir texto na parte inferior do painel de configurações rápidas</string>
@@ -917,6 +899,9 @@
     <string name="burn_in_protection_summary">Altere a posição dos ícones da barra de navegação e barra de status durante intervalos para evitar o efeito Burn-in</string>
     <string name="burn_in_protection_interval_title">Intervalo de ação</string>
     <string name="burn_in_protection_interval_summary">Com que frequência os ícones se deslocam</string>
+    <!-- UDFPS Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">Resposta tátil na impressão digital</string>
+    <string name="udfps_haptic_feedback_summary">Vibrar ao tocar no ícone de impressão digital</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Mostrar contador de notificações</string>
     <string name="status_bar_notif_count_summary">Exibe o número de notificações pendentes</string>
@@ -1147,4 +1132,12 @@
     <string name="app_lock_notifications_disabled_summary">Primeiro proteja um aplicativo</string>
     <string name="app_lock_biometrics_allowed_title">Habilitar biometria para desbloquear</string>
     <string name="app_lock_footer_text">Balões de notificações serão automaticamente dispersos após o tempo limite</string>
+    <!-- Alert Slider category (OnePlus devices) -->
+    <string name="alert_slider_cat_title">Controle deslizante de alerta</string>
+    <!-- Alert Slider Pulse (OnePlus devices) -->
+    <string name="alert_slider_pulse_title">Pulsar tela ambiente</string>
+    <string name="alert_slider_pulse_summary">Pulsar a tela ambiente ao alterar a posição do controle deslizante de alerta</string>
+    <!-- Alert Slider block -->
+    <string name="block_alert_title">Bloquear Barra de Alerta</string>
+    <string name="block_alert_summary">Modo de bolso irá bloquear o controle deslizante de alerta</string>
 </resources>
