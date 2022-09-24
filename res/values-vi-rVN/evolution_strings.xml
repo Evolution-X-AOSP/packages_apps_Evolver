@@ -7,7 +7,7 @@
     <!-- The Evolver -->
     <string name="evolver_dashboard_title">The Evolver</string>
     <!-- Categories -->
-    <string name="aosp_setting_title">Thiết lập hệ thống</string>
+    <string name="aosp_options_title">Thiết lập hệ thống</string>
     <string name="animation_title">Hiệu ứng</string>
     <string name="dev_options_title">Tùy chọn nhà phát triển</string>
     <string name="general_title">Chung</string>
@@ -28,7 +28,7 @@
     <string name="torch_gestures_title">Điều hướng đèn flash</string>
     <string name="flashlight_category">Đèn pin</string>
     <!-- Summaries -->
-    <string name="aosp_gesture_summary">Cử chỉ gốc có sẵn của Android</string>
+    <string name="aosp_options_summary">Cài đặt có sẵn của Android</string>
     <string name="dark_ui_mode_summary">Duyệt qua các tùy chọn chủ đề tối</string>
     <string name="theme_summary">Cài đặt Monet</string>
     <string name="unsupported_gestures">Bật thanh điều hướng dạng hai phím hoặc ba phím để sử dụng tính năng này</string>
@@ -274,17 +274,22 @@
     <string name="qs_date_title">Ngày</string>
     <string name="qs_date_summary">Hiển thị ngày tháng ở phía trên bảng cài đặt nhanh</string>
     <!-- QuickSettings haptic feedback -->
+    <string name="qs_tile_vibration_title">Rung</string>
     <string name="quick_settings_vibrate_title">Rung khi chạm</string>
     <string name="quick_settings_vibrate_summary">Rung khi chạm các ô cài đặt nhanh</string>
+    <string name="quick_settings_vibrate_duration_title">Thời gian rung</string>
+    <string name="quick_settings_vibrate_duration_summary">Rung trong bao nhiêu mili giây</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Hiệu ứng ô cài đặt nhanh</string>
     <string name="qs_tile_animation_style_title">Kiểu hiệu ứng</string>
     <string name="qs_tile_animation_duration_title">Thời lượng hoạt ảnh</string>
     <string name="qs_tile_animation_interpolator_title">Hiệu ứng thu phóng ô</string>
     <string name="qs_tile_animation_style_off">Không có hiệu ứng</string>
+    <string name="qs_tile_animation_style_flip">Lật</string>
     <string name="qs_tile_animation_style_rotate">Xoay</string>
-    <string name="qs_tile_animation_style_flipx">Lật chiều X</string>
-    <string name="qs_tile_animation_style_flipy">Lật chiều Y</string>
+    <string name="qs_tile_animation_duration_low">Thấp</string>
+    <string name="qs_tile_animation_duration_default">Mặc định</string>
+    <string name="qs_tile_animation_duration_fast">Nhanh</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Đường thẳng</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Tăng tốc</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Giảm tốc</string>
@@ -300,7 +305,7 @@
     <string name="roaming_indicator_icon_title">Chỉ báo chuyển vùng</string>
     <string name="roaming_indicator_icon_summary">Hiển thị chỉ báo chuyển vùng trong biểu tượng tín hiệu khi ở chế độ chuyển vùng</string>
     <!-- Smart pulldown-->
-    <string name="smart_pulldown_title">Mở cài đặt nhanh thông minh</string>
+    <string name="smart_pulldown_title">Kéo xuống thông minh</string>
     <string name="smart_pulldown_summary">Mở cài đặt nhanh khi có %1$s thông báo</string>
     <string name="smart_pulldown_none_summary">Mở cài đặt nhanh khi không có thông báo</string>
     <string name="smart_pulldown_off">Tắt</string>
@@ -357,44 +362,21 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Ẩn biểu tượng khóa</string>
     <string name="lockscreen_lock_icon_summary">Biểu tượng khóa hiển thị trên màn hình khóa</string>
-    <!-- Pulse notifications lighting -->
-    <string name="pulse_ambient_light_title">Hiển thị thông báo ánh sáng cạnh</string>
-    <string name="pulse_ambient_light_summary">Ánh sáng cạnh cho các xung thông báo</string>
-    <string name="ambient_notification_light_enabled_title">Hiển thị trên màn hình luôn bật</string>
-    <string name="ambient_notification_light_enabled_summary">Hiển thị xung ánh sáng trên thông báo mới trên màn hình luôn bật</string>
-    <string name="ambient_notification_light_hide_aod_title">Ẩn nội dung màn hình luôn bật</string>
-    <string name="ambient_notification_light_hide_aod_summary">Ẩn nội dung màn hình luôn bật khi các cạnh được chiếu sáng</string>
-    <string name="ambient_notification_light_duration_title">Thời lượng</string>
-    <string name="ambient_notification_light_duration_summary">Thời lượng hoạt ảnh</string>
-    <string name="ambient_notification_light_repeats_title">Lặp lại</string>
-    <string name="ambient_notification_light_repeats_summary">Số lần hoạt ảnh hiển thị\n0 là vô hạn</string>
-    <string name="ambient_notification_light_timeout_title">Thời gian chờ</string>
-    <string name="ambient_notification_light_timeout_forever">Vĩnh viễn</string>
-    <string name="ambient_notification_light_timeout_half_minute">30 giây</string>
-    <string name="ambient_notification_light_timeout_minute">1 phút</string>
-    <string name="ambient_notification_light_timeout_three_minutes">3 phút</string>
-    <string name="ambient_notification_light_timeout_five_minutes">5 phút</string>
-    <string name="ambient_notification_light_timeout_ten_minutes">10 phút</string>
-    <string name="set_to_zero">Đặt số lần lặp lại thành 0 để bật</string>
-    <string name="ambient_notification_color_mode_title">Chế độ màu</string>
-    <string name="ambient_notification_color_mode_accent">Chủ đề màu</string>
-    <string name="ambient_notification_color_mode_wall">Màu chủ đạo hình nền</string>
-    <string name="ambient_notification_color_mode_notification">Màu biểu tượng thông báo</string>
-    <string name="ambient_notification_color_mode_custom">@string/ambient_notification_light_color_title</string>
-    <string name="ambient_notification_light_color_title">Màu tự chọn</string>
-    <string name="pulse_ambient_light_show_always_title">Luôn hiển thị</string>
-    <string name="pulse_ambient_light_show_always_summary">Hiển thị đèn cho tất cả các sự kiện ngủ gật và không chỉ thông báo</string>
-    <string name="pulse_ambient_light_repeat_direction_title">Chế độ lặp lại ánh sáng</string>
-    <string name="pulse_ambient_light_repeat_direction_restart">Khởi động lại</string>
-    <string name="pulse_ambient_light_repeat_direction_reverse">Đảo ngược</string>
-    <string name="pulse_ambient_light_layout_title">Ánh sáng nhỏ</string>
-    <string name="pulse_ambient_light_layout_solid">Khối</string>
-    <string name="pulse_ambient_light_layout_faded">Mờ dần</string>
-    <string name="pulse_ambient_light_width_title">Chiều rộng nhỏ</string>
-    <string name="pulse_light_layout_style_title">Kiểu bố cục nhỏ</string>
-    <string name="pulse_light_both">Tất cả bốn mặt</string>
-    <string name="pulse_light_top_bottom">Chỉ Trên và Dưới</string>
-    <string name="pulse_light_left_right">Chỉ Trái và Phải</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Ánh sáng cạnh</string>
+    <string name="enable_edge_light">Bật Ánh sáng cạnh</string>
+    <string name="edge_light_intro_text">Hiển thị hoạt ảnh trên các cạnh của màn hình khi có thông báo</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Bật ngay cả khi không có thông báo</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Luôn sáng màn hình cạnh khi màn hình xem nhanh được hiển thị, ngay cả khi không có thông báo</string>
+    <string name="edge_light_repeat_animation_title">Lặp lại hoạt ảnh</string>
+    <string name="edge_light_repeat_animation_summary_on">Lặp lại cho đến khi hết thời gian</string>
+    <string name="edge_light_repeat_animation_summary_off">Chỉ hiển thị một lần</string>
+    <string name="edge_light_color_mode_title">Chế độ màu màn hình cạnh</string>
+    <string name="accent_color">Màu nhấn (Mặc định)</string>
+    <string name="notification_color">Màu thông báo</string>
+    <string name="wallpaper_color">Màu hình nền</string>
+    <string name="custom_color">Màu tùy chỉnh</string>
+    <string name="edge_light_custom_color_title">Màu tùy chỉnh</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">Văn bản dạng Footer</string>
     <string name="qs_footer_text_summary">Hiển thị văn bản ở cuối bảng QS</string>
@@ -423,15 +405,15 @@
     <string name="powermenu_device_controls">Điều khiển thiết bị</string>
     <string name="powermenu_bugreport">Báo cáo lỗi</string>
     <string name="powermenu_assist">Trợ lý</string>
-    <string name="powermenu_voice_assist">Trợ lý thoại</string>
+    <string name="powermenu_voice_assist">Trợ lý giọng nói</string>
     <!-- Doze Brightness Config -->
     <string name="doze_brightness_category">Cấu hình độ sáng Doze</string>
     <string name="doze_brightness_force_title">Buộc giá trị độ sáng</string>
     <string name="doze_brightness_force_summary">Sử dụng giá trị độ sáng tùy chỉnh thay vì độ sáng màn hình</string>
     <string name="ambient_pulse_brightness_title">Độ sáng thông báo xung quanh</string>
     <string name="ambient_pulse_brightness_summary">Đặt độ sáng để sử dụng khi thông báo được hiển thị</string>
-    <string name="ambient_doze_brightness_title">Độ sáng màn hình luôn bật</string>
-    <string name="ambient_doze_brightness_summary">Đặt độ sáng để sử dụng trong khi mở màn hình luôn bật</string>
+    <string name="ambient_doze_brightness_title">Độ sáng màn hình xem nhanh</string>
+    <string name="ambient_doze_brightness_summary">Đặt độ sáng cho màn hình xem nhanh</string>
     <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Chủ đề</string>
@@ -681,6 +663,7 @@
     <string name="swap_capacitive_keys_summary">Đổi vị trí phím Đa nhiệm và Trở về</string>
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Hiển thị trình trực quan âm nhạc</string>
+    <string name="lockscreen_visualizer_summary">Hiện sóng nhạc khi có sẵn</string>
     <string name="lockscreen_visualizer_enable">Sóng âm thanh</string>
     <string name="lockscreen_visualizer_enable_summary">Hiển thị các thanh sóng âm thanh khi phát nhạc</string>
     <string name="lockscreen_autocolor_title">Màu sắc tự động</string>
@@ -897,8 +880,8 @@
     <string name="monet_engine_chroma_factor_title">Yếu tố sắc tố</string>
     <string name="monet_engine_linear_lightness_title">Sử dụng độ đậm nhạt tuyến tính</string>
     <!-- Black theme -->
-    <string name="system_black_theme_title">Chủ đề màu đen</string>
-    <string name="system_black_theme_summary">Sử dụng nền màu đen thay vì xám</string>
+    <string name="system_black_theme_title">Màu đậm</string>
+    <string name="system_black_theme_summary">Sử dụng màu đậm và tối hơn cho monet</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Biểu tượng tín hiệu kép</string>
     <string name="combined_status_bar_signal_icons_summary">Bật biểu tượng tín hiệu kép trong thanh trạng thái.\nLời khuyên khởi động lại SystemUI</string>
@@ -917,6 +900,9 @@
     <string name="burn_in_protection_summary">Ngăn lưu ảnh bằng cách di chuyển các biểu tượng trên thanh điều hướng và thanh trạng thái</string>
     <string name="burn_in_protection_interval_title">Khoảng thời gian thay đổi</string>
     <string name="burn_in_protection_interval_summary">Tần suất di chuyển biểu tượng</string>
+    <!-- UDFPS Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">Phản hồi xúc giác cho UDFPS</string>
+    <string name="udfps_haptic_feedback_summary">Rung khi chạm vào biểu tượng UDFPS</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Hiện số thông báo</string>
     <string name="status_bar_notif_count_summary">Hiển thị số lượng thông báo đang chờ</string>
@@ -925,6 +911,8 @@
     <string name="mic_camera_privacy_indicator_summary">Hiện thị biểu tượng tách biệt khi một app nào đó sử dụng mic và camera</string>
     <string name="location_privacy_indicator_title">Hiển thị biểu tượng vị trí</string>
     <string name="location_privacy_indicator_summary">Hiện thị biểu tượng tách biệt khi một app nào đó sử dụng mic và camera</string>
+    <string name="projection_privacy_indicator_title">Chỉ báo truyền media</string>
+    <string name="projection_privacy_indicator_summary">Hiển thị chỉ báo khi truyền màn hình</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_category">Hiển thị trình trực quan âm nhạc</string>
     <string name="pulse_help_policy_notice_title">Về Pulse</string>
@@ -1137,13 +1125,22 @@
     <string name="enable_debugging">Bật chế độ gỡ lỗi</string>
     <string name="disable_debugging">Vô hiệu gỡ lỗi</string>
     <string name="app_lock_packages_title">Các ứng dụng được bảo vệ</string>
-    <string name="app_lock_packages_summary">Chọn các ứng dụng để bảo vệ bằng sinh trắc học hoặc thông tin đăng nhập thiết bị</string>
+    <string name="app_lock_packages_summary">Chọn các ứng dụng để bảo vệ bằng sinh trắc học hoặc thông tin mở khoá thiết bị</string>
     <string name="app_lock_timeout_title">Hẹn giờ tự động khóa</string>
-    <string name="app_lock_timeout_summary">Khoảng thời gian mà sau đó ứng dụng đã mở khóa trong nền sẽ bị khóa</string>
+    <string name="app_lock_timeout_summary">Khoảng thời gian mà ứng dụng dưới nền tự động bị khoá</string>
     <string name="app_lock_notifications_title">Thu gọn thông báo</string>
-    <string name="app_lock_notifications_summary">Nội dung thông báo sẽ bị ẩn và thu gọn đối với các ứng dụng đã chọn khi chúng bị khóa.
-           Thông báo cảnh báo sẽ tự động bị tắt.    </string>
-    <string name="app_lock_notifications_disabled_summary">Bảo vệ một ứng dụng trước tiên</string>
-    <string name="app_lock_biometrics_allowed_title">Bật sinh trắc học để mở khóa</string>
-    <string name="app_lock_footer_text">Bong bóng sẽ tự động bị loại bỏ sau khi hết thời gian chờ</string>
+    <string name="app_lock_notifications_summary">          Nội dung thông báo của những ứng dụng được chọn sẽ bị ẩn và thu gọn lại khi chúng bị khoá.
+          Thông báo nổi sẽ tự động tắt.
+    </string>
+    <string name="app_lock_notifications_disabled_summary">Đầu tiên hãy khoá một ứng dụng</string>
+    <string name="app_lock_biometrics_allowed_title">Mở khoá bằng sinh trắc học</string>
+    <string name="app_lock_footer_text">Bong bóng nổi sẽ tự động biến mất sau khi hết thời gian chờ</string>
+    <!-- Alert Slider category (OnePlus devices) -->
+    <string name="alert_slider_cat_title">Cần gạt chuông</string>
+    <!-- Alert Slider Pulse (OnePlus devices) -->
+    <string name="alert_slider_pulse_title">Thông báo đẩy cần gạt chuông</string>
+    <string name="alert_slider_pulse_summary">Hiển thị màn hình xem nhanh khi di chuyển vị trí của cần gạt chuông</string>
+    <!-- Alert Slider block -->
+    <string name="block_alert_title">Chặn Cần gạt chuông</string>
+    <string name="block_alert_summary">Chế độ bỏ túi sẽ vô hiệu hoá Cần gạt chuông</string>
 </resources>
