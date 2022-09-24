@@ -7,7 +7,7 @@
     <!-- The Evolver -->
     <string name="evolver_dashboard_title">The Evolver</string>
     <!-- Categories -->
-    <string name="aosp_setting_title">Impostazioni AOSP</string>
+    <string name="aosp_options_title">Impostazioni di sistema</string>
     <string name="animation_title">Animazioni</string>
     <string name="dev_options_title">Opzioni sviluppatore</string>
     <string name="general_title">Generale</string>
@@ -21,14 +21,14 @@
     <string name="quicksettings_title">Impostazioni rapide</string>
     <string name="spoof_title">Spoofing</string>
     <string name="status_bar_title">Barra di stato</string>
-    <string name="status_bar_battery_category_title">Personalizzazione della batteria</string>
+    <string name="battery_title">Personalizzazioni batteria</string>
     <string name="swipe_gestures_title">Gesti a scorrimento</string>
     <string name="system_settings_title">Opzioni di sistema</string>
     <string name="themes_title">Temi</string>
     <string name="torch_gestures_title">Gesture per la torcia</string>
     <string name="flashlight_category">Torcia</string>
     <!-- Summaries -->
-    <string name="aosp_gesture_summary">Gesti stock inclusi con Android</string>
+    <string name="aosp_options_summary">Impostazioni incluse con Android</string>
     <string name="dark_ui_mode_summary">Sfoglia le opzioni del tema scuro</string>
     <string name="theme_summary">Impostazioni Monet</string>
     <string name="unsupported_gestures">Abilita la navigazione a due o tre pulsanti per utilizzare questa funzionalità</string>
@@ -135,7 +135,7 @@
     <!-- Heads up -->
     <string name="heads_up_notifications">Notifiche fluttuanti</string>
     <string name="heads_up_notifications_summary">Notifiche fluttuanti sulla barra di stato</string>
-    <string name="heads_up_notifications_master_switch_title">Usa Heads Up</string>
+    <string name="heads_up_notifications_master_switch_title">Usa notifiche fluttuanti</string>
     <string name="summary_heads_up_enabled">Le notifiche fluttuanti sono abilitate</string>
     <string name="summary_heads_up_disabled">Le notifiche fluttuanti sono disabilitate</string>
     <string name="add_heads_up_package">Aggiungi app</string>
@@ -210,7 +210,7 @@
     <string name="qs_column_rows_settings_title">Impostazioni pannello Impostazioni Rapide</string>
     <string name="qs_edit_title">Icona modifica</string>
     <string name="qs_edit_summary">Abilita l\'icona della modifica dei tile nel piè di pagina</string>
-    <string name="qs_footer_category">Piè di Pagina impostazioni rapide</string>
+    <string name="qs_footer_category">Piè di pagina Impostazioni rapide</string>
     <string name="qs_header_category_title">Intestazione Impostazioni rapide</string>
     <string name="qs_panel_category_title">Pannello Impostazioni rapide</string>
     <string name="status_bar_quick_qs_pulldown">Apertura rapida delle impostazioni rapide</string>
@@ -266,6 +266,7 @@
     <string name="clock_date_position">Posizione data</string>
     <string name="clock_date_right">A destra dell\'ora</string>
     <string name="clock_date_left">A sinistra dell\'ora</string>
+    <string name="clock_font_size_title">Dimensioni orologio</string>
     <!-- QS clock -->
     <string name="qs_clock_title">Orologio</string>
     <string name="qs_clock_summary">Mostra l\'orologio nell\'intestazione della barra di stato rapida</string>
@@ -273,17 +274,22 @@
     <string name="qs_date_title">Data</string>
     <string name="qs_date_summary">Mostra la data nell\'intestazione della barra di stato rapida</string>
     <!-- QuickSettings haptic feedback -->
+    <string name="qs_tile_vibration_title">Vibrazione</string>
     <string name="quick_settings_vibrate_title">Vibra al tocco</string>
     <string name="quick_settings_vibrate_summary">Vibra al tocco delle tile delle Impostazioni Rapide</string>
+    <string name="quick_settings_vibrate_duration_title">Durata vibrazione</string>
+    <string name="quick_settings_vibrate_duration_summary">Quanti millisecondi vibrare</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Animazioni</string>
     <string name="qs_tile_animation_style_title">Stile animazione</string>
     <string name="qs_tile_animation_duration_title">Durata animazione</string>
     <string name="qs_tile_animation_interpolator_title">Interpolatore animazione delle tile</string>
     <string name="qs_tile_animation_style_off">Nessuna animazione</string>
+    <string name="qs_tile_animation_style_flip">Capovolgi</string>
     <string name="qs_tile_animation_style_rotate">Ruota</string>
-    <string name="qs_tile_animation_style_flipx">Capovolgi su X</string>
-    <string name="qs_tile_animation_style_flipy">Capovolgi su Y</string>
+    <string name="qs_tile_animation_duration_low">Lento</string>
+    <string name="qs_tile_animation_duration_default">Predefinito</string>
+    <string name="qs_tile_animation_duration_fast">Veloce</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Lineare</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelera</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelera</string>
@@ -356,44 +362,21 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Icona di blocco</string>
     <string name="lockscreen_lock_icon_summary">Mostra icona di blocco sul blocco schermo</string>
-    <!-- Pulse notifications lighting -->
-    <string name="pulse_ambient_light_title">Illuminazione ambientale del bordo</string>
-    <string name="pulse_ambient_light_summary">Illuminazione ambientale dei bordi per le notifiche pulsanti</string>
-    <string name="ambient_notification_light_enabled_title">Mostra in AOD</string>
-    <string name="ambient_notification_light_enabled_summary">Continua a mostrare illuminazione ambientale dei bordi in AOD</string>
-    <string name="ambient_notification_light_hide_aod_title">Nascondi il contenuto dell\'AOD</string>
-    <string name="ambient_notification_light_hide_aod_summary">Nascondi il contenuto AOD quando i bordi sono illuminati</string>
-    <string name="ambient_notification_light_duration_title">Durata</string>
-    <string name="ambient_notification_light_duration_summary">Tempo necessario per completare ogni animazione</string>
-    <string name="ambient_notification_light_repeats_title">Ripeti</string>
-    <string name="ambient_notification_light_repeats_summary">Quantità di volte che l\'animazione si dovrebbe ripetere\n0 per infinito</string>
-    <string name="ambient_notification_light_timeout_title">Tempo di attesa</string>
-    <string name="ambient_notification_light_timeout_forever">Sempre</string>
-    <string name="ambient_notification_light_timeout_half_minute">30 secondi</string>
-    <string name="ambient_notification_light_timeout_minute">1 minuto</string>
-    <string name="ambient_notification_light_timeout_three_minutes">3 minuti</string>
-    <string name="ambient_notification_light_timeout_five_minutes">5 minuti</string>
-    <string name="ambient_notification_light_timeout_ten_minutes">10 minuti</string>
-    <string name="set_to_zero">Imposta ripetizioni a 0 per abilitare</string>
-    <string name="ambient_notification_color_mode_title">Modalità colore</string>
-    <string name="ambient_notification_color_mode_accent">Colore primario</string>
-    <string name="ambient_notification_color_mode_wall">Colore dominante sfondo</string>
-    <string name="ambient_notification_color_mode_notification">Colore icona notifica</string>
-    <string name="ambient_notification_color_mode_custom">@string/ambient_notification_light_color_title</string>
-    <string name="ambient_notification_light_color_title">Colore personalizzato</string>
-    <string name="pulse_ambient_light_show_always_title">Mostra sempre</string>
-    <string name="pulse_ambient_light_show_always_summary">Mostra luci per tutti gli eventi doze e non solo notifiche</string>
-    <string name="pulse_ambient_light_repeat_direction_title">Modalità delle ripetizioni del Led</string>
-    <string name="pulse_ambient_light_repeat_direction_restart">Riavvia</string>
-    <string name="pulse_ambient_light_repeat_direction_reverse">Inverti</string>
-    <string name="pulse_ambient_light_layout_title">Visualizzazione chiara</string>
-    <string name="pulse_ambient_light_layout_solid">Solido</string>
-    <string name="pulse_ambient_light_layout_faded">Sfumato</string>
-    <string name="pulse_ambient_light_width_title">Larghezza luminosità</string>
-    <string name="pulse_light_layout_style_title">Stile Layout Chiaro</string>
-    <string name="pulse_light_both">Tutti I Quattro Lati</string>
-    <string name="pulse_light_top_bottom">Solo in alto centrale</string>
-    <string name="pulse_light_left_right">Solo Sinistra-Destra</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Luce bordo</string>
+    <string name="enable_edge_light">Abilita la luce del bordo</string>
+    <string name="edge_light_intro_text">Mostra un\'animazione lungo i bordi dello schermo all\'arrivo di una notifica</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Attiva sempre per notifiche</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Indica se mostrare la luce del bordo ogni volta che viene mostrato l\'Ambient Display e non solo per le notifiche</string>
+    <string name="edge_light_repeat_animation_title">Ripeti animazione</string>
+    <string name="edge_light_repeat_animation_summary_on">Ripeti fino al timeout</string>
+    <string name="edge_light_repeat_animation_summary_off">Mostra solo una volta</string>
+    <string name="edge_light_color_mode_title">Colore luce del bordo</string>
+    <string name="accent_color">Colore primario (predefinito)</string>
+    <string name="notification_color">Colore notifiche</string>
+    <string name="wallpaper_color">Colore dallo sfondo</string>
+    <string name="custom_color">Colore personalizzato</string>
+    <string name="edge_light_custom_color_title">Colore personalizzato</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">Testo piè di pagina impostazioni rapide</string>
     <string name="qs_footer_text_summary">Mostra testo in fondo al pannello delle impostazioni rapide</string>
@@ -563,7 +546,7 @@
     <string name="lock_screen_custom_clock_face_category">Orologio del blocco schermo</string>
     <string name="lock_screen_custom_clock_face_title">Stile orologio del blocco schermo</string>
     <string name="lock_screen_custom_clock_face_default_bold">Predefinito (grassetto)</string>
-    <string name="lock_screen_custom_clock_face_alt_typographic">Tipografico (Nuovo)</string>
+    <string name="lock_screen_custom_clock_face_alt_typographic">Tipografico (nuovo)</string>
     <string name="lock_screen_custom_clock_face_analog">Analogico</string>
     <string name="lock_screen_custom_clock_face_binary">Binario</string>
     <string name="lock_screen_custom_clock_face_bubble">Bolla</string>
@@ -577,7 +560,7 @@
     <string name="lock_screen_custom_clock_face_mnml_box">Casella di MNML</string>
     <string name="lock_screen_custom_clock_face_mnml_minimal">MNML Ridotto</string>
     <string name="lock_screen_custom_clock_face_op_minimal">OnePlus Minimal</string>
-    <string name="lock_screen_custom_clock_face_op_numbers">Numeri OnePlus</string>
+    <string name="lock_screen_custom_clock_face_op_numbers">OnePlus Numbers</string>
     <string name="lock_screen_custom_clock_face_op_roman">OnePlus Roman</string>
     <string name="lock_screen_custom_clock_face_samsung">Samsung</string>
     <string name="lock_screen_custom_clock_face_samsung_bold">Samsung (grassetto)</string>
@@ -679,7 +662,8 @@
     <string name="swap_capacitive_keys_title">Inverti pulsanti capacitivi</string>
     <string name="swap_capacitive_keys_summary">Scambia l\'ordine dei pulsanti recenti e indietro</string>
     <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_title">Visualizzatore</string>
+    <string name="lockscreen_visualizer_title">Mostra visualizzatore musicale</string>
+    <string name="lockscreen_visualizer_summary">Mostra il visualizzatore musicale quando disponibile</string>
     <string name="lockscreen_visualizer_enable">Visualizzatore musicale</string>
     <string name="lockscreen_visualizer_enable_summary">Mostra le barre delle frequenze durante la riproduzione della musica</string>
     <string name="lockscreen_autocolor_title">Colore automatico</string>
@@ -900,7 +884,7 @@
     <string name="system_black_theme_summary">Forza colori di sfondo nero</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Icone di segnale combinate</string>
-    <string name="combined_status_bar_signal_icons_summary">Abilita icone di segnale combinate nella barra di stato.\nRichiede un riavvio di SystemUI</string>
+    <string name="combined_status_bar_signal_icons_summary">Abilita le icone segnale combinate nella barra di stato</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Stato batteria dispotivo Bluetooth</string>
     <string name="bluetooth_battery_summary">Mostra lo stato della batteria per il dispositivo bluetooth attualmente connesso, se disponibile</string>
@@ -916,14 +900,19 @@
     <string name="burn_in_protection_summary">Spostare la barra di navigazione e le icone della barra di stato per evitare burn-in</string>
     <string name="burn_in_protection_interval_title">Intervallo della variazione di posizione</string>
     <string name="burn_in_protection_interval_summary">Quanto spesso variare la posizione</string>
+    <!-- UDFPS Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">Feedback impronte digitali</string>
+    <string name="udfps_haptic_feedback_summary">Vibra quando si tocca l\'icona del sensore impronte digitali</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Mostra conteggio notifiche</string>
     <string name="status_bar_notif_count_summary">Visualizza il numero di notifiche in sospeso</string>
     <!-- Privacy indicators -->
     <string name="mic_camera_privacy_indicator_title">Indicatore di privacy microfono e fotocamera</string>
-    <string name="mic_camera_privacy_indicator_summary">Mostra un indicatore separato quando un\'applicazione utilizza il microfono o la fotocamera</string>
+    <string name="mic_camera_privacy_indicator_summary">Mostra un indicatore quando un\'app utilizza il microfono o la fotocamera</string>
     <string name="location_privacy_indicator_title">Indicatore di privacy della posizione</string>
-    <string name="location_privacy_indicator_summary">Mostra un indicatore separato quando un\'applicazione utilizza la posizione</string>
+    <string name="location_privacy_indicator_summary">Mostra un indicatore quando un\'app utilizza la posizione</string>
+    <string name="projection_privacy_indicator_title">Indicatore di privacy proiezione media</string>
+    <string name="projection_privacy_indicator_summary">Mostra un indicatore quando lo schermo del dispositivo è proiettato</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_category">Visualizzatore musicale Pulse</string>
     <string name="pulse_help_policy_notice_title">Informazioni su Pulse</string>
@@ -999,6 +988,9 @@
     <string name="notification_material_dismiss_summary">Sostituisci il pulsante \"cancella tutte le notifiche\" con un pulsante fluttuante in stile material</string>
     <string name="notification_material_dismiss_style_title">Stile del pulsante</string>
     <string name="notification_material_dismiss_bgstyle_title">Sfondo del pulsante</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Ignora i flag di sicurezza della finestra</string>
+    <string name="ignore_window_secure_summary">Questo toggle rimuove i limiti degli screenshot e delle registrazioni dello schermo per tutte le applicazioni. Di solito, le applicazioni speciali vengono sostituite con aree nere nelle registrazioni. Può essere conveniente in alcuni casi, ma può portare a problemi di privacy. Dopo aver modificato questo toggle potrebbe essere necessario riavviare le applicazioni affinché la modifica abbia effetto.</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">Sostituisce le notifiche fluttuanti con una versione riprogettata, sottile e meno invasiva</string>
@@ -1143,4 +1135,12 @@
     <string name="app_lock_notifications_disabled_summary">Proteggi prima un\'applicazione</string>
     <string name="app_lock_biometrics_allowed_title">Abilita la biometria per lo sblocco</string>
     <string name="app_lock_footer_text">Le bolle verranno automaticamente eliminate dopo il timeout</string>
+    <!-- Alert Slider category (OnePlus devices) -->
+    <string name="alert_slider_cat_title">Slider notifiche</string>
+    <!-- Alert Slider Pulse (OnePlus devices) -->
+    <string name="alert_slider_pulse_title">Notifica slider notifiche</string>
+    <string name="alert_slider_pulse_summary">Mostra l\'Ambient Display cambiando la posizione dello slider notifiche</string>
+    <!-- Alert Slider block -->
+    <string name="block_alert_title">Blocca slider notifiche</string>
+    <string name="block_alert_summary">La modalità tasca bloccherà lo slider notifiche</string>
 </resources>
