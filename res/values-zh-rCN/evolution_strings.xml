@@ -7,7 +7,7 @@
     <!-- The Evolver -->
     <string name="evolver_dashboard_title">Evolution 自定义</string>
     <!-- Categories -->
-    <string name="aosp_setting_title">系统设置</string>
+    <string name="aosp_options_title">系统设置</string>
     <string name="animation_title">动画</string>
     <string name="dev_options_title">开发者选项</string>
     <string name="general_title">常规</string>
@@ -28,7 +28,7 @@
     <string name="torch_gestures_title">手电筒手势</string>
     <string name="flashlight_category">手电筒</string>
     <!-- Summaries -->
-    <string name="aosp_gesture_summary">Android 中包含的常用手势</string>
+    <string name="aosp_options_summary">包含安卓系统的库存选项</string>
     <string name="dark_ui_mode_summary">浏览黑暗主题选项</string>
     <string name="theme_summary">Monet 设置</string>
     <string name="unsupported_gestures">启用两个按钮或三个按钮导航来使用此功能</string>
@@ -274,17 +274,22 @@
     <string name="qs_date_title">日期</string>
     <string name="qs_date_summary">在快速状态栏顶部显示日期</string>
     <!-- QuickSettings haptic feedback -->
+    <string name="qs_tile_vibration_title">振动</string>
     <string name="quick_settings_vibrate_title">触摸时振动</string>
     <string name="quick_settings_vibrate_summary">触摸快速设置磁贴时振动</string>
+    <string name="quick_settings_vibrate_duration_title">振动持续时间</string>
+    <string name="quick_settings_vibrate_duration_summary">振动多少毫秒</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">动画</string>
     <string name="qs_tile_animation_style_title">动画样式</string>
     <string name="qs_tile_animation_duration_title">动画持续时间</string>
-    <string name="qs_tile_animation_interpolator_title">磁铁动画插值</string>
+    <string name="qs_tile_animation_interpolator_title">磁贴动画插值</string>
     <string name="qs_tile_animation_style_off">无动画</string>
+    <string name="qs_tile_animation_style_flip">翻转</string>
     <string name="qs_tile_animation_style_rotate">旋转</string>
-    <string name="qs_tile_animation_style_flipx">翻转 X</string>
-    <string name="qs_tile_animation_style_flipy">翻转 Y</string>
+    <string name="qs_tile_animation_duration_low">慢速</string>
+    <string name="qs_tile_animation_duration_default">默认</string>
+    <string name="qs_tile_animation_duration_fast">快速</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">线性</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">加速</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">减速</string>
@@ -357,44 +362,21 @@
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">锁定图标</string>
     <string name="lockscreen_lock_icon_summary">在锁屏界面显示锁定图标</string>
-    <!-- Pulse notifications lighting -->
-    <string name="pulse_ambient_light_title">环境边缘闪光</string>
-    <string name="pulse_ambient_light_summary">当收到通知时在屏幕边缘显示光效</string>
-    <string name="ambient_notification_light_enabled_title">在息屏显示中显示</string>
-    <string name="ambient_notification_light_enabled_summary">保持显示环境显示上的边缘闪光</string>
-    <string name="ambient_notification_light_hide_aod_title">隐藏环境显示内容</string>
-    <string name="ambient_notification_light_hide_aod_summary">边缘闪光开启时隐藏环境显示内容</string>
-    <string name="ambient_notification_light_duration_title">持续时间</string>
-    <string name="ambient_notification_light_duration_summary">每个动画完成所需的时间</string>
-    <string name="ambient_notification_light_repeats_title">重复</string>
-    <string name="ambient_notification_light_repeats_summary">动画应显示的次数\n0 表示无限</string>
-    <string name="ambient_notification_light_timeout_title">超时</string>
-    <string name="ambient_notification_light_timeout_forever">无限期</string>
-    <string name="ambient_notification_light_timeout_half_minute">30 秒</string>
-    <string name="ambient_notification_light_timeout_minute">1 分钟</string>
-    <string name="ambient_notification_light_timeout_three_minutes">3 分钟</string>
-    <string name="ambient_notification_light_timeout_five_minutes">5 分钟</string>
-    <string name="ambient_notification_light_timeout_ten_minutes">10 分钟</string>
-    <string name="set_to_zero">将重复次数设置为 0 以启用</string>
-    <string name="ambient_notification_color_mode_title">颜色模式</string>
-    <string name="ambient_notification_color_mode_accent">主题颜色</string>
-    <string name="ambient_notification_color_mode_wall">壁纸主要颜色</string>
-    <string name="ambient_notification_color_mode_notification">通知图标颜色</string>
-    <string name="ambient_notification_color_mode_custom">@string/ambient_notification_light_color_title</string>
-    <string name="ambient_notification_light_color_title">自定义颜色</string>
-    <string name="pulse_ambient_light_show_always_title">始终显示</string>
-    <string name="pulse_ambient_light_show_always_summary">显示所有 Doze 事件的灯光，而不仅仅是通知</string>
-    <string name="pulse_ambient_light_repeat_direction_title">闪光样式</string>
-    <string name="pulse_ambient_light_repeat_direction_restart">重新启动</string>
-    <string name="pulse_ambient_light_repeat_direction_reverse">从外而内</string>
-    <string name="pulse_ambient_light_layout_title">灯光视图</string>
-    <string name="pulse_ambient_light_layout_solid">Solid 质感</string>
-    <string name="pulse_ambient_light_layout_faded">褪色</string>
-    <string name="pulse_ambient_light_width_title">亮边宽度</string>
-    <string name="pulse_light_layout_style_title">浅色布局样式</string>
-    <string name="pulse_light_both">所有四个侧面</string>
-    <string name="pulse_light_top_bottom">只在顶部下</string>
-    <string name="pulse_light_left_right">仅左至右</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">边缘闪光</string>
+    <string name="enable_edge_light">开启边缘闪光</string>
+    <string name="edge_light_intro_text">拉取时沿屏幕边缘显示动画</string>
+    <string name="edge_light_always_trigger_on_pulse_title">总是在脉冲上触发</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">是否在显示环境显示时显示边缘光线，而不仅仅是为了通知</string>
+    <string name="edge_light_repeat_animation_title">重复动画</string>
+    <string name="edge_light_repeat_animation_summary_on">重复直到超时</string>
+    <string name="edge_light_repeat_animation_summary_off">只显示一次</string>
+    <string name="edge_light_color_mode_title">边缘闪光颜色</string>
+    <string name="accent_color">首选颜色 (默认)</string>
+    <string name="notification_color">通知颜色</string>
+    <string name="wallpaper_color">壁纸颜色</string>
+    <string name="custom_color">自定义颜色</string>
+    <string name="edge_light_custom_color_title">自定义颜色</string>
     <!-- QS Footer Text -->
     <string name="qs_footer_text_title">控制中心页脚文本</string>
     <string name="qs_footer_text_summary">控制中心底部显示文本</string>
@@ -681,6 +663,7 @@
     <string name="swap_capacitive_keys_summary">交换最近使用与后退按钮的顺序</string>
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_title">频谱</string>
+    <string name="lockscreen_visualizer_summary">可用时显示音乐可视化</string>
     <string name="lockscreen_visualizer_enable">音乐频谱</string>
     <string name="lockscreen_visualizer_enable_summary">播放音乐时启用音乐频谱</string>
     <string name="lockscreen_autocolor_title">自动调整颜色</string>
@@ -917,6 +900,9 @@
     <string name="burn_in_protection_summary">调整导航栏和状态栏图标，以防止烧屏</string>
     <string name="burn_in_protection_interval_title">切换时间间隔</string>
     <string name="burn_in_protection_interval_summary">图标切换频率</string>
+    <!-- UDFPS Haptic Feedback -->
+    <string name="udfps_haptic_feedback_title">屏下指纹触觉反馈</string>
+    <string name="udfps_haptic_feedback_summary">触摸屏下指纹时振动</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">显示通知计数</string>
     <string name="status_bar_notif_count_summary">显示待处理的通知数量</string>
@@ -925,6 +911,8 @@
     <string name="mic_camera_privacy_indicator_summary">当任何应用使用麦克风或相机时显示单独的指示器</string>
     <string name="location_privacy_indicator_title">显示位置隐私指示器</string>
     <string name="location_privacy_indicator_summary">当任何应用程序使用位置时，显示单独的指示器</string>
+    <string name="projection_privacy_indicator_title">媒体投影隐私指示器</string>
+    <string name="projection_privacy_indicator_summary">当设备屏幕投影时显示指示器</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_category">脉冲音乐可视化器</string>
     <string name="pulse_help_policy_notice_title">关于脉冲</string>
@@ -1147,4 +1135,12 @@
     <string name="app_lock_notifications_disabled_summary">首先保护应用程序</string>
     <string name="app_lock_biometrics_allowed_title">启用生物识别解锁</string>
     <string name="app_lock_footer_text">超时后气泡会自动消失</string>
+    <!-- Alert Slider category (OnePlus devices) -->
+    <string name="alert_slider_cat_title">三段式滑块</string>
+    <!-- Alert Slider Pulse (OnePlus devices) -->
+    <string name="alert_slider_pulse_title">三段式滑块脉冲</string>
+    <string name="alert_slider_pulse_summary">改变三段式滑块位置时脉冲环境显示</string>
+    <!-- Alert Slider block -->
+    <string name="block_alert_title">屏蔽三段式滑块</string>
+    <string name="block_alert_summary">口袋模式将屏蔽三段式滑块</string>
 </resources>
