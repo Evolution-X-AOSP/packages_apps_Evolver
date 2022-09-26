@@ -30,7 +30,6 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">Opções incluídas no Android</string>
     <string name="dark_ui_mode_summary">Navegue pelas opções de tema escuro</string>
-    <string name="theme_summary">Configurações do tema Monet</string>
     <string name="unsupported_gestures">Habilite a navegação de dois ou três botões para usar este recurso</string>
     <!-- General strings -->
     <string name="ok">Ok</string>
@@ -70,6 +69,12 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Definir</string>
     <string name="color_default">Padrão</string>
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="confirm">Confirmar</string>
+    <string name="invalid_color">Cor inválida!</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Nenhum valor padrão definido</string>
     <string name="seekbar_default_value_set">Valor definido para o padrão de <xliff:g id="number">%d</xliff:g></string>
@@ -147,6 +152,10 @@
     <string name="dialog_delete_title">Excluir</string>
     <string name="dialog_delete_message">Remover o item selecionado?</string>
     <!-- Network traffic -->
+    <string name="network_traffic_intro_text">        Mostra a velocidade de tráfego de rede atual na barra de status.
+        O monitor mostra a velocidade dinamicamente de forma que alterne entre
+        velocidade de download e upload a cada segundo
+    </string>
     <string name="network_traffic_title">Indicador de tráfego de rede</string>
     <string name="network_traffic_summary">Ativar ou desativar os indicadores de tráfego de rede</string>
     <string name="network_traffic_master_switch_title">Mostrar indicador de tráfego de rede</string>
@@ -281,7 +290,7 @@
     <string name="quick_settings_vibrate_duration_summary">Quantos milissegundos para vibrar</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Animação dos blocos</string>
-    <string name="qs_tile_animation_style_title">Estilo de animação</string>
+    <string name="qs_tile_animation_style_title">Estilo da animação</string>
     <string name="qs_tile_animation_duration_title">Duração da animação</string>
     <string name="qs_tile_animation_interpolator_title">Interpolador de animação dos blocos</string>
     <string name="qs_tile_animation_style_off">Sem animação</string>
@@ -868,17 +877,18 @@
     <string name="show_carrier_keyguard">Tela de bloqueio</string>
     <string name="show_carrier_statusbar">Barra de status</string>
     <string name="show_carrier_enabled">Ambos</string>
-    <!-- Monet Engine -->
-    <string name="monet_category">Tema Monet</string>
-    <string name="monet_engine_title">Tema Monet</string>
-    <string name="monet_engine_summary">Personalize os parâmetros do tema Monet</string>
-    <string name="monet_engine_custom_color_title">Usar cor personalizada</string>
-    <string name="monet_engine_custom_color_summary">Usar cor personalizada para o motor de temas Monet em vez de cores do papel de parede</string>
-    <string name="monet_engine_color_override_title">Cor personalizada</string>
-    <string name="monet_engine_white_luminance_user_title">Tonalidade clara</string>
-    <string name="monet_engine_accurate_shades_title">Usar tons precisos</string>
-    <string name="monet_engine_chroma_factor_title">Coloração</string>
-    <string name="monet_engine_linear_lightness_title">Brilho linear</string>
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Tema Monet</string>
+    <string name="monet_engine_settings_summary">Cor personalizada, escala de cor, brilho</string>
+    <string name="color_override_title">Cor personalizada</string>
+    <string name="color_override_default_summary">Usar cores do papel de parede</string>
+    <string name="custom_color_override_summary_placeholder">        Cor escolhida: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Defina um valor vazio para usar a cor do papel de parede.
+    </string>
+    <string name="invalid_color_input">Cor inválida!</string>
+    <string name="white_luminance_title">Brilho</string>
+    <string name="accurate_shades_title">Usar tons precisos</string>
+    <string name="chroma_factor_title">Coloração</string>
+    <string name="linear_lightness_title">Usar escala de luz personalizada</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Cores vívidas</string>
     <string name="system_black_theme_summary">Colorir e realçar as cores do tema monet</string>
@@ -980,6 +990,7 @@
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Ocultar aplicativos</string>
     <string name="hidden_apps_summary">Aplicativos que não serão exibidos no launcher. É necessário reiniciar o launcher para que entre em vigor</string>
+    <string name="hidden_app_authentication_dialog_title">Desbloquear para ocultar apps</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Ocultar a barra de status</string>
     <string name="hide_lockscreen_status_bar_summary">Toque na barra de status para alternar a visibilidade</string>
@@ -1119,8 +1130,7 @@
     <string name="custom_timeout_summary_8hours">8 horas</string>
     <!-- App lock -->
     <string name="app_lock_title">Bloqueio de aplicativos</string>
-    <string name="app_lock_summary_singular">1 aplicativo protegido</string>
-    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> aplicativos estão protegidos</string>
+    <string name="app_lock_summary">Aplicativos exigirão autenticação por impressão digital para iniciar</string>
     <string name="app_lock_authentication_dialog_title">Desbloquear</string>
     <string name="enable_debugging">Ativar depuração</string>
     <string name="disable_debugging">Desativar depuração</string>
@@ -1135,6 +1145,7 @@
     <string name="app_lock_notifications_disabled_summary">Primeiro proteja um aplicativo</string>
     <string name="app_lock_biometrics_allowed_title">Habilitar biometria para desbloquear</string>
     <string name="app_lock_footer_text">Balões de notificações serão automaticamente dispersos após o tempo limite</string>
+    <string name="enable_protection">Ativar proteção</string>
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Controle deslizante de alerta</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
