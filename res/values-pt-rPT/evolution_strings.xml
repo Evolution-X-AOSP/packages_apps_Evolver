@@ -30,7 +30,6 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">Opções incluídas no Android</string>
     <string name="dark_ui_mode_summary">Navegar pelas opções do Modo Escuro</string>
-    <string name="theme_summary">Definições do tema Monet</string>
     <string name="unsupported_gestures">Ligar a navegação com 2 ou 3 botões para utilizar esta funcionalidade</string>
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -70,6 +69,12 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Definir</string>
     <string name="color_default">Predefinida</string>
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="confirm">Confirmar</string>
+    <string name="invalid_color">Cor inválida!</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Sem valor predefinido</string>
     <string name="seekbar_default_value_set">Valor predefinido: <xliff:g id="number">%d</xliff:g></string>
@@ -147,6 +152,10 @@
     <string name="dialog_delete_title">Eliminar</string>
     <string name="dialog_delete_message">Remover o item selecionado?</string>
     <!-- Network traffic -->
+    <string name="network_traffic_intro_text">        Mostra a velocidade atual do tráfego de rede na barra de estado.
+        O monitor mostra a velocidade dinamicamente, alternando entre a
+        velocidade de upload e de download a cada segundo
+    </string>
     <string name="network_traffic_title">Indicador de tráfego de rede</string>
     <string name="network_traffic_summary">Ativar ou desativar o indicador de velocidade de rede na barra de estado</string>
     <string name="network_traffic_master_switch_title">Usar indicador de tráfego de rede</string>
@@ -238,7 +247,7 @@
     <string name="status_bar_clock_position_right">Direita</string>
     <string name="status_bar_clock_position_left">Esquerda</string>
     <string name="status_bar_clock_position_center">Centro</string>
-    <string name="status_bar_clock_position_hidden">Oculto</string>
+    <string name="status_bar_clock_position_hidden">Oculta</string>
     <string name="status_bar_clock_auto_hide_title">Ocultar automaticamente</string>
     <string name="status_bar_clock_auto_hide_launcher_summary">Ocultar o relógio se o launcher estiver visível</string>
     <string name="status_bar_clock_auto_hide_summary">Ocultar relógio em intervalos regulares</string>
@@ -250,7 +259,7 @@
     <string name="status_bar_am_pm_info">Formato de 24 horas ligado</string>
     <string name="status_bar_am_pm_normal">Normal</string>
     <string name="status_bar_am_pm_small">Pequeno</string>
-    <string name="status_bar_am_pm_hidden">Oculto</string>
+    <string name="status_bar_am_pm_hidden">Oculta</string>
     <string name="status_bar_date_title">Data</string>
     <string name="status_bar_date_none">Oculta</string>
     <string name="status_bar_date_small">Pequena</string>
@@ -868,17 +877,19 @@
     <string name="show_carrier_keyguard">Ecrã de bloqueio</string>
     <string name="show_carrier_statusbar">Barra de estado</string>
     <string name="show_carrier_enabled">Ambos</string>
-    <!-- Monet Engine -->
-    <string name="monet_category">Monet</string>
-    <string name="monet_engine_title">Mecanismo do Monet</string>
-    <string name="monet_engine_summary">Personalizar parâmetros do Monet</string>
-    <string name="monet_engine_custom_color_title">Usar cor personalizada</string>
-    <string name="monet_engine_custom_color_summary">Usar cor personalizada para o motor de temas Monet em vez de cores do papel de parede</string>
-    <string name="monet_engine_color_override_title">Cor personalizada</string>
-    <string name="monet_engine_white_luminance_user_title">Tonalidade clara</string>
-    <string name="monet_engine_accurate_shades_title">Usar tons precisos</string>
-    <string name="monet_engine_chroma_factor_title">Fator cromático</string>
-    <string name="monet_engine_linear_lightness_title">Usar brilho linear</string>
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Motor de temas Monet</string>
+    <string name="monet_engine_settings_summary">Cor personalizada, coloração, luminosidade</string>
+    <string name="color_override_title">Seletor de cor personalizada</string>
+    <string name="color_override_default_summary">Usando cores do papel de parede</string>
+    <string name="custom_color_override_summary_placeholder">        Cor escolhida: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Deixe em branco para usar a cor do papel de parede.
+    
+    </string>
+    <string name="invalid_color_input">Cor inválida inserida!</string>
+    <string name="white_luminance_title">Luminosidade</string>
+    <string name="accurate_shades_title">Usar tons precisos</string>
+    <string name="chroma_factor_title">Coloração</string>
+    <string name="linear_lightness_title">Usar escala personalizada de luz</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Usar tema preto</string>
     <string name="system_black_theme_summary">Forçar cores de fundo pretas</string>
@@ -980,6 +991,7 @@
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Aplicações ocultas</string>
     <string name="hidden_apps_summary">Aplicações que devem estar ocultas no Iniciador</string>
+    <string name="hidden_app_authentication_dialog_title">Desbloquear para ocultar apps</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Ocultar barra de estado</string>
     <string name="hide_lockscreen_status_bar_summary">Toque na barra de estado para alterar a visibilidade</string>
@@ -1119,8 +1131,7 @@
     <string name="custom_timeout_summary_8hours">8 horas</string>
     <!-- App lock -->
     <string name="app_lock_title">Bloqueio de aplicações</string>
-    <string name="app_lock_summary_singular">1 aplicação protegida</string>
-    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> aplicações estão protegidas</string>
+    <string name="app_lock_summary">As apps exigirão autenticação por impressão digital para iniciar</string>
     <string name="app_lock_authentication_dialog_title">Desbloquear</string>
     <string name="enable_debugging">Ativar depuração</string>
     <string name="disable_debugging">Desativar depuração</string>
@@ -1135,6 +1146,7 @@
     <string name="app_lock_notifications_disabled_summary">Proteger primeiro uma aplicação</string>
     <string name="app_lock_biometrics_allowed_title">Habilitar biometria para desbloquear</string>
     <string name="app_lock_footer_text">Balões de notificações serão automaticamente dispersos após o tempo limite</string>
+    <string name="enable_protection">Ativar proteção</string>
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Controlo deslizante de alerta</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
