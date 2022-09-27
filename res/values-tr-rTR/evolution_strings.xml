@@ -30,7 +30,6 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">Dahili temel android ayarları</string>
     <string name="dark_ui_mode_summary">Koyu tema seçeneklerine göz atın</string>
-    <string name="theme_summary">Monet ayarları</string>
     <string name="unsupported_gestures">Bu özelliği kullanmak için iki veya üç düğmeli gezinmeyi etkinleştirin</string>
     <!-- General strings -->
     <string name="ok">Tamam</string>
@@ -70,6 +69,12 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Ayarla</string>
     <string name="color_default">Varsayılan</string>
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="confirm">Onayla</string>
+    <string name="invalid_color">Geçersiz renk!</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Varsayılan değer ayarlanmadı</string>
     <string name="seekbar_default_value_set">Değer <xliff:g id="number">%d</xliff:g>\'in varsayılanına ayarlandı</string>
@@ -147,6 +152,8 @@
     <string name="dialog_delete_title">Sil</string>
     <string name="dialog_delete_message">Seçili öge silinsin mi?</string>
     <!-- Network traffic -->
+    <string name="network_traffic_intro_text">Durum çubuğunda mevcut ağ trafiği hızını gösterir.
+Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme hızı arasında geçiş yapar</string>
     <string name="network_traffic_title">Ağ trafik göstergesi</string>
     <string name="network_traffic_summary">Durum çubuğunda ağ hızı göstergesini etkinleştirin veya devre dışı bırakın</string>
     <string name="network_traffic_master_switch_title">Ağ trafik göstergesini kullan</string>
@@ -377,11 +384,11 @@
     <string name="wallpaper_color">Duvar kağıdı rengi</string>
     <string name="custom_color">Özel renk</string>
     <string name="edge_light_custom_color_title">Özel renk</string>
-    <!-- QS Footer Text -->
-    <string name="qs_footer_text_title">Hızlı ayarlar alt bilgi metni</string>
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">Hızlı ayarlar alt bilgi metni</string>
     <string name="qs_footer_text_summary">Hızlı ayarlar panelinin en altında metni görüntüle</string>
     <string name="qs_footer_text_string_title">Altbilgi metnini özelleştir</string>
-    <string name="qs_footer_text_string_summary">Varsayılan için boş bırakın</string>
+    <string name="qs_footer_text_string_summary">Varsayılan \"Evolution X\" için boş olarak ayarlayın</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Kulaklık takıldığında müzik uygulamasını başlat</string>
     <string name="headset_connect_player_summary">Kulaklık takıldığında varsayılan müzik uygulamasını başlat</string>
@@ -868,17 +875,18 @@
     <string name="show_carrier_keyguard">Kilit ekranı</string>
     <string name="show_carrier_statusbar">Durum çubuğu</string>
     <string name="show_carrier_enabled">Her ikisi</string>
-    <!-- Monet Engine -->
-    <string name="monet_category">Monet</string>
-    <string name="monet_engine_title">Monet ayarları</string>
-    <string name="monet_engine_summary">Monet parametrelerini özelleştirin</string>
-    <string name="monet_engine_custom_color_title">Özel renk kullan</string>
-    <string name="monet_engine_custom_color_summary">Monet için duvar kağıdı rengi yerine özel renk kullan</string>
-    <string name="monet_engine_color_override_title">Özel renk</string>
-    <string name="monet_engine_white_luminance_user_title">Beyaz parlaklığı</string>
-    <string name="monet_engine_accurate_shades_title">Doğru renk tonları kullan</string>
-    <string name="monet_engine_chroma_factor_title">Berraklık faktörü</string>
-    <string name="monet_engine_linear_lightness_title">Doğrusal canlılığı kullan</string>
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Monet ayarları</string>
+    <string name="monet_engine_settings_summary">Özel renk, renklilik, parlaklık</string>
+    <string name="color_override_title">Özel renk seçici</string>
+    <string name="color_override_default_summary">Duvar kağıdı rengini kullanın</string>
+    <string name="custom_color_override_summary_placeholder">Seçilen renk: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Duvar kağıdı rengini kullanmak için boş bir değer belirleyin.
+    </string>
+    <string name="invalid_color_input">Geçersiz renk girişi!</string>
+    <string name="white_luminance_title">Parlaklık</string>
+    <string name="accurate_shades_title">Doğru renk tonları kullan</string>
+    <string name="chroma_factor_title">Renklilik</string>
+    <string name="linear_lightness_title">Özel parlaklık ölçeği kullan</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Siyah temayı kullan</string>
     <string name="system_black_theme_summary">Siyah arka plan renklerini zorla</string>
@@ -980,6 +988,7 @@
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Gizlenmiş uygulamalar</string>
     <string name="hidden_apps_summary">Başlatıcıda gizlenecek uygulamalar. Değişikliklerin etkili olması için başlatıcıyı yeniden başlatın</string>
+    <string name="hidden_app_authentication_dialog_title">Uygulamaları gizlemek için kilidi açın</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Durum çubuğunu gizle</string>
     <string name="hide_lockscreen_status_bar_summary">Görünür yapmak için durum çubuğuna dokunun</string>
@@ -1107,10 +1116,10 @@
     <string name="custom_timeout_summary_10secs">10 saniyede</string>
     <string name="custom_timeout_summary_15secs">15 saniye</string>
     <string name="custom_timeout_summary_30secs">30 saniye</string>
-    <string name="custom_timeout_summary_1min">1 dakikada</string>
+    <string name="custom_timeout_summary_1min">1 dakika</string>
     <string name="custom_timeout_summary_2mins">2 dakika</string>
-    <string name="custom_timeout_summary_5mins">5 dakikada</string>
-    <string name="custom_timeout_summary_10mins">10 dakikada</string>
+    <string name="custom_timeout_summary_5mins">5 dakika</string>
+    <string name="custom_timeout_summary_10mins">10 dakika</string>
     <string name="custom_timeout_summary_20mins">20 dakika</string>
     <string name="custom_timeout_summary_30mins">30 dakika</string>
     <string name="custom_timeout_summary_1hour">1 saat</string>
@@ -1119,8 +1128,7 @@
     <string name="custom_timeout_summary_8hours">8 saat</string>
     <!-- App lock -->
     <string name="app_lock_title">Uygulama kilidi</string>
-    <string name="app_lock_summary_singular">1 uygulama kilitlendi</string>
-    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> uygulama kilitlendi</string>
+    <string name="app_lock_summary">Uygulamaların başlaması için parmak izi doğrulaması gerekir</string>
     <string name="app_lock_authentication_dialog_title">Kilidi aç</string>
     <string name="enable_debugging">Hata ayıklamayı etkinleştir</string>
     <string name="disable_debugging">Hata ayıklamayı devre dışı bırak</string>
@@ -1134,6 +1142,7 @@
     <string name="app_lock_notifications_disabled_summary">Önce bir uygulama kilitleyin</string>
     <string name="app_lock_biometrics_allowed_title">Kilidi açmak için biyometri kullan</string>
     <string name="app_lock_footer_text">Baloncuklar zaman aşımından sonra otomatik olarak yok sayılacak</string>
+    <string name="enable_protection">Korumayı etkinleştir</string>
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Uyarı kaydırıcısı</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
