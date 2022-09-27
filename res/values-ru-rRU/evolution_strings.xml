@@ -30,7 +30,6 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">Стандартные системные настройки</string>
     <string name="dark_ui_mode_summary">Просмотреть параметры темной темы</string>
-    <string name="theme_summary">Настройки Monet</string>
     <string name="unsupported_gestures">Включите две или три кнопки навигации для использования этой функции</string>
     <!-- General strings -->
     <string name="ok">ОК</string>
@@ -70,6 +69,12 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Установить</string>
     <string name="color_default">По умолчанию</string>
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="invalid_color">Недопустимый цвет!</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Значение по умолчанию не установлено</string>
     <string name="seekbar_default_value_set">Значение по умолчанию установлено на <xliff:g id="number">%d</xliff:g></string>
@@ -147,6 +152,10 @@
     <string name="dialog_delete_title">Удалить</string>
     <string name="dialog_delete_message">Удалить выбранный элемент?</string>
     <!-- Network traffic -->
+    <string name="network_traffic_intro_text">        Показывает текущую скорость сетевого трафика в строке состояния.
+        Скорость монитора динамически меняется между
+        скоростью раздачи и скоростью загрузки
+    </string>
     <string name="network_traffic_title">Индикатор сетевого трафика</string>
     <string name="network_traffic_summary">Включить или отключить индикатор скорости сети в строке состояния</string>
     <string name="network_traffic_master_switch_title">Использовать индикатор сетевого трафика</string>
@@ -238,7 +247,7 @@
     <string name="status_bar_clock_position_right">Справа</string>
     <string name="status_bar_clock_position_left">Слева</string>
     <string name="status_bar_clock_position_center">По центру</string>
-    <string name="status_bar_clock_position_hidden">Скрыть</string>
+    <string name="status_bar_clock_position_hidden">Скрыт</string>
     <string name="status_bar_clock_auto_hide_title">Автоскрытие часов</string>
     <string name="status_bar_clock_auto_hide_launcher_summary">Скрывать часы, если открыт рабочий стол</string>
     <string name="status_bar_clock_auto_hide_summary">Скрывать и показывать часы через регулярные интервалы времени</string>
@@ -250,9 +259,9 @@
     <string name="status_bar_am_pm_info">24-часовой формат включен</string>
     <string name="status_bar_am_pm_normal">Обычный</string>
     <string name="status_bar_am_pm_small">Маленький</string>
-    <string name="status_bar_am_pm_hidden">Скрытый</string>
+    <string name="status_bar_am_pm_hidden">Скрыт</string>
     <string name="status_bar_date_title">Дата</string>
-    <string name="status_bar_date_none">Скрыть</string>
+    <string name="status_bar_date_none">Скрыт</string>
     <string name="status_bar_date_small">Маленький</string>
     <string name="status_bar_date_normal">Обычный</string>
     <string name="status_bar_date_format_title">Формат даты</string>
@@ -377,11 +386,11 @@
     <string name="wallpaper_color">Цвет обоев</string>
     <string name="custom_color">Пользовательский цвет</string>
     <string name="edge_light_custom_color_title">Пользовательский цвет</string>
-    <!-- QS Footer Text -->
-    <string name="qs_footer_text_title">Текст нижнего колонтитула</string>
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">Показывать текст в нижнем колонтитуле быстрых настроек</string>
     <string name="qs_footer_text_summary">Отображать текст внизу панели быстрых настроек</string>
     <string name="qs_footer_text_string_title">Пользовательский текст нижнего колонтитула</string>
-    <string name="qs_footer_text_string_summary">Оставьте пустым для значения по умолчанию</string>
+    <string name="qs_footer_text_string_summary">Оставьте пустым для строки по умолчанию #Evolution X\"</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Запускать музыкальный плеер при подключении наушников</string>
     <string name="headset_connect_player_summary">Запускать стандартный музыкальный плеер при подключении гарнитуры</string>
@@ -868,17 +877,18 @@
     <string name="show_carrier_keyguard">Экран блокировки</string>
     <string name="show_carrier_statusbar">Строка состояния</string>
     <string name="show_carrier_enabled">Оба</string>
-    <!-- Monet Engine -->
-    <string name="monet_category">Monet</string>
-    <string name="monet_engine_title">Monet Engine</string>
-    <string name="monet_engine_summary">Настройка параметров Monet</string>
-    <string name="monet_engine_custom_color_title">Использовать свой цвет</string>
-    <string name="monet_engine_custom_color_summary">Использовать пользовательский цвет для движка монет вместо цвета обоев</string>
-    <string name="monet_engine_color_override_title">Пользовательский цвет</string>
-    <string name="monet_engine_white_luminance_user_title">Белая яркость</string>
-    <string name="monet_engine_accurate_shades_title">Использовать точные оттенки</string>
-    <string name="monet_engine_chroma_factor_title">Фактор интенсивности</string>
-    <string name="monet_engine_linear_lightness_title">Использовать линейную легкость</string>
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Настройки Monet</string>
+    <string name="monet_engine_settings_summary">Пользовательский цвет, красочность, яркость</string>
+    <string name="color_override_title">Добавление своего цвета</string>
+    <string name="color_override_default_summary">Цвета из обоев</string>
+    <string name="custom_color_override_summary_placeholder">        Выберите цвет: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Установите пустое значение для использования цвета обоев.
+    </string>
+    <string name="invalid_color_input">Неправильно введен цвет!</string>
+    <string name="white_luminance_title">Яркость</string>
+    <string name="accurate_shades_title">Использовать точные оттенки</string>
+    <string name="chroma_factor_title">Полнота цвета</string>
+    <string name="linear_lightness_title">Использовать пользовательскую шкалу яркости</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Яркие цвета</string>
     <string name="system_black_theme_summary">Используйте красочные и темные оттенки монет</string>
@@ -980,6 +990,7 @@
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Скрыть приложения</string>
     <string name="hidden_apps_summary">Приложения, которые должны быть скрыты из лаунчера. Требуется перезагрузка лаунчера, чтобы изменения вступили в силу</string>
+    <string name="hidden_app_authentication_dialog_title">Разблокируйте для скрытия приложений</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Скрыть строку состояния</string>
     <string name="hide_lockscreen_status_bar_summary">Коснитесь строки состояния для переключения видимости</string>
@@ -1067,7 +1078,7 @@
     <string name="status_bar_battery_style_big_dotted_circle">Круг из точек</string>
     <string name="status_bar_battery_style_filled_circle">Круг (Заполняющийся)</string>
     <string name="status_bar_battery_style_text">Текст</string>
-    <string name="status_bar_battery_style_hidden">Скрыто</string>
+    <string name="status_bar_battery_style_hidden">Скрыт</string>
     <string name="status_bar_battery_percent_title">Процент батареи</string>
     <string name="status_bar_battery_percent_hidden">Скрыт</string>
     <string name="status_bar_battery_percent_text_inside">Внутри значка</string>
@@ -1119,8 +1130,7 @@
     <string name="custom_timeout_summary_8hours">8 часов</string>
     <!-- App lock -->
     <string name="app_lock_title">App Lock</string>
-    <string name="app_lock_summary_singular">1 приложение защищено</string>
-    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> приложений защищено</string>
+    <string name="app_lock_summary">Для запуска приложений требуется аутентификация по отпечатку пальцев</string>
     <string name="app_lock_authentication_dialog_title">Разблокировать</string>
     <string name="enable_debugging">Включить отладку</string>
     <string name="disable_debugging">Отключить отладку</string>
@@ -1135,6 +1145,7 @@
     <string name="app_lock_notifications_disabled_summary">Сначала выберите приложение для защиты</string>
     <string name="app_lock_biometrics_allowed_title">Включить биометрию для разблокировки</string>
     <string name="app_lock_footer_text">Всплывающие уведомления будут автоматически удалены по истечении таймаута</string>
+    <string name="enable_protection">Включить защиту</string>
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Слайдер оповещений</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
