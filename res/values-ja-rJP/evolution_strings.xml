@@ -30,7 +30,6 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">Android に含まれる標準の設定です</string>
     <string name="dark_ui_mode_summary">ダークテーマのオプションを参照する</string>
-    <string name="theme_summary">Monet 設定</string>
     <string name="unsupported_gestures">この機能を使用するには2または3ボタンナビゲーションを有効化して下さい</string>
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -70,6 +69,12 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">設定</string>
     <string name="color_default">既定</string>
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="confirm">確認</string>
+    <string name="invalid_color">無効な色です!</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">既定値が設定されていません</string>
     <string name="seekbar_default_value_set"><xliff:g id="number">%d</xliff:g> の既定に設定</string>
@@ -147,6 +152,10 @@
     <string name="dialog_delete_title">削除</string>
     <string name="dialog_delete_message">選択した項目を削除しますか?</string>
     <!-- Network traffic -->
+    <string name="network_traffic_intro_text">        現在のネットワーク速度をステータスバーに表示します。
+        速度モニターはアップロードとダウンロードの各速度を
+        動的に交互に毎秒表示するようになります。
+    </string>
     <string name="network_traffic_title">通信速度の表示</string>
     <string name="network_traffic_summary">ステータスバーのネットワーク速度の表示を切り替える</string>
     <string name="network_traffic_master_switch_title">通信速度の表示を使用</string>
@@ -377,11 +386,11 @@
     <string name="wallpaper_color">壁紙の色</string>
     <string name="custom_color">カスタムの色</string>
     <string name="edge_light_custom_color_title">カスタムの色</string>
-    <!-- QS Footer Text -->
-    <string name="qs_footer_text_title">フッターのテキスト</string>
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">クイック設定フッターの文字を表示</string>
     <string name="qs_footer_text_summary">クイック設定パネルの下部にテキストを表示する</string>
     <string name="qs_footer_text_string_title">フッターのテキストを編集</string>
-    <string name="qs_footer_text_string_summary">空白に設定して既定値になります</string>
+    <string name="qs_footer_text_string_summary">空白にすると Evolution X が既定値として設定されます</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">ヘッドセット接続時に音楽アプリ起動</string>
     <string name="headset_connect_player_summary">ヘッドセット接続時に既定の音楽アプリを起動する</string>
@@ -868,17 +877,18 @@
     <string name="show_carrier_keyguard">ロック画面</string>
     <string name="show_carrier_statusbar">ステータスバー</string>
     <string name="show_carrier_enabled">両方</string>
-    <!-- Monet Engine -->
-    <string name="monet_category">Monet</string>
-    <string name="monet_engine_title">Monet エンジン</string>
-    <string name="monet_engine_summary">Monet のパラメータを編集する</string>
-    <string name="monet_engine_custom_color_title">選択した色を使用</string>
-    <string name="monet_engine_custom_color_summary">Monet エンジンに壁紙の色の代わりにカスタムの色を使用する</string>
-    <string name="monet_engine_color_override_title">カスタムの色</string>
-    <string name="monet_engine_white_luminance_user_title">白い輝き</string>
-    <string name="monet_engine_accurate_shades_title">正確な色合いを使用</string>
-    <string name="monet_engine_chroma_factor_title">クローマ (彩度) 係数</string>
-    <string name="monet_engine_linear_lightness_title">線形の明度を使用</string>
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Monet エンジン</string>
+    <string name="monet_engine_settings_summary">カスタムの色、彩度、明度</string>
+    <string name="color_override_title">カスタムの色の選択</string>
+    <string name="color_override_default_summary">壁紙の色を使う</string>
+    <string name="custom_color_override_summary_placeholder">        選択した色: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>。空白の値を設定すると壁紙の色が使用されます。
+    </string>
+    <string name="invalid_color_input">無効な色の入力です!</string>
+    <string name="white_luminance_title">明度</string>
+    <string name="accurate_shades_title">正確な色合いを使用</string>
+    <string name="chroma_factor_title">彩度</string>
+    <string name="linear_lightness_title">カスタムの明度スケールを使用</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">ブラックテーマの使用</string>
     <string name="system_black_theme_summary">強制的に黒い背景のテーマを使用する</string>
@@ -980,6 +990,7 @@
     <!-- Hidden apps -->
     <string name="hidden_apps_title">非表示のアプリ</string>
     <string name="hidden_apps_summary">ランチャーアプリから非表示になるアプリです。変更を反映させるにはランチャーの再起動が必要です。</string>
+    <string name="hidden_app_authentication_dialog_title">ロック解除してアプリを隠す</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">ステータスバーを隠す</string>
     <string name="hide_lockscreen_status_bar_summary">ステータスバーのタップで表示を切り替える</string>
@@ -1119,8 +1130,7 @@
     <string name="custom_timeout_summary_8hours">8時間</string>
     <!-- App lock -->
     <string name="app_lock_title">アプリロック</string>
-    <string name="app_lock_summary_singular">1個のアプリが保護されています</string>
-    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g>個のアプリが保護されています</string>
+    <string name="app_lock_summary">アプリを起動するには指紋認証が必要です</string>
     <string name="app_lock_authentication_dialog_title">ロック解除</string>
     <string name="enable_debugging">デバッグを有効化</string>
     <string name="disable_debugging">デバッグを無効化</string>
@@ -1135,6 +1145,7 @@
     <string name="app_lock_notifications_disabled_summary">アプリを最初に保護する</string>
     <string name="app_lock_biometrics_allowed_title">生体認証でのロック解除を有効化</string>
     <string name="app_lock_footer_text">制限時間後にバブルは自動的に解除されます</string>
+    <string name="enable_protection">保護を有効にする</string>
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Alert Slider</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
