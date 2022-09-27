@@ -30,7 +30,6 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">Cài đặt có sẵn của Android</string>
     <string name="dark_ui_mode_summary">Duyệt qua các tùy chọn chủ đề tối</string>
-    <string name="theme_summary">Cài đặt Monet</string>
     <string name="unsupported_gestures">Bật thanh điều hướng dạng hai phím hoặc ba phím để sử dụng tính năng này</string>
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -70,6 +69,12 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Đặt</string>
     <string name="color_default">Mặc định</string>
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="invalid_color">Màu không hợp lệ!</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Chưa đặt giá trị mặc định</string>
     <string name="seekbar_default_value_set">Giá trị được đặt mặc định là <xliff:g id="number">%d</xliff:g></string>
@@ -147,6 +152,9 @@
     <string name="dialog_delete_title">Xoá</string>
     <string name="dialog_delete_message">Xoá các mục đã chọn?</string>
     <!-- Network traffic -->
+    <string name="network_traffic_intro_text">        Hiển thị lưu lượng mạng hiện tại trên thanh trạng thái.
+        Mỗi giây nó sẽ tự động chuyển giữa hiển thị tốc độ tải lên và tốc độ tải xuống
+    </string>
     <string name="network_traffic_title">Lưu lượng mạng</string>
     <string name="network_traffic_summary">Bật hoặc tắt hiển thị tốc độ mạng trên thanh trạng thái</string>
     <string name="network_traffic_master_switch_title">Hiển thị tốc độ mạng</string>
@@ -192,7 +200,7 @@
     <string name="qs_show_brightness_slider_not_expanded">Hiển thị khi không mở rộng</string>
     <string name="qs_brightness_slider_position_title">Vị trí</string>
     <string name="qs_brightness_slider_position_top">Đầu trang</string>
-    <string name="qs_brightness_slider_position_bottom">Cuối trang</string>
+    <string name="qs_brightness_slider_position_bottom">Dưới cùng</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Biểu tượng độ sáng tự động</string>
     <string name="qs_show_auto_brightness_summary">Hiển thị phím bật Độ sáng tự động bên cạnh thanh độ sáng</string>
@@ -377,11 +385,11 @@
     <string name="wallpaper_color">Màu hình nền</string>
     <string name="custom_color">Màu tùy chỉnh</string>
     <string name="edge_light_custom_color_title">Màu tùy chỉnh</string>
-    <!-- QS Footer Text -->
-    <string name="qs_footer_text_title">Văn bản dạng Footer</string>
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">Văn bản chân trang</string>
     <string name="qs_footer_text_summary">Hiển thị văn bản ở cuối bảng QS</string>
     <string name="qs_footer_text_string_title">Tùy chỉnh văn bản chân trang</string>
-    <string name="qs_footer_text_string_summary">Đặt thành trống để thiết lập mặc định</string>
+    <string name="qs_footer_text_string_summary">Để trống sẽ hiển thị \"Evolution X\"</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Khởi chạy ứng dụng nhạc khi kết nối tai nghe</string>
     <string name="headset_connect_player_summary">Khởi chạy ứng dụng nhạc mặc định khi tai nghe được kết nối</string>
@@ -445,8 +453,8 @@
     <string name="qstile_dottedcircle">Vòng tròn chấm</string>
     <string name="qstile_attemptmountain">Ngọn núi hùng vĩ</string>
     <string name="qstile_squaremedo">Hình vuông chéo nhau</string>
-    <string name="qstile_inkdrop">Ink</string>
-    <string name="qstile_cookie">Cookie</string>
+    <string name="qstile_inkdrop">Mực</string>
+    <string name="qstile_cookie">Bánh quy</string>
     <string name="qstile_circleoutline">Đường viền vòng tròn</string>
     <string name="qstile_cosmos">Shishu Cosmos</string>
     <string name="qstile_divided">Vòng tròn chấm</string>
@@ -474,7 +482,7 @@
     <string name="volume_panel_category">Bảng điều chỉnh âm lượng</string>
     <string name="volume_panel_title">Kiểu bảng điều khiển âm lượng</string>
     <string name="volume_panel_compact">Nhỏ gọn</string>
-    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_oreo">Bánh Oreo</string>
     <string name="volume_panel_tiled">Ô xếp</string>
     <string name="volume_panel_p404">P404</string>
     <string name="volume_panel_ssos">ShapeShift</string>
@@ -568,7 +576,7 @@
     <string name="lock_screen_custom_clock_face_sfuny">SFUNY</string>
     <string name="lock_screen_custom_clock_face_shapeshift">ShapeShift</string>
     <string name="lock_screen_custom_clock_face_spectrum">Sóng nhạc</string>
-    <string name="lock_screen_custom_clock_face_sticker_tag">Sticker Tag</string>
+    <string name="lock_screen_custom_clock_face_sticker_tag">Nhãn hình dán</string>
     <string name="lock_screen_custom_clock_face_typographic">Đánh máy</string>
     <string name="lock_screen_custom_clock_face_typographic_alt">Đánh máy (giữa)</string>
     <!-- Volume rocker gestures -->
@@ -622,7 +630,7 @@
     <string name="hardware_keys_action_clear_all_notifications">Xóa tất cả thông báo</string>
     <string name="hardware_keys_action_notifications_panel">Ẩn/hiện bảng thông báo</string>
     <string name="hardware_keys_action_toggle_qs_panel">Chuyển đổi bảng Cài đặt nhanh</string>
-    <string name="hardware_keys_action_ringer_modes">Ringer modes</string>
+    <string name="hardware_keys_action_ringer_modes">Chế độ chuông</string>
     <string name="hardware_keys_swipe_right_key_title">Vuốt sang phải</string>
     <string name="hardware_keys_swipe_left_key_title">Vuốt sang trái</string>
     <string name="hardware_keys_long_tap_key_title">Chạm và giữ</string>
@@ -868,17 +876,18 @@
     <string name="show_carrier_keyguard">Màn hình khóa</string>
     <string name="show_carrier_statusbar">Thanh trạng thái</string>
     <string name="show_carrier_enabled">Cả hai</string>
-    <!-- Monet Engine -->
-    <string name="monet_category">Monet</string>
-    <string name="monet_engine_title">Công cụ Monet</string>
-    <string name="monet_engine_summary">Tùy chỉnh các thông số monet</string>
-    <string name="monet_engine_custom_color_title">Sử dụng màu tùy chỉnh</string>
-    <string name="monet_engine_custom_color_summary">Sử dụng màu tùy chỉnh cho monet thay vì màu hình nền</string>
-    <string name="monet_engine_color_override_title">Màu tùy chỉnh</string>
-    <string name="monet_engine_white_luminance_user_title">Độ sáng trắng</string>
-    <string name="monet_engine_accurate_shades_title">Sử dụng các sắc thái chính xác</string>
-    <string name="monet_engine_chroma_factor_title">Yếu tố sắc tố</string>
-    <string name="monet_engine_linear_lightness_title">Sử dụng độ đậm nhạt tuyến tính</string>
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Hệ thống monet</string>
+    <string name="monet_engine_settings_summary">Màu tuỳ chỉnh, độ sặc sỡ, độ sáng</string>
+    <string name="color_override_title">Chọn màu tuỳ chỉnh</string>
+    <string name="color_override_default_summary">Sử dụng màu của hình nền</string>
+    <string name="custom_color_override_summary_placeholder">        Màu đã chọn: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Để trống để sử dụng màu hình nền.
+    </string>
+    <string name="invalid_color_input">Màu không hợp lệ!</string>
+    <string name="white_luminance_title">Độ sáng</string>
+    <string name="accurate_shades_title">Sự dụng tông màu chính xác</string>
+    <string name="chroma_factor_title">Rực rỡ</string>
+    <string name="linear_lightness_title">Sử dụng thang đo độ sáng tùy chỉnh</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Màu đậm</string>
     <string name="system_black_theme_summary">Sử dụng màu đậm và tối hơn cho monet</string>
@@ -980,6 +989,7 @@
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Ẩn ứng dụng</string>
     <string name="hidden_apps_summary">Ứng dụng cần ẩn trên màn hình</string>
+    <string name="hidden_app_authentication_dialog_title">Mở khoá để ẩn ứng dụng</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Ẩn thanh trạng thái</string>
     <string name="hide_lockscreen_status_bar_summary">Chạm vào thanh trạng thái để hiển thị</string>
@@ -1119,8 +1129,7 @@
     <string name="custom_timeout_summary_8hours">8 giờ</string>
     <!-- App lock -->
     <string name="app_lock_title">Khoá ứng dụng</string>
-    <string name="app_lock_summary_singular">1 ứng dụng được bảo vệ</string>
-    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g>ứng dụng được bảo vệ</string>
+    <string name="app_lock_summary">Sẽ yêu cầu xác nhận vân tay để khởi chạy ứng dụng</string>
     <string name="app_lock_authentication_dialog_title">Mở khóa</string>
     <string name="enable_debugging">Bật chế độ gỡ lỗi</string>
     <string name="disable_debugging">Vô hiệu gỡ lỗi</string>
@@ -1135,6 +1144,7 @@
     <string name="app_lock_notifications_disabled_summary">Đầu tiên hãy khoá một ứng dụng</string>
     <string name="app_lock_biometrics_allowed_title">Mở khoá bằng sinh trắc học</string>
     <string name="app_lock_footer_text">Bong bóng nổi sẽ tự động biến mất sau khi hết thời gian chờ</string>
+    <string name="enable_protection">Bật bảo vệ</string>
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Cần gạt chuông</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
