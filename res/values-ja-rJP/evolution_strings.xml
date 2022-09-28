@@ -89,13 +89,15 @@
     <string name="usb_default_config_title">USB 設定</string>
     <string name="usb_default_config_summary">USB 経由で端末に接続されている時の既定の動作を選択する</string>
     <!-- Navigation bar -->
-    <string name="navigation_bar_category">ナビゲーションバー</string>
-    <string name="navigation_bar_title">画面内ナビゲーションバー</string>
-    <string name="navigation_bar_summary">画面上にナビゲーションバーを表示する</string>
-    <string name="navigation_bar_arrow_keys_title">入力中に矢印キーを表示</string>
-    <string name="navigation_bar_arrow_keys_summary">入力中は左右のカーソルボタンをナビゲーションバーに表示する</string>
-    <string name="navigation_bar_compact_layout_title">小さなレイアウト</string>
-    <string name="navigation_bar_compact_layout_summary">ナビゲーションバーに小さなレイアウトを使用する</string>
+    <string name="navbar_visibility_title">ナビゲーションバー</string>
+    <string name="navbar_visibility_summary">画面下部にナビゲーションバーを表示する</string>
+    <string name="navbar_layout_category_title">レイアウト</string>
+    <string name="navbar_arrow_keys_title">入力中に矢印キーを表示</string>
+    <string name="navbar_arrow_keys_summary">入力中は左右の矢印ボタンを表示します。IME の切り替えアイコンは無効になります。</string>
+    <string name="navbar_compact_layout_title">小さなレイアウト</string>
+    <string name="navbar_compact_layout_summary">ナビゲーションバーに小さなレイアウトを使用する</string>
+    <string name="navbar_invert_layout_title">レイアウトを反転</string>
+    <string name="navbar_invert_layout_summary">ナビゲーションバーや IEM 切替えのようなその他の項目のレイアウトを反転させる</string>
     <string name="system_navigation_summary">使用するシステムナビゲーションバーのスタイルを選択する</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel アニメーション</string>
@@ -163,10 +165,10 @@
     <string name="network_traffic_autohide_title">非動作時は通信量モニターを隠す</string>
     <string name="network_traffic_autohide_summary">1 KB/s未満の場合は通信料モニターを非表示にする</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_error_vib_title">指紋認証失敗時の振動</string>
-    <string name="fprint_error_vib_summary">指紋認証が失敗した時に振動させる</string>
-    <string name="fprint_success_vib_title">指紋認証の振動</string>
-    <string name="fprint_success_vib_summary">指紋認証が成功した時に振動させる</string>
+    <string name="fp_success_vibrate_title">指紋認証の振動</string>
+    <string name="fp_success_vibrate_summary">指紋認証成功時に振動させる</string>
+    <string name="fp_error_vibrate_title">指紋認証失敗時の振動</string>
+    <string name="fp_error_vibrate_summary">指紋認証が失敗した際に振動させる</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">LTE の代わりに 4G を表示</string>
     <string name="show_fourg_icon_summary">電波アイコンを LTE から 4G に置き換える</string>
@@ -330,28 +332,24 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">アプリ終了ボタン</string>
     <string name="notification_guts_kill_app_button_summary">通知の長押しメニューにアプリ終了ボタンを表示する</string>
-    <!-- Battery bar -->
+    <!-- Status bar - Battery Bar -->
     <string name="battery_bar_title">バッテリーバー</string>
-    <string name="battery_bar_summary">ステータスバー又はナビゲーションバー付近のバッテリーバーの表示や編集をする</string>
-    <string name="battery_bar_location">バッテリーバーの位置</string>
+    <string name="battery_bar_summary">ステータスバーやナビゲーションバー上のバッテリーバーの表示や編集をする</string>
     <string name="battery_bar_color">色</string>
+    <string name="battery_bar_charging_color">充電中の色</string>
+    <string name="battery_bar_battery_low_color">低残量時の色</string>
     <string name="battery_bar_style_title">配置</string>
     <string name="battery_bar_thickness_title">太さ</string>
     <string name="battery_bar_animate_title">充電アニメーション</string>
-    <string name="battery_bar_animate_summary">有効にすると動作が遅くなる可能性があります。ご自身で判断して下さい。</string>
-    <string name="battery_bar_hide">非表示</string>
-    <string name="battery_bar_statusbar">ステータスバー</string>
-    <string name="battery_bar_topnav">ナビゲーションバー上部</string>
-    <string name="battery_bar_bottomnav">ナビゲーションバー下部</string>
-    <string name="battery_bar_reg">通常</string>
-    <string name="battery_bar_center">中央</string>
-    <string name="battery_bar_charging_color">充電時の色</string>
-    <string name="battery_bar_battery_low_color">残量低下時の色</string>
-    <string name="battery_bar_reversed">反転</string>
-    <string name="battery_bar_use_gradient_color">グラデーションを使用</string>
-    <string name="battery_bar_gradient_color_summary">バッテリー残量の目盛りにグラデーションを使用する</string>
-    <string name="battery_bar_high_color">高残量時の色</string>
-    <string name="battery_bar_low_color">低残量時の色</string>
+    <string name="battery_bar_style_regular">通常</string>
+    <string name="battery_bar_style_center_mirrored">中央</string>
+    <string name="battery_bar_style_reversed">反転</string>
+    <string name="battery_bar_use_charging_color">カスタムの充電時の色</string>
+    <string name="battery_bar_blend_color_title">色のブレンド</string>
+    <string name="battery_bar_blend_color_summary">バッテリー残量に応じてフル/低残量時の色をブレンドする</string>
+    <string name="battery_bar_blend_color_reverse_title">色の順番を反転</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">フル &#8594; 残量低下: 赤 &#8592; 緑 &#8592; 青 &#8592; 赤</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">フル &#8594; 残量低下: 赤 &#8594; 緑 &#8594; 青 &#8594; 赤</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">スクロールキャッシュ</string>
     <string name="pref_scrollingcache_summary">スクロールキャッシュはメモリを消費しますがスクロールのパフォーマンスが向上します</string>
@@ -985,8 +983,6 @@
     <!-- Unlock FPS for specific games -->
     <string name="use_games_spoof_title">ゲーム内でより高い FPS 設定を解放する</string>
     <string name="use_games_spoof_summary">より高い FPS 設定を表示させるために、一部のゲームでは異なるモデルとしてデバイスを偽装します</string>
-    <!-- NavBar Inverse -->
-    <string name="navigation_bar_inverse_title">3ボタンナビゲーションバーの反転</string>
     <!-- Hidden apps -->
     <string name="hidden_apps_title">非表示のアプリ</string>
     <string name="hidden_apps_summary">ランチャーアプリから非表示になるアプリです。変更を反映させるにはランチャーの再起動が必要です。</string>
