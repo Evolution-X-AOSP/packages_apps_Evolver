@@ -30,7 +30,6 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">包含安卓系统的库存选项</string>
     <string name="dark_ui_mode_summary">浏览黑暗主题选项</string>
-    <string name="theme_summary">Monet 设置</string>
     <string name="unsupported_gestures">启用两个按钮或三个按钮导航来使用此功能</string>
     <!-- General strings -->
     <string name="ok">确定</string>
@@ -70,6 +69,12 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">设置</string>
     <string name="color_default">默认</string>
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="confirm">确认</string>
+    <string name="invalid_color">颜色无效</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">未设置任何默认选项</string>
     <string name="seekbar_default_value_set">设定默认值为<xliff:g id="number">%d</xliff:g></string>
@@ -84,13 +89,15 @@
     <string name="usb_default_config_title">USB 配置</string>
     <string name="usb_default_config_summary">选择通过 USB 连接到设备时的默认行为</string>
     <!-- Navigation bar -->
-    <string name="navigation_bar_category">导航栏</string>
-    <string name="navigation_bar_title">屏幕导航栏</string>
-    <string name="navigation_bar_summary">启用屏幕导航栏</string>
-    <string name="navigation_bar_arrow_keys_title">键入时显示方向键</string>
-    <string name="navigation_bar_arrow_keys_summary">输入时，在导航栏显示左右光标按钮</string>
-    <string name="navigation_bar_compact_layout_title">紧凑布局</string>
-    <string name="navigation_bar_compact_layout_summary">在导航栏中使用紧凑布局</string>
+    <string name="navbar_visibility_title">导航栏</string>
+    <string name="navbar_visibility_summary">在屏幕底部显示导航栏</string>
+    <string name="navbar_layout_category_title">布局</string>
+    <string name="navbar_arrow_keys_title">键入时显示方向键</string>
+    <string name="navbar_arrow_keys_summary">键入时显示左右光标按钮而不显示输入法选择器。</string>
+    <string name="navbar_compact_layout_title">紧凑布局</string>
+    <string name="navbar_compact_layout_summary">在导航栏中使用紧凑布局</string>
+    <string name="navbar_invert_layout_title">反转布局</string>
+    <string name="navbar_invert_layout_summary">反转导航栏和其他项目的布局，如输入法切换器</string>
     <string name="system_navigation_summary">选择要使用的系统导航样式</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel 动画</string>
@@ -147,6 +154,10 @@
     <string name="dialog_delete_title">删除</string>
     <string name="dialog_delete_message">删除所选中的项目？</string>
     <!-- Network traffic -->
+    <string name="network_traffic_intro_text">        在状态栏中显示当前网络流速。
+        监视器动态显示了它在
+        上传和下载速度之间的速度。
+    </string>
     <string name="network_traffic_title">网络流量监视器</string>
     <string name="network_traffic_summary">在状态栏中启用或禁用网络流量监视器</string>
     <string name="network_traffic_master_switch_title">使用网络流量监视器</string>
@@ -154,10 +165,10 @@
     <string name="network_traffic_autohide_title">当网络处于非活动状态时隐藏网络流量监视器</string>
     <string name="network_traffic_autohide_summary">当网络流量监视小于 1 KB/s 时隐藏</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_error_vib_title">指纹错误振动</string>
-    <string name="fprint_error_vib_summary">指纹认证错误时振动</string>
-    <string name="fprint_success_vib_title">指纹验证振动</string>
-    <string name="fprint_success_vib_summary">验证指纹身份成功时振动</string>
+    <string name="fp_success_vibrate_title">指纹验证振动</string>
+    <string name="fp_success_vibrate_summary">指纹识别成功时振动</string>
+    <string name="fp_error_vibrate_title">指纹错误振动</string>
+    <string name="fp_error_vibrate_summary">指纹验证失败时振动</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">显示 4G 来替代 LTE</string>
     <string name="show_fourg_icon_summary">显示 4G 网络指示图标而非 LTE 图标</string>
@@ -321,28 +332,24 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">强制关闭应用按钮</string>
     <string name="notification_guts_kill_app_button_summary">在通知长按菜单中显示强行停止应用按钮</string>
-    <!-- Battery bar -->
+    <!-- Status bar - Battery Bar -->
     <string name="battery_bar_title">电量条</string>
-    <string name="battery_bar_summary">显示和自定义在状态栏或导航栏附近的电量条</string>
-    <string name="battery_bar_location">电量条位置</string>
-    <string name="battery_bar_color">电量条颜色</string>
-    <string name="battery_bar_style_title">电池图标对齐方式</string>
-    <string name="battery_bar_thickness_title">电量条厚度</string>
+    <string name="battery_bar_summary">显示并自定义电量栏</string>
+    <string name="battery_bar_color">颜色</string>
+    <string name="battery_bar_charging_color">充电时颜色</string>
+    <string name="battery_bar_battery_low_color">低电量颜色</string>
+    <string name="battery_bar_style_title">对齐</string>
+    <string name="battery_bar_thickness_title">厚度</string>
     <string name="battery_bar_animate_title">充电动画</string>
-    <string name="battery_bar_animate_summary">充电动画可能会降低用户体验，请酌情使用。</string>
-    <string name="battery_bar_hide">隐藏</string>
-    <string name="battery_bar_statusbar">状态栏</string>
-    <string name="battery_bar_topnav">导航栏顶部</string>
-    <string name="battery_bar_bottomnav">导航栏底部</string>
-    <string name="battery_bar_reg">常规</string>
-    <string name="battery_bar_center">居中</string>
-    <string name="battery_bar_charging_color">电量条颜色 (充电时)</string>
-    <string name="battery_bar_battery_low_color">电量条颜色 (低电量时)</string>
-    <string name="battery_bar_reversed">反转</string>
-    <string name="battery_bar_use_gradient_color">使用渐变颜色</string>
-    <string name="battery_bar_gradient_color_summary">使用渐变颜色显示电池电量</string>
-    <string name="battery_bar_high_color">高电量颜色</string>
-    <string name="battery_bar_low_color">低电量颜色</string>
+    <string name="battery_bar_style_regular">常规</string>
+    <string name="battery_bar_style_center_mirrored">中心镜像</string>
+    <string name="battery_bar_style_reversed">反转</string>
+    <string name="battery_bar_use_charging_color">自定义充电颜色</string>
+    <string name="battery_bar_blend_color_title">混合颜色</string>
+    <string name="battery_bar_blend_color_summary">基于电池的百分比颜色渐变</string>
+    <string name="battery_bar_blend_color_reverse_title">反转颜色方向</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">完整 &#8594; 空：红色 &#8592; 绿色 &#8592; 蓝色 &#8592; 红色</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">完整 &#8594; 空：红色 &#8594; 绿色 &#8594; 蓝色 &#8594; 红色</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">滚动缓存</string>
     <string name="pref_scrollingcache_summary">滚动缓存可以提高滚动性能，但消耗更多内存。</string>
@@ -377,8 +384,8 @@
     <string name="wallpaper_color">壁纸颜色</string>
     <string name="custom_color">自定义颜色</string>
     <string name="edge_light_custom_color_title">自定义颜色</string>
-    <!-- QS Footer Text -->
-    <string name="qs_footer_text_title">控制中心页脚文本</string>
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">快速设置页脚文本</string>
     <string name="qs_footer_text_summary">控制中心底部显示文本</string>
     <string name="qs_footer_text_string_title">自定义页脚文本</string>
     <string name="qs_footer_text_string_summary">置空以使用默认文本</string>
@@ -868,17 +875,18 @@
     <string name="show_carrier_keyguard">锁屏界面</string>
     <string name="show_carrier_statusbar">状态栏</string>
     <string name="show_carrier_enabled">上传和下载</string>
-    <!-- Monet Engine -->
-    <string name="monet_category">Monet</string>
-    <string name="monet_engine_title">Monet 引擎</string>
-    <string name="monet_engine_summary">自定义 Monet 参数</string>
-    <string name="monet_engine_custom_color_title">使用自定义颜色</string>
-    <string name="monet_engine_custom_color_summary">使用自定义的色彩用于木板引擎，而不是壁纸颜色</string>
-    <string name="monet_engine_color_override_title">自定义颜色</string>
-    <string name="monet_engine_white_luminance_user_title">白色亮度</string>
-    <string name="monet_engine_accurate_shades_title">使用准确的阴影</string>
-    <string name="monet_engine_chroma_factor_title">Chroma 因子</string>
-    <string name="monet_engine_linear_lightness_title">使用线性亮度</string>
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Monet 引擎</string>
+    <string name="monet_engine_settings_summary">自定义颜色，颜色，亮度</string>
+    <string name="color_override_title">自定义颜色选择器</string>
+    <string name="color_override_default_summary">使用壁纸颜色</string>
+    <string name="custom_color_override_summary_placeholder">        选择颜色： <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>。设置一个空值使用壁纸颜色。
+    </string>
+    <string name="invalid_color_input">无效的颜色输入！</string>
+    <string name="white_luminance_title">亮度</string>
+    <string name="accurate_shades_title">使用准确的阴影</string>
+    <string name="chroma_factor_title">饱和度</string>
+    <string name="linear_lightness_title">使用自定义亮度刻度</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">生动颜色</string>
     <string name="system_black_theme_summary">使用更深邃、更多彩的 Monet 色调</string>
@@ -975,11 +983,10 @@
     <!-- Unlock FPS for specific games -->
     <string name="use_games_spoof_title">在游戏中解锁更高的 FPS</string>
     <string name="use_games_spoof_summary">将您的设备伪装成特定游戏的不同型号以解锁更高的 FPS</string>
-    <!-- NavBar Inverse -->
-    <string name="navigation_bar_inverse_title">反转三按钮导航栏</string>
     <!-- Hidden apps -->
     <string name="hidden_apps_title">隐藏应用</string>
     <string name="hidden_apps_summary">应从启动器隐藏的应用程序，需要启动器重新启动以进行更改生效</string>
+    <string name="hidden_app_authentication_dialog_title">解锁隐藏应用程序</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">隐藏状态栏</string>
     <string name="hide_lockscreen_status_bar_summary">触摸状态栏以切换可见性</string>
@@ -1107,7 +1114,7 @@
     <string name="custom_timeout_summary_10secs">10 秒</string>
     <string name="custom_timeout_summary_15secs">15 秒</string>
     <string name="custom_timeout_summary_30secs">30 秒</string>
-    <string name="custom_timeout_summary_1min">1分钟</string>
+    <string name="custom_timeout_summary_1min">1 分钟</string>
     <string name="custom_timeout_summary_2mins">2 分钟</string>
     <string name="custom_timeout_summary_5mins">5 分钟</string>
     <string name="custom_timeout_summary_10mins">10 分钟</string>
@@ -1119,8 +1126,7 @@
     <string name="custom_timeout_summary_8hours">8 小时</string>
     <!-- App lock -->
     <string name="app_lock_title">应用锁</string>
-    <string name="app_lock_summary_singular">1 个应用程序受到保护</string>
-    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> 应用程序受到保护</string>
+    <string name="app_lock_summary">应用程序需要指纹身份验证才能启动</string>
     <string name="app_lock_authentication_dialog_title">解锁</string>
     <string name="enable_debugging">启用调试</string>
     <string name="disable_debugging">禁用调试</string>
@@ -1135,6 +1141,7 @@
     <string name="app_lock_notifications_disabled_summary">首先保护应用程序</string>
     <string name="app_lock_biometrics_allowed_title">启用生物识别解锁</string>
     <string name="app_lock_footer_text">超时后气泡会自动消失</string>
+    <string name="enable_protection">启用保护</string>
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">三段式滑块</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
