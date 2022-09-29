@@ -89,13 +89,15 @@
     <string name="usb_default_config_title">Cấu hình cổng USB</string>
     <string name="usb_default_config_summary">Chọn hành vi mặc định khi được kết nối với thiết bị qua cổng USB</string>
     <!-- Navigation bar -->
-    <string name="navigation_bar_category">Thanh điều hướng</string>
-    <string name="navigation_bar_title">Thanh điều hướng trên màn hình</string>
-    <string name="navigation_bar_summary">Hiện các phím điều hướng trên màn hình</string>
-    <string name="navigation_bar_arrow_keys_title">Hiển thị các phím mũi tên trong khi nhập</string>
-    <string name="navigation_bar_arrow_keys_summary">Hiển thị các nút con trỏ trái và phải trong thanh điều hướng khi gõ</string>
-    <string name="navigation_bar_compact_layout_title">Bố cục nhỏ gọn</string>
-    <string name="navigation_bar_compact_layout_summary">Sử dụng bố cục nhỏ gọn trong thanh điều hướng</string>
+    <string name="navbar_visibility_title">Thanh điều hướng</string>
+    <string name="navbar_visibility_summary">Hiển thị thanh điều hướng ở phía dưới màn hình</string>
+    <string name="navbar_layout_category_title">Bố cục</string>
+    <string name="navbar_arrow_keys_title">Hiển thị phím mũi tên khi nhập liệu</string>
+    <string name="navbar_arrow_keys_summary">Hiển thị các nút con trỏ bên trái và bên phải khi nhập liệu. Ghi đè bộ chuyển IME.</string>
+    <string name="navbar_compact_layout_title">Bố cục thu gọn</string>
+    <string name="navbar_compact_layout_summary">Sử dụng bố cục nhỏ gọn cho thanh điều hướng</string>
+    <string name="navbar_invert_layout_title">Đảo ngược bố cục</string>
+    <string name="navbar_invert_layout_summary">Đảo ngược bố cục của thanh điều hướng và các mục khác, chẳng hạn như trình chuyển đổi IME</string>
     <string name="system_navigation_summary">Chọn kiểu điều hướng hệ thống sẽ sử dụng</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Hoạt ảnh Pixel</string>
@@ -162,10 +164,10 @@
     <string name="network_traffic_autohide_title">Tự động ẩn tốc độ mạng khi không dùng</string>
     <string name="network_traffic_autohide_summary">Ẩn lưu lượng mạng khi tốc độ mạng dưới 1KB/s</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_error_vib_title">Rung khi lỗi vân tay</string>
-    <string name="fprint_error_vib_summary">Rung khi xác thực dấu vân tay lỗi</string>
-    <string name="fprint_success_vib_title">Rung xác thực bằng vân tay</string>
-    <string name="fprint_success_vib_summary">Rung khi xác thực dấu vân tay thành công</string>
+    <string name="fp_success_vibrate_title">Rung khi xác thực dấu vân tay</string>
+    <string name="fp_success_vibrate_summary">Rung khi xác thực vân tay thành công</string>
+    <string name="fp_error_vibrate_title">Rung khi lỗi vân tay</string>
+    <string name="fp_error_vibrate_summary">Rung khi xác thực dấu vân tay thất bại</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">Hiển thị 4G thay vì LTE</string>
     <string name="show_fourg_icon_summary">Thay thế chỉ báo LTE bằng 4G</string>
@@ -329,28 +331,24 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Nút buộc dừng ứng dụng</string>
     <string name="notification_guts_kill_app_button_summary">Hiển thị nút buộc dừng ứng dụng trong menu nhấn giữ thông báo</string>
-    <!-- Battery bar -->
+    <!-- Status bar - Battery Bar -->
     <string name="battery_bar_title">Thanh pin</string>
-    <string name="battery_bar_summary">Hiển thị và tùy chỉnh thanh pin gần thanh trạng thái hoặc thanh điều hướng</string>
-    <string name="battery_bar_location">Vị trí thanh pin</string>
-    <string name="battery_bar_color">Màu sắc thanh pin</string>
-    <string name="battery_bar_style_title">Kiểu thanh pin</string>
-    <string name="battery_bar_thickness_title">Độ dày thanh pin</string>
+    <string name="battery_bar_summary">Hiển thị và tuỳ chỉnh thanh pin phía trên thanh trạng thái</string>
+    <string name="battery_bar_color">Màu sắc</string>
+    <string name="battery_bar_charging_color">Màu khi sạc</string>
+    <string name="battery_bar_battery_low_color">Màu pin yếu</string>
+    <string name="battery_bar_style_title">Vị trí</string>
+    <string name="battery_bar_thickness_title">Độ dày</string>
     <string name="battery_bar_animate_title">Hiệu ứng sạc</string>
-    <string name="battery_bar_animate_summary">Hoạt hình sạc có thể dẫn đến trải nghiệm người dùng kém. Kích hoạt theo ý của bạn.</string>
-    <string name="battery_bar_hide">Ẩn</string>
-    <string name="battery_bar_statusbar">Thanh Trạng Thái</string>
-    <string name="battery_bar_topnav">Phía trên của thanh điều hướng</string>
-    <string name="battery_bar_bottomnav">Phía dưới của thanh điều hướng</string>
-    <string name="battery_bar_reg">Đều đặn</string>
-    <string name="battery_bar_center">Trung tâm nhân đôi</string>
-    <string name="battery_bar_charging_color">Màu sắc thanh pin khi đang sạc</string>
-    <string name="battery_bar_battery_low_color">Màu sắc thanh pin khi pin yếu</string>
-    <string name="battery_bar_reversed">Đảo ngược</string>
-    <string name="battery_bar_use_gradient_color">Sử dụng màu gradient</string>
-    <string name="battery_bar_gradient_color_summary">Sử dụng màu gradient làm tỷ lệ cho mức pin</string>
-    <string name="battery_bar_high_color">Màu mức cao\"</string>
-    <string name="battery_bar_low_color">Màu mức thấp\"</string>
+    <string name="battery_bar_style_regular">Bình thường</string>
+    <string name="battery_bar_style_center_mirrored">Đối xứng giữa</string>
+    <string name="battery_bar_style_reversed">Đảo ngược</string>
+    <string name="battery_bar_use_charging_color">Tùy chỉnh màu khi sạc</string>
+    <string name="battery_bar_blend_color_title">Pha trộn màu sắc</string>
+    <string name="battery_bar_blend_color_summary">Pha trộn màu sắc tương ứng với tỷ lệ phần trăm pin</string>
+    <string name="battery_bar_blend_color_reverse_title">Đảo ngược hướng màu sắc</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">Đầy pin &#8594; hết pin: đỏ &#8592; lục &#8592; lam &#8592; đỏ</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">Đầy pin &#8594; hết pin: đỏ &#8594; lục &#8594; lam &#8594; đỏ</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Cuộn bộ nhớ cache</string>
     <string name="pref_scrollingcache_summary">Bộ nhớ đệm cuộn có thể cải thiện hiệu suất cuộn với chi phí bộ nhớ</string>
@@ -984,8 +982,6 @@
     <!-- Unlock FPS for specific games -->
     <string name="use_games_spoof_title">Mở khóa FPS cao hơn trong trò chơi</string>
     <string name="use_games_spoof_summary">Định danh thiết bị của bạn thành thiết bị khác để mở khóa FPS cao hơn trong các trò chơi</string>
-    <!-- NavBar Inverse -->
-    <string name="navigation_bar_inverse_title">Đảo ngược bố cục của thanh điều hướng</string>
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Ẩn ứng dụng</string>
     <string name="hidden_apps_summary">Ứng dụng cần ẩn trên màn hình</string>
@@ -1138,8 +1134,8 @@
     <string name="app_lock_timeout_title">Hẹn giờ tự động khóa</string>
     <string name="app_lock_timeout_summary">Khoảng thời gian mà ứng dụng dưới nền tự động bị khoá</string>
     <string name="app_lock_notifications_title">Thu gọn thông báo</string>
-    <string name="app_lock_notifications_summary">          Nội dung thông báo của những ứng dụng được chọn sẽ bị ẩn và thu gọn lại khi chúng bị khoá.
-          Thông báo nổi sẽ tự động tắt.
+    <string name="app_lock_notifications_summary">          Thông báo sẽ bị ẩn và thu lại khi ứng dụng bị khoá.
+          Các thông hiện tại và cả các thông báo mới sẽ được điều chỉnh lại.
     </string>
     <string name="app_lock_notifications_disabled_summary">Đầu tiên hãy khoá một ứng dụng</string>
     <string name="app_lock_biometrics_allowed_title">Mở khoá bằng sinh trắc học</string>
@@ -1153,4 +1149,7 @@
     <!-- Alert Slider block -->
     <string name="block_alert_title">Chặn Cần gạt chuông</string>
     <string name="block_alert_summary">Chế độ bỏ túi sẽ vô hiệu hoá Cần gạt chuông</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Hiển thị Chuẩn Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Hiển thị chuẩn Wi-Fi ở biểu tượng Wi-Fi</string>
 </resources>
