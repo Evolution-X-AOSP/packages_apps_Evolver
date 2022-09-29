@@ -89,13 +89,15 @@
     <string name="usb_default_config_title">USB yapılandırması</string>
     <string name="usb_default_config_summary">Bir cihaza USB üzerinden bağlandığınızda varsayılan davranışı seçin</string>
     <!-- Navigation bar -->
-    <string name="navigation_bar_category">Gezinme çubuğu</string>
-    <string name="navigation_bar_title">Gezinme çubuğu</string>
-    <string name="navigation_bar_summary">Gezinme tuşlarını etkinleştir</string>
-    <string name="navigation_bar_arrow_keys_title">Yazı yazarken ok tuşlarını göster</string>
-    <string name="navigation_bar_arrow_keys_summary">Yazarken gezinme çubuğunda sol ve sağ imleç tuşlarını göster</string>
-    <string name="navigation_bar_compact_layout_title">Sıkışık düzen</string>
-    <string name="navigation_bar_compact_layout_summary">Gezinme çubuğunda sıkışık düzeni kullan</string>
+    <string name="navbar_visibility_title">Gezinme çubuğu</string>
+    <string name="navbar_visibility_summary">Ekranın alt kısmında gezinme çubuğunu göster</string>
+    <string name="navbar_layout_category_title">Düzen</string>
+    <string name="navbar_arrow_keys_title">Yazı yazarken ok tuşlarını göster</string>
+    <string name="navbar_arrow_keys_summary">Yazarken sol ve sağ imleç düğmelerini görüntüleyin. Klavye değiştiriciyi geçersiz kılar.</string>
+    <string name="navbar_compact_layout_title">Sıkışık düzen</string>
+    <string name="navbar_compact_layout_summary">Gezinme çubuğunda sıkışık düzeni kullan</string>
+    <string name="navbar_invert_layout_title">Düzeni tersine çevir</string>
+    <string name="navbar_invert_layout_summary">Gezinme çubuğunun ve klavye değiştirici gibi diğer öğelerin düzenini tersine çevirir</string>
     <string name="system_navigation_summary">Hangi sistem gezinme stilini kullanacağınızı seçin</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel animasyonu</string>
@@ -161,10 +163,10 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="network_traffic_autohide_title">Ağ trafiği göstergesi etkin olmadığında gizle</string>
     <string name="network_traffic_autohide_summary">Ağ trafiği göstergesi 1 KB/s\'nin altında olduğunda gizle</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_error_vib_title">Parmak izi hata titreşimi</string>
-    <string name="fprint_error_vib_summary">Parmak izi kimlik doğrulaması hatası olduğunda titret</string>
-    <string name="fprint_success_vib_title">Parmak izi kimlik doğrulama titreşimi</string>
-    <string name="fprint_success_vib_summary">Başarılı parmak izi kimlik doğrulamasında titret</string>
+    <string name="fp_success_vibrate_title">Parmak izi kimlik doğrulama titreşimi</string>
+    <string name="fp_success_vibrate_summary">Başarılı parmak izi kimlik doğrulanmasında titret</string>
+    <string name="fp_error_vibrate_title">Parmak izi hata titreşimi</string>
+    <string name="fp_error_vibrate_summary">Parmak izi doğrulaması başarısız olduğunda titret</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">LTE yerine 4G göster</string>
     <string name="show_fourg_icon_summary">LTE göstergesini 4G ile değiştirir</string>
@@ -328,28 +330,24 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Uygulama sonlandırma tuşu</string>
     <string name="notification_guts_kill_app_button_summary">Bildirimlere uzun basma menüsünde uygulama sonlandırma tuşunu göster</string>
-    <!-- Battery bar -->
+    <!-- Status bar - Battery Bar -->
     <string name="battery_bar_title">Pil çubuğu</string>
-    <string name="battery_bar_summary">Durum çubuğunun yanında pil çubuğunu görüntüleyin ve özelleştirin</string>
-    <string name="battery_bar_location">Pil çubuğu konumu</string>
-    <string name="battery_bar_color">Pil çubuğu rengi</string>
-    <string name="battery_bar_style_title">Pil çubuğu hizalama</string>
-    <string name="battery_bar_thickness_title">Pil çubuğu kalınlığı</string>
+    <string name="battery_bar_summary">Durum çubuğu üzerinde pil çubuğunu görüntüleyin ve özelleştirin</string>
+    <string name="battery_bar_color">Renk</string>
+    <string name="battery_bar_charging_color">Şarj rengi</string>
+    <string name="battery_bar_battery_low_color">Düşük pil rengi</string>
+    <string name="battery_bar_style_title">Konum</string>
+    <string name="battery_bar_thickness_title">Kalınlık</string>
     <string name="battery_bar_animate_title">Şarj animasyonu</string>
-    <string name="battery_bar_animate_summary">Şarj animasyonu kötü bir kullanıcı deneyimine neden olabilir. Kendi takdirinize bağlı olarak etkinleştirin.</string>
-    <string name="battery_bar_hide">Gizle</string>
-    <string name="battery_bar_statusbar">Durum çubuğu</string>
-    <string name="battery_bar_topnav">Gezinti çubuğunun üstü</string>
-    <string name="battery_bar_bottomnav">Gezinti çubuğunun altı</string>
-    <string name="battery_bar_reg">Normal</string>
-    <string name="battery_bar_center">Merkez-yansıtmalı</string>
-    <string name="battery_bar_charging_color">Pil çubuğu şarj rengi</string>
-    <string name="battery_bar_battery_low_color">Pil çubuğu düşük pil rengi</string>
-    <string name="battery_bar_reversed">Ters</string>
-    <string name="battery_bar_use_gradient_color">Gradyan rengi kullan</string>
-    <string name="battery_bar_gradient_color_summary">Pil seviyesine bir ölçek olarak gradyan renk kullan</string>
-    <string name="battery_bar_high_color">Yüksek düzeyde renk\"</string>
-    <string name="battery_bar_low_color">Düşük düzeyde renk\"</string>
+    <string name="battery_bar_style_regular">Düzenli</string>
+    <string name="battery_bar_style_center_mirrored">Merkez-yansıtmalı</string>
+    <string name="battery_bar_style_reversed">Ters</string>
+    <string name="battery_bar_use_charging_color">Özel şarj rengi</string>
+    <string name="battery_bar_blend_color_title">Renkleri karıştır</string>
+    <string name="battery_bar_blend_color_summary">Pil yüzdesine karşılık gelen dolu/boş renkleri karıştırır</string>
+    <string name="battery_bar_blend_color_reverse_title">Renk yönünü tersine çevir</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">Dolu &#8594; boş: kırmızı &#8592; yeşil &#8592; mavi &#8592; kırmızı</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">Dolu &#8594; boş: kırmızı &#8594; yeşil &#8594; mavi &#8594; kırmızı</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Kaydırma önbelleği</string>
     <string name="pref_scrollingcache_summary">Kaydırma önbelleği fazla bellek kullanımı olsa dahi performansı arttırabilir</string>
@@ -983,8 +981,6 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <!-- Unlock FPS for specific games -->
     <string name="use_games_spoof_title">Oyunlarda yüksek yenileme hızını etkinleştir</string>
     <string name="use_games_spoof_summary">Daha yüksek FPS kilidini açmak için belirli oyunlar için cihazınızı farklı bir model olarak taklit edin</string>
-    <!-- NavBar Inverse -->
-    <string name="navigation_bar_inverse_title">Gezinme tuşlarının yerini değiştir</string>
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Gizlenmiş uygulamalar</string>
     <string name="hidden_apps_summary">Başlatıcıda gizlenecek uygulamalar. Değişikliklerin etkili olması için başlatıcıyı yeniden başlatın</string>
@@ -1137,8 +1133,8 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="app_lock_timeout_title">Otomatik kilit zaman aşımı</string>
     <string name="app_lock_timeout_summary">Kilidi açılan bir uygulamanın arka planda ne kadar süre sonra kilitleneceği</string>
     <string name="app_lock_notifications_title">Bildirimleri daralt</string>
-    <string name="app_lock_notifications_summary">          Seçilen uygulamalar kilitlendiğinde bildirim içeriği gizlenecek ve daraltılacak.
-          Bildirim pencereleri otomatik olarak devre dışı bırakılacak.    </string>
+    <string name="app_lock_notifications_summary">Uygulama kilitlendiğinde bildirim içeriği gizlenecek ve daraltılacak.
+Mevcut bildirimler ve yeni bildirimler yayına hazırlanacak.    </string>
     <string name="app_lock_notifications_disabled_summary">Önce bir uygulama kilitleyin</string>
     <string name="app_lock_biometrics_allowed_title">Kilidi açmak için biyometri kullan</string>
     <string name="app_lock_footer_text">Baloncuklar zaman aşımından sonra otomatik olarak yok sayılacak</string>
@@ -1151,4 +1147,7 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <!-- Alert Slider block -->
     <string name="block_alert_title">Uyarı kaydırıcısını engelle</string>
     <string name="block_alert_summary">Cep modu uyarı kaydırıcısını engelleyecek</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Standart Wi-Fi simgesini göster</string>
+    <string name="show_wifi_standard_icon_summary">Wi-Fi türünü sinyal göstergesinde göster</string>
 </resources>
