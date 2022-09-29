@@ -89,13 +89,15 @@
     <string name="usb_default_config_title">USB-konfiguráció</string>
     <string name="usb_default_config_summary">Alapértelmezett mód beállítása USB-re való csatlakozáskor</string>
     <!-- Navigation bar -->
-    <string name="navigation_bar_category">Navigációs sáv</string>
-    <string name="navigation_bar_title">Képernyőn megjelenő navigációs sáv</string>
-    <string name="navigation_bar_summary">A képernyőn megjelenő navigációs gombok engedélyezése</string>
-    <string name="navigation_bar_arrow_keys_title">Nyíl-billentyűk megjelenítése gépelés közben</string>
-    <string name="navigation_bar_arrow_keys_summary">Mutassa a bal és jobb oldali kurzort a navigációs sávban, gépelés közben</string>
-    <string name="navigation_bar_compact_layout_title">Kompakt elrendezés</string>
-    <string name="navigation_bar_compact_layout_summary">Kompakt elrendezés a navigációs sávban</string>
+    <string name="navbar_visibility_title">Navigációs sáv</string>
+    <string name="navbar_visibility_summary">A navigációs sáv megjelenítése a képernyő alján</string>
+    <string name="navbar_layout_category_title">Elrendezés</string>
+    <string name="navbar_arrow_keys_title">Nyíl-billentyűk megjelenítése gépelés közben</string>
+    <string name="navbar_arrow_keys_summary">Mutassa a bal és jobb kurzort gépelés közben. A billentyűzetválasztó felülírja.</string>
+    <string name="navbar_compact_layout_title">Kompakt elrendezés</string>
+    <string name="navbar_compact_layout_summary">Kompakt elrendezés a navigációs sávban</string>
+    <string name="navbar_invert_layout_title">Fordított elrendezés</string>
+    <string name="navbar_invert_layout_summary">Navigációs sáv és más elemek megfordítása, mint például a bevitelimód-váltó elrendezése</string>
     <string name="system_navigation_summary">Válassza ki a használni kívánt rendszernavigációs stílust</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel-animáció</string>
@@ -163,10 +165,10 @@
     <string name="network_traffic_autohide_title">Ha nincs adatforgalom, a kijelző se látszódjon</string>
     <string name="network_traffic_autohide_summary">1 KB/s adatforgalom alatt ne látszódjon a kijelző</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_error_vib_title">Az ujjlenyomat-olvasó rezgő hibajelzése</string>
-    <string name="fprint_error_vib_summary">Rezgéssel jelezze a hibás ujjlenyomat-ellenőrzést</string>
-    <string name="fprint_success_vib_title">Ujjlenyomat-hitelesítési rezgés</string>
-    <string name="fprint_success_vib_summary">Rezgéssel jelezze a sikeres ujjlenyomat-ellenőrzést</string>
+    <string name="fp_success_vibrate_title">Ujjlenyomat-hitelesítési rezgés</string>
+    <string name="fp_success_vibrate_summary">Ujjlenyomat sikeres hitelesítésekor rezgés</string>
+    <string name="fp_error_vibrate_title">Ujjlenyomat-hibajelzés rezgéssel</string>
+    <string name="fp_error_vibrate_summary">Rezgéssel jelzi az ujjlenyomat sikertelen hitelesítését</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">4G felirat az LTE helyett</string>
     <string name="show_fourg_icon_summary">Lecseréli az LTE hálózatkijelző ikont egy 4G feliratra</string>
@@ -330,28 +332,24 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Gomb az alkalmazás kényszerített leállítására</string>
     <string name="notification_guts_kill_app_button_summary">Az értesítés hosszannyomási menüjében megjeleníti az \'Alkalmazás leállítása\' gombot</string>
-    <!-- Battery bar -->
+    <!-- Status bar - Battery Bar -->
     <string name="battery_bar_title">Akkumulátorsáv</string>
-    <string name="battery_bar_summary">Az akkumulátorsáv az állapotsor vagy a navigációs sáv melletti megjelenítése és testreszabása</string>
-    <string name="battery_bar_location">Az akkumulátorsáv helye</string>
-    <string name="battery_bar_color">Az akkumulátorsáv színe</string>
-    <string name="battery_bar_style_title">Az akkumulátorsáv stílusa</string>
-    <string name="battery_bar_thickness_title">Az akkumulátorsáv vastagsága</string>
+    <string name="battery_bar_summary">Akkumulátorsáv megjelenítése és testreszabása az állapotsor felett</string>
+    <string name="battery_bar_color">Szín</string>
+    <string name="battery_bar_charging_color">Töltésjelző szín</string>
+    <string name="battery_bar_battery_low_color">Alacsony akkuszint jelzőszíne</string>
+    <string name="battery_bar_style_title">Igazítás</string>
+    <string name="battery_bar_thickness_title">Vastagság</string>
     <string name="battery_bar_animate_title">Töltési animáció</string>
-    <string name="battery_bar_animate_summary">A töltési animáció ronthatja a felhasználói élményt. Saját döntésére engedélyezze.</string>
-    <string name="battery_bar_hide">Elrejtés</string>
-    <string name="battery_bar_statusbar">Az Állapotsoron</string>
-    <string name="battery_bar_topnav">A navigációs sáv tetején</string>
-    <string name="battery_bar_bottomnav">A navigációs sáv alján</string>
-    <string name="battery_bar_reg">Hagyományos</string>
-    <string name="battery_bar_center">Középre tükrözött</string>
-    <string name="battery_bar_charging_color">Az akkumulátorsáv töltési színe</string>
-    <string name="battery_bar_battery_low_color">Az akkumulátorsáv színe alacsony töltöttség esetén</string>
-    <string name="battery_bar_reversed">Fordított</string>
-    <string name="battery_bar_use_gradient_color">Színátmenet használata</string>
-    <string name="battery_bar_gradient_color_summary">Színátmenet használata az akkumulátor töltöttségi szintjéhez</string>
-    <string name="battery_bar_high_color">A magas szint színe</string>
-    <string name="battery_bar_low_color">Az alacsony szint színe</string>
+    <string name="battery_bar_style_regular">Hagyományos</string>
+    <string name="battery_bar_style_center_mirrored">Középre tükrözött</string>
+    <string name="battery_bar_style_reversed">Fordított</string>
+    <string name="battery_bar_use_charging_color">Egyéni töltésjelző szín</string>
+    <string name="battery_bar_blend_color_title">Kevert színek</string>
+    <string name="battery_bar_blend_color_summary">Keverje az üres/teli színeket az akkumulátor töltöttségének megfelelően</string>
+    <string name="battery_bar_blend_color_reverse_title">Fordított irányú színek</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">Teljesen &#8594; üres: piros &#8592; zöld &#8592; kék &#8592; piros</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">Teljesen &#8594; üres: piros &#8594; zöld &#8594; kék &#8594; piros</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Görgetési gyorsítótár</string>
     <string name="pref_scrollingcache_summary">A görgetési gyorsítótár javíthatja a görgetés minőségét a memória rovására</string>
@@ -985,8 +983,6 @@
     <!-- Unlock FPS for specific games -->
     <string name="use_games_spoof_title">Magasabb FPS feloldása játékokhoz</string>
     <string name="use_games_spoof_summary">Eszközinfó-hamisítás hogy magasabb FPS legyen elérhető a játékokhoz</string>
-    <!-- NavBar Inverse -->
-    <string name="navigation_bar_inverse_title">A 3 gombos navigáció átfordítása</string>
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Rejtett alkalmazások</string>
     <string name="hidden_apps_summary">Alkalmazások, amelyeket el kell rejteni az indítópult elől</string>
@@ -1139,8 +1135,8 @@
     <string name="app_lock_timeout_title">Az automatikus lezárás időkorlátja</string>
     <string name="app_lock_timeout_summary">Az az időtartam, amely után a feloldott alkalmazás a háttérben visszazár</string>
     <string name="app_lock_notifications_title">Összezárt értesítések</string>
-    <string name="app_lock_notifications_summary">      A kiválasztott zárolt alkalmazások értesítései elrejtődnek és összecsukódnak.
-      A lebegő értesítések automatikusan letiltódnak.
+    <string name="app_lock_notifications_summary">          Lezárt alkalmazásoknál az értesítések tartalma rejtett és összecsukott.
+          A meglévő értesítésekből beleértve az újakat is csak rövid rész látszik.
     </string>
     <string name="app_lock_notifications_disabled_summary">Előbb állítson be legalább egy védett alkalmazást</string>
     <string name="app_lock_biometrics_allowed_title">Biometria-bekapcsolás a feloldáshoz</string>
@@ -1154,4 +1150,7 @@
     <!-- Alert Slider block -->
     <string name="block_alert_title">Az \'Értesítőcsúszka\' tiltása</string>
     <string name="block_alert_summary">A \'Zsebmód\' kikapcsolja az \'Értesitőcsúszkát\'</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">A megszokott WiFi-ikon</string>
+    <string name="show_wifi_standard_icon_summary">Jelenítse meg a Wi-Fi típusát a Wi-Fi-térerőikonban</string>
 </resources>
