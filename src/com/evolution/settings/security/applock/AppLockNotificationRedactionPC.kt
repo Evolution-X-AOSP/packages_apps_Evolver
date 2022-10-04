@@ -59,6 +59,7 @@ class AppLockNotificationRedactionPC(
     override fun isChecked() = shouldRedactNotification
 
     override fun setChecked(checked: Boolean): Boolean {
+        if (shouldRedactNotification == checked) return false
         shouldRedactNotification = checked
         coroutineScope.launch(Dispatchers.Default) {
             appLockManager.setShouldRedactNotification(packageName, checked)

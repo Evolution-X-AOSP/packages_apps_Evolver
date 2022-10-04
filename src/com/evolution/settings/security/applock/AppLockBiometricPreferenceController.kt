@@ -63,6 +63,7 @@ class AppLockBiometricPreferenceController(
     override fun isChecked() = isBiometricsAllowed
 
     override fun setChecked(checked: Boolean): Boolean {
+        if (isBiometricsAllowed == checked) return false
         isBiometricsAllowed = checked
         coroutineScope.launch(Dispatchers.Default) {
             appLockManager.setBiometricsAllowed(isBiometricsAllowed)
