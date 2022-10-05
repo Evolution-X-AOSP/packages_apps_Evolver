@@ -30,7 +30,6 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">Výchozí možnosti zahrnuté v systému Android</string>
     <string name="dark_ui_mode_summary">Procházet možnosti tmavého motivu</string>
-    <string name="theme_summary">Nastavení Monetu</string>
     <string name="unsupported_gestures">Pro použití této funkce přepněte na navigaci tlačítky</string>
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -70,6 +69,12 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Nastavit</string>
     <string name="color_default">Výchozí</string>
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="confirm">Potvrdit</string>
+    <string name="invalid_color">Neplatná barva!</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Nejsou nastaveny žádné výchozí hodnoty</string>
     <string name="seekbar_default_value_set">Hodnota nastavena na výchozí - <xliff:g id="number">%d</xliff:g></string>
@@ -84,13 +89,15 @@
     <string name="usb_default_config_title">Konfigurace USB</string>
     <string name="usb_default_config_summary">Vyberte výchozí chování při připojení zařízení pomocí USB</string>
     <!-- Navigation bar -->
-    <string name="navigation_bar_category">Navigační panel</string>
-    <string name="navigation_bar_title">Navigační panel na obrazovce</string>
-    <string name="navigation_bar_summary">Zapnout navigační tlačítka na obrazovce</string>
-    <string name="navigation_bar_arrow_keys_title">Zobrazit navigační šipky při psaní</string>
-    <string name="navigation_bar_arrow_keys_summary">Zobrazit tlačítka pro kurzor vlevo a vpravo na navigačním panelu při psaní</string>
-    <string name="navigation_bar_compact_layout_title">Kompaktní rozložení</string>
-    <string name="navigation_bar_compact_layout_summary">Použít kompaktní rozložení v navigačním panelu</string>
+    <string name="navbar_visibility_title">Navigační panel</string>
+    <string name="navbar_visibility_summary">Zobrazit navigační panel v dolní části obrazovky</string>
+    <string name="navbar_layout_category_title">Rozložení</string>
+    <string name="navbar_arrow_keys_title">Zobrazit navigační šipky při psaní</string>
+    <string name="navbar_arrow_keys_summary">Zobrazit při psaní levé a pravé kurzorové tlačítko. Potlačí nastavení voliče metody vstupu (IME).</string>
+    <string name="navbar_compact_layout_title">Kompaktní rozložení</string>
+    <string name="navbar_compact_layout_summary">Použít kompaktní rozložení v navigačním panelu</string>
+    <string name="navbar_invert_layout_title">Převrátit rozložení</string>
+    <string name="navbar_invert_layout_summary">Převrátí rozložení navigačního panelu dalších položek, jako např. přepínače metody vstupu (IME)</string>
     <string name="system_navigation_summary">Vyberte styl navigace systému</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Animace Pixel</string>
@@ -147,6 +154,10 @@
     <string name="dialog_delete_title">Odstranit</string>
     <string name="dialog_delete_message">Odstranit vybranou položku?</string>
     <!-- Network traffic -->
+    <string name="network_traffic_intro_text">        Zobrazuje aktuální rychlost síťového provozu na stavovém řádku.
+        Monitor zobrazuje rychlost dynamicky tak, že se střídá
+        rychlost odesílání a stahování každou sekundu
+    </string>
     <string name="network_traffic_title">Indikátor síťového provozu</string>
     <string name="network_traffic_summary">Zapnout nebo vypnout indikátory rychlosti sítě ve stavovém řádku</string>
     <string name="network_traffic_master_switch_title">Použít indikátor síťového provozu</string>
@@ -154,10 +165,10 @@
     <string name="network_traffic_autohide_title">Skrýt indikátor síťového provozu při neaktivitě</string>
     <string name="network_traffic_autohide_summary">Skrýt indikátor síťového provozu, když je stahování nižší než 1 KB/s</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_error_vib_title">Vibrace při chybném otisku prstu</string>
-    <string name="fprint_error_vib_summary">Vibrovat při chybném ověření otisku prstu</string>
-    <string name="fprint_success_vib_title">Vibrace při ověření otisků prstů</string>
-    <string name="fprint_success_vib_summary">Vibrovat při úspěšném ověření otisku prstu</string>
+    <string name="fp_success_vibrate_title">Vibrace při ověření otisků prstů</string>
+    <string name="fp_success_vibrate_summary">Zavibrovat při úspěšném ověření otisku prstu</string>
+    <string name="fp_error_vibrate_title">Vibrace při chybném otisku prstu</string>
+    <string name="fp_error_vibrate_summary">Zavibrovat při selhání ověření otisku prstu</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">Zobrazit 4G namísto LTE</string>
     <string name="show_fourg_icon_summary">Nahradí indikátor LTE ve stavovém řádku ukazatelem 4G</string>
@@ -321,28 +332,24 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Tlačítko „Ukončit aplikaci“</string>
     <string name="notification_guts_kill_app_button_summary">Zobrazit tlačítko „Ukončit aplikaci“ při dlouhém stisku v nabídce oznámení</string>
-    <!-- Battery bar -->
+    <!-- Status bar - Battery Bar -->
     <string name="battery_bar_title">Pruh baterie</string>
     <string name="battery_bar_summary">Zobrazit a přizpůsobit ikonu baterie v blízkosti stavového řádku nebo navigačního panelu</string>
-    <string name="battery_bar_location">Pozice indikátoru baterie</string>
     <string name="battery_bar_color">Barva indikátoru baterie</string>
+    <string name="battery_bar_charging_color">Barva indikátoru baterie při nabíjení</string>
+    <string name="battery_bar_battery_low_color">Barva indikátoru baterie při vybití</string>
     <string name="battery_bar_style_title">Styl indikátoru baterie</string>
     <string name="battery_bar_thickness_title">Tloušťka indikátoru baterie</string>
     <string name="battery_bar_animate_title">Animace nabíjení</string>
-    <string name="battery_bar_animate_summary">Animace při nabíjení může mít za následek špatné odezvy systému. Povolení je na vlastním uvážení.</string>
-    <string name="battery_bar_hide">Skrýt</string>
-    <string name="battery_bar_statusbar">Stavový řádek</string>
-    <string name="battery_bar_topnav">V horní části navigačního panelu</string>
-    <string name="battery_bar_bottomnav">V dolní části navigačního panelu</string>
-    <string name="battery_bar_reg">Standardní</string>
-    <string name="battery_bar_center">Zrcadlově na střed</string>
-    <string name="battery_bar_charging_color">Barva indikátoru baterie při nabíjení</string>
-    <string name="battery_bar_battery_low_color">Barva indikátoru baterie při vybití</string>
-    <string name="battery_bar_reversed">Obráceně</string>
-    <string name="battery_bar_use_gradient_color">Použít barvu přechodu</string>
-    <string name="battery_bar_gradient_color_summary">Použít barvu přechodu jako měřítko pro stav baterie</string>
-    <string name="battery_bar_high_color">Barva vysoké úrovně</string>
-    <string name="battery_bar_low_color">Barva nízké úrovně</string>
+    <string name="battery_bar_style_regular">Normální</string>
+    <string name="battery_bar_style_center_mirrored">Zrcadlově na střed</string>
+    <string name="battery_bar_style_reversed">Obráceně</string>
+    <string name="battery_bar_use_charging_color">Vlastní barva při nabíjení</string>
+    <string name="battery_bar_blend_color_title">Smísit barvy</string>
+    <string name="battery_bar_blend_color_summary">Smísení barev, nabitá/vybitá, odpovídá procentuálnímu stavu baterie</string>
+    <string name="battery_bar_blend_color_reverse_title">Obrátit pořadí barev</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">Nabito &#8594; Vybito: červená &#8592; zelená &#8592; modrá &#8592; červená</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">Nabito &#8594; Vybito: červená &#8594; zelená &#8594; modrá &#8594; červená</string>
     <!-- Option to enable/disable scrolling cache -->
     <string name="pref_scrollingcache_title">Mezipaměť rolování</string>
     <string name="pref_scrollingcache_summary">Mezipaměť rolování může zlepšit plynulost rolování na úkor úbytku paměti</string>
@@ -377,9 +384,9 @@
     <string name="wallpaper_color">Barva tapety</string>
     <string name="custom_color">Vlastní barva</string>
     <string name="edge_light_custom_color_title">Vlastní barva</string>
-    <!-- QS Footer Text -->
-    <string name="qs_footer_text_title">Text záhlaví</string>
-    <string name="qs_footer_text_summary">Zobrazit text ve spodní části panelu QS</string>
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">Zobrazit text zápatí QS</string>
+    <string name="qs_footer_text_show_summary">Zobrazit text ve spodní části panelu QS</string>
     <string name="qs_footer_text_string_title">Přizpůsobit text zápatí</string>
     <string name="qs_footer_text_string_summary">Nastavte na prázdné pro výchozí</string>
     <!-- Launch music player when headset is connected -->
@@ -485,9 +492,6 @@
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">Vibrovat při oznámení</string>
     <string name="vibrate_on_notifications_summary">Přepnout pro vypnutí vibrací oznámení</string>
-    <!-- Data usage info in QS footer -->
-    <string name="qs_footer_datausage_title">Využití dat</string>
-    <string name="qs_footer_datausage_summary">Zobrazit přehled využití dat v zápatí rychlého nastavení</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_art_options_title">Obal interpreta na zamykací obrazovce</string>
     <!-- Media art -->
@@ -868,17 +872,18 @@
     <string name="show_carrier_keyguard">Zamykací obrazovka</string>
     <string name="show_carrier_statusbar">Stavový řádek</string>
     <string name="show_carrier_enabled">Obojí</string>
-    <!-- Monet Engine -->
-    <string name="monet_category">Monet</string>
-    <string name="monet_engine_title">Monet Engine</string>
-    <string name="monet_engine_summary">Přizpůsobit parametry Monetu</string>
-    <string name="monet_engine_custom_color_title">Použít vlastní barvu</string>
-    <string name="monet_engine_custom_color_summary">Použít vlastní barvu pro Monet Engine namísto barev tapety</string>
-    <string name="monet_engine_color_override_title">Vlastní barva</string>
-    <string name="monet_engine_white_luminance_user_title">Bílý bod</string>
-    <string name="monet_engine_accurate_shades_title">Použít přesné odstíny</string>
-    <string name="monet_engine_chroma_factor_title">Chromatický faktor</string>
-    <string name="monet_engine_linear_lightness_title">Použít lineární světlost</string>
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Monet Engine</string>
+    <string name="monet_engine_settings_summary">Vlastní barva, barevnost a jas</string>
+    <string name="color_override_title">Vlastní výběr barvy</string>
+    <string name="color_override_default_summary">Použít barvy tapety</string>
+    <string name="custom_color_override_summary_placeholder">        Výběr barvy: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Nastavte prázdnou hodnotu pro použití barvy tapety.
+    </string>
+    <string name="invalid_color_input">Neplatné zadání barvy!</string>
+    <string name="white_luminance_title">Jas</string>
+    <string name="accurate_shades_title">Použít přesné odstíny</string>
+    <string name="chroma_factor_title">Barevnost</string>
+    <string name="linear_lightness_title">Použití vlastní stupnice světlosti</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Použít černý motiv</string>
     <string name="system_black_theme_summary">Vynutit černou barvu pozadí</string>
@@ -906,7 +911,7 @@
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Zobrazit počet oznámení</string>
     <string name="status_bar_notif_count_summary">Zobrazí počet nezobrazených oznámení v oznamovací oblasti</string>
-    <!-- Privacy indicators -->
+    <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">Ukazatel soukromí mikrofonu a\u00a0fotoaparátu</string>
     <string name="mic_camera_privacy_indicator_summary">Zobrazit samostatný ukazatel, pokud jakákoliv aplikace používá mikrofon nebo fotoaparát</string>
     <string name="location_privacy_indicator_title">Ukazatel ochrany soukromí polohy</string>
@@ -975,11 +980,6 @@
     <!-- Unlock FPS for specific games -->
     <string name="use_games_spoof_title">Odemknout vyšší FPS ve hrách</string>
     <string name="use_games_spoof_summary">Napodobí vaše zařízení jako jiný model pro konkrétní hry k\u00a0odemknutí vyšších FPS</string>
-    <!-- NavBar Inverse -->
-    <string name="navigation_bar_inverse_title">Invertovat navigační panel se třemi tlačítky</string>
-    <!-- Hidden apps -->
-    <string name="hidden_apps_title">Skryté aplikace</string>
-    <string name="hidden_apps_summary">Aplikace, které by měly být skryty ze spouštěče</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Skrýt stavový řádek</string>
     <string name="hide_lockscreen_status_bar_summary">Klikněte na stavový řádek pro přepínání viditelnosti</string>
@@ -1119,8 +1119,7 @@
     <string name="custom_timeout_summary_8hours">8 hodin</string>
     <!-- App lock -->
     <string name="app_lock_title">Zámek aplikací</string>
-    <string name="app_lock_summary_singular">1 aplikace je chráněna</string>
-    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> aplikace jsou chráněny</string>
+    <string name="app_lock_summary">Aplikace budou ke spuštění vyžadovat ověření otiskem prstu</string>
     <string name="app_lock_authentication_dialog_title">Odemknout</string>
     <string name="enable_debugging">Aktivovat ladění aplikace</string>
     <string name="disable_debugging">Zakázat ladění aplikace</string>
@@ -1135,6 +1134,10 @@
     <string name="app_lock_notifications_disabled_summary">Nejprve chránit aplikaci</string>
     <string name="app_lock_biometrics_allowed_title">Povolit biometriku pro odemykání</string>
     <string name="app_lock_footer_text">Bubliny se po uplynutí časového limitu automaticky zruší</string>
+    <string name="enable_protection">Povolit ochranu</string>
+    <string name="hide_from_launcher_title">Skrýt ze spouštěče</string>
+    <string name="hide_from_launcher_summary">        Zabránit zobrazení této aplikace ve spouštěči. Aby se změny projevily, je třeba restartovat spouštěč.
+    </string>
     <!-- Alert Slider category (OnePlus devices) -->
     <string name="alert_slider_cat_title">Posuvník oznámení</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
@@ -1143,4 +1146,24 @@
     <!-- Alert Slider block -->
     <string name="block_alert_title">Blokovat posuvník oznámení</string>
     <string name="block_alert_summary">Režim v kapse zablokuje posuvník oznámení</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Zobrazit standardní ikonu Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Zobrazit typ Wi-Fi sítě v indikátoru Wi-Fi</string>
+    <!-- Power menu Animations  -->
+    <string name="power_menu_animation_title">Animace tlačítka napájení</string>
+    <string name="power_menu_animation_dialog_title">Vyberte animace menu tlačítka nepájení</string>
+    <string name="power_menu_animation_aosp">AOSP (výchozí)</string>
+    <string name="power_menu_animation_bottom">Dole</string>
+    <string name="power_menu_animation_top">Horní</string>
+    <string name="power_menu_animation_xylon">Létání</string>
+    <string name="power_menu_animation_slide">Sklouznutí</string>
+    <string name="power_menu_animation_turn">Zatočení</string>
+    <string name="power_menu_animation_fly">Záře</string>
+    <string name="power_menu_animation_card">3D</string>
+    <string name="power_menu_animation_translucent_top">Průsvitnost (nahoře)</string>
+    <string name="power_menu_animation_translucent_bottom">Průsvitnost (dole)</string>
+    <string name="power_menu_animation_rotate">Otočení</string>
+    <!-- Power menu and dialogs opacity -->
+    <string name="power_menu_transparency">Neprůhlednost menu tlačítka napájení/restartu</string>
+    <string name="power_menu_dialog_dim">Úroveň ztmavení pozadí menu napájení/restartu</string>
 </resources>
