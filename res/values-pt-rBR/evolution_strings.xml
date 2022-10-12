@@ -99,9 +99,6 @@
     <string name="navbar_invert_layout_title">Inverter botões</string>
     <string name="navbar_invert_layout_summary">Inverte a ordem dos botões da barra de navegação e outros itens, como o seletor de teclado</string>
     <string name="system_navigation_summary">Escolha qual estilo de navegação do sistema usar</string>
-    <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Animação do Pixel</string>
-    <string name="pixel_navbar_anim_summary">Alternar animação do botão home</string>
     <!-- About Evolution X -->
     <string name="evolution_about_title">A Equipe</string>
     <string name="evolution_about_summary">Informações sobre nossa ROM</string>
@@ -141,10 +138,11 @@
     <string name="notification_light_settings">Led de notificações</string>
     <!-- Heads up -->
     <string name="heads_up_notifications">Notificações flutuantes</string>
-    <string name="heads_up_notifications_summary">Notificações flutuantes na barra de status</string>
-    <string name="heads_up_notifications_master_switch_title">Permitir notificações flutuantes</string>
-    <string name="summary_heads_up_enabled">As notificações flutuantes estão ativadas</string>
-    <string name="summary_heads_up_disabled">As notificações flutuantes estão desativadas</string>
+    <string name="notification_heads_up_title">Atenção</string>
+    <string name="notification_heads_up_summary">Permitir notificações pop-up</string>
+    <string name="notification_heads_up_primary_switch_title">Use atenção.</string>
+    <string name="notification_heads_up_timeout_title">Tempo esgotado</string>
+    <string name="notification_heads_up_timeout_summary">Hora de exibir atenção das notificações </string>
     <string name="add_heads_up_package">Adicionar aplicativo</string>
     <string name="add_heads_up_stoplist_summary">Desativar notificações flutuantes para esses aplicativos</string>
     <string name="add_heads_up_blocklist_summary">Desativar notificações flutuantes a partir desses aplicativos</string>
@@ -160,7 +158,7 @@
     </string>
     <string name="network_traffic_title">Indicador de tráfego de rede</string>
     <string name="network_traffic_summary">Ativar ou desativar os indicadores de tráfego de rede</string>
-    <string name="network_traffic_master_switch_title">Mostrar indicador de tráfego de rede</string>
+    <string name="network_traffic_primary_switch_title">Usar indicador de tráfego de rede</string>
     <string name="network_options_title">Opções</string>
     <string name="network_traffic_autohide_title">Ocultar indicadores de tráfego rede automaticamente</string>
     <string name="network_traffic_autohide_summary">Ocultar quando o indicador de tráfego de rede estiver abaixo de 1 KB/s</string>
@@ -183,18 +181,6 @@
     <!-- Show old style mobile data icon -->
     <string name="use_old_mobiletype_title">Usar ícones de dados móveis no estilo antigo</string>
     <string name="use_old_mobiletype_summary">Mostrar o indicador de rede móvel no topo da barra de sinal</string>
-    <!-- QS tiles layout direction: vertical or horizontal -->
-    <string name="qs_tile_layout_category_title">Estilo dos blocos</string>
-    <string name="qs_tile_layout_title">Estilo vertical</string>
-    <string name="qs_tile_layout_summary">Mudar para o estilo vertical. O padrão é horizontal</string>
-    <!-- QS rows and columns -->
-    <string name="qs_layout_category_title">Estilo do painel de configurações rápidas</string>
-    <string name="qs_rows_portrait_title">Linhas em modo retrato</string>
-    <string name="qs_rows_landscape_title">Linhas em modo paisagem</string>
-    <string name="qs_columns_portrait_title">Colunas em modo retrato</string>
-    <!-- QS tiles title visibility -->
-    <string name="qs_tile_title_visibility_title">Ocultar títulos dos blocos</string>
-    <string name="qs_tile_title_visibility_summary">Mude para ocultar os títulos dos blocos</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_slider_title">Controle de brilho</string>
     <string name="qs_show_brightness_slider_never">Nunca mostrar</string>
@@ -327,8 +313,8 @@
     <string name="status_bar_brightness_control_title">Controle de brilho ao deslizar</string>
     <string name="status_bar_brightness_control_summary">Ajustar brilho deslizando pela barra de status</string>
     <!-- Heads up options -->
-    <string name="less_boring_heads_up_title">Notificações flutuantes menos irritantes</string>
-    <string name="less_boring_heads_up_summary">Mostrar notificações flutuantes apenas para o discador, aplicativo de mensagens e alarmes</string>
+    <string name="less_boring_heads_up_title">Menos chato</string>
+    <string name="less_boring_heads_up_summary">Mostrar notificações pop-up apenas para alarme, discador e aplicativo de mensagens</string>
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Botão para encerrar aplicativo</string>
     <string name="notification_guts_kill_app_button_summary">Mostrar botão para fechar o aplicativo ao tocar e segurar em uma notificação</string>
@@ -363,12 +349,6 @@
     <!-- Suppress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Som de notificação se ativo</string>
     <string name="notification_sound_vib_screen_on_summary">Reproduzir som e vibração para notificações quando a tela estiver ligada</string>
-    <!-- Notification headers -->
-    <string name="notification_headers_title">Cabeçalhos das notificações</string>
-    <string name="notification_headers_summary">Mostrar cabeçalhos no painel de notificações</string>
-    <!-- Lock icon -->
-    <string name="lockscreen_lock_icon_title">Ícone de bloqueio</string>
-    <string name="lockscreen_lock_icon_summary">Mostrar ícone do cadeado na tela de bloqueio</string>
     <!-- Edge light -->
     <string name="edge_light_title">Iluminação nas bordas da tela</string>
     <string name="enable_edge_light">Ativar luz na borda</string>
@@ -413,14 +393,6 @@
     <string name="powermenu_bugreport">Relatório de bugs</string>
     <string name="powermenu_assist">Assistente</string>
     <string name="powermenu_voice_assist">Assistente de voz</string>
-    <!-- Doze Brightness Config -->
-    <string name="doze_brightness_category">Configuração de brilho da tela ambiente</string>
-    <string name="doze_brightness_force_title">Forçar valores de brilho</string>
-    <string name="doze_brightness_force_summary">Usar valores de brilho personalizado ao invés do brilho da tela</string>
-    <string name="ambient_pulse_brightness_title">Brilho da tela ambiente ao mostrar notificações</string>
-    <string name="ambient_pulse_brightness_summary">Definir o brilho a ser utilizado quando as notificações forem exibidas</string>
-    <string name="ambient_doze_brightness_title">Nível de brilho da tela ambiente</string>
-    <string name="ambient_doze_brightness_summary">Definir o nível de brilho utilizado quando a tela ambiente está ativa</string>
     <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Temas</string>
@@ -441,51 +413,6 @@
     <string name="theme_customization_wifi_icon_summary">Definir ícone de wifi personalizado</string>
     <string name="theme_customization_navbar_title">Estilo da barra de navegação</string>
     <string name="theme_customization_navbar_summary">Definir estilo personalizado para a barra de navegação</string>
-    <!-- QS tile icon styles -->
-    <string name="qs_tile_style_title">Estilo dos ícones do bloco QS</string>
-    <string name="qstile_circle_trim">Círculo com Gradiente</string>
-    <string name="qstile_dual_tone_circle">Círculo com dois tons</string>
-    <string name="qstile_squircle_trim">Quadrado Arredondado Recortado</string>
-    <string name="qstile_wavey">Ondulado</string>
-    <string name="qstile_pokesign">Signo Pokemon</string>
-    <string name="qstile_ninja">Ninja</string>
-    <string name="qstile_dottedcircle">Círculo Pontilhado</string>
-    <string name="qstile_attemptmountain">Uma tentativa de montanha</string>
-    <string name="qstile_squaremedo">O Squaremedo</string>
-    <string name="qstile_inkdrop">Cai</string>
-    <string name="qstile_cookie">Biscoito</string>
-    <string name="qstile_circleoutline">Círculo contornado</string>
-    <string name="qstile_cosmos">Cosmos Shishu</string>
-    <string name="qstile_divided">Círculo Dividido</string>
-    <string name="qstile_neonlike">Luz Neon</string>
-    <string name="qstile_triangles">Triângulo</string>
-    <!-- Custom header -->
-    <string name="custom_header_browse_summary">Clique em qualquer imagem para usar no modo estático</string>
-    <string name="custom_header_browse_summary_new">Navegue por todas as coleções de cabeçalho disponíveis</string>
-    <string name="custom_header_browse_title">Procurar cabeçalhos instalados</string>
-    <string name="custom_header_pick_summary">Selecione uma imagem para usar no modo estático</string>
-    <string name="custom_header_pick_title">Selecione a imagem do cabeçalho</string>
-    <string name="custom_header_provider_title">Origem do cabeçalho</string>
-    <string name="custom_header_summary">Exibir imagem no topo do painel de notificação</string>
-    <string name="custom_header_title">Cabeçalho personalizado</string>
-    <string name="daylight_header_pack_title">Coleção de imagens do cabeçalho</string>
-    <string name="daylight_header_provider_title">Coleção de imagens</string>
-    <string name="file_header_provider_title">Imagem personalizada</string>
-    <string name="file_header_select_summary">Selecionar imagem personalizada</string>
-    <string name="file_header_select_title">Selecionar imagem</string>
-    <string name="header_provider_disabled">Desativado</string>
-    <string name="static_header_provider_title">Imagem estática</string>
-    <string name="status_bar_custom_header_shadow_summary">Para melhor visibilidade em imagens claras</string>
-    <string name="status_bar_custom_header_shadow_title">Sombra da imagem do cabeçalho</string>
-    <!-- Volume Panel Plugin -->
-    <string name="volume_panel_category">Painel de volume</string>
-    <string name="volume_panel_title">Estilo do painel de volume</string>
-    <string name="volume_panel_compact">Compacto</string>
-    <string name="volume_panel_oreo">Android Oreo</string>
-    <string name="volume_panel_tiled">Blocos</string>
-    <string name="volume_panel_p404">P404</string>
-    <string name="volume_panel_ssos">ShapeShift</string>
-    <!-- Volume Panel Plugin Values -->
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Barra de status</string>
     <string name="lockscreen_status_bar_summary">Exibir barra de status na tela de bloqueio</string>
@@ -500,83 +427,16 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Bloquear sensores por pacote</string>
     <string name="sensor_block_summary">Bloquear o acesso de alguns apps a certos sensores para poupar bateria</string>
-    <string name="sensor_block_master_switch_title">Bloquear sensores por pacote</string>
+    <string name="sensor_block_primary_switch_title">Usar bloco de sensor por pacote</string>
     <string name="sensor_block_app_picker_title">Bloquear sensores para estes aplicativos</string>
     <string name="add_sensor_block_package_title">Adicionar aplicativos ao \"bloqueio de sensores\"</string>
     <string name="add_sensor_block_package_summary">Sensores significativos de movimento, acelerômetro e aceleração linear serão bloqueados para esses aplicativos</string>
-    <!-- G-Visual mod -->
-    <string name="gvisual_title">G-Visual Mod</string>
-    <string name="gvisual_summary">Várias personalizações da interface</string>
-    <string name="status_bar_height_title">Altura da barra de status</string>
-    <string name="status_bar_height_dialog_title">Selecionar o modelo de altura para barra de status</string>
-    <string name="navbar_color_title">Cor da barra de navegação</string>
-    <string name="navbar_color_dialog_title">Selecionar cor</string>
-    <string name="navbar_orchid">Orquídea</string>
-    <string name="navbar_red">Vermelho</string>
-    <string name="navbar_purp">Roxo</string>
-    <string name="navbar_blue">Azul</string>
-    <string name="navbar_rose">Rosa</string>
-    <string name="header_title">Tamanho do cabeçalho</string>
-    <string name="header_dialog_title">Selecione o tamanho</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Cronograma da tela ambiente sempre ativa</string>
     <string name="always_on_display_schedule_sunset">Pôr do sol</string>
     <string name="always_on_display_schedule_sunrise">Nascer do sol</string>
     <string name="always_on_display_schedule_mixed_sunset">Ativado do anoitecer até um tempo específico</string>
     <string name="always_on_display_schedule_mixed_sunrise">Ativado do tempo específico até o amanhecer</string>
-    <!-- Settings dashboard icon style -->
-    <string name="theming_settings_dashboard_icons_title">Ícones do painel de configurações</string>
-    <string name="theming_settings_dashboard_icons_default">Fundo padrão / Plano de fundo transparente</string>
-    <string name="theming_settings_dashboard_icons_white">Fundo padrão / Plano de fundo branco</string>
-    <string name="theming_settings_dashboard_icons_accent">Fundo de destaque / Plano de fundo transparente</string>
-    <string name="theming_settings_dashboard_icons_plain">Fundo transparente / Plano de fundo simples</string>
-    <string name="theming_settings_dashboard_icons_plain_accent">Fundo transparente / Plano de fundo de destaque</string>
-    <!-- Switch styles -->
-    <string name="switch_style_title">Mudar estilo dos interruptores</string>
-    <string name="switch_contained">Isolado</string>
-    <string name="switch_telegram">Telegram</string>
-    <string name="switch_md2">Material Design 2</string>
-    <string name="switch_retro">Retrô</string>
-    <!-- QS themes -->
-    <string name="qs_panel_bg_alpha_title">Fundo alfa</string>
-    <string name="qs_panel_bg_disco_title">Discoteca nas QS tiles</string>
-    <string name="qs_panel_bg_disco_summary">Deixe suas QS tiles loucamente coloridas!</string>
-    <!-- QS tile tint styles -->
-    <string name="qs_tint_title">Estilo do bloco QS</string>
-    <string name="qs_tint_accent">Cor de destaque</string>
-    <!-- Lock screen Clocks -->
-    <string name="clock_show_status_area">Mostrar (clima etc...) na barra de status</string>
-    <string name="clock_show_status_area_summary">Mostrar a linha extra de informações sob o relógio da tela de bloqueio (SysUI pode ser necessário reiniciar)</string>
-    <string name="lock_screen_custom_clock_face_category">Relógio da tela de bloqueio</string>
-    <string name="lock_screen_custom_clock_face_title">Estilo do relógio da tela de bloqueio</string>
-    <string name="lock_screen_custom_clock_face_default_bold">Padrão (negrito)</string>
-    <string name="lock_screen_custom_clock_face_alt_typographic">Tipográfico (Novo)</string>
-    <string name="lock_screen_custom_clock_face_analog">Analógico</string>
-    <string name="lock_screen_custom_clock_face_binary">Binário</string>
-    <string name="lock_screen_custom_clock_face_bubble">Bolha</string>
-    <string name="lock_screen_custom_clock_face_clockertino">Clockertino</string>
-    <string name="lock_screen_custom_clock_face_divided">Linhas Divididas</string>
-    <string name="lock_screen_custom_clock_face_fluid">Fluido</string>
-    <string name="lock_screen_custom_clock_face_fluid_v2">Fluid v2</string>
-    <string name="lock_screen_custom_clock_face_gradient_fire">Gradiente Fire</string>
-    <string name="lock_screen_custom_clock_face_ide">IDE</string>
-    <string name="lock_screen_custom_clock_face_ide_java">IDE (Java Mix)</string>
-    <string name="lock_screen_custom_clock_face_mnml_box">MNML Box</string>
-    <string name="lock_screen_custom_clock_face_mnml_minimal">MNML Minimal</string>
-    <string name="lock_screen_custom_clock_face_op_minimal">OnePlus Minimal</string>
-    <string name="lock_screen_custom_clock_face_op_numbers">Números OnePlus</string>
-    <string name="lock_screen_custom_clock_face_op_roman">OnePlus Roman</string>
-    <string name="lock_screen_custom_clock_face_samsung">Samsung</string>
-    <string name="lock_screen_custom_clock_face_samsung_bold">Samsung (negrito)</string>
-    <string name="lock_screen_custom_clock_face_samsung_highlight">Samsung (Grande)</string>
-    <string name="lock_screen_custom_clock_face_sfuny">SFUNY</string>
-    <string name="lock_screen_custom_clock_face_shapeshift">ShapeShift</string>
-    <string name="lock_screen_custom_clock_face_spectrum">Spectrum</string>
-    <string name="lock_screen_custom_clock_face_sticker_tag">Etiqueta de adesivo</string>
-    <string name="lock_screen_custom_clock_face_typographic">Tipográfico</string>
-    <string name="lock_screen_custom_clock_face_typographic_alt">Tipográfico (Centro)</string>
-    <!-- Volume rocker gestures -->
-    <string name="volume_skiptrack_screen_title">Pular faixas de música</string>
     <!-- HW keys -->
     <string name="hardware_keys_title">Botões físicos</string>
     <string name="hardware_keys_category">Botões de navegação físicos</string>
@@ -680,79 +540,12 @@
     <string name="lockscreen_solid_units_count_title">Contagem de linhas</string>
     <string name="lockscreen_solid_fudge_factor_title">Nível de sanidade</string>
     <string name="lockscreen_solid_units_opacity_title">Opacidade das linhas</string>
-    <!-- Heads up timeout -->
-    <string name="heads_up_footer">Tempo limite e adiamento de recursos podem requerer uma reinicialização da interface do sistema.</string>
-    <string name="heads_up_time_out_title">Tempo limite</string>
-    <string name="heads_up_time_out_summary">Mostrar notificação por <xliff:g id="number">%d</xliff:g> segundos</string>
-    <string name="heads_up_time_out_2sec">2 segundos</string>
-    <string name="heads_up_time_out_4sec">4 segundos</string>
-    <string name="heads_up_time_out_5sec">5 segundos</string>
-    <string name="heads_up_time_out_6sec">6 segundos</string>
-    <string name="heads_up_time_out_8sec">8 segundos</string>
-    <string name="heads_up_time_out_10sec">10 segundos</string>
-    <!-- Heads up snooze -->
-    <string name="heads_up_snooze_title">Silenciar temporariamente</string>
-    <string name="heads_up_snooze_summary_one_minute">Deslizar para cima sobre a notificação exibida vai silenciar as notificações flutuantes desse aplicativo por 1 minuto</string>
-    <string name="heads_up_snooze_summary">Deslizar para cima sobre a notificação exibida vai silenciar as notificações flutuantes desse aplicativo por <xliff:g id="number">%d</xliff:g> minutos</string>
-    <string name="heads_up_snooze_disabled_summary">Silenciar temporariamente está desativado</string>
-    <string name="heads_up_snooze_1min">1 minuto</string>
-    <string name="heads_up_snooze_5min">5 minutos</string>
-    <string name="heads_up_snooze_10min">10 minutos</string>
-    <string name="heads_up_snooze_15min">15 minutos</string>
-    <string name="heads_up_snooze_20min">20 minutos</string>
     <!-- Per-app volume -->
     <string name="show_app_volume_title">Mostrar volume de aplicativos</string>
     <string name="show_app_volume_summary">Mostrar volume do aplicativo no painel de volume (só funciona para o painel de volume padrão)</string>
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Notificações deslizantes de alerta</string>
     <string name="alert_slider_notifications_summary">Exibe uma notificação ao mudar a posição do controle deslizante de alerta</string>
-    <!-- Rounded corners -->
-    <string name="corners_title">Cantos arredondados</string>
-    <string name="corners_summary">Ajustar valores dos cantos arredondados</string>
-    <string name="corner_radius">Raio dos cantos arredondados</string>
-    <string name="content_padding">Espaçamento dos cantos</string>
-    <string name="corner_fwvals">Usar valores do framework</string>
-    <string name="corner_fwvals_summary">Útil se o dispositivo realmente tiver bordas arredondadas</string>
-    <!-- Display cutout options -->
-    <string name="cutout_category_title">Opções de recorte</string>
-    <string name="cutout_main">Corte da tela</string>
-    <string name="cutout_main_summary">Use isso se deseja ocultar o notch do seu aparelho</string>
-    <string name="display_cutout_style_title">Estilo do corte</string>
-    <string name="display_cutout_style_normal">Normal</string>
-    <string name="display_cutout_style_immerse">Imersivo</string>
-    <string name="stock_statusbar_in_hide">Altura padrão da barra de status</string>
-    <string name="stock_statusbar_in_hide_summary">Usar a altura padrão da barra de status ao esconder recorte</string>
-    <string name="display_hide_notch_title">Ocultar recorte da tela</string>
-    <string name="display_hide_notch_summary">Desativar preenchimento preto para o corte de tela (notch)</string>
-    <!-- Status Bar Ticker -->
-    <string name="ticker_screen_title">Ticker</string>
-    <string name="ticker_screen_summary">Mostrar notificações estilo ticker na barra de status</string>
-    <string name="ticker_screen_footer">O ticker só é visível quando o alerta de notificação não é mostrado. Dispositivos com entalhe central devem ocultar o notch nas opções de recorte.</string>
-    <string name="ticker_title">Ticker da barra de status</string>
-    <string name="ticker_summary">Ativar ticker da barra de status</string>
-    <string name="ticker_restore_defaults_title">Restaurar padrões</string>
-    <string name="text_title">Texto</string>
-    <string name="icon_title">Ícone</string>
-    <string name="colors_title">Cores</string>
-    <string name="values_restored_title">Valores restaurados</string>
-    <string name="ticker_disabled">Sem ticker</string>
-    <string name="ticker_enabled">Ticker de notificação</string>
-    <string name="ticker_media_enabled">Notificações e ticker de música</string>
-    <string name="ticker_animation_mode_title">Estilo de animação do ticker</string>
-    <string name="ticker_animation_mode_alpha_fade">Desvanecer</string>
-    <string name="ticker_animation_mode_scroll">Rolar</string>
-    <string name="ticker_tick_duration_title">Duração do ticker</string>
-    <!-- Navbar Picker -->
-    <string name="theme_navbar_picker_title">Estilo da barra de navegação (para navegação por 3-botões)</string>
-    <string name="theme_navbar_picker_summary">Selecione o estilo da barra de navegação</string>
-    <string name="theme_navbar_picker_oneui">One UI</string>
-    <string name="theme_navbar_picker_tecno">Tecno Camon</string>
-    <string name="theme_navbar_picker_asus">ASUS</string>
-    <string name="theme_navbar_picker_android">Android</string>
-    <string name="theme_navbar_picker_moto">Moto</string>
-    <string name="theme_navbar_picker_nexus">Nexus</string>
-    <string name="theme_navbar_picker_old">Antigo</string>
-    <string name="theme_navbar_picker_sammy">Samsung</string>
     <!-- Alarm and Wakelock blocker -->
     <string name="blocker_action_reload">Atualizar</string>
     <string name="blocker_action_save">Salvar</string>
@@ -777,21 +570,12 @@
     <string name="flashlight_on_call_ignore_dnd_summary">Se deve piscar quando a modo Não Perturbe estiver ativado</string>
     <string name="flashlight_on_call_rate_title">Velocidade</string>
     <string name="flashlight_on_call_rate_summary">Velocidade em que a lanterna vai piscar durante uma chamada</string>
-    <!-- Status Bar Lyric -->
-    <string name="status_bar_show_lyric_title">Recurso de letras na barra de status</string>
-    <string name="status_bar_show_lyric_summary">Mostrar letras na barra de status (requer suporte ao aplicativo e reinicialização da SystemUI)</string>
-    <!-- Media artwork -->
-    <string name="media_category">Player de mídia</string>
-    <string name="artwork_media_background_title">Arte de fundo do player de mídia</string>
-    <string name="artwork_media_background_summary">Definir a capa do álbum como fundo do player de mídia</string>
-    <string name="artwork_media_background_enable_blur_title">Desfocar o fundo do player de mídia</string>
-    <string name="artwork_media_background_blur_radius_title">Nível de desfoque do player de mídia</string>
-    <string name="artwork_media_background_fade_filter_title">Nível de desfoque do player de mídia</string>
-    <string name="artwork_media_background_alpha_title">Transparência do player de mídia</string>
-    <!-- Rounded styles -->
-    <string name="rounded_style_title">Estilo arredondado para diálogos do sistema</string>
-    <string name="rounded_slight">Pouco</string>
-    <string name="rounded_high">Muito</string>
+    <!-- Status bar lyric -->
+    <string name="status_bar_lyric_title">Letra da barra de status</string>
+    <string name="status_bar_lyric_summary">Mostrar letras na barra de status (precisa de suporte a aplicativos)</string>
+    <string name="status_bar_lyric_primary_switch_title">Usar barra de status com letras</string>
+    <string name="disguise_props_for_music_app_title">Disfarçar o dispositivo para aplicativos de música</string>
+    <string name="disguise_props_for_music_app_summary">Disfarce o dispositivo em alguns aplicativos de música para suportar a letra da barra de status. Após alterar esta alternância, você precisa reiniciar o aplicativo para que a alteração tenha efeito.</string>
     <!-- OOS style material dismiss all button for notifications -->
     <string name="notification_material_dismiss_button_title">Botão de dispensar (Material)</string>
     <string name="notification_material_dismiss_button_summary">Substituir texto de notificação \"limpar tudo\" pelo botão flutuante</string>
@@ -899,18 +683,9 @@
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Blocos QS seguros na tela de bloqueio</string>
     <string name="qstile_requires_unlocking_summary">Os seguintes blocos no painel de configurações rápidas requerem o desbloqueio antes de poder ativar/desativar a partir da tela de bloqueio:\nModo Avião, Dados Móveis, NFC, Ponto de Acesso WiFi, Compartilhamento de Internet por USB e Localização</string>
-    <!-- Burn-in Protection -->
-    <string name="burnin_category">Proteção contra Burn-in</string>
-    <string name="burn_in_protection_title">Usar proteção contra Burn-in</string>
-    <string name="burn_in_protection_summary">Altere a posição dos ícones da barra de navegação e barra de status durante intervalos para evitar o efeito Burn-in</string>
-    <string name="burn_in_protection_interval_title">Intervalo de ação</string>
-    <string name="burn_in_protection_interval_summary">Com que frequência os ícones se deslocam</string>
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">Resposta tátil na impressão digital</string>
     <string name="udfps_haptic_feedback_summary">Vibrar ao tocar no ícone de impressão digital</string>
-    <!-- Notification count -->
-    <string name="status_bar_notif_count_title">Mostrar contador de notificações</string>
-    <string name="status_bar_notif_count_summary">Exibe o número de notificações pendentes</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">Indicador de privacidade do microfone e da câmera</string>
     <string name="mic_camera_privacy_indicator_summary">Mostrar indicador de privacidade quando um aplicativo usar o microfone ou câmera</string>
@@ -970,11 +745,7 @@
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Animação de desbloqueio</string>
     <string name="enable_fingerprint_ripple_effect_summary">Mostrar animação (efeito cascata) ao desbloquear usando a impressão digital</string>
-    <!-- Screenshot type -->
-    <string name="screenshot_type_title">Tipo de captura de tela</string>
-    <string name="screenshot_type_fullscreen">Captura em tela cheia</string>
-    <string name="screenshot_type_partial">Selecionar a área que deseja capturar</string>
-    <!-- Unlimited g00gle ph0t0s st0rage -->
+    <!-- Unlimited Photos storage -->
     <string name="use_photos_spoof_title">Armazenamento de fotos ilimitado</string>
     <string name="use_photos_spoof_summary">Seu dispositivo será identificado como um Pixel XL pelo aplicativo Fotos para obter armazenamento ilimitado de fotos na qualidade original</string>
     <!-- Unlock FPS for specific games -->
@@ -1013,40 +784,32 @@
     <!-- Statusbar logo -->
     <string name="status_bar_logo_title">Logo</string>
     <string name="status_bar_logo_summary">Mostrar logo na barra de status</string>
-    <string name="status_bar_logo_master_switch_title">Mostrar logotipo</string>
+    <string name="status_bar_logo_primary_switch_title">Usar logo</string>
     <string name="status_bar_logo_position_title">Posição</string>
     <string name="status_bar_logo_position_summary">Escolher o lado para exibir o logotipo, à esquerda ou direita</string>
     <string name="status_bar_logo_position_right">Direita</string>
     <string name="status_bar_logo_position_left">Esquerda</string>
     <string name="status_bar_logo_style_title">Estilo</string>
     <string name="status_bar_logo_style_evolution">Evolution X</string>
-    <string name="status_bar_logo_style_android">Android</string>
-    <string name="status_bar_logo_style_apple">Apple</string>
-    <string name="status_bar_logo_style_ios">iOS</string>
-    <string name="status_bar_logo_style_emoticon">Emoji</string>
-    <string name="status_bar_logo_style_emoticon_cool">Emoji feliz</string>
-    <string name="status_bar_logo_style_emoticon_dead">Emoji morto</string>
-    <string name="status_bar_logo_style_emoticon_devil">Emoji demônio</string>
-    <string name="status_bar_logo_style_emoticon_happy">Emoji alegre</string>
-    <string name="status_bar_logo_style_emoticon_neutral">Emoji neutro</string>
-    <string name="status_bar_logo_style_emoticon_poop">Emoji cocô</string>
-    <string name="status_bar_logo_style_emoticon_sad">Emoji triste</string>
-    <string name="status_bar_logo_style_emoticon_tongue">Emoji língua</string>
-    <string name="status_bar_logo_style_blackberry">Blackberry</string>
-    <string name="status_bar_logo_style_cake">Bolo</string>
-    <string name="status_bar_logo_style_blogger">Blogueiro</string>
-    <string name="status_bar_logo_style_biohazard">Radioativo</string>
-    <string name="status_bar_logo_style_linux">Linux</string>
-    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
-    <string name="status_bar_logo_style_windows">Windows</string>
-    <string name="status_bar_logo_style_robot">Robô</string>
-    <string name="status_bar_logo_style_ninja">Ninja</string>
-    <string name="status_bar_logo_style_heart">Coração</string>
-    <string name="status_bar_logo_style_flower">Flor</string>
-    <string name="status_bar_logo_style_ghost">Fantasma</string>
-    <string name="status_bar_logo_style_google">Google</string>
-    <string name="status_bar_logo_style_guitar_electric">Guitarra</string>
+    <string name="status_bar_logo_style_adidas">Adidas</string>
+    <string name="status_bar_logo_style_airjordan">Air Jordan</string>
     <string name="status_bar_logo_style_amogus">Amogus</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_avengers">Vingadores</string>
+    <string name="status_bar_logo_style_batman">Batman</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman O Cavaleiro das Trevas</string>
+    <string name="status_bar_logo_style_beats">Batidas</string>
+    <string name="status_bar_logo_style_biohazard">Radioativo</string>
+    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_cannabis">Maconha</string>
+    <string name="status_bar_logo_style_fire">Fogo</string>
+    <string name="status_bar_logo_style_nike">Nike</string>
+    <string name="status_bar_logo_style_pac_man">Pac-Man</string>
+    <string name="status_bar_logo_style_puma">Panorâmica</string>
+    <string name="status_bar_logo_style_rog">ROG</string>
+    <string name="status_bar_logo_style_superman">Homem-Aranha</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_xbox">XBOX</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Estilo do ícone da bateria</string>
     <string name="status_bar_battery_style_icon_portrait">Ícone retrato</string>
@@ -1086,9 +849,6 @@
     <!-- Lock screen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Informação de carregamento na tela de bloqueio</string>
     <string name="lockscreen_battery_info_summary">Exibe a corrente de carga, tensão e temperatura da bateria na tela de bloqueio durante o carregamento</string>
-    <!-- Disable music track title in QS tile -->
-    <string name="qs_music_tile_track_optional_title">Título da faixa no bloco de música</string>
-    <string name="qs_music_tile_track_optional_summary">Mostrar o título da faixa de música nas configurações rápidas</string>
     <!-- Charging animation -->
     <string name="charging_animation_title">Animação de carregamento</string>
     <string name="charging_animation_summary">Exibir uma animação quando o dispositivo for conectado</string>
@@ -1164,6 +924,9 @@
     <string name="power_menu_animation_translucent_bottom">Translúcido (inferior)</string>
     <string name="power_menu_animation_rotate">Rotacionar</string>
     <!-- Power menu and dialogs opacity -->
-    <string name="power_menu_transparency">Opacidade do menu de energia</string>
-    <string name="power_menu_dialog_dim">Opacidade de fundo do menu de energia</string>
+    <string name="power_menu_transparency">Opacidade do Menu de Energia</string>
+    <string name="power_menu_dialog_dim">Diálogo do menu de energia escurece a quantidade de fundo</string>
+    <!-- Changelog -->
+    <string name="changelog_evolution_title">Registro das últimas alterações</string>
+    <string name="changelog_evolution_summary">Ver as alterações recentes na ROM</string>
 </resources>
