@@ -16,8 +16,6 @@
     <string name="misc_title">Diversos</string>
     <string name="navigation_title">Navegação</string>
     <string name="notifications_title">Notificações</string>
-    <string name="powermenu_title">Menu de energia</string>
-    <string name="powermenu_items_title">Itens do menu de energia</string>
     <string name="quicksettings_title">Configurações rápidas</string>
     <string name="spoof_title">Mascarar dispositivo</string>
     <string name="status_bar_title">Barra de status</string>
@@ -353,7 +351,7 @@
     <string name="edge_light_title">Iluminação nas bordas da tela</string>
     <string name="enable_edge_light">Ativar luz na borda</string>
     <string name="edge_light_intro_text">Exibir uma animação ao longo das bordas da tela</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Sempre mostrar as luzes</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Sempre mostrar luzes no pulso</string>
     <string name="edge_light_always_trigger_on_pulse_summary">Mostrar a luz de borda sempre que a tela ambiente é exibida e não apenas para notificações</string>
     <string name="edge_light_repeat_animation_title">Repetir animação</string>
     <string name="edge_light_repeat_animation_summary_on">Repetir até o tempo limite</string>
@@ -375,24 +373,21 @@
     <string name="radio_info_title">Informação de rádio</string>
     <!-- Power Menu -->
     <string name="power_menu_title">Menu de energia</string>
-    <string name="power_menu_title_summary">Exibir ou alterar os itens do menu de energia</string>
-    <string name="powermenu_screenshot">Captura de tela</string>
-    <string name="powermenu_onthego">Modo On-The-Go</string>
-    <string name="powermenu_torch">Lanterna</string>
-    <string name="powermenu_power">Liga/Desliga</string>
-    <string name="powermenu_advanced">Menu de reinicialização avançada</string>
-    <string name="powermenu_restart">Reiniciar</string>
-    <string name="powermenu_airplane">Modo Avião</string>
-    <string name="powermenu_settings">Configurações</string>
-    <string name="powermenu_lockdown">Bloqueio total</string>
-    <string name="powermenu_soundpanel">Painel de som</string>
-    <string name="powermenu_users">Usuários</string>
-    <string name="powermenu_logout">Sair</string>
-    <string name="powermenu_emergency">Emergência</string>
-    <string name="powermenu_device_controls">Controle do dispositivo</string>
-    <string name="powermenu_bugreport">Relatório de bugs</string>
-    <string name="powermenu_assist">Assistente</string>
-    <string name="powermenu_voice_assist">Assistente de voz</string>
+    <string name="global_actions_title">Itens do menu de energia</string>
+    <string name="global_actions_screenshot">Captura de tela</string>
+    <string name="global_actions_on_the_go">Modo On-The-Go</string>
+    <string name="global_actions_flashlight">Lanterna</string>
+    <string name="global_actions_power">Liga/Desliga</string>
+    <string name="global_actions_advanced">Menu de reinicialização avançada</string>
+    <string name="global_actions_restart">Reiniciar</string>
+    <string name="global_actions_airplane">Modo avião</string>
+    <string name="global_actions_settings">Configurações</string>
+    <string name="global_actions_lockdown">Bloquear</string>
+    <string name="global_actions_users">Usuários</string>
+    <string name="global_actions_logout">Sair</string>
+    <string name="global_actions_emergency">Emergência</string>
+    <string name="global_actions_device_controls">Controle do dispositivo</string>
+    <string name="global_actions_bugreport">Reportar bug</string>
     <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
     <string name="theme_customization_category">Temas</string>
@@ -510,6 +505,9 @@
     <string name="extras_title">Extras</string>
     <string name="click_partial_screenshot_title">Clique para captura parcial de tela</string>
     <string name="click_partial_screenshot_summary">Clique rapidamente no botão Volume Menos junto com o botão Power para tirar captura parcial de tela</string>
+    <!-- Volume panel -->
+    <string name="volume_panel_category">Painel de volume</string>
+    <string name="volume_dialog_timeout_title">Duração do painel de volume</string>
     <!-- Button brightness -->
     <string name="button_backlight_options_category">Opções de luz de fundo</string>
     <string name="button_backlight_enable_title">Permitir luz de fundo dos botões</string>
@@ -668,9 +666,13 @@
     <string name="accurate_shades_title">Usar tons precisos</string>
     <string name="chroma_factor_title">Coloração</string>
     <string name="linear_lightness_title">Usar escala de luz personalizada</string>
-    <!-- Black theme -->
-    <string name="system_black_theme_title">Cores vívidas</string>
-    <string name="system_black_theme_summary">Colorir e realçar as cores do tema monet</string>
+    <!-- Custom themes -->
+    <string name="custom_theme_title">Usar tema personalizado</string>
+    <string name="custom_theme_black">Preto</string>
+    <string name="custom_theme_clear">Transparente</string>
+    <string name="custom_theme_vivid">Vívido (Monet)</string>
+    <string name="custom_theme_snowpaint">Pintar na neve</string>
+    <string name="custom_theme_espresso">Espresso</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Combinar ícones de sinal</string>
     <string name="combined_status_bar_signal_icons_summary">Mostrar ícones de sinal combinados na barra de status.\nNecessário reiniciar a Interface do sistema</string>
@@ -720,6 +722,7 @@
     <string name="pulse_color_accent">Cor de destaque</string>
     <string name="pulse_color_custom">Personalizado</string>
     <string name="pulse_color_lava_lamp">Lâmpada de lava</string>
+    <string name="pulse_color_auto">Álbum</string>
     <string name="pulse_color_user_title">Escolha a cor</string>
     <string name="pulse_smoothing_enabled_title">Ativar suavização</string>
     <string name="pulse_smoothing_enabled_summary">Cada barra é animada mais suavemente</string>
@@ -767,9 +770,6 @@
     <string name="reticker_summary">Substitua suas notificações por uma versão redesenhada de tickers. \nSlim e menos invasivo do que uma notificação padrão</string>
     <string name="reticker_colored_title">Fundo na cor do aplicativo</string>
     <string name="reticker_colored_summary">Substitua a cor de fundo do reTicker pela cor de destaque do aplicativo de notificação</string>
-    <!-- Temperature warning -->
-    <string name="show_temperature_warning_title">Mostrar alerta de temperatura</string>
-    <string name="show_temperature_warning_summary">Exibir um aviso quando o aparelho atingir um determinado limite de temperatura</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Pixels inteligentes é um recurso para economizar energia. Dependendo da quantidade de pixels a serem desativados, você notará a diferença na duração da bateria</string>
     <string name="smart_pixels_title">Pixels Inteligentes</string>
