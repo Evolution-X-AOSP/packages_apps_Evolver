@@ -22,6 +22,12 @@
         android:fragment="com.evolution.settings.lockscreen.EdgeLightSettings"
         settings:observe="true" />
 
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="ambient_wake_gestures"
+        android:title="@string/ambient_wake_gestures_title"
+        android:summary="@string/ambient_wake_gestures_summary"
+        android:defaultValue="false" />
+
     <!-- Udfps options -->
     <PreferenceCategory
         android:key="udfps_category"
