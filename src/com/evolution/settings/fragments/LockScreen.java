@@ -27,6 +27,7 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.view.View;
 
 import androidx.preference.ListPreference;
@@ -56,6 +57,7 @@ public class LockScreen extends DashboardFragment implements
 
     private static final String TAG = "LockScreen";
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
+    private static final String CATEGORY_AMBIENT = "ambient_display";
     private static final String FINGERPRINT_CATEGORY = "lockscreen_fingerprint_category";
     private static final String UDFPS_CATEGORY = "udfps_category";
 
@@ -100,6 +102,12 @@ public class LockScreen extends DashboardFragment implements
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
         updateAlwaysOnSummary();
+
+        final PreferenceCategory ambientCat = (PreferenceCategory) prefScreen.findPreference(CATEGORY_AMBIENT);
+        if (TextUtils.isEmpty(getResources().getString(com.android.internal.R.string.config_dozeDoubleTapSensorType)) &&
+                TextUtils.isEmpty(getResources().getString(com.android.internal.R.string.config_dozeTapSensorType))) {
+            prefScreen.removePreference(ambientCat);
+        }
     }
 
     @Override
