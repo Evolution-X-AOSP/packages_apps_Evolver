@@ -142,11 +142,17 @@
 
     </PreferenceCategory>
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="ambient_wake_gestures"
-        android:title="@string/ambient_wake_gestures_title"
-        android:summary="@string/ambient_wake_gestures_summary"
-        android:defaultValue="false" />
+    <PreferenceCategory
+        android:key="ambient_display"
+        android:title="@string/ambient_display_category">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="ambient_wake_gestures"
+            android:title="@string/ambient_wake_gestures_title"
+            android:summary="@string/ambient_wake_gestures_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 
     <!-- Lockscreen bottom shortcuts -->
     <!--
