@@ -37,4 +37,30 @@
         android:title="@string/accent_color_title"
         android:summary="@string/accent_color_summary" />
 
+    <com.evolution.settings.preference.CustomSeekBarPreference
+        android:key="luminance_factor"
+        android:title="@string/luminance_factor_title"
+        android:summary="@string/luminance_factor_summary"
+        android:max="100"
+        settings:min="-95"
+        settings:interval="5"
+        settings:defaultValue="0"
+        settings:units="%" />
+
+    <com.evolution.settings.preference.CustomSeekBarPreference
+        android:key="chroma_factor"
+        android:title="@string/chroma_factor_title"
+        android:summary="@string/chroma_factor_summary"
+        android:max="100"
+        settings:min="-95"
+        settings:interval="5"
+        settings:defaultValue="0"
+        settings:units="%" />
+
+    <com.evolution.settings.preference.SwitchPreference
+        android:key="tint_background"
+        android:title="@string/tint_background_title"
+        android:summary="@string/tint_background_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
