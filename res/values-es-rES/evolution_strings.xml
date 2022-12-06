@@ -223,7 +223,6 @@
     <string name="lockscreen_albumart_filter_tint">Acentuado tintado</string>
     <string name="lockscreen_albumart_filter_blur">Desenfoque</string>
     <string name="lockscreen_albumart_filter_grayblur">Escala de grises y desenfocado</string>
-    <string name="lockscreen_albumart_filter_blur_radius_title">Nivel de desenfoque para la carátula multimedia en pantalla de bloqueo</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Ajustes de reloj &amp; fecha</string>
     <string name="status_bar_clock_summary">Personalizar reloj &amp; fecha</string>
@@ -366,7 +365,7 @@
     <string name="qs_footer_text_show_title">Texto en Ajustes Rápidos</string>
     <string name="qs_footer_text_show_summary">Mostrar texto al pie del panel de Ajustes Rápidos</string>
     <string name="qs_footer_text_string_title">Personalizar texto abajo de los Ajustes Rápidos</string>
-    <string name="qs_footer_text_string_summary">Dejar en blanco para \"Spark\" predeterminado</string>
+    <string name="qs_footer_text_string_summary">Dejar en blanco para \"Evolution X\" predeterminado</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Abrir aplicación de música al conectar auriculares</string>
     <string name="headset_connect_player_summary">Inicia el reproductor de música por defecto al conectar los auriculares</string>
@@ -508,15 +507,18 @@
     <!-- Volume panel -->
     <string name="volume_panel_category">Panel de volumen</string>
     <string name="volume_dialog_timeout_title">Tiempo de espera del panel de volumen</string>
-    <!-- Button brightness -->
-    <string name="button_backlight_options_category">Opciones de retroiluminación</string>
-    <string name="button_backlight_enable_title">Permitir retroiluminación de los botones</string>
-    <string name="button_link_brightness">Vincular al brillo de pantalla</string>
-    <string name="button_link_brightness_summary">El brillo de la retroiluminación de los botones se ajustará al nivel de brillo de la pantalla</string>
-    <string name="button_manual_brightness">Nivel de brillo</string>
-    <string name="button_timeout_title">Duración de la retroiluminación</string>
-    <string name="button_backlight_on_touch_only_title">Iluminación del botón al tocar</string>
-    <string name="button_backlight_on_touch_only_summary">La retroiluminación de los botones solo aparecerá cuando se pulsen los botones en lugar de estar encendida todo el tiempo. El tiempo de espera sigue afectando a esta función.</string>
+    <!-- Key backlight -->
+    <string name="button_backlight_title">Retroiluminación</string>
+    <string name="button_backlight_enabled">Iluminar botones</string>
+    <string name="button_backlight_only_when_pressed_title">Iluminar los botones solo cuando se presionan</string>
+    <string name="keyboard_backlight_enabled">Iluminar teclado</string>
+    <string name="button_backlight_seekbar_title">Brillo de los botones</string>
+    <string name="keyboard_backlight_seekbar_title">Brillo del teclado</string>
+    <string name="backlight_timeout_title">Tiempo de iluminación</string>
+    <string name="backlight_timeout_unlimited">No apagar</string>
+    <string name="backlight_summary_disabled">Desactivado</string>
+    <string name="backlight_summary_enabled_with_timeout">Activar durante <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Activado</string>
     <!-- Buttons - Enable navbar -->
     <string name="disable_navkeys_title">Activar barra de navegación en pantalla</string>
     <string name="disable_navkeys_summary">Activar la barra de navegación en pantalla y desactivar los botones físicos</string>
@@ -674,7 +676,7 @@
     <string name="custom_theme_snowpaint">Pintar en la nieve</string>
     <string name="custom_theme_espresso">Espresso</string>
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons">Iconos de señal combinados</string>
+    <string name="combined_status_bar_signal_icons_title">Combinar iconos de señal</string>
     <string name="combined_status_bar_signal_icons_summary">Activar iconos de señal combinados en la barra de estado. Requiere reiniciar SystemUI o reiniciar</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Nivel de batería de Bluetooth</string>
@@ -749,11 +751,14 @@
     <string name="enable_fingerprint_ripple_effect_title">Efecto al desbloquear</string>
     <string name="enable_fingerprint_ripple_effect_summary">Mostrar efecto al desbloquear con la huella</string>
     <!-- Unlimited Photos storage -->
-    <string name="use_photos_spoof_title">Almacenamiento ilimitado en Fotos</string>
-    <string name="use_photos_spoof_summary">Simule el dispositivo como un Pixel XL para tener almacenamiento ilimitado en las copias de seguridad de Google Fotos</string>
+    <string name="photos_spoof_title">Almacenamiento ilimitado en Google Fotos</string>
+    <string name="photos_spoof_summary">Simular que tiene un Pixel XL para tener almacenamiento ilimitado en Google Fotos</string>
     <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Desbloquear mayores FPS en juegos</string>
-    <string name="use_games_spoof_summary">Simule el dispositivo como un modelo diferente en juegos específicos para tener más FPS</string>
+    <string name="games_spoof_title">Desbloquear el uso de FPS altos en juegos</string>
+    <string name="games_spoof_summary">Simular otro dispositivo en algunos juegos para desbloquear mayor tasa de FPS</string>
+    <!-- Netflix Spoof -->
+    <string name="netflix_spoof_title">Simular otro dispositivo en Netflix</string>
+    <string name="netflix_spoof_summary">Simular otro dispositivo en Netflix</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Ocultar la barra de estado</string>
     <string name="hide_lockscreen_status_bar_summary">Tocar la barra de estado para alternar su visibilidad</string>
@@ -839,9 +844,10 @@
     <string name="status_bar_battery_text_charging_summary">Mostrar siempre porcentaje de batería al cargar</string>
     <!-- QS battery -->
     <string name="qs_use_status_bar_battery_style">Seguir estilo de la barra de estado</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">Estimación de batería</string>
-    <string name="battery_estimate_summary">Mostrar duración estimada de la batería cuando esté disponible</string>
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">Batería restante</string>
+    <string name="qs_show_battery_estimate_summary_on">Batería aproximada</string>
+    <string name="qs_show_battery_estimate_summary_off">Ocultar valor estimado de la batería</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
@@ -929,4 +935,7 @@
     <!-- Changelog -->
     <string name="changelog_evolution_title">Registro de cambios</string>
     <string name="changelog_evolution_summary">Ver los cambios recientes de la ROM</string>
+    <!-- Squiggle animation -->
+    <string name="show_squiggle_animation_title">Mostrar animación de garabato</string>
+    <string name="show_squiggle_animation_summary">Mostrar animación de garabato en el panel multimedia, necesitarás cambiar o pausar la música o mover la barra de progreso para aplicar el cambio</string>
 </resources>
