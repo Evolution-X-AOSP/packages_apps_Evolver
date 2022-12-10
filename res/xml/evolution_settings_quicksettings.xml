@@ -160,6 +160,15 @@
             android:summary="@string/qs_tile_label_hide_summary"
             android:defaultValue="false" />
 
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_tile_label_size"
+            android:title="@string/qs_tile_label_size_title"
+            android:max="15"
+            settings:min="10"
+            settings:interval="1"
+            settings:units="@string/unit_size"
+            android:defaultValue="14" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_tile_vertical_layout"
             android:title="@string/qs_tile_layout_title"
