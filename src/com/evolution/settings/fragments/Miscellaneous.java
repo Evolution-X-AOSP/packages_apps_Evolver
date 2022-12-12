@@ -41,8 +41,6 @@ import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.fragments.SmartPixels;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,9 +49,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
-    private static final String SMART_PIXELS = "smart_pixels";
-
-    private Preference mSmartPixels;
 
     static final int MODE_DISABLED = 0;
     static final int MODE_NIGHT = 1;
@@ -70,12 +65,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
-
-        mSmartPixels = (Preference) findPreference(SMART_PIXELS);
-        boolean mSmartPixelsSupported = getResources().getBoolean(
-                com.android.internal.R.bool.config_supportSmartPixels);
-        if (!mSmartPixelsSupported)
-            prefSet.removePreference(mSmartPixels);
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
         updateAlwaysOnSummary();
@@ -126,12 +115,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
-
-                    boolean mSmartPixelsSupported = context.getResources().getBoolean(
-                            com.android.internal.R.bool.config_supportSmartPixels);
-                    if (!mSmartPixelsSupported)
-                        keys.add(SMART_PIXELS);
-
                     return keys;
                 }
             };
