@@ -139,8 +139,8 @@ public class StatusBarIcons extends SettingsPreferenceFragment {
         public void onBindViewHolder(CustomViewHolder holder, final int position) {
             String iconPkg = mPkgs.get(position);
 
-            holder.image1.setBackgroundDrawable(getDrawable(holder.image1.getContext(), iconPkg, "ic_wifi_signal_4"));
-            holder.image2.setBackgroundDrawable(getDrawable(holder.image2.getContext(), iconPkg, "ic_signal_cellular_4_4_bar"));
+            holder.image1.setBackgroundDrawable(getDrawable(holder.image1.getContext(), iconPkg, "ic_qs_dnd"));
+            holder.image2.setBackgroundDrawable(getDrawable(holder.image2.getContext(), iconPkg, "ic_qs_bluetooth"));
             holder.image3.setBackgroundDrawable(getDrawable(holder.image3.getContext(), iconPkg, "ic_qs_airplane"));
             holder.image4.setBackgroundDrawable(getDrawable(holder.image4.getContext(), iconPkg, "ic_qs_flashlight"));
 
