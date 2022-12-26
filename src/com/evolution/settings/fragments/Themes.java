@@ -15,15 +15,24 @@
  */
 package com.evolution.settings.fragments;
 
+import static android.os.UserHandle.USER_CURRENT;
+import static android.os.UserHandle.USER_SYSTEM;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.om.IOverlayManager;
 import android.content.res.Resources;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
@@ -42,6 +51,8 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.SystemSettingListPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,8 +62,13 @@ public class Themes extends DashboardFragment implements
 
     private static final String TAG = "Themes";
     private static final String KG_CUSTOM_CLOCK_COLOR_ENABLED = "kg_custom_clock_color_enabled";
+    private static final String KEY_QS_PANEL_STYLE  = "qs_panel_style";
 
+    private Handler mHandler;
+    private IOverlayManager mOverlayManager;
+    private IOverlayManager mOverlayService;
     private SwitchPreference mKGCustomClockColor;
+    private SystemSettingListPreference mQsStyle;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -72,6 +88,35 @@ public class Themes extends DashboardFragment implements
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
         mKGCustomClockColor.setChecked(mKGCustomClockColorEnabled);
         mKGCustomClockColor.setOnPreferenceChangeListener(this);
+
+        mOverlayService = IOverlayManager.Stub
+        .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+
+        mQsStyle = (SystemSettingListPreference) findPreference(KEY_QS_PANEL_STYLE);
+        mCustomSettingsObserver.observe();
+    }
+
+    private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
+    private class CustomSettingsObserver extends ContentObserver {
+
+        CustomSettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            Context mContext = getContext();
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_PANEL_STYLE),
+                    false, this, UserHandle.USER_ALL);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            if (uri.equals(Settings.System.getUriFor(Settings.System.QS_PANEL_STYLE))) {
+                updateQsStyle();
+            }
+        }
     }
 
     @Override
@@ -83,9 +128,65 @@ public class Themes extends DashboardFragment implements
             Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, val ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mQsStyle) {
+            mCustomSettingsObserver.observe();
+            return true;
         }
         return false;
     }
+
+    private void updateQsStyle() {
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        int qsPanelStyle = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT);
+
+        if (qsPanelStyle == 0) {
+            setDefaultStyle(mOverlayService);
+        } else if (qsPanelStyle == 1) {
+            setQsStyle(mOverlayService, "com.android.system.qs.outline");
+        } else if (qsPanelStyle == 2 || qsPanelStyle == 3) {
+            setQsStyle(mOverlayService, "com.android.system.qs.twotoneaccent");
+        } else if (qsPanelStyle == 4) {
+            setQsStyle(mOverlayService, "com.android.system.qs.shaded");
+        } else if (qsPanelStyle == 5) {
+            setQsStyle(mOverlayService, "com.android.system.qs.cyberpunk");
+        }
+    }
+
+    public static void setDefaultStyle(IOverlayManager overlayManager) {
+        for (int i = 0; i < QS_STYLES.length; i++) {
+            String qsStyles = QS_STYLES[i];
+            try {
+                overlayManager.setEnabled(qsStyles, false, USER_SYSTEM);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void setQsStyle(IOverlayManager overlayManager, String overlayName) {
+        try {
+            for (int i = 0; i < QS_STYLES.length; i++) {
+                String qsStyles = QS_STYLES[i];
+                try {
+                    overlayManager.setEnabled(qsStyles, false, USER_SYSTEM);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            }
+            overlayManager.setEnabled(overlayName, true, USER_SYSTEM);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static final String[] QS_STYLES = {
+        "com.android.system.qs.outline",
+        "com.android.system.qs.twotoneaccent",
+        "com.android.system.qs.shaded",
+        "com.android.system.qs.cyberpunk"
+    };
 
     @Override
     public int getMetricsCategory() {
