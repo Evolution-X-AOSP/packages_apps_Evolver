@@ -52,7 +52,7 @@
     <string name="search">Tìm kiếm</string>
     <string name="search_apps">Tìm kiếm ứng dụng</string>
     <!-- Units -->
-    <string name="unit_milliseconds">mili giây</string>
+    <string name="unit_ms">ms</string>
     <string name="unit_seconds">giây</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Bật</string>
@@ -633,17 +633,6 @@
     <string name="show_cpu_info">Hiển thị thông tin CPU</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Hiển thị thông tin CPU trên màn hình</string>
-    <!-- Volume Steps Fragment -->
-    <string name="volume_steps_fragment_title">Các mức âm lượng</string>
-    <string name="volume_steps_summary">Tùy chỉnh mức âm lượng</string>
-    <string name="volume_steps_alarm_title">Mức âm lượng: Báo thức</string>
-    <string name="volume_steps_dtmf_title">Mức âm lượng: DTMF</string>
-    <string name="volume_steps_music_title">Mức âm lượng: Phương tiện</string>
-    <string name="volume_steps_notification_title">Mức âm lượng: Thông báo</string>
-    <string name="volume_steps_ring_title">Mức âm lượng: Nhạc chuông</string>
-    <string name="volume_steps_system_title">Mức âm lượng: Hệ thống</string>
-    <string name="volume_steps_voice_call_title">Mức âm lượng: Gọi thoại</string>
-    <string name="volume_steps_reset">Thiết lập lại</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Tên nhà mạng</string>
     <string name="carrier_label_settings_summary">Tùy chỉnh tên nhà mạng</string>
@@ -674,15 +663,13 @@
     <string name="custom_theme_vivid">Rực rỡ (Monet)</string>
     <string name="custom_theme_snowpaint">Vẽ trên tuyết</string>
     <string name="custom_theme_espresso">Cà phê Espresso</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Biểu tượng tín hiệu kép</string>
-    <string name="combined_status_bar_signal_icons_summary">Bật biểu tượng tín hiệu kép trong thanh trạng thái.\nLời khuyên khởi động lại SystemUI</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Trạng thái pin bluetooth</string>
     <string name="bluetooth_battery_summary">Hiển thị trạng thái pin của thiết bị bluetooth đã kết nối, nếu có sẵn</string>
-    <!-- Screen off UDFPS -->
-    <string name="screen_off_udfps_title">UDFPS khi màn hình tắt</string>
-    <string name="screen_off_udfps_summary">Luôn bật UDFPS khi màn hình tắt</string>
+    <!-- Preference and settings suggestion title text for screen off UDFPS [CHAR LIMIT=60]-->
+    <string name="ambient_display_screen_off_udfps_title">Luôn bật vân tay khi màn hình tắt</string>
+    <!-- Summary text for screen off UDFPS [CHAR LIMIT=NONE]-->
+    <string name="ambient_display_screen_off_udfps_summary">Cho phép mở khóa bằng vân tay khi màn hình đang tắt.\nKích hoạt có thể khiến thiết bị bất ngờ bị đánh thức.</string>
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Rung khi mở khóa</string>
     <string name="qstile_requires_unlocking_summary">Các ô QS sau đây yêu cầu mở khóa trước khi bạn có thể truy cập chúng từ màn hình khóa: \ Máy bay, Mạng di động, NFC, Điểm phát sóng, Chia sẻ kết nối USB và Vị trí</string>
@@ -743,7 +730,7 @@
     <string name="visualizer_center_mirrored_summary">Đặt trình hiển thị ở chế độ phản chiếu trung tâm</string>
     <string name="pulse_vertical_mirror_title">Gương dọc</string>
     <string name="pulse_vertical_mirror_summary">Tạo xung khác và lật theo chiều dọc</string>
-    <!-- Game Space -->
+    <!-- Game space -->
     <string name="game_space_title">Game Mode</string>
     <string name="game_space_summary">Cải thiện trải nghiệm chơi game</string>
     <!-- Fingerprint Ripple Effect -->
@@ -911,9 +898,6 @@
     <!-- Alert Slider block -->
     <string name="block_alert_title">Chặn Cần gạt chuông</string>
     <string name="block_alert_summary">Chế độ bỏ túi sẽ vô hiệu hoá Cần gạt chuông</string>
-    <!-- Wi-Fi Standard icon -->
-    <string name="show_wifi_standard_icon_title">Hiển thị Chuẩn Wi-Fi</string>
-    <string name="show_wifi_standard_icon_summary">Hiển thị chuẩn Wi-Fi ở biểu tượng Wi-Fi</string>
     <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Hiệu ứng menu nguồn</string>
     <string name="power_menu_animation_dialog_title">Chọn hiệu ứng menu nguồn</string>
@@ -928,13 +912,8 @@
     <string name="power_menu_animation_translucent_top">Mờ (trên)</string>
     <string name="power_menu_animation_translucent_bottom">Mờ (dưới)</string>
     <string name="power_menu_animation_rotate">Xoay</string>
-    <!-- Power menu and dialogs opacity -->
-    <string name="power_menu_transparency">Độ mờ menu nguồn</string>
-    <string name="power_menu_dialog_dim">Độ mờ nền hộp thoại menu nguồn</string>
     <!-- Changelog -->
     <string name="changelog_evolution_title">Thay đổi hiện tại</string>
     <string name="changelog_evolution_summary">Xem các thay đổi gần đây trong ROM</string>
-    <!-- Squiggle animation -->
-    <string name="show_squiggle_animation_title">Hiển thị hoạt ảnh uốn cong</string>
-    <string name="show_squiggle_animation_summary">Hiển thị hoạt ảnh uốn cong bảng điều khiển phương tiện, sau khi thay đổi cần chuyển nhạc, tạm dừng nhạc hoặc di chuyển thanh tiến trình để áp dụng</string>
+    <!-- Parallel space -->
 </resources>
