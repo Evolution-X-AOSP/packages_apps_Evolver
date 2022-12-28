@@ -52,7 +52,7 @@
     <string name="search">Пошук</string>
     <string name="search_apps">Пошук додатків</string>
     <!-- Units -->
-    <string name="unit_milliseconds">мілісекунди</string>
+    <string name="unit_ms">мс</string>
     <string name="unit_seconds">секунди</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Увімкнути</string>
@@ -117,20 +117,20 @@
     <string name="battery_light_low_blinking_title">Блимання індикатора при низькому заряді</string>
     <string name="battery_light_cat">Колір індикатора під час заряджання</string>
     <string name="battery_light_low_color">Низький заряд батареї</string>
-    <string name="battery_light_medium_color">Середній заряд батареї</string>
+    <string name="battery_light_medium_color">Заряджається</string>
     <string name="battery_light_full_color">Майже повний заряд акумулятора</string>
     <string name="battery_light_reallyfull_color">Повний (100) заряд</string>
     <!-- UDFPS settings -->
     <string name="udfps_category">Сканер відбитків пальців під дисплеєм (UDFPS)</string>
-    <string name="udfps_customization">Налаштування UDFPS</string>
+    <string name="udfps_customization">Користувацька анімація іконки відбитків пальців</string>
     <string name="udfps_recog_animation">Анімації відбитка пальця</string>
     <string name="udfps_recog_animation_summary">Показує анімацію під час розпізнавання вашого пальця</string>
-    <string name="udfps_recog_animation_effect_title">Користувацька анімація FOD</string>
+    <string name="udfps_recog_animation_effect_title">Користувацька анімація іконки відбитків пальців</string>
     <string name="udfps_recog_animation_effect_summary">Виберіть ефект анімації</string>
-    <string name="udfps_settings_title">Налаштування UDFPS</string>
+    <string name="udfps_settings_title">Налаштування відбитка пальця</string>
     <string name="udfps_settings_summary">Налаштування відбитка пальця</string>
     <!-- UDFPS icon picker -->
-    <string name="udfps_icon_picker_title">Вибір іконки FOD</string>
+    <string name="udfps_icon_picker_title">Вибір іконки сканера відбитків пальців</string>
     <string name="udfps_icon_picker_summary">Оберіть улюблену піктограму відбитка пальця</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Індикатор сповіщень</string>
@@ -634,17 +634,6 @@
     <string name="show_cpu_info">Показати інформацію про процесор</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Накладний слой, показуючий поточну інформацію про процесор</string>
-    <!-- Volume Steps Fragment -->
-    <string name="volume_steps_fragment_title">Рівні гучності</string>
-    <string name="volume_steps_summary">Налаштування рівня гучності</string>
-    <string name="volume_steps_alarm_title">Рівень гучності: Будильника</string>
-    <string name="volume_steps_dtmf_title">Рівні гучності: Тонального набіру</string>
-    <string name="volume_steps_music_title">Рівні гучності: Медіа</string>
-    <string name="volume_steps_notification_title">Рівень гучності: Сповіщень</string>
-    <string name="volume_steps_ring_title">Рівень гучності: Дзвінка</string>
-    <string name="volume_steps_system_title">Рівень гучності: Системи</string>
-    <string name="volume_steps_voice_call_title">Рівень гучності: Голосових викликів</string>
-    <string name="volume_steps_reset">Скинути</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Ім\'я оператора</string>
     <string name="carrier_label_settings_summary">Змінити назву оператора</string>
@@ -675,15 +664,13 @@
     <string name="custom_theme_vivid">Яскраві (Monet)</string>
     <string name="custom_theme_snowpaint">Фарба в снігу</string>
     <string name="custom_theme_espresso">Еспрессо</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Комбіновані значки сигналу</string>
-    <string name="combined_status_bar_signal_icons_summary">Показувати комбіновану піктограму сигналів WiFi та мобільного інтернету\nУВАГА: Після увімкнення відбудеться перезавантаження системного інтерфейсу</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Показати заряд Bluetooth-пристрою</string>
     <string name="bluetooth_battery_summary">Показувати заряд батареї під\'єднаних в даний час bluetooth-пристроїв, якщо можливо</string>
-    <!-- Screen off UDFPS -->
-    <string name="screen_off_udfps_title">Вимкнути UDFPS</string>
-    <string name="screen_off_udfps_summary">Тримати UDFPS включеним при вимкненому екрані</string>
+    <!-- Preference and settings suggestion title text for screen off UDFPS [CHAR LIMIT=60]-->
+    <string name="ambient_display_screen_off_udfps_title">Завжди увімкнений відбиток пальця</string>
+    <!-- Summary text for screen off UDFPS [CHAR LIMIT=NONE]-->
+    <string name="ambient_display_screen_off_udfps_summary">Дозволяє розблокування екрану вимкнений.\nУвімкнення може викликати випадкові пробудження.</string>
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">Безпечні плитки швидких налаштувань потребують розблокування</string>
     <string name="qstile_requires_unlocking_summary">Ці плитки швидких налаштувань потребують розблокування, перш ніж ви зможете надіслати їх на доступ із екрану блокування:\nРежим у Літаку, Мобільна Мережа, NFC, точка доступу, USB-модем і місцезнаходження</string>
@@ -744,7 +731,7 @@
     <string name="visualizer_center_mirrored_summary">Встановити візуалізатор дзеркально від центра</string>
     <string name="pulse_vertical_mirror_title">Вертикально віддзеркалено</string>
     <string name="pulse_vertical_mirror_summary">Створити інший імпульс та перевернути вертикально</string>
-    <!-- Game Space -->
+    <!-- Game space -->
     <string name="game_space_title">Ігровий простір</string>
     <string name="game_space_summary">Покращіть свій ігровий досвід</string>
     <!-- Fingerprint Ripple Effect -->
@@ -912,9 +899,6 @@
     <!-- Alert Slider block -->
     <string name="block_alert_title">Перемикач блокування сповіщень</string>
     <string name="block_alert_summary">Кишеньковий режим заблокує повзунок сповіщень</string>
-    <!-- Wi-Fi Standard icon -->
-    <string name="show_wifi_standard_icon_title">Показувати стандартну піктограму Wi-Fi</string>
-    <string name="show_wifi_standard_icon_summary">Показувати тип Wi-Fi в індикаторі сигналу Wi-Fi</string>
     <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Анімація меню живлення</string>
     <string name="power_menu_animation_dialog_title">Виберіть анімацію меню живлення</string>
@@ -929,13 +913,8 @@
     <string name="power_menu_animation_translucent_top">Напівпрозорість (зверху)</string>
     <string name="power_menu_animation_translucent_bottom">Напівпрозорість (знизу)</string>
     <string name="power_menu_animation_rotate">Обертання</string>
-    <!-- Power menu and dialogs opacity -->
-    <string name="power_menu_transparency">Непрозорість меню живлення</string>
-    <string name="power_menu_dialog_dim">Затемнення фону при відображенні меню живлення</string>
     <!-- Changelog -->
     <string name="changelog_evolution_title">Поточний список змін</string>
     <string name="changelog_evolution_summary">Переглянути останні зміни в прошивці</string>
-    <!-- Squiggle animation -->
-    <string name="show_squiggle_animation_title">Показувати анімацію руху</string>
-    <string name="show_squiggle_animation_summary">Показати мультимедійну панель анімації, після чого потрібно змінити музику, призупинити музику або перемістити її для застосування</string>
+    <!-- Parallel space -->
 </resources>
