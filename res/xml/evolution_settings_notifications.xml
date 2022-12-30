@@ -51,6 +51,19 @@
             android:summary="@string/notification_guts_kill_app_button_summary"
             android:defaultValue="false" />
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="media_artwork_blur_enabled"
+            android:title="@string/artwork_media_background_enable_blur_title"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="media_artwork_blur_radius"
+            android:title="@string/artwork_media_background_blur_radius_title"
+            android:dependency="media_artwork_blur_enabled" 
+            android:defaultValue="1"
+            android:max="25"
+            settings:min="5" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
