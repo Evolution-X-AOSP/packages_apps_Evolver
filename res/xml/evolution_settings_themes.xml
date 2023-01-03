@@ -25,6 +25,17 @@
         android:key="theme_customization_category"
         android:title="@string/theme_customization_category">
 
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="kg_custom_clock_color_enabled"
+            android:title="@string/kg_custom_clock_color_enabled_title"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.colorpicker.SecureSettingColorPickerPreference
+            android:key="kg_custom_clock_color"
+            android:title="@string/kg_custom_clock_color_title"
+            android:dependency="kg_custom_clock_color_enabled"
+            android:defaultValue="0xFFFFFFFF" />
+
         <Preference
             android:key="android.theme.customization.lockscreen_clock_font"
             android:title="@string/theme_customization_lock_clock_title"
