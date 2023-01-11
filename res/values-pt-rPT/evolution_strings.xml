@@ -24,7 +24,8 @@
     <string name="system_settings_title">Opções de sistema</string>
     <string name="themes_title">Temas</string>
     <string name="torch_gestures_title">Gestos da lanterna</string>
-    <string name="flashlight_category">Lanterna</string>
+    <string name="on_call_flashlight_category">Lanterna ligada em chamada</string>
+    <string name="notification_flashlight_category">Lanterna nas notificações</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Opções incluídas no Android</string>
     <string name="dark_ui_mode_summary">Navegar pelas opções do tema escuro</string>
@@ -407,6 +408,9 @@
     <string name="theme_customization_wifi_icon_summary">Definir ícone personalizado de WiFi</string>
     <string name="theme_customization_navbar_title">Estilo da barra de navegação</string>
     <string name="theme_customization_navbar_summary">Definir o estilo da barra de navegação</string>
+    <!-- Custom Fonts -->
+    <string name="theme_customization_lock_clock_title">Fonte do relógio do ecrã de bloqueio</string>
+    <string name="theme_customization_lock_clock_summary">Definir o estilo da fonte do relógio do ecrã de bloqueio</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Barra de estado</string>
     <string name="lockscreen_status_bar_summary">Mostrar barra de estado no ecrã de bloqueio</string>
@@ -570,6 +574,11 @@
     <string name="flashlight_on_call_ignore_dnd_summary">Se deve piscar quando o modo Não perturbe estiver ativado</string>
     <string name="flashlight_on_call_rate_title">Taxa de intervalo</string>
     <string name="flashlight_on_call_rate_summary">Taxa de intermitência da lanterna durante a chamada</string>
+    <!-- Blink flashlight for notifications -->
+    <string name="notification_torch_title">Piscar lanterna para notificações</string>
+    <string name="notification_torch_summary">Por padrão. Por canal existem configurações</string>
+    <string name="notification_torch_slider1">Vezes para piscar</string>
+    <string name="notification_torch_slider2">Ritmo do piscar</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Letra na barra de estado</string>
     <string name="status_bar_lyric_summary">Mostrar letra de música na barra de estado (requer suporte da app)</string>
@@ -645,19 +654,35 @@
     <string name="show_carrier_keyguard">Ecrã de bloqueio</string>
     <string name="show_carrier_statusbar">Barra de estado</string>
     <string name="show_carrier_enabled">Ambos</string>
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Motor de temas Monet</string>
-    <string name="monet_engine_settings_summary">Cor personalizada, coloração, luminosidade</string>
-    <string name="color_override_title">Seletor de cor personalizada</string>
-    <string name="color_override_default_summary">Usando cores do papel de parede</string>
-    <string name="custom_color_override_summary_placeholder">        Cor escolhida: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Deixe em branco para usar a cor do papel de parede.
-    
-    </string>
-    <string name="invalid_color_input">Cor inválida inserida!</string>
-    <string name="white_luminance_title">Luminosidade</string>
-    <string name="accurate_shades_title">Usar tons precisos</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Configurações do tema</string>
+    <string name="monet_settings_sammary">Algumas configurações extras para customizar o monet engine</string>
+    <string name="theme_style_title">Estilo do tema</string>
+    <string name="theme_style_tonal_spot">Ponto Tonal (Padrão)</string>
+    <string name="theme_style_vibrant">Vibrante</string>
+    <string name="theme_style_expressive">Expressivo</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Arco-íris</string>
+    <string name="theme_style_fruit_salad">Salada de fruta</string>
+    <string name="theme_style_muted">Silenciado</string>
+    <string name="theme_style_content">Conteúdo</string>
+    <string name="color_source_title">Fonte de cor</string>
+    <string name="color_source_both">Ambos (Padrão)</string>
+    <string name="color_source_home">Imagem de fundo</string>
+    <string name="color_source_lock">Imagem do ecrã de bloqueio</string>
+    <string name="color_source_preset">Pré-definido</string>
+    <string name="accent_color_title">Cor de Destaque</string>
+    <string name="accent_color_summary">Substituir a cor de destaque padrão</string>
+    <string name="accent_background_title">Destaque do fundo</string>
+    <string name="accent_background_summary">Escolha uma cor de destaque diferente para o fundo</string>
+    <string name="bg_color_title">Cor do Fundo</string>
+    <string name="bg_color_summary">Substituir a cor de destaque padrão</string>
+    <string name="luminance_factor_title">Luminosidade</string>
+    <string name="luminance_factor_summary">Valores maiores produzem cores mais brilhantes</string>
     <string name="chroma_factor_title">Coloração</string>
-    <string name="linear_lightness_title">Usar escala personalizada de luz</string>
+    <string name="chroma_factor_summary">Valores maiores produzem cores mais fortes</string>
+    <string name="tint_background_title">Matriz de fundo</string>
+    <string name="tint_background_summary">Fazer a Luminância e a seleção do Chroma também afetar as cores de fundo</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Usar tema personalizado</string>
     <string name="custom_theme_black">Preto</string>
@@ -855,6 +880,9 @@
     <!-- QS Transparency -->
     <string name="qs_transparency_title">Transparência do fundo</string>
     <string name="qs_transparency_summary">Definir a transparência do fundo do painel de definições rápidas</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Mostrar ícone de tipo do Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Mostrar tipo de Wi-Fi no indicador de sinal de Wi-Fi</string>
     <!--  screen, setting option summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Nunca</string>
     <string name="custom_timeout_summary_5secs">5 segundos</string>
@@ -918,4 +946,6 @@
     <string name="changelog_evolution_title">Changelog atual</string>
     <string name="changelog_evolution_summary">Veja as alterações recentes da ROM</string>
     <!-- Parallel space -->
+    <string name="laboratory_parallel_space_title">Espaço paralelo</string>
+    <string name="laboratory_parallel_space_summary">Permite executar várias instâncias da mesma app em paralelo</string>
 </resources>
