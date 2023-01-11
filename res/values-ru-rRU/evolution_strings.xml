@@ -24,7 +24,8 @@
     <string name="system_settings_title">Системные настройки</string>
     <string name="themes_title">Темы</string>
     <string name="torch_gestures_title">Жесты для включения фонарика</string>
-    <string name="flashlight_category">Фонарик</string>
+    <string name="on_call_flashlight_category">Мигание фонарика при звонке</string>
+    <string name="notification_flashlight_category">Мигание фонарика при уведомлении</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Стандартные системные настройки</string>
     <string name="dark_ui_mode_summary">Просмотреть параметры темной темы</string>
@@ -407,6 +408,9 @@
     <string name="theme_customization_wifi_icon_summary">Выберите пользовательский значок wifi</string>
     <string name="theme_customization_navbar_title">Стиль панели навигации</string>
     <string name="theme_customization_navbar_summary">Установить пользовательский стиль панели навигации</string>
+    <!-- Custom Fonts -->
+    <string name="theme_customization_lock_clock_title">Шрифт часов на экране блокировки</string>
+    <string name="theme_customization_lock_clock_summary">Установить стиль шрифта часов экрана блокировки</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Строка состояния</string>
     <string name="lockscreen_status_bar_summary">Показывать строку состояния на заблокированном экране</string>
@@ -570,6 +574,11 @@
     <string name="flashlight_on_call_ignore_dnd_summary">Мигать ли в режиме \"Не беспокоить\"</string>
     <string name="flashlight_on_call_rate_title">Частота</string>
     <string name="flashlight_on_call_rate_summary">Частота мигания фонарика при вызове</string>
+    <!-- Blink flashlight for notifications -->
+    <string name="notification_torch_title">Мигать фонариком для уведомлений</string>
+    <string name="notification_torch_summary">По умолчанию. Существуют настройки для каждого канала</string>
+    <string name="notification_torch_slider1">Время мигания</string>
+    <string name="notification_torch_slider2">Частота мигания</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Текст в строке состояния</string>
     <string name="status_bar_lyric_summary">Показывать текст песни в строке состояния (требуется поддержка приложения)</string>
@@ -645,18 +654,35 @@
     <string name="show_carrier_keyguard">Экран блокировки</string>
     <string name="show_carrier_statusbar">Строка состояния</string>
     <string name="show_carrier_enabled">Оба</string>
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Настройки Monet</string>
-    <string name="monet_engine_settings_summary">Пользовательский цвет, Коэффициент цветности, яркость</string>
-    <string name="color_override_title">Добавление своего цвета</string>
-    <string name="color_override_default_summary">Цвета из обоев</string>
-    <string name="custom_color_override_summary_placeholder">        Выберите цвет: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Установите пустое значение для использования цвета обоев.
-    </string>
-    <string name="invalid_color_input">Неправильно введен цвет!</string>
-    <string name="white_luminance_title">Яркость</string>
-    <string name="accurate_shades_title">Использовать точные оттенки</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Настройки темы</string>
+    <string name="monet_settings_sammary">Несколько дополнительных настроек для настройки темы</string>
+    <string name="theme_style_title">Стиль темы</string>
+    <string name="theme_style_tonal_spot">Тональная точка (по умолчанию)</string>
+    <string name="theme_style_vibrant">Яркий</string>
+    <string name="theme_style_expressive">Экстремальный</string>
+    <string name="theme_style_spritz">Брызги</string>
+    <string name="theme_style_rainbow">Радуга</string>
+    <string name="theme_style_fruit_salad">Фруктовый салат</string>
+    <string name="theme_style_muted">Приглушенный</string>
+    <string name="theme_style_content">Содержание</string>
+    <string name="color_source_title">Источник цвета</string>
+    <string name="color_source_both">Оба (по умолчанию)</string>
+    <string name="color_source_home">Обои домашнего экрана</string>
+    <string name="color_source_lock">Обои экрана блокировки</string>
+    <string name="color_source_preset">Пользовательский</string>
+    <string name="accent_color_title">Цвет акцента</string>
+    <string name="accent_color_summary">Изменить цвет акцента по умолчанию</string>
+    <string name="accent_background_title">Цветовой акцент</string>
+    <string name="accent_background_summary">Выберите другой акцентный цвет для фона</string>
+    <string name="bg_color_title">Цвет фона</string>
+    <string name="bg_color_summary">Изменить стандартный фон цветового акцента</string>
+    <string name="luminance_factor_title">Яркость</string>
+    <string name="luminance_factor_summary">Чем больше значение, тем ярче цвета</string>
     <string name="chroma_factor_title">Коэффициент цветности</string>
-    <string name="linear_lightness_title">Использовать пользовательскую шкалу яркости</string>
+    <string name="chroma_factor_summary">Чем больше значение, тем насыщеннее цвета</string>
+    <string name="tint_background_title">Оттеночный фон</string>
+    <string name="tint_background_summary">Выбор яркости и цветности, позволяет также лиять на цвета фона</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Использовать собственную тему</string>
     <string name="custom_theme_black">Чёрный</string>
@@ -854,6 +880,9 @@
     <!-- QS Transparency -->
     <string name="qs_transparency_title">Прозрачность фона</string>
     <string name="qs_transparency_summary">Установка уровня прозрачности панели быстрых настроек</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Показывать значок стандарта Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Показывать значок стандарта Wi-Fi в индикаторе сигнала</string>
     <!--  screen, setting option summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Никогда</string>
     <string name="custom_timeout_summary_5secs">5 секунд</string>
@@ -917,6 +946,6 @@
     <string name="changelog_evolution_title">Текущий список изменений</string>
     <string name="changelog_evolution_summary">Просмотр последних изменений в прошивке</string>
     <!-- Parallel space -->
-    <string name="laboratory_parallel_space_title">Параллельный запуск</string>
+    <string name="laboratory_parallel_space_title">Параллельное пространство</string>
     <string name="laboratory_parallel_space_summary">Разрешить параллельный запуск нескольких экземпляров одного и того же приложения</string>
 </resources>
