@@ -24,7 +24,8 @@
     <string name="system_settings_title">系统选项</string>
     <string name="themes_title">主题</string>
     <string name="torch_gestures_title">手电筒手势</string>
-    <string name="flashlight_category">手电筒</string>
+    <string name="on_call_flashlight_category">来电话时闪烁闪光灯</string>
+    <string name="notification_flashlight_category">通知时闪烁闪光灯</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">包含安卓系统的库存选项</string>
     <string name="dark_ui_mode_summary">浏览黑暗主题选项</string>
@@ -52,7 +53,7 @@
     <string name="search">搜索</string>
     <string name="search_apps">搜索应用</string>
     <!-- Units -->
-    <string name="unit_milliseconds">毫秒</string>
+    <string name="unit_ms">毫秒</string>
     <string name="unit_seconds">秒</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">开启</string>
@@ -375,7 +376,6 @@
     <string name="global_actions_title">电源菜单项目</string>
     <string name="global_actions_screenshot">截图</string>
     <string name="global_actions_on_the_go">行走模式</string>
-    <string name="global_actions_flashlight">手电</string>
     <string name="global_actions_power">电源</string>
     <string name="global_actions_advanced">高级重启选项</string>
     <string name="global_actions_restart">重启</string>
@@ -407,6 +407,9 @@
     <string name="theme_customization_wifi_icon_summary">设置自定义 WiFi 图标样式</string>
     <string name="theme_customization_navbar_title">导航栏样式</string>
     <string name="theme_customization_navbar_summary">设置自定义导航栏样式</string>
+    <!-- Custom Fonts -->
+    <string name="theme_customization_lock_clock_title">锁屏时钟字体</string>
+    <string name="theme_customization_lock_clock_summary">设置 LS 时钟字体样式</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">状态栏</string>
     <string name="lockscreen_status_bar_summary">锁屏界面显示状态栏</string>
@@ -507,15 +510,18 @@
     <!-- Volume panel -->
     <string name="volume_panel_category">声音面板</string>
     <string name="volume_dialog_timeout_title">音量面板超时</string>
-    <!-- Button brightness -->
-    <string name="button_backlight_options_category">背光选项</string>
-    <string name="button_backlight_enable_title">启用按键背光灯</string>
-    <string name="button_link_brightness">跟随屏幕亮度</string>
-    <string name="button_link_brightness_summary">按键背光亮度将根据屏幕亮度调整</string>
-    <string name="button_manual_brightness">亮度级别</string>
-    <string name="button_timeout_title">背光灯超时</string>
-    <string name="button_backlight_on_touch_only_title">触摸时点亮按键背光</string>
-    <string name="button_backlight_on_touch_only_summary">按钮背光将只出现在按下按钮时, 而不是在所有的时间。超时仍然会影响此功能。</string>
+    <!-- Key backlight -->
+    <string name="button_backlight_title">背光</string>
+    <string name="button_backlight_enabled">点亮按钮</string>
+    <string name="button_backlight_only_when_pressed_title">仅在按下时点亮按钮</string>
+    <string name="keyboard_backlight_enabled">背光键盘</string>
+    <string name="button_backlight_seekbar_title">按钮亮度</string>
+    <string name="keyboard_backlight_seekbar_title">键盘亮度</string>
+    <string name="backlight_timeout_title">背光超时</string>
+    <string name="backlight_timeout_unlimited">永不关闭</string>
+    <string name="backlight_summary_disabled">已禁用</string>
+    <string name="backlight_summary_enabled_with_timeout">保持背光灯 <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">已启用</string>
     <!-- Buttons - Enable navbar -->
     <string name="disable_navkeys_title">启用屏幕上的导航栏</string>
     <string name="disable_navkeys_summary">启用屏幕上导航栏并禁用实体按钮</string>
@@ -567,6 +573,11 @@
     <string name="flashlight_on_call_ignore_dnd_summary">在免打扰模式下是否闪烁</string>
     <string name="flashlight_on_call_rate_title">评价</string>
     <string name="flashlight_on_call_rate_summary">通话闪光速率</string>
+    <!-- Blink flashlight for notifications -->
+    <string name="notification_torch_title">通知时闪烁闪光灯</string>
+    <string name="notification_torch_summary">默认情况下。每个频道设置存在</string>
+    <string name="notification_torch_slider1">闪烁时间</string>
+    <string name="notification_torch_slider2">闪烁频率</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">状态栏歌词</string>
     <string name="status_bar_lyric_summary">在状态栏显示歌词（需要应用程序支持）</string>
@@ -631,17 +642,6 @@
     <string name="show_cpu_info">显示 CPU 信息</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">屏幕叠加显示当前 CPU 信息</string>
-    <!-- Volume Steps Fragment -->
-    <string name="volume_steps_fragment_title">音量调整级别</string>
-    <string name="volume_steps_summary">自定义音量阶数</string>
-    <string name="volume_steps_alarm_title">音量调整级别: 闹钟</string>
-    <string name="volume_steps_dtmf_title">音量调整级别: 双音多频</string>
-    <string name="volume_steps_music_title">音量级别: 媒体</string>
-    <string name="volume_steps_notification_title">音量调整级别: 通知音量</string>
-    <string name="volume_steps_ring_title">音量调整级别: 铃声</string>
-    <string name="volume_steps_system_title">音量调整级别: 系统</string>
-    <string name="volume_steps_voice_call_title">音量调整级别: 通话</string>
-    <string name="volume_steps_reset">重置</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">运营商名称</string>
     <string name="carrier_label_settings_summary">自定义运营商名称</string>
@@ -653,18 +653,35 @@
     <string name="show_carrier_keyguard">锁屏界面</string>
     <string name="show_carrier_statusbar">状态栏</string>
     <string name="show_carrier_enabled">上传和下载</string>
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Monet 引擎</string>
-    <string name="monet_engine_settings_summary">自定义颜色，颜色，亮度</string>
-    <string name="color_override_title">自定义颜色选择器</string>
-    <string name="color_override_default_summary">使用壁纸颜色</string>
-    <string name="custom_color_override_summary_placeholder">        选择颜色： <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>。设置一个空值使用壁纸颜色。
-    </string>
-    <string name="invalid_color_input">无效的颜色输入！</string>
-    <string name="white_luminance_title">亮度</string>
-    <string name="accurate_shades_title">使用准确的阴影</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">主题设置</string>
+    <string name="monet_settings_sammary">自定义Monet引擎的一些额外设置</string>
+    <string name="theme_style_title">主题样式</string>
+    <string name="theme_style_tonal_spot">Tonal Spot (默认)</string>
+    <string name="theme_style_vibrant">鲜亮</string>
+    <string name="theme_style_expressive">扩展性</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">彩虹</string>
+    <string name="theme_style_fruit_salad">水果沙拉</string>
+    <string name="theme_style_muted">已设为静音</string>
+    <string name="theme_style_content">内容</string>
+    <string name="color_source_title">色源</string>
+    <string name="color_source_both">两者都(默认)</string>
+    <string name="color_source_home">主题壁纸</string>
+    <string name="color_source_lock">锁屏壁纸</string>
+    <string name="color_source_preset">预设值</string>
+    <string name="accent_color_title">强调色</string>
+    <string name="accent_color_summary">覆盖默认强调色</string>
+    <string name="accent_background_title">强调色背景</string>
+    <string name="accent_background_summary">为背景选择不同的强调色</string>
+    <string name="bg_color_title">背景颜色</string>
+    <string name="bg_color_summary">覆盖默认强调色</string>
+    <string name="luminance_factor_title">亮度</string>
+    <string name="luminance_factor_summary">更高的值生成更亮的颜色</string>
     <string name="chroma_factor_title">饱和度</string>
-    <string name="linear_lightness_title">使用自定义亮度刻度</string>
+    <string name="chroma_factor_summary">更高的值生成更亮的颜色</string>
+    <string name="tint_background_title">强调背景</string>
+    <string name="tint_background_summary">让亮度和色彩选择也会影响背景颜色</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">使用自定义主题</string>
     <string name="custom_theme_black">黑色</string>
@@ -672,21 +689,22 @@
     <string name="custom_theme_vivid">生动（莫奈）</string>
     <string name="custom_theme_snowpaint">雪中的绘画</string>
     <string name="custom_theme_espresso">浓咖啡</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons">组合信号图标</string>
-    <string name="combined_status_bar_signal_icons_summary">在状态栏中实现组合信号图标</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">蓝牙电池状态</string>
     <string name="bluetooth_battery_summary">显示当前连接蓝牙设备的电量 (如果设备支持)</string>
-    <!-- Screen off UDFPS -->
-    <string name="screen_off_udfps_title">息屏指纹</string>
-    <string name="screen_off_udfps_summary">当屏幕关闭时保持屏下指纹开启</string>
+    <!-- Preference and settings suggestion title text for screen off UDFPS [CHAR LIMIT=60]-->
+    <string name="ambient_display_screen_off_udfps_title">始终在指纹上</string>
+    <!-- Summary text for screen off UDFPS [CHAR LIMIT=NONE]-->
+    <string name="ambient_display_screen_off_udfps_summary">允许锁定屏幕关闭。\n启用可能会导致意外唤醒</string>
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">控制中心设置磁贴需要解锁</string>
     <string name="qstile_requires_unlocking_summary">以下的控制中心磁贴需要解锁，然后您可以从锁定屏幕中启用：\n飞行模式，移动数据，NFC，热点，USB 网络共享和位置</string>
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">屏下指纹触觉反馈</string>
     <string name="udfps_haptic_feedback_summary">触摸屏下指纹时振动</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">通知数量</string>
+    <string name="status_bar_notif_count_summary">在状态栏通知图标右下角显示待处理通知的数量</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">麦克风和相机隐私指示器</string>
     <string name="mic_camera_privacy_indicator_summary">当任何应用使用麦克风或相机时显示单独的指示器</string>
@@ -741,18 +759,21 @@
     <string name="visualizer_center_mirrored_summary">将可视化器设置为中心镜像模式</string>
     <string name="pulse_vertical_mirror_title">垂直镜像</string>
     <string name="pulse_vertical_mirror_summary">创建其他脉冲并垂直翻转</string>
-    <!-- Game Space -->
+    <!-- Game space -->
     <string name="game_space_title">游戏空间</string>
     <string name="game_space_summary">提升您的游戏体验</string>
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">波纹效果</string>
     <string name="enable_fingerprint_ripple_effect_summary">使用指纹解锁时显示波纹效果</string>
     <!-- Unlimited Photos storage -->
-    <string name="use_photos_spoof_title">无限照片存储</string>
-    <string name="use_photos_spoof_summary">您的设备将被照片应用程序识别为 Pixel XL，以便以原始质量获得无限的照片存储空间</string>
+    <string name="photos_spoof_title">无限照片存储</string>
+    <string name="photos_spoof_summary">在谷歌相册中将您的设备伪装为 Pixel XL来以原始质量无限备份照片</string>
     <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">在游戏中解锁更高的 FPS</string>
-    <string name="use_games_spoof_summary">将您的设备伪装成特定游戏的不同型号以解锁更高的 FPS</string>
+    <string name="games_spoof_title">在游戏中解锁更高的帧数</string>
+    <string name="games_spoof_summary">在特定游戏中将您的设备伪装成不同机型以解锁更高的帧数</string>
+    <!-- Netflix Spoof -->
+    <string name="netflix_spoof_title">Netflix 伪装</string>
+    <string name="netflix_spoof_summary">将您的设备伪装为其他机型以获得 Netflix 认证</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">隐藏状态栏</string>
     <string name="hide_lockscreen_status_bar_summary">触摸状态栏以切换可见性</string>
@@ -861,6 +882,9 @@
     <!-- QS Transparency -->
     <string name="qs_transparency_title">背景透明度</string>
     <string name="qs_transparency_summary">设置快速设置背景透明度级别</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">显示 Wi-Fi 标准图标</string>
+    <string name="show_wifi_standard_icon_summary">在 Wi-Fi 信号指示器中显示 Wi-Fi 类型</string>
     <!--  screen, setting option summary to change custom timeout -->
     <string name="custom_timeout_summary_never">永不</string>
     <string name="custom_timeout_summary_5secs">5 秒</string>
@@ -906,9 +930,6 @@
     <!-- Alert Slider block -->
     <string name="block_alert_title">屏蔽三段式滑块</string>
     <string name="block_alert_summary">口袋模式将屏蔽三段式滑块</string>
-    <!-- Wi-Fi Standard icon -->
-    <string name="show_wifi_standard_icon_title">显示 Wi-Fi 标准图标</string>
-    <string name="show_wifi_standard_icon_summary">在 Wi-Fi 信号指示器中显示 Wi-Fi 类型</string>
     <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">电源菜单动画</string>
     <string name="power_menu_animation_dialog_title">选择电源菜单动画</string>
@@ -923,13 +944,10 @@
     <string name="power_menu_animation_translucent_top">半透明 (顶部)</string>
     <string name="power_menu_animation_translucent_bottom">半透明 (底部)</string>
     <string name="power_menu_animation_rotate">旋转</string>
-    <!-- Power menu and dialogs opacity -->
-    <string name="power_menu_transparency">电源菜单不透明度</string>
-    <string name="power_menu_dialog_dim">电源菜单背景阴影度</string>
     <!-- Changelog -->
     <string name="changelog_evolution_title">当前更新日志</string>
     <string name="changelog_evolution_summary">查看 ROM 的最近更改</string>
-    <!-- Squiggle animation -->
-    <string name="show_squiggle_animation_title">显示波形动画</string>
-    <string name="show_squiggle_animation_summary">在需要切换音乐、暂停音乐或移动进度条以使用后，显示媒体面板波形动画</string>
+    <!-- Parallel space -->
+    <string name="laboratory_parallel_space_title">平行空间</string>
+    <string name="laboratory_parallel_space_summary">允许同时运行同一应用程序的多个实例</string>
 </resources>
