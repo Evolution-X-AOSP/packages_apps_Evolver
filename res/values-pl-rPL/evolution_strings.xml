@@ -24,7 +24,8 @@
     <string name="system_settings_title">Opcje systemowe</string>
     <string name="themes_title">Motywy</string>
     <string name="torch_gestures_title">Gesty latarki</string>
-    <string name="flashlight_category">Latarka</string>
+    <string name="on_call_flashlight_category">Migaj latarką podczas połączenia</string>
+    <string name="notification_flashlight_category">Migaj latarką przy powiadomieniach</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Opcje wbudowane w system Android</string>
     <string name="dark_ui_mode_summary">Przeglądaj opcje ciemnego motywu</string>
@@ -375,7 +376,6 @@
     <string name="global_actions_title">Elementy menu zasilania</string>
     <string name="global_actions_screenshot">Zrzut ekranu</string>
     <string name="global_actions_on_the_go">Tryb \"w ruchu\"</string>
-    <string name="global_actions_flashlight">Latarka</string>
     <string name="global_actions_power">Zasilanie</string>
     <string name="global_actions_advanced">Zaawansowany restart</string>
     <string name="global_actions_restart">Uruchom ponownie</string>
@@ -407,6 +407,9 @@
     <string name="theme_customization_wifi_icon_summary">Ustaw niestandardowy wygląd ikony wifi</string>
     <string name="theme_customization_navbar_title">Styl paska nawigacji</string>
     <string name="theme_customization_navbar_summary">Ustaw własny styl paska nawigacji</string>
+    <!-- Custom Fonts -->
+    <string name="theme_customization_lock_clock_title">Czcionka zegara na ekranie blokady</string>
+    <string name="theme_customization_lock_clock_summary">Ustaw styl czcionki zegara ekranu blokady</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Pasek stanu</string>
     <string name="lockscreen_status_bar_summary">Pokaż pasek statusu na ekranie blokady</string>
@@ -570,6 +573,9 @@
     <string name="flashlight_on_call_ignore_dnd_summary">Informacja, czy lampa błyskowa ma migać w trybie nie przeszkadzać</string>
     <string name="flashlight_on_call_rate_title">Częstotliwość</string>
     <string name="flashlight_on_call_rate_summary">Częstotliwość migania podczas połączenia</string>
+    <!-- Blink flashlight for notifications -->
+    <string name="notification_torch_title">Migaj latarką przy powiadomieniach</string>
+    <string name="notification_torch_summary">Domyślnie. Istnieją ustawienia dla każdego kanału</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Tekst piosenki na pasku stanu</string>
     <string name="status_bar_lyric_summary">Pokaż tekst piosenki na pasku stanu (wymaga wsparcia aplikacji)</string>
@@ -645,18 +651,35 @@
     <string name="show_carrier_keyguard">Ekran blokady</string>
     <string name="show_carrier_statusbar">Pasek stanu</string>
     <string name="show_carrier_enabled">Obydwa</string>
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Silnik Monet</string>
-    <string name="monet_engine_settings_summary">Niestandardowy kolor, kolor, jasność</string>
-    <string name="color_override_title">Użyj własnego koloru</string>
-    <string name="color_override_default_summary">Użyj kolorów tapety</string>
-    <string name="custom_color_override_summary_placeholder">        Wybrany kolor: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Ustaw pustą wartość, aby użyć koloru tapety.
-    </string>
-    <string name="invalid_color_input">Nieprawidłowy kolor!</string>
-    <string name="white_luminance_title">Jasność</string>
-    <string name="accurate_shades_title">Używaj dokładnych odcieni</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Ustawienia motywu</string>
+    <string name="monet_settings_sammary">Kilka dodatkowych ustawień do dostosowania silnika monet</string>
+    <string name="theme_style_title">Styl motywu</string>
+    <string name="theme_style_tonal_spot">Punkt tonalny (domyślny)</string>
+    <string name="theme_style_vibrant">Intensywny</string>
+    <string name="theme_style_expressive">Ekspresywny</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Tęcza</string>
+    <string name="theme_style_fruit_salad">Sałatka owocowa</string>
+    <string name="theme_style_muted">Wyciszony</string>
+    <string name="theme_style_content">Zawartość</string>
+    <string name="color_source_title">Źródło kolorów</string>
+    <string name="color_source_both">Oba (domyślne)</string>
+    <string name="color_source_home">Tapeta domowa</string>
+    <string name="color_source_lock">Tapeta ekranu blokady</string>
+    <string name="color_source_preset">Predefiniowane</string>
+    <string name="accent_color_title">Kolor akcentu</string>
+    <string name="accent_color_summary">Nadpisz domyślny kolor akcentu</string>
+    <string name="accent_background_title">Akcentowane tło</string>
+    <string name="accent_background_summary">Wybierz inny kolor dla tła</string>
+    <string name="bg_color_title">Kolor tła</string>
+    <string name="bg_color_summary">Nadpisz domyślny kolor akcentu dla tła</string>
+    <string name="luminance_factor_title">Luminancja</string>
+    <string name="luminance_factor_summary">Wyższe wartości dają jaśniejsze kolory</string>
     <string name="chroma_factor_title">Barwność</string>
-    <string name="linear_lightness_title">Użyj niestandardowej skali jasności</string>
+    <string name="chroma_factor_summary">Wyższe wartości tworzą silniejsze kolory</string>
+    <string name="tint_background_title">Akcentowane tło</string>
+    <string name="tint_background_summary">Spraw, aby luminancja i wybór Chroma miały również wpływ na kolory tła</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Niestandardowy motyw</string>
     <string name="custom_theme_black">Czarny</string>
@@ -677,6 +700,9 @@
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">Wibracja dla czytnika linii papilarnych</string>
     <string name="udfps_haptic_feedback_summary">Wibruj przy naciśnięciu ikony czytnika linii papilarnych</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Licznik powiadomień</string>
+    <string name="status_bar_notif_count_summary">Wyświetl liczbę oczekujących powiadomień w prawym dolnym rogu ikony powiadomień na pasku stanu</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">Wskaźnik prywatności mikrofonu i kamery</string>
     <string name="mic_camera_privacy_indicator_summary">Pokaż oddzielny wskaźnik, gdy jakakolwiek aplikacja używa mikrofonu lub kamery</string>
@@ -854,6 +880,9 @@
     <!-- QS Transparency -->
     <string name="qs_transparency_title">Przeźroczystość tła</string>
     <string name="qs_transparency_summary">Ustaw poziom przezroczystości dla tła szybkich ustawień</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Pokaż ikonę typu Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Pokaż typ Wi-Fi w ikonie sygnału Wi-Fi</string>
     <!--  screen, setting option summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Nigdy</string>
     <string name="custom_timeout_summary_5secs">5 sekund</string>
