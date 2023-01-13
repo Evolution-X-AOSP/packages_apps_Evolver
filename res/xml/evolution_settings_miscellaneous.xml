@@ -8,6 +8,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
+    <!-- Google services -->
+    <Preference
+        android:key="gms_enabled_settings"
+        android:title="@string/gms_enabled_title"
+        android:summary="@string/gms_enabled_summary"
+        android:fragment="com.evolution.settings.fragments.GmsSwitch"/>
+
     <!-- Parallel Space -->
     <Preference
         android:key="parallel_space"
