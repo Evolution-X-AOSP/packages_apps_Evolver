@@ -241,18 +241,11 @@
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_text_show"
-            android:title="@string/qs_footer_text_show_title"
-            android:summary="@string/qs_footer_text_show_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingEditTextPreference
-            android:key="qs_footer_text_string"
-            android:title="@string/qs_footer_text_string_title"
-            android:summary="@string/qs_footer_text_string_summary"
-            android:dependency="qs_footer_text_show"
-            settings:controller="com.evolution.settings.qs.QSFooterTextPreferenceController" />
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="qs_show_data_usage"
+            android:title="@string/qs_show_data_usage_title"
+            android:summary="@string/qs_show_data_usage_summary"
+            android:defaultValue="true" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_show_user"
