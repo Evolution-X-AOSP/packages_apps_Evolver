@@ -25,6 +25,12 @@
         android:key="ambient_display"
         android:title="@string/ambient_display_category">
 
+        <Preference
+            android:key="ambient_customization"
+            android:title="@string/ambient_text_category_title"
+            android:summary="@string/ambient_text_category_summary"
+            android:fragment="com.evolution.settings.fragments.AmbientCustomizations" />
+
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="pulse_on_new_tracks"
             android:title="@string/pulse_on_new_tracks_title"
