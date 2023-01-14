@@ -5,41 +5,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/qs_tile_layout_title">
 
-    <com.evolution.settings.preference.SystemSettingSeekBarPreference
-        android:key="qs_layout_columns"
-        android:title="@string/qs_columns_portrait_title"
-        android:defaultValue="2"
-        android:max="6"
-        settings:min="2" />
-
-    <com.evolution.settings.preference.SystemSettingSeekBarPreference
-        android:key="qs_layout_columns_landscape"
-        android:title="@string/qs_columns_landscape_title"
-        android:defaultValue="4"
-        android:max="8"
-        settings:min="2" />
-
-    <com.evolution.settings.preference.SystemSettingSeekBarPreference
-        android:key="qs_layout_rows"
-        android:title="@string/qs_rows_portrait_title"
-        android:defaultValue="4"
-        android:max="6"
-        settings:min="2" />
-
-    <com.evolution.settings.preference.SystemSettingSeekBarPreference
-        android:key="qs_layout_rows_landscape"
-        android:title="@string/qs_rows_landscape_title"
-        android:defaultValue="2"
-        android:max="2"
-        settings:min="1" />
-
-    <com.evolution.settings.preference.SystemSettingSeekBarPreference
-        android:key="qqs_layout_rows"
-        android:title="@string/qqs_rows_portrait_title"
-        android:defaultValue="2"
-        android:max="6"
-        settings:min="1" />
-
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="qs_tile_label_hide"
         android:title="@string/qs_tile_hide_label_title"
@@ -51,5 +16,35 @@
         android:title="@string/qs_tile_vertical_layout_title"
         android:summary="@string/qs_tile_vertical_layout_summary"
         android:defaultValue="false" />
+        
+    <PreferenceCategory
+        android:key="tiles_layout"
+        android:title="@string/qs_tiles_layout_category">
+
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="qs_layout_columns"
+            android:title="@string/qs_columns_portrait_title"
+            android:defaultValue="2"
+            android:max="6"
+            settings:min="2" />
+
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="qs_layout_rows"
+            android:title="@string/qs_rows_portrait_title"
+            android:defaultValue="4"
+            android:max="6"
+            settings:min="2" />
+
+        <com.evolution.settings.preference.CustomSeekBarPreference
+            android:key="qqs_layout_rows"
+            android:title="@string/qqs_rows_portrait_title"
+            android:defaultValue="2"
+            android:max="5"
+            settings:min="1" />
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:key="apply_change_button"
+            android:layout="@layout/qs_tile_apply_change_button" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
