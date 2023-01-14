@@ -114,4 +114,26 @@
 
     </PreferenceCategory>
 
+    <!-- Lockscreen bottom shortcuts -->
+    <PreferenceCategory
+        android:title="@string/lockscreen_shortcut_category">
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="lockscreen_shortcut_start"
+            android:title="@string/lockscreen_shortcut_start_title"
+            android:summary="%s"
+            android:entries="@array/lockscreen_shortcut_entries"
+            android:entryValues="@array/lockscreen_shortcut_values"
+            android:defaultValue="1" />
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="lockscreen_shortcut_end"
+            android:title="@string/lockscreen_shortcut_end_title"
+            android:summary="%s"
+            android:entries="@array/lockscreen_shortcut_entries"
+            android:entryValues="@array/lockscreen_shortcut_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
