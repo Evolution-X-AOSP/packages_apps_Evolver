@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/qs_tile_layout_title">
+
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="qs_layout_columns"
+        android:title="@string/qs_columns_portrait_title"
+        android:defaultValue="2"
+        android:max="6"
+        settings:min="2" />
+
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="qs_layout_columns_landscape"
+        android:title="@string/qs_columns_landscape_title"
+        android:defaultValue="4"
+        android:max="8"
+        settings:min="2" />
+
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="qs_layout_rows"
+        android:title="@string/qs_rows_portrait_title"
+        android:defaultValue="4"
+        android:max="6"
+        settings:min="2" />
+
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="qs_layout_rows_landscape"
+        android:title="@string/qs_rows_landscape_title"
+        android:defaultValue="2"
+        android:max="2"
+        settings:min="1" />
+
+    <com.evolution.settings.preference.SystemSettingSeekBarPreference
+        android:key="qqs_layout_rows"
+        android:title="@string/qqs_rows_portrait_title"
+        android:defaultValue="2"
+        android:max="6"
+        settings:min="1" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="qs_tile_vertical_layout"
+        android:title="@string/qs_tile_vertical_layout_title"
+        android:summary="@string/qs_tile_vertical_layout_summary"
+        android:defaultValue="false" />
+
+</PreferenceScreen>
