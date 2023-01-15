@@ -37,8 +37,8 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -49,11 +49,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class StatusBar extends SettingsPreferenceFragment implements
+public class StatusBar extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "StatusBar";
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
-
     private static final String KEY_NOTIFICATION_COUNT = "status_bar_notif_count";
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
@@ -70,9 +70,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SystemSettingListPreference mStatusBarClock;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_status_bar;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_status_bar);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final Context mContext = getActivity().getApplicationContext();
@@ -150,6 +154,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

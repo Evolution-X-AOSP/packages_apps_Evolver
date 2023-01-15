@@ -33,17 +33,25 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 
-public class GmsSwitch extends SettingsPreferenceFragment {
+public class GmsSwitch extends DashboardFragment {
 
     private static final String TAG = "GmsSwitch";
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_gms_enabled;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+    }
 
-        addPreferencesFromResource(R.xml.evolution_settings_gms_enabled);
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     @Override

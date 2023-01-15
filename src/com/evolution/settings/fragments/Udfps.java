@@ -37,10 +37,9 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
-
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -48,17 +47,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class Udfps extends SettingsPreferenceFragment implements
+public class Udfps extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "Udfps";
     private static final String UDFPS_CUSTOMIZATION = "udfps_customization";
 
     private PreferenceCategory mUdfpsCustomization;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_udfps;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_udfps);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
@@ -80,6 +84,11 @@ public class Udfps extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

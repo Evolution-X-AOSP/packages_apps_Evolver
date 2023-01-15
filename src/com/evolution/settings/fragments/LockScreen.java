@@ -40,8 +40,8 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.udfps.UdfpsUtils;
 
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -51,9 +51,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class LockScreen extends SettingsPreferenceFragment implements
+public class LockScreen extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "LockScreen";
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String FINGERPRINT_CATEGORY = "lockscreen_fingerprint_category";
     private static final String SHORTCUT_START_KEY = "lockscreen_shortcut_start";
@@ -78,9 +79,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
     SystemSettingListPreference mEndShortcut;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_lockscreen;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_lockscreen);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -210,6 +215,11 @@ public class LockScreen extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

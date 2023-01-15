@@ -36,28 +36,34 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
 import com.evolution.settings.preference.SystemSettingMainSwitchPreference;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SearchIndexable
-public class NetworkTrafficSettings extends SettingsPreferenceFragment implements
+public class NetworkTrafficSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String TAG = "NetworkTrafficSettings";
 
     private SystemSettingSwitchPreference mThreshold;
     private SystemSettingMainSwitchPreference mNetMonitor;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_network_traffic;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_network_traffic);
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
@@ -98,6 +104,11 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment implement
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
