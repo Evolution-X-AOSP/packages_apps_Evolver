@@ -123,15 +123,15 @@ public class AlarmBlocker extends SettingsPreferenceFragment implements
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle icicle) {
         mInflater = inflater;
         setHasOptionsMenu(true);
         return inflater.inflate(R.layout.blocker, container, false);
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onViewCreated(View view, Bundle icicle) {
+        super.onViewCreated(view, icicle);
 
         boolean enabled = Settings.Global.getInt(getContentResolver(),
                 Settings.Global.ALARM_BLOCKING_ENABLED, 0) == 1;
@@ -182,14 +182,14 @@ public class AlarmBlocker extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         getActivity().setTitle(getString(R.string.alarm_blocker_title));
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onActivityCreated(Bundle icicle) {
+        super.onActivityCreated(icicle);
 
         mAlarmState = new HashMap<String, Boolean>();
         updateSeenAlarmsList();

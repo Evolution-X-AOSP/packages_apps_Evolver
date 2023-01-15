@@ -33,20 +33,18 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.colorpicker.ColorPickerPreference;
 
 @SearchIndexable
-public class Pulse extends SettingsPreferenceFragment implements
+public class Pulse extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = Pulse.class.getSimpleName();
-
+    private static final String TAG = "Pulse";
     private static final String AMBIENT_PULSE_ENABLED_KEY = "ambient_pulse_enabled";
     private static final String LOCKSCREEN_PULSE_ENABLED_KEY = "lockscreen_pulse_enabled";
     private static final String NAVBAR_PULSE_ENABLED_KEY = "navbar_pulse_enabled";
@@ -79,10 +77,13 @@ public class Pulse extends SettingsPreferenceFragment implements
     private SwitchPreference mPulseSmoothing;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_pulse;
+    }
 
-        addPreferencesFromResource(R.xml.evolution_settings_pulse);
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
 
         ContentResolver resolver = getContext().getContentResolver();
 
@@ -220,6 +221,11 @@ public class Pulse extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

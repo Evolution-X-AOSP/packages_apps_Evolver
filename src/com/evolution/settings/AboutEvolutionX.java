@@ -23,19 +23,19 @@ import android.os.Bundle;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 
-public class AboutEvolutionX extends SettingsPreferenceFragment {
+public class AboutEvolutionX extends DashboardFragment {
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.EVOLVER;
+    private static final String TAG = "AboutEvolutionX";
+
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_about;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.evolution_settings_about);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
     }
 
     @Override
@@ -46,5 +46,15 @@ public class AboutEvolutionX extends SettingsPreferenceFragment {
     @Override
     public void setDividerHeight(int height) {
         super.setDividerHeight(0);
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 }

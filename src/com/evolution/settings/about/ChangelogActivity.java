@@ -21,8 +21,8 @@ import com.android.settingslib.widget.R;
 
 public class ChangelogActivity extends CollapsingToolbarBaseActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         getFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, new ChangelogFragment())
                 .commit();

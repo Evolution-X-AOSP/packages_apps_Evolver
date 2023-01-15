@@ -47,7 +47,7 @@ import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.widget.FooterPreference;
 import com.android.settingslib.search.SearchIndexable;
@@ -62,10 +62,12 @@ import java.util.List;
 import java.util.Map;
 
 @SearchIndexable
-public class SensorBlockSettings extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceClickListener {
+public class SensorBlockSettings extends DashboardFragment implements
+        Preference.OnPreferenceClickListener {
 
     private static final int DIALOG_BLOCKED_APPS = 1;
+
+    private static final String TAG = "SensorBlockSettings";
     private static final String SENSOR_BLOCK = "sensor_block";
     private static final String SENSOR_BLOCK_FOOTER = "sensor_block_footer";
 
@@ -79,10 +81,13 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
     private Context mContext;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // Get launch-able applications
-        addPreferencesFromResource(R.xml.evolution_settings_sensor_block);
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_sensor_block;
+    }
+
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
 
         getPreferenceScreen().addPreference(new FooterPreference.Builder(getActivity()).setTitle(
                 R.string.add_sensor_block_package_summary).build());
@@ -108,19 +113,6 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
     public void onResume() {
         super.onResume();
         refreshCustomApplicationPrefs();
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.EVOLVER;
-    }
-
-    @Override
-    public int getDialogMetricsCategory(int dialogId) {
-        if (dialogId == DIALOG_BLOCKED_APPS) {
-            return MetricsEvent.EVOLVER;
-        }
-        return 0;
     }
 
     /**
@@ -324,6 +316,24 @@ public class SensorBlockSettings extends SettingsPreferenceFragment
         }
         Settings.System.putString(getContentResolver(),
                 setting, value);
+    }
+
+    @Override
+    public int getDialogMetricsCategory(int dialogId) {
+        if (dialogId == DIALOG_BLOCKED_APPS) {
+            return MetricsEvent.EVOLVER;
+        }
+        return 0;
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

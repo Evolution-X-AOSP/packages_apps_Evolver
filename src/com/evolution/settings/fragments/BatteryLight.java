@@ -29,19 +29,19 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
-
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
-
 import com.evolution.settings.preference.colorpicker.SystemSettingColorPickerPreference;
 
 @SearchIndexable
-public class BatteryLight extends SettingsPreferenceFragment implements
+public class BatteryLight extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String TAG = "BatteryLight";
 
     private SystemSettingColorPickerPreference mLowColor;
     private SystemSettingColorPickerPreference mMediumColor;
@@ -52,9 +52,13 @@ public class BatteryLight extends SettingsPreferenceFragment implements
     private PreferenceCategory mColorCategory;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.evolution_settings_battery_light);
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_battery_light;
+    }
+
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
 
         PreferenceScreen prefScreen = getPreferenceScreen();
         mColorCategory = (PreferenceCategory) findPreference("battery_light_cat");
@@ -145,6 +149,11 @@ public class BatteryLight extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

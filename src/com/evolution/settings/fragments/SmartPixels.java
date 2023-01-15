@@ -33,19 +33,21 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 
-public class SmartPixels extends SettingsPreferenceFragment {
+public class SmartPixels extends DashboardFragment {
 
     private static final String TAG = "SmartPixels";
-
     private static final String SMART_PIXELS_FOOTER = "smart_pixels_footer";
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_smart_pixels;
+    }
 
-        addPreferencesFromResource(R.xml.evolution_settings_smart_pixels);
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
 
         findPreference(SMART_PIXELS_FOOTER).setTitle(R.string.smart_pixels_warning_text);
     }
@@ -53,5 +55,10 @@ public class SmartPixels extends SettingsPreferenceFragment {
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 }

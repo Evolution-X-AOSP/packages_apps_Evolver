@@ -32,16 +32,16 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 @SearchIndexable
-public class BatteryBar extends SettingsPreferenceFragment
-            implements Preference.OnPreferenceChangeListener {
+public class BatteryBar extends DashboardFragment implements
+            Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "BatteryBar";
     private static final String PREF_BATT_BAR = "statusbar_battery_bar";
 
     private SwitchPreference mBatteryBar;
@@ -50,9 +50,13 @@ public class BatteryBar extends SettingsPreferenceFragment
     private Handler mHandler;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.evolution_settings_battery_bar);
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_battery_bar;
+    }
+
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefScreen = getPreferenceScreen();
@@ -96,6 +100,11 @@ public class BatteryBar extends SettingsPreferenceFragment
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

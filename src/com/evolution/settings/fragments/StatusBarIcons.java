@@ -50,6 +50,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.ThemeUtils;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
@@ -57,14 +58,12 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.bumptech.glide.Glide;
 
-import com.android.internal.util.evolution.ThemeUtils;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Arrays;
 
 import org.json.JSONObject;
 import org.json.JSONException;
@@ -86,8 +85,8 @@ public class StatusBarIcons extends SettingsPreferenceFragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         getActivity().setTitle(R.string.theme_customization_icon_pack_title);
 
         mThemeUtils = new ThemeUtils(getActivity());
@@ -97,7 +96,7 @@ public class StatusBarIcons extends SettingsPreferenceFragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-            @Nullable Bundle savedInstanceState) {
+            @Nullable Bundle icicle) {
         View view = inflater.inflate(
                 R.layout.item_view, container, false);
 

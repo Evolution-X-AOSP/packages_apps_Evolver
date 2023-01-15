@@ -42,8 +42,8 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -55,11 +55,10 @@ import com.evolution.settings.preference.SystemSettingSwitchPreference;
 import java.util.Date;
 
 @SearchIndexable
-public class Clock extends SettingsPreferenceFragment implements
+public class Clock extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "Clock";
-
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
     private static final String CLOCK_DATE_DISPLAY = "status_bar_clock_date_display";
     private static final String CLOCK_DATE_POSITION = "status_bar_clock_date_position";
@@ -77,9 +76,13 @@ public class Clock extends SettingsPreferenceFragment implements
     private ListPreference mClockDateFormat;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_status_bar_clock;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_status_bar_clock);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final Context mContext = getActivity().getApplicationContext();
@@ -220,6 +223,11 @@ public class Clock extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

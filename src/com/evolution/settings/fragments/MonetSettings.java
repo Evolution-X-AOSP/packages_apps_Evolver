@@ -26,7 +26,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.R;
 import com.android.settingslib.search.SearchIndexable;
@@ -41,9 +41,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 @SearchIndexable
-public class MonetSettings extends SettingsPreferenceFragment implements
+public class MonetSettings extends DashboardFragment implements
         OnPreferenceChangeListener {
 
+    private static final String TAG = "MonetSettings";
     private static final String OVERLAY_CATEGORY_ACCENT_COLOR =
             "android.theme.customization.accent_color";
     private static final String OVERLAY_CATEGORY_SYSTEM_PALETTE =
@@ -85,9 +86,13 @@ public class MonetSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mTintBackgroundPref;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_monet;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_monet);
 
         mThemeStylePref = findPreference(PREF_THEME_STYLE);
         mColorSourcePref = findPreference(PREF_COLOR_SOURCE);
@@ -343,6 +348,11 @@ public class MonetSettings extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
