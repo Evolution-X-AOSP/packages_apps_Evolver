@@ -36,10 +36,9 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
-
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -51,9 +50,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class Notifications extends SettingsPreferenceFragment implements
+public class Notifications extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "Notifications";
     private static final String CHARGING_LIGHTS_PREF = "charging_light";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String FLASH_ON_CALL_OPTIONS = "on_call_flashlight_category";
@@ -78,9 +78,13 @@ public class Notifications extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mFlashOnCallIgnoreDND;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_notifications;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_notifications);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final Context mContext = getActivity().getApplicationContext();
@@ -223,6 +227,11 @@ public class Notifications extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

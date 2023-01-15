@@ -36,10 +36,9 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
-
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -48,11 +47,10 @@ import com.evolution.settings.preference.SystemSettingListPreference;
 import java.util.List;
 
 @SearchIndexable
-public class QuickSettings extends SettingsPreferenceFragment implements
+public class QuickSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
-    public static final String TAG = "QuickSettings";
-
+    private static final String TAG = "QuickSettings";
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
     private static final String KEY_PREF_BATTERY_ESTIMATE = "qs_show_battery_estimate";
@@ -66,9 +64,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mShowAutoBrightness;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_quicksettings;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_quicksettings);
 
         final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = mContext.getContentResolver();
@@ -130,6 +132,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

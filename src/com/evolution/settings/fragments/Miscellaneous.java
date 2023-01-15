@@ -36,8 +36,8 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -47,17 +47,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class Miscellaneous extends SettingsPreferenceFragment implements
+public class Miscellaneous extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "Miscellaneous";
     private static final String SMART_PIXELS = "smart_pixels";
 
     private Preference mSmartPixels;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_miscellaneous;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_miscellaneous);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -77,6 +82,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
