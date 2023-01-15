@@ -37,8 +37,8 @@ import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.SecureSettingListPreference;
@@ -47,9 +47,10 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalTime;
 
 @SearchIndexable
-public class AODSchedule extends SettingsPreferenceFragment implements
+public class AODSchedule extends DashboardFragment implements
         Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "AODSchedule";
     private static final String MODE_KEY = "doze_always_on_auto_mode";
     private static final String SINCE_PREF_KEY = "doze_always_on_auto_since";
     private static final String TILL_PREF_KEY = "doze_always_on_auto_till";
@@ -59,9 +60,14 @@ public class AODSchedule extends SettingsPreferenceFragment implements
     private Preference mTillPref;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_always_on_display_schedule;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_always_on_display_schedule);
+
         PreferenceScreen screen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
@@ -181,6 +187,11 @@ public class AODSchedule extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
