@@ -16,35 +16,30 @@
 
 package com.evolution.settings;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
-import android.os.Bundle;
-import android.preference.Preference;
-import android.provider.SearchIndexableResource;
-
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @SearchIndexable
-public class EvolutionSettings extends SettingsPreferenceFragment {
+public class EvolutionSettings extends DashboardFragment {
+
+    private static final String TAG = "EvolutionSettings";
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings);
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings;
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

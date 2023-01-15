@@ -48,8 +48,8 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -64,11 +64,12 @@ import java.util.List;
 import java.util.Map;
 
 @SearchIndexable
-public class HeadsUpSettings extends SettingsPreferenceFragment implements
+public class HeadsUpSettings extends DashboardFragment implements
         Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
 
     private static final int DIALOG_STOPLIST_APPS = 0;
     private static final int DIALOG_BLACKLIST_APPS = 1;
+    private static final String TAG = "HeadsUpSettings";
     private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
 
     private PackageListAdapter mPackageAdapter;
@@ -85,9 +86,13 @@ public class HeadsUpSettings extends SettingsPreferenceFragment implements
     private Map<String, Package> mBlacklistPackages;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_heads_up;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_heads_up);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Context mContext = getActivity().getApplicationContext();
@@ -391,6 +396,11 @@ public class HeadsUpSettings extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

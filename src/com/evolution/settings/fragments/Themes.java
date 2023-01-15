@@ -38,7 +38,7 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
@@ -46,17 +46,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class Themes extends SettingsPreferenceFragment implements
+public class Themes extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String TAG = "Themes";
     private static final String KG_CUSTOM_CLOCK_COLOR_ENABLED = "kg_custom_clock_color_enabled";
 
     private SwitchPreference mKGCustomClockColor;
 
     @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.evolution_settings_themes;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_themes);
 
         Context mContext = getActivity().getApplicationContext();
         ContentResolver resolver = mContext.getContentResolver();
@@ -85,6 +90,11 @@ public class Themes extends SettingsPreferenceFragment implements
     @Override
     public int getMetricsCategory() {
         return MetricsEvent.EVOLVER;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
