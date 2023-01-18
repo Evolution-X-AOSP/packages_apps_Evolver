@@ -44,6 +44,8 @@
     <string name="large_string">Mare</string>
     <string name="medium_string">Mediu</string>
     <string name="xlarge_string">Foarte mare</string>
+    <string name="enable">Activare</string>
+    <string name="disable">Dezactivare</string>
     <string name="disabled">Dezactivat</string>
     <string name="enable_first">Activați mai întâi</string>
     <string name="led_color_green">Verde</string>
@@ -55,6 +57,7 @@
     <!-- Units -->
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">secunde</string>
+    <string name="unit_size">sp</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Pornit</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -177,7 +180,7 @@
     <string name="vowifi_icon_summary">Afişare pictogramă VoWiFi atunci când este disponibilă</string>
     <string name="volte_vowifi_override_title">Suprascriere VoWiFi</string>
     <string name="volte_vowifi_override_summary">Ascunde VoLTE când este disponibil VoWiFi. Acest lucru suprascrie stilul vechi al pictogramei de semnal pentru VoWiFi</string>
-    <!-- Show old style mobile data icon -->
+    <!-- Show old-style mobile data icon -->
     <string name="use_old_mobiletype_title">Folosește pictograme vechi pentru date mobile</string>
     <string name="use_old_mobiletype_summary">Se afișează pictograma tipului de rețea mobilă deasupra indicatorului de semnal</string>
     <!-- Quick Settings brightness slider -->
@@ -362,11 +365,9 @@
     <string name="wallpaper_color">Culoarea imaginii de fundal</string>
     <string name="custom_color">Culoare personalizată</string>
     <string name="edge_light_custom_color_title">Culoare personalizată</string>
-    <!-- QS footer text -->
-    <string name="qs_footer_text_show_title">Afișare text subsol setări rapide</string>
-    <string name="qs_footer_text_show_summary">Afișare text în partea de jos a panoului</string>
-    <string name="qs_footer_text_string_title">Personalizați textul subsolului</string>
-    <string name="qs_footer_text_string_summary">Setează gol pentru implicit Spark</string>
+    <!-- QS footer data usage -->
+    <string name="qs_show_data_usage_title">Arată utilizarea datelor</string>
+    <string name="qs_show_data_usage_summary">Afișare utilizare zilnică a datelor celulare/Wi-Fi în subsolul setărilor rapide</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Lansare aplicație de muzică la conectarea căștilor</string>
     <string name="headset_connect_player_summary">Lansează aplicația implicită de muzică când se conectează căștile audio</string>
@@ -611,7 +612,7 @@
     <string name="torch_power_button_gesture_dt">Atingeți de două ori butonul de pornire (răspuns mai lent la o singură atingere), Dezactivează atingerea dublă a butonului de alimentare pentru cameră.</string>
     <string name="torch_power_button_gesture_dt_toast">Gestul de accesare a Camerei foto este dezactivat acum</string>
     <string name="torch_power_button_gesture_lp">Apăsare lungă pe butonul de alimentare</string>
-    <!-- Power menu on lockscreen -->
+    <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Dezactivare meniu de alimentare pe ecranul de blocare</string>
     <string name="lockscreen_power_menu_disabled_summary">Această opţiune va dezactiva meniul de alimentare doar pe ecranele de blocare securizate</string>
     <!-- Toast app icon -->
@@ -640,7 +641,7 @@
     <string name="qs_footer_settings_icon_title">Scurtătură setări</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Afișare informații CPU</string>
-    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Suprapunerea de ecran afișează informația curentă a CPU</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Etichetă operator</string>
@@ -801,7 +802,7 @@
     <string name="smart_pixels_percent">Procentajul de pixeli pentru dezactivare</string>
     <string name="smart_pixels_shift_title">Protecție Burn-in</string>
     <string name="smart_pixels_shift_summary">Împiedică deteriorarea pixelilor pe dispozitivele OLED prin deplasarea acestora la intervale frecvente</string>
-    <!-- Statusbar logo -->
+    <!-- Status bar logo -->
     <string name="status_bar_logo_title">Siglă</string>
     <string name="status_bar_logo_summary">Activați pentru a afișa sigla în bara de stare</string>
     <string name="status_bar_logo_primary_switch_title">Utilizați logo-ul</string>
@@ -873,15 +874,12 @@
     <!-- Charging animation -->
     <string name="charging_animation_title">Animație la încărcare</string>
     <string name="charging_animation_summary">Se afișează o animație atunci când dispozitivul este conectat la încărcător</string>
-    <!-- Lockscreen clock color -->
-    <string name="lockscreen_clock_color_title">Culoare ceas ecran de blocare</string>
-    <string name="lockscreen_clock_color_summary">Utilizați culoarea secundară pentru ceasul ecranului de blocare, dacă este dezactivat, va folosi un accent de culoare</string>
-    <!-- Statusbar colored icons -->
+    <!-- Lock screen clock color -->
+    <string name="kg_custom_clock_color_enabled_title">Culoare personalizată a ceasului ecranului de blocare</string>
+    <string name="kg_custom_clock_color_title">Culoarea ceasului</string>
+    <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">Pictograme colorate</string>
     <string name="statusbar_colored_icons_summary">Utilizați pictogramele aplicației pentru pictogramele de notificare din bara de stare</string>
-    <!-- QS Transparency -->
-    <string name="qs_transparency_title">Transparență setări rapide</string>
-    <string name="qs_transparency_summary">Alegeți cât de transparente doriți să fiți setările rapide (necesită repornirea interfeței sistemului)</string>
     <!-- Wi-Fi Standard icon -->
     <string name="show_wifi_standard_icon_title">Afișare pictogramă tip Wi-Fi</string>
     <string name="show_wifi_standard_icon_summary">Arată tipul Wi-Fi în indicatorul de semnal Wi-Fi</string>
@@ -951,4 +949,39 @@
     <string name="laboratory_parallel_space_title">Spațiu paralel</string>
     <string name="laboratory_parallel_space_summary">Permite rularea mai multor instanțe ale aceleiași aplicații în paralel</string>
     <!-- Google services -->
+    <string name="gms_enabled_title">Servicii Google</string>
+    <string name="gms_enabled_summary">Control servicii Google și aplicații de bază</string>
+    <string name="gms_enabled_text">Înainte de a dezactiva serviciile Google și aplicațiile de bază, ar trebui să dezactivați \"Găsește-mi dispozitivul\" și verificarea în 2 pași pe contul dvs. Google. Este recomandat să păstrați această setare activată, altfel aplicațiile dependente de componentele Google vor fi afectate. Dacă întâmpinați orice probleme după schimbarea acestei setări, efectuați o resetare a fabricii.</string>
+    <!-- QS tiles layout -->
+    <string name="qs_layout_category_title">Aspect dale</string>
+    <string name="qs_tile_label_hide_title">Ascundere etichete</string>
+    <string name="qs_tile_label_hide_summary">Afișează doar pictogramele</string>
+    <string name="qs_tile_label_size_title">Dimensiune text etichetă</string>
+    <string name="qs_tile_layout_title">Aspect vertical</string>
+    <string name="qs_tile_layout_summary">Arată eticheta de mai jos de pictograma decât lângă pictogramă</string>
+    <string name="qs_columns_portrait_title">Coloane (portret)</string>
+    <string name="qs_columns_landscape_title">Coloane (peisaj)</string>
+    <!-- HeadsUp notifications importance threshold -->
+    <!--string name="hun_importance_none">None</string-->
+    <string name="hun_importance_title">Pragul de importanță</string>
+    <string name="hun_importance_min">Minim</string>
+    <string name="hun_importance_low">Scăzut</string>
+    <string name="hun_importance_default">Implicit</string>
+    <string name="hun_importance_high">Ridicat</string>
+    <string name="hun_importance_max">Maxim</string>
+    <!-- Lock screen bottom shortcuts -->
+    <string name="lockscreen_shortcut_category">Comenzi rapide de jos</string>
+    <string name="lockscreen_shortcut_start_title">Comanda rapidă din stânga</string>
+    <string name="lockscreen_shortcut_end_title">Comanda rapidă din dreapta</string>
+    <string name="lockscreen_shortcut_wallet">Portofel</string>
+    <string name="lockscreen_shortcut_home">Acasă</string>
+    <string name="lockscreen_shortcut_flashlight">Lanternă</string>
+    <string name="lockscreen_shortcut_qr">QR</string>
+    <string name="lockscreen_shortcut_camera">Cameră</string>
+    <string name="lockscreen_shortcut_none">Nimic</string>
+    <string name="lockscreen_shortcut_enforce_title">Comandă rapidă unică</string>
+    <string name="lockscreen_shortcut_enforce_summary">Forțează scurtătura aleasă să fie singura prioritate existentă\nSe va afișa nimic până când scurtătura aleasă este disponibilă</string>
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">Transparență setări rapide</string>
+    <string name="qs_transparency_summary">Alegeți cât de transparente doriți să fiți setările rapide (necesită repornirea interfeței sistemului)</string>
 </resources>
