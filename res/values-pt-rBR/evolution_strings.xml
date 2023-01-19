@@ -44,6 +44,8 @@
     <string name="large_string">Grande</string>
     <string name="medium_string">Médio</string>
     <string name="xlarge_string">Extra grande</string>
+    <string name="enable">Ativar</string>
+    <string name="disable">Desativar</string>
     <string name="disabled">Desativado</string>
     <string name="enable_first">Por favor, ative primeiro</string>
     <string name="led_color_green">Verde</string>
@@ -55,6 +57,7 @@
     <!-- Units -->
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">segundos</string>
+    <string name="unit_size">sp</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Ativado</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -177,7 +180,7 @@
     <string name="vowifi_icon_summary">Mostrar ícone VoWIFI quando disponível</string>
     <string name="volte_vowifi_override_title">Sobrepor VoWiFi</string>
     <string name="volte_vowifi_override_summary">Ocultar VoLTE quando o VoWiFi estiver disponível</string>
-    <!-- Show old style mobile data icon -->
+    <!-- Show old-style mobile data icon -->
     <string name="use_old_mobiletype_title">Usar ícones de dados móveis no estilo antigo</string>
     <string name="use_old_mobiletype_summary">Mostrar o indicador de rede móvel no topo da barra de sinal</string>
     <!-- Quick Settings brightness slider -->
@@ -362,11 +365,9 @@
     <string name="wallpaper_color">Cores do papel de parede</string>
     <string name="custom_color">Cor personalizada</string>
     <string name="edge_light_custom_color_title">Cor personalizada</string>
-    <!-- QS footer text -->
-    <string name="qs_footer_text_show_title">Texto do rodapé das configurações rápidas</string>
-    <string name="qs_footer_text_show_summary">Mostrar texto no rodapé das configurações rápidas</string>
-    <string name="qs_footer_text_string_title">Personalizar texto do rodapé</string>
-    <string name="qs_footer_text_string_summary">Definir como vazio para o padrão</string>
+    <!-- QS footer data usage -->
+    <string name="qs_show_data_usage_title">Mostrar uso de dados</string>
+    <string name="qs_show_data_usage_summary">Mostrar uso diário de dados móveis/Wi-Fi no rodapé das configurações rápidas</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Iniciar aplicativo de música ao conectar o fone de ouvido</string>
     <string name="headset_connect_player_summary">Abrir aplicativo de música padrão quando o fone de ouvido for conectado</string>
@@ -376,7 +377,6 @@
     <string name="global_actions_title">Itens do menu de energia</string>
     <string name="global_actions_screenshot">Captura de tela</string>
     <string name="global_actions_on_the_go">Modo On-The-Go</string>
-    <string name="global_actions_flashlight">Lanterna</string>
     <string name="global_actions_power">Liga/Desliga</string>
     <string name="global_actions_advanced">Menu de reinicialização avançada</string>
     <string name="global_actions_restart">Reiniciar</string>
@@ -409,7 +409,7 @@
     <string name="theme_customization_navbar_title">Estilo da barra de navegação</string>
     <string name="theme_customization_navbar_summary">Definir estilo personalizado para a barra de navegação</string>
     <!-- Custom Fonts -->
-    <string name="theme_customization_lock_clock_title">Fonte do relógio</string>
+    <string name="theme_customization_lock_clock_title">Fonte do relógio da tela de bloqueio</string>
     <string name="theme_customization_lock_clock_summary">Definir estilo da fonte do relógio</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Barra de status</string>
@@ -612,7 +612,7 @@
     <string name="torch_power_button_gesture_dt">Dois toques no botão liga/desliga (o toque duplo para a câmera ficará indisponível)</string>
     <string name="torch_power_button_gesture_dt_toast">O atalho para a câmera agora está desativado</string>
     <string name="torch_power_button_gesture_lp">Toque longo no botão liga/desliga</string>
-    <!-- Power menu on lockscreen -->
+    <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Desativar o menu de energia na tela de bloqueio</string>
     <string name="lockscreen_power_menu_disabled_summary">Esta opção vai desativar o acesso ao menu de energia apenas na tela de bloqueio</string>
     <!-- Toast app icon -->
@@ -641,7 +641,7 @@
     <string name="qs_footer_settings_icon_title">Atalho para as configurações</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Mostrar informações da CPU</string>
-    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Sobreposição de tela mostrando informações atuais da CPU</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Rótulo da operadora</string>
@@ -655,17 +655,17 @@
     <string name="show_carrier_statusbar">Barra de status</string>
     <string name="show_carrier_enabled">Ambos</string>
     <!-- Monet settings -->
-    <string name="monet_settings_title">Configurações de tema</string>
+    <string name="monet_settings_title">Configurações do tema Monet</string>
     <string name="monet_settings_sammary">Algumas configurações extras para personalizar o tema monet</string>
     <string name="theme_style_title">Estilo do tema</string>
-    <string name="theme_style_tonal_spot">Ponto Tonal (Padrão)</string>
+    <string name="theme_style_tonal_spot">Cores destacadas (padrão)</string>
     <string name="theme_style_vibrant">Vibrante</string>
     <string name="theme_style_expressive">Expressivo</string>
     <string name="theme_style_spritz">Spritz</string>
     <string name="theme_style_rainbow">Arco-íris</string>
     <string name="theme_style_fruit_salad">Salada de frutas</string>
-    <string name="theme_style_muted">Mudo</string>
-    <string name="theme_style_content">Conteúdo</string>
+    <string name="theme_style_muted">Neutro</string>
+    <string name="theme_style_content">Material</string>
     <string name="color_source_title">Fonte de cor</string>
     <string name="color_source_both">Ambos (Padrão)</string>
     <string name="color_source_home">Papal de parede</string>
@@ -703,6 +703,9 @@
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">Resposta tátil na impressão digital</string>
     <string name="udfps_haptic_feedback_summary">Vibrar ao tocar no ícone de impressão digital</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Contador de notificações</string>
+    <string name="status_bar_notif_count_summary">Mostrar número de notificações pendentes no ícone de notificação da barra de status</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">Indicador de privacidade do microfone e da câmera</string>
     <string name="mic_camera_privacy_indicator_summary">Mostrar indicador de privacidade quando um aplicativo usar o microfone ou câmera</string>
@@ -799,7 +802,7 @@
     <string name="smart_pixels_percent">Porcentagem de pixels a desativar</string>
     <string name="smart_pixels_shift_title">Proteção contra Burn-in</string>
     <string name="smart_pixels_shift_summary">Previne contra o efeito Burn-in em dispositivos com tela OLED</string>
-    <!-- Statusbar logo -->
+    <!-- Status bar logo -->
     <string name="status_bar_logo_title">Logo</string>
     <string name="status_bar_logo_summary">Mostrar logo na barra de status</string>
     <string name="status_bar_logo_primary_switch_title">Usar logo</string>
@@ -871,15 +874,12 @@
     <!-- Charging animation -->
     <string name="charging_animation_title">Animação de carregamento</string>
     <string name="charging_animation_summary">Exibir uma animação quando o dispositivo for conectado</string>
-    <!-- Lockscreen clock color -->
-    <string name="lockscreen_clock_color_title">Cor do relógio na tela de bloqueio</string>
-    <string name="lockscreen_clock_color_summary">Usar cor secundária para o relógio da tela de bloqueio, quando desativado será usado a cor de destaque</string>
-    <!-- Statusbar colored icons -->
+    <!-- Lock screen clock color -->
+    <string name="kg_custom_clock_color_enabled_title">Cor personalizada no relógio da tela de bloqueio</string>
+    <string name="kg_custom_clock_color_title">Cor do relógio</string>
+    <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">Ícones coloridos</string>
     <string name="statusbar_colored_icons_summary">Colorir ícones de notificações na barra de status</string>
-    <!-- QS Transparency -->
-    <string name="qs_transparency_title">Transparência do fundo</string>
-    <string name="qs_transparency_summary">Defina o nível de transparência para o fundo do painel de configurações rápidas</string>
     <!-- Wi-Fi Standard icon -->
     <string name="show_wifi_standard_icon_title">Mostrar ícone de frequência do Wi-Fi</string>
     <string name="show_wifi_standard_icon_summary">Mostrar a frequência da rede conectada no ícone de Wi-Fi</string>
@@ -935,9 +935,9 @@
     <string name="power_menu_animation_bottom">Inferior</string>
     <string name="power_menu_animation_top">Topo</string>
     <string name="power_menu_animation_xylon">Voar</string>
-    <string name="power_menu_animation_slide">Deslize</string>
+    <string name="power_menu_animation_slide">Deslizar</string>
     <string name="power_menu_animation_turn">Virar</string>
-    <string name="power_menu_animation_fly">Brilho</string>
+    <string name="power_menu_animation_fly">Crescer</string>
     <string name="power_menu_animation_card">3D</string>
     <string name="power_menu_animation_translucent_top">Translúcido (topo)</string>
     <string name="power_menu_animation_translucent_bottom">Translúcido (inferior)</string>
@@ -948,4 +948,40 @@
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Espaço Paralelo</string>
     <string name="laboratory_parallel_space_summary">Permite a execução de várias instâncias do mesmo aplicativo em paralelo</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Serviços do Google</string>
+    <string name="gms_enabled_summary">Controle os serviços e aplicativos do Google</string>
+    <string name="gms_enabled_text">Antes de desativar os serviços do Google e seus aplicativos principais, você deve desativar \"Encontrar Meu Dispositivo\" e verificação em duas etapas na sua conta Google. É altamente recomendável manter essa configuração ativada, caso contrário, os aplicativos que dependem dos serviços do Google serão afetados. Se você tiver algum problema depois de alterar essa configuração, execute uma redefinição de fábrica.</string>
+    <!-- QS tiles layout -->
+    <string name="qs_layout_category_title">Estilo dos blocos</string>
+    <string name="qs_tile_label_hide_title">Ocultar rótulo</string>
+    <string name="qs_tile_label_hide_summary">Mostrar somente o ícone no bloco</string>
+    <string name="qs_tile_label_size_title">Tamanho do rótulo</string>
+    <string name="qs_tile_layout_title">Estilo vertical</string>
+    <string name="qs_tile_layout_summary">Mostrar o texto embaixo dos ícones dos blocos</string>
+    <string name="qs_columns_portrait_title">Número de colunas (retrato)</string>
+    <string name="qs_columns_landscape_title">Número de colunas (paisagem)</string>
+    <!-- HeadsUp notifications importance threshold -->
+    <!--string name="hun_importance_none">None</string-->
+    <string name="hun_importance_title">Limite de importância</string>
+    <string name="hun_importance_min">Mínimo</string>
+    <string name="hun_importance_low">Baixo</string>
+    <string name="hun_importance_default">Padrão</string>
+    <string name="hun_importance_high">Alta</string>
+    <string name="hun_importance_max">Máximo</string>
+    <!-- Lock screen bottom shortcuts -->
+    <string name="lockscreen_shortcut_category">Atalhos inferiores</string>
+    <string name="lockscreen_shortcut_start_title">Atalho à esquerda</string>
+    <string name="lockscreen_shortcut_end_title">Atalho à direita</string>
+    <string name="lockscreen_shortcut_wallet">Carteira</string>
+    <string name="lockscreen_shortcut_home">Controle de casa</string>
+    <string name="lockscreen_shortcut_flashlight">Lanterna</string>
+    <string name="lockscreen_shortcut_qr">Código QR</string>
+    <string name="lockscreen_shortcut_camera">Câmera</string>
+    <string name="lockscreen_shortcut_none">Nenhum</string>
+    <string name="lockscreen_shortcut_enforce_title">Atalho único</string>
+    <string name="lockscreen_shortcut_enforce_summary">Força o atalho escolhido a ser a única prioridade existente\nNão irá mostrar nada até que o atalho escolhido específico esteja disponível</string>
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">Transparência do fundo</string>
+    <string name="qs_transparency_summary">Defina o nível de transparência para o fundo do painel de configurações rápidas</string>
 </resources>
