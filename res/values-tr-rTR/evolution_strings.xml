@@ -44,6 +44,8 @@
     <string name="large_string">Büyük</string>
     <string name="medium_string">Orta</string>
     <string name="xlarge_string">Çok büyük</string>
+    <string name="enable">Etkinleştir</string>
+    <string name="disable">Devre dışı bırak</string>
     <string name="disabled">Devre dışı</string>
     <string name="enable_first">Lütfen önce etkinleştirin</string>
     <string name="led_color_green">Yeşil</string>
@@ -55,6 +57,7 @@
     <!-- Units -->
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">saniye</string>
+    <string name="unit_size">sp</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Açık</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -175,7 +178,7 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="vowifi_icon_summary">VoWiFi kullanılabilir olduğunda simgesini göster</string>
     <string name="volte_vowifi_override_title">VoWiFi geçersiz kılma</string>
     <string name="volte_vowifi_override_summary">VoWiFi kullanılabilir olduğunda VoLTE\'yi gizle</string>
-    <!-- Show old style mobile data icon -->
+    <!-- Show old-style mobile data icon -->
     <string name="use_old_mobiletype_title">Eski stil mobil veri simgelerini kullan</string>
     <string name="use_old_mobiletype_summary">Mobil gösterge simgesini sinyal göstergesinin üstünde göster</string>
     <!-- Quick Settings brightness slider -->
@@ -360,11 +363,9 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="wallpaper_color">Duvar kağıdı rengi</string>
     <string name="custom_color">Özel renk</string>
     <string name="edge_light_custom_color_title">Özel renk</string>
-    <!-- QS footer text -->
-    <string name="qs_footer_text_show_title">Hızlı ayarlar alt bilgi metni</string>
-    <string name="qs_footer_text_show_summary">Hızlı ayarlar panelinin en altında metni görüntüle</string>
-    <string name="qs_footer_text_string_title">Altbilgi metnini özelleştir</string>
-    <string name="qs_footer_text_string_summary">Varsayılan \"Evolution X\" için boş olarak ayarlayın</string>
+    <!-- QS footer data usage -->
+    <string name="qs_show_data_usage_title">Veri kullanımını göster</string>
+    <string name="qs_show_data_usage_summary">Hızlı ayarlar alt bilgisinde günlük hücresel/Wi-Fi veri kullanımını göster</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Kulaklık takıldığında müzik uygulamasını başlat</string>
     <string name="headset_connect_player_summary">Kulaklık takıldığında varsayılan müzik uygulamasını başlat</string>
@@ -609,7 +610,7 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="torch_power_button_gesture_dt">Güç tuşuna çift tıklayarak fener açma (daha yavaş tek dokunma tepkisi), çift tıklama ile kamera açmayı devre dışı bırakır.</string>
     <string name="torch_power_button_gesture_dt_toast">Kamera açma hareketi şu anda devre dışı</string>
     <string name="torch_power_button_gesture_lp">Güç tuşuna uzun bas</string>
-    <!-- Power menu on lockscreen -->
+    <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Kilit ekranında güç menüsünü devre dışı bırak</string>
     <string name="lockscreen_power_menu_disabled_summary">Bu seçenek sadece güvenli kilit ekranlarında güç menüsünü devre dışı bırakır</string>
     <!-- Toast app icon -->
@@ -638,7 +639,7 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="qs_footer_settings_icon_title">Ayarlar kısayolu</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">İşlemci bilgisini göster</string>
-    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Mevcut işlemci bilgisini ekranda gösteren kaplama</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Operatör etiketi</string>
@@ -799,7 +800,7 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="smart_pixels_percent">Devre dışı bırakılacak piksel yüzdesi</string>
     <string name="smart_pixels_shift_title">Yanma koruması</string>
     <string name="smart_pixels_shift_summary">Amoled cihazlarda sık sık pikselleri kaydırarak yanmaları önler</string>
-    <!-- Statusbar logo -->
+    <!-- Status bar logo -->
     <string name="status_bar_logo_title">Logo</string>
     <string name="status_bar_logo_summary">Durum çubuğunda logo göstermeyi etkinleştir</string>
     <string name="status_bar_logo_primary_switch_title">Logo kullan</string>
@@ -871,15 +872,12 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <!-- Charging animation -->
     <string name="charging_animation_title">Şarj animasyonu</string>
     <string name="charging_animation_summary">Cihaz şarja takıldığında bir animasyon göster</string>
-    <!-- Lockscreen clock color -->
-    <string name="lockscreen_clock_color_title">Kilit ekranı saati rengi</string>
-    <string name="lockscreen_clock_color_summary">Kilit ekranı saati rengi için ikinci renk kullan, devre dışı bırakılırsa vurgu rengi kullanılır</string>
-    <!-- Statusbar colored icons -->
+    <!-- Lock screen clock color -->
+    <string name="kg_custom_clock_color_enabled_title">Kilit ekranı saati rengi</string>
+    <string name="kg_custom_clock_color_title">Saat rengi</string>
+    <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">Renkli simgeler</string>
     <string name="statusbar_colored_icons_summary">Durum çubuğundaki bildirim simgeleri için uygun uygulama simgelerini kullanın</string>
-    <!-- QS Transparency -->
-    <string name="qs_transparency_title">Arka plan saydamlığı</string>
-    <string name="qs_transparency_summary">Hızlı ayarlar arka planı için şeffaflık seviyesi ayarla</string>
     <!-- Wi-Fi Standard icon -->
     <string name="show_wifi_standard_icon_title">Standart Wi-Fi simgesini göster</string>
     <string name="show_wifi_standard_icon_summary">Wi-Fi türünü sinyal göstergesinde göster</string>
@@ -947,4 +945,37 @@ Mevcut bildirimler ve yeni bildirimler yayına hazırlanacak.    </string>
     <string name="laboratory_parallel_space_title">Paralel alan</string>
     <string name="laboratory_parallel_space_summary">Aynı uygulamanın birden çok örneğini paralel olarak çalıştırmaya izin ver</string>
     <!-- Google services -->
+    <string name="gms_enabled_title">Google hizmetleri</string>
+    <string name="gms_enabled_summary">Google hizmetlerini ve temel uygulamaları kontrol edin</string>
+    <string name="gms_enabled_text">Google hizmetlerini ve temel uygulamaları devre dışı bırakmadan önce, Google hesabınızda \"Cihazımı Bul\"u ve 2 adımlı doğrulamayı devre dışı bırakmalısınız. Bu ayarın etkin durumda tutulması kesinlikle önerilir, aksi takdirde Google bileşenlerine bağımlı uygulamalar etkilenir. Bu ayarı değiştirdikten sonra herhangi bir sorunla karşılaşırsanız fabrika ayarlarına sıfırlayın.</string>
+    <!-- QS tiles layout -->
+    <string name="qs_layout_category_title">Kare düzeni</string>
+    <string name="qs_tile_label_hide_title">Etiketleri gizle</string>
+    <string name="qs_tile_label_hide_summary">Karede yalnızca simgeyi göster</string>
+    <string name="qs_tile_label_size_title">Etiket metni boyutu</string>
+    <string name="qs_tile_layout_title">Dikey düzen</string>
+    <string name="qs_tile_layout_summary">Simgenin yanında etiketi simgenin altında göster</string>
+    <string name="qs_columns_portrait_title">Sütunlar (dikey)</string>
+    <string name="qs_columns_landscape_title">Sütunlar (yatay)</string>
+    <!-- HeadsUp notifications importance threshold -->
+    <!--string name="hun_importance_none">None</string-->
+    <string name="hun_importance_title">Önem eşiği</string>
+    <string name="hun_importance_min">Minimum</string>
+    <string name="hun_importance_low">Düşük</string>
+    <string name="hun_importance_default">Varsayılan</string>
+    <string name="hun_importance_high">Yüksek</string>
+    <string name="hun_importance_max">En Fazla</string>
+    <!-- Lock screen bottom shortcuts -->
+    <string name="lockscreen_shortcut_category">Alt kısayollar</string>
+    <string name="lockscreen_shortcut_start_title">Sol kısayol</string>
+    <string name="lockscreen_shortcut_end_title">Sağ kısayol</string>
+    <string name="lockscreen_shortcut_wallet">Cüzdan</string>
+    <string name="lockscreen_shortcut_home">Ana ekran</string>
+    <string name="lockscreen_shortcut_flashlight">Fener</string>
+    <string name="lockscreen_shortcut_qr">QR</string>
+    <string name="lockscreen_shortcut_camera">Kamera</string>
+    <string name="lockscreen_shortcut_remote">Google TV uzaktan kontrol</string>
+    <string name="lockscreen_shortcut_none">Yok</string>
+    <string name="lockscreen_shortcut_enforce_title">Tek kısayol</string>
+    <string name="lockscreen_shortcut_enforce_summary">Seçilen kısayolu öncelikli kısayol olarak kullan\nÖzel seçilen kısayol ayarlanana kadar hiçbir şey gösterilmeyecek</string>
 </resources>
