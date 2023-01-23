@@ -44,6 +44,8 @@
     <string name="large_string">Великий</string>
     <string name="medium_string">Середній</string>
     <string name="xlarge_string">Збільшений</string>
+    <string name="enable">Увімкнути</string>
+    <string name="disable">Вимкнути</string>
     <string name="disabled">Вимкнено</string>
     <string name="enable_first">Будь ласка, спочатку увімкніть</string>
     <string name="led_color_green">Зелений</string>
@@ -55,6 +57,7 @@
     <!-- Units -->
     <string name="unit_ms">мс</string>
     <string name="unit_seconds">секунди</string>
+    <string name="unit_size">сп</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Увімкнути</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -177,7 +180,7 @@
     <string name="vowifi_icon_summary">Показувати значок VoWiFi при можливості</string>
     <string name="volte_vowifi_override_title">Заміна VoWiFi</string>
     <string name="volte_vowifi_override_summary">Приховати VoLTE при наявності VoWiFi</string>
-    <!-- Show old style mobile data icon -->
+    <!-- Show old-style mobile data icon -->
     <string name="use_old_mobiletype_title">Використовувати старий стиль значків мережі</string>
     <string name="use_old_mobiletype_summary">Відображати значок типу мережі над індикатором сигналу</string>
     <!-- Quick Settings brightness slider -->
@@ -362,11 +365,9 @@
     <string name="wallpaper_color">Колір шпалер</string>
     <string name="custom_color">Власний колір</string>
     <string name="edge_light_custom_color_title">Користувацький колір</string>
-    <!-- QS footer text -->
-    <string name="qs_footer_text_show_title">Відображати текст в нижній частині швидких налаштувань</string>
-    <string name="qs_footer_text_show_summary">Показувати текст в нижній частині панелі швидких налаштувань</string>
-    <string name="qs_footer_text_string_title">Налаштувати текст нижнього колонтитула</string>
-    <string name="qs_footer_text_string_summary">Встановіть або залиште порожнім за замовчуванням</string>
+    <!-- QS footer data usage -->
+    <string name="qs_show_data_usage_title">Відображати використання мобільних даних</string>
+    <string name="qs_show_data_usage_summary">Показувати щоденне використання стільникових/Wi-Fi даних у нижньому колонтитулі QS</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Запуск музичного додатку при підключенні гарнітури</string>
     <string name="headset_connect_player_summary">Запуск музичного програвача за замовчуванням, коли підключена гарнітура</string>
@@ -376,7 +377,6 @@
     <string name="global_actions_title">Елементи меню живлення</string>
     <string name="global_actions_screenshot">Скріншот</string>
     <string name="global_actions_on_the_go">Режим «На ходу»</string>
-    <string name="global_actions_flashlight">Ліхтарик</string>
     <string name="global_actions_power">Живлення</string>
     <string name="global_actions_advanced">Розширене меню перезавантаження</string>
     <string name="global_actions_restart">Перезавантажити</string>
@@ -612,7 +612,7 @@
     <string name="torch_power_button_gesture_dt">Подвійне натискання кнопки живлення (при натисканні на кнопку) вимикає подвійне натискання для сенсорної камери.</string>
     <string name="torch_power_button_gesture_dt_toast">Жест \"Перейти до камери\" вимкнено</string>
     <string name="torch_power_button_gesture_lp">Довге натискання кнопки живлення</string>
-    <!-- Power menu on lockscreen -->
+    <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Не показувати меню живлення на екрані блокування</string>
     <string name="lockscreen_power_menu_disabled_summary">Ця опція вимикає меню живлення тільки на захищеному екрані блокування</string>
     <!-- Toast app icon -->
@@ -641,7 +641,7 @@
     <string name="qs_footer_settings_icon_title">Ярлик налаштувань</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Показати інформацію про процесор</string>
-    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Накладний слой, показуючий поточну інформацію про процесор</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Ім\'я оператора</string>
@@ -703,6 +703,9 @@
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">UDFPS тактична реакція сканеру відбитків</string>
     <string name="udfps_haptic_feedback_summary">Вібрувати при торканні значка UDFPS</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Лічильник сповіщень</string>
+    <string name="status_bar_notif_count_summary">Відображати кількість нових сповіщень у правому нижньому куті іконки сповіщень в рядку стану</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">Індикатор конфіденційності мікрофона та камери</string>
     <string name="mic_camera_privacy_indicator_summary">Відображати окремий індикатор при використанні додатків з мікрофону чи камери</string>
@@ -799,7 +802,7 @@
     <string name="smart_pixels_percent">Відсоток пікселів для вимкнення</string>
     <string name="smart_pixels_shift_title">Захист від вигорання</string>
     <string name="smart_pixels_shift_summary">Запобігає вигоранню на пристроях з OLED екраном, періодично змінюючи пікселі</string>
-    <!-- Statusbar logo -->
+    <!-- Status bar logo -->
     <string name="status_bar_logo_title">Логотип</string>
     <string name="status_bar_logo_summary">Увімкнути задля відображення логотипу у рядку стану</string>
     <string name="status_bar_logo_primary_switch_title">Використовувати логотип</string>
@@ -871,15 +874,12 @@
     <!-- Charging animation -->
     <string name="charging_animation_title">Анімація заряджання</string>
     <string name="charging_animation_summary">Показувати анімацію при підключенні зарядного пристрою</string>
-    <!-- Lockscreen clock color -->
-    <string name="lockscreen_clock_color_title">Стиль годинника екрана блокування</string>
-    <string name="lockscreen_clock_color_summary">Використовувати додатковий колір для годинника на екрані, якщо його вимкнено, буде використовуватися колір</string>
-    <!-- Statusbar colored icons -->
+    <!-- Lock screen clock color -->
+    <string name="kg_custom_clock_color_enabled_title">Користувацький колір годинника на екрані блокування</string>
+    <string name="kg_custom_clock_color_title">Колір годинника</string>
+    <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">Кольорові значки</string>
     <string name="statusbar_colored_icons_summary">Використовувати відповідні значки програм для повідомлень у статус барі</string>
-    <!-- QS Transparency -->
-    <string name="qs_transparency_title">Прозорість заднього фону</string>
-    <string name="qs_transparency_summary">Встановити рівень прозорості для фону Швидких налаштувань</string>
     <!-- Wi-Fi Standard icon -->
     <string name="show_wifi_standard_icon_title">Показувати стандартну піктограму Wi-Fi</string>
     <string name="show_wifi_standard_icon_summary">Показувати тип Wi-Fi в індикаторі сигналу Wi-Fi</string>
@@ -948,4 +948,38 @@
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Паралельний простір</string>
     <string name="laboratory_parallel_space_summary">Дозволити паралельний запуск кількох екземплярів одного додатка</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Сервіси Google</string>
+    <string name="gms_enabled_summary">Управління сервісами Google та основними додатками</string>
+    <string name="gms_enabled_text">Перед відключенням сервісів Google та основних додатків, вам потрібно вимкнути \"Знайти мій пристрій\" і двоетапну перевірку для вашого облікового запису Google. Настійно рекомендується підтримувати цей параметр увімкненим, інакше зачепить програми, залежні від компонентів Google. Якщо у вас виникнуть проблеми після зміни цього налаштування, виконайте скидання до заводських налаштувань.</string>
+    <!-- QS tiles layout -->
+    <string name="qs_layout_category_title">Розташування плиток швидких налаштувань</string>
+    <string name="qs_tile_label_hide_title">Приховати підписи</string>
+    <string name="qs_tile_label_hide_summary">Показувати лише іконку на плитці</string>
+    <string name="qs_tile_label_size_title">Розмір тексту підпису</string>
+    <string name="qs_tile_layout_title">Вертикальне розташування</string>
+    <string name="qs_tile_layout_summary">Відображати підпис під іконкою замість поряд з іконкою</string>
+    <string name="qs_columns_portrait_title">Стовпці (портретна орієнтація)</string>
+    <string name="qs_columns_landscape_title">Стовпці (ландшафтна орієнтація)</string>
+    <!-- HeadsUp notifications importance threshold -->
+    <!--string name="hun_importance_none">None</string-->
+    <string name="hun_importance_title">Поріг важливості</string>
+    <string name="hun_importance_min">Мінімальна</string>
+    <string name="hun_importance_low">Низька</string>
+    <string name="hun_importance_default">За замовчуванням</string>
+    <string name="hun_importance_high">Висока</string>
+    <string name="hun_importance_max">Максимальний</string>
+    <!-- Lock screen bottom shortcuts -->
+    <string name="lockscreen_shortcut_category">Ярлики в нижніх кутах</string>
+    <string name="lockscreen_shortcut_start_title">Лівий ярлик</string>
+    <string name="lockscreen_shortcut_end_title">Правий ярлик</string>
+    <string name="lockscreen_shortcut_wallet">Гаманець</string>
+    <string name="lockscreen_shortcut_home">(Розумний) дім</string>
+    <string name="lockscreen_shortcut_flashlight">Ліхтарик</string>
+    <string name="lockscreen_shortcut_qr">QR</string>
+    <string name="lockscreen_shortcut_camera">Камера</string>
+    <string name="lockscreen_shortcut_remote">Дистанційний пульт Google TV</string>
+    <string name="lockscreen_shortcut_none">Нічого</string>
+    <string name="lockscreen_shortcut_enforce_title">Один ярлик</string>
+    <string name="lockscreen_shortcut_enforce_summary">Обраний ярлик примусово зробити єдиним пріоритетом\nНе буде показано нічого, поки не буде доступний вказаний ярлик</string>
 </resources>
