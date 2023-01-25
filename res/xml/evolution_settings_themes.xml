@@ -47,6 +47,14 @@
             android:title="@string/theme_customization_font_title"
             android:summary="@string/theme_customization_font_summary"
             android:fragment="com.evolution.settings.fragments.FontsPicker" />
+            
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="clock_use_custom_format"
+            android:title="@string/clock_use_single_line_title"
+            android:entries="@array/clock_use_single_line_entries"
+            android:entryValues="@array/clock_use_single_line_values"
+            android:summary="%s"
+            android:defaultValue="0" />
 
         <Preference
             android:key="android.theme.customization.icon_pack"
