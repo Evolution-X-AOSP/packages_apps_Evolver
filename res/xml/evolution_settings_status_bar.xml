@@ -182,6 +182,15 @@
             android:summary="@string/status_bar_notif_count_summary"
             android:defaultValue="false" />
 
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="max_visible_notification_icons"
+            android:title="@string/max_visible_notification_icons_title"
+            android:summary="@string/max_visible_notification_icons_summary"
+            android:defaultValue="5"
+            android:max="10"
+            settings:min="0"
+            settings:units="" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="bluetooth_show_battery"
             android:title="@string/bluetooth_battery_title"
