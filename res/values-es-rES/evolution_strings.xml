@@ -24,7 +24,8 @@
     <string name="system_settings_title">Opciones del sistema</string>
     <string name="themes_title">Temas</string>
     <string name="torch_gestures_title">Gestos de linterna</string>
-    <string name="flashlight_category">Linterna</string>
+    <string name="on_call_flashlight_category">Linterna en llamada</string>
+    <string name="notification_flashlight_category">Linterna en las notificaciones</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Gestos por defecto de Android</string>
     <string name="dark_ui_mode_summary">Ver las opciones del tema oscuro</string>
@@ -37,12 +38,14 @@
     <string name="action_save">Guardar</string>
     <string name="action_cancel">Cancelar</string>
     <string name="attention">Atención</string>
-    <string name="default_string">Predeterminado</string>
+    <string name="default_string">Por defecto</string>
     <string name="none_string">Ninguno</string>
     <string name="hidden_string">Oculto</string>
     <string name="large_string">Grande</string>
     <string name="medium_string">Mediana</string>
     <string name="xlarge_string">Extra grande</string>
+    <string name="enable">Habilitar</string>
+    <string name="disable">Deshabilitar</string>
     <string name="disabled">Desactivado</string>
     <string name="enable_first">Por favor, active primero</string>
     <string name="led_color_green">Verde</string>
@@ -54,13 +57,14 @@
     <!-- Units -->
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">segundos</string>
+    <string name="unit_size">sp</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Activado</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_off">Desactivado</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selector de color</string>
-    <string name="press_color_to_apply">Pulse en el color de abajo para aplicar</string>
+    <string name="press_color_to_apply">Presiona el color de abajo para usar</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
@@ -72,7 +76,7 @@
     <string name="hsl">HSL</string>
     <string name="hsv">HSV</string>
     <string name="confirm">Confirmar</string>
-    <string name="invalid_color">¡Color no válido!</string>
+    <string name="invalid_color">¡Color inválido!</string>
     <!-- SeekBar -->
     <string name="seekbar_no_default_value">Sin valor predeterminado</string>
     <string name="seekbar_default_value_set">Valor establecido por defecto de <xliff:g id="number">%d</xliff:g></string>
@@ -81,17 +85,17 @@
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valor: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">Predeterminado</string>
-    <string name="custom_seekbar_default_value_to_set">Valor predeterminado: <xliff:g id="v">%s</xliff:g>\nMantener presionado para establecer</string>
-    <string name="custom_seekbar_default_value_is_set">Está establecido el valor predeterminado</string>
+    <string name="custom_seekbar_default_value_to_set">Valor por defecto: <xliff:g id="v">%s</xliff:g>\nMantener presionado para establecer</string>
+    <string name="custom_seekbar_default_value_is_set">Valor por defecto establecido</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">Configuración de USB</string>
     <string name="usb_default_config_summary">Elegir el comportamiento por defecto cuando se conecta un dispositivo USB</string>
     <!-- Navigation bar -->
     <string name="navbar_visibility_title">Barra de navegación</string>
-    <string name="navbar_visibility_summary">Mostrar barra de navegación en la parte inferior de la pantalla</string>
+    <string name="navbar_visibility_summary">Mostrar la barra de navegación en la parte inferior de la pantalla.\nDeshabilitar desactivará los gestos de navegación. Visite los ajustes de gestos para ocultar la píldora</string>
     <string name="navbar_layout_category_title">Disposición</string>
     <string name="navbar_arrow_keys_title">Mostrar las flechas mientras se escribe</string>
-    <string name="navbar_arrow_keys_summary">Mostrar los botones izquierda y derecha mientras se escribe. Reemplaza al selector IME.</string>
+    <string name="navbar_arrow_keys_summary">Mostrar cursor para izquierda y derecha mientras escribe. Reemplaza el interruptor IME</string>
     <string name="navbar_compact_layout_title">Diseño compacto</string>
     <string name="navbar_compact_layout_summary">Use un diseño compacto en la barra de navegación</string>
     <string name="navbar_invert_layout_title">Invertir la disposición</string>
@@ -99,11 +103,11 @@
     <string name="system_navigation_summary">Elegir que estilo de navegación del sistema usar</string>
     <!-- About Evolution X -->
     <string name="evolution_about_title">Equipo de desarrollo</string>
-    <string name="evolution_about_summary">Información sobre el equipo</string>
+    <string name="evolution_about_summary">Información sobre nuestra ROM</string>
     <string name="evolution_website_title">Sitio web</string>
     <string name="evolution_website_summary">¡Pulsa aquí para visitar nuestro impresionante sitio web!</string>
     <string name="evolution_twitter_summary">¡Pulsa aquí para visitar nuestro Twitter!</string>
-    <string name="evolution_telegram_summary">¡Pulsa aquí para visitar nuestra increíble comunidad!</string>
+    <string name="evolution_telegram_summary">¡Pulsa aquí para visitar nuestro increíble chat!</string>
     <string name="evolution_github_summary">¡Pulsa aquí para abrir nuestro Github!</string>
     <string name="evolution_about_info_summary">Evolution X es una ROM personalizada cuyo objetivo principal es ofrecer la experiencia de Pixel a tu dispositivo Android, con mucha personalización. Nuestro objetivo es proporcionar mensualmente actualizaciones con parches de seguridad de las últimas fuentes de Android.</string>
     <string name="evolution_about_team">Colaboradores</string>
@@ -142,8 +146,8 @@
     <string name="notification_heads_up_timeout_title">Tiempo agotado</string>
     <string name="notification_heads_up_timeout_summary">Tiempo de espera para las notificaciones emergentes</string>
     <string name="add_heads_up_package">Añadir aplicación</string>
-    <string name="add_heads_up_stoplist_summary">Desactiva las notificaciones emergentes en estas aplicaciones</string>
-    <string name="add_heads_up_blocklist_summary">Desactivar notificaciones flotantes de estas aplicaciones</string>
+    <string name="add_heads_up_stoplist_summary">Deshabilitar las notificaciones emergentes en estas aplicaciones</string>
+    <string name="add_heads_up_blocklist_summary">Deshabilitar notificaciones flotantes de estas aplicaciones</string>
     <string name="heads_up_stoplist_title">Lista de detenidas</string>
     <string name="heads_up_blocklist_title">Lista de bloqueadas</string>
     <string name="profile_choose_app">Elegir aplicación</string>
@@ -176,7 +180,7 @@
     <string name="vowifi_icon_summary">Mostrar icono VoWiFi cuando esté disponible</string>
     <string name="volte_vowifi_override_title">Prioridad VoWiFi</string>
     <string name="volte_vowifi_override_summary">Ocultar VoLTE cuando VoWiFi está disponible</string>
-    <!-- Show old style mobile data icon -->
+    <!-- Show old-style mobile data icon -->
     <string name="use_old_mobiletype_title">Usar iconos antiguos de datos móviles</string>
     <string name="use_old_mobiletype_summary">Mostrar icono del tipo de señal en la parte superior del indicador de señal</string>
     <!-- Quick Settings brightness slider -->
@@ -361,11 +365,9 @@
     <string name="wallpaper_color">Color del fondo de pantalla</string>
     <string name="custom_color">Color personalizado</string>
     <string name="edge_light_custom_color_title">Color personalizado</string>
-    <!-- QS footer text -->
-    <string name="qs_footer_text_show_title">Texto en Ajustes Rápidos</string>
-    <string name="qs_footer_text_show_summary">Mostrar texto al pie del panel de Ajustes Rápidos</string>
-    <string name="qs_footer_text_string_title">Personalizar texto abajo de los Ajustes Rápidos</string>
-    <string name="qs_footer_text_string_summary">Dejar en blanco para \"Evolution X\" predeterminado</string>
+    <!-- QS footer data usage -->
+    <string name="qs_show_data_usage_title">Mostrar uso de datos</string>
+    <string name="qs_show_data_usage_summary">Mostrar el uso diario de datos móviles/Wi-Fi en el pie de los ajustes rápidos</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Abrir aplicación de música al conectar auriculares</string>
     <string name="headset_connect_player_summary">Inicia el reproductor de música por defecto al conectar los auriculares</string>
@@ -375,7 +377,6 @@
     <string name="global_actions_title">Elementos del menú de energía</string>
     <string name="global_actions_screenshot">Captura de pantalla</string>
     <string name="global_actions_on_the_go">Modo sobre la marcha</string>
-    <string name="global_actions_flashlight">Linterna</string>
     <string name="global_actions_power">Energía</string>
     <string name="global_actions_advanced">Opciones de reinicio avanzadas</string>
     <string name="global_actions_restart">Reiniciar</string>
@@ -407,6 +408,9 @@
     <string name="theme_customization_wifi_icon_summary">Establece el estilo del icono de WiFi</string>
     <string name="theme_customization_navbar_title">Estilo de la barra de navegación</string>
     <string name="theme_customization_navbar_summary">Establecer estilo personalizado de la barra de navegación</string>
+    <!-- Custom Fonts -->
+    <string name="theme_customization_lock_clock_title">Fuente del reloj de la pantalla de bloqueo</string>
+    <string name="theme_customization_lock_clock_summary">Establecer estilo de fuente en pantalla de bloqueo</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Barra de estado</string>
     <string name="lockscreen_status_bar_summary">Muestra la barra de estado en la pantalla de bloqueo</string>
@@ -570,6 +574,11 @@
     <string name="flashlight_on_call_ignore_dnd_summary">Parpadear cuando esté en modo No molestar</string>
     <string name="flashlight_on_call_rate_title">Frecuencia</string>
     <string name="flashlight_on_call_rate_summary">Parpadeo de linterna en llamada</string>
+    <!-- Blink flashlight for notifications -->
+    <string name="notification_torch_title">Parpadear linterna para las notificaciones</string>
+    <string name="notification_torch_summary">Por defecto. Por ajustes de canal existente</string>
+    <string name="notification_torch_slider1">Tiempo de parpadeo</string>
+    <string name="notification_torch_slider2">Tasa de parpadeo</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Letras en la barra de estado</string>
     <string name="status_bar_lyric_summary">Mostrar letras en la barra de estado (necesita soporte de la app)</string>
@@ -603,7 +612,7 @@
     <string name="torch_power_button_gesture_dt">Doble toque del botón de encendido (más lento que un solo toque). Desactiva doble toque para la cámara.</string>
     <string name="torch_power_button_gesture_dt_toast">El gesto de abrir la cámara ha sido desactivado</string>
     <string name="torch_power_button_gesture_lp">Pulsación larga del botón de encendido</string>
-    <!-- Power menu on lockscreen -->
+    <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Deshabilitar el menú de apagado en la pantalla de bloqueo</string>
     <string name="lockscreen_power_menu_disabled_summary">Esto solo desactivará el menú de apagado en la pantalla de bloqueo con seguridad establecida</string>
     <!-- Toast app icon -->
@@ -632,7 +641,7 @@
     <string name="qs_footer_settings_icon_title">Acceso directo a Ajustes</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Mostrar información de CPU</string>
-    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Mostrar información de CPU sobre la pantalla</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Nombre del operador</string>
@@ -645,18 +654,35 @@
     <string name="show_carrier_keyguard">Pantalla de bloqueo</string>
     <string name="show_carrier_statusbar">Barra de estado</string>
     <string name="show_carrier_enabled">Ambas</string>
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Monet</string>
-    <string name="monet_engine_settings_summary">Color personalizado, colorido, brillo</string>
-    <string name="color_override_title">Elegir color personalizado</string>
-    <string name="color_override_default_summary">Usar color del fondo de pantalla</string>
-    <string name="custom_color_override_summary_placeholder">        Color elegido: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Dejar vacío para usar el color del fondo de pantalla.
-    </string>
-    <string name="invalid_color_input">¡Color no válido!</string>
-    <string name="white_luminance_title">Brillo</string>
-    <string name="accurate_shades_title">Usar matices precisos</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Configuración de temas</string>
+    <string name="monet_settings_sammary">Unos pocos ajustes adicionales para personalizar el motor de monet</string>
+    <string name="theme_style_title">Estilo del tema</string>
+    <string name="theme_style_tonal_spot">Tonal Spot (por defecto)</string>
+    <string name="theme_style_vibrant">Vibrante</string>
+    <string name="theme_style_expressive">Expresivo</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Arcoiris</string>
+    <string name="theme_style_fruit_salad">Ensalada de frutas</string>
+    <string name="theme_style_muted">Silenciado</string>
+    <string name="theme_style_content">Contenido</string>
+    <string name="color_source_title">Color de origen</string>
+    <string name="color_source_both">Ambos (por defecto)</string>
+    <string name="color_source_home">Fondo de pantalla</string>
+    <string name="color_source_lock">Fondo de pantalla de bloqueo</string>
+    <string name="color_source_preset">Predeterminado</string>
+    <string name="accent_color_title">Color de acento</string>
+    <string name="accent_color_summary">Remplaza el color de acento predeterminado</string>
+    <string name="accent_background_title">Acento de fondo</string>
+    <string name="accent_background_summary">Elige un color de acento diferente para el fondo</string>
+    <string name="bg_color_title">Color de fondo</string>
+    <string name="bg_color_summary">Reemplaza el color de acento por defecto</string>
+    <string name="luminance_factor_title">Luminosidad</string>
+    <string name="luminance_factor_summary">Valores más altos son colores más brillantes</string>
     <string name="chroma_factor_title">Nivel de color</string>
-    <string name="linear_lightness_title">Usar escala de luz personalizada</string>
+    <string name="chroma_factor_summary">Valores más altos son colores más fuertes</string>
+    <string name="tint_background_title">Tinte de fondo</string>
+    <string name="tint_background_summary">Hacer que la luminosidad y la selección cromática también afecten el color del fondo</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Tema personalizado</string>
     <string name="custom_theme_black">Negro</string>
@@ -677,6 +703,9 @@
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">Respuesta háptica de Huella en Pantalla</string>
     <string name="udfps_haptic_feedback_summary">Vibrar al tocar el icono de Huella</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Contador de notificaciones</string>
+    <string name="status_bar_notif_count_summary">Mostrar el número de notificaciones pendientes en la esquina inferior derecha del icono de notificación de la barra de estado</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">Indicador de privacidad de micrófono y cámara</string>
     <string name="mic_camera_privacy_indicator_summary">Mostrar indicador separado cuando cualquier aplicación utilice el micrófono o la cámara</string>
@@ -773,7 +802,7 @@
     <string name="smart_pixels_percent">Porcentaje de píxeles para deshabilitar</string>
     <string name="smart_pixels_shift_title">Protección contra el quemado de pantalla</string>
     <string name="smart_pixels_shift_summary">Previene el quemado de la pantalla en dispositivos con tecnología OLED alternando píxeles de vez en cuando</string>
-    <!-- Statusbar logo -->
+    <!-- Status bar logo -->
     <string name="status_bar_logo_title">Logo</string>
     <string name="status_bar_logo_summary">Activar para mostrar logo en la barra de estado</string>
     <string name="status_bar_logo_primary_switch_title">Usar logo</string>
@@ -845,15 +874,15 @@
     <!-- Charging animation -->
     <string name="charging_animation_title">Animación de carga</string>
     <string name="charging_animation_summary">Mostrar una animación al conectar el cargador</string>
-    <!-- Lockscreen clock color -->
-    <string name="lockscreen_clock_color_title">Color del reloj de la pantalla de bloqueo</string>
-    <string name="lockscreen_clock_color_summary">Usar color secundario para el reloj de la pantalla de bloqueo, si está deshabilitado usará el acento de color</string>
-    <!-- Statusbar colored icons -->
+    <!-- Lock screen clock color -->
+    <string name="kg_custom_clock_color_enabled_title">Color personalizado del reloj de la pantalla de bloqueo</string>
+    <string name="kg_custom_clock_color_title">Color del reloj</string>
+    <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">Iconos coloreados</string>
     <string name="statusbar_colored_icons_summary">Usar iconos de aplicación para las notificaciones en la barra de estado</string>
-    <!-- QS Transparency -->
-    <string name="qs_transparency_title">Transparencia del fondo</string>
-    <string name="qs_transparency_summary">Nivel de transparencia para el panel de ajustes rápidos</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Mostrar icono de tipo de Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Mostrar tipo Wi-Fi en el indicador de señal Wi-Fi</string>
     <!--  screen, setting option summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Nunca</string>
     <string name="custom_timeout_summary_5secs">5 segundos</string>
@@ -917,6 +946,40 @@
     <string name="changelog_evolution_title">Registro de cambios</string>
     <string name="changelog_evolution_summary">Ver los cambios recientes de la ROM</string>
     <!-- Parallel space -->
-    <string name="laboratory_parallel_space_title">Espacio Paralelo</string>
-    <string name="laboratory_parallel_space_summary">Permite ejecutar varias versiones de una misma aplicación en paralelo</string>
+    <string name="laboratory_parallel_space_title">Espacio paralelo</string>
+    <string name="laboratory_parallel_space_summary">Permite ejecutar múltiples instancias de la misma aplicación en paralelo</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Servicios de Google</string>
+    <string name="gms_enabled_summary">Controla los servicios de Google y las aplicaciones integradas</string>
+    <string name="gms_enabled_text">Antes de desactivar los servicios de Google y las aplicaciones integradas, debería desactivar la verificación \"Encontrar mi dispositivo\" y la verificación en dos pasos en su cuenta de Google. Se recomienda encarecidamente mantener esta configuración activada, de lo contrario las aplicaciones dependientes de los componentes de Google se verán afectadas. Si tiene algún problema después de cambiar esta configuración, realice un restablecimiento de fábrica.</string>
+    <!-- QS tiles layout -->
+    <string name="qs_layout_category_title">Distribución de ajustes rápidos</string>
+    <string name="qs_tile_label_hide_title">Ocultar nombres</string>
+    <string name="qs_tile_label_hide_summary">Mostrar solo icono</string>
+    <string name="qs_tile_label_size_title">Tamaño de texto</string>
+    <string name="qs_tile_layout_title">Disposición vertical</string>
+    <string name="qs_tile_layout_summary">Mostrar nombre debajo, no a un lado</string>
+    <string name="qs_columns_portrait_title">Columnas (vertical)</string>
+    <string name="qs_columns_landscape_title">Columnas (horizontal)</string>
+    <!-- HeadsUp notifications importance threshold -->
+    <!--string name="hun_importance_none">None</string-->
+    <string name="hun_importance_title">Umbral de importancia</string>
+    <string name="hun_importance_min">Mínimo</string>
+    <string name="hun_importance_low">Baja</string>
+    <string name="hun_importance_default">Por defecto</string>
+    <string name="hun_importance_high">Alta</string>
+    <string name="hun_importance_max">Máxima</string>
+    <!-- Lock screen bottom shortcuts -->
+    <string name="lockscreen_shortcut_category">Atajos inferiores</string>
+    <string name="lockscreen_shortcut_start_title">Atajo izquierdo</string>
+    <string name="lockscreen_shortcut_end_title">Atajo derecho</string>
+    <string name="lockscreen_shortcut_wallet">Billetera</string>
+    <string name="lockscreen_shortcut_home">Inicio</string>
+    <string name="lockscreen_shortcut_flashlight">Linterna</string>
+    <string name="lockscreen_shortcut_qr">Escanear QR</string>
+    <string name="lockscreen_shortcut_camera">Cámara</string>
+    <string name="lockscreen_shortcut_remote">Controles remotos de Google TV</string>
+    <string name="lockscreen_shortcut_none">Ninguno</string>
+    <string name="lockscreen_shortcut_enforce_title">Atajo</string>
+    <string name="lockscreen_shortcut_enforce_summary">Forzar que el atajo elegido sea la única prioridad existente\nNo mostrará nada hasta que el atajo elegido esté disponible</string>
 </resources>
