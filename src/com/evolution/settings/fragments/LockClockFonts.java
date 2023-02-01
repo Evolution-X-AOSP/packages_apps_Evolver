@@ -103,7 +103,7 @@ public class LockClockFonts extends SettingsPreferenceFragment {
                 R.layout.item_view, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerView.setLayoutManager(gridLayoutManager);
         Adapter mAdapter = new Adapter(getActivity());
         mRecyclerView.setAdapter(mAdapter);
@@ -148,9 +148,10 @@ public class LockClockFonts extends SettingsPreferenceFragment {
                 .findFirst()
                 .orElse("android");
 
-            holder.title.setTextSize(24);
+            holder.title.setTextSize(32);
+            holder.name.setText("android".equals(pkg) ? "Default" : label);
             holder.title.setTypeface(getTypeface(holder.title.getContext(), pkg));
-            holder.name.setVisibility(View.GONE);
+            holder.name.setVisibility(View.VISIBLE);
 
             if (currentPackageName.equals(pkg)) {
                 mAppliedPkg = pkg;
