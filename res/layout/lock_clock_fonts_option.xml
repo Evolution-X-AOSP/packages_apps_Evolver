@@ -24,7 +24,7 @@
     <FrameLayout
         android:id="@+id/option_tile"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="150dp"
         android:gravity="center"
         android:layout_gravity="center"
         android:paddingHorizontal="10dp"
@@ -35,8 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:format12Hour="hh:mm"
-            android:format24Hour="kk:mm"
+            android:format12Hour="hh\nmm"
+            android:format24Hour="kk\nmm"
+            android:fontFamily="@*android:string/config_clockFontFamily"
             android:textAppearance="@style/OptionTitleTextAppearance"/>
 
     </FrameLayout>
