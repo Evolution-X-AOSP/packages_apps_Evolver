@@ -17,6 +17,12 @@
     <PreferenceCategory
         android:title="@string/qs_header_category_title">
 
+        <SwitchPreference
+            android:key="enable_combined_qs_headers"
+            android:title="@string/combined_qs_headers_title"
+            android:summary="@string/combined_qs_headers_icons_summary"
+            android:defaultValue="true" />
+
         <!-- QS clock -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference 
             android:key="show_qs_clock"
