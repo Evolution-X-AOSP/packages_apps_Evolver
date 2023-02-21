@@ -43,7 +43,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.development.SystemPropPoker;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.preference.SystemSettingListPreference;
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
+import com.evolution.settings.preference.SystemSettingSeekBarPreference;
 
 import java.util.List;
 
@@ -59,6 +60,9 @@ public class QuickSettings extends DashboardFragment implements
     private static final String QUICK_PULLDOWN = "status_bar_quick_qs_pulldown";
     private static final String KEY_COMBINED_QS_HEADERS = "enable_combined_qs_headers";
     private static final String SYS_COMBINED_QS_HEADERS = "persist.sys.flags.combined_qs_headers";
+    private static final String KEY_QS_HEADER_CLOCK_SIZE = "qs_header_clock_size";
+    private static final String KEY_SHOW_QS_CLOCK = "show_qs_clock";
+    private static final String KEY_SHOW_QS_DATE = "show_qs_date";
 
     private SwitchPreference mCombinedQSHeaders;
     private ListPreference mShowBrightnessSlider;
@@ -66,6 +70,9 @@ public class QuickSettings extends DashboardFragment implements
     private ListPreference mQuickPulldown;
     private SwitchPreference mBatteryEstimate;
     private SwitchPreference mShowAutoBrightness;
+    private SystemSettingSwitchPreference mShowQSClock;
+    private SystemSettingSwitchPreference mShowQSDate;
+    private SystemSettingSeekBarPreference mQSHeaderClockSize;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -113,6 +120,17 @@ public class QuickSettings extends DashboardFragment implements
         mCombinedQSHeaders = (SwitchPreference) findPreference(KEY_COMBINED_QS_HEADERS);
         mCombinedQSHeaders.setChecked(SystemProperties.getBoolean(SYS_COMBINED_QS_HEADERS, true));
         mCombinedQSHeaders.setOnPreferenceChangeListener(this);
+
+        final boolean combinedQSHeaders = SystemProperties.getBoolean(SYS_COMBINED_QS_HEADERS, true);
+
+        mShowQSClock = (SystemSettingSwitchPreference) findPreference(KEY_SHOW_QS_CLOCK);
+        mShowQSClock.setEnabled(!combinedQSHeaders);
+
+        mShowQSDate = (SystemSettingSwitchPreference) findPreference(KEY_SHOW_QS_DATE);
+        mShowQSDate.setEnabled(!combinedQSHeaders);
+
+        mQSHeaderClockSize = (SystemSettingSeekBarPreference) findPreference(KEY_QS_HEADER_CLOCK_SIZE);
+        mQSHeaderClockSize.setEnabled(!combinedQSHeaders);
     }
 
     @Override
