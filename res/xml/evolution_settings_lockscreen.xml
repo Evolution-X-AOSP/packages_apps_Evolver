@@ -8,6 +8,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_title">
 
+    <com.evolution.settings.preference.SecureSettingSwitchPreference
+        android:key="pulse_on_new_tracks"
+        android:title="@string/pulse_on_new_tracks_title"
+        android:summary="@string/pulse_on_new_tracks_summary"
+        android:defaultValue="false" />
+
     <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
         android:key="edge_light_enabled"
         android:title="@string/edge_light_title"
