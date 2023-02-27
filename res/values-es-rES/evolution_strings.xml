@@ -12,7 +12,7 @@
     <string name="dev_options_title">Opciones de desarrollador</string>
     <string name="general_title">General</string>
     <string name="gestures_title">Gestos</string>
-    <string name="lockscreen_title">Bloqueo de pantalla</string>
+    <string name="lockscreen_title">Pantalla de bloqueo</string>
     <string name="misc_title">Varios</string>
     <string name="navigation_title">Navegación</string>
     <string name="notifications_title">Notificaciones</string>
@@ -44,6 +44,8 @@
     <string name="large_string">Grande</string>
     <string name="medium_string">Mediana</string>
     <string name="xlarge_string">Extra grande</string>
+    <string name="enable">Habilitar</string>
+    <string name="disable">Deshabilitar</string>
     <string name="disabled">Desactivado</string>
     <string name="enable_first">Por favor, active primero</string>
     <string name="led_color_green">Verde</string>
@@ -133,7 +135,7 @@
     <string name="udfps_settings_summary">Configuración para personalizar la Huella en Pantalla</string>
     <!-- UDFPS icon picker -->
     <string name="udfps_icon_picker_title">Selector de iconos de Huella en Pantalla</string>
-    <string name="udfps_icon_picker_summary">Elige tu icono de huella dactilar favorito</string>
+    <string name="udfps_icon_picker_summary">Elige tu icono de huella favorito</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Luz de notificación</string>
     <!-- Heads up -->
@@ -163,10 +165,10 @@
     <string name="network_traffic_autohide_title">Ocultar indicador de tráfico de red si está inactivo</string>
     <string name="network_traffic_autohide_summary">Ocultar cuando el tráfico de red es menor de 1 Kb/s</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fp_success_vibrate_title">Vibración al autentificar la huella dactilar</string>
-    <string name="fp_success_vibrate_summary">Vibrar con la autenticación exitosa de la huella dactilar</string>
-    <string name="fp_error_vibrate_title">Vibración por error de huella dactilar</string>
-    <string name="fp_error_vibrate_summary">Vibrar cuando falla la verificación de huella digital</string>
+    <string name="fp_success_vibrate_title">Vibración al autentificar la huella</string>
+    <string name="fp_success_vibrate_summary">Vibrar con la autenticación exitosa de la huella</string>
+    <string name="fp_error_vibrate_title">Vibración por error de huella</string>
+    <string name="fp_error_vibrate_summary">Vibrar cuando falla la verificación de huella</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">Mostrar 4G en lugar de LTE</string>
     <string name="show_fourg_icon_summary">Reemplazar el indicador LTE por 4G</string>
@@ -899,7 +901,7 @@
     <string name="custom_timeout_summary_8hours">8 horas</string>
     <!-- App lock -->
     <string name="app_lock_title">Bloqueador de apps</string>
-    <string name="app_lock_summary">Las aplicaciones requerirán autenticación de huella dactilar para lanzar</string>
+    <string name="app_lock_summary">Las aplicaciones requerirán autenticación de huella para lanzar</string>
     <string name="app_lock_authentication_dialog_title">Desbloquear</string>
     <string name="enable_debugging">Activar depuración</string>
     <string name="disable_debugging">Desactivar depuración</string>
@@ -946,15 +948,10 @@
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Espacio paralelo</string>
     <string name="laboratory_parallel_space_summary">Permite ejecutar múltiples instancias de la misma aplicación en paralelo</string>
-    <!-- QS tiles layout -->
-    <string name="qs_layout_category_title">Distribución de ajustes rápidos</string>
-    <string name="qs_tile_label_hide_title">Ocultar nombres</string>
-    <string name="qs_tile_label_hide_summary">Mostrar solo icono</string>
-    <string name="qs_tile_label_size_title">Tamaño de texto</string>
-    <string name="qs_tile_layout_title">Disposición vertical</string>
-    <string name="qs_tile_layout_summary">Mostrar nombre debajo, no a un lado</string>
-    <string name="qs_columns_portrait_title">Columnas (vertical)</string>
-    <string name="qs_columns_landscape_title">Columnas (horizontal)</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Servicios de Google</string>
+    <string name="gms_enabled_summary">Controla los servicios de Google y las aplicaciones integradas</string>
+    <string name="gms_enabled_text">Antes de desactivar los servicios de Google y las aplicaciones integradas, debería desactivar la verificación \"Encontrar mi dispositivo\" y la verificación en dos pasos en su cuenta de Google. Se recomienda encarecidamente mantener esta configuración activada, de lo contrario las aplicaciones dependientes de los componentes de Google se verán afectadas. Si tiene algún problema después de cambiar esta configuración, realice un restablecimiento de fábrica.</string>
     <!-- HeadsUp notifications importance threshold -->
     <!--string name="hun_importance_none">None</string-->
     <string name="hun_importance_title">Umbral de importancia</string>
@@ -976,4 +973,32 @@
     <string name="lockscreen_shortcut_none">Ninguno</string>
     <string name="lockscreen_shortcut_enforce_title">Atajo</string>
     <string name="lockscreen_shortcut_enforce_summary">Forzar que el atajo elegido sea la única prioridad existente\nNo mostrará nada hasta que el atajo elegido esté disponible</string>
+    <!-- QS tiles layout -->
+    <string name="qs_tile_layout_title">Disposición vertical</string>
+    <string name="qs_tile_layout_summary">Mostrar nombre debajo, no a un lado</string>
+    <string name="qs_tiles_layout_category">Distribución de ajustes rápidos</string>
+    <string name="qs_rows_portrait_title">Filas de iconos (modo vertical)</string>
+    <string name="qqs_rows_portrait_title">Filas (retrato rápido QS)</string>
+    <string name="qs_columns_portrait_title">Columnas (vertical)</string>
+    <string name="qs_apply_change_button_title">Aplicar cambio</string>
+    <string name="qs_apply_change_failed">Error al aplicar el cambio</string>
+    <string name="qs_tile_hide_label_title">Ocultar etiquetas</string>
+    <string name="qs_tile_hide_label_summary">Mostrar sólo icono para mosaicos QS</string>
+    <string name="qs_tile_label_size_title">Tamaño de texto</string>
+    <string name="qs_tile_vertical_layout_title">Disposición vertical</string>
+    <string name="qs_tile_vertical_layout_summary">Habilitar el diseño vertical para azulejos QS</string>
+    <!-- Lockscreen clock format -->
+    <string name="clock_use_single_line_title">Formato del reloj de la pantalla de bloqueo</string>
+    <string name="single_line">Línea simple</string>
+    <string name="double_line">Línea doble</string>
+    <!-- Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons_title">Combinar iconos de señal</string>
+    <string name="combined_status_bar_signal_icons_summary">Mostrar un único icono para Wi-Fi y señal móvil</string>
+    <!-- Quick settings styles -->
+    <string name="qs_styles_title">Estilos de elemento QS combinados</string>
+    <string name="qs_outline">Resumen general</string>
+    <string name="qs_two_tone">Acento doble tono</string>
+    <string name="qs_color_pop">Color Destacado</string>
+    <string name="qs_shaded">Sombreado</string>
+    <string name="qs_cyberpunk">Ciberpunk</string>
 </resources>
