@@ -96,7 +96,9 @@ class AppLockSettingsPreferenceController(
         preference.apply {
             if (getAvailabilityStatus() == AVAILABLE) {
                 setEnabled(true)
-                summary = getSummaryForListSize(appLockManager.packageData.size)
+                summary = getSummaryForListSize(appLockManager.packageData.filter {
+                    it.shouldProtectApp == true
+                }.size)
             } else {
                 setEnabled(false)
                 summary = mContext.getString(R.string.disabled_because_no_backup_security)
