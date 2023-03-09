@@ -44,6 +44,8 @@
     <string name="large_string">Nagy</string>
     <string name="medium_string">Közepes</string>
     <string name="xlarge_string">Nagyon nagy</string>
+    <string name="enable">Engedélyez</string>
+    <string name="disable">Letilt</string>
     <string name="disabled">Kikapcsolva</string>
     <string name="enable_first">Kérjük, előbb engedélyezze</string>
     <string name="led_color_green">Zöld</string>
@@ -55,7 +57,6 @@
     <!-- Units -->
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">másodperc</string>
-    <string name="unit_size">sp</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Be</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -134,6 +135,11 @@
     <!-- UDFPS icon picker -->
     <string name="udfps_icon_picker_title">Ujjlenyomat-ikonválasztó</string>
     <string name="udfps_icon_picker_summary">Válassza ki a kedvenc ujjlenyomat-ikonját</string>
+    <!-- Custom UDFPS icon -->
+    <string name="custom_fp_icon_title">Egyéni ujjlenyomat-ikon</string>
+    <string name="custom_fp_icon_summary">Egyéni ikon engedélyezése a képernyőbe épített szenzorhoz</string>
+    <string name="custom_fp_select_title">Ikonválasztás a tárhelyről</string>
+    <string name="custom_fp_select_summary">A mentett fájlokból vagy a galériából választhat egyéni ikont</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Értesítési fény</string>
     <!-- Heads up -->
@@ -812,6 +818,7 @@
     <string name="status_bar_logo_style_evolution">Evolution X</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_airjordan">Air Jordan</string>
+    <string name="status_bar_logo_style_alien">Földönkívüli</string>
     <string name="status_bar_logo_style_amogus">Amogus</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">Bosszúállók</string>
@@ -820,15 +827,26 @@
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Biológiai veszély</string>
     <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_captain_america">Amerika Kapitány</string>
     <string name="status_bar_logo_style_cannabis">Kannabisz</string>
+    <string name="status_bar_logo_style_flash">Villám</string>
     <string name="status_bar_logo_style_fire">Tűz</string>
+    <string name="status_bar_logo_style_ghost">Szellem</string>
+    <string name="status_bar_logo_style_heart">Szív</string>
+    <string name="status_bar_logo_style_ironman">Iron Man</string>
+    <string name="status_bar_logo_style_mint">Linux Mint</string>
     <string name="status_bar_logo_style_nike">Nike</string>
+    <string name="status_bar_logo_style_ninja">Nindzsa</string>
     <string name="status_bar_logo_style_pac_man">Pac-Man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
     <string name="status_bar_logo_style_rog">ROG</string>
+    <string name="status_bar_logo_style_spiderman">Pókember</string>
     <string name="status_bar_logo_style_superman">Superman</string>
+    <string name="status_bar_logo_style_tux">TUX</string>
+    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_windows">Windows</string>
-    <string name="status_bar_logo_style_xbox">XBOX</string>
+    <string name="status_bar_logo_style_xbox">Xbox</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Akkustílus</string>
     <string name="status_bar_battery_style_icon_portrait">Álló ikon</string>
@@ -946,15 +964,10 @@
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Párhuzamos tér</string>
     <string name="laboratory_parallel_space_summary">Egy alkalmazás több példányának párhuzamos futtatásának lehetősége</string>
-    <!-- QS tiles layout -->
-    <string name="qs_layout_category_title">Csempe-elrendezés</string>
-    <string name="qs_tile_label_hide_title">Címke-elrejtés</string>
-    <string name="qs_tile_label_hide_summary">Csak az ikonok a csempén</string>
-    <string name="qs_tile_label_size_title">A Címke betűmérete</string>
-    <string name="qs_tile_layout_title">Függőleges elrendezés</string>
-    <string name="qs_tile_layout_summary">Ikonnév nem az ikon alatt, hanem mellette</string>
-    <string name="qs_columns_portrait_title">Oszlopok (álló)</string>
-    <string name="qs_columns_landscape_title">Oszlopok (fekvő)</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Google-szolgáltatások</string>
+    <string name="gms_enabled_summary">Itt kontrollálhatja a Google-cuccokat</string>
+    <string name="gms_enabled_text">Mielőtt letiltja a Google-szolgáltatásokat és alkalmazásokat kapcsolja ki Google-fiókjában a Készülékkeresést és a kétlépcsős azonosítást. Erősen ajánlott meghagyni ezt a beállítást, hiszen érinti a Google összetevőitől függő alkalmazásokat. Ha a változtatás után fatális hibák keletkeznek, kénytelen lesz Gyári adatok visszaállítását végrehajtani.</string>
     <!-- HeadsUp notifications importance threshold -->
     <!--string name="hun_importance_none">None</string-->
     <string name="hun_importance_title">Fontossági határérték</string>
@@ -976,4 +989,37 @@
     <string name="lockscreen_shortcut_none">Nincs</string>
     <string name="lockscreen_shortcut_enforce_title">Egy parancsikon</string>
     <string name="lockscreen_shortcut_enforce_summary">A kiválasztott parancsikon kényszerítése az egyetlen létező ikonként\nSemmit nem mutat, amíg a kiválasztott parancsikon elérhetővé nem válik</string>
+    <!-- QS tiles layout -->
+    <string name="qs_tile_layout_title">Gyorsbeállítások-elrendezés</string>
+    <string name="qs_tile_layout_summary">Egyéni feliratkinézet a Gyorsbeállításokban</string>
+    <string name="qs_tiles_layout_category">Csempe-elrendezés</string>
+    <string name="qs_rows_portrait_title">Sorok (álló módban)</string>
+    <string name="qqs_rows_portrait_title">Sorok (Gyorsbeállítások álló)</string>
+    <string name="qs_columns_portrait_title">Oszlopok (álló módban)</string>
+    <string name="qs_apply_change_button_title">A változtatás alkalmazása</string>
+    <string name="qs_apply_change_failed">A változás érvényesítése sikertelen</string>
+    <string name="qs_tile_hide_label_title">Címke-elrejtés</string>
+    <string name="qs_tile_hide_label_summary">Csak a csempék látszanak, a felirat nem</string>
+    <string name="qs_tile_vertical_layout_title">Függőleges elrendezés</string>
+    <string name="qs_tile_vertical_layout_summary">A csempék elrendezése vertikális is lehet</string>
+    <!-- Lockscreen clock format -->
+    <string name="clock_use_single_line_title">A képernyőzár órájának stílusa</string>
+    <string name="single_line">Egysoros</string>
+    <string name="double_line">Duplasoros</string>
+    <!-- Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons_title">Kombinált térerőikonok</string>
+    <string name="combined_status_bar_signal_icons_summary">A két ikon helyett egy kombinált ikon jelenik meg</string>
+    <!-- Quick settings styles -->
+    <string name="qs_styles_title">Kombinált Gyorsbeállítás-stílus</string>
+    <string name="qs_outline">Körvonal</string>
+    <string name="qs_two_tone">Kéttónusú kiemelés</string>
+    <string name="qs_color_pop">Többszínű</string>
+    <string name="qs_shaded">Árnyékolt</string>
+    <string name="qs_cyberpunk">Cyberpunk</string>
+    <!-- Media artwork -->
+    <string name="artwork_media_background_enable_blur_title">A médiaértesítési grafikák hátterének elmosódása</string>
+    <string name="artwork_media_background_blur_radius_title">Az elmosódás mértéke</string>
+    <string name="media_artwork_fade_percent_title">Az áttűnés százaléka</string>
+    <string name="lockscreen_albumart_filter_blur_radius_title">A zárképernyő-borítókép elmosódási értéke</string>
+    <string name="ls_media_artwork_fade_percent_title">A zárképernyő-borítókép áttűnési százaléka</string>
 </resources>
