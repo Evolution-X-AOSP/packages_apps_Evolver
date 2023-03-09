@@ -74,11 +74,13 @@
             android:defaultValue="true" />
 
         <!-- Battery bar settings -->
-        <Preference
-            android:key="batterybar"
+        <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
+            android:key="statusbar_battery_bar"
             android:title="@string/battery_bar_title"
             android:summary="@string/battery_bar_summary"
-            android:fragment="com.evolution.settings.fragments.BatteryBar" />
+            android:defaultValue="false"
+            android:fragment="com.evolution.settings.fragments.BatteryBar"
+            settings:observe="true" />
 
     </PreferenceCategory>
 

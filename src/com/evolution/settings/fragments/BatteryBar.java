@@ -37,6 +37,8 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.evolution.settings.preference.SystemSettingMainSwitchPreference;
+
 @SearchIndexable
 public class BatteryBar extends DashboardFragment implements
             Preference.OnPreferenceChangeListener {
@@ -44,7 +46,7 @@ public class BatteryBar extends DashboardFragment implements
     private static final String TAG = "BatteryBar";
     private static final String PREF_BATT_BAR = "statusbar_battery_bar";
 
-    private SwitchPreference mBatteryBar;
+    private SystemSettingMainSwitchPreference mBatteryBar;
 
     private boolean mIsBarSwitchingMode = false;
     private Handler mHandler;
@@ -63,7 +65,7 @@ public class BatteryBar extends DashboardFragment implements
         int intColor;
         String hexColor;
 
-        mBatteryBar = (SwitchPreference) findPreference(PREF_BATT_BAR);
+        mBatteryBar = (SystemSettingMainSwitchPreference) findPreference(PREF_BATT_BAR);
         mHandler = new Handler();
 
         boolean showing = Settings.System.getIntForUser(resolver,
