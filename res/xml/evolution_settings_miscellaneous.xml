@@ -8,24 +8,8 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
-    <!-- Google services -->
-    <Preference
-        android:key="gms_enabled_settings"
-        android:title="@string/gms_enabled_title"
-        android:summary="@string/gms_enabled_summary"
-        android:fragment="com.evolution.settings.fragments.GmsSwitch"/>
-
-    <!-- Parallel Space -->
-    <Preference
-        android:key="parallel_space"
-        android:title="@string/laboratory_parallel_space_title"
-        android:summary="@string/laboratory_parallel_space_summary">
-        <intent
-            android:targetPackage="ink.kscope.parallelspace"
-            android:targetClass="ink.kscope.parallelspace.MainActivity" />
-    </Preference>
-
     <!-- Game Space -->
+    <!--
     <Preference
         android:key="game_settings"
         android:title="@string/game_space_title"
@@ -34,6 +18,7 @@
             android:targetPackage="io.chaldeaprjkt.gamespace"
             android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
     </Preference>
+    -->
 
     <!-- Smart Pixels -->
     <Preference
@@ -58,7 +43,7 @@
             android:key="persist.sys.pixelprops.gphotos"
             android:title="@string/photos_spoof_title"
             android:summary="@string/photos_spoof_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <!-- Unlock FPS for specific games -->
         <com.evolution.settings.preference.SystemPropertySwitchPreference
@@ -67,15 +52,9 @@
             android:summary="@string/games_spoof_summary"
             android:defaultValue="false" />
 
-        <!-- Netflix -->
-        <com.evolution.settings.preference.SystemPropertySwitchPreference
-            android:key="persist.sys.pixelprops.netflix"
-            android:title="@string/netflix_spoof_title"
-            android:summary="@string/netflix_spoof_summary"
-            android:defaultValue="false" />
-
     </PreferenceCategory>
 
+    <!--
     <PreferenceCategory
         android:key="pulse_category"
         android:title="@string/pulse_category">
@@ -87,6 +66,7 @@
             android:fragment="com.evolution.settings.fragments.Pulse" />
 
     </PreferenceCategory>
+    -->
 
     <!-- Volume panel -->
     <PreferenceCategory

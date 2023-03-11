@@ -75,11 +75,13 @@
     <PreferenceCategory
         android:title="@string/general_category">
 
-        <!-- com.evolution.settings.preference.SystemSettingSwitchPreference
+        <!--
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="music_tile_title"
             android:title="@string/qs_music_tile_track_optional_title"
             android:summary="@string/qs_music_tile_track_optional_summary"
-            android:defaultValue="false" />-->
+            android:defaultValue="false" />
+        -->
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="qstile_requires_unlocking"
@@ -96,7 +98,8 @@
 
     </PreferenceCategory>
 
-    <!-- PreferenceCategory
+    <!--
+    <PreferenceCategory
         android:title="@string/media_category">
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
@@ -127,7 +130,8 @@
             android:max="25"
             settings:min="1" />
 
-    </PreferenceCategory> -->
+    </PreferenceCategory>
+    -->
 
     <PreferenceCategory
         android:key="quick_settings_brighness_category"
@@ -246,33 +250,6 @@
             android:key="qs_footer_show_settings"
             android:title="@string/qs_footer_settings_icon_title"
             android:defaultValue="true" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/notification_material_dismiss_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="notification_material_dismiss"
-            android:title="@string/notification_material_dismiss_title"
-            android:summary="@string/notification_material_dismiss_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="notification_material_dismiss_style"
-            android:title="@string/notification_material_dismiss_style_title"
-            android:dependency="notification_material_dismiss"
-            android:defaultValue="0"
-            android:max="9"
-            settings:min="0" />
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="notification_material_dismiss_bgstyle"
-            android:title="@string/notification_material_dismiss_bgstyle_title"
-            android:dependency="notification_material_dismiss"
-            android:defaultValue="0"
-            android:max="4"
-            settings:min="0" />
 
     </PreferenceCategory>
 
