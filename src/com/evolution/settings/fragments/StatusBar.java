@@ -55,9 +55,6 @@ public class StatusBar extends DashboardFragment implements
 
     private static final String TAG = "StatusBar";
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
-    private static final String KEY_COMBINED_SIGNAL_ICONS = "enable_combined_signal_icons";
-    private static final String SYS_COMBINED_SIGNAL_ICONS = "persist.sys.flags.combined_signal_icons";
-    private static final String KEY_NOTIFICATION_COUNT = "status_bar_notif_count";
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
@@ -68,7 +65,6 @@ public class StatusBar extends DashboardFragment implements
     private static final int BATTERY_STYLE_HIDDEN = 5;
 
     private SwitchPreference mBatteryTextCharging;
-    private SwitchPreference mCombinedSignalIcons;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingListPreference mStatusBarClock;
@@ -124,16 +120,6 @@ public class StatusBar extends DashboardFragment implements
         Resources sysUiRes = sysUiContext.getResources();
         final int resId = sysUiRes.getIdentifier("config_statusBarShowNumber", "bool", SYSTEMUI_PACKAGE);
         final boolean isDefaultEnabled = sysUiRes.getBoolean(resId);
-
-        SwitchPreference notifCountPref = findPreference(KEY_NOTIFICATION_COUNT);
-        boolean enabled = Settings.System.getIntForUser(resolver,
-                KEY_NOTIFICATION_COUNT, isDefaultEnabled ? 1 : 0,
-                UserHandle.USER_CURRENT) == 1;
-        notifCountPref.setChecked(enabled);
-
-        mCombinedSignalIcons = (SwitchPreference) findPreference(KEY_COMBINED_SIGNAL_ICONS);
-        mCombinedSignalIcons.setChecked(SystemProperties.getBoolean(SYS_COMBINED_SIGNAL_ICONS, false));
-        mCombinedSignalIcons.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -154,13 +140,6 @@ public class StatusBar extends DashboardFragment implements
                     Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
             mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
                     (batterystyle != BATTERY_STYLE_TEXT && value != 2));
-            return true;
-        } else if (preference == mCombinedSignalIcons) {
-            boolean value = (Boolean) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
-                Settings.Secure.ENABLE_COMBINED_SIGNAL_ICONS, value ? 1 : 0, UserHandle.USER_CURRENT);
-            SystemProperties.set(SYS_COMBINED_SIGNAL_ICONS, value ? "true" : "false");
-            SystemPropPoker.getInstance().poke();
             return true;
         }
         return false;
