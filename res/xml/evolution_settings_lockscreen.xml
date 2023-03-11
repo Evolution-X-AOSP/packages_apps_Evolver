@@ -45,7 +45,8 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
-        <!-- com.evolution.settings.preference.SystemSettingSwitchPreference
+        <!--
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="use_secondary_color_clock"
             android:title="@string/lockscreen_clock_color_title"
             android:summary="@string/lockscreen_clock_color_summary"
@@ -55,7 +56,8 @@
             android:key="lockscreen_use_double_line_clock"
             android:title="@string/lockscreen_double_line_clock_setting_toggle"
             android:summary="@string/lockscreen_double_line_clock_summary"
-            android:defaultValue="true" />-->
+            android:defaultValue="true" />
+        -->
 
         <Preference
             android:key="always_on_display_schedule"
@@ -84,7 +86,7 @@
             android:key="lockscreen_media_metadata"
             android:title="@string/media_art_title"
             android:summary="@string/media_art_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="lockscreen_albumart_filter"
@@ -122,6 +124,7 @@
             android:summary="@string/enable_fingerprint_ripple_effect_summary"
             android:defaultValue="true" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="fp_success_vibrate"
             android:title="@string/fp_success_vibrate_title"
@@ -133,10 +136,12 @@
             android:title="@string/fp_error_vibrate_title"
             android:summary="@string/fp_error_vibrate_summary"
             android:defaultValue="true" />
+        -->
 
     </PreferenceCategory>
 
     <!-- Lockscreen bottom shortcuts -->
+    <!--
     <PreferenceCategory
         android:title="@string/lockscreen_shortcut_category">
 
@@ -163,5 +168,6 @@
             android:defaultValue="false" />
 
     </PreferenceCategory>
+    -->
 
 </PreferenceScreen>
