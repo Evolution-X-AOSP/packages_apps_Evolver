@@ -53,14 +53,12 @@ public class QuickSettings extends DashboardFragment implements
     private static final String TAG = "QuickSettings";
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
-    private static final String KEY_PREF_BATTERY_ESTIMATE = "qs_show_battery_estimate";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
     private static final String QUICK_PULLDOWN = "status_bar_quick_qs_pulldown";
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
     private ListPreference mQuickPulldown;
-    private SwitchPreference mBatteryEstimate;
     private SwitchPreference mShowAutoBrightness;
 
     @Override
@@ -99,12 +97,6 @@ public class QuickSettings extends DashboardFragment implements
         mQuickPulldown.setValue(String.valueOf(qpmode));
         mQuickPulldown.setSummary(mQuickPulldown.getEntry());
         mQuickPulldown.setOnPreferenceChangeListener(this);
-
-        boolean turboInstalled = EvolutionUtils.isPackageInstalled(getContext(),
-                "com.google.android.apps.turbo");
-        mBatteryEstimate = findPreference(KEY_PREF_BATTERY_ESTIMATE);
-        if (!turboInstalled)
-            prefScreen.removePreference(mBatteryEstimate);
     }
 
     @Override
@@ -140,19 +132,5 @@ public class QuickSettings extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_quicksettings) {
-
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    List<String> keys = super.getNonIndexableKeys(context);
-
-                    boolean turboInstalled = EvolutionUtils.isPackageInstalled(context,
-                            "com.google.android.apps.turbo");
-
-                    if (!turboInstalled)
-                        keys.add(KEY_PREF_BATTERY_ESTIMATE);
-
-                    return keys;
-                }
-            };
+            new BaseSearchIndexProvider(R.xml.evolution_settings_quicksettings);
 }
