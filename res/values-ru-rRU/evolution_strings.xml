@@ -146,7 +146,7 @@
     <string name="heads_up_notifications">Всплывающие уведомления</string>
     <string name="notification_heads_up_title">Всплывающие уведомления</string>
     <string name="notification_heads_up_summary">Разрешить всплывающие уведомления</string>
-    <string name="notification_heads_up_primary_switch_title">Использовать всплывающие уведомления</string>
+    <string name="notification_heads_up_main_switch_title">Использовать всплывающие уведомления</string>
     <string name="notification_heads_up_timeout_title">Длительность</string>
     <string name="notification_heads_up_timeout_summary">Время для отображения всплывающих уведомлений</string>
     <string name="add_heads_up_package">Добавить приложение</string>
@@ -164,7 +164,7 @@
     </string>
     <string name="network_traffic_title">Индикатор сетевого трафика</string>
     <string name="network_traffic_summary">Включить или отключить индикатор скорости сети в строке состояния</string>
-    <string name="network_traffic_primary_switch_title">Использовать индикатор сетевого трафика</string>
+    <string name="network_traffic_main_switch_title">Использовать индикатор сетевого трафика</string>
     <string name="network_options_title">Настройки</string>
     <string name="network_traffic_autohide_title">Скрыть индикатор сетевого трафика, если он неактивен</string>
     <string name="network_traffic_autohide_summary">Скрывать, когда индикатор сетевого трафика ниже 1 КБ/с</string>
@@ -356,7 +356,7 @@
     <string name="notification_sound_vib_screen_on_summary">Воспроизводить звук и вибрацию при получении уведомлений когда экран включен</string>
     <!-- Edge light -->
     <string name="edge_light_title">Подсветка краёв экрана</string>
-    <string name="enable_edge_light">Включить подсветку краев экрана</string>
+    <string name="edge_light_main_switch_title">Включить подсветку краев экрана</string>
     <string name="edge_light_intro_text">Отображение анимации по краям экрана при уведомлении</string>
     <string name="edge_light_always_trigger_on_pulse_title">Всегда запускать при уведомлениях</string>
     <string name="edge_light_always_trigger_on_pulse_summary">Воспроизводить анимацию даже когда Всегда включенный экран включён и не только для уведомлений</string>
@@ -429,7 +429,7 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Блокировка сенсоров по-пакетно</string>
     <string name="sensor_block_summary">Заблокировать доступ к датчикам для некоторых приложений для экономии заряда батареи</string>
-    <string name="sensor_block_primary_switch_title">Использовать блокировку сенсоров по-пакетно</string>
+    <string name="sensor_block_main_switch_title">Использовать блокировку сенсоров по-пакетно</string>
     <string name="sensor_block_app_picker_title">Блокировать датчики для этих приложений</string>
     <string name="add_sensor_block_package_title">Выбрать приложения, для которых блокируются датчики</string>
     <string name="add_sensor_block_package_summary">Акселерометр, датчики движения и линейного ускорения будут заблокированы для выбранных приложений</string>
@@ -586,12 +586,9 @@
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Текст в строке состояния</string>
     <string name="status_bar_lyric_summary">Показывать текст песни в строке состояния (требуется поддержка приложения)</string>
-    <string name="status_bar_lyric_primary_switch_title">Использовать текст в строке состояния</string>
+    <string name="status_bar_lyric_main_switch_title">Использовать текст в строке состояния</string>
     <string name="disguise_props_for_music_app_title">Маскировка устройства для музыкальных приложений</string>
     <string name="disguise_props_for_music_app_summary">Маскировка устройства в некоторых музыкальных приложениях для поддержки текста в строке состояния. После изменения этого переключателя необходимо перезапустить приложение, чтобы изменения вступили в силу.</string>
-    <!-- OOS style material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_button_title">Material-style кнопка очистки уведомлений</string>
-    <string name="notification_material_dismiss_button_summary">Заменить \"Очистить все\" на плавающую кнопку</string>
     <!-- Evolver categories -->
     <string name="general_category">Основные</string>
     <string name="fingerprint_category">Отпечаток пальца</string>
@@ -782,11 +779,6 @@
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Скрыть строку состояния</string>
     <string name="hide_lockscreen_status_bar_summary">Коснитесь строки состояния для переключения видимости</string>
-    <!-- Material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_title">Кнопка очистки всех уведомлений</string>
-    <string name="notification_material_dismiss_summary">Заменяет текст \"Очистить все\" на плавающую кнопку</string>
-    <string name="notification_material_dismiss_style_title">Стиль кнопки</string>
-    <string name="notification_material_dismiss_bgstyle_title">Фон кнопки</string>
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Игнорировать флаги безопасности в окнах приложений</string>
     <string name="ignore_window_secure_summary">Убирает ограничения снимков и записей экрана для всех приложений. Обычно они заменяются черными областями в записях. Это может быть удобным в некоторых случаях, но может привести к утечке конфиденциальной информации. После изменения этого переключателя может потребоваться перезапустить приложения, чтобы изменения вступили в силу.</string>
@@ -799,7 +791,7 @@
     <string name="smart_pixels_warning_text">Умные пиксели - это функция энергосбережения. В зависимости от количества пикселей, которые вы решили выключить, вы можете видеть улучшения в жизни батареи. Заметьте, что в некоторых случаях это может привести к нереагирующим областям при сенсорном экране</string>
     <string name="smart_pixels_title">Умные пиксели</string>
     <string name="smart_pixels_summary">Экономьте батарею, отключая лишние пиксели</string>
-    <string name="smart_pixels_primary_switch_title">Использовать умные пиксели</string>
+    <string name="smart_pixels_main_switch_title">Использовать умные пиксели</string>
     <string name="smart_pixels_intro_text">Выключать пиксели для снижения энергопотребления</string>
     <string name="smart_pixels_on_power_save_title">Автоматическое включение при активации экономии зарядка батареи</string>
     <string name="smart_pixels_on_power_save_summary">Включить умные пиксели, когда включена заставка</string>
@@ -807,9 +799,9 @@
     <string name="smart_pixels_shift_title">Защита от выгорания экрана</string>
     <string name="smart_pixels_shift_summary">Предотвращение выгорания на OLED устройствах благодаря перемещению пикселей с такой частотой</string>
     <!-- Status bar logo -->
-    <string name="status_bar_logo_title">Логотип</string>
+    <string name="status_bar_logo_title">Логотип в строке состояния</string>
     <string name="status_bar_logo_summary">Включите для отображения логотипа в строке состояния</string>
-    <string name="status_bar_logo_primary_switch_title">Использовать логотип</string>
+    <string name="status_bar_logo_main_switch_title">Использовать логотип в строке состояния</string>
     <string name="status_bar_logo_position_title">Расположение</string>
     <string name="status_bar_logo_position_summary">Выберите, с какой стороны отображать логотип</string>
     <string name="status_bar_logo_position_right">Справа</string>
@@ -958,9 +950,6 @@
     <string name="power_menu_animation_translucent_top">Полупрозрачность (сверху)</string>
     <string name="power_menu_animation_translucent_bottom">Полупрозрачность (снизу)</string>
     <string name="power_menu_animation_rotate">Вращение</string>
-    <!-- Changelog -->
-    <string name="changelog_evolution_title">Текущий список изменений</string>
-    <string name="changelog_evolution_summary">Просмотр последних изменений в прошивке</string>
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Параллельное пространство</string>
     <string name="laboratory_parallel_space_summary">Разрешить параллельный запуск нескольких экземпляров одного и того же приложения</string>
