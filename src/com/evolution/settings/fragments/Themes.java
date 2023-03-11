@@ -15,9 +15,6 @@
  */
 package com.evolution.settings.fragments;
 
-import static android.os.UserHandle.USER_CURRENT;
-import static android.os.UserHandle.USER_SYSTEM;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;

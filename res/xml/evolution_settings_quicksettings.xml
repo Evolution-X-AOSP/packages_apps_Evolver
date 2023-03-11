@@ -8,23 +8,59 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title">
 
-    <Preference
-       android:key="qs_tile_layout"
-       android:title="@string/qs_tile_layout_title"
-       android:summary="@string/qs_tile_layout_summary"
-       android:fragment="com.evolution.settings.fragments.QsTileLayoutSettings" />
+    <PreferenceCategory
+        android:key="qs_layout_category"
+        android:title="@string/qs_layout_category_title">
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_tile_label_hide"
+            android:title="@string/qs_tile_label_hide_title"
+            android:summary="@string/qs_tile_label_hide_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_tile_label_size"
+            android:title="@string/qs_tile_label_size_title"
+            android:max="15"
+            settings:min="10"
+            settings:interval="1"
+            settings:units="sp"
+            android:defaultValue="14" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_tile_vertical_layout"
+            android:title="@string/qs_tile_layout_title"
+            android:summary="@string/qs_tile_layout_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_layout_columns"
+            android:title="@string/qs_columns_portrait_title"
+            android:max="5"
+            settings:min="2"
+            settings:interval="1"
+            android:defaultValue="2" />
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_layout_columns_landscape"
+            android:title="@string/qs_columns_landscape_title"
+            android:max="6"
+            settings:min="2"
+            settings:interval="1"
+            android:defaultValue="4" />
+
+    </PreferenceCategory>
+
+    <!--
     <PreferenceCategory
         android:title="@string/qs_header_category_title">
 
-        <!-- QS clock -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference 
             android:key="show_qs_clock"
             android:title="@string/qs_clock_title"
             android:summary="@string/qs_clock_summary"
             android:defaultValue="true" />
 
-        <!-- QS clock size -->
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="qs_header_clock_size"
             android:title="@string/clock_font_size_title"
@@ -35,7 +71,6 @@
             android:defaultValue="14"
             settings:units="@string/unit_pixels" />
 
-        <!-- QS date -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="show_qs_date"
             android:title="@string/qs_date_title"
@@ -47,7 +82,6 @@
     <PreferenceCategory
         android:title="@string/battery_title">
 
-        <!-- Battery styles -->
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="qs_battery_style"
             android:title="@string/status_bar_battery_style_title"
@@ -62,7 +96,6 @@
             android:entryValues="@array/status_bar_battery_percent_values"
             android:defaultValue="2" />
 
-        <!-- QS Battery estimates -->
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_show_battery_estimate"
             android:title="@string/qs_show_battery_estimate_title"
@@ -71,15 +104,18 @@
             android:defaultValue="true" />
 
     </PreferenceCategory>
+     -->
 
     <PreferenceCategory
         android:title="@string/general_category">
 
-        <!-- com.evolution.settings.preference.SystemSettingSwitchPreference
+        <!--
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="music_tile_title"
             android:title="@string/qs_music_tile_track_optional_title"
             android:summary="@string/qs_music_tile_track_optional_summary"
-            android:defaultValue="false" />-->
+            android:defaultValue="false" />
+        -->
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="qstile_requires_unlocking"
@@ -96,7 +132,8 @@
 
     </PreferenceCategory>
 
-    <!-- PreferenceCategory
+    <!--
+    <PreferenceCategory
         android:title="@string/media_category">
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
@@ -127,7 +164,8 @@
             android:max="25"
             settings:min="1" />
 
-    </PreferenceCategory> -->
+    </PreferenceCategory>
+    -->
 
     <PreferenceCategory
         android:key="quick_settings_brighness_category"
@@ -209,11 +247,13 @@
     <PreferenceCategory
         android:title="@string/qs_footer_category">
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true" />
+        -->
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="qs_show_data_usage"
@@ -221,6 +261,7 @@
             android:summary="@string/qs_show_data_usage_summary"
             android:defaultValue="true" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_show_user"
             android:title="@string/qs_footer_users_icon_title"
@@ -246,33 +287,7 @@
             android:key="qs_footer_show_settings"
             android:title="@string/qs_footer_settings_icon_title"
             android:defaultValue="true" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/notification_material_dismiss_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="notification_material_dismiss"
-            android:title="@string/notification_material_dismiss_title"
-            android:summary="@string/notification_material_dismiss_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="notification_material_dismiss_style"
-            android:title="@string/notification_material_dismiss_style_title"
-            android:dependency="notification_material_dismiss"
-            android:defaultValue="0"
-            android:max="9"
-            settings:min="0" />
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="notification_material_dismiss_bgstyle"
-            android:title="@string/notification_material_dismiss_bgstyle_title"
-            android:dependency="notification_material_dismiss"
-            android:defaultValue="0"
-            android:max="4"
-            settings:min="0" />
+        -->
 
     </PreferenceCategory>
 
