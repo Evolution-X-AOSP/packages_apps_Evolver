@@ -135,13 +135,18 @@
     <!-- UDFPS icon picker -->
     <string name="udfps_icon_picker_title">屏下指纹图标选择器</string>
     <string name="udfps_icon_picker_summary">选择您最喜欢的指纹图标</string>
+    <!-- Custom UDFPS icon -->
+    <string name="custom_fp_icon_title">自定义屏幕指纹图标</string>
+    <string name="custom_fp_icon_summary">选择自定义屏幕指纹图标</string>
+    <string name="custom_fp_select_title">从存储中选择自定义的屏幕指纹图标</string>
+    <string name="custom_fp_select_summary">从您保存的文件或图库中选择自定义图像</string>
     <!-- Notification light -->
     <string name="notification_light_settings">通知灯</string>
     <!-- Heads up -->
     <string name="heads_up_notifications">浮动通知</string>
     <string name="notification_heads_up_title">浮动通知</string>
     <string name="notification_heads_up_summary">允许弹出通知</string>
-    <string name="notification_heads_up_primary_switch_title">使用浮动通知</string>
+    <string name="notification_heads_up_main_switch_title">使用浮动通知</string>
     <string name="notification_heads_up_timeout_title">超时</string>
     <string name="notification_heads_up_timeout_summary">显示浮动通知的时间</string>
     <string name="add_heads_up_package">添加应用程序</string>
@@ -159,7 +164,7 @@
     </string>
     <string name="network_traffic_title">网络流量监视器</string>
     <string name="network_traffic_summary">在状态栏中启用或禁用网络流量监视器</string>
-    <string name="network_traffic_primary_switch_title">使用网络流量监视器</string>
+    <string name="network_traffic_main_switch_title">使用网络流量监视器</string>
     <string name="network_options_title">选项</string>
     <string name="network_traffic_autohide_title">当网络处于非活动状态时隐藏网络流量监视器</string>
     <string name="network_traffic_autohide_summary">当网络流量监视小于 1 KB/s 时隐藏</string>
@@ -351,7 +356,7 @@
     <string name="notification_sound_vib_screen_on_summary">屏幕开启时播放声音和振动通知</string>
     <!-- Edge light -->
     <string name="edge_light_title">边缘闪光</string>
-    <string name="enable_edge_light">开启边缘闪光</string>
+    <string name="edge_light_main_switch_title">开启边缘闪光</string>
     <string name="edge_light_intro_text">拉取时沿屏幕边缘显示动画</string>
     <string name="edge_light_always_trigger_on_pulse_title">总是在脉冲上触发</string>
     <string name="edge_light_always_trigger_on_pulse_summary">是否在显示环境显示时显示边缘光线，而不仅仅是为了通知</string>
@@ -424,7 +429,7 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">阻止某些应用访问传感器</string>
     <string name="sensor_block_summary">阻止某些应用访问特定的传感器以节省电池电量。</string>
-    <string name="sensor_block_primary_switch_title">每个包使用传感器块</string>
+    <string name="sensor_block_main_switch_title">阻止个別应用使用传感器</string>
     <string name="sensor_block_app_picker_title">屏蔽这些应用的传感器</string>
     <string name="add_sensor_block_package_title">添加将被屏蔽传感器的应用</string>
     <string name="add_sensor_block_package_summary">这些应用程序将阻止重大运动，加速计，线性加速度传感器</string>
@@ -581,12 +586,9 @@
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">状态栏歌词</string>
     <string name="status_bar_lyric_summary">在状态栏显示歌词（需要应用程序支持）</string>
-    <string name="status_bar_lyric_primary_switch_title">使用状态栏歌词</string>
+    <string name="status_bar_lyric_main_switch_title">使用状态栏歌词</string>
     <string name="disguise_props_for_music_app_title">对音乐应用伪装设备型号</string>
     <string name="disguise_props_for_music_app_summary">在一些音乐应用中伪装设备型号以支持状态栏歌词。更改此开关后，您必须重新启动相关应用才能使更改生效。</string>
-    <!-- OOS style material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_button_title">清除通知按钮</string>
-    <string name="notification_material_dismiss_button_summary">用浮动按钮替换清除所有通知文本</string>
     <!-- Evolver categories -->
     <string name="general_category">常规</string>
     <string name="fingerprint_category">指纹</string>
@@ -777,11 +779,6 @@
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">隐藏状态栏</string>
     <string name="hide_lockscreen_status_bar_summary">触摸状态栏以切换可见性</string>
-    <!-- Material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_title">清除所有通知按钮</string>
-    <string name="notification_material_dismiss_summary">用 material 样式浮动按钮替换清除所有通知文本</string>
-    <string name="notification_material_dismiss_style_title">按钮样式</string>
-    <string name="notification_material_dismiss_bgstyle_title">按钮背景</string>
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">忽略窗口安全标志</string>
     <string name="ignore_window_secure_summary">这将删除所有应用程序的屏幕截图和屏幕记录限制。 通常，特殊应用程序会替换为记录中的黑色区域。 在某些情况下这可能很方便，但可能会导致隐私泄露。 更改此切换后，您可能需要重新启动</string>
@@ -794,7 +791,7 @@
     <string name="smart_pixels_warning_text">智能像素是一种节电功能。根据你决定关闭多少像素，你可以看到电池寿命的改善。注意，在某些情况下，它可能会导致触摸屏上的无响应区域</string>
     <string name="smart_pixels_title">智能像素</string>
     <string name="smart_pixels_summary">通过关闭额外的像素来节省电量</string>
-    <string name="smart_pixels_primary_switch_title">使用智能像素</string>
+    <string name="smart_pixels_main_switch_title">使用智能像素</string>
     <string name="smart_pixels_intro_text">关闭像素以降低功耗</string>
     <string name="smart_pixels_on_power_save_title">省电模式时自动启用</string>
     <string name="smart_pixels_on_power_save_summary">开启省电模式时自动启用智能像素</string>
@@ -804,7 +801,7 @@
     <!-- Status bar logo -->
     <string name="status_bar_logo_title">Logo</string>
     <string name="status_bar_logo_summary">启用在状态栏中显示 logo</string>
-    <string name="status_bar_logo_primary_switch_title">使用 Logo</string>
+    <string name="status_bar_logo_main_switch_title">使用状态栏标志</string>
     <string name="status_bar_logo_position_title">位置</string>
     <string name="status_bar_logo_position_summary">选择左侧或右侧显示 Logo</string>
     <string name="status_bar_logo_position_right">右侧</string>
@@ -953,9 +950,6 @@
     <string name="power_menu_animation_translucent_top">半透明 (顶部)</string>
     <string name="power_menu_animation_translucent_bottom">半透明 (底部)</string>
     <string name="power_menu_animation_rotate">旋转</string>
-    <!-- Changelog -->
-    <string name="changelog_evolution_title">当前更新日志</string>
-    <string name="changelog_evolution_summary">查看 ROM 的最近更改</string>
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">平行空间</string>
     <string name="laboratory_parallel_space_summary">允许同时运行同一应用程序的多个实例</string>
