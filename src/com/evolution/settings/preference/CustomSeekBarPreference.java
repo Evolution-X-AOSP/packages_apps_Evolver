@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2020 crDroid Android Project
+ * Copyright (C) 2016-2023 crDroid Android Project
  * Copyright (C) 2016-2017 The Dirty Unicorns Project
  *               2019-2022 Evolution X
  *
@@ -35,6 +35,7 @@ import androidx.core.content.res.TypedArrayUtils;
 import androidx.preference.*;
 
 import com.android.settings.R;
+import com.android.settings.Utils;
 
 public class CustomSeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
     protected final String TAG = getClass().getName();
@@ -114,8 +115,8 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
 
     public CustomSeekBarPreference(Context context, AttributeSet attrs) {
         this(context, attrs, TypedArrayUtils.getAttr(context,
-                androidx.preference.R.attr.preferenceStyle,
-                android.R.attr.preferenceStyle));
+                        androidx.preference.R.attr.seekBarPreferenceStyle,
+                        com.android.internal.R.attr.seekBarPreferenceStyle));
     }
 
     public CustomSeekBarPreference(Context context) {
@@ -260,8 +261,8 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         if (mMinusImageView != null) {
             if (mValue == mMinValue || mTrackingTouch) {
                 mMinusImageView.setClickable(false);
-                mMinusImageView.setColorFilter(getContext().getColor(R.color.disabled_text_color),
-                    PorterDuff.Mode.MULTIPLY);
+                mMinusImageView.setColorFilter(Utils.getColorAttrDefaultColor(getContext(), android.R.attr.textColorTertiary),
+                    PorterDuff.Mode.SRC_IN);
             } else {
                 mMinusImageView.setClickable(true);
                 mMinusImageView.clearColorFilter();
@@ -270,7 +271,8 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         if (mPlusImageView != null) {
             if (mValue == mMaxValue || mTrackingTouch) {
                 mPlusImageView.setClickable(false);
-                mPlusImageView.setColorFilter(getContext().getColor(R.color.disabled_text_color), PorterDuff.Mode.MULTIPLY);
+                mPlusImageView.setColorFilter(Utils.getColorAttrDefaultColor(getContext(), android.R.attr.textColorTertiary),
+                    PorterDuff.Mode.SRC_IN);
             } else {
                 mPlusImageView.setClickable(true);
                 mPlusImageView.clearColorFilter();
