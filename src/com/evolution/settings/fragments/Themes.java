@@ -50,6 +50,9 @@ public class Themes extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "Themes";
+    private static final String KG_CUSTOM_CLOCK_COLOR_ENABLED = "kg_custom_clock_color_enabled";
+
+    private SwitchPreference mKGCustomClockColor;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -63,12 +66,24 @@ public class Themes extends DashboardFragment implements
         Context mContext = getActivity().getApplicationContext();
         ContentResolver resolver = mContext.getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mKGCustomClockColor = (SwitchPreference) findPreference(KG_CUSTOM_CLOCK_COLOR_ENABLED);
+        boolean mKGCustomClockColorEnabled = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
+        mKGCustomClockColor.setChecked(mKGCustomClockColorEnabled);
+        mKGCustomClockColor.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Context mContext = getActivity().getApplicationContext();
         ContentResolver resolver = mContext.getContentResolver();
+        if (preference == mKGCustomClockColor) {
+            boolean val = (Boolean) newValue;
+            Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.KG_CUSTOM_CLOCK_COLOR_ENABLED, val ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        }
         return false;
     }
 
