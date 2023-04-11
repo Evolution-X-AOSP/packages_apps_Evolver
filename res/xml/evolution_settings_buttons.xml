@@ -64,6 +64,14 @@
             android:summary="@string/volume_panel_on_left_summary"
             android:defaultValue="false" />
 
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="volume_dialog_timeout"
+            android:title="@string/volume_dialog_timeout_title"
+            android:defaultValue="3"
+            android:max="10"
+            settings:min="1"
+            settings:units="@string/unit_seconds" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="show_app_volume"
             android:title="@string/app_volume_title"
@@ -257,18 +265,6 @@
            android:title="@string/block_alert_title"
            android:summary="@string/block_alert_summary"
            android:defaultValue="true" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="extras_category"
-        android:title="@string/extras_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="click_partial_screenshot"
-            android:title="@string/click_partial_screenshot_title"
-            android:summary="@string/click_partial_screenshot_summary"
-            android:defaultValue="false" />
 
     </PreferenceCategory>
 
