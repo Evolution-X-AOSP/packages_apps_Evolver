@@ -8,32 +8,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_title">
 
-    <com.evolution.settings.preference.SecureSettingSwitchPreference
-        android:key="pulse_on_new_tracks"
-        android:title="@string/pulse_on_new_tracks_title"
-        android:summary="@string/pulse_on_new_tracks_summary"
-        android:defaultValue="false" />
-
-    <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
-        android:key="edge_light_enabled"
-        android:title="@string/edge_light_title"
-        android:summary="@string/edge_light_intro_text"
-        android:defaultValue="false"
-        android:fragment="com.evolution.settings.lockscreen.EdgeLightSettings"
-        settings:observe="true" />
-
-    <PreferenceCategory
-        android:key="ambient_display"
-        android:title="@string/ambient_display_category">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="ambient_wake_gestures"
-            android:title="@string/ambient_wake_gestures_title"
-            android:summary="@string/ambient_wake_gestures_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
     <!-- Udfps options -->
     <PreferenceCategory
         android:key="udfps_category"
@@ -44,6 +18,26 @@
             android:title="@string/udfps_settings_title"
             android:summary="@string/udfps_settings_summary"
             android:fragment="com.evolution.settings.fragments.Udfps" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="ambient_display"
+        android:title="@string/ambient_display_category">
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="pulse_on_new_tracks"
+            android:title="@string/pulse_on_new_tracks_title"
+            android:summary="@string/pulse_on_new_tracks_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
+            android:key="edge_light_enabled"
+            android:title="@string/edge_light_title"
+            android:summary="@string/edge_light_intro_text"
+            android:defaultValue="false"
+            android:fragment="com.evolution.settings.lockscreen.EdgeLightSettings"
+            settings:observe="true" />
 
     </PreferenceCategory>
 
