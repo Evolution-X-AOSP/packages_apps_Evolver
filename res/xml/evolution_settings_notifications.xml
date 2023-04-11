@@ -8,19 +8,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/notifications_title">
 
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="reticker_status"
-        android:title="@string/reticker_title"
-        android:summary="@string/reticker_summary"
-        android:defaultValue="false" />
-
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:dependency="reticker_status"
-        android:key="reticker_colored"
-        android:title="@string/reticker_colored_title"
-        android:summary="@string/reticker_colored_summary"
-        android:defaultValue="false" />
-
     <PreferenceCategory
         android:key="headsup_notifications_category"
         android:title="@string/headsup_category">
@@ -38,6 +25,19 @@
     <PreferenceCategory
         android:key="notifications_general_category"
         android:title="@string/general_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="reticker_status"
+            android:title="@string/reticker_title"
+            android:summary="@string/reticker_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:dependency="reticker_status"
+            android:key="reticker_colored"
+            android:title="@string/reticker_colored_title"
+            android:summary="@string/reticker_colored_summary"
+            android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="notification_sound_vib_screen_on"
