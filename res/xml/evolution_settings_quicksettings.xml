@@ -8,6 +8,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title">
 
+    <!-- QuickSettings -->
+    <Preference
+        android:key="qs_tile_layout"
+        android:title="@string/qs_layout_category_title"
+        android:summary="@string/qs_tile_layout_summary"
+        android:fragment="com.evolution.settings.fragments.QsLayoutSettings" />
+
     <!--
     <PreferenceCategory
         android:key="qs_layout_category"
