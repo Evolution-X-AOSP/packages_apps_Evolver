@@ -40,6 +40,7 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.development.SystemPropPoker;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.SystemSettingListPreference;
@@ -55,11 +56,14 @@ public class QuickSettings extends DashboardFragment implements
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
     private static final String QUICK_PULLDOWN = "status_bar_quick_qs_pulldown";
+    private static final String KEY_COMBINED_QS_HEADERS = "enable_combined_qs_headers";
+    private static final String SYS_COMBINED_QS_HEADERS = "persist.sysui.flags.combined_qs_headers";
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
     private ListPreference mQuickPulldown;
     private SwitchPreference mShowAutoBrightness;
+    private SwitchPreference mCombinedQSHeader;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -97,6 +101,10 @@ public class QuickSettings extends DashboardFragment implements
         mQuickPulldown.setValue(String.valueOf(qpmode));
         mQuickPulldown.setSummary(mQuickPulldown.getEntry());
         mQuickPulldown.setOnPreferenceChangeListener(this);
+
+        mCombinedQSHeader = (SwitchPreference) findPreference(KEY_COMBINED_QS_HEADERS);
+        mCombinedQSHeader.setChecked(SystemProperties.getBoolean(SYS_COMBINED_QS_HEADERS, true));
+        mCombinedQSHeader.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -116,6 +124,13 @@ public class QuickSettings extends DashboardFragment implements
             int index = mQuickPulldown.findIndexOfValue((String) newValue);
             mQuickPulldown.setSummary(
                     mQuickPulldown.getEntries()[index]);
+            return true;
+        } else if (preference == mCombinedQSHeader) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putIntForUser(getContentResolver(),
+                Settings.Secure.ENABLE_COMBINED_QS_HEADERS, value ? 1 : 0, UserHandle.USER_CURRENT);
+            SystemProperties.set(SYS_COMBINED_QS_HEADERS, value ? "true" : "false");
+            SystemPropPoker.getInstance().poke();
             return true;
         }
         return false;
