@@ -8,6 +8,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_title">
 
+    <com.evolution.settings.preference.SystemPropertySwitchPreference
+        android:key="persist.sysui.monochromatic"
+        android:title="@string/monochromatic_themes_title"
+        android:defaultValue="false" />
+
     <Preference
         android:key="monet_settings"
         android:title="@string/monet_settings_title"
