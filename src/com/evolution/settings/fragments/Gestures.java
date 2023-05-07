@@ -25,7 +25,6 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.text.TextUtils;
 import android.view.View;
 
 import androidx.preference.ListPreference;
@@ -50,7 +49,6 @@ public class Gestures extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "Gestures";
-    private static final String CATEGORY_AMBIENT = "ambient_display";
     private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
 
     private ListPreference mTorchPowerButton;
@@ -74,12 +72,6 @@ public class Gestures extends DashboardFragment implements
         mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
         mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
         mTorchPowerButton.setOnPreferenceChangeListener(this);
-
-        final PreferenceCategory ambientCat = (PreferenceCategory) prefScreen.findPreference(CATEGORY_AMBIENT);
-        if (TextUtils.isEmpty(getResources().getString(com.android.internal.R.string.config_dozeDoubleTapSensorType)) &&
-                TextUtils.isEmpty(getResources().getString(com.android.internal.R.string.config_dozeTapSensorType))) {
-            prefScreen.removePreference(ambientCat);
-        }
     }
 
     @Override
