@@ -111,11 +111,13 @@ public class Udfps extends DashboardFragment implements
         mCustomFodIcon = (SystemSettingSwitchPreference) findPreference(CUSTOM_FOD_ICON_KEY);
         boolean val = Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.OMNI_CUSTOM_FP_ICON_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
-        mCustomFodIcon.setOnPreferenceChangeListener(this);
-        if (val) {
-            mUdfpsIconPicker.setEnabled(false);
-        } else {
-            mUdfpsIconPicker.setEnabled(true);
+        if (mCustomFodIcon != null) {
+            mCustomFodIcon.setOnPreferenceChangeListener(this);
+            if (val) {
+                mUdfpsIconPicker.setEnabled(false);
+            } else {
+                mUdfpsIconPicker.setEnabled(true);
+            }
         }
     }
 
