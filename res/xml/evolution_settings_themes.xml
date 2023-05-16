@@ -8,6 +8,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themes_title">
 
+    <!-- Monet Theme Engine -->
     <Preference
         android:key="monet_settings"
         android:title="@string/monet_settings_title"
@@ -24,6 +25,7 @@
     <PreferenceCategory
         android:title="@string/lockscreen_clock_category">
 
+        <!-- Lockscreen Clock Font style -->
         <Preference
             android:key="android.theme.customization.lockscreen_clock_font"
             android:title="@string/theme_customization_lock_clock_title"
@@ -49,6 +51,16 @@
             android:summary="%s"
             android:defaultValue="0" />
 
+        <!-- Lock screen clock top margin settings -->
+        <com.evolution.settings.preference.SecureSettingSeekBarPreference
+            android:key="kg_custom_clock_top_margin"
+            android:title="@string/kg_custom_clock_top_margin_title"
+            android:max="500"
+            settings:min="80"
+            settings:interval="1"
+            android:defaultValue="280"
+            settings:units="dp" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -63,30 +75,35 @@
             android:summary="%s"
             android:defaultValue="0" />
 
+        <!-- Font style -->
         <Preference
             android:key="android.theme.customization.fonts"
             android:title="@string/theme_customization_font_title"
             android:summary="@string/theme_customization_font_summary"
             android:fragment="com.evolution.settings.fragments.FontsPicker" />
 
+        <!-- Icon pack -->
         <Preference
             android:key="android.theme.customization.icon_pack"
             android:title="@string/theme_customization_icon_pack_title"
             android:summary="@string/theme_customization_icon_pack_summary"
             android:fragment="com.evolution.settings.fragments.StatusBarIcons" />
 
+        <!-- Signal icon style -->
         <Preference
             android:key="android.theme.customization.signal_icon"
             android:title="@string/theme_customization_signal_icon_title"
             android:summary="@string/theme_customization_signal_icon_summary"
             android:fragment="com.evolution.settings.fragments.SignalIcons" />
 
+        <!-- Wifi icon style -->
         <Preference
             android:key="android.theme.customization.wifi_icon"
             android:title="@string/theme_customization_wifi_icon_title"
             android:summary="@string/theme_customization_wifi_icon_summary"
             android:fragment="com.evolution.settings.fragments.WifiIcons" />
 
+        <!-- Adaptive icon pack -->
         <Preference
             android:key="android.theme.customization.adaptive_icon_shape"
             android:title="@string/theme_customization_icon_shape_title"
