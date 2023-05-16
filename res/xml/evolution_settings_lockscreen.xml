@@ -42,6 +42,37 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/lockscreen_clock_category">
+
+        <!-- Lockscreen Clock Font style -->
+        <Preference
+            android:key="android.theme.customization.lockscreen_clock_font"
+            android:title="@string/theme_customization_lock_clock_title"
+            android:summary="@string/theme_customization_lock_clock_summary"
+            android:fragment="com.evolution.settings.fragments.LockClockFonts" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="kg_custom_clock_color_enabled"
+            android:title="@string/kg_custom_clock_color_enabled_title"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.colorpicker.SecureSettingColorPickerPreference
+            android:key="kg_custom_clock_color"
+            android:title="@string/kg_custom_clock_color_title"
+            android:dependency="kg_custom_clock_color_enabled"
+            android:defaultValue="0xFFFFFFFF" />
+            
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="clock_use_custom_format"
+            android:title="@string/clock_use_single_line_title"
+            android:entries="@array/clock_use_single_line_entries"
+            android:entryValues="@array/clock_use_single_line_values"
+            android:summary="%s"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_general_category"
         android:title="@string/general_category">
 
@@ -50,20 +81,6 @@
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
-
-        <!--
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="use_secondary_color_clock"
-            android:title="@string/lockscreen_clock_color_title"
-            android:summary="@string/lockscreen_clock_color_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="lockscreen_use_double_line_clock"
-            android:title="@string/lockscreen_double_line_clock_setting_toggle"
-            android:summary="@string/lockscreen_double_line_clock_summary"
-            android:defaultValue="true" />
-        -->
 
         <Preference
             android:key="always_on_display_schedule"
