@@ -88,7 +88,6 @@
 
     </PreferenceCategory>
 
-    <!--
     <PreferenceCategory
         android:title="@string/battery_title">
 
@@ -104,17 +103,15 @@
             android:title="@string/status_bar_battery_percent_title"
             android:entries="@array/status_bar_battery_percent_entries"
             android:entryValues="@array/status_bar_battery_percent_values"
-            android:defaultValue="2" />
+            android:defaultValue="1" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_show_battery_estimate"
-            android:title="@string/qs_show_battery_estimate_title"
-            android:summaryOn="@string/qs_show_battery_estimate_summary_on"
-            android:summaryOff="@string/qs_show_battery_estimate_summary_off"
+            android:title="@string/battery_estimate_title"
+            android:summary="@string/battery_estimate_summary"
             android:defaultValue="true" />
 
     </PreferenceCategory>
-    -->
 
     <PreferenceCategory
         android:title="@string/general_category">
