@@ -38,46 +38,11 @@
         android:max="10"
         android:dependency="heads_up_notifications_enabled" />
 
-    <com.evolution.settings.preference.SystemSettingIntListPreference
-        android:key="heads_up_notifications_threshold"
-        android:title="@string/hun_importance_title"
-        android:summary="%s"
-        android:entries="@array/hun_importance_entries"
-        android:entryValues="@array/hun_importance_values"
-        android:dependency="heads_up_notifications_enabled"
-        android:defaultValue="4" />
-
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="less_boring_heads_up"
         android:title="@string/less_boring_heads_up_title"
         android:summary="@string/less_boring_heads_up_summary"
         android:dependency="heads_up_notifications_enabled"
         android:defaultValue="false" />
-
-    <PreferenceCategory
-        android:title="@string/heads_up_stoplist_title"
-        android:key="stoplist_applications"
-        android:dependency="heads_up_notifications_enabled">
-
-        <com.evolution.settings.preference.AppListPreference
-            android:key="add_stoplist_packages"
-            android:icon="@drawable/ic_menu_add_activated_tint"
-            android:title="@string/add_heads_up_package"
-            android:summary="@string/add_heads_up_stoplist_summary" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/heads_up_blocklist_title"
-        android:key="blacklist_applications"
-        android:dependency="heads_up_notifications_enabled">
-
-        <com.evolution.settings.preference.AppListPreference
-            android:key="add_blacklist_packages"
-            android:icon="@drawable/ic_menu_add_activated_tint"
-            android:title="@string/add_heads_up_package"
-            android:summary="@string/add_heads_up_blocklist_summary" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>
