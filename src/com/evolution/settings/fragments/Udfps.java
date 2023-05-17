@@ -27,7 +27,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -159,8 +158,7 @@ public class Udfps extends DashboardFragment implements
                    uri.toString());
             }
         } else if (requestCode == REQUEST_PICK_IMAGE && resultCode == Activity.RESULT_CANCELED) {
-            mCustomFPImage.setIcon(new ColorDrawable(Color.TRANSPARENT));
-            Settings.System.putString(getContentResolver(), Settings.System.OMNI_CUSTOM_FP_ICON, "");
+            // Do nothing, retain the previously set image, if any.
         }
     }
 
