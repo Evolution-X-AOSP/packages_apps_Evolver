@@ -26,8 +26,6 @@
     <string name="torch_gestures_title">Gestos de linterna</string>
     <string name="on_call_flashlight_category">Linterna en llamada</string>
     <string name="notification_flashlight_category">Linterna en notificaciones</string>
-    <string name="ambient_display_category">Pantalla ambiente</string>
-    <string name="lockscreen_clock_category">Reloj de pantalla de bloqueo</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Gestos por defecto de Android</string>
     <string name="dark_ui_mode_summary">Ver las opciones del tema oscuro</string>
@@ -137,18 +135,13 @@
     <!-- UDFPS icon picker -->
     <string name="udfps_icon_picker_title">Selector de iconos de Huella en Pantalla</string>
     <string name="udfps_icon_picker_summary">Elige tu icono de huella favorito</string>
-    <!-- Custom UDFPS icon -->
-    <string name="custom_fp_icon_title">Ícono personalizado UDFPS</string>
-    <string name="custom_fp_icon_summary">Habilitar icono personalizado de UDFPS</string>
-    <string name="custom_fp_select_title">Seleccionar icono personalizado UDFPS desde el almacenamiento</string>
-    <string name="custom_fp_select_summary">Selecciona una imagen personalizada de tus archivos guardados o de la galería</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Luz de notificación</string>
     <!-- Heads up -->
     <string name="heads_up_notifications">Notificaciones emergentes</string>
     <string name="notification_heads_up_title">Notificaciones emergentes</string>
     <string name="notification_heads_up_summary">Permitir notificaciones emergentes</string>
-    <string name="notification_heads_up_main_switch_title">Usar notificaciones emergentes</string>
+    <string name="notification_heads_up_primary_switch_title">Usar notificaciones emergentes</string>
     <string name="notification_heads_up_timeout_title">Tiempo agotado</string>
     <string name="notification_heads_up_timeout_summary">Tiempo de espera para las notificaciones emergentes</string>
     <string name="add_heads_up_package">Añadir aplicación</string>
@@ -166,7 +159,7 @@
     </string>
     <string name="network_traffic_title">Indicador de tráfico de red</string>
     <string name="network_traffic_summary">Activar o desactivar el indicador de velocidad de red en la barra de estado</string>
-    <string name="network_traffic_main_switch_title">Usar indicador de tráfico de red</string>
+    <string name="network_traffic_primary_switch_title">Usar indicador de tráfico de red</string>
     <string name="network_options_title">Opciones</string>
     <string name="network_traffic_autohide_title">Ocultar indicador de tráfico de red si está inactivo</string>
     <string name="network_traffic_autohide_summary">Ocultar cuando el tráfico de red es menor de 1 Kb/s</string>
@@ -232,10 +225,10 @@
     <string name="lockscreen_albumart_filter_grayscale">Escala de grises</string>
     <string name="lockscreen_albumart_filter_tint">Acentuado tintado</string>
     <string name="lockscreen_albumart_filter_blur">Desenfoque</string>
-    <string name="lockscreen_albumart_filter_grayblur">Escala de grises y desenfocado</string>
+    <string name="lockscreen_albumart_filter_grayblur">Escala de grises y desenfoque</string>
     <!-- Status bar - Clock -->
-    <string name="status_bar_clock_title">Ajustes de reloj &amp; fecha</string>
-    <string name="status_bar_clock_summary">Personalizar reloj &amp; fecha</string>
+    <string name="status_bar_clock_title">Ajustes de reloj y fecha</string>
+    <string name="status_bar_clock_summary">Personalizar reloj y fecha</string>
     <string name="status_bar_clock_seconds_title">Segundos del reloj</string>
     <string name="status_bar_clock_seconds_summary">Mostrar segundos junto al reloj en la barra de estado</string>
     <string name="status_bar_clock_position_title">Estilo de reloj</string>
@@ -283,7 +276,7 @@
     <string name="quick_settings_vibrate_summary">Vibrar al tocar los ajustes de Ajustes Rápidos</string>
     <string name="quick_settings_vibrate_duration_title">Duración de la vibración</string>
     <string name="quick_settings_vibrate_duration_summary">Cuantos milisegundos vibrar</string>
-    <!-- QS Tiles animation -->
+    <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Animaciones</string>
     <string name="qs_tile_animation_style_title">Estilo de animación</string>
     <string name="qs_tile_animation_duration_title">Duración de la animación</string>
@@ -358,7 +351,7 @@
     <string name="notification_sound_vib_screen_on_summary">Las notificaciones suenan y vibran cuando la pantalla está encendida</string>
     <!-- Edge light -->
     <string name="edge_light_title">Iluminación de bordes</string>
-    <string name="edge_light_main_switch_title">Usar luz de borde</string>
+    <string name="enable_edge_light">Usar luz de borde</string>
     <string name="edge_light_intro_text">Muestra una animación en los bordes de la pantalla al pulsar notificaciones</string>
     <string name="edge_light_always_trigger_on_pulse_title">Siempre activa en pulso</string>
     <string name="edge_light_always_trigger_on_pulse_summary">Mostrar la luz del borde siempre que se muestra la pantalla ambiente y no sólo para las notificaciones</string>
@@ -431,7 +424,7 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Bloqueo de sensor por paquete</string>
     <string name="sensor_block_summary">Bloquear el acceso a ciertos sensores para algunas apps para ahorrar batería</string>
-    <string name="sensor_block_main_switch_title">Usar bloqueo de sensor por paquete</string>
+    <string name="sensor_block_primary_switch_title">Bloqueo de sensor por aplicación</string>
     <string name="sensor_block_app_picker_title">Bloquear sensores para estas aplicaciones</string>
     <string name="add_sensor_block_package_title">Añadir aplicaciones para el bloqueo de sensores</string>
     <string name="add_sensor_block_package_summary">Movimiento significativo, acelerómetro, sensores de aceleración lineal serán bloqueados para estas aplicaciones</string>
@@ -588,9 +581,12 @@
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Letras en la barra de estado</string>
     <string name="status_bar_lyric_summary">Mostrar letras en la barra de estado (necesita soporte de la app)</string>
-    <string name="status_bar_lyric_main_switch_title">Usar letra de barra de estado</string>
+    <string name="status_bar_lyric_primary_switch_title">Mostrar letras en la barra de estado</string>
     <string name="disguise_props_for_music_app_title">Disfrazar dispositivo para aplicaciones de música</string>
     <string name="disguise_props_for_music_app_summary">Disfrazar dispositivo en algunas aplicaciones de música para soportar letras en la barra de estado. Después de cambiar este interruptor, debes reiniciar las aplicaciones para que surta efecto.</string>
+    <!-- OOS style material dismiss all button for notifications -->
+    <string name="notification_material_dismiss_button_title">Botón eliminar en Material</string>
+    <string name="notification_material_dismiss_button_summary">Reemplazar el texto de borrar notificaciones con un botón flotante</string>
     <!-- Evolver categories -->
     <string name="general_category">General</string>
     <string name="fingerprint_category">Huella dactilar</string>
@@ -689,7 +685,7 @@
     <!-- Custom themes -->
     <string name="custom_theme_title">Tema personalizado</string>
     <string name="custom_theme_black">Negro</string>
-    <string name="custom_theme_clear">Claro</string>
+    <string name="custom_theme_clear">Transparente</string>
     <string name="custom_theme_vivid">Vivo (Monet)</string>
     <string name="custom_theme_snowpaint">Pintar en la nieve</string>
     <string name="custom_theme_espresso">Espresso</string>
@@ -798,7 +794,7 @@
     <string name="smart_pixels_warning_text">Los píxeles inteligentes son una opción de ahorro de batería. Dependiendo de cuantos pixeles decidas apagar, tal vez veas mejoras en la duración de la batería</string>
     <string name="smart_pixels_title">Píxeles Inteligentes</string>
     <string name="smart_pixels_summary">Ahorra batería apagando píxeles adicionales</string>
-    <string name="smart_pixels_main_switch_title">Usar píxeles inteligentes</string>
+    <string name="smart_pixels_primary_switch_title">Usar píxeles inteligentes</string>
     <string name="smart_pixels_intro_text">Apaga píxeles para ahorrar batería</string>
     <string name="smart_pixels_on_power_save_title">Activación automática en ahorro de batería</string>
     <string name="smart_pixels_on_power_save_summary">Habilitar Píxeles Inteligentes cuando el ahorro de batería esté habilitado</string>
@@ -808,7 +804,7 @@
     <!-- Status bar logo -->
     <string name="status_bar_logo_title">Logo</string>
     <string name="status_bar_logo_summary">Activar para mostrar logo en la barra de estado</string>
-    <string name="status_bar_logo_main_switch_title">Usar el logo de la barra de estado</string>
+    <string name="status_bar_logo_primary_switch_title">Usar logo</string>
     <string name="status_bar_logo_position_title">Posición</string>
     <string name="status_bar_logo_position_summary">Elige en que lado quieres ver el logo, izquierda o derecha</string>
     <string name="status_bar_logo_position_right">Derecha</string>
@@ -817,7 +813,6 @@
     <string name="status_bar_logo_style_evolution">Evolution X</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_airjordan">Air Jordan</string>
-    <string name="status_bar_logo_style_alien">Alien</string>
     <string name="status_bar_logo_style_amogus">Amogus</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">Vengadores</string>
@@ -826,24 +821,13 @@
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Riesgo biológico</string>
     <string name="status_bar_logo_style_blackberry">Blackberry</string>
-    <string name="status_bar_logo_style_captain_america">Capitán América</string>
     <string name="status_bar_logo_style_cannabis">Cannabis</string>
-    <string name="status_bar_logo_style_flash">Flash</string>
     <string name="status_bar_logo_style_fire">Fuego</string>
-    <string name="status_bar_logo_style_ghost">Ghost</string>
-    <string name="status_bar_logo_style_heart">Corazón</string>
-    <string name="status_bar_logo_style_ironman">Iron Man</string>
-    <string name="status_bar_logo_style_mint">Linux Mint</string>
     <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_ninja">Ninja</string>
     <string name="status_bar_logo_style_pac_man">Pac-man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
-    <string name="status_bar_logo_style_robot">Robot</string>
     <string name="status_bar_logo_style_rog">ROG</string>
-    <string name="status_bar_logo_style_spiderman">El hombre araña</string>
     <string name="status_bar_logo_style_superman">Superman</string>
-    <string name="status_bar_logo_style_tux">Tux</string>
-    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">XBOX</string>
     <!-- Status bar - Battery -->
@@ -883,7 +867,7 @@
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
     <string name="jitter_test_summary">Calcular jitter de renderizado</string>
-    <!-- Lock screen battery info indicator -->
+    <!-- Lock screen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Información de carga en la pantalla de bloqueo</string>
     <string name="lockscreen_battery_info_summary">Mostrar la corriente máxima del cargador, voltaje y temperatura de la batería en la pantalla de bloqueo durante la carga</string>
     <!-- Charging animation -->
@@ -898,7 +882,7 @@
     <!-- Wi-Fi Standard icon -->
     <string name="show_wifi_standard_icon_title">Mostrar icono de tipo de Wi-Fi</string>
     <string name="show_wifi_standard_icon_summary">Mostrar tipo Wi-Fi en el indicador de señal Wi-Fi</string>
-    <!-- Summary to change custom timeout -->
+    <!--  screen, setting option summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Nunca</string>
     <string name="custom_timeout_summary_5secs">5 segundos</string>
     <string name="custom_timeout_summary_10secs">10 segundos</string>
@@ -943,7 +927,7 @@
     <!-- Alert Slider block -->
     <string name="block_alert_title">Bloquear el Alert Slider</string>
     <string name="block_alert_summary">El modo bolsillo bloqueará el Alert slider</string>
-    <!-- Power menu Animations -->
+    <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Animación de menú de apagado</string>
     <string name="power_menu_animation_dialog_title">Seleccionar animación del menú de apagado</string>
     <string name="power_menu_animation_aosp">AOSP (predeterminado)</string>
@@ -957,12 +941,22 @@
     <string name="power_menu_animation_translucent_top">Traslúcida (arriba)</string>
     <string name="power_menu_animation_translucent_bottom">Traslúcida (abajo)</string>
     <string name="power_menu_animation_rotate">Rotar</string>
+    <!-- Changelog -->
+    <string name="changelog_evolution_title">Registro de cambios</string>
+    <string name="changelog_evolution_summary">Ver los cambios recientes de la ROM</string>
+    <!-- Parallel space -->
+    <string name="laboratory_parallel_space_title">Espacio paralelo</string>
+    <string name="laboratory_parallel_space_summary">Permite ejecutar múltiples instancias de la misma aplicación en paralelo</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Servicios de Google</string>
+    <string name="gms_enabled_summary">Controla los servicios de Google y las aplicaciones integradas</string>
+    <string name="gms_enabled_text">Antes de desactivar los servicios de Google y las aplicaciones integradas, debería desactivar la verificación \"Encontrar mi dispositivo\" y la verificación en dos pasos en su cuenta de Google. Se recomienda encarecidamente mantener esta configuración activada, de lo contrario las aplicaciones dependientes de los componentes de Google se verán afectadas. Si tiene algún problema después de cambiar esta configuración, realice un restablecimiento de fábrica.</string>
     <!-- HeadsUp notifications importance threshold -->
     <!--string name="hun_importance_none">None</string-->
     <string name="hun_importance_title">Umbral de importancia</string>
     <string name="hun_importance_min">Mínimo</string>
-    <string name="hun_importance_low">Baja</string>
-    <string name="hun_importance_default">Por defecto</string>
+    <string name="hun_importance_low">Bajo</string>
+    <string name="hun_importance_default">Predeterminado</string>
     <string name="hun_importance_high">Alta</string>
     <string name="hun_importance_max">Máxima</string>
     <!-- Lock screen bottom shortcuts -->
@@ -979,15 +973,19 @@
     <string name="lockscreen_shortcut_enforce_title">Atajo</string>
     <string name="lockscreen_shortcut_enforce_summary">Forzar que el atajo elegido sea la única prioridad existente\nNo mostrará nada hasta que el atajo elegido esté disponible</string>
     <!-- QS tiles layout -->
-    <string name="qs_layout_category_title">Distribución de ajustes rápidos</string>
-    <string name="qs_tile_label_hide_title">Ocultar etiqueta</string>
-    <string name="qs_tile_label_hide_summary">Mostrar solo el icono en el mosaico</string>
-    <string name="qs_tile_label_size_title">Tamaño de texto de la etiqueta</string>
     <string name="qs_tile_layout_title">Disposición vertical</string>
     <string name="qs_tile_layout_summary">Mostrar etiqueta debajo, no a un lado</string>
+    <string name="qs_tiles_layout_category">Distribución de ajustes rápidos</string>
+    <string name="qs_rows_portrait_title">Filas de iconos (modo vertical)</string>
+    <string name="qqs_rows_portrait_title">Filas (retrato rápido QS)</string>
     <string name="qs_columns_portrait_title">Columnas (vertical)</string>
-    <string name="qs_columns_landscape_title">Columnas (horizontal)</string>
-    <!-- Lock screen clock format -->
+    <string name="qs_apply_change_button_title">Aplicar cambio</string>
+    <string name="qs_apply_change_failed">Error al aplicar el cambio</string>
+    <string name="qs_tile_hide_label_title">Ocultar etiquetas</string>
+    <string name="qs_tile_hide_label_summary">Mostrar sólo icono para mosaicos QS</string>
+    <string name="qs_tile_vertical_layout_title">Disposición vertical</string>
+    <string name="qs_tile_vertical_layout_summary">Habilitar el diseño vertical para azulejos QS</string>
+    <!-- Lockscreen clock format -->
     <string name="clock_use_single_line_title">Formato del reloj de la pantalla de bloqueo</string>
     <string name="single_line">Línea simple</string>
     <string name="double_line">Línea doble</string>
@@ -1001,27 +999,4 @@
     <string name="qs_color_pop">Color Destacado</string>
     <string name="qs_shaded">Sombreado</string>
     <string name="qs_cyberpunk">Ciberpunk</string>
-    <!-- Media artwork -->
-    <string name="artwork_media_background_enable_blur_title">Desenfocar fondo de imagen de notificación multimedia</string>
-    <string name="artwork_media_background_blur_radius_title">Trabajo de cantidad de desenfoque en notificaciones</string>
-    <string name="media_artwork_fade_percent_title">Trabajo de porcentaje de apagado en notificaciones</string>
-    <string name="lockscreen_albumart_filter_blur_radius_title">Trabajo de difuminado en pantalla de bloqueo</string>
-    <string name="ls_media_artwork_fade_percent_title">Trabajo de apagado en pantallas de bloqueo</string>
-    <!-- Ambient Wake gesture -->
-    <string name="ambient_wake_gestures_title">Gestos de activación de pantalla ambiente</string>
-    <string name="ambient_wake_gestures_summary">Mostrar la pantalla ambiente en lugar de la pantalla de bloqueo normal al activar los gestos de activación</string>
-    <!-- Volume Steps Fragment -->
-    <string name="volume_steps_fragment_title">Pasos de volumen</string>
-    <string name="volume_steps_summary">Personalizar pasos de volumen</string>
-    <string name="volume_steps_alarm_title">Pasos de volumen: Alarma</string>
-    <string name="volume_steps_dtmf_title">Pasos de volumen: DTMF</string>
-    <string name="volume_steps_music_title">Pasos de volumen: Multimedia</string>
-    <string name="volume_steps_notification_title">Pasos de volumen: Notificaciones</string>
-    <string name="volume_steps_ring_title">Pasos de volumen: Tono de llamada</string>
-    <string name="volume_steps_system_title">Pasos de volumen: Sistema</string>
-    <string name="volume_steps_voice_call_title">Pasos de volumen: Llamada de voz</string>
-    <string name="volume_steps_reset">Restablecer</string>
-    <!-- Max visible notification icons -->
-    <string name="max_visible_notification_icons_title">Iconos de notificación</string>
-    <string name="max_visible_notification_icons_summary">Limite de iconos de notificación en la barra de estado</string>
 </resources>
