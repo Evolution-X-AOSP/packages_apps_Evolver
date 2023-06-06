@@ -26,8 +26,6 @@
     <string name="torch_gestures_title">Gestur Senter</string>
     <string name="on_call_flashlight_category">Senter pada panggilan</string>
     <string name="notification_flashlight_category">Senter pada notifikasi</string>
-    <string name="ambient_display_category">Tampilan Ambien</string>
-    <string name="lockscreen_clock_category">Jam layar kunci</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Opsi bawaan sudah tersedia di Android</string>
     <string name="dark_ui_mode_summary">Jelajahi opsi tema gelap</string>
@@ -137,18 +135,13 @@
     <!-- UDFPS icon picker -->
     <string name="udfps_icon_picker_title">Pilihan ikon Sidik Jari Dalam Layar</string>
     <string name="udfps_icon_picker_summary">Pilih ikon sidik jari favorit Anda</string>
-    <!-- Custom UDFPS icon -->
-    <string name="custom_fp_icon_title">Ikon kustom Sidik Jari Dalam Layar</string>
-    <string name="custom_fp_icon_summary">Aktifkan ikon kustom Sidik Jari Dalam Layar</string>
-    <string name="custom_fp_select_title">Pilih ikon kustom Sidik Jari Dalam Layar dari penyimpanan</string>
-    <string name="custom_fp_select_summary">Pilih gambar kustom dari file atau galeri yang Anda simpan</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Lampu notifikasi</string>
     <!-- Heads up -->
     <string name="heads_up_notifications">Notifikasi mengambang</string>
     <string name="notification_heads_up_title">Notifikasi mengambang</string>
     <string name="notification_heads_up_summary">Izinkan notifikasi mengambang</string>
-    <string name="notification_heads_up_main_switch_title">Gunakan notifikasi mengambang</string>
+    <string name="notification_heads_up_primary_switch_title">Gunakan notifikasi mengambang</string>
     <string name="notification_heads_up_timeout_title">Waktu habis</string>
     <string name="notification_heads_up_timeout_summary">Waktu untuk menampilkan notifikasi mengambang</string>
     <string name="add_heads_up_package">Tambah aplikasi</string>
@@ -166,7 +159,7 @@
     </string>
     <string name="network_traffic_title">Indikator lalu lintas jaringan</string>
     <string name="network_traffic_summary">Mengaktifkan atau menonaktifkan indikator kecepatan jaringan di bilah status</string>
-    <string name="network_traffic_main_switch_title">Gunakan indikator lalu lintas jaringan</string>
+    <string name="network_traffic_primary_switch_title">Gunakan indikator lalu lintas jaringan</string>
     <string name="network_options_title">Opsi</string>
     <string name="network_traffic_autohide_title">Sembunyikan indikator lalu lintas jaringan jika tidak aktif</string>
     <string name="network_traffic_autohide_summary">Sembunyikan saat indikator lalu lintas jaringan di bawah 1 KB/d</string>
@@ -283,7 +276,7 @@
     <string name="quick_settings_vibrate_summary">Bergetar saat menyentuh ubin QS</string>
     <string name="quick_settings_vibrate_duration_title">Durasi getaran</string>
     <string name="quick_settings_vibrate_duration_summary">Berapa milidetik untuk bergetar</string>
-    <!-- QS Tiles animation -->
+    <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Animasi ubin</string>
     <string name="qs_tile_animation_style_title">Gaya animasi</string>
     <string name="qs_tile_animation_duration_title">Durasi animasi</string>
@@ -358,7 +351,7 @@
     <string name="notification_sound_vib_screen_on_summary">Putar suara dan getaran untuk notifikasi saat layar menyala</string>
     <!-- Edge light -->
     <string name="edge_light_title">Cahaya Tepi</string>
-    <string name="edge_light_main_switch_title">Gunakan Cahaya Tepi</string>
+    <string name="enable_edge_light">Gunakan Cahaya Tepi</string>
     <string name="edge_light_intro_text">Menampilkan animasi di sepanjang tepi layar saat menerima notifikasi</string>
     <string name="edge_light_always_trigger_on_pulse_title">Selalu terpicu</string>
     <string name="edge_light_always_trigger_on_pulse_summary">Apakah akan menampilkan cahaya tepi setiap kali tampilan ambien ditampilkan dan bukan hanya untuk notifikasi</string>
@@ -431,7 +424,7 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Blok sensor per-paket</string>
     <string name="sensor_block_summary">Blokir akses sensor tertentu untuk beberapa aplikasi untuk menghemat baterai</string>
-    <string name="sensor_block_main_switch_title">Gunakan blokir sensor per paket</string>
+    <string name="sensor_block_primary_switch_title">Gunakan blokir sensor per paket</string>
     <string name="sensor_block_app_picker_title">Blokir sensor untuk aplikasi ini</string>
     <string name="add_sensor_block_package_title">Tambahkan aplikasi untuk blokir sensor</string>
     <string name="add_sensor_block_package_summary">Gerakan signifikan, akselerometer, dan sensor akselerasi linier akan diblokir untuk aplikasi ini</string>
@@ -587,10 +580,13 @@
     <string name="notification_torch_slider2">Tingkat berkedip</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Lirik bilah status</string>
-    <string name="status_bar_lyric_summary">Tampilkan lirik di bilah status (membutuhkan aplikasi StatusBarLyricExt)</string>
-    <string name="status_bar_lyric_main_switch_title">Gunakan lirik bilah status</string>
+    <string name="status_bar_lyric_summary">Tampilkan lirik di bilah status (perlu dukungan aplikasi)</string>
+    <string name="status_bar_lyric_primary_switch_title">Gunakan lirik bilah status</string>
     <string name="disguise_props_for_music_app_title">Menyamarkan perangkat untuk aplikasi musik</string>
     <string name="disguise_props_for_music_app_summary">Menyamarkan perangkat di beberapa aplikasi musik untuk mendukung lirik bilah status. Setelah mengubah sakelar ini, Anda harus memulai ulang aplikasi agar perubahan diterapkan</string>
+    <!-- OOS style material dismiss all button for notifications -->
+    <string name="notification_material_dismiss_button_title">Tombol bersihkan semua</string>
+    <string name="notification_material_dismiss_button_summary">Aktifkan untuk menggunakan tombol di tengah bawah sebagai ganti teks Hapus Semua</string>
     <!-- Evolver categories -->
     <string name="general_category">Umum</string>
     <string name="fingerprint_category">Sidik jari</string>
@@ -798,7 +794,7 @@
     <string name="smart_pixels_warning_text">Piksel Cerdas adalah fitur hemat daya. Bergantung pada berapa banyak piksel yang Anda putuskan untuk dimatikan, Anda dapat melihat peningkatan dalam masa pakai baterai. Perhatikan bahwa dalam beberapa kasus dapat mengakibatkan area yang tidak responsif pada layar sentuh</string>
     <string name="smart_pixels_title">Piksel Cerdas</string>
     <string name="smart_pixels_summary">Menghemat baterai dengan mematikan beberapa piksel</string>
-    <string name="smart_pixels_main_switch_title">Gunakan Piksel Cerdas</string>
+    <string name="smart_pixels_primary_switch_title">Gunakan piksel cerdas</string>
     <string name="smart_pixels_intro_text">Mematikan beberapa piksel untuk mengurangi konsumsi daya</string>
     <string name="smart_pixels_on_power_save_title">Aktifkan otomatis pada penghemat baterai</string>
     <string name="smart_pixels_on_power_save_summary">Aktifkan Piksel Cerdas saat penghemat baterai diaktifkan</string>
@@ -806,9 +802,9 @@
     <string name="smart_pixels_shift_title">Perlindungan burn-in</string>
     <string name="smart_pixels_shift_summary">Mencegah burn-in pada perangkat OLED dengan menggeser piksel sesering mungkin</string>
     <!-- Status bar logo -->
-    <string name="status_bar_logo_title">Logo bilah status</string>
+    <string name="status_bar_logo_title">Logo</string>
     <string name="status_bar_logo_summary">Aktifkan untuk menampilkan logo di bilah status</string>
-    <string name="status_bar_logo_main_switch_title">Gunakan logo bilah status</string>
+    <string name="status_bar_logo_primary_switch_title">Gunakan Logo</string>
     <string name="status_bar_logo_position_title">Posisi</string>
     <string name="status_bar_logo_position_summary">Pilih sisi mana untuk menampilkan logo, kiri atau kanan</string>
     <string name="status_bar_logo_position_right">Kanan</string>
@@ -817,7 +813,6 @@
     <string name="status_bar_logo_style_evolution">Evolution X</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_airjordan">Air Jordan</string>
-    <string name="status_bar_logo_style_alien">Alien</string>
     <string name="status_bar_logo_style_amogus">Amogus</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">Avengers</string>
@@ -826,24 +821,13 @@
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Biohazard</string>
     <string name="status_bar_logo_style_blackberry">Blackberry</string>
-    <string name="status_bar_logo_style_captain_america">Kapten Amerika</string>
     <string name="status_bar_logo_style_cannabis">Ganja</string>
-    <string name="status_bar_logo_style_flash">Lampu kilat</string>
     <string name="status_bar_logo_style_fire">Api</string>
-    <string name="status_bar_logo_style_ghost">Hantu</string>
-    <string name="status_bar_logo_style_heart">Hati</string>
-    <string name="status_bar_logo_style_ironman">Iron Man</string>
-    <string name="status_bar_logo_style_mint">Linux Mint</string>
     <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_ninja">Ninja</string>
     <string name="status_bar_logo_style_pac_man">Pac-Man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
-    <string name="status_bar_logo_style_robot">Robot</string>
     <string name="status_bar_logo_style_rog">ROG</string>
-    <string name="status_bar_logo_style_spiderman">Spider-Man</string>
     <string name="status_bar_logo_style_superman">Superman</string>
-    <string name="status_bar_logo_style_tux">Tux</string>
-    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">XBOX</string>
     <!-- Status bar - Battery -->
@@ -875,14 +859,15 @@
     <string name="status_bar_battery_text_charging_summary">Selalu tampilkan persentase baterai saat mengisi daya</string>
     <!-- QS battery -->
     <string name="qs_use_status_bar_battery_style">Ikuti gaya bilah status</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">Perkiraan baterai</string>
-    <string name="battery_estimate_summary">Tampilkan estimasi daya baterai apabila tersedia</string>
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">Perkiraan sisa baterai</string>
+    <string name="qs_show_battery_estimate_summary_on">Tampilkan perkiraan baterai di Setelan Cepat</string>
+    <string name="qs_show_battery_estimate_summary_off">Sembunyikan perkiraan baterai di Setelan Cepat</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
     <string name="jitter_test_summary">Hitung rendering jitter</string>
-    <!-- Lock screen battery info indicator -->
+    <!-- Lock screen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Info pengisian daya pada layar kunci</string>
     <string name="lockscreen_battery_info_summary">Tampilkan arus dan tegangan maksimum pengisi daya yang dinegosiasikan, dan suhu baterai di layar kunci saat mengisi daya</string>
     <!-- Charging animation -->
@@ -897,7 +882,7 @@
     <!-- Wi-Fi Standard icon -->
     <string name="show_wifi_standard_icon_title">Tampilkan ikon tipe Wi-Fi</string>
     <string name="show_wifi_standard_icon_summary">Tampilkan tipe Wi-Fi di indikator sinyal Wi-Fi</string>
-    <!-- Summary to change custom timeout -->
+    <!--  screen, setting option summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Jangan pernah</string>
     <string name="custom_timeout_summary_5secs">5 detik</string>
     <string name="custom_timeout_summary_10secs">10 detik</string>
@@ -942,7 +927,7 @@
     <!-- Alert Slider block -->
     <string name="block_alert_title">Blokir Penggeser Peringatan</string>
     <string name="block_alert_summary">Mode saku akan memblokir Penggeser Peringatan</string>
-    <!-- Power menu Animations -->
+    <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Animasi menu daya</string>
     <string name="power_menu_animation_dialog_title">Pilih animasi menu daya</string>
     <string name="power_menu_animation_aosp">AOSP (standar)</string>
@@ -956,6 +941,24 @@
     <string name="power_menu_animation_translucent_top">Tembus (atas)</string>
     <string name="power_menu_animation_translucent_bottom">Tembus (bawah)</string>
     <string name="power_menu_animation_rotate">Putar</string>
+    <!-- Changelog -->
+    <string name="changelog_evolution_title">Perubahan saat ini</string>
+    <string name="changelog_evolution_summary">Lihat perubahan terbaru di ROM</string>
+    <!-- Parallel space -->
+    <string name="laboratory_parallel_space_title">Ruang paralel</string>
+    <string name="laboratory_parallel_space_summary">Izinkan menjalankan beberapa hal dari aplikasi yang sama secara paralel</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Layanan Google</string>
+    <string name="gms_enabled_summary">Kontrol layanan Google dan aplikasi inti</string>
+    <string name="gms_enabled_text">Sebelum menonaktifkan layanan Google dan aplikasi inti, Anda harus menonaktifkan \"Temukan Perangkat Saya\" dan verifikasi 2 langkah di akun Google Anda. Sangat disarankan untuk tetap mengaktifkan setelan ini jika tidak aplikasi yang bergantung pada komponen Google akan terpengaruh. Jika Anda mengalami masalah setelah mengubah setelan ini, lakukan reset pabrik.</string>
+    <!-- HeadsUp notifications importance threshold -->
+    <!--string name="hun_importance_none">None</string-->
+    <string name="hun_importance_title">Ambang batas kepentingan</string>
+    <string name="hun_importance_min">Minimum</string>
+    <string name="hun_importance_low">Rendah</string>
+    <string name="hun_importance_default">Bawaan</string>
+    <string name="hun_importance_high">Tinggi</string>
+    <string name="hun_importance_max">Maksimum</string>
     <!-- Lock screen bottom shortcuts -->
     <string name="lockscreen_shortcut_category">Tombol Pintasan</string>
     <string name="lockscreen_shortcut_start_title">Pintasan kiri</string>
@@ -970,7 +973,6 @@
     <string name="lockscreen_shortcut_enforce_title">Pintasan tunggal</string>
     <string name="lockscreen_shortcut_enforce_summary">Terapkan pintasan yang dipilih menjadi satu-satunya prioritas yang ada\nTidak akan menampilkan apa pun hingga pintasan yang dipilih tertentu tersedia</string>
     <!-- QS tiles layout -->
-    <string name="qs_layout_category_title">Tata Letak Setelan Cepat</string>
     <string name="qs_tile_layout_title">Tata letak vertikal</string>
     <string name="qs_tile_layout_summary">Tampilkan label di bawah ikon alih-alih di sebelah ikon</string>
     <string name="qs_tiles_layout_category">Tata Letak Setelan Cepat</string>
@@ -983,8 +985,7 @@
     <string name="qs_tile_hide_label_summary">Hanya tampilkan ikon untuk ubin Setelan Cepat</string>
     <string name="qs_tile_vertical_layout_title">Tata letak vertikal</string>
     <string name="qs_tile_vertical_layout_summary">Aktifkan tata letak vertikal untuk ubin Setelan Cepat</string>
-    <string name="qs_tile_label_size_title">Ukuran teks label</string>
-    <!-- Lock screen clock format -->
+    <!-- Lockscreen clock format -->
     <string name="clock_use_single_line_title">Format jam layar kunci</string>
     <string name="single_line">Satu baris</string>
     <string name="double_line">Dua baris</string>
@@ -998,34 +999,4 @@
     <string name="qs_color_pop">Warna mencolok</string>
     <string name="qs_shaded">Berbayang</string>
     <string name="qs_cyberpunk">Cyberpunk</string>
-    <!-- Media artwork -->
-    <string name="artwork_media_background_enable_blur_title">Blur latar belakang karya seni notifikasi media</string>
-    <string name="artwork_media_background_blur_radius_title">Jumlah blur untuk karya seni notifikasi media</string>
-    <string name="media_artwork_fade_percent_title">Persentase pudar untuk karya seni notifikasi media</string>
-    <string name="lockscreen_albumart_filter_blur_radius_title">Jumlah blur untuk 
-karya seni media layar kunci</string>
-    <string name="ls_media_artwork_fade_percent_title">Jumlah pudar untuk karya seni media layar kunci</string>
-    <!-- Volume Steps Fragment -->
-    <string name="volume_steps_fragment_title">Tingkat volume</string>
-    <string name="volume_steps_summary">Sesuaikan tingkat volume</string>
-    <string name="volume_steps_alarm_title">Tingkat volume: Alarm</string>
-    <string name="volume_steps_dtmf_title">Tingkat volume: DTMF</string>
-    <string name="volume_steps_music_title">Tingkat volume: Media</string>
-    <string name="volume_steps_notification_title">Tingkat volume: Notifikasi</string>
-    <string name="volume_steps_ring_title">Tingkat volume: Dering</string>
-    <string name="volume_steps_system_title">Tingkat volume: Sistem</string>
-    <string name="volume_steps_voice_call_title">Tingkat volume: Panggilan Suara</string>
-    <string name="volume_steps_reset">Atur ulang</string>
-    <!-- Max visible notification icons -->
-    <string name="max_visible_notification_icons_title">Ikon notifikasi</string>
-    <string name="max_visible_notification_icons_summary">Maksimal ikon notifikasi terlihat di bilah status</string>
-    <!-- QS Header image -->
-    <string name="qs_header_image_title">Gambar Header Setelan Cepat</string>
-    <string name="qs_header_random_image_title">Gambar Header Acak Setelan Cepat</string>
-    <string name="qs_header_random_image_summary">Aktifkan gambar acak header setelan cepat</string>
-    <!-- Brightness slider styles -->
-    <string name="brightness_slider_style_title">Gaya slider kecerahan</string>
-    <string name="brightness_slider_style_default">Bawaan</string>
-    <string name="brightness_slider_style_filled">Terisi</string>
-    <string name="brightness_slider_style_thin">Tipis</string>
 </resources>
