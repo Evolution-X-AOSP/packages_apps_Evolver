@@ -26,8 +26,6 @@
     <string name="torch_gestures_title">Taschenlampengesten</string>
     <string name="on_call_flashlight_category">LED-Blitz bei Anrufe</string>
     <string name="notification_flashlight_category">LED-Blitz bei Benachrichtigungen</string>
-    <string name="ambient_display_category">Ambient-Display</string>
-    <string name="lockscreen_clock_category">Sperrbildschirm-Uhr</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">In Stock-Android enthaltene Optionen</string>
     <string name="dark_ui_mode_summary">Durchsuchen der dunklen Design-Optionen</string>
@@ -137,18 +135,13 @@
     <!-- UDFPS icon picker -->
     <string name="udfps_icon_picker_title">Symbolauswahl des In-Display-Fingerabdrucksensor</string>
     <string name="udfps_icon_picker_summary">Bevorzugtes Fingerabdrucksymbol wählen</string>
-    <!-- Custom UDFPS icon -->
-    <string name="custom_fp_icon_title">Benutzerdefiniertes UDFPS Symbol</string>
-    <string name="custom_fp_icon_summary">Benutzerdefiniertes UDFPS Symbol aktivieren</string>
-    <string name="custom_fp_select_title">Benutzerdefiniertes UDFPS Symbol aus dem Speicher auswählen</string>
-    <string name="custom_fp_select_summary">Benutzerdefiniertes Bild aus deinen gespeicherten Dateien oder Galerie auswählen</string>
     <!-- Notification light -->
     <string name="notification_light_settings">Benachrichtigungs-LED</string>
     <!-- Heads up -->
     <string name="heads_up_notifications">Pop-up-Benachrichtigungen</string>
     <string name="notification_heads_up_title">Pop-up-Benachrichtigungen</string>
     <string name="notification_heads_up_summary">Pop-up-Benachrichtigungen zulassen</string>
-    <string name="notification_heads_up_main_switch_title">Heads-Up verwenden</string>
+    <string name="notification_heads_up_primary_switch_title">Heads-Up verwenden</string>
     <string name="notification_heads_up_timeout_title">Timeout</string>
     <string name="notification_heads_up_timeout_summary">Anzeigedauer von Pop-up-Benachrichtigungen</string>
     <string name="add_heads_up_package">App hinzufügen</string>
@@ -166,7 +159,7 @@
     </string>
     <string name="network_traffic_title">Netzwerkverkehrsanzeige</string>
     <string name="network_traffic_summary">Netzwerkverkehrsanzeige aktivieren oder deaktivieren</string>
-    <string name="network_traffic_main_switch_title">Netzwerkverkehrsanzeige verwenden</string>
+    <string name="network_traffic_primary_switch_title">Netzwerkverkehrsanzeige verwenden</string>
     <string name="network_options_title">Optionen</string>
     <string name="network_traffic_autohide_title">Netzwerkverkehrsanzeige ausblenden, wenn inaktiv</string>
     <string name="network_traffic_autohide_summary">Ausblenden, wenn die Netzwerkverkehrsanzeige unter 1 KB/s liegt</string>
@@ -283,7 +276,7 @@
     <string name="quick_settings_vibrate_summary">Beim Berühren von Schnelleinstellungs-Kacheln vibrieren</string>
     <string name="quick_settings_vibrate_duration_title">Vibrationsdauer</string>
     <string name="quick_settings_vibrate_duration_summary">Vibrationsdauer in Millisekunden</string>
-    <!-- QS Tiles animation -->
+    <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Animationen</string>
     <string name="qs_tile_animation_style_title">Animationsstil</string>
     <string name="qs_tile_animation_duration_title">Animationsdauer</string>
@@ -358,7 +351,7 @@
     <string name="notification_sound_vib_screen_on_summary">Wiedergabe von Ton und Vibration für Benachrichtigungen bei eingeschaltetem Bildschirm</string>
     <!-- Edge light -->
     <string name="edge_light_title">Kantenbeleuchtung</string>
-    <string name="edge_light_main_switch_title">Kantenbeleuchtung verwenden</string>
+    <string name="enable_edge_light">Kantenbeleuchtung verwenden</string>
     <string name="edge_light_intro_text">Animierte Kantenbeleuchtung bei Benachrichtigungen anzeigen</string>
     <string name="edge_light_always_trigger_on_pulse_title">Durch Pulse immer auslösen</string>
     <string name="edge_light_always_trigger_on_pulse_summary">Kantenbeleuchtung auch bei Ambient-Display anzeigen und nicht nur bei Benachrichtigungen</string>
@@ -417,9 +410,6 @@
     <!-- Custom Fonts -->
     <string name="theme_customization_lock_clock_title">Schriftart der Sperrbildschirm-Uhr</string>
     <string name="theme_customization_lock_clock_summary">Schriftart der Sperrbildschirm-Uhr einstellen</string>
-    <!-- Brightness slider styles -->
-    <string name="theme_customization_brightness_slider_title">Stil des Helligkeitsreglers</string>
-    <string name="theme_customization_brightness_slider_summary">Benutzerdefinierten Helligkeitsreglerstil festlegen</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Statusleiste</string>
     <string name="lockscreen_status_bar_summary">Statusleiste auf dem Sperrbildschirm anzeigen</string>
@@ -434,7 +424,7 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Sensorblockierung pro Paket</string>
     <string name="sensor_block_summary">Den Zugriff auf bestimmte Sensoren für ausgewählte Apps blockieren, um Akku zu sparen</string>
-    <string name="sensor_block_main_switch_title">Sensorblockierung pro Paket verwenden</string>
+    <string name="sensor_block_primary_switch_title">Sensorblockierung pro Paket verwenden</string>
     <string name="sensor_block_app_picker_title">Sensoren für diese Anwendungen blockieren</string>
     <string name="add_sensor_block_package_title">Anwendungen für Sensorblockierung hinzufügen</string>
     <string name="add_sensor_block_package_summary">Signifikante Bewegung, Beschleunigungsmesser, lineare Beschleunigungssensoren werden für diese Apps blockiert</string>
@@ -591,9 +581,12 @@
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Songtexte in der Status-Bar</string>
     <string name="status_bar_lyric_summary">Songtexte in der Statusleiste (benötigt App-Support)</string>
-    <string name="status_bar_lyric_main_switch_title">Songtexte in der Statusleiste anzeigen</string>
+    <string name="status_bar_lyric_primary_switch_title">Songtexte in der Statusleiste anzeigen</string>
     <string name="disguise_props_for_music_app_title">Gerät für Musik-Anwendungen verschleiern</string>
     <string name="disguise_props_for_music_app_summary">Gerät für Musik-Anwendungen verschleiern, um Songtexte in der Statusleiste anzeigen zu können. Neustart der Apps notwendig, um die Änderungen zu aktivieren.</string>
+    <!-- OOS style material dismiss all button for notifications -->
+    <string name="notification_material_dismiss_button_title">Material-Taste statt \"Alle Benachr. löschen\"</string>
+    <string name="notification_material_dismiss_button_summary">Entfernen des gesamten Benachrichtigungstextes mit schwebender Taste</string>
     <!-- Evolver categories -->
     <string name="general_category">Allgemein</string>
     <string name="fingerprint_category">Fingerabdruck</string>
@@ -802,7 +795,7 @@ ein Entsperren des Gerätes</string>
     <string name="smart_pixels_warning_text">„Smart Pixels“ ist eine Energiesparfunktion. Je nachdem, wie viele Pixel abgeschaltet werden, wird die Akkulaufzeit verlängert. Achtung: Dies kann dazu führen, dass der Touchscreen teilweise schlecht auf Berührungen reagiert</string>
     <string name="smart_pixels_title">Smart Pixels</string>
     <string name="smart_pixels_summary">Energie sparen durch das Abschalten von zusätzlichen Pixeln</string>
-    <string name="smart_pixels_main_switch_title">Smart Pixels verwenden</string>
+    <string name="smart_pixels_primary_switch_title">Smart Pixels verwenden</string>
     <string name="smart_pixels_intro_text">Pixel zur Reduzierung des Stromverbrauchs abschalten</string>
     <string name="smart_pixels_on_power_save_title">Automatische Aktivierung im Energiesparmodus</string>
     <string name="smart_pixels_on_power_save_summary">Smart Pixels automatisch mit dem Energiesparmodus einschalten</string>
@@ -812,7 +805,7 @@ ein Entsperren des Gerätes</string>
     <!-- Status bar logo -->
     <string name="status_bar_logo_title">Symbol</string>
     <string name="status_bar_logo_summary">Symbol in der Statusleiste anzeigen</string>
-    <string name="status_bar_logo_main_switch_title">Statusbar Logo verwenden</string>
+    <string name="status_bar_logo_primary_switch_title">Logo verwenden</string>
     <string name="status_bar_logo_position_title">Position</string>
     <string name="status_bar_logo_position_summary">Wählen Sie die Seite zum Anzeigen des Symbols, links oder rechts</string>
     <string name="status_bar_logo_position_right">Rechts</string>
@@ -821,7 +814,6 @@ ein Entsperren des Gerätes</string>
     <string name="status_bar_logo_style_evolution">Evolution X</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_airjordan">Air Jordan</string>
-    <string name="status_bar_logo_style_alien">Alien</string>
     <string name="status_bar_logo_style_amogus">Amogus</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">Avengers</string>
@@ -830,24 +822,13 @@ ein Entsperren des Gerätes</string>
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Biologische Gefahr</string>
     <string name="status_bar_logo_style_blackberry">Blackberry</string>
-    <string name="status_bar_logo_style_captain_america">Captain America</string>
     <string name="status_bar_logo_style_cannabis">Cannabis</string>
-    <string name="status_bar_logo_style_flash">Blitz</string>
     <string name="status_bar_logo_style_fire">Feuer</string>
-    <string name="status_bar_logo_style_ghost">Geist</string>
-    <string name="status_bar_logo_style_heart">Herz</string>
-    <string name="status_bar_logo_style_ironman">Iron Man</string>
-    <string name="status_bar_logo_style_mint">Linux Mint</string>
     <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_ninja">Ninja</string>
     <string name="status_bar_logo_style_pac_man">Pac-Man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
-    <string name="status_bar_logo_style_robot">Roboter</string>
     <string name="status_bar_logo_style_rog">ROG</string>
-    <string name="status_bar_logo_style_spiderman">Spider-Man</string>
     <string name="status_bar_logo_style_superman">Superman</string>
-    <string name="status_bar_logo_style_tux">Tux</string>
-    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">XBOX</string>
     <!-- Status bar - Battery -->
@@ -879,14 +860,15 @@ ein Entsperren des Gerätes</string>
     <string name="status_bar_battery_text_charging_summary">Akku-Prozentanzeige beim Laden immer anzeigen</string>
     <!-- QS battery -->
     <string name="qs_use_status_bar_battery_style">Stil der Statusleiste folgen</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">Akku-Schätzung</string>
-    <string name="battery_estimate_summary">Geschätzte verbleibende Akkulaufzeit anzeigen, wenn verfügbar</string>
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">Geschätzte Akkulaufzeit</string>
+    <string name="qs_show_battery_estimate_summary_on">Geschätzte Akkulaufzeit in QS anzeigen</string>
+    <string name="qs_show_battery_estimate_summary_off">Geschätzte Akkulaufzeit in QS ausblenden</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
     <string name="jitter_test_summary">Berechnung des Rendering-Jitters</string>
-    <!-- Lock screen battery info indicator -->
+    <!-- Lock screen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Ladeinformationen auf dem Sperrbildschirm</string>
     <string name="lockscreen_battery_info_summary">Maximalen Stromstärke und Spannung des Ladegeräts sowie der Akkutemperatur auf dem Sperrbildschirm während des Ladevorgangs anzeigen</string>
     <!-- Charging animation -->
@@ -901,7 +883,7 @@ ein Entsperren des Gerätes</string>
     <!-- Wi-Fi Standard icon -->
     <string name="show_wifi_standard_icon_title">WLAN-Symbol anzeigen</string>
     <string name="show_wifi_standard_icon_summary">WLAN-Typ in WLAN-Signalanzeige anzeigen</string>
-    <!-- Summary to change custom timeout -->
+    <!--  screen, setting option summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Niemals</string>
     <string name="custom_timeout_summary_5secs">5 Sekunden</string>
     <string name="custom_timeout_summary_10secs">10 Sekunden</string>
@@ -946,7 +928,7 @@ ein Entsperren des Gerätes</string>
     <!-- Alert Slider block -->
     <string name="block_alert_title">Alarm-Slider blockieren</string>
     <string name="block_alert_summary">Taschenmodus blockiert den Alarm-Slider</string>
-    <!-- Power menu Animations -->
+    <!-- Power menu Animations  -->
     <string name="power_menu_animation_title">Startmenü Animation</string>
     <string name="power_menu_animation_dialog_title">Startmenü Animation auswählen</string>
     <string name="power_menu_animation_aosp">AOSP (Standard)</string>
@@ -960,9 +942,24 @@ ein Entsperren des Gerätes</string>
     <string name="power_menu_animation_translucent_top">Durchsichtig (oben)</string>
     <string name="power_menu_animation_translucent_bottom">Durchsichtig (unten)</string>
     <string name="power_menu_animation_rotate">Rotieren</string>
+    <!-- Changelog -->
+    <string name="changelog_evolution_title">Aktuelles Änderungsprotokoll</string>
+    <string name="changelog_evolution_summary">Zeige die letzten Änderungen im ROM</string>
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Zweites Profil</string>
     <string name="laboratory_parallel_space_summary">Ermöglicht parallele Ausführung mehrerer Instanzen derselben App</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Google-Dienste</string>
+    <string name="gms_enabled_summary">Steuerung von Google-Diensten und Core Anwendungen</string>
+    <string name="gms_enabled_text">Bevor Sie die Google-Dienste und Core Anwendungen deaktivieren, sollten Sie \"Mein Gerät suchen\" und die 2-Schritt-Verifizierung in Ihrem Google-Konto deaktivieren. Es wird dringend empfohlen, diese Einstellung aktiviert zu lassen, da sonst Apps, die von Google-Komponenten abhängig sind, betroffen sind. Wenn Sie nach dem Ändern dieser Einstellung Probleme haben, führen Sie einen Werksreset durch.</string>
+    <!-- HeadsUp notifications importance threshold -->
+    <!--string name="hun_importance_none">None</string-->
+    <string name="hun_importance_title">Nach Wichtigkeit einschränken</string>
+    <string name="hun_importance_min">Minimum</string>
+    <string name="hun_importance_low">Gering</string>
+    <string name="hun_importance_default">Standard</string>
+    <string name="hun_importance_high">Hoch</string>
+    <string name="hun_importance_max">Maximum</string>
     <!-- Lock screen bottom shortcuts -->
     <string name="lockscreen_shortcut_category">Untere Verknüpfungen</string>
     <string name="lockscreen_shortcut_start_title">Linke Verknüpfung</string>
@@ -977,15 +974,19 @@ ein Entsperren des Gerätes</string>
     <string name="lockscreen_shortcut_enforce_title">Einzelne Verknüpfung</string>
     <string name="lockscreen_shortcut_enforce_summary">Erzwingt, dass die gewählte Verknüpfung die einzige vorhandene Priorität ist\nZeigt nichts an, bis die gewählte Verknüpfung verfügbar ist</string>
     <!-- QS tiles layout -->
-    <string name="qs_layout_category_title">Kachelanordnung</string>
-    <string name="qs_tile_label_hide_title">Bezeichnung ausblenden</string>
-    <string name="qs_tile_label_hide_summary">Nur Symbol in Kachel anzeigen</string>
-    <string name="qs_tile_label_size_title">Textgröße der Beschriftung</string>
     <string name="qs_tile_layout_title">Vertikales Layout</string>
     <string name="qs_tile_layout_summary">Beschriftung unter Symbol statt neben Symbol anzeigen</string>
+    <string name="qs_tiles_layout_category">Kachelanordnung</string>
+    <string name="qs_rows_portrait_title">Zeilen (Hochformat)</string>
+    <string name="qqs_rows_portrait_title">Zeilen (Schnell-QS-Hochformat)</string>
     <string name="qs_columns_portrait_title">Spalten (Hochformat)</string>
-    <string name="qs_columns_landscape_title">Spalten (Querformat)</string>
-    <!-- Lock screen clock format -->
+    <string name="qs_apply_change_button_title">Änderungen übernehmen</string>
+    <string name="qs_apply_change_failed">Änderungen konnten nicht gespeichert werden</string>
+    <string name="qs_tile_hide_label_title">Beschriftungen ausblenden</string>
+    <string name="qs_tile_hide_label_summary">Nur Symbol für QS-Kacheln anzeigen</string>
+    <string name="qs_tile_vertical_layout_title">Vertikales Layout</string>
+    <string name="qs_tile_vertical_layout_summary">Aktiviere vertikales Layout für QS-Kacheln</string>
+    <!-- Lockscreen clock format -->
     <string name="clock_use_single_line_title">Uhrenstil auf Sperrbildschirm</string>
     <string name="single_line">Einzelne Linie</string>
     <string name="double_line">Doppelte Linien</string>
@@ -999,25 +1000,4 @@ ein Entsperren des Gerätes</string>
     <string name="qs_color_pop">Auffällige Farbe</string>
     <string name="qs_shaded">Schattiert</string>
     <string name="qs_cyberpunk">Cyberpunk</string>
-    <!-- Media artwork -->
-    <string name="artwork_media_background_enable_blur_title">Unschärfe Medien-Benachrichtigungs-Grafik im Hintergrund</string>
-    <string name="artwork_media_background_blur_radius_title">Unschärfe für Medien-Benachrichtigungs-Artwork</string>
-    <string name="media_artwork_fade_percent_title">Unschärfe für Medien-Benachrichtigungs-Artwork</string>
-    <string name="lockscreen_albumart_filter_blur_radius_title">Unschärfe für Mediengrafiken auf dem Sperrbildschirm</string>
-    <string name="ls_media_artwork_fade_percent_title">Unschärfe für Mediengrafiken auf dem Sperrbildschirm</string>
-    <!-- Volume Steps Fragment -->
-    <string name="volume_steps_fragment_title">Lautstärkestufen</string>
-    <string name="volume_steps_summary">Lautstärkestufen anpassen</string>
-    <string name="volume_steps_alarm_title">Lautstärkestufen: Wecker</string>
-    <string name="volume_steps_dtmf_title">Lautstärkestufen: DTMF</string>
-    <string name="volume_steps_music_title">Lautstärkestufen: Medien</string>
-    <string name="volume_steps_notification_title">Lautstärkestufen: Benachrichtigungen</string>
-    <string name="volume_steps_ring_title">Lautstärkestufen: Klingelton</string>
-    <string name="volume_steps_system_title">Lautstärkestufen: System</string>
-    <string name="volume_steps_voice_call_title">Lautstärkestufen: Sprachanruf</string>
-    <string name="volume_steps_reset">Zurücksetzen</string>
-    <!-- QS Header image -->
-    <string name="qs_header_image_title">Bild in Kopfzeile</string>
-    <string name="qs_header_random_image_title">Zufälliges  Bild in der Kopfzeile</string>
-    <string name="qs_header_random_image_summary">Zufälliges Bild in der Kopfzeile aktivieren</string>
 </resources>
