@@ -12,6 +12,14 @@
         android:key="qs_layout_category"
         android:title="@string/qs_layout_category_title">
 
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="qs_panel_style"
+            android:title="@string/qs_styles_title"
+            android:entries="@array/qs_styles_entries"
+            android:entryValues="@array/qs_styles_values"
+            android:summary="%s"
+            android:defaultValue="0" />
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
             android:title="@string/qs_tile_label_hide_title"
@@ -103,13 +111,15 @@
             android:title="@string/status_bar_battery_percent_title"
             android:entries="@array/status_bar_battery_percent_entries"
             android:entryValues="@array/status_bar_battery_percent_values"
-            android:defaultValue="1" />
+            android:defaultValue="2" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_show_battery_estimate"
             android:title="@string/battery_estimate_title"
             android:summary="@string/battery_estimate_summary"
             android:defaultValue="true" />
+        -->
 
     </PreferenceCategory>
 
@@ -259,7 +269,6 @@
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true" />
-        -->
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="qs_show_data_usage"
@@ -267,7 +276,6 @@
             android:summary="@string/qs_show_data_usage_summary"
             android:defaultValue="true" />
 
-        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_show_user"
             android:title="@string/qs_footer_users_icon_title"
@@ -297,6 +305,7 @@
 
     </PreferenceCategory>
 
+    <!--
     <PreferenceCategory
         android:title="@string/notification_material_dismiss_title">
 
@@ -323,5 +332,6 @@
             settings:min="0" />
 
     </PreferenceCategory>
+    -->
 
 </PreferenceScreen>
