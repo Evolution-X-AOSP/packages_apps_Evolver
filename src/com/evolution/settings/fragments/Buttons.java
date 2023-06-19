@@ -211,8 +211,6 @@ public class Buttons extends ActionFragment implements
         mAlertBlock = (SystemSettingSwitchPreference) findPreference(BLOCK_ALERT);
         boolean mAlertSliderAvailable = res.getBoolean(
             com.android.internal.R.bool.config_hasAlertSlider);
-        boolean isPocketEnabled = Settings.System.getInt(resolver, Settings.System.POCKET_JUDGE, 0) == 1;
-        mAlertBlock.setEnabled(isPocketEnabled);
         if (!mAlertSliderAvailable && alertSliderCat != null)
             prefScreen.removePreference(alertSliderCat);
     }
