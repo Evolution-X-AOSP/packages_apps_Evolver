@@ -61,7 +61,8 @@
             android:title="@string/kg_custom_clock_color_title"
             android:dependency="kg_custom_clock_color_enabled"
             android:defaultValue="0xFFFFFFFF" />
-            
+
+        <!--
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="clock_use_custom_format"
             android:title="@string/clock_use_single_line_title"
@@ -69,6 +70,7 @@
             android:entryValues="@array/clock_use_single_line_values"
             android:summary="%s"
             android:defaultValue="0" />
+        -->
 
     </PreferenceCategory>
 
@@ -76,11 +78,13 @@
         android:key="lockscreen_general_category"
         android:title="@string/general_category">
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
+        -->
 
         <Preference
             android:key="always_on_display_schedule"
@@ -113,6 +117,7 @@
             android:dependency="lockscreen_media_metadata"
             android:defaultValue="0" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="ls_media_filter_blur_radius"
             android:title="@string/lockscreen_albumart_filter_blur_radius_title"
@@ -128,6 +133,7 @@
             android:defaultValue="30"
             android:max="80"
             settings:min="1" />
+        -->
 
     </PreferenceCategory>
 
@@ -135,13 +141,11 @@
         android:key="lockscreen_fingerprint_category"
         android:title="@string/fingerprint_category">
 
-        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="enable_ripple_effect"
             android:title="@string/enable_fingerprint_ripple_effect_title"
             android:summary="@string/enable_fingerprint_ripple_effect_summary"
             android:defaultValue="true" />
-        -->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="fp_success_vibrate"

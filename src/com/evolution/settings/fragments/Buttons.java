@@ -2,7 +2,7 @@
  * Copyright (C) 2016 The CyanogenMod project
  *               2017-2022 The LineageOS project
  *               2018 The PixelExperience Project
- *               2019-2022 Evolution X
+ *               2023 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -211,8 +211,6 @@ public class Buttons extends ActionFragment implements
         mAlertBlock = (SystemSettingSwitchPreference) findPreference(BLOCK_ALERT);
         boolean mAlertSliderAvailable = res.getBoolean(
             com.android.internal.R.bool.config_hasAlertSlider);
-        boolean isPocketEnabled = Settings.System.getInt(resolver, Settings.System.POCKET_JUDGE, 0) == 1;
-        mAlertBlock.setEnabled(isPocketEnabled);
         if (!mAlertSliderAvailable && alertSliderCat != null)
             prefScreen.removePreference(alertSliderCat);
     }
