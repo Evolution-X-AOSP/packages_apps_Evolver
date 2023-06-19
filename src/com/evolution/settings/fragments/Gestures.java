@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2022 Evolution X
+ * Copyright (C) 2023 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
+
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.dashboard.DashboardFragment;
@@ -71,7 +73,11 @@ public class Gestures extends DashboardFragment implements
                 Settings.System.TORCH_POWER_BUTTON_GESTURE, 0);
         mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
         mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
-        mTorchPowerButton.setOnPreferenceChangeListener(this);
+        if (!EvolutionUtils.deviceHasFlashlight(getContext())) {
+            prefScreen.removePreference(mTorchPowerButton);
+        } else {
+            mTorchPowerButton.setOnPreferenceChangeListener(this);
+        }
     }
 
     @Override
