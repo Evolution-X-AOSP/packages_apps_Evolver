@@ -59,6 +59,7 @@ public class Clock extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "Clock";
+
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
     private static final String CLOCK_DATE_DISPLAY = "status_bar_clock_date_display";
     private static final String CLOCK_DATE_POSITION = "status_bar_clock_date_position";
