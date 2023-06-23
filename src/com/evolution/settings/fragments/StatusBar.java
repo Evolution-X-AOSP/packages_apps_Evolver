@@ -45,6 +45,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.fragments.Clock;
 import com.evolution.settings.preference.SystemSettingListPreference;
+import com.evolution.settings.utils.DeviceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +55,7 @@ public class StatusBar extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "StatusBar";
+
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
@@ -104,8 +106,16 @@ public class StatusBar extends DashboardFragment implements
 
         // Adjust status bar preferences for RTL
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
-            mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
+            if (DeviceUtils.hasCenteredCutout(mContext)) {
+                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch_rtl);
+            } else {
+                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
+            }
+        } else if (DeviceUtils.hasCenteredCutout(mContext)) {
+            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
+            mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
         }
 
         // Get config_statusBarShowNumber from SystemUI
