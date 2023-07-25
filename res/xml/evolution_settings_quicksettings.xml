@@ -62,6 +62,30 @@
             android:max="64"
             android:min="0" />
 
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_header_image_blur_level"
+            android:title="@string/qs_header_image_blur_level_title"
+            android:defaultValue="0"
+            settings:interval="1"
+            android:max="125"
+            android:min="1" />
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_header_image_fade_level"
+            android:title="@string/qs_header_image_fade_level_level_title"
+            android:defaultValue="40"
+            settings:interval="1"
+            android:max="100"
+            android:min="1" />
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_header_image_opacity_level"
+            android:title="@string/qs_header_image_opacity_level_title"
+            android:defaultValue="30"
+            settings:interval="1"
+            android:max="255"
+            android:min="1" />
+
         <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference 
             android:key="show_qs_clock"
