@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.os.Vibrator;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.View;
@@ -57,6 +58,7 @@ public class QuickSettings extends DashboardFragment implements
     private static final String QS_FOOTER_TEXT_STRING = "qs_footer_text_string";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
     private static final String KEY_QS_PANEL_STYLE  = "qs_panel_style";
+    private static final String KEY_QS_VIBRATION_CATEGORY = "quick_settings_vibration";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String QUICK_PULLDOWN = "status_bar_quick_qs_pulldown";
@@ -65,11 +67,13 @@ public class QuickSettings extends DashboardFragment implements
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
     private ListPreference mQuickPulldown;
+    private PreferenceCategory mQuickSettingsVibration;
     private SwitchPreference mShowAutoBrightness;
     private SystemSettingEditTextPreference mFooterString;
     private SystemSettingListPreference mQsStyle;
     private ThemeUtils mThemeUtils;
     private Handler mHandler;
+    private Vibrator mVibrator;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -123,6 +127,12 @@ public class QuickSettings extends DashboardFragment implements
             mFooterString.setText("#KeepEvolving");
             Settings.System.putString(resolver,
                     Settings.System.QS_FOOTER_TEXT_STRING, "#KeepEvolving");
+        }
+
+        mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+        mQuickSettingsVibration = (PreferenceCategory) findPreference(KEY_QS_VIBRATION_CATEGORY);
+        if (!mVibrator.hasVibrator()) {
+            prefScreen.removePreference(mQuickSettingsVibration);
         }
     }
 
