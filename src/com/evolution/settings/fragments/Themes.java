@@ -46,6 +46,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -61,10 +62,12 @@ public class Themes extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "Themes";
+    private static final String KEY_SIGNAL_ICON = "android.theme.customization.signal_icon";
 
     private Handler mHandler;
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
+    private Preference mSignalIcon;
     private SystemSettingListPreference mQsStyle;
 
     @Override
@@ -82,6 +85,11 @@ public class Themes extends DashboardFragment implements
 
         mOverlayService = IOverlayManager.Stub
         .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+
+        mSignalIcon = (Preference) findPreference(KEY_SIGNAL_ICON);
+        if (EvolutionUtils.isWifiOnly(mContext)) {
+            prefScreen.removePreference(mSignalIcon);
+        }
     }
 
     @Override

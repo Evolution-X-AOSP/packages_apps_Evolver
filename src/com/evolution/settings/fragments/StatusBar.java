@@ -36,6 +36,8 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
+
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.dashboard.DashboardFragment;
@@ -60,6 +62,7 @@ public class StatusBar extends DashboardFragment implements
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
+    private static final String STATUS_BAR_SIGNAL_CATEGORY = "status_bar_signal_category";
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
@@ -67,6 +70,7 @@ public class StatusBar extends DashboardFragment implements
     private static final int BATTERY_STYLE_HIDDEN = 5;
 
     private Preference mCombinedSignalIcons;
+    private PreferenceCategory mSignalCategory;
     private SwitchPreference mBatteryTextCharging;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
@@ -134,6 +138,11 @@ public class StatusBar extends DashboardFragment implements
 
         mCombinedSignalIcons = findPreference("persist.sys.flags.combined_signal_icons");
         mCombinedSignalIcons.setOnPreferenceChangeListener(this);
+
+        mSignalCategory = (PreferenceCategory) findPreference(STATUS_BAR_SIGNAL_CATEGORY);
+        if (EvolutionUtils.isWifiOnly(mContext)) {
+            prefScreen.removePreference(mSignalCategory);
+        }
     }
 
     @Override

@@ -96,6 +96,58 @@
                  android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
         </Preference>
 
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="show_wifi_standard_icon"
+            android:title="@string/show_wifi_standard_icon_title"
+            android:summary="@string/show_wifi_standard_icon_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="statusbar_colored_icons"
+            android:title="@string/statusbar_colored_icons_title"
+            android:summary="@string/statusbar_colored_icons_summary"
+            android:defaultValue="false" />
+
+        <!-- Notification Counter -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="status_bar_notif_count"
+            android:title="@string/status_bar_notif_count_title"
+            android:summary="@string/status_bar_notif_count_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true" />
+
+        <!-- Mic/Camera privacy indicator -->
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="enable_camera_privacy_indicator"
+            android:title="@string/mic_camera_privacy_indicator_title"
+            android:summary="@string/mic_camera_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+        <!-- Location privacy indicator -->
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="enable_location_privacy_indicator"
+            android:title="@string/location_privacy_indicator_title"
+            android:summary="@string/location_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+        <!-- Projection privacy indicator -->
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="enable_projection_privacy_indicator"
+            android:title="@string/projection_privacy_indicator_title"
+            android:summary="@string/projection_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="status_bar_signal_category"
+        android:title="@string/signal_icons_category_title">
+
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="data_disabled_icon"
             android:title="@string/data_disabled_icon_title"
@@ -156,52 +208,6 @@
             android:title="@string/roaming_indicator_icon_title"
             android:summary="@string/roaming_indicator_icon_summary"
             android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="show_wifi_standard_icon"
-            android:title="@string/show_wifi_standard_icon_title"
-            android:summary="@string/show_wifi_standard_icon_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="statusbar_colored_icons"
-            android:title="@string/statusbar_colored_icons_title"
-            android:summary="@string/statusbar_colored_icons_summary"
-            android:defaultValue="false" />
-
-        <!-- Notification Counter -->
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="status_bar_notif_count"
-            android:title="@string/status_bar_notif_count_title"
-            android:summary="@string/status_bar_notif_count_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="bluetooth_show_battery"
-            android:title="@string/bluetooth_battery_title"
-            android:summary="@string/bluetooth_battery_summary"
-            android:defaultValue="true" />
-
-        <!-- Mic/Camera privacy indicator -->
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="enable_camera_privacy_indicator"
-            android:title="@string/mic_camera_privacy_indicator_title"
-            android:summary="@string/mic_camera_privacy_indicator_summary"
-            android:defaultValue="true" />
-
-        <!-- Location privacy indicator -->
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="enable_location_privacy_indicator"
-            android:title="@string/location_privacy_indicator_title"
-            android:summary="@string/location_privacy_indicator_summary"
-            android:defaultValue="true" />
-
-        <!-- Projection privacy indicator -->
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="enable_projection_privacy_indicator"
-            android:title="@string/projection_privacy_indicator_title"
-            android:summary="@string/projection_privacy_indicator_summary"
-            android:defaultValue="true" />
 
     </PreferenceCategory>
 
