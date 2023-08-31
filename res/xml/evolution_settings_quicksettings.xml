@@ -62,6 +62,12 @@
     <PreferenceCategory
         android:title="@string/qs_header_category_title">
 
+        <com.evolution.settings.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.flags.combined_qs_headers"
+            android:title="@string/combined_qs_headers_title"
+            android:summary="@string/combined_qs_headers_summary" 
+            android:defaultValue="true"/>
+
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="qs_header_image"
             android:title="@string/qs_header_image_title"
