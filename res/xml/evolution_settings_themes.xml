@@ -40,26 +40,12 @@
             android:summary="@string/theme_customization_icon_pack_summary"
             android:fragment="com.evolution.settings.fragments.StatusBarIcons" />
 
-        <!-- Signal icon style -->
-        <Preference
-            android:key="android.theme.customization.signal_icon"
-            android:title="@string/theme_customization_signal_icon_title"
-            android:summary="@string/theme_customization_signal_icon_summary"
-            android:fragment="com.evolution.settings.fragments.SignalIcons" />
-
         <!-- Wifi icon style -->
         <Preference
             android:key="android.theme.customization.wifi_icon"
             android:title="@string/theme_customization_wifi_icon_title"
             android:summary="@string/theme_customization_wifi_icon_summary"
             android:fragment="com.evolution.settings.fragments.WifiIcons" />
-
-        <!-- Data icon style -->  
-        <Preference
-            android:key="android.customization.sb_data"
-            android:title="@string/theme_customization_data_title"
-            android:summary="@string/theme_customization_data_summary"
-            android:fragment="com.evolution.settings.fragments.DataStyles" />
 
         <!-- Adaptive icon pack -->
         <Preference
@@ -74,6 +60,26 @@
             android:title="@string/theme_customization_navbar_title"
             android:summary="@string/theme_customization_navbar_summary"
             android:fragment="com.evolution.settings.fragments.NavbarStyles" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="status_bar_signal_category"
+        android:title="@string/signal_icons_category_title">
+
+        <!-- Signal icon style -->
+        <Preference
+            android:key="android.theme.customization.signal_icon"
+            android:title="@string/theme_customization_signal_icon_title"
+            android:summary="@string/theme_customization_signal_icon_summary"
+            android:fragment="com.evolution.settings.fragments.SignalIcons" />
+
+        <!-- Data icon style -->  
+        <Preference
+            android:key="android.customization.sb_data"
+            android:title="@string/theme_customization_data_title"
+            android:summary="@string/theme_customization_data_summary"
+            android:fragment="com.evolution.settings.fragments.DataStyles" />
 
     </PreferenceCategory>
 

@@ -62,12 +62,13 @@ public class Themes extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "Themes";
-    private static final String KEY_SIGNAL_ICON = "android.theme.customization.signal_icon";
+
+    private static final String STATUS_BAR_SIGNAL_CATEGORY = "status_bar_signal_category";
 
     private Handler mHandler;
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
-    private Preference mSignalIcon;
+    private PreferenceCategory mSignalCategory;
     private SystemSettingListPreference mQsStyle;
 
     @Override
@@ -86,9 +87,9 @@ public class Themes extends DashboardFragment implements
         mOverlayService = IOverlayManager.Stub
         .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
 
-        mSignalIcon = (Preference) findPreference(KEY_SIGNAL_ICON);
+        mSignalCategory = (PreferenceCategory) findPreference(STATUS_BAR_SIGNAL_CATEGORY);
         if (EvolutionUtils.isWifiOnly(mContext)) {
-            prefScreen.removePreference(mSignalIcon);
+            prefScreen.removePreference(mSignalCategory);
         }
     }
 
