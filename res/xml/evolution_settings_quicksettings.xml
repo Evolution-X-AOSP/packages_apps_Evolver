@@ -226,33 +226,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="quick_settings_vibration"
-        android:title="@string/qs_tile_vibration_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_brightness_slider_haptic"
-            android:title="@string/qs_brightness_slider_haptic_title"
-            android:summary="@string/qs_brightness_slider_haptic_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="quick_settings_vibrate"
-            android:title="@string/quick_settings_vibrate_title"
-            android:summary="@string/quick_settings_vibrate_summary"
-            android:defaultValue="false"/>
-
-        <com.evolution.settings.preference.SecureSettingSeekBarPreference
-            android:key="quick_settings_vibrate_duration"
-            android:title="@string/quick_settings_vibrate_duration_title"
-            android:summary="@string/quick_settings_vibrate_duration_summary"
-            android:max="200"
-            android:min="10"
-            android:defaultValue="45"
-            android:dependency="quick_settings_vibrate" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/qs_footer_category">
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference

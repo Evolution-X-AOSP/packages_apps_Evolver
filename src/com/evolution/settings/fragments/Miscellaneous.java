@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemProperties;
 import android.os.UserHandle;
+import android.os.Vibrator;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.View;
@@ -52,11 +53,14 @@ public class Miscellaneous extends DashboardFragment implements
 
     private static final String TAG = "Miscellaneous";
 
+    private static final String KEY_VIBRATION_CATEGORY = "vibration_category";
     private static final String POCKET_JUDGE = "pocket_judge";
     private static final String SMART_PIXELS = "smart_pixels";
 
     private Preference mPocketJudge;
     private Preference mSmartPixels;
+    private PreferenceCategory mVibrationCategory;
+    private Vibrator mVibrator;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -67,6 +71,7 @@ public class Miscellaneous extends DashboardFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
+        final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
@@ -74,14 +79,22 @@ public class Miscellaneous extends DashboardFragment implements
         mPocketJudge = (Preference) findPreference(POCKET_JUDGE);
         boolean mPocketJudgeSupported = res.getBoolean(
                 com.android.internal.R.bool.config_pocketModeSupported);
-        if (!mPocketJudgeSupported)
+        if (!mPocketJudgeSupported) {
             prefScreen.removePreference(mPocketJudge);
+        }
 
         mSmartPixels = (Preference) findPreference(SMART_PIXELS);
         boolean mSmartPixelsSupported = res.getBoolean(
                 com.android.internal.R.bool.config_supportSmartPixels);
-        if (!mSmartPixelsSupported)
+        if (!mSmartPixelsSupported) {
             prefScreen.removePreference(mSmartPixels);
+        }
+
+        mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+        mVibrationCategory = (PreferenceCategory) findPreference(KEY_VIBRATION_CATEGORY);
+        if (!mVibrator.hasVibrator()) {
+            prefScreen.removePreference(mVibrationCategory);
+        }
     }
 
     @Override
