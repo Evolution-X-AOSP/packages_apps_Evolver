@@ -222,6 +222,11 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         mSeekBar.setMax(mMaxValue);
     }
 
+    public void setMin(int min) {
+        mMinValue = min;
+        mSeekBar.setMax(mMaxValue - mMinValue);
+    }
+
     protected int getSeekValue(int v) {
         return 0 - Math.floorDiv(mMinValue - v, mInterval);
     }
