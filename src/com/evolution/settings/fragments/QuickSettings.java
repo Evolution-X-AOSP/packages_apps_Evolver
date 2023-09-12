@@ -62,7 +62,6 @@ public class QuickSettings extends DashboardFragment implements
     private static final String QUICK_PULLDOWN = "status_bar_quick_qs_pulldown";
     private static final String overlayThemeTarget  = "com.android.systemui";
 
-    private Preference mCombinedQsHeaders;
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
     private ListPreference mQuickPulldown;
@@ -89,9 +88,6 @@ public class QuickSettings extends DashboardFragment implements
 
         mQsStyle = (SystemSettingListPreference) findPreference(KEY_QS_PANEL_STYLE);
         mCustomSettingsObserver.observe();
-
-        mCombinedQsHeaders = findPreference("persist.sys.flags.combined_qs_headers");
-        mCombinedQsHeaders.setOnPreferenceChangeListener(this);
 
         mShowBrightnessSlider = findPreference(KEY_SHOW_BRIGHTNESS_SLIDER);
         mShowBrightnessSlider.setOnPreferenceChangeListener(this);
@@ -161,11 +157,6 @@ public class QuickSettings extends DashboardFragment implements
             return true;
         } else if (preference == mQsStyle) {
             mCustomSettingsObserver.observe();
-            return true;
-        } else if (preference == mCombinedQsHeaders) {
-            boolean value = (Boolean) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
-                Settings.Secure.ENABLE_COMBINED_QS_HEADERS, value ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
