@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -277,19 +277,6 @@
     </string-array>
 
     <string-array name="battery_bar_style_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <!-- Edge light color modes -->
-    <string-array name="edge_light_color_mode_entries" translatable="false">
-        <item>@string/theme_color</item>
-        <item>@string/notification_color</item>
-        <item>@string/custom_color</item>
-    </string-array>
-
-    <string-array name="edge_light_color_mode_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -1016,5 +1003,20 @@
         <item>6</item>
         <item>7</item>
         <item>8</item>
+    </string-array>
+
+    <!-- NOTE: Make sure you are adding colors hex in #AARRGGBB (8 chars) and capital letters. -->
+    <!--       Since it's expect this format to check in the AmbientEdgeLightSettings. -->
+    <string-array name="ambient_edge_light_manual_colors">
+        <item>#FF6ACEFF</item>
+        <item>#FF7BFFDF</item>
+        <item>#FFB18CFF</item>
+        <item>#FFB3FF84</item>
+        <item>#FF26BEFF</item>
+        <item>#FFCDCDCD</item>
+        <item>#FFFFDC62</item>
+        <item>#FFFEDADA</item>
+        <item>#FFFF7676</item>
+        <item>#FF615EFF</item>
     </string-array>
 </resources>

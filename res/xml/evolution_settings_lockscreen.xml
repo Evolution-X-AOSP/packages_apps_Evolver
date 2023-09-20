@@ -37,13 +37,15 @@
             android:summary="@string/pulse_on_new_tracks_summary"
             android:defaultValue="true" />
 
-        <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
-            android:key="edge_light_enabled"
-            android:title="@string/edge_light_title"
-            android:summary="@string/edge_light_intro_text"
+        <com.evolution.settings.preference.SecureSettingPrimarySwitchPreference
+            android:key="pulse_ambient_light"
+            android:title="@string/ambient_edge_light_title"
+            android:summary="@string/ambient_edge_light_summary"
             android:defaultValue="false"
-            android:fragment="com.evolution.settings.fragments.EdgeLightSettings"
-            settings:observe="true" />
+            android:fragment="com.evolution.settings.fragments.AmbientEdgeLightSettings"
+            settings:controller="com.evolution.settings.fragments.AmbientEdgeLightPreferenceController"
+            settings:observe="true"
+            settings:requiresConfig="@bool/config_show_ambient_edge_light" />
 
     </PreferenceCategory>
 
