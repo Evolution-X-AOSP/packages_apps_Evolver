@@ -28,6 +28,8 @@
     <string name="notification_flashlight_category">Jelzőfény értesítéskor</string>
     <string name="ambient_display_category">Környezeti kijelző</string>
     <string name="lockscreen_clock_category">A záróképernyő órája</string>
+    <string name="signal_icons_category_title">Térerőjelzési-ikon</string>
+    <string name="vibration_category_title">Rezgés</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Az Androidból átvett gyári funkciók</string>
     <string name="dark_ui_mode_summary">Nézze át a sötét témabeállításokat</string>
@@ -56,7 +58,13 @@
     <string name="seek_value_edit_label">Érték-beállítás</string>
     <string name="search">Keresés</string>
     <string name="search_apps">Alkalmazások keresése</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">Engedélyezve</string>
+    <string name="string_disabled">Kikapcsolva</string>
+    <string name="string_on">Be</string>
+    <string name="string_off">Ki</string>
     <!-- Units -->
+    <string name="unit_milliseconds">ezredmásodperc</string>
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">másodperc</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -85,8 +93,8 @@
     <string name="seekbar_default_string">Alapértelmezett</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value"><xliff:g id="v">%s</xliff:g> értékű</string>
-    <string name="custom_seekbar_default_value">Alapértelmezett</string>
-    <string name="custom_seekbar_default_value_to_set">Alapértelmezetten <xliff:g id="v">%s</xliff:g> értékű\nNyomja hosszan a beállításhoz</string>
+    <string name="custom_seekbar_default_value">alapértelmezetten</string>
+    <string name="custom_seekbar_default_value_to_set">Alapértelmezett érték <xliff:g id="v">%s</xliff:g>\nNyomja hosszan a beállításhoz</string>
     <string name="custom_seekbar_default_value_is_set">Az alapértelmezett érték beállítva</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">USB-konfiguráció</string>
@@ -160,16 +168,32 @@
     <string name="dialog_delete_title">Törlés</string>
     <string name="dialog_delete_message">Törli a kiválasztott elemeket?</string>
     <!-- Network traffic -->
-    <string name="network_traffic_intro_text">        Kijelzi az aktuális hálózati sebességet az állapotsoron.
-        A kijelző dinamikusan mutatja a sebességet úgy, hogy másodpercenként
-        váltja a fel- és letöltési sebességet
-    </string>
-    <string name="network_traffic_title">Hálózatiforgalom-kijelző</string>
-    <string name="network_traffic_summary">Engedélyezheti vagy letilthatja a mobiladatforgalom sebességének kijelzését</string>
-    <string name="network_traffic_main_switch_title">A \'Hálózatiforgalom-kijelző\' használata</string>
-    <string name="network_options_title">Lehetőségek</string>
-    <string name="network_traffic_autohide_title">Ha nincs adatforgalom, a kijelző se látszódjon</string>
-    <string name="network_traffic_autohide_summary">1 KB/s adatforgalom alatt ne látszódjon a kijelző</string>
+    <string name="network_traffic_settings_title">Hálózati forgalom-figyelő</string>
+    <string name="network_traffic_settings_summary">A Hálózatiforgalom-figyelő megjelenítése, és testreszabása</string>
+    <string name="network_traffic_location_title">Helymeghatározás</string>
+    <string name="network_traffic_location_disable">Kikapcsolva</string>
+    <string name="network_traffic_location_statusbar">Értesítési sáv</string>
+    <string name="network_traffic_location_quick_statusbar">Gyors értesítési sáv</string>
+    <string name="network_traffic_mode_title">Megjelenítési mód</string>
+    <string name="network_traffic_mode_up">Csak a feltöltés</string>
+    <string name="network_traffic_mode_down">Csak a letöltés</string>
+    <string name="network_traffic_mode_all">Feltöltés és letöltés</string>
+    <string name="network_traffic_autohide">Automatikus elrejtés</string>
+    <string name="network_traffic_autohide_summary">Elrejti a forgalomkijelzést, ha nincs forgalom</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_threshold">Inaktivítási küszöb</string>
+    <string name="network_traffic_refresh_interval_title">Frissítési gyakoriság</string>
+    <string name="network_traffic_refresh_interval_summary">Időtartam, amely után a sebesség újra látható</string>
+    <string name="network_traffic_units_title">Hálózatforgalmi mértékegység</string>
+    <string name="network_traffic_units_bits">Bit / másodperc (b/s)</string>
+    <string name="network_traffic_units_kilobits">Kilobit / másodperc (kb/s)</string>
+    <string name="network_traffic_units_megabits">Megabit / másodperc (Mb/s)</string>
+    <string name="network_traffic_units_bytes">Bájt / másodperc (B/s)</string>
+    <string name="network_traffic_units_kilobytes">Kilobájt / másodperc (kB/s)</string>
+    <string name="network_traffic_units_megabytes">Megabájt / másodperc (MB/s)</string>
+    <string name="network_traffic_hidearrow">Nyilak elrejtése</string>
+    <string name="network_traffic_hidearrow_summary">Elrejti a forgalmat jelző nyilakat</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Ujjlenyomat-hitelesítési rezgés</string>
     <string name="fp_success_vibrate_summary">Ujjlenyomat sikeres hitelesítésekor rezgés</string>
@@ -199,7 +223,7 @@
     <string name="qs_brightness_slider_position_top">Felül</string>
     <string name="qs_brightness_slider_position_bottom">Alul</string>
     <!-- Brightness slider haptic feedback -->
-    <string name="qs_brightness_slider_haptic_title">Érintési visszajelzés</string>
+    <string name="qs_brightness_slider_haptic_title">A Fényerő rezgő visszajelzése</string>
     <string name="qs_brightness_slider_haptic_summary">Rezgéssel jelzi, ha fényerő-szabályzás történt a csúszkával</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Az automatikus fényerő ikonja</string>
@@ -221,11 +245,16 @@
     <string name="qs_footer_category">Gyorsbeállítások-lábléc</string>
     <string name="qs_header_category_title">Gyorsbeállítások-fejléc</string>
     <string name="qs_panel_category_title">Gyorsbeállítások-panel</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Gyors legördítés</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Gyorsbeállítások megjelenítése az állapotsor %1$s oldalán történő lehúzáskor</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Bal</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Jobb</string>
+    <string name="status_bar_quick_qs_pulldown_off">Ki</string>
+    <string name="status_bar_quick_qs_pulldown_left">Bal</string>
+    <string name="status_bar_quick_qs_pulldown_right">Jobb</string>
+    <string name="status_bar_quick_qs_pulldown_always">Mindig jelenítse meg a Gyorsbeállításokat az állapotsor lehúzásakor</string>
     <string name="status_bar_quick_qs_pulldown">Gyors legördítés</string>
-    <string name="quick_pulldown_none">Kikapcsolva</string>
-    <string name="quick_pulldown_right">Az állapotsor jobb oldalán lehet legördíteni</string>
-    <string name="quick_pulldown_left">Az állapotsor bal oldalán lehet legördíteni</string>
-    <string name="quick_pulldown_always">Mindig jelenítse meg a Gyorsbeállításokat az állapotsor lehúzásakor</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Honnan szólaljanak meg a csengőhangok</string>
     <string name="ringtone_focus_mode_dynamic">A fejhallgatóból, ha csatlakoztatva van és épp zenét hallgat</string>
@@ -281,8 +310,7 @@
     <string name="qs_date_title">Dátum</string>
     <string name="qs_date_summary">A dátum megjelenítése a gyors-állapotsor fejlécén</string>
     <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">Rezgés</string>
-    <string name="quick_settings_vibrate_title">Rezgő visszajelzés</string>
+    <string name="quick_settings_vibrate_title">A Gyorsbeállítások rezgő visszajelzése</string>
     <string name="quick_settings_vibrate_summary">A Gyorsbeállítások csempéi érintéskor rezegni fognak</string>
     <string name="quick_settings_vibrate_duration_title">Rezgéshossz</string>
     <string name="quick_settings_vibrate_duration_summary">Hány milliszekundumig rezegjen</string>
@@ -423,6 +451,9 @@
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">A Fényerőcsúszka stílusa</string>
     <string name="theme_customization_brightness_slider_summary">Itt állíthatja be a csúszka egyéni stílusát</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Adatforgalom-ikonstílus</string>
+    <string name="theme_customization_data_summary">Egyéni adatforgalom-ikonstílus állítható be</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Állapotsor</string>
     <string name="lockscreen_status_bar_summary">Az állapotsor megjelenítése a zárképernyőn</string>
@@ -609,17 +640,13 @@
     <string name="status_bar_icons_summary">Beállítható mely állapotsori ikonok jelenjenek meg</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Záróképernyő parancsikonok</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Duplakopp a Záróképernyőn</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">A záróképernyő felső harmadának vagy alsó parancsikon területének dupla érintésére a készülék alvó állapotba kerül</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Duplakopp az állapotsávon</string>
-    <string name="double_tap_to_sleep_summary">Az állapotsáv dupla érintésére a készülék alvó állapotba kerül</string>
+    <!-- Double tap to sleep on status bar or lockscreen -->
+    <string name="status_bar_double_tap_to_sleep_title">Alvómód érintésre</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Dupla érintés az állapotsoron vagy a záróképernyőn a képernyő kikapcsolásához</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Zseblámpakapcsoló kikapcsolt képernyőn</string>
     <string name="torch_power_button_gesture_none">Kikapcsolva</string>
     <string name="torch_power_button_gesture_dt">A Bekapcsológomb dupla érintése (az egyszeri érintés reakciója lassul), ez a funkció letiltja a bekapcsológombbal való kameraindítást.</string>
-    <string name="torch_power_button_gesture_dt_toast">A kameraindítás most le van tiltva</string>
     <string name="torch_power_button_gesture_lp">A bekapcsológomb nyomva tartása</string>
     <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Letiltja a kikapcsolási menüt a Képernyőzáron</string>
@@ -794,7 +821,7 @@
     <string name="notification_material_dismiss_bgstyle_title">Gombháttér</string>
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">A képernyő biztonsági figyemeztetéseinek figyelmen kívül hagyása</string>
-    <string name="ignore_window_secure_summary">Ez eltávolítja a képernyőképek és képernyőfelvételek alkalmazásokhoz kötődő összes korlátozását. Általában a speciális alkalmazásokat fekete területek helyettesítik a felvételeken. Ez bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet. A kapcsoló megváltoztatása után előfordulhat, hogy újra kell indítania az alkalmazásokat, hogy a változtatás érvénybe lépjen.</string>
+    <string name="ignore_window_secure_summary">Képernyőképek és képernyővideók alkalmazásokhoz kötődő összes korlátozását törli. Bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet. A módosítás életbe lépéséhez újra kell indítani az alkalmazásokat.</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">Kicseréli a régi felugró értesitéseket egy vékonyabb, szolidabb újratervezett dizájnúra</string>
@@ -859,32 +886,22 @@
     <string name="status_bar_battery_style_icon_portrait">Álló ikon</string>
     <string name="status_bar_battery_style_icon_rlandscape">Fekvő ikon (Jobb)</string>
     <string name="status_bar_battery_style_icon_landscape">Fekvő ikon (Bal)</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_a">Fekvő R Style A</string>
-    <string name="status_bar_battery_style_icon_landscape_style_a">Fekvő L Style A</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_b">Fekvő R Style B</string>
-    <string name="status_bar_battery_style_icon_landscape_style_b">Fekvő L Style B</string>
-    <string name="status_bar_battery_style_icon_landscape_ios15">Fekvő ( iOS 15 )</string>
-    <string name="status_bar_battery_style_icon_landscape_ios16">Fekvő ( iOS 16 )</string>
-    <string name="status_bar_battery_style_icon_landscape_origami">Fekvő Origami</string>
-    <string name="status_bar_battery_style_icon_landscape_pill">Álló (Portré) MX</string>
-    <string name="status_bar_battery_style_icon_landscape_line">Fekvő Lorn</string>
-    <string name="status_bar_battery_style_icon_landscape_musku">Álló (Portré) iOS</string>
-    <string name="status_bar_battery_style_icon_landscape_signal">Fekvő Airoo</string>
-    <string name="status_bar_battery_style_icon_landscape_buddy">Fekvő kapszula</string>
     <string name="status_bar_battery_style_circle">Kör</string>
     <string name="status_bar_battery_style_dotted_circle">Pontozott kör</string>
-    <string name="status_bar_battery_style_big_circle">Nagy kör</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Nagy pontozott kör</string>
     <string name="status_bar_battery_style_filled_circle">Telített kör</string>
     <string name="status_bar_battery_style_text">Szöveg</string>
     <string name="status_bar_battery_style_hidden">Rejtett</string>
     <string name="status_bar_battery_percent_title">Akkumulátorszázalék</string>
     <string name="status_bar_battery_percent_hidden">Rejtett</string>
     <string name="status_bar_battery_percent_text_inside">Az ikonon belül</string>
-    <string name="status_bar_battery_percent_text_next">Az ikon mellett</string>
+    <string name="status_bar_battery_percent_text_next_right">Az ikon mellett (jobb)</string>
+    <string name="status_bar_battery_percent_text_next_left">Az ikon mellett (bal)</string>
     <string name="status_bar_battery_text_charging_title">Akkuszázalék töltés közben</string>
     <string name="status_bar_battery_text_charging_summary">Töltés közben állandóan jelenítse meg az akkuszázalékot</string>
     <!-- QS battery -->
+    <string name="qs_battery_location_title">Az akkujelzés helye</string>
+    <string name="qs_battery_location_qs_panel">Gyorsbeállítások-panel</string>
+    <string name="qs_battery_location_qs_statusbar">Gyors értesítési sáv</string>
     <string name="qs_use_status_bar_battery_style">Kövesse az állapotsor stílusát</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Becsült akkuszint</string>
@@ -1029,7 +1046,7 @@
     <string name="volume_steps_voice_call_title">Hangerőléptetés: Hanghívás</string>
     <string name="volume_steps_reset">Visszaállítás</string>
     <!-- QS Header image -->
-    <string name="qs_header_image_title">Gyorsbeállítások fejléc-kép</string>
+    <string name="qs_header_image_title">Gyorsbeállítási-fejléc (csak állómódban)</string>
     <string name="qs_header_random_image_title">Véletlenszerű kép</string>
     <string name="qs_header_random_image_summary">Itt engedélyezheti a váltakozást</string>
     <!-- Pulse on music track change -->
@@ -1043,4 +1060,19 @@
     <string name="qs_footer_text_summary">Szövegmegjelenítés alul a gyorsbeállítás panel alján</string>
     <string name="qs_footer_text_string_title">A Lábjegyzet személyre szabása</string>
     <string name="qs_footer_text_string_summary">Hogy alapértelmezett legyen, állítsa üresre</string>
+    <!-- Volume haptic feedback -->
+    <string name="volume_panel_haptic_feedback_title">A Hangerő rezgő visszajelzése</string>
+    <string name="volume_panel_haptic_feedback_summary">Megengedi, hogy rezgéssel jelezze a hangerő-változtatást</string>
+    <!-- Volume rocker music control -->
+    <string name="volbtn_music_controls_title">Lejátszásvezérlés</string>
+    <string name="volbtn_music_controls_summary">Kikapcsolt kijelzőnél is továbbléptetheti a zeneszámokat a hangerőgombok hosszan nyomásával</string>
+    <!-- Ambient Wake gesture -->
+    <string name="ambient_wake_gestures_title">Környezeti kijelzős feloldás</string>
+    <string name="ambient_wake_gestures_summary">Ébresztéskor a környezeti kijelző megjelenítése normál képernyőzár helyett</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Alkalmazások downgrade-jének lehetővé tétele</string>
+    <string name="app_downgrade_summary">Lehetővé teszi a visszafelé frissítést (downgrade). Összeomláshoz és adatsérüléshez vezethet.</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Vágólap-átfedés</string>
+    <string name="show_clipboard_overlay_summary">Átfedés megjelenítése a képernyő bal alsó sarkában, ha valamit a vágólapra másol</string>
 </resources>
