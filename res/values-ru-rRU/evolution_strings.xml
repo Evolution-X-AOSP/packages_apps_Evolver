@@ -28,6 +28,8 @@
     <string name="notification_flashlight_category">Мигание фонарика при уведомлении</string>
     <string name="ambient_display_category">Активный экран</string>
     <string name="lockscreen_clock_category">Часы на экране блокировки</string>
+    <string name="signal_icons_category_title">Стиль значка сети</string>
+    <string name="vibration_category_title">Тип вибрации</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Стандартные системные настройки</string>
     <string name="dark_ui_mode_summary">Просмотреть параметры темной темы</string>
@@ -56,6 +58,11 @@
     <string name="seek_value_edit_label">Установка значения</string>
     <string name="search">Поиск</string>
     <string name="search_apps">Поиск приложений</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">Включено</string>
+    <string name="string_disabled">Отключено</string>
+    <string name="string_on">Вкл</string>
+    <string name="string_off">Выкл.</string>
     <!-- Units -->
     <string name="unit_ms">мсек</string>
     <string name="unit_seconds">секунд</string>
@@ -199,7 +206,7 @@
     <string name="qs_brightness_slider_position_top">Сверху</string>
     <string name="qs_brightness_slider_position_bottom">Внизу</string>
     <!-- Brightness slider haptic feedback -->
-    <string name="qs_brightness_slider_haptic_title">Тактильный отклик</string>
+    <string name="qs_brightness_slider_haptic_title">Тактильный отклик ползунка яркости</string>
     <string name="qs_brightness_slider_haptic_summary">Виброотклик при использовании регулятора яркости</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Значок автояркости</string>
@@ -229,7 +236,7 @@
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Откуда воспроизводить рингтоны</string>
     <string name="ringtone_focus_mode_dynamic">Из гарнитуры при подключении и воспроизведении музыки</string>
-    <string name="ringtone_focus_mode_stock">Из динамика (по умолч. в AOSP)</string>
+    <string name="ringtone_focus_mode_stock">Из динамика (по умолч. AOSP)</string>
     <!-- Lock screen album art filter -->
     <string name="lockscreen_albumart_filter_title">Фильтр обложек медиафайлов</string>
     <string name="lockscreen_albumart_filter_grayscale">Оттенки серого</string>
@@ -281,8 +288,7 @@
     <string name="qs_date_title">Дата</string>
     <string name="qs_date_summary">Отображать дату в заголовке строки состояния</string>
     <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">Вибрация</string>
-    <string name="quick_settings_vibrate_title">Вибрировать при касании</string>
+    <string name="quick_settings_vibrate_title">Вибрация при касании</string>
     <string name="quick_settings_vibrate_summary">Вибрировать при касании плиток быстрых настроек</string>
     <string name="quick_settings_vibrate_duration_title">Продолжительность вибрации</string>
     <string name="quick_settings_vibrate_duration_summary">Время вибрации</string>
@@ -423,6 +429,9 @@
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">Стиль ползунка яркости</string>
     <string name="theme_customization_brightness_slider_summary">Установить свой стиль ползунка яркости</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Стиль значка сети</string>
+    <string name="theme_customization_data_summary">Выберите пользовательский значок сети</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Строка состояния</string>
     <string name="lockscreen_status_bar_summary">Показывать строку состояния на заблокированном экране</string>
@@ -619,7 +628,6 @@
     <string name="torch_power_button_gesture_title">Включение фонарика при выключенном экране</string>
     <string name="torch_power_button_gesture_none">Отключено</string>
     <string name="torch_power_button_gesture_dt">Двойное нажатие на кнопку питания (медленнее однократный отклик), отключает двойное нажатие по кнопке питания для камеры.</string>
-    <string name="torch_power_button_gesture_dt_toast">Жест перехода к камере теперь отключён</string>
     <string name="torch_power_button_gesture_lp">Долгое нажатие кнопки питания</string>
     <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Отключить меню питания на экране блокировки</string>
@@ -691,7 +699,7 @@
     <string name="chroma_factor_title">Коэффициент цветности</string>
     <string name="chroma_factor_summary">Чем больше значение, тем насыщеннее цвета</string>
     <string name="tint_background_title">Оттеночный фон</string>
-    <string name="tint_background_summary">Выбор яркости и цветности, позволяет также лиять на цвета фона</string>
+    <string name="tint_background_summary">Выбор яркости и цветности, позволяет также влиять на цвета фона</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Использовать собственную тему</string>
     <string name="custom_theme_black">Чёрный</string>
@@ -1029,7 +1037,7 @@
     <string name="volume_steps_voice_call_title">Шаги громкости: Голосовой вызов</string>
     <string name="volume_steps_reset">Сбросить</string>
     <!-- QS Header image -->
-    <string name="qs_header_image_title">Изображение заголовка быстрых настроек</string>
+    <string name="qs_header_image_title">Изображение заголовка быстрых настроек (Только в портретном режиме)</string>
     <string name="qs_header_random_image_title">Случайное изображение заголовка быстрых настроек</string>
     <string name="qs_header_random_image_summary">Включить случайное изображение заголовка быстрых настроек</string>
     <!-- Pulse on music track change -->
@@ -1043,4 +1051,7 @@
     <string name="qs_footer_text_summary">Отображать текст внизу панели быстрых настроек</string>
     <string name="qs_footer_text_string_title">Пользовательский текст нижнего колонтитула</string>
     <string name="qs_footer_text_string_summary">Оставьте пустым для значения по умолчанию</string>
+    <!-- Volume haptic feedback -->
+    <string name="volume_panel_haptic_feedback_title">Виброотклик при регулировке громкости</string>
+    <string name="volume_panel_haptic_feedback_summary">Включить виброотклик при регулировке громкости</string>
 </resources>

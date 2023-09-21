@@ -28,6 +28,8 @@
     <string name="notification_flashlight_category">Jelzőfény értesítéskor</string>
     <string name="ambient_display_category">Környezeti kijelző</string>
     <string name="lockscreen_clock_category">A záróképernyő órája</string>
+    <string name="signal_icons_category_title">Térerőjelzési-ikon</string>
+    <string name="vibration_category_title">Rezgés</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Az Androidból átvett gyári funkciók</string>
     <string name="dark_ui_mode_summary">Nézze át a sötét témabeállításokat</string>
@@ -56,7 +58,13 @@
     <string name="seek_value_edit_label">Érték-beállítás</string>
     <string name="search">Keresés</string>
     <string name="search_apps">Alkalmazások keresése</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">Engedélyezve</string>
+    <string name="string_disabled">Kikapcsolva</string>
+    <string name="string_on">Be</string>
+    <string name="string_off">Ki</string>
     <!-- Units -->
+    <string name="unit_milliseconds">ezredmásodperc</string>
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">másodperc</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -85,8 +93,8 @@
     <string name="seekbar_default_string">Alapértelmezett</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value"><xliff:g id="v">%s</xliff:g> értékű</string>
-    <string name="custom_seekbar_default_value">Alapértelmezett</string>
-    <string name="custom_seekbar_default_value_to_set">Alapértelmezetten <xliff:g id="v">%s</xliff:g> értékű\nNyomja hosszan a beállításhoz</string>
+    <string name="custom_seekbar_default_value">alapértelmezetten</string>
+    <string name="custom_seekbar_default_value_to_set">Alapértelmezett érték <xliff:g id="v">%s</xliff:g>\nNyomja hosszan a beállításhoz</string>
     <string name="custom_seekbar_default_value_is_set">Az alapértelmezett érték beállítva</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">USB-konfiguráció</string>
@@ -160,16 +168,32 @@
     <string name="dialog_delete_title">Törlés</string>
     <string name="dialog_delete_message">Törli a kiválasztott elemeket?</string>
     <!-- Network traffic -->
-    <string name="network_traffic_intro_text">        Kijelzi az aktuális hálózati sebességet az állapotsoron.
-        A kijelző dinamikusan mutatja a sebességet úgy, hogy másodpercenként
-        váltja a fel- és letöltési sebességet
-    </string>
-    <string name="network_traffic_title">Hálózatiforgalom-kijelző</string>
-    <string name="network_traffic_summary">Engedélyezheti vagy letilthatja a mobiladatforgalom sebességének kijelzését</string>
-    <string name="network_traffic_main_switch_title">A \'Hálózatiforgalom-kijelző\' használata</string>
-    <string name="network_options_title">Lehetőségek</string>
-    <string name="network_traffic_autohide_title">Ha nincs adatforgalom, a kijelző se látszódjon</string>
-    <string name="network_traffic_autohide_summary">1 KB/s adatforgalom alatt ne látszódjon a kijelző</string>
+    <string name="network_traffic_settings_title">Hálózati forgalom-figyelő</string>
+    <string name="network_traffic_settings_summary">A Hálózatiforgalom-figyelő megjelenítése, és testreszabása</string>
+    <string name="network_traffic_location_title">Helymeghatározás</string>
+    <string name="network_traffic_location_disable">Kikapcsolva</string>
+    <string name="network_traffic_location_statusbar">Értesítési sáv</string>
+    <string name="network_traffic_location_quick_statusbar">Gyors értesítési sáv</string>
+    <string name="network_traffic_mode_title">Megjelenítési mód</string>
+    <string name="network_traffic_mode_up">Csak a feltöltés</string>
+    <string name="network_traffic_mode_down">Csak a letöltés</string>
+    <string name="network_traffic_mode_all">Feltöltés és letöltés</string>
+    <string name="network_traffic_autohide">Automatikus elrejtés</string>
+    <string name="network_traffic_autohide_summary">Elrejti a forgalomkijelzést, ha nincs forgalom</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_threshold">Inaktivítási küszöb</string>
+    <string name="network_traffic_refresh_interval_title">Frissítési gyakoriság</string>
+    <string name="network_traffic_refresh_interval_summary">Időtartam, amely után a sebesség újra látható</string>
+    <string name="network_traffic_units_title">Hálózatforgalmi mértékegység</string>
+    <string name="network_traffic_units_bits">Bit / másodperc (b/s)</string>
+    <string name="network_traffic_units_kilobits">Kilobit / másodperc (kb/s)</string>
+    <string name="network_traffic_units_megabits">Megabit / másodperc (Mb/s)</string>
+    <string name="network_traffic_units_bytes">Bájt / másodperc (B/s)</string>
+    <string name="network_traffic_units_kilobytes">Kilobájt / másodperc (kB/s)</string>
+    <string name="network_traffic_units_megabytes">Megabájt / másodperc (MB/s)</string>
+    <string name="network_traffic_hidearrow">Nyilak elrejtése</string>
+    <string name="network_traffic_hidearrow_summary">Elrejti a forgalmat jelző nyilakat</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Ujjlenyomat-hitelesítési rezgés</string>
     <string name="fp_success_vibrate_summary">Ujjlenyomat sikeres hitelesítésekor rezgés</string>
@@ -199,7 +223,7 @@
     <string name="qs_brightness_slider_position_top">Felül</string>
     <string name="qs_brightness_slider_position_bottom">Alul</string>
     <!-- Brightness slider haptic feedback -->
-    <string name="qs_brightness_slider_haptic_title">Érintési visszajelzés</string>
+    <string name="qs_brightness_slider_haptic_title">A Fényerő rezgő visszajelzése</string>
     <string name="qs_brightness_slider_haptic_summary">Rezgéssel jelzi, ha fényerő-szabályzás történt a csúszkával</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Az automatikus fényerő ikonja</string>
@@ -221,11 +245,16 @@
     <string name="qs_footer_category">Gyorsbeállítások-lábléc</string>
     <string name="qs_header_category_title">Gyorsbeállítások-fejléc</string>
     <string name="qs_panel_category_title">Gyorsbeállítások-panel</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Gyors legördítés</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Gyorsbeállítások megjelenítése az állapotsor %1$s oldalán történő lehúzáskor</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Bal</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Jobb</string>
+    <string name="status_bar_quick_qs_pulldown_off">Ki</string>
+    <string name="status_bar_quick_qs_pulldown_left">Bal</string>
+    <string name="status_bar_quick_qs_pulldown_right">Jobb</string>
+    <string name="status_bar_quick_qs_pulldown_always">Mindig jelenítse meg a Gyorsbeállításokat az állapotsor lehúzásakor</string>
     <string name="status_bar_quick_qs_pulldown">Gyors legördítés</string>
-    <string name="quick_pulldown_none">Kikapcsolva</string>
-    <string name="quick_pulldown_right">Az állapotsor jobb oldalán lehet legördíteni</string>
-    <string name="quick_pulldown_left">Az állapotsor bal oldalán lehet legördíteni</string>
-    <string name="quick_pulldown_always">Mindig jelenítse meg a Gyorsbeállításokat az állapotsor lehúzásakor</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Honnan szólaljanak meg a csengőhangok</string>
     <string name="ringtone_focus_mode_dynamic">A fejhallgatóból, ha csatlakoztatva van és épp zenét hallgat</string>
@@ -281,8 +310,7 @@
     <string name="qs_date_title">Dátum</string>
     <string name="qs_date_summary">A dátum megjelenítése a gyors-állapotsor fejlécén</string>
     <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">Rezgés</string>
-    <string name="quick_settings_vibrate_title">Rezgő visszajelzés</string>
+    <string name="quick_settings_vibrate_title">A Gyorsbeállítások rezgő visszajelzése</string>
     <string name="quick_settings_vibrate_summary">A Gyorsbeállítások csempéi érintéskor rezegni fognak</string>
     <string name="quick_settings_vibrate_duration_title">Rezgéshossz</string>
     <string name="quick_settings_vibrate_duration_summary">Hány milliszekundumig rezegjen</string>
@@ -423,6 +451,9 @@
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">A Fényerőcsúszka stílusa</string>
     <string name="theme_customization_brightness_slider_summary">Itt állíthatja be a csúszka egyéni stílusát</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Adatforgalom-ikonstílus</string>
+    <string name="theme_customization_data_summary">Egyéni adatforgalom-ikonstílus állítható be</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Állapotsor</string>
     <string name="lockscreen_status_bar_summary">Az állapotsor megjelenítése a zárképernyőn</string>
@@ -609,17 +640,13 @@
     <string name="status_bar_icons_summary">Beállítható mely állapotsori ikonok jelenjenek meg</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Záróképernyő parancsikonok</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Duplakopp a Záróképernyőn</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">A záróképernyő felső harmadának vagy alsó parancsikon területének dupla érintésére a készülék alvó állapotba kerül</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Duplakopp az állapotsávon</string>
-    <string name="double_tap_to_sleep_summary">Az állapotsáv dupla érintésére a készülék alvó állapotba kerül</string>
+    <!-- Double tap to sleep on status bar or lockscreen -->
+    <string name="status_bar_double_tap_to_sleep_title">Alvómód érintésre</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Dupla érintés az állapotsoron vagy a záróképernyőn a képernyő kikapcsolásához</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Zseblámpakapcsoló kikapcsolt képernyőn</string>
     <string name="torch_power_button_gesture_none">Kikapcsolva</string>
     <string name="torch_power_button_gesture_dt">A Bekapcsológomb dupla érintése (az egyszeri érintés reakciója lassul), ez a funkció letiltja a bekapcsológombbal való kameraindítást.</string>
-    <string name="torch_power_button_gesture_dt_toast">A kameraindítás most le van tiltva</string>
     <string name="torch_power_button_gesture_lp">A bekapcsológomb nyomva tartása</string>
     <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Letiltja a kikapcsolási menüt a Képernyőzáron</string>
@@ -794,7 +821,7 @@
     <string name="notification_material_dismiss_bgstyle_title">Gombháttér</string>
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">A képernyő biztonsági figyemeztetéseinek figyelmen kívül hagyása</string>
-    <string name="ignore_window_secure_summary">Ez eltávolítja a képernyőképek és képernyőfelvételek alkalmazásokhoz kötődő összes korlátozását. Általában a speciális alkalmazásokat fekete területek helyettesítik a felvételeken. Ez bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet. A kapcsoló megváltoztatása után előfordulhat, hogy újra kell indítania az alkalmazásokat, hogy a változtatás érvénybe lépjen.</string>
+    <string name="ignore_window_secure_summary">Képernyőképek és képernyővideók alkalmazásokhoz kötődő összes korlátozását törli. Bizonyos esetekben kényelmes lehet, de adatszivárgáshoz vezethet. A módosítás életbe lépéséhez újra kell indítani az alkalmazásokat.</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">Kicseréli a régi felugró értesitéseket egy vékonyabb, szolidabb újratervezett dizájnúra</string>
@@ -881,10 +908,14 @@
     <string name="status_bar_battery_percent_title">Akkumulátorszázalék</string>
     <string name="status_bar_battery_percent_hidden">Rejtett</string>
     <string name="status_bar_battery_percent_text_inside">Az ikonon belül</string>
-    <string name="status_bar_battery_percent_text_next">Az ikon mellett</string>
+    <string name="status_bar_battery_percent_text_next_right">Az ikon mellett (jobb)</string>
+    <string name="status_bar_battery_percent_text_next_left">Az ikon mellett (bal)</string>
     <string name="status_bar_battery_text_charging_title">Akkuszázalék töltés közben</string>
     <string name="status_bar_battery_text_charging_summary">Töltés közben állandóan jelenítse meg az akkuszázalékot</string>
     <!-- QS battery -->
+    <string name="qs_battery_location_title">Az akkujelzés helye</string>
+    <string name="qs_battery_location_qs_panel">Gyorsbeállítások-panel</string>
+    <string name="qs_battery_location_qs_statusbar">Gyors értesítési sáv</string>
     <string name="qs_use_status_bar_battery_style">Kövesse az állapotsor stílusát</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Becsült akkuszint</string>
@@ -1015,8 +1046,8 @@
     <string name="artwork_media_background_enable_blur_title">A médiaértesítési grafikák hátterének elmosódása</string>
     <string name="artwork_media_background_blur_radius_title">Az elmosódás mértéke</string>
     <string name="media_artwork_fade_percent_title">Az áttűnés százaléka</string>
-    <string name="lockscreen_albumart_filter_blur_radius_title">A zárképernyő-borítókép elmosódási értéke</string>
-    <string name="ls_media_artwork_fade_percent_title">A zárképernyő-borítókép áttűnési százaléka</string>
+    <string name="lockscreen_albumart_filter_blur_radius_title">A mégdiaborító elmosási szintje</string>
+    <string name="ls_media_artwork_fade_percent_title">A mégdiaborító elhalványítási szintje</string>
     <!-- Volume Steps Fragment -->
     <string name="volume_steps_fragment_title">Hangerőléptetés</string>
     <string name="volume_steps_summary">Testre szabhatja a hangerőléptetéseket</string>
@@ -1029,7 +1060,7 @@
     <string name="volume_steps_voice_call_title">Hangerőléptetés: Hanghívás</string>
     <string name="volume_steps_reset">Visszaállítás</string>
     <!-- QS Header image -->
-    <string name="qs_header_image_title">Gyorsbeállítások fejléc-kép</string>
+    <string name="qs_header_image_title">Gyorsbeállítási-fejléc (csak állómódban)</string>
     <string name="qs_header_random_image_title">Véletlenszerű kép</string>
     <string name="qs_header_random_image_summary">Itt engedélyezheti a váltakozást</string>
     <!-- Pulse on music track change -->
@@ -1043,4 +1074,279 @@
     <string name="qs_footer_text_summary">Szövegmegjelenítés alul a gyorsbeállítás panel alján</string>
     <string name="qs_footer_text_string_title">A Lábjegyzet személyre szabása</string>
     <string name="qs_footer_text_string_summary">Hogy alapértelmezett legyen, állítsa üresre</string>
+    <!-- Volume haptic feedback -->
+    <string name="volume_panel_haptic_feedback_title">A Hangerő rezgő visszajelzése</string>
+    <string name="volume_panel_haptic_feedback_summary">Megengedi, hogy rezgéssel jelezze a hangerő-változtatást</string>
+    <!-- The Evolver -->
+    <string name="evolver_dashboard_title">Az Evolver</string>
+    <string name="evolver_dashboard_summary">Android 14-es Evolúció</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Ne legyen érvényesítés</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Nincs tanusítvány megadva. Kapcsolata nem lesz privát.</string>
+    <!-- Hardware info -->
+    <string name="soc_model">CPU modell</string>
+    <string name="total_ram">Az összes RAM</string>
+    <!-- About device screen, Evolution X -->
+    <string name="evolution_x_version">Evolution X-verzió</string>
+    <!-- About device screen, Build date -->
+    <string name="build_date">A kiadás dátuma</string>
+    <!-- About device screen, build maintainer -->
+    <string name="build_maintainer">A kiadás felelőse</string>
+    <!-- Build status -->
+    <string name="build_status">Gyártási állapot</string>
+    <string name="radio_info_title">Rádióinformációk</string>
+    <!-- Refresh rate -->
+    <string name="min_refresh_rate_title">Képernyőfrissítési minimum</string>
+    <string name="max_refresh_rate_title">Képernyőfrissítési maximum</string>
+    <string name="low_power_refresh_rate_title_custom">Képernyőfrissítés gyenge akkuhoz</string>
+    <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
+    <string name="fingerprint_enroll_find_sensor_message_front">Készüléke előlapján találhatja meg az ujjlenyomat-olvasót.</string>
+    <string name="fingerprint_enroll_find_sensor_message_rear">Készüléke hátlapján találhatja meg az ujjlenyomat-olvasót.</string>
+    <string name="fingerprint_enroll_find_sensor_message_side">Készüléke oldalán találhatja meg az ujjlenyomat-olvasót.</string>
+    <!-- Message shown when user touches the icon on the screen, instead of the real fingerprint sensor -->
+    <string name="fingerprint_enroll_touch_dialog_message_front">Érintse meg a szenzort készüléke előlapján.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_rear">Érintse meg a szenzort készüléke hátlapján.</string>
+    <string name="fingerprint_enroll_touch_dialog_message_side">Érintse meg a szenzort készüléke oldalán.</string>
+    <!-- Warning message for the sd card setup -->
+    <string name="storage_warning_internal">Figyelmeztetés: Előfordulhat, hogy ez a lehetőség nem működik megfelelően, vagy adatvesztéshez vezethet, ezért nem ajánlott!</string>
+    <!-- FastCharge feature -->
+    <string name="fast_charging_title">Gyorstöltés</string>
+    <string name="fast_charging_summary">Tiltás,  hogy ne melegedjen a készülék töltés közben és az akkuélettartam növeléséért</string>
+    <!-- Package details -->
+    <string name="package_details_group_title">Csomagadatok</string>
+    <string name="package_name">Csomagnév</string>
+    <string name="package_version">Csomagverzió</string>
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön által létrehozott hotspot neve nem fog megjelenni a mások által elérhető WLAN-hálózatok listájában.</string>
+    <string name="wifi_hotspot_client_manager_title">Csatlakozó készülékek</string>
+    <string name="wifi_hotspot_client_manager_summary">A hotspothoz csatlakoztatott készülékek listája és kezelése</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">A hotspothoz csatlakoztatott készülékek listája</string>
+    <string name="wifi_hotspot_client_limit_title">Maximálisan csatlakoztatható készülék</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokkolt készülékek</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Csatlakoztatott készülékek</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Készüléktiltás</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ez a művelet lecsatlakoztatja \"<xliff:g id="device_name">%1$s</xliff:g>\" készüléket erről a hotspotról és tiltólistához adja</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Készülékfeloldás</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">\"<xliff:g id="device_name">%1$s</xliff:g>\"-készülék kapcsolódhat ehhez a hotspothoz</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Jelenleg nincs elérhető kliens. Amint lesz akár csatlakoztatott, akár letiltott, az itt fog megjelenni.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play Áruház</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Vágólapra másolva</string>
+    <string name="longpress_to_clipboard">Másolás hosszannyomással</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Teljesképernyős-alkalmazások</string>
+    <string name="display_cutout_force_fullscreen_summary">Alkalmazások kényszerítése, hogy a képernyőkivágást mellőzzék</string>
+    <!-- Hide developer status -->
+    <string name="hide_developer_status_title">Rejtett fejlesztői állapot</string>
+    <string name="hide_developer_status_summary">A fejlesztői állapot elrejtése az alkalmazások elől</string>
+    <string name="search">Keresés</string>
+    <string name="search_apps">Alkalmazások keresése</string>
+    <!-- Captive portal -->
+    <string name="captive_portal_title">Kapcsolódási teszt</string>
+    <string name="captive_portal_summary">Internet-csatlakozási képesség behatárolása a Google-val való kapcsolódás alatt. Nyilvános, de rögzített portálok észlelésére is használható.</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Kevesebb, mint egy perc</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">Ma: %1$s</string>
+    <!-- Summary for list to control apps that ignore battery saving restrictions -->
+    <string name="high_power_apps_summary">Akkuoptimalizálási lehetőségek</string>
+    <!-- LiveDisplay -->
+    <string name="live_display_summary">Optimalizálja a képernyőt a napszaktól és a környezeti feltételektől függően és javítja az olvashatóságot, kímélve a szemet</string>
+    <string name="live_display_mode">Megjelenítési mód</string>
+    <string name="live_display_color_temperature_title">Színhőmérséklet</string>
+    <string name="live_display_color_temperature_summary">Nappali:<xliff:g id="day_temperature">%1$d</xliff:g>K Éjszakai:<xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+    <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
+    <string name="live_display_day">Nappali</string>
+    <string name="live_display_night">Éjszakai</string>
+    <string name="live_display_outdoor_mode_title">Automatikus szabadtéri mód</string>
+    <string name="live_display_outdoor_mode_summary">Fényerő és színtelítettség automatikus növelése erős napfényben</string>
+    <string name="live_display_anti_flicker_title">Vibrálásmentesítés</string>
+    <string name="live_display_anti_flicker_summary">Gyenge fényviszonyok között megakadályozza az erőteljes vilbrálást és csökkenti a szemek megerőltetését. A funkció ronthatja a színpontosságot, és befolyásolhatja egyes elemek megjelenítését.</string>
+    <string name="live_display_low_power_title">Energiafogyasztás-csökkentés</string>
+    <string name="live_display_low_power_summary">A kijelzőt a legkisebb energiafogyasztásra állítja, minőségromlás nélkül</string>
+    <string name="live_display_enhance_color_title">Színélénkítés</string>
+    <string name="live_display_enhance_color_summary">Bőrszíntónusok, tájképek, és egyéb képek színdinamikájának javítása</string>
+    <string name="live_display_color_profile_title">Színprofil</string>
+    <string name="live_display_color_profile_standard_title">Alapértelmezett</string>
+    <string name="live_display_color_profile_standard_summary">Pontos színek és fényes fehér</string>
+    <string name="live_display_color_profile_natural_title">Természetes</string>
+    <string name="live_display_color_profile_natural_summary">Realisztikus színek és telített tónusok</string>
+    <string name="live_display_color_profile_dynamic_title">Dinamikus</string>
+    <string name="live_display_color_profile_dynamic_summary">Kiemelt színek és erős fehérítés</string>
+    <string name="live_display_color_profile_cinema_title">Mozi</string>
+    <string name="live_display_color_profile_cinema_summary">Tökéletes színreprodukció videókhoz</string>
+    <string name="live_display_color_profile_astronomy_title">Csillagászat</string>
+    <string name="live_display_color_profile_astronomy_summary">Mélyvörös az éjjeli használathoz</string>
+    <string name="live_display_color_profile_photography_title">Fényképezés</string>
+    <string name="live_display_color_profile_photography_summary">Tökéletes színreprodukció fotókhoz</string>
+    <string name="live_display_color_profile_basic_title">Alap</string>
+    <string name="live_display_color_profile_basic_summary">A kijelző használata kalibrálás nélkül</string>
+    <string name="live_display_color_profile_adaptive_title">Alkalmazkodó</string>
+    <string name="live_display_color_profile_adaptive_summary">A színek alkalmazkodnak a környezethez</string>
+    <string name="live_display_color_profile_reading_title">Olvasás</string>
+    <string name="live_display_color_profile_reading_summary">Melegebb színek a kisebb szemfáradásért</string>
+    <string name="live_display_color_profile_srgb_title">sRGB</string>
+    <string name="live_display_color_profile_srgb_summary">Színek az sRGB-színtérhez igazítva</string>
+    <string name="live_display_color_profile_dci_p3_title">DCI-P3</string>
+    <string name="live_display_color_profile_dci_p3_summary">Színek a DCI-P3-színtérhez igazítva</string>
+    <string name="live_display_reading_mode_title">Olvasómód</string>
+    <string name="live_display_reading_mode_summary">Szürkeárnyalatos mód a hosszabb olvasásokhoz</string>
+    <string name="color_calibration_title">Színkalibrálás</string>
+    <string name="color_calibration_summary">A képernyőn megjelenő színek kalibrálása</string>
+    <string name="color_red_title">Vörös</string>
+    <string name="color_green_title">Zöld</string>
+    <string name="color_blue_title">Kék</string>
+    <!-- LiveDisplay : Picture Adjustment -->
+    <string name="picture_adjustment_title">Képkorrekciók</string>
+    <string name="picture_adjustment_summary">Árnyalat, telítettség, intenzitás és kontraszt beállítása</string>
+    <string name="adj_hue_title">Színárnyalat</string>
+    <string name="adj_saturation_title">Telítettség</string>
+    <string name="adj_intensity_title">Intenzitás</string>
+    <string name="adj_contrast_title">Kontraszt</string>
+    <!-- High touch sensitivity -->
+    <string name="high_touch_sensitivity_title">Magas érintési érzékenység</string>
+    <string name="high_touch_sensitivity_summary">Érintőképernyő érzékenységének növelése, így kesztyű viselése esetén is használható</string>
+    <!-- Touchscreen hovering -->
+    <string name="touchscreen_hovering_title">Képernyőlebegtetés</string>
+    <string name="touchscreen_hovering_summary">Engedélyezi a mutatóval való vezérlést, mint egy egérrel a böngészőknél, távoli asztaloknál, stb</string>
+    <!-- High touch polling rate -->
+    <string name="high_touch_polling_rate_title">Magas értékű képernyő-lekérdezés</string>
+    <string name="high_touch_polling_rate_summary">Az érintőképernyő lekérdezési értékének növelése</string>
+    <!-- Battery Temperature -->
+    <string name="battery_temp">Akkuhőmérséklet</string>
+    <!-- Battery health -->
+    <string name="battery_health_title">Akkuállapot</string>
+    <!-- PIN scramble -->
+    <string name="unlock_scramble_pin_layout_title">Véletlenszerű elrendezés</string>
+    <string name="unlock_scramble_pin_layout_summary">Összekeveri a beviteli mezőn a számok elrendezését az eszköz feloldásakor</string>
+    <!-- Lock screen pattern size -->
+    <string name="lock_settings_picker_pattern_size_message">Válassza ki a minta méretét</string>
+    <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
+    <string name="lockpattern_settings_enable_error_path_title">Jelenítse meg a hibás mintát</string>
+    <!-- Whether the dots will be drawn when using the lockscreen pattern -->
+    <string name="lockpattern_settings_enable_dots_title">Jelenítse meg a feleoldási pontokat</string>
+    <!-- Wake on plug -->
+    <string name="wake_when_plugged_or_unplugged_title">Képenyőébredés töltéskor</string>
+    <string name="wake_when_plugged_or_unplugged_summary">A töltő csatlakoztatása vagy eltávolítása után bekapcsolódik a képernyő</string>
+    <!-- Private DNS -->
+    <!-- Alternative: 1dot1dot1dot1.cloudflare-dns.com -->
+    <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
+    <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
+    <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">A képernyőmentés hangja</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="swipe_to_screenshot_gesture_title">Képernyőkép csúsztatással</string>
+    <string name="swipe_to_screenshot_gesture_summary">Csúsztasson három ujjal képernyőkép készítéséhez</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Mélyalvás</string>
+    <!-- Increasing ring tone volume -->
+    <string name="increasing_ring_volume_option_title">Emelkedő csengőhang</string>
+    <string name="increasing_ring_min_volume_title">Kezdeti hangerő</string>
+    <string name="increasing_ring_ramp_up_time_title">Felfutási idő</string>
+    <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <string name="sim_card_number_title"><xliff:g id="CARD_NUMBER">%1$d</xliff:g>. SIM-kártya</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Az LTE CA erőltetése</string>
+    <string name="force_lte_ca_summary">A működéshez kényszerítse az LTE szolgáltató aggregációt</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Csengőhang rezgésmintázat</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">Egyéni</string>
+    <string name="custom_vibration_pattern_title">Egyéni mintázat</string>
+    <string name="custom_vibration_pattern_summary">Beállíthat egyéni vibrációs mintát is</string>
+    <!-- Per-channel vibration pattern -->
+    <string name="notification_custom_vibrate_title">Egyedi rezgésminta</string>
+    <string name="notification_custom_vibrate_summary">Csak az alapértelmezett mintát cseréli le.\nAz alkalmazáskészlet mintája elsőbbséget élvez</string>
+    <string name="notification_custom_vibrate_slider1">Rezgés ennyi ideig</string>
+    <string name="notification_custom_vibrate_slider2">Szüneteltetés ennyi ideig</string>
+    <!-- Smart Pause -->
+    <string name="adaptive_playback_screen_title">Okos szüneteltetés</string>
+    <string name="adaptive_playback_enabled">Az \'Okos szüneteltetés\' használata</string>
+    <string name="adaptive_playback_disabled_summary">Ki</string>
+    <string name="adaptive_playback_intro_text">Hangerőnémításkor automatikusan leállítja a lejátszást és automatikusan újra is indítja, ha a némítás megszűnik.</string>
+    <string name="adaptive_playback_timeout_title">A használt időtúllépés mértéke</string>
+    <string name="adaptive_playback_timeout_none">Nincs időkorlát</string>
+    <string name="adaptive_playback_timeout_none_summary">Be (nincs időkorlát)</string>
+    <string name="adaptive_playback_timeout_30_secs">30 másodperc</string>
+    <string name="adaptive_playback_timeout_30_secs_summary">Be (30 másodperc)</string>
+    <string name="adaptive_playback_timeout_1_min">1 perc</string>
+    <string name="adaptive_playback_timeout_1_min_summary">Be (1 perc)</string>
+    <string name="adaptive_playback_timeout_2_min">2 perc</string>
+    <string name="adaptive_playback_timeout_2_min_summary">Be (2 perc)</string>
+    <string name="adaptive_playback_timeout_5_min">5 perc</string>
+    <string name="adaptive_playback_timeout_5_min_summary">Be (5 perc)</string>
+    <string name="adaptive_playback_timeout_10_min">10 perc</string>
+    <string name="adaptive_playback_timeout_10_min_summary">Be (10 perc)</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">Alkalmazásonkénti hangerő</string>
+    <string name="app_volume_title">Hangerőszabályozás alkalmazásonként</string>
+    <string name="app_volume_summary">Lehetővé teszi, hogy minden alkalmazásnak más legyen a hangereje</string>
+    <!-- Torch Power button gestures -->
+    <string name="power_button_torch_title">Gyors zseblámpa</string>
+    <string name="power_button_torch_summary">Kikapcsolt képernyőnél a bekapcsológomb hosszan nyomására a zseblámpa bekapcsol</string>
+    <string name="torch_long_press_power_timeout_title">Automatikus zseblámpa-kikapcsolás</string>
+    <string name="torch_long_press_power_timeout_never">Soha</string>
+    <string name="torch_long_press_power_timeout_1min">1 perc</string>
+    <string name="torch_long_press_power_timeout_2min">2 perc</string>
+    <string name="torch_long_press_power_timeout_5min">5 perc</string>
+    <string name="torch_long_press_power_timeout_10min">10 perc</string>
+    <!-- Hotspot extras -->
+    <string name="tethering_allow_vpn_upstreams_title">Engedélyezi a klienseknek a VPN-használatot</string>
+    <string name="tethering_allow_vpn_upstreams_summary">Engedélyezze a hotspot-klienseknek, hogy a készülék VPN-kapcsolatait felfelé csatlakoztathassák</string>
+    <!-- Navigation bar hint -->
+    <string name="show_navbar_hint_title">Navigációs tipp</string>
+    <string name="show_navbar_hint_summary">A navigáció ajánlásait a képernyő alján jeleníti meg</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">Kapszulahossz</string>
+    <string name="short_label">Rövid</string>
+    <string name="long_label">Hosszú</string>
+    <!-- Back gesture height -->
+    <string name="back_height_low_label">Teljes</string>
+    <string name="back_height_high_label">Alul</string>
+    <string name="back_height_title">A \'Vissza\'-vezérlés magassága</string>
+    <string name="back_height_summary">Az érvényes terület nagysága a \'Vissza\'-vezérléshez</string>
+    <!-- Back gesture animation -->
+    <string name="back_gesture_arrow_title">A \'Vissza\'-vezérlés animációja</string>
+    <string name="back_gesture_arrow_summary">Mutasson egy animált nyilat a \'Vissza\'-mozdulatvezérléshez</string>
+    <!-- Back gesture haptic -->
+    <string name="back_gesture_haptic_title">Rezgés \'Vissza\'-vezérléskor</string>
+    <string name="back_gesture_haptic_summary">Rezegni fog a készülék amikor a \'Vissza\'-vezérlőt használja</string>
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">A kapszula rádiusza</string>
+    <string name="thin_label">Vékony</string>
+    <string name="thick_label">Vastag</string>
+    <!-- Navigation bar IME space -->
+    <string name="navigation_bar_ime_space_title">IME-gombhely</string>
+    <string name="ime_narrow">Keskeny</string>
+    <string name="ime_default">Alapértelmezett</string>
+    <string name="ime_hidden">Rejtett</string>
+    <!-- Doze on double tap -->
+    <string name="double_tap_title">Duplakopp</string>
+    <string name="doze_double_tap_title">Gyorsellenőrzés dupla érintéssel</string>
+    <string name="doze_double_tap_summary">Pulzáló értesítések dupla érintésre</string>
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Gyorsfeloldás</string>
+    <string name="unlock_quick_unlock_control_summary">Helyes jelszó/PIN-kód megadásakor azonnal felold</string>
+    <!-- Volume rocker music control -->
+    <string name="volbtn_music_controls_title">Lejátszásvezérlés</string>
+    <string name="volbtn_music_controls_summary">Kikapcsolt kijelzőnél is továbbléptetheti a zeneszámokat a hangerőgombok hosszan nyomásával</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Alkalmazások downgrade-jének lehetővé tétele</string>
+    <string name="app_downgrade_summary">Lehetővé teszi a visszafelé frissítést (downgrade). Összeomláshoz és adatsérüléshez vezethet.</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Vágólap-átfedés</string>
+    <string name="show_clipboard_overlay_summary">Átfedés megjelenítése a képernyő bal alsó sarkában, ha valamit a vágólapra másol</string>
 </resources>
