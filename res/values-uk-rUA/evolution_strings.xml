@@ -28,6 +28,8 @@
     <string name="notification_flashlight_category">Спалах при сповіщеннях</string>
     <string name="ambient_display_category">Активний дисплей</string>
     <string name="lockscreen_clock_category">Годинник екрану блокування</string>
+    <string name="signal_icons_category_title">Піктограма сигналу</string>
+    <string name="vibration_category_title">Вібрація</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Варіанти опцій включені до Android</string>
     <string name="dark_ui_mode_summary">Переглянути параметри темної теми</string>
@@ -56,7 +58,13 @@
     <string name="seek_value_edit_label">Встановити значення</string>
     <string name="search">Пошук</string>
     <string name="search_apps">Пошук додатків</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">Увімкнено</string>
+    <string name="string_disabled">Вимкнено</string>
+    <string name="string_on">Увімкнено</string>
+    <string name="string_off">Вимкнути</string>
     <!-- Units -->
+    <string name="unit_milliseconds">мілісекунди</string>
     <string name="unit_ms">мс</string>
     <string name="unit_seconds">секунди</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -93,7 +101,7 @@
     <string name="usb_default_config_summary">Вибрати поведінку за замовчуванням під час підключення пристрою через USB</string>
     <!-- Navigation bar -->
     <string name="navbar_visibility_title">Панель навігації</string>
-    <string name="navbar_visibility_summary">Показувати панель навігації внизу екрана.\nВимкнення функції вимкне жести навігації. Відвідайте налаштування жестів, щоб приховати саму \"таблетку\"</string>
+    <string name="navbar_visibility_summary">Відображати панель навігації внизу екрана</string>
     <string name="navbar_layout_category_title">Макет</string>
     <string name="navbar_arrow_keys_title">Показувати стрілки під час введення тексту</string>
     <string name="navbar_arrow_keys_summary">Показувати кнопки переміщення курсору при введенні. Кнопка вибору методу введення не буде відображатися.</string>
@@ -160,16 +168,32 @@
     <string name="dialog_delete_title">Видалити</string>
     <string name="dialog_delete_message">Видалити вибраний елемент?</string>
     <!-- Network traffic -->
-    <string name="network_traffic_intro_text">        Показує поточну швидкість з\'єднання у рядку стану.
-        Моніторинг показує динамічну швидкість, що замінюється між
-        швидкістю завантаження і швидкістю відвантаження кожної секунди
-    </string>
-    <string name="network_traffic_title">Індикатор швидкості мережі</string>
-    <string name="network_traffic_summary">Увімкнути або вимкнути індикатор швидкості мережі</string>
-    <string name="network_traffic_main_switch_title">Використовувати індикатор швидкості мережі</string>
-    <string name="network_options_title">Налаштування</string>
-    <string name="network_traffic_autohide_title">Приховати індикатор при відсутності активності</string>
+    <string name="network_traffic_settings_title">Монітор мережевого трафіку</string>
+    <string name="network_traffic_settings_summary">Показати та змінити рівні мережевого трафіку</string>
+    <string name="network_traffic_location_title">Місцезнаходження</string>
+    <string name="network_traffic_location_disable">Вимкнено</string>
+    <string name="network_traffic_location_statusbar">Рядок стану</string>
+    <string name="network_traffic_location_quick_statusbar">Рядок стану швидких налаштувань</string>
+    <string name="network_traffic_mode_title">Режим дисплея</string>
+    <string name="network_traffic_mode_up">Вихідний</string>
+    <string name="network_traffic_mode_down">Завантаження</string>
+    <string name="network_traffic_mode_all">Вихідний і вхідний</string>
+    <string name="network_traffic_autohide">Автоприховування</string>
     <string name="network_traffic_autohide_summary">Приховати, якщо швидкість мережі менше 1 КБ/с</string>
+    <string name="network_traffic_autohide_kilobits">Кб/с</string>
+    <string name="network_traffic_autohide_kilobytes">КБ/с</string>
+    <string name="network_traffic_autohide_threshold">Поріг неактивності</string>
+    <string name="network_traffic_refresh_interval_title">Інтервал оновлення</string>
+    <string name="network_traffic_refresh_interval_summary">Проміжок часу оновлення швидкості</string>
+    <string name="network_traffic_units_title">Одиниці виміру трафіку</string>
+    <string name="network_traffic_units_bits">Біти в секунду (b/s)</string>
+    <string name="network_traffic_units_kilobits">Кілобіт за секунду (Кбіт/с)</string>
+    <string name="network_traffic_units_megabits">Мегабіти в секунду (Mb/s)</string>
+    <string name="network_traffic_units_bytes">Байти в секунду (B/s)</string>
+    <string name="network_traffic_units_kilobytes">Кілобайти в секунду (kB/s)</string>
+    <string name="network_traffic_units_megabytes">Мегабайти в секунду (MB/s)</string>
+    <string name="network_traffic_hidearrow">Приховати стрілки</string>
+    <string name="network_traffic_hidearrow_summary">Приховати стрілки індикатора мережевого трафіка</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Вібрація при розпізнаванні відбитку пальця</string>
     <string name="fp_success_vibrate_summary">Вібрувати при успішному розпізнаванні відбитку пальця</string>
@@ -221,11 +245,16 @@
     <string name="qs_footer_category">Нижній рядок панелі швидких налаштувань</string>
     <string name="qs_header_category_title">Параметри заголовку</string>
     <string name="qs_panel_category_title">Панель швидких налаштувань</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Швидке розгортання швидких налаштувань</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s край рядка сповіщень при опусканні вниз відкриває швидкі налаштування</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Зліва</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Зправа</string>
+    <string name="status_bar_quick_qs_pulldown_off">Вимкнути</string>
+    <string name="status_bar_quick_qs_pulldown_left">Зліва</string>
+    <string name="status_bar_quick_qs_pulldown_right">Зправа</string>
+    <string name="status_bar_quick_qs_pulldown_always">Завжди показувати швидкі налаштування під час згортанні шторки вниз</string>
     <string name="status_bar_quick_qs_pulldown">Швидке розгортання швидких налаштувань</string>
-    <string name="quick_pulldown_none">Вимкнено</string>
-    <string name="quick_pulldown_right">Потягніть рядок стану вниз з правого боку</string>
-    <string name="quick_pulldown_left">Потягніть рядок стану вниз з лівого боку</string>
-    <string name="quick_pulldown_always">Завжди показувати швидкі налаштування під час згортанні шторки вниз</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Грати мелодію виклику через</string>
     <string name="ringtone_focus_mode_dynamic">Навушники, якщо вони під\'єднані і грає музика</string>
@@ -281,7 +310,6 @@
     <string name="qs_date_title">Дата</string>
     <string name="qs_date_summary">Показувати дату в заголовку швидкого рядка стану</string>
     <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">Вібрація</string>
     <string name="quick_settings_vibrate_title">Вібрація при дотику</string>
     <string name="quick_settings_vibrate_summary">Вібрація при дотику до плитки швидких налаштувань</string>
     <string name="quick_settings_vibrate_duration_title">Тривалість вібрації</string>
@@ -423,6 +451,9 @@
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">Стиль повзунка яскравості</string>
     <string name="theme_customization_brightness_slider_summary">Встановити користувацький стиль повзунка яскравості</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Стиль іконки даних</string>
+    <string name="theme_customization_data_summary">Встановити користувацький стиль іконки даних</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Рядок стану</string>
     <string name="lockscreen_status_bar_summary">Показувати рядок стану на заблокованому екрані</string>
@@ -566,7 +597,7 @@
     <string name="blocker_action_reload">Перезапустити</string>
     <string name="blocker_action_save">Зберегти</string>
     <string name="blocker_action_save_toast">Налаштування успішно збережено</string>
-    <string name="blocker_warning_title">Увага</string>
+    <string name="blocker_warning_title">Попередження</string>
     <string name="wakelock_blocker_title">Блокування пробудження</string>
     <string name="wakelock_blocker_summary">Блокувати системні пробудження для економії заряду акумулятора</string>
     <string name="wakelock_blocker_warning">Блокування пробудження може викликати нестабільність, збої чи втрату даних.</string>
@@ -609,17 +640,13 @@
     <string name="status_bar_icons_summary">Оберіть значки, які можуть бути показані на статус барі</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Ярлики екрану блокування</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Показати на екрані блокування</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Двічі натисніть на верхній третині або в нижній зоні області ярликів блокування екрану, щоб перевести пристрій в режим сну</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Показати в рядку стану</string>
-    <string name="double_tap_to_sleep_summary">Двічі торкніться панелі навігації, щоб перевести пристрій в режим сну</string>
+    <!-- Double tap to sleep on status bar or lockscreen -->
+    <string name="status_bar_double_tap_to_sleep_title">Торкніться для сну</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Двічі торкніться рядка стану або блокування екрана, щоб перевести пристрій в сплячий режим</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Увімкніть ліхтарик, коли екран вимкнено</string>
     <string name="torch_power_button_gesture_none">Вимкнено</string>
     <string name="torch_power_button_gesture_dt">Подвійне натискання кнопки живлення (при натисканні на кнопку) вимикає подвійне натискання для сенсорної камери.</string>
-    <string name="torch_power_button_gesture_dt_toast">Жест \"Перейти до камери\" вимкнено</string>
     <string name="torch_power_button_gesture_lp">Довге натискання кнопки живлення</string>
     <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Не показувати меню живлення на екрані блокування</string>
@@ -881,10 +908,14 @@
     <string name="status_bar_battery_percent_title">Відсоток заряду батареї</string>
     <string name="status_bar_battery_percent_hidden">Приховано</string>
     <string name="status_bar_battery_percent_text_inside">Всередині іконки</string>
-    <string name="status_bar_battery_percent_text_next">Поруч зі значком</string>
+    <string name="status_bar_battery_percent_text_next_right">Поруч з іконкою (праворуч)</string>
+    <string name="status_bar_battery_percent_text_next_left">Поруч з іконкою (ліворуч)</string>
     <string name="status_bar_battery_text_charging_title">Відсоток заряду акумулятора під час заряджання</string>
     <string name="status_bar_battery_text_charging_summary">Завжди показувати відсотки акумулятора під час заряджання</string>
     <!-- QS battery -->
+    <string name="qs_battery_location_title">Розташування значка акумулятора</string>
+    <string name="qs_battery_location_qs_panel">Панель настроек спизженых из других прошивок</string>
+    <string name="qs_battery_location_qs_statusbar">Рядок стану швидких налаштувань</string>
     <string name="qs_use_status_bar_battery_style">Дотримуватись стилю рядка стану</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Оцінка залишку батареї</string>
@@ -1043,4 +1074,16 @@
     <string name="qs_footer_text_summary">Показувати текст в нижній частині панелі швидких налаштувань</string>
     <string name="qs_footer_text_string_title">Налаштувати текст нижнього колонтитула</string>
     <string name="qs_footer_text_string_summary">Встановіть або залиште порожнім за замовчуванням</string>
+    <!-- Volume haptic feedback -->
+    <string name="volume_panel_haptic_feedback_title">Використовувати вібровідгук</string>
+    <string name="volume_panel_haptic_feedback_summary">Увімкнути вібрацію при зміні гучності</string>
+    <!-- Volume rocker music control -->
+    <string name="volbtn_music_controls_title">Управління плеєром</string>
+    <string name="volbtn_music_controls_summary">Перемикати трек при довгому натисканні кнопок гучності, коли вимкнено екран</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Дозволити пониження версії додатка</string>
+    <string name="app_downgrade_summary">Дозвіл понижує програму. Може призвести до збоїв і пошкодження даних.</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Показати накладення буфера обміну</string>
+    <string name="show_clipboard_overlay_summary">Показувати накладання в лівому нижньому куті екрана, коли щось копіюється в буфер обміну</string>
 </resources>
