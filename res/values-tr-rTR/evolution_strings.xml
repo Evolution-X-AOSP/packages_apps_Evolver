@@ -28,6 +28,8 @@
     <string name="notification_flashlight_category">Fener bildirimi</string>
     <string name="ambient_display_category">Ortam ekranı</string>
     <string name="lockscreen_clock_category">Kilit ekranı saati stili</string>
+    <string name="signal_icons_category_title">Sinyal simgesi</string>
+    <string name="vibration_category_title">Titreşim</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Dahili temel android ayarları</string>
     <string name="dark_ui_mode_summary">Koyu tema seçeneklerine göz atın</string>
@@ -56,7 +58,13 @@
     <string name="seek_value_edit_label">Değer belirle</string>
     <string name="search">Ara</string>
     <string name="search_apps">Uygulamaları ara</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">Etkin</string>
+    <string name="string_disabled">Devre dışı</string>
+    <string name="string_on">Açık</string>
+    <string name="string_off">Kapalı</string>
     <!-- Units -->
+    <string name="unit_milliseconds">milisaniye</string>
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">saniye</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -160,14 +168,32 @@
     <string name="dialog_delete_title">Sil</string>
     <string name="dialog_delete_message">Seçili öge silinsin mi?</string>
     <!-- Network traffic -->
-    <string name="network_traffic_intro_text">Durum çubuğunda mevcut ağ trafiği hızını gösterir.
-Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme hızı arasında geçiş yapar</string>
-    <string name="network_traffic_title">Ağ trafik göstergesi</string>
-    <string name="network_traffic_summary">Durum çubuğunda ağ hızı göstergesini etkinleştirin veya devre dışı bırakın</string>
-    <string name="network_traffic_main_switch_title">Ağ trafik göstergesi</string>
-    <string name="network_options_title">Seçenekler</string>
-    <string name="network_traffic_autohide_title">Ağ trafiği göstergesi etkin olmadığında gizle</string>
-    <string name="network_traffic_autohide_summary">Ağ trafiği göstergesi 1 KB/s\'nin altında olduğunda gizle</string>
+    <string name="network_traffic_settings_title">Ağ trafiği monitörü</string>
+    <string name="network_traffic_settings_summary">Geçerli ağ trafiği düzeylerini görüntüleyin ve özelleştirin</string>
+    <string name="network_traffic_location_title">Konum</string>
+    <string name="network_traffic_location_disable">Devre dışı</string>
+    <string name="network_traffic_location_statusbar">Durum çubuğu</string>
+    <string name="network_traffic_location_quick_statusbar">Hızlı Durum Çubuğu</string>
+    <string name="network_traffic_mode_title">Görüntü modu</string>
+    <string name="network_traffic_mode_up">Yalnızca yükleme</string>
+    <string name="network_traffic_mode_down">Yalnızca indirme</string>
+    <string name="network_traffic_mode_all">Yükleme ve İndirme</string>
+    <string name="network_traffic_autohide">Otomatik gizle</string>
+    <string name="network_traffic_autohide_summary">Veri etkinliği olmadığında ağ göstergesini gizle</string>
+    <string name="network_traffic_autohide_kilobits">Kb/sn</string>
+    <string name="network_traffic_autohide_kilobytes">KB/sn</string>
+    <string name="network_traffic_autohide_threshold">Hareketsizlik sınırı</string>
+    <string name="network_traffic_refresh_interval_title">Yenileme aralığı</string>
+    <string name="network_traffic_refresh_interval_summary">Hızın yeniden ölçülmesinden sonraki süre</string>
+    <string name="network_traffic_units_title">Ağ ölçü birimi</string>
+    <string name="network_traffic_units_bits">Saniye başına bit (b/s)</string>
+    <string name="network_traffic_units_kilobits">Saniye başına kilobit (kb/s)</string>
+    <string name="network_traffic_units_megabits">Saniyede megabit (Mb/s)</string>
+    <string name="network_traffic_units_bytes">Saniye başına bayt (B/sn)</string>
+    <string name="network_traffic_units_kilobytes">Saniye başına Kilobayt (kB/sn)</string>
+    <string name="network_traffic_units_megabytes">Saniye başına megabayt (MB/sn)</string>
+    <string name="network_traffic_hidearrow">Okları gizle</string>
+    <string name="network_traffic_hidearrow_summary">Ağ etkinliği ok göstergelerini gizle</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Parmak izi kimlik doğrulama titreşimi</string>
     <string name="fp_success_vibrate_summary">Başarılı parmak izi kimlik doğrulanmasında titret</string>
@@ -219,11 +245,16 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="qs_footer_category">Hızlı ayarlar alt bilgisi</string>
     <string name="qs_header_category_title">Hızlı ayarlar başlığı</string>
     <string name="qs_panel_category_title">Hızlı ayarlar paneli</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Hızlı aşağı çekme</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s durum çubuğunun kenarı hızlı ayarları aşağı çeker</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Sol</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Sağ</string>
+    <string name="status_bar_quick_qs_pulldown_off">Kapalı</string>
+    <string name="status_bar_quick_qs_pulldown_left">Sol</string>
+    <string name="status_bar_quick_qs_pulldown_right">Sağ</string>
+    <string name="status_bar_quick_qs_pulldown_always">Durum çubuğunu aşağı çekince her zaman hızlı ayarları göster</string>
     <string name="status_bar_quick_qs_pulldown">Hızlı aşağı çekme</string>
-    <string name="quick_pulldown_none">Devre dışı</string>
-    <string name="quick_pulldown_right">Durum çubuğunu sağ taraftan aşağı çekin</string>
-    <string name="quick_pulldown_left">Durum çubuğunu sol taraftan aşağı çekin</string>
-    <string name="quick_pulldown_always">Durum çubuğunu aşağı çekince her zaman hızlı ayarları göster</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Zil sesini buradan çal</string>
     <string name="ringtone_focus_mode_dynamic">Kulaklık bağlıysa ve müzik çalıyorsa</string>
@@ -279,7 +310,6 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="qs_date_title">Tarih</string>
     <string name="qs_date_summary">Hızlı durum çubuğu başlığında tarihi görüntüle</string>
     <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">Titreşim</string>
     <string name="quick_settings_vibrate_title">Dokunulduğunda titret</string>
     <string name="quick_settings_vibrate_summary">Hızlı ayarlar karelerine dokunulduğunda titret</string>
     <string name="quick_settings_vibrate_duration_title">Titreşim süresi</string>
@@ -421,6 +451,9 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">Parlaklık kaydırıcı stili</string>
     <string name="theme_customization_brightness_slider_summary">Özel parlaklık kaydırıcı stilini ayarlama</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Sinyal simgesi stili</string>
+    <string name="theme_customization_data_summary">Özel sinyal simgesi stili ayarlayın</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Durum çubuğu</string>
     <string name="lockscreen_status_bar_summary">Kilit ekranında durum çubuğunu görüntüle</string>
@@ -607,17 +640,13 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="status_bar_icons_summary">Hangi durum çubuğu simgelerinin gösterilebileceğini seçin</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Kilit ekranı kısayolları</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Uyutmak için dokun</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Cihazı uyutmak için kilit ekranının boş bir alanına iki kez dokunun</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Durum çubuğuna dokun</string>
-    <string name="double_tap_to_sleep_summary">Cihazı uyutmak için durum çubuğuna iki kez dokunun</string>
+    <!-- Double tap to sleep on status bar or lockscreen -->
+    <string name="status_bar_double_tap_to_sleep_title">Çift dokunuşla uyutma</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Ekranı kapatmak için durum çubuğuna veya kilit ekranına çift dokunun</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Güç tuşu ile fener aç</string>
     <string name="torch_power_button_gesture_none">Devre dışı</string>
     <string name="torch_power_button_gesture_dt">Güç tuşuna çift tıklayarak fener açma (daha yavaş tek dokunma tepkisi), çift tıklama ile kamera açmayı devre dışı bırakır.</string>
-    <string name="torch_power_button_gesture_dt_toast">Kamera açma hareketi şu anda devre dışı</string>
     <string name="torch_power_button_gesture_lp">Güç tuşuna uzun bas</string>
     <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Kilit ekranında güç menüsünü devre dışı bırak</string>
@@ -661,35 +690,21 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="show_carrier_keyguard">Kilit ekranı</string>
     <string name="show_carrier_statusbar">Durum çubuğu</string>
     <string name="show_carrier_enabled">Her ikisi</string>
-    <!-- Monet settings -->
-    <string name="monet_settings_title">Tema ayarları</string>
-    <string name="monet_settings_sammary">Monet motorunu özelleştirmek için birkaç ekstra ayar</string>
-    <string name="theme_style_title">Tema stili</string>
-    <string name="theme_style_tonal_spot">Ton Noktası (Varsayılan)</string>
-    <string name="theme_style_vibrant">Canlı</string>
-    <string name="theme_style_expressive">Etkileyici</string>
-    <string name="theme_style_spritz">Spritz</string>
-    <string name="theme_style_rainbow">Gökkuşağı</string>
-    <string name="theme_style_fruit_salad">Meyve Salatası</string>
-    <string name="theme_style_muted">Susturuldu</string>
-    <string name="theme_style_content">İçerik</string>
-    <string name="color_source_title">Renk kaynağı</string>
-    <string name="color_source_both">Her ikisi (Varsayılan)</string>
-    <string name="color_source_home">Ana ekran duvar kağıdı</string>
-    <string name="color_source_lock">Kilit ekranı duvar kağıdı</string>
-    <string name="color_source_preset">Hazır ayar</string>
-    <string name="accent_color_title">Vurgu Rengi</string>
-    <string name="accent_color_summary">Varsayılan vurgu rengini geçersiz kıl</string>
-    <string name="accent_background_title">Arka plan rengi</string>
-    <string name="accent_background_summary">Arka plan için farklı bir vurgu rengi seçin</string>
-    <string name="bg_color_title">Arka Plan Rengi</string>
-    <string name="bg_color_summary">Varsayılan arka plan vurgu rengini geçersiz kıl</string>
-    <string name="luminance_factor_title">Parlak</string>
-    <string name="luminance_factor_summary">Daha yüksek değerler daha parlak renkler üretir</string>
-    <string name="chroma_factor_title">Renklilik</string>
-    <string name="chroma_factor_summary">Daha yüksek değerler daha güçlü renkler üretir</string>
-    <string name="tint_background_title">Arka Planı Renklendir</string>
-    <string name="tint_background_summary">Parlaklık ve Renklilik seçiminin arka plan renklerini de etkilemesini sağlayın</string>
+    <!-- UI settings -->
+    <string name="monet_title">Monet ayarları</string>
+    <string name="monet_summary">Monet temalarını özelleştirin</string>
+    <!-- Monet Engine -->
+    <string name="monet_engine_custom_color_title">Vurgu rengi</string>
+    <string name="monet_engine_custom_color_summary">Vurgu rengi için özel renk seçin</string>
+    <string name="monet_engine_custom_bgcolor_title">Arka plan rengi</string>
+    <string name="monet_engine_custom_bgcolor_summary">Arka plan için özel renk seçin</string>
+    <string name="monet_engine_color_override_title">Özel renk</string>
+    <string name="monet_engine_luminance_factor_title">Parlak</string>
+    <string name="monet_engine_luminance_factor_summary">Daha yüksek değerler daha parlak renkler üretir</string>
+    <string name="monet_engine_chroma_factor_title">Netlik faktörü</string>
+    <string name="monet_engine_chroma_factor_summary">Daha yüksek değerler daha güçlü renkler üretir</string>
+    <string name="monet_engine_tint_background_title">Renk tonu arka planı</string>
+    <string name="monet_engine_tint_background_summary">Parlaklık ve renk seçiminin arka plan renklerini de etkilemesini sağlayın</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Özel tema kullan</string>
     <string name="custom_theme_black">Siyah</string>
@@ -792,7 +807,7 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="notification_material_dismiss_bgstyle_title">Tuş arka planı</string>
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Pencere güvenli işaretlerini yok say</string>
-    <string name="ignore_window_secure_summary">Ekran görüntüsü ve ekran kaydının limitlerini tüm uygulamalar için kaldırır. Normalde, kayıtlardaki siyah alanlarla özel uygulamalar değiştirilir. Bu bazı durumlarda uygun olabilir fakat güvenlik açıklarına neden olabilir. Bu ayarı değiştirdikten sonra, değişikliklerin etkili olması için uygulamaları yeniden başlatmanız gerekebilir</string>
+    <string name="ignore_window_secure_summary">Tüm uygulamalar için ekran görüntüleri ve ekran kayıtları sınırlarını kaldırın. Bazı durumlarda kullanışlı olabilir ancak gizlilik sızıntılarına yol açabilir. Değişikliğin etkili olması için uygulamaları yeniden başlatmanız gerekir.</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">Bildirim pencerelerini, bildirim çubuğu yazılarının yeniden tasarlanmış haliyle değiştirin</string>
@@ -821,10 +836,9 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="status_bar_logo_position_left">Sol</string>
     <string name="status_bar_logo_style_title">Stil</string>
     <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
-    <string name="status_bar_logo_style_airjordan">Air Jordan</string>
     <string name="status_bar_logo_style_alien">Uzaylı</string>
-    <string name="status_bar_logo_style_amogus">Amogus</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">Avengers</string>
     <string name="status_bar_logo_style_batman">Batman</string>
@@ -832,26 +846,28 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Biohazard</string>
     <string name="status_bar_logo_style_blackberry">Blackberry</string>
-    <string name="status_bar_logo_style_captain_america">Kaptan Amerika</string>
     <string name="status_bar_logo_style_cannabis">Cannabis</string>
-    <string name="status_bar_logo_style_flash">Flaş</string>
+    <string name="status_bar_logo_style_emoticon_cool">Havalı ifadesi</string>
+    <string name="status_bar_logo_style_emoticon_devil">Şeytan ifadesi</string>
     <string name="status_bar_logo_style_fire">Fire</string>
-    <string name="status_bar_logo_style_ghost">Hayalet</string>
     <string name="status_bar_logo_style_heart">Kalp</string>
-    <string name="status_bar_logo_style_ironman">Demir Adam</string>
-    <string name="status_bar_logo_style_mint">Linux Mint</string>
     <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_ninja">Ninja</string>
-    <string name="status_bar_logo_style_pac_man">Pac-man</string>
+    <string name="status_bar_logo_style_pacman">Pac-man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
-    <string name="status_bar_logo_style_robot">Robot</string>
     <string name="status_bar_logo_style_rog">ROG</string>
     <string name="status_bar_logo_style_spiderman">Örümcek Adam</string>
     <string name="status_bar_logo_style_superman">Süpermen</string>
-    <string name="status_bar_logo_style_tux">Tux</string>
-    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">XBOX</string>
+    <string name="status_bar_logo_style_ghost">Hayalet</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
+    <string name="status_bar_logo_style_ironman">Demir Adam</string>
+    <string name="status_bar_logo_style_captain_america">Kaptan Amerika</string>
+    <string name="status_bar_logo_style_flash">Flaş</string>
+    <string name="status_bar_logo_style_tux">Tux</string>
+    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
+    <string name="status_bar_logo_style_mint">Linux Mint</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Pil stili</string>
     <string name="status_bar_battery_style_icon_portrait">Dikey simge</string>
@@ -879,10 +895,14 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="status_bar_battery_percent_title">Pil yüzdesi</string>
     <string name="status_bar_battery_percent_hidden">Gizli</string>
     <string name="status_bar_battery_percent_text_inside">Simgenin içinde</string>
-    <string name="status_bar_battery_percent_text_next">Simgenin yanında</string>
+    <string name="status_bar_battery_percent_text_next_right">Simgenin yanında (sağ)</string>
+    <string name="status_bar_battery_percent_text_next_left">Simgenin yanında (sol)</string>
     <string name="status_bar_battery_text_charging_title">Şarj olurken pil yüzdesi</string>
     <string name="status_bar_battery_text_charging_summary">Şarj olurken her zaman pil yüzdesini göster</string>
     <!-- QS battery -->
+    <string name="qs_battery_location_title">Pil konumu</string>
+    <string name="qs_battery_location_qs_panel">Hızlı ayarlar paneli</string>
+    <string name="qs_battery_location_qs_statusbar">Hızlı Durum Çubuğu</string>
     <string name="qs_use_status_bar_battery_style">Durum çubuğu stilini takip et</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Tahmini pil süresi</string>
@@ -1039,4 +1059,16 @@ Mevcut bildirimler ve yeni bildirimler yayına hazırlanacak.    </string>
     <string name="qs_footer_text_summary">Hızlı ayarlar panelinin en altında metni görüntüle</string>
     <string name="qs_footer_text_string_title">Altbilgi metnini özelleştir</string>
     <string name="qs_footer_text_string_summary">Varsayılan olarak boş olarak ayarlayın</string>
+    <!-- Volume haptic feedback -->
+    <string name="volume_panel_haptic_feedback_title">Hacimsel dokunsal geri bildirim</string>
+    <string name="volume_panel_haptic_feedback_summary">Ses seviyesini ayarlarken ses seviyesi dokunsal geri bildirimini etkinleştirin</string>
+    <!-- Volume rocker music control -->
+    <string name="volbtn_music_controls_title">Oynatma kontrolü</string>
+    <string name="volbtn_music_controls_summary">Ekran kapalıyken ses tuşlarına uzun basarak müziği değiştirin</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Uygulamanın eski sürüme geçirilmesine izin ver</string>
+    <string name="app_downgrade_summary">Uygulamaların sürümünü düşürmeye izin verir. Çökmelere ve veri bozulmasına yol açabilir.</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Pano yer paylaşımını göster</string>
+    <string name="show_clipboard_overlay_summary">Panoya bir şey kopyalandığında ekranın sol alt köşesinde bir kaplama göster</string>
 </resources>
