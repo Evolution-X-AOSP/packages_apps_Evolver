@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2022 Evolution X
+     Copyright (C) 2019-2023 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -14,20 +14,23 @@
     <string name="gestures_title">手勢</string>
     <string name="lockscreen_title">鎖定畫面</string>
     <string name="misc_title">其他</string>
-    <string name="navigation_title">導航欄</string>
+    <string name="navigation_title">導覽列</string>
     <string name="notifications_title">通知</string>
     <string name="quicksettings_title">快速設定</string>
-    <string name="spoof_title">欺騙</string>
+    <string name="spoof_title">裝置偽裝</string>
     <string name="status_bar_title">狀態列</string>
     <string name="battery_title">電池自定義</string>
     <string name="swipe_gestures_title">滑動手勢</string>
     <string name="system_settings_title">系統選項</string>
     <string name="themes_title">主題</string>
-    <string name="torch_gestures_title">關閉螢幕手勢</string>
-    <string name="flashlight_category">手電筒</string>
+    <string name="ambient_display_category">微光螢幕</string>
+    <string name="lockscreen_clock_category">鎖定畫面時鐘</string>
+    <string name="signal_icons_category_title">訊號圖示</string>
+    <string name="vibration_category_title">震動</string>
     <!-- Summaries -->
-    <string name="aosp_options_summary">原生Android系統選項</string>
-    <string name="dark_ui_mode_summary">瀏覽深色主題選項</string>
+    <string name="aosp_options_summary">原生 Android 系統選項</string>
+    <string name="dark_ui_mode_summary">查看深色主題設定</string>
+    <string name="spoof_summary">為 ROM 中的特定功能啟用偽裝</string>
     <string name="unsupported_gestures">啟用兩個按鈕或三個按鈕導覽列以使用這項功能</string>
     <!-- General strings -->
     <string name="ok">確定</string>
@@ -38,11 +41,13 @@
     <string name="action_cancel">取消</string>
     <string name="attention">注意</string>
     <string name="default_string">預設值</string>
-    <string name="none_string">預設</string>
+    <string name="none_string">無</string>
     <string name="hidden_string">隱藏</string>
     <string name="large_string">大</string>
-    <string name="medium_string">預設</string>
+    <string name="medium_string">中</string>
     <string name="xlarge_string">較大</string>
+    <string name="enable">啟用</string>
+    <string name="disable">停用</string>
     <string name="disabled">停用</string>
     <string name="enable_first">請先啟動</string>
     <string name="led_color_green">強調色-綠色</string>
@@ -50,16 +55,22 @@
     <string name="edit_hint">值</string>
     <string name="seek_value_edit_label">設定值</string>
     <string name="search">搜尋</string>
-    <string name="search_apps">搜尋 Apps</string>
+    <string name="search_apps">搜尋應用程式</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">已啟用</string>
+    <string name="string_disabled">停用</string>
+    <string name="string_on">開啟</string>
+    <string name="string_off">關閉</string>
     <!-- Units -->
     <string name="unit_milliseconds">毫秒</string>
+    <string name="unit_ms">毫秒</string>
     <string name="unit_seconds">秒</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">開啟</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_off">關閉</string>
     <!-- Color Picker -->
-    <string name="dialog_color_picker">調色盤</string>
+    <string name="dialog_color_picker">選色器</string>
     <string name="press_color_to_apply">選擇色彩以套用</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
@@ -99,27 +110,16 @@
     <string name="system_navigation_summary">選擇要使用的導航列樣式</string>
     <!-- About Evolution X -->
     <string name="evolution_about_title">團隊</string>
-    <string name="evolution_about_summary">ROM詳情</string>
+    <string name="evolution_about_summary">ROM 資訊</string>
     <string name="evolution_website_title">網站</string>
     <string name="evolution_website_summary">歡迎瀏覽我們的網站</string>
     <string name="evolution_twitter_summary">來看我們的推文</string>
-    <string name="evolution_telegram_summary">訪問我們的討論區</string>
-    <string name="evolution_github_summary">查看我們的GitHub</string>
-    <string name="evolution_about_info_summary">Evolution X是一款擁有豐富自定義的ROM，為您的設備帶來第一眼的 Pixel 風格，還有許多額外的設定。我們將定期發布包含最新Android每月安全性更新的系統。</string>
+    <string name="evolution_telegram_summary">造訪我們的討論區</string>
+    <string name="evolution_github_summary">查看我們的 GitHub</string>
+    <string name="evolution_about_info_summary">Evolution X 是一款擁有豐富自定義功能的 ROM，為您的設備帶來 Pixel 風格，還有許多額外的設定。我們將定期發布包含最新 Android 每月安全性更新。</string>
     <string name="evolution_about_team">貢獻者</string>
     <!-- Battery light -->
     <string name="light_settings_header">指示燈設定</string>
-    <string name="battery_light_settings">電量指示燈</string>
-    <string name="battery_light_summary">在勿擾模式、低電量時啟用或停用充電指示燈</string>
-    <string name="battery_light_enable">充電指示燈</string>
-    <string name="battery_full_light_enabled">充電完成時顯示電量指示燈</string>
-    <string name="battery_light_allow_on_dnd_title">在勿擾模式下啟用呼吸燈</string>
-    <string name="battery_light_low_blinking_title">電量不足時閃爍指示燈</string>
-    <string name="battery_light_cat">充電時電池指示燈顏色</string>
-    <string name="battery_light_low_color">電量不足</string>
-    <string name="battery_light_medium_color">充電中</string>
-    <string name="battery_light_full_color">接近充飽電時</string>
-    <string name="battery_light_reallyfull_color">充飽電時</string>
     <!-- UDFPS settings -->
     <string name="udfps_category">螢幕下指紋辨識</string>
     <string name="udfps_customization">自訂螢幕下指紋辨識</string>
@@ -132,13 +132,18 @@
     <!-- UDFPS icon picker -->
     <string name="udfps_icon_picker_title">螢幕下指紋辨識圖示選擇器</string>
     <string name="udfps_icon_picker_summary">選擇您喜歡的指紋圖示</string>
+    <!-- Custom UDFPS icon -->
+    <string name="custom_fp_icon_title">自訂指紋辨識圖示</string>
+    <string name="custom_fp_icon_summary">啟用自訂指紋辨識圖示</string>
+    <string name="custom_fp_select_title">從存儲空間選擇指紋辨識圖示</string>
+    <string name="custom_fp_select_summary">從檔案或相簿中選擇圖片</string>
     <!-- Notification light -->
     <string name="notification_light_settings">通知提示燈</string>
     <!-- Heads up -->
-    <string name="heads_up_notifications">彈出通知</string>
+    <string name="heads_up_notifications">浮動通知</string>
     <string name="notification_heads_up_title">浮動通知</string>
-    <string name="notification_heads_up_summary">允許彈出通知</string>
-    <string name="notification_heads_up_primary_switch_title">使用浮動通知</string>
+    <string name="notification_heads_up_summary">允許浮動通知</string>
+    <string name="notification_heads_up_main_switch_title">使用浮動通知</string>
     <string name="notification_heads_up_timeout_title">逾時</string>
     <string name="notification_heads_up_timeout_summary">顯示浮動通知的時間</string>
     <string name="add_heads_up_package">新增應用程式</string>
@@ -146,25 +151,41 @@
     <string name="add_heads_up_blocklist_summary">停用下列應用程式傳送的浮動通知</string>
     <string name="heads_up_stoplist_title">停用名單</string>
     <string name="heads_up_blocklist_title">黑名單</string>
-    <string name="profile_choose_app">選取應用程式</string>
-    <string name="dialog_delete_title">刪除</string>
-    <string name="dialog_delete_message">移除選取的項目？</string>
+    <string name="choose_app">選取應用程式</string>
+    <string name="delete">刪除</string>
+    <string name="delete_message">移除選取的項目？</string>
     <!-- Network traffic -->
-    <string name="network_traffic_intro_text">        在狀態列中顯示現在的網速。
-        監測器動態了它在
-        上傳和下載的速度。
-    </string>
-    <string name="network_traffic_title">網路流量指示器</string>
-    <string name="network_traffic_summary">啟用或停用狀態列中的網速指示器</string>
-    <string name="network_traffic_primary_switch_title">使用網路流量指示器</string>
-    <string name="network_options_title">選項</string>
-    <string name="network_traffic_autohide_title">當網路處於非活動狀態時隱藏網路流量指示器</string>
-    <string name="network_traffic_autohide_summary">當網絡流量小於 1 KB/s 時隱藏</string>
+    <string name="network_traffic_settings_title">網路流量指示器</string>
+    <string name="network_traffic_settings_summary">顯示並自訂目前網路流量狀態</string>
+    <string name="network_traffic_location_title">位置</string>
+    <string name="network_traffic_location_disable">停用</string>
+    <string name="network_traffic_location_statusbar">狀態列</string>
+    <string name="network_traffic_location_quick_statusbar">快速設定狀態列</string>
+    <string name="network_traffic_mode_title">顯示模式</string>
+    <string name="network_traffic_mode_up">只顯示上傳</string>
+    <string name="network_traffic_mode_down">只顯示下載</string>
+    <string name="network_traffic_mode_all">上傳和下載</string>
+    <string name="network_traffic_autohide">自動隱藏</string>
+    <string name="network_traffic_autohide_summary">沒有網路活動時隱藏網路流量指示器</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_threshold">自動隱藏閥值</string>
+    <string name="network_traffic_refresh_interval_title">重新整理間隔</string>
+    <string name="network_traffic_refresh_interval_summary">重新測量網速的間隔時間</string>
+    <string name="network_traffic_units_title">網路流量單位</string>
+    <string name="network_traffic_units_bits">每秒位元 (b/s)</string>
+    <string name="network_traffic_units_kilobits">每秒千位元 (kb/s)</string>
+    <string name="network_traffic_units_megabits">每秒百萬位元 (Mb/s)</string>
+    <string name="network_traffic_units_bytes">每秒位元組 (B/s)</string>
+    <string name="network_traffic_units_kilobytes">每秒千位元組 (kB/s)</string>
+    <string name="network_traffic_units_megabytes">每秒百萬位元組 (MB/s)</string>
+    <string name="network_traffic_hidearrow">隱藏箭頭</string>
+    <string name="network_traffic_hidearrow_summary">隱藏網路流量指示器箭頭</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">指紋辨識震動</string>
-    <string name="fp_success_vibrate_summary">當指紋驗證成功時震動</string>
+    <string name="fp_success_vibrate_summary">指紋驗證成功時震動</string>
     <string name="fp_error_vibrate_title">指紋辨識錯誤震動</string>
-    <string name="fp_error_vibrate_summary">當指紋驗證失敗時震動</string>
+    <string name="fp_error_vibrate_summary">指紋驗證失敗時震動</string>
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">顯示 4G 以替代 LTE</string>
     <string name="show_fourg_icon_summary">使用4G圖示替代狀態列中的LTE圖示</string>
@@ -176,7 +197,7 @@
     <string name="vowifi_icon_summary">可用時顯示 VoWiFi 圖示</string>
     <string name="volte_vowifi_override_title">覆寫 VoWiFi</string>
     <string name="volte_vowifi_override_summary">當 VoWiFi 可用時隱藏 VoLTE 圖示</string>
-    <!-- Show old style mobile data icon -->
+    <!-- Show old-style mobile data icon -->
     <string name="use_old_mobiletype_title">使用舊的數據圖示風格</string>
     <string name="use_old_mobiletype_summary">在訊號指示器頂部顯示行動類型圖示</string>
     <!-- Quick Settings brightness slider -->
@@ -188,6 +209,8 @@
     <string name="qs_brightness_slider_position_title">位置</string>
     <string name="qs_brightness_slider_position_top">頂部</string>
     <string name="qs_brightness_slider_position_bottom">底部</string>
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">調整亮度控制條時震動</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">自動調整亮度</string>
     <string name="qs_show_auto_brightness_summary">在亮度滑塊附近顯示自動調節亮度開關</string>
@@ -202,21 +225,26 @@
     <string name="power_menu_hide_on_secure_title">在鎖定畫面上隱藏</string>
     <string name="power_menu_hide_on_secure_summary">在螢幕鎖定畫面隱藏全局動作選單</string>
     <!-- QS advanced settings -->
-    <string name="qs_column_rows_settings_title">快速設置</string>
+    <string name="qs_column_rows_settings_title">快速設定</string>
     <string name="qs_edit_title">編輯圖示</string>
     <string name="qs_edit_summary">在快速設定面板底部顯示編輯圖示</string>
     <string name="qs_footer_category">快速設定頁尾</string>
-    <string name="qs_header_category_title">快速設置標頭</string>
+    <string name="qs_header_category_title">快速設定標題列</string>
     <string name="qs_panel_category_title">快速設定面板</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">快速下拉</string>
+    <string name="status_bar_quick_qs_pulldown_summary">沿著狀態列的%1$s邊緣下拉開啟快速設定面板</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">左側</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">右側</string>
+    <string name="status_bar_quick_qs_pulldown_off">關閉</string>
+    <string name="status_bar_quick_qs_pulldown_left">左側</string>
+    <string name="status_bar_quick_qs_pulldown_right">右側</string>
+    <string name="status_bar_quick_qs_pulldown_always">下拉狀態列時一律顯示快速設定</string>
     <string name="status_bar_quick_qs_pulldown">快速拉下快速設定面板</string>
-    <string name="quick_pulldown_none">停用</string>
-    <string name="quick_pulldown_right">從狀態列右邊下拉</string>
-    <string name="quick_pulldown_left">從狀態列左邊下拉</string>
-    <string name="quick_pulldown_always">在下滑狀態欄後總是顯示快速設定面板</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">從何處播放鈴聲</string>
     <string name="ringtone_focus_mode_dynamic">從耳機(若已連接且正在播放音樂)</string>
-    <string name="ringtone_focus_mode_stock">從喇叭(AOSP預設)</string>
+    <string name="ringtone_focus_mode_stock">從喇叭 (AOSP預設)</string>
     <!-- Lock screen album art filter -->
     <string name="lockscreen_albumart_filter_title">媒體封面效果</string>
     <string name="lockscreen_albumart_filter_grayscale">灰階</string>
@@ -254,7 +282,7 @@
     <string name="status_bar_date_style_normal">適中</string>
     <string name="status_bar_date_style_lowercase">小寫</string>
     <string name="status_bar_date_style_uppercase">大寫</string>
-    <string name="status_bar_date_format_custom">自訂 java 格式</string>
+    <string name="status_bar_date_format_custom">Java 文字格式自訂</string>
     <string name="status_bar_date_string_edittext_title">請依照日期格式，例如 MM/dd/yy</string>
     <string name="status_bar_date_string_edittext_summary">輸入字串</string>
     <string name="clock_date_position">日期位置</string>
@@ -267,13 +295,9 @@
     <!-- QS date -->
     <string name="qs_date_title">日期</string>
     <string name="qs_date_summary">在快速狀態列標題中顯示時鐘</string>
-    <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">震動</string>
-    <string name="quick_settings_vibrate_title">觸摸時震動</string>
-    <string name="quick_settings_vibrate_summary">觸碰磁貼時震動</string>
-    <string name="quick_settings_vibrate_duration_title">震動持續時間</string>
-    <string name="quick_settings_vibrate_duration_summary">震動多少毫秒</string>
-    <!-- QS Tiles animation  -->
+    <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">點擊快速設定圖塊時震動</string>
+    <!-- QS Tiles animation -->
     <string name="qs_tile_animation_title">動畫</string>
     <string name="qs_tile_animation_style_title">動畫樣式</string>
     <string name="qs_tile_animation_duration_title">動畫持續時間</string>
@@ -311,12 +335,13 @@
     <string name="status_bar_brightness_control_summary">在狀態列上左右滑動以調整亮度</string>
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">減少無關的浮動通知</string>
-    <string name="less_boring_heads_up_summary">僅顯示電話或是簡訊的彈出通知</string>
+    <string name="less_boring_heads_up_summary">僅顯示電話或是簡訊的浮動通知</string>
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">強制停止應用程式按鈕</string>
     <string name="notification_guts_kill_app_button_summary">在通知長按選單中顯示強制停止應用程式按鍵</string>
     <!-- Status bar - Battery Bar -->
     <string name="battery_bar_title">電量條</string>
+    <string name="battery_bar_main_switch_title">使用電量條</string>
     <string name="battery_bar_summary">顯示和自定義在狀態列或導覽列附近的電量條</string>
     <string name="battery_bar_color">電量條顏色</string>
     <string name="battery_bar_charging_color">電量條充電顏色</string>
@@ -348,7 +373,7 @@
     <string name="notification_sound_vib_screen_on_summary">在螢幕開啟時播放音效和震動通知</string>
     <!-- Edge light -->
     <string name="edge_light_title">螢幕邊緣光線</string>
-    <string name="enable_edge_light">使用螢幕邊緣光線</string>
+    <string name="edge_light_main_switch_title">使用螢幕邊緣光線</string>
     <string name="edge_light_intro_text">脈衝時沿螢幕邊緣顯示動畫</string>
     <string name="edge_light_always_trigger_on_pulse_title">總是在脈衝時觸發</string>
     <string name="edge_light_always_trigger_on_pulse_summary">是否在顯示環境顯示時顯示邊緣光線，而不僅是為了通知</string>
@@ -356,16 +381,12 @@
     <string name="edge_light_repeat_animation_summary_on">重複直到逾時</string>
     <string name="edge_light_repeat_animation_summary_off">只顯示一次</string>
     <string name="edge_light_color_mode_title">邊緣光線顏色</string>
-    <string name="accent_color">強調色（預設）</string>
+    <string name="theme_color">主題色 (預設)</string>
     <string name="notification_color">通知顏色</string>
-    <string name="wallpaper_color">桌布顏色</string>
     <string name="custom_color">自訂顏色</string>
-    <string name="edge_light_custom_color_title">自訂顏色</string>
-    <!-- QS footer text -->
-    <string name="qs_footer_text_show_title">顯示快速設定頁尾文字</string>
-    <string name="qs_footer_text_show_summary">在快速設定面板底部顯示文字</string>
-    <string name="qs_footer_text_string_title">自訂快速設定面板底部文字</string>
-    <string name="qs_footer_text_string_summary">當設定空值時使用預設值</string>
+    <!-- QS footer data usage -->
+    <string name="qs_show_data_usage_title">顯示行動數據用量</string>
+    <string name="qs_show_data_usage_summary">在快速設定面板下方顯示行動數據/ Wi-FI 的使用量</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">在連接耳機後自動開啟音樂應用程式</string>
     <string name="headset_connect_player_summary">在連接耳機後自動開啟預設音樂應用程式</string>
@@ -375,7 +396,6 @@
     <string name="global_actions_title">電源選單項目</string>
     <string name="global_actions_screenshot">螢幕截圖</string>
     <string name="global_actions_on_the_go">On-The-Go 模式</string>
-    <string name="global_actions_flashlight">手電筒</string>
     <string name="global_actions_power">電源</string>
     <string name="global_actions_advanced">進階重新啟動選項</string>
     <string name="global_actions_restart">重新啟動</string>
@@ -389,7 +409,7 @@
     <string name="global_actions_bugreport">錯誤報告</string>
     <!-- Themes customization -->
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
-    <string name="theme_customization_category">主题</string>
+    <string name="theme_customization_category">主題</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">圖示形狀</string>
     <string name="theme_customization_icon_shape_summary">設定系統圖示形狀</string>
@@ -401,12 +421,21 @@
     <string name="theme_customization_icon_pack_summary">設定自訂圖示套件樣式</string>
     <!-- Custom Signal bar icons -->
     <string name="theme_customization_signal_icon_title">訊號圖示樣式</string>
-    <string name="theme_customization_signal_icon_summary">設定子自訂訊號圖示樣式</string>
+    <string name="theme_customization_signal_icon_summary">自訂訊號圖示樣式</string>
     <!-- Custom Wi-Fi bar icons -->
-    <string name="theme_customization_wifi_icon_title">WiFi 圖示樣式</string>
-    <string name="theme_customization_wifi_icon_summary">設定自訂 WiFi 圖示樣式</string>
+    <string name="theme_customization_wifi_icon_title">Wi-Fi 圖示樣式</string>
+    <string name="theme_customization_wifi_icon_summary">設定自訂 Wi-Fi 圖示樣式</string>
     <string name="theme_customization_navbar_title">導覽列樣式</string>
     <string name="theme_customization_navbar_summary">設定自訂導覽列樣式</string>
+    <!-- Custom Fonts -->
+    <string name="theme_customization_lock_clock_title">鎖定畫面時鐘字體</string>
+    <string name="theme_customization_lock_clock_summary">設定鎖定畫面時鐘字體樣式</string>
+    <!-- Brightness slider styles -->
+    <string name="theme_customization_brightness_slider_title">亮度控制條樣式</string>
+    <string name="theme_customization_brightness_slider_summary">設定亮度控制條樣式</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">數據圖示樣式</string>
+    <string name="theme_customization_data_summary">設定數據圖示樣式</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">狀態欄</string>
     <string name="lockscreen_status_bar_summary">在鎖定畫面顯示狀態欄</string>
@@ -418,12 +447,14 @@
     <!-- Media art -->
     <string name="media_art_title">媒體封面</string>
     <string name="media_art_summary">啟用鎖定畫面背景設定為撥放中的媒體封面功能</string>
+    <!-- Lock screen cover art -->
+    <string name="lockscreen_media_blur_title">媒體封面模糊度</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">阻止個別應用存取感應器</string>
     <string name="sensor_block_summary">為某些應用程式停用偵測器以延長使用時間</string>
-    <string name="sensor_block_primary_switch_title">阻止個別應用程式存取傳感器</string>
+    <string name="sensor_block_main_switch_title">阻止個別應用程式存取感測器</string>
     <string name="sensor_block_app_picker_title">使這些應用程式無法使用感應器</string>
-    <string name="add_sensor_block_package_title">增加屏蔽感應器的應用程式</string>
+    <string name="add_sensor_block_package_title">增加禁止存取感測器的應用程式</string>
     <string name="add_sensor_block_package_summary">這些應用程式將無法使用動作感應器、加速度感應器以及線性加速感應器</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">AOD開啟時間</string>
@@ -431,16 +462,13 @@
     <string name="always_on_display_schedule_sunrise">日出</string>
     <string name="always_on_display_schedule_mixed_sunset">從日落開啟到設定的時間</string>
     <string name="always_on_display_schedule_mixed_sunrise">開啟到設定的時間</string>
-    <!-- HW keys -->
-    <string name="hardware_keys_title">實體按鈕</string>
-    <string name="hardware_keys_category">實體導航鍵</string>
-    <string name="hardware_keys_disable_title">停用實體導航鍵</string>
-    <string name="hardware_keys_disable_summary">使用實體按鈕導覽</string>
-    <string name="hardware_keys_volume_keys_title">音量按鈕</string>
     <!-- ANBI -->
     <string name="anbi_title">誤觸</string>
     <string name="anbi_summary">防止在操作螢幕時誤觸到實體按鈕</string>
-    <!-- Button settings -->
+    <!-- Buttons -->
+    <string name="navigation_bar_title">導覽列</string>
+    <string name="hardware_keys_power_key_title">電源鍵</string>
+    <string name="hardware_keys_volume_keys_title">音量按鈕</string>
     <string name="button_pref_title">按鈕</string>
     <!-- Hardware button navigation -->
     <string name="picker_activities">應用程式活動</string>
@@ -458,10 +486,6 @@
     <string name="hardware_keys_appswitch_key_title">應用程式總覽按鈕</string>
     <string name="hardware_keys_camera_key_title">相機按鈕</string>
     <string name="hardware_keys_short_press_title">短按動作</string>
-    <string name="hardware_keys_double_tap_summary">設定輕觸兩下的動作</string>
-    <string name="hardware_keys_single_tap_summary">設定輕觸一下的動作</string>
-    <string name="hardware_keys_long_press_summary">設定長按動作</string>
-    <string name="hardware_keys_single_tap_title">輕觸一下的動作</string>
     <string name="hardware_keys_long_press_title">長按動作</string>
     <string name="hardware_keys_double_tap_title">雙擊動作</string>
     <string name="hardware_keys_action_nothing">無動作</string>
@@ -472,14 +496,14 @@
     <string name="hardware_keys_action_in_app_search">在應用程式內搜索</string>
     <string name="hardware_keys_action_launch_camera">啟動相機</string>
     <string name="hardware_keys_action_sleep">關閉螢幕</string>
+    <string name="hardware_keys_action_last_app">最後使用的應用程式</string>
     <string name="hardware_keys_action_split_screen">分割畫面</string>
     <string name="hardware_keys_action_close_app">終止應用程式</string>
     <string name="hardware_keys_action_torch">手電筒</string>
-    <string name="hardware_keys_action_screenshot">螢幕擷取畫面</string>
     <string name="hardware_keys_action_volume_panel">切換音量面板</string>
     <string name="hardware_keys_action_clear_all_notifications">清除通知</string>
     <string name="hardware_keys_action_notifications_panel">切換通知面板</string>
-    <string name="hardware_keys_action_toggle_qs_panel">切換快速設定面板</string>
+    <string name="hardware_keys_action_expand_qs_panel">展開快速設定面板</string>
     <string name="hardware_keys_action_ringer_modes">鈴聲模式</string>
     <string name="hardware_keys_swipe_right_key_title">像右滑</string>
     <string name="hardware_keys_swipe_left_key_title">向左滑</string>
@@ -499,11 +523,25 @@
     <string name="volume_key_cursor_control_on_reverse">按音量鍵 上/下 鍵使游標向 右/左 移動</string>
     <string name="swap_volume_buttons_title">調整方向</string>
     <string name="swap_volume_buttons_summary">旋轉螢幕時交換上/下音量鍵</string>
+    <!-- Volume keys customization -->
+    <string name="volbtn_music_controls_title">播放控制</string>
+    <string name="volbtn_music_controls_summary">螢幕關閉時，長按音量鍵切換曲目</string>
+    <string name="volume_answer_call_title">接聽來電</string>
+    <string name="volume_answer_call_summary">按音量鍵接聽來電</string>
+    <!-- Home key customization -->
+    <string name="home_answer_call_title">接聽來電</string>
+    <string name="home_answer_call_summary">按主畫面按鍵接聽來電</string>
+    <!-- Power menu key customization -->
+    <string name="power_end_call_title">結束通話</string>
+    <string name="power_end_call_summary">按電源鍵結束當前通話</string>
     <string name="volume_panel_on_left_title">在左側顯示音量面板</string>
     <string name="volume_panel_on_left_summary">在螢幕左邊顯示音量面板</string>
     <string name="extras_title">附加功能</string>
+    <!-- Partial screenshot -->
     <string name="click_partial_screenshot_title">點擊以局部螢幕擷圖</string>
     <string name="click_partial_screenshot_summary">同時按下“音量減鍵”和“電源鍵”以擷取部分螢幕擷圖</string>
+    <!-- Edge gesture -->
+    <string name="navigation_bar_edge_long_swipe_title">邊緣長滑動作</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">音量面板</string>
     <string name="volume_dialog_timeout_title">音量控制面板自動關閉時間</string>
@@ -531,7 +569,7 @@
     <string name="lockscreen_visualizer_enable">音樂視覺化效果</string>
     <string name="lockscreen_visualizer_enable_summary">在撥放音樂時顯示視覺化效果</string>
     <string name="lockscreen_autocolor_title">自動設定顏色</string>
-    <string name="lockscreen_autocolor_summary">與鎖定螢幕背景同步顏色</string>
+    <string name="lockscreen_autocolor_summary">與鎖定畫面背景同步顏色</string>
     <string name="lockscreen_autocolor_lavalamp">需要禁用熔岩燈效果</string>
     <string name="lockscreen_lavalamp_title">熔岩燈</string>
     <string name="lockscreen_lavalamp_summary">使用平滑的跑馬燈樣式顏色混合動畫</string>
@@ -542,7 +580,7 @@
     <string name="lockscreen_solid_units_opacity_title">線條透明度</string>
     <!-- Per-app volume -->
     <string name="show_app_volume_title">顯示應用程式音量</string>
-    <string name="show_app_volume_summary">在音量面板中顯示應用程式音量（需要使用AOSP音量面板）</string>
+    <string name="show_app_volume_summary">在音量面板中顯示應用程式音量</string>
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">三段式開關提醒</string>
     <string name="alert_slider_notifications_summary">當切換三段式開關時顯示提示</string>
@@ -559,26 +597,12 @@
     <string name="alarm_blocker_summary">在螢幕關閉時使用警報阻止工具節省電量</string>
     <string name="alarm_blocker_warning">警報阻止工具可能會導致系統不穩定、出錯或資料遺失</string>
     <string name="alarm_blocker_display_text">要查看警報阻止工具，請先打開警報阻止功能。</string>
-    <!-- Blink flashlight for incoming calls -->
-    <string name="flashlight_on_call_title">來電時閃爍閃光燈</string>
-    <string name="flashlight_on_call_disabled">停用</string>
-    <string name="flashlight_on_call_ringer">響鈴時</string>
-    <string name="flashlight_on_call_no_ringer">靜音時</string>
-    <string name="flashlight_on_call_silent">靜音(關閉鈴聲及震動)時</string>
-    <string name="flashlight_on_call_always">一律採用</string>
-    <string name="flashlight_on_call_ignore_dnd_title">忽略零打擾</string>
-    <string name="flashlight_on_call_ignore_dnd_summary">零打擾模式下是否閃爍閃光燈</string>
-    <string name="flashlight_on_call_rate_title">頻率</string>
-    <string name="flashlight_on_call_rate_summary">閃光燈閃爍的頻率</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">狀態列歌詞</string>
-    <string name="status_bar_lyric_summary">在狀態列顯示歌詞（需要支援此功能的應用程式）</string>
-    <string name="status_bar_lyric_primary_switch_title">使用狀態列歌詞</string>
+    <string name="status_bar_lyric_summary">在狀態列顯示歌詞 (需要支援此功能的應用程式)</string>
+    <string name="status_bar_lyric_main_switch_title">使用狀態列歌詞</string>
     <string name="disguise_props_for_music_app_title">對音樂應用程式偽裝裝置型號</string>
     <string name="disguise_props_for_music_app_summary">在一些音樂應用程式中偽裝裝置型號以支持狀態列歌詞。變更此設定後，您必須重新啟動相關程式才能使變更生效。</string>
-    <!-- OOS style material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_button_title">Material 樣式的清除按鈕</string>
-    <string name="notification_material_dismiss_button_summary">以浮動按鈕取代「清除所有通知」文字</string>
     <!-- Evolver categories -->
     <string name="general_category">一般</string>
     <string name="fingerprint_category">指紋</string>
@@ -591,21 +615,12 @@
     <string name="status_bar_icons_summary">選擇要在狀態列顯示哪些圖示</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">鎖定畫面捷徑</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">在鎖定畫面上輕觸</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">輕觸鎖定畫面的上半部或是底部捷徑區域兩下以關閉裝置螢幕</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">狀態列輕觸兩下</string>
-    <string name="double_tap_to_sleep_summary">輕觸狀態列區域兩下以關閉裝置螢幕</string>
-    <!-- Flashlight Power button gestures -->
-    <string name="torch_power_button_gesture_title">關閉螢幕時切換手電筒</string>
-    <string name="torch_power_button_gesture_none">停用</string>
-    <string name="torch_power_button_gesture_dt">雙擊電源按鈕（裝置只反應第一次），禁用快速開啟相機。</string>
-    <string name="torch_power_button_gesture_dt_toast">快速開啟相機手勢目前已被停用</string>
-    <string name="torch_power_button_gesture_lp">按住電源鍵</string>
-    <!-- Power menu on lockscreen -->
-    <string name="lockscreen_power_menu_disabled_title">停用鎖定螢幕上的電源按鈕選單</string>
-    <string name="lockscreen_power_menu_disabled_summary">這個選項只會在鎖定螢幕上停用電源選單菜單</string>
+    <!-- Double tap to sleep on status bar or lockscreen -->
+    <string name="status_bar_double_tap_to_sleep_title">雙擊關閉螢幕</string>
+    <string name="status_bar_double_tap_to_sleep_summary">點擊狀態列或鎖定畫面兩次以關閉螢幕</string>
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">電源選單</string>
+    <string name="lockscreen_enable_power_menu_summary">允許在安全鎖定畫面上使用電源選單</string>
     <!-- Toast app icon -->
     <string name="toast_icon_title">提示訊息中的應用圖示</string>
     <string name="toast_icon_summary">再通知中顯示來源應用程式的圖示</string>
@@ -632,19 +647,8 @@
     <string name="qs_footer_settings_icon_title">設定捷徑</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">顯示CPU資訊</string>
-    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">在螢幕上方顯示目前的 CPU 資訊</string>
-    <!-- Volume Steps Fragment -->
-    <string name="volume_steps_fragment_title">音量調整等級</string>
-    <string name="volume_steps_summary">自訂音量級數</string>
-    <string name="volume_steps_alarm_title">音量等級: 鬧鐘</string>
-    <string name="volume_steps_dtmf_title">音量等級: 雙音多頻 (DTMF)</string>
-    <string name="volume_steps_music_title">音量級數：媒體音量</string>
-    <string name="volume_steps_notification_title">音量等級: 通知</string>
-    <string name="volume_steps_ring_title">音量等級: 鈴聲</string>
-    <string name="volume_steps_system_title">音量等級: 系統</string>
-    <string name="volume_steps_voice_call_title">音量等級: 通話</string>
-    <string name="volume_steps_reset">重置</string>
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">電信業者名稱</string>
     <string name="carrier_label_settings_summary">自訂狀態列的電信業者名稱</string>
@@ -653,45 +657,62 @@
     <string name="custom_carrier_label_notset">尚未設定電信商名稱</string>
     <string name="show_carrier_title">電信業者名稱位置</string>
     <string name="show_carrier_disabled">停用</string>
-    <string name="show_carrier_keyguard">鎖定螢幕</string>
+    <string name="show_carrier_keyguard">鎖定畫面</string>
     <string name="show_carrier_statusbar">狀態列</string>
     <string name="show_carrier_enabled">全部</string>
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Monet 引擎</string>
-    <string name="monet_engine_settings_summary">自訂顏色，彩度和亮度</string>
-    <string name="color_override_title">自訂顏色選擇器</string>
-    <string name="color_override_default_summary">使用桌布色彩</string>
-    <string name="custom_color_override_summary_placeholder">        選擇的顏色： <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>。 設定空白值以使用桌布顏色。
-    </string>
-    <string name="invalid_color_input">無效的顏色輸入！</string>
-    <string name="white_luminance_title">亮度</string>
-    <string name="accurate_shades_title">使用更精準的色調</string>
-    <string name="chroma_factor_title">彩度</string>
-    <string name="linear_lightness_title">使用自訂亮度比例</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">主題設定</string>
+    <string name="monet_settings_summary">自訂 monet 引擎設定</string>
+    <string name="theme_style_title">主題樣式</string>
+    <string name="theme_style_tonal_spot">Tonal Spot (預設)</string>
+    <string name="theme_style_vibrant">Vibrant</string>
+    <string name="theme_style_expressive">生動</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Rainbow</string>
+    <string name="theme_style_fruit_salad">Fruit Salad</string>
+    <string name="theme_style_monochromatic">單色調</string>
+    <string name="color_source_title">取色來源</string>
+    <string name="color_source_both">兩者 (預設)</string>
+    <string name="color_source_home">主畫面桌布</string>
+    <string name="color_source_lock">鎖定桌布</string>
+    <string name="color_source_preset">預設</string>
+    <string name="accent_color_title">強調色</string>
+    <string name="accent_color_summary">覆蓋預設強調色</string>
+    <string name="accent_background_title">強調色背景</string>
+    <string name="accent_background_summary">選擇不同的背景强調色</string>
+    <string name="bg_color_title">背景顏色</string>
+    <string name="bg_color_summary">覆蓋預設背景強調色</string>
+    <string name="luminance_factor_title">亮度</string>
+    <string name="luminance_factor_summary">較高的亮度會使色彩看起來更亮</string>
+    <string name="chroma_factor_title">色彩濃度</string>
+    <string name="chroma_factor_summary">較高的彩度會使色彩看起來更鮮明</string>
+    <string name="tint_background_title">色調背景</string>
+    <string name="tint_background_summary">使背景色彩也套用自訂的亮度及彩度</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">使用自訂主題</string>
     <string name="custom_theme_black">黑色</string>
     <string name="custom_theme_clear">清除</string>
-    <string name="custom_theme_vivid">鮮豔（Monet）</string>
+    <string name="custom_theme_vivid">鮮豔 (Monet)</string>
     <string name="custom_theme_snowpaint">雪中之色</string>
     <string name="custom_theme_espresso">特濃咖啡</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">合併信號圖示</string>
-    <string name="combined_status_bar_signal_icons_summary">在狀態欄中顯示組合的信號圖示。\n 啟用後需要重新啟動 SystemUI</string>
     <!-- Bluetooth status -->
-    <string name="bluetooth_battery_title">顯示藍牙設備電量</string>
-    <string name="bluetooth_battery_summary">顯示當前連接的藍牙裝置電量。 （如果設備支持）</string>
-    <!-- Screen off UDFPS -->
-    <string name="screen_off_udfps_title">熄屏螢幕下指紋辨識</string>
-    <string name="screen_off_udfps_summary">螢幕關閉時仍可使用螢幕下指紋辨識</string>
+    <string name="bluetooth_battery_title">顯示藍牙裝置電量</string>
+    <string name="bluetooth_battery_summary">顯示當前連接的藍牙裝置電量 (需裝置支援)</string>
+    <!-- Preference and settings suggestion title text for screen off UDFPS [CHAR LIMIT=60]-->
+    <string name="ambient_display_screen_off_udfps_title">一律啟用指紋辨識</string>
+    <!-- Summary text for screen off UDFPS [CHAR LIMIT=NONE]-->
+    <string name="ambient_display_screen_off_udfps_summary">允許在螢幕關閉時解鎖。\n啟用可能會導致意外喚醒。</string>
     <!-- QSTile requires unlocking before being accessible -->
     <string name="qstile_requires_unlocking_title">需解鎖才允許使用部分快速設定按鈕</string>
     <string name="qstile_requires_unlocking_summary">下列快速設定按鈕需要先將裝置解鎖才能使用：\n飛航模式、行動數據、NFC、無線基地台、USB 網路共用以及定位</string>
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">螢幕指紋辨識觸覺回饋</string>
     <string name="udfps_haptic_feedback_summary">在使用銀幕指紋辨識時發出震動</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">通知數量</string>
+    <string name="status_bar_notif_count_summary">在狀態列通知圖示右下角顯示待處理通知的數量</string>
     <!-- Privacy Indicator -->
-    <string name="mic_camera_privacy_indicator_title">麥克風和相機隱私存取指示器</string>
+    <string name="mic_camera_privacy_indicator_title">麥克風和鏡頭隱私存取指示器</string>
     <string name="mic_camera_privacy_indicator_summary">當應用程式在存取麥克風或相機時顯示圖示</string>
     <string name="location_privacy_indicator_title">位置隱私存取指示器</string>
     <string name="location_privacy_indicator_summary">當應用程式在存取位置時顯示圖示</string>
@@ -705,7 +726,7 @@
     <string name="pulse_settings_summary">導覽列與鎖定畫面的音訊圖形等化器</string>
     <string name="show_navbar_pulse_title">導覽列 Pulse</string>
     <string name="show_navbar_pulse_summary">導覽列上的音樂視覺化效果</string>
-    <string name="show_lockscreen_pulse_title">鎖定螢幕 Pulse</string>
+    <string name="show_lockscreen_pulse_title">鎖定畫面 Pulse</string>
     <string name="show_lockscreen_pulse_summary">在鎖定畫面上的音訊圖形等化器</string>
     <string name="show_ambient_pulse_title">環境顯示 Pluse</string>
     <string name="show_ambient_pulse_summary">在環境顯示畫面上的音訊圖形等化器</string>
@@ -744,21 +765,21 @@
     <string name="visualizer_center_mirrored_summary">將圖形等化器設定為置中鏡像模式</string>
     <string name="pulse_vertical_mirror_title">垂直鏡像</string>
     <string name="pulse_vertical_mirror_summary">創建其他脈衝並垂直翻轉</string>
-    <!-- Game Space -->
+    <!-- Game space -->
     <string name="game_space_title">遊戲空間</string>
     <string name="game_space_summary">提升您的遊戲體驗</string>
     <!-- Fingerprint Ripple Effect -->
-    <string name="enable_fingerprint_ripple_effect_title">波紋效果</string>
-    <string name="enable_fingerprint_ripple_effect_summary">指紋解鎖時顯示波紋效果</string>
+    <string name="enable_fingerprint_ripple_effect_title">漣波效果</string>
+    <string name="enable_fingerprint_ripple_effect_summary">指紋解鎖時顯示漣波效果</string>
     <!-- Unlimited Photos storage -->
     <string name="photos_spoof_title">Google相簿無限儲存空間</string>
-    <string name="photos_spoof_summary">針對 Google 相簿將您的裝置偽裝成 Pixel XL 來取得無限相簿儲存空間</string>
+    <string name="photos_spoof_summary">針對 Google 相簿將您的裝置偽裝成 Google Pixel XL 來取得無限相簿儲存空間。如果停用 Google 相簿將偽裝成 Google Pixel 8 Pro。</string>
     <!-- Unlock FPS for specific games -->
     <string name="games_spoof_title">解鎖遊戲中更高的螢幕更新率</string>
     <string name="games_spoof_summary">針對部分特定的遊戲將您的裝置偽裝成其他機型來解鎖更高的更新率</string>
     <!-- Netflix Spoof -->
     <string name="netflix_spoof_title">Netflix 偽裝</string>
-    <string name="netflix_spoof_summary">針對 Netflix 將您的裝置偽裝成其他機型</string>
+    <string name="netflix_spoof_summary">針對 Netflix 將您的裝置偽裝成 Google Pixel 8 Pro</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">隱藏狀態列</string>
     <string name="hide_lockscreen_status_bar_summary">輕觸狀態列以切換可見度</string>
@@ -770,60 +791,78 @@
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">忽略 FLAG_SECURE 窗口標誌</string>
     <string name="ignore_window_secure_summary">這將移除所有應用程式的螢幕截圖和螢幕錄影限制。通常，特殊應用程式會被替換為黑色區域。 這在某些情況下很方便，但可能會導致隱私洩露。變更此設定後，您可能需要重新啟動應用程式才能使變更生效。</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">以更精簡、更無侵入性的 ticker 取代傳統浮動通知</string>
-    <string name="reticker_colored_title">使用應用程式背景色彩</string>
-    <string name="reticker_colored_summary">將 reTicker 背景顏色替換為通知應用程式的主色</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">動態島通知</string>
+    <string name="island_notification_summary">以 iOS 動態島風格顯示彈跳通知</string>
+    <string name="island_notification_now_playing_title">Now playing</string>
+    <string name="island_notification_now_playing_summary">將目前播放的媒體用動態島通知顯示</string>
+    <string name="island_notification_intro_title">動態島通知功能，靈感來自iOS的動態島，將Android的浮動通知轉換為可快速存取且精簡的通知。\n\n動態島快速存取控制包括以下功能\n1. 點擊動態島通知以快速接聽來電。\n2. 長按動態島通知以拒絕來電\n3. 長按動態島通知以展開通知進行預覽。</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">智慧像素能藉由減少顯示的像素數量來達到省電效果，但在某些情況下可能會使觸控靈敏度降低</string>
     <string name="smart_pixels_title">智慧像素</string>
     <string name="smart_pixels_summary">通過關閉額外的像素來節省電量</string>
-    <string name="smart_pixels_primary_switch_title">使用智慧像素</string>
+    <string name="smart_pixels_main_switch_title">使用智慧像素</string>
     <string name="smart_pixels_intro_text">關閉像素以降低功耗</string>
     <string name="smart_pixels_on_power_save_title">在省電模式下自動啟用</string>
     <string name="smart_pixels_on_power_save_summary">當啟用省電模式時也啟用智慧像素</string>
     <string name="smart_pixels_percent">要停用像素的百分比</string>
     <string name="smart_pixels_shift_title">螢幕烙印保護</string>
-    <string name="smart_pixels_shift_summary">透過經常移動像素以防止使用 OLED 螢幕的裝置烙印</string>
-    <!-- Statusbar logo -->
-    <string name="status_bar_logo_title">Logo</string>
-    <string name="status_bar_logo_summary">啟用在狀態列中顯示 Logo</string>
-    <string name="status_bar_logo_primary_switch_title">使用 Logo</string>
+    <string name="smart_pixels_shift_summary">透過螢幕畫面像素移動以防止使用 OLED 螢幕的裝置烙印</string>
+    <!-- Status bar logo -->
+    <string name="status_bar_logo_title">狀態列 Logo</string>
+    <string name="status_bar_logo_summary">在狀態列中顯示 Logo</string>
+    <string name="status_bar_logo_main_switch_title">使用狀態列圖示</string>
     <string name="status_bar_logo_position_title">位置</string>
     <string name="status_bar_logo_position_summary">選擇在左側或右側顯示圖示</string>
     <string name="status_bar_logo_position_right">右側</string>
     <string name="status_bar_logo_position_left">左側</string>
     <string name="status_bar_logo_style_title">樣式</string>
     <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
-    <string name="status_bar_logo_style_airjordan">Air Jordan</string>
-    <string name="status_bar_logo_style_amogus">Amogus</string>
-    <string name="status_bar_logo_style_apple">蘋果</string>
+    <string name="status_bar_logo_style_alien">外星人</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">復仇者聯盟</string>
     <string name="status_bar_logo_style_batman">蝙蝠俠</string>
     <string name="status_bar_logo_style_batman_tdk">蝙蝠俠—黑暗騎士</string>
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">生化危害</string>
-    <string name="status_bar_logo_style_blackberry">黑莓機</string>
+    <string name="status_bar_logo_style_blackberry">BlackBerry</string>
     <string name="status_bar_logo_style_cannabis">大麻</string>
+    <string name="status_bar_logo_style_emoticon_cool">表情符號-酷</string>
+    <string name="status_bar_logo_style_emoticon_devil">表情符號-惡魔</string>
     <string name="status_bar_logo_style_fire">火焰</string>
+    <string name="status_bar_logo_style_heart">愛心</string>
     <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_pac_man">Pac-Man</string>
+    <string name="status_bar_logo_style_pacman">小精靈</string>
     <string name="status_bar_logo_style_puma">Puma</string>
     <string name="status_bar_logo_style_rog">ROG</string>
+    <string name="status_bar_logo_style_spiderman">蜘蛛人</string>
     <string name="status_bar_logo_style_superman">超人</string>
-    <string name="status_bar_logo_style_windows">視窗</string>
-    <string name="status_bar_logo_style_xbox">XBOX</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_xbox">Xbox</string>
+    <string name="status_bar_logo_style_ghost">幽靈</string>
+    <string name="status_bar_logo_style_ninja">忍者</string>
+    <string name="status_bar_logo_style_robot">機器人</string>
+    <string name="status_bar_logo_style_ironman">鋼鐵人</string>
+    <string name="status_bar_logo_style_captain_america">美國隊長</string>
+    <string name="status_bar_logo_style_flash">閃電</string>
+    <string name="status_bar_logo_style_tux">Tux</string>
+    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
+    <string name="status_bar_logo_style_mint">Linux Mint</string>
+    <string name="status_bar_logo_style_amogus">Amogus</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">電池圖示樣式</string>
     <string name="status_bar_battery_style_icon_portrait">直立圖示 (預設)</string>
-    <string name="status_bar_battery_style_icon_rlandscape">橫向圖標（右側）</string>
-    <string name="status_bar_battery_style_icon_landscape">橫向圖標（右側）</string>
+    <string name="status_bar_battery_style_icon_rlandscape">橫向圖標 (右側)</string>
+    <string name="status_bar_battery_style_icon_landscape">橫向圖標 (左側)</string>
     <string name="status_bar_battery_style_icon_rlandscape_style_a">橫向 R 風格 A</string>
     <string name="status_bar_battery_style_icon_landscape_style_a">橫向 L 風格 A</string>
     <string name="status_bar_battery_style_icon_rlandscape_style_b">橫向 R 風格 B</string>
     <string name="status_bar_battery_style_icon_landscape_style_b">橫向 L 風格 B</string>
+    <string name="status_bar_battery_style_icon_landscape_ios15">iOS 15 橫向電池</string>
+    <string name="status_bar_battery_style_icon_landscape_ios16">iOS 16 橫向電池</string>
+    <string name="status_bar_battery_style_icon_landscape_origami">橫向摺紙</string>
     <string name="status_bar_battery_style_icon_landscape_pill">縱向 Mx</string>
     <string name="status_bar_battery_style_icon_landscape_line">横向 Lorn</string>
     <string name="status_bar_battery_style_icon_landscape_musku">縱向 iOS</string>
@@ -839,40 +878,45 @@
     <string name="status_bar_battery_percent_title">電量百分比</string>
     <string name="status_bar_battery_percent_hidden">隱藏</string>
     <string name="status_bar_battery_percent_text_inside">電量圖示內</string>
-    <string name="status_bar_battery_percent_text_next">電量圖示旁</string>
+    <string name="status_bar_battery_percent_text_next_right">電量圖示右側</string>
+    <string name="status_bar_battery_percent_text_next_left">電量圖示左側</string>
     <string name="status_bar_battery_text_charging_title">充電時的電量百分比</string>
     <string name="status_bar_battery_text_charging_summary">充電時一律顯示電量百分比</string>
     <!-- QS battery -->
-    <string name="qs_use_status_bar_battery_style">跟隨狀態列樣式</string>
-    <!-- QS Battery estimates -->
-    <string name="qs_show_battery_estimate_title">電池預估可用時間</string>
-    <string name="qs_show_battery_estimate_summary_on">於快速設定顯示電池預估可用時間</string>
-    <string name="qs_show_battery_estimate_summary_off">於快速設定隱藏電池預估可用時間</string>
+    <string name="qs_battery_location_title">電池位置</string>
+    <string name="qs_battery_location_qs_panel">快速設定面板</string>
+    <string name="qs_battery_location_qs_statusbar">快速狀態列</string>
+    <string name="qs_use_status_bar_battery_style">依照狀態列樣式</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">預計電量可用時間</string>
+    <string name="battery_estimate_summary">可用時顯示預計電量可用時間</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
-    <string name="jitter_test_title">抖動</string>
-    <string name="jitter_test_summary">計算渲染抖動</string>
-    <!-- Lock screen battery info indicator  -->
+    <string name="jitter_test_title">Jitter</string>
+    <string name="jitter_test_summary">計算渲染 Jitter</string>
+    <!-- Lock screen battery info indicator -->
     <string name="lockscreen_battery_info_title">鎖定畫面充電資訊</string>
-    <string name="lockscreen_battery_info_summary">充電時在鎖定螢幕上顯示充電時最大電流、電壓和電池溫度</string>
+    <string name="lockscreen_battery_info_summary">充電時在鎖定畫面上顯示充電時最大電流、電壓和電池溫度</string>
     <!-- Charging animation -->
     <string name="charging_animation_title">充電動畫</string>
-    <string name="charging_animation_summary">在設備插入電源時顯示動畫</string>
-    <!-- Lockscreen clock color -->
-    <string name="lockscreen_clock_color_title">鎖定螢幕時鐘顏色</string>
-    <string name="lockscreen_clock_color_summary">鎖定螢幕時鐘使用次強調色，若禁用則使用強調色</string>
-    <!-- Statusbar colored icons -->
+    <string name="charging_animation_summary">在裝置插入電源時顯示動畫</string>
+    <!-- Lock screen clock color -->
+    <string name="kg_custom_clock_color_enabled_title">自訂鎖定畫面時鐘顏色</string>
+    <string name="kg_custom_clock_color_title">時鐘顏色</string>
+    <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">彩色圖示</string>
     <string name="statusbar_colored_icons_summary">在狀態列使用應用程式圖示作為通知圖示</string>
-    <!-- QS Transparency -->
-    <string name="qs_transparency_title">背景透明度</string>
-    <string name="qs_transparency_summary">為快速設定背景設定透明度</string>
-    <!--  screen, setting option summary to change custom timeout -->
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">顯示 Wi-Fi 標準圖示</string>
+    <string name="show_wifi_standard_icon_summary">在 Wi-Fi 訊號指示器中顯示 Wi-Fi 類型</string>
+    <!-- Summary to change custom timeout -->
     <string name="custom_timeout_summary_never">永遠不要</string>
     <string name="custom_timeout_summary_5secs">5 秒</string>
     <string name="custom_timeout_summary_10secs">10 秒</string>
     <string name="custom_timeout_summary_15secs">15 秒</string>
+    <string name="custom_timeout_summary_30secs">30 秒</string>
     <string name="custom_timeout_summary_1min">1 分鐘</string>
+    <string name="custom_timeout_summary_2mins">2 分鐘</string>
     <string name="custom_timeout_summary_5mins">5 分鐘</string>
     <string name="custom_timeout_summary_10mins">10 分鐘</string>
     <string name="custom_timeout_summary_20mins">20 分鐘</string>
@@ -883,7 +927,7 @@
     <string name="custom_timeout_summary_8hours">8 小時</string>
     <!-- App lock -->
     <string name="app_lock_title">應用程式鎖</string>
-    <string name="app_lock_summary">應用程式需要指纹驗證才能啟動</string>
+    <string name="app_lock_summary">應用程式需要指紋驗證才能啟動</string>
     <string name="app_lock_authentication_dialog_title">解除鎖定</string>
     <string name="enable_debugging">啟用偵錯功能</string>
     <string name="disable_debugging">停用偵錯功能</string>
@@ -891,7 +935,7 @@
     <string name="app_lock_packages_summary">選擇要使用生物辨識或裝置憑證保護的應用程式</string>
     <string name="app_lock_timeout_title">自動鎖定時間</string>
     <string name="app_lock_timeout_summary">後台已解鎖的應用程式在一段時間後會被重新鎖定</string>
-    <string name="app_lock_notifications_title">屏蔽通知</string>
+    <string name="app_lock_notifications_title">隱藏通知</string>
     <string name="app_lock_notifications_summary">          鎖定時，將為所選應用程式隱藏並折疊通知内容。
           浮動通知將被自動禁用。
     </string>
@@ -908,12 +952,9 @@
     <string name="alert_slider_pulse_title">警報滑塊脈衝</string>
     <string name="alert_slider_pulse_summary">改變警報滑塊位置時脈衝環境顯示</string>
     <!-- Alert Slider block -->
-    <string name="block_alert_title">屏蔽警報滑塊</string>
-    <string name="block_alert_summary">口袋模式將屏蔽警報滑塊</string>
-    <!-- Wi-Fi Standard icon -->
-    <string name="show_wifi_standard_icon_title">顯示 Wi-Fi 標準圖示</string>
-    <string name="show_wifi_standard_icon_summary">在 Wi-Fi 訊號指示器中顯示 Wi-Fi 類型</string>
-    <!-- Power menu Animations  -->
+    <string name="block_alert_title">封鎖警報滑桿</string>
+    <string name="block_alert_summary">口袋模式將封鎖警報滑桿</string>
+    <!-- Power menu Animations -->
     <string name="power_menu_animation_title">電源選單動畫</string>
     <string name="power_menu_animation_dialog_title">選擇電源選單動畫</string>
     <string name="power_menu_animation_aosp">AOSP (預設)</string>
@@ -922,18 +963,97 @@
     <string name="power_menu_animation_xylon">飛入</string>
     <string name="power_menu_animation_slide">幻燈片</string>
     <string name="power_menu_animation_turn">旋轉</string>
-    <string name="power_menu_animation_fly">發光</string>
     <string name="power_menu_animation_card">立體</string>
-    <string name="power_menu_animation_translucent_top">半透明（頂部）</string>
-    <string name="power_menu_animation_translucent_bottom">半透明（底部）</string>
     <string name="power_menu_animation_rotate">旋轉</string>
-    <!-- Power menu and dialogs opacity -->
-    <string name="power_menu_transparency">電源選單透明度</string>
-    <string name="power_menu_dialog_dim">電源選單背景明暗度</string>
     <!-- Changelog -->
     <string name="changelog_evolution_title">更新日誌​​​​​</string>
     <string name="changelog_evolution_summary">查看 ROM 的更新日誌</string>
-    <!-- Squiggle animation -->
-    <string name="show_squiggle_animation_title">顯示波浪形動畫</string>
-    <string name="show_squiggle_animation_summary">在需要切换音樂、暫停音樂或移動進度條以使用後，顯示媒體面板波浪形動畫</string>
+    <!-- QS tiles layout -->
+    <string name="qs_layout_category_title">圖塊佈局</string>
+    <string name="qs_tile_label_hide_title">隱藏標題</string>
+    <string name="qs_tile_label_hide_summary">圖塊中只顯示圖示</string>
+    <string name="qs_tile_label_size_title">標題字體大小</string>
+    <string name="qs_tile_layout_title">垂直佈局</string>
+    <string name="qs_tile_layout_summary">在圖示下方顯示標題</string>
+    <string name="qs_columns_portrait_title">欄 (縱向)</string>
+    <string name="qs_columns_landscape_title">列 (橫向)</string>
+    <!-- Lock screen clock format -->
+    <string name="clock_use_single_line_title">鎖定畫面時鐘格式</string>
+    <string name="single_line">單行</string>
+    <string name="double_line">雙行</string>
+    <!-- Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons_title">合併信號圖示</string>
+    <string name="combined_status_bar_signal_icons_summary">在狀態欄中顯示組合的信號圖示。\n 啟用後需要重新啟動 SystemUI</string>
+    <!-- Quick settings styles -->
+    <string name="qs_styles_title">組合快速設定元素樣式</string>
+    <string name="qs_outline">外框</string>
+    <string name="qs_two_tone">雙主題顏色</string>
+    <string name="qs_color_pop">流行色</string>
+    <string name="qs_shaded">陰影</string>
+    <string name="qs_cyberpunk">電馭叛客</string>
+    <string name="qs_neumorph">變形</string>
+    <string name="qs_reflected">反射</string>
+    <string name="qs_surround">環繞</string>
+    <string name="qs_thin">細線</string>
+    <string name="qs_two_tone_trans">半透明雙色調</string>
+    <!-- Media artwork -->
+    <string name="artwork_media_background_enable_blur_title">媒體通知背景模糊</string>
+    <string name="artwork_media_background_blur_radius_title">媒體通知背景模糊量</string>
+    <string name="media_artwork_fade_percent_title">媒體通知背景淡入量</string>
+    <string name="lockscreen_albumart_filter_blur_radius_title">媒體封面模糊度</string>
+    <string name="ls_media_artwork_fade_percent_title">媒體封面淡入量</string>
+    <!-- QS Header image -->
+    <string name="qs_header_image_title">快速設定頂部標題圖片</string>
+    <string name="qs_header_image_summary">選擇快速設定頂部標題圖片</string>
+    <string name="qs_header_image_enabled_title">自訂快速設定頂部標題圖片</string>
+    <string name="qs_header_image_enabled_summary">啟用快速設定頂部標題</string>
+    <string name="qs_header_image_landscape_enabled_title">橫向顯示</string>
+    <string name="qs_header_image_landscape_enabled_summary">以橫向模式顯示快速設定頂部標題圖片</string>
+    <string name="qs_header_image_tint_title">色調</string>
+    <string name="qs_header_image_tint_none">無色調</string>
+    <string name="qs_header_image_tint_accent">主題顏色</string>
+    <string name="qs_header_image_tint_primary">主要顏色</string>
+    <string name="qs_header_image_tint_primary_inverse">反轉主要顏色</string>
+    <string name="qs_header_image_tint_custom">自訂顏色</string>
+    <string name="qs_header_image_tint_custom_title">自訂色調顏色</string>
+    <string name="qs_header_image_height_portrait_title">高度(縱向)</string>
+    <string name="qs_header_image_height_landscape_title">高度(橫向)</string>
+    <string name="qs_header_image_alpha_title">透明度</string>
+    <string name="qs_header_image_padding_side_title">側邊填補</string>
+    <string name="qs_header_image_padding_top_title">頂部填補</string>
+    <string name="file_header_select_title">選擇本地圖片</string>
+    <string name="file_header_select_summary">從存儲空間中選擇圖片</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">音樂提示訊息</string>
+    <string name="pulse_on_new_tracks_summary">播放新的音樂曲目時顯示微光螢幕</string>
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">口袋防誤觸偵測</string>
+    <string name="pocket_judge_summary">當裝置位於口袋中時防止螢幕和按鍵輸入</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">快速設定面板底部文字</string>
+    <string name="qs_footer_text_summary">在快速設定面板底部顯示文字</string>
+    <string name="qs_footer_text_string_title">自訂快速設定面板底部文字</string>
+    <string name="qs_footer_text_string_summary">當設定空值時使用預設值</string>
+    <!-- Volume slider haptic feedback -->
+    <string name="volume_slider_haptic_feedback_title">調整音量控制條時震動</string>
+    <!-- Pif -->
+    <string name="pif_title">Play integrity 修正</string>
+    <string name="pif_summary">查看當前所使用的 GMS 偽裝資訊</string>
+    <string name="pif_spoof_title">啟用 ROM 內建的 Play integrity 修正</string>
+    <string name="pif_spoof_summary">停用已允許模組使用自訂的指紋參數</string>
+    <!-- PixelProps -->
+    <string name="spoof_pixel_title">啟用偽裝 Pixel 專屬功能</string>
+    <string name="spoof_pixel_summary">將裝置中的所有 Google 應用程式偽裝成 Google Pixel 6 Pro。非 Pixel 裝置保持啟用。</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">允許應用程式降版</string>
+    <string name="app_downgrade_summary">允許應用程式降低版本。這可能導致應用程式崩潰和資料損壞。</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">顯示剪貼簿</string>
+    <string name="show_clipboard_overlay_summary">複製文字或圖片後在左下角顯示複製內容</string>
+    <!-- Weather -->
+    <string name="lockscreen_weather_title">顯示天氣狀態</string>
+    <string name="lockscreen_weather_summary">顯示目前的天氣狀態和氣溫</string>
+    <!-- Spoof storage encryption status -->
+    <string name="spoof_storage_encryption_status_title">使用加密儲存空間偽裝</string>
+    <string name="spoof_storage_encryption_status_summary">偽裝加密儲存空間已加密</string>
 </resources>
