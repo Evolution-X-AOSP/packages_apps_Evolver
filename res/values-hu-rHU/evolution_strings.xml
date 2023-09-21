@@ -28,6 +28,8 @@
     <string name="notification_flashlight_category">Jelzőfény értesítéskor</string>
     <string name="ambient_display_category">Környezeti kijelző</string>
     <string name="lockscreen_clock_category">A záróképernyő órája</string>
+    <string name="signal_icons_category_title">Térerőjelzési-ikon</string>
+    <string name="vibration_category_title">Rezgés</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Az Androidból átvett gyári funkciók</string>
     <string name="dark_ui_mode_summary">Nézze át a sötét témabeállításokat</string>
@@ -56,6 +58,11 @@
     <string name="seek_value_edit_label">Érték-beállítás</string>
     <string name="search">Keresés</string>
     <string name="search_apps">Alkalmazások keresése</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">Engedélyezve</string>
+    <string name="string_disabled">Kikapcsolva</string>
+    <string name="string_on">Be</string>
+    <string name="string_off">Ki</string>
     <!-- Units -->
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">másodperc</string>
@@ -85,8 +92,8 @@
     <string name="seekbar_default_string">Alapértelmezett</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value"><xliff:g id="v">%s</xliff:g> értékű</string>
-    <string name="custom_seekbar_default_value">Alapértelmezett</string>
-    <string name="custom_seekbar_default_value_to_set">Alapértelmezetten <xliff:g id="v">%s</xliff:g> értékű\nNyomja hosszan a beállításhoz</string>
+    <string name="custom_seekbar_default_value">alapértelmezetten</string>
+    <string name="custom_seekbar_default_value_to_set">Alapértelmezett érték <xliff:g id="v">%s</xliff:g>\nNyomja hosszan a beállításhoz</string>
     <string name="custom_seekbar_default_value_is_set">Az alapértelmezett érték beállítva</string>
     <!-- USB configuration -->
     <string name="usb_default_config_title">USB-konfiguráció</string>
@@ -199,7 +206,7 @@
     <string name="qs_brightness_slider_position_top">Felül</string>
     <string name="qs_brightness_slider_position_bottom">Alul</string>
     <!-- Brightness slider haptic feedback -->
-    <string name="qs_brightness_slider_haptic_title">Érintési visszajelzés</string>
+    <string name="qs_brightness_slider_haptic_title">A Fényerő rezgő visszajelzése</string>
     <string name="qs_brightness_slider_haptic_summary">Rezgéssel jelzi, ha fényerő-szabályzás történt a csúszkával</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Az automatikus fényerő ikonja</string>
@@ -281,8 +288,7 @@
     <string name="qs_date_title">Dátum</string>
     <string name="qs_date_summary">A dátum megjelenítése a gyors-állapotsor fejlécén</string>
     <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">Rezgés</string>
-    <string name="quick_settings_vibrate_title">Rezgő visszajelzés</string>
+    <string name="quick_settings_vibrate_title">A Gyorsbeállítások rezgő visszajelzése</string>
     <string name="quick_settings_vibrate_summary">A Gyorsbeállítások csempéi érintéskor rezegni fognak</string>
     <string name="quick_settings_vibrate_duration_title">Rezgéshossz</string>
     <string name="quick_settings_vibrate_duration_summary">Hány milliszekundumig rezegjen</string>
@@ -423,6 +429,9 @@
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">A Fényerőcsúszka stílusa</string>
     <string name="theme_customization_brightness_slider_summary">Itt állíthatja be a csúszka egyéni stílusát</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Adatforgalom-ikonstílus</string>
+    <string name="theme_customization_data_summary">Egyéni adatforgalom-ikonstílus állítható be</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Állapotsor</string>
     <string name="lockscreen_status_bar_summary">Az állapotsor megjelenítése a zárképernyőn</string>
@@ -619,7 +628,6 @@
     <string name="torch_power_button_gesture_title">Zseblámpakapcsoló kikapcsolt képernyőn</string>
     <string name="torch_power_button_gesture_none">Kikapcsolva</string>
     <string name="torch_power_button_gesture_dt">A Bekapcsológomb dupla érintése (az egyszeri érintés reakciója lassul), ez a funkció letiltja a bekapcsológombbal való kameraindítást.</string>
-    <string name="torch_power_button_gesture_dt_toast">A kameraindítás most le van tiltva</string>
     <string name="torch_power_button_gesture_lp">A bekapcsológomb nyomva tartása</string>
     <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Letiltja a kikapcsolási menüt a Képernyőzáron</string>
@@ -1029,7 +1037,7 @@
     <string name="volume_steps_voice_call_title">Hangerőléptetés: Hanghívás</string>
     <string name="volume_steps_reset">Visszaállítás</string>
     <!-- QS Header image -->
-    <string name="qs_header_image_title">Gyorsbeállítások fejléc-kép</string>
+    <string name="qs_header_image_title">Gyorsbeállítási-fejléc (csak állómódban)</string>
     <string name="qs_header_random_image_title">Véletlenszerű kép</string>
     <string name="qs_header_random_image_summary">Itt engedélyezheti a váltakozást</string>
     <!-- Pulse on music track change -->
@@ -1043,4 +1051,7 @@
     <string name="qs_footer_text_summary">Szövegmegjelenítés alul a gyorsbeállítás panel alján</string>
     <string name="qs_footer_text_string_title">A Lábjegyzet személyre szabása</string>
     <string name="qs_footer_text_string_summary">Hogy alapértelmezett legyen, állítsa üresre</string>
+    <!-- Volume haptic feedback -->
+    <string name="volume_panel_haptic_feedback_title">A Hangerő rezgő visszajelzése</string>
+    <string name="volume_panel_haptic_feedback_summary">Megengedi, hogy rezgéssel jelezze a hangerő-változtatást</string>
 </resources>
