@@ -206,27 +206,6 @@ public class QuickSettings extends DashboardFragment implements
             case 3:
               setQsStyle("com.android.system.qs.twotoneaccent", qsPanelStyleCategory);
               break;
-            case 4:
-              setQsStyle("com.android.system.qs.shaded", qsPanelStyleCategory);
-              break;
-            case 5:
-              setQsStyle("com.android.system.qs.cyberpunk", qsPanelStyleCategory);
-              break;
-            case 6:
-              setQsStyle("com.android.system.qs.neumorph", qsPanelStyleCategory);
-              break;
-            case 7:
-              setQsStyle("com.android.system.qs.reflected", qsPanelStyleCategory);
-              break;
-            case 8:
-              setQsStyle("com.android.system.qs.surround", qsPanelStyleCategory);
-              break;
-            case 9:
-              setQsStyle("com.android.system.qs.thin", qsPanelStyleCategory);
-              break;
-            case 10:
-              setQsStyle("com.android.system.qs.twotoneaccenttrans", qsPanelStyleCategory);
-              break;
             default:
               break;
         }
