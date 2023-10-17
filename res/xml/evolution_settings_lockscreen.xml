@@ -25,6 +25,12 @@
         android:key="ambient_display"
         android:title="@string/ambient_display_category">
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="ambient_wake_gestures"
+            android:title="@string/ambient_wake_gestures_title"
+            android:summary="@string/ambient_wake_gestures_summary"
+            android:defaultValue="false" />
+
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="pulse_on_new_tracks"
             android:title="@string/pulse_on_new_tracks_title"
@@ -44,13 +50,13 @@
     <PreferenceCategory
         android:title="@string/lockscreen_clock_category">
 
-        <!-- Lockscreen Clock Font style -->
         <Preference
             android:key="android.theme.customization.lockscreen_clock_font"
             android:title="@string/theme_customization_lock_clock_title"
             android:summary="@string/theme_customization_lock_clock_summary"
             android:fragment="com.evolution.settings.fragments.LockClockFonts" />
 
+        <!--
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="kg_custom_clock_color_enabled"
             android:title="@string/kg_custom_clock_color_enabled_title"
@@ -62,7 +68,6 @@
             android:dependency="kg_custom_clock_color_enabled"
             android:defaultValue="0xFFFFFFFF" />
 
-        <!--
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="clock_use_custom_format"
             android:title="@string/clock_use_single_line_title"
@@ -78,22 +83,26 @@
         android:key="lockscreen_general_category"
         android:title="@string/general_category">
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="false" />
+        -->
 
         <Preference
             android:key="always_on_display_schedule"
             android:title="@string/always_on_display_schedule_title"
             android:fragment="com.evolution.settings.fragments.AODSchedule" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="hide_lockscreen_status_bar"
             android:title="@string/hide_lockscreen_status_bar_title"
             android:summary="@string/hide_lockscreen_status_bar_summary"
             android:defaultValue="false" />
+        -->
 
     </PreferenceCategory>
 
@@ -105,7 +114,7 @@
             android:key="lockscreen_media_metadata"
             android:title="@string/media_art_title"
             android:summary="@string/media_art_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="lockscreen_albumart_filter"
