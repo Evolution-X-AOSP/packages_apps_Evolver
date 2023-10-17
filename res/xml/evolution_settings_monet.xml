@@ -1,77 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2022 Yet Another AOSP Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+     Copyright (C) 2019-2023 Evolution X
+     SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/monet_settings_title"
+    android:title="@string/monet_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <ListPreference
-        android:key="theme_style"
-        android:title="@string/theme_style_title"
-        android:entries="@array/theme_style_entries"
-        android:entryValues="@array/theme_style_values"
-        android:defaultValue="0" />
-
-    <ListPreference
-        android:key="color_source"
-        android:title="@string/color_source_title"
-        android:entries="@array/color_source_entries"
-        android:entryValues="@array/color_source_values"
-        android:defaultValue="0" />
-
-    <com.evolution.settings.preference.colorpicker.ColorPickerPreference
-        android:key="accent_color"
-        android:title="@string/accent_color_title"
-        android:summary="@string/accent_color_summary" />
-
-    <com.evolution.settings.preference.SwitchPreference
-        android:key="accent_background"
-        android:title="@string/accent_background_title"
-        android:summary="@string/accent_background_summary"
+    <com.evolution.settings.preference.SecureSettingSwitchPreference
+        android:key="monet_engine_custom_color"
+        android:title="@string/monet_engine_custom_color_title"
+        android:summary="@string/monet_engine_custom_color_summary"
         android:defaultValue="false" />
 
-    <com.evolution.settings.preference.colorpicker.ColorPickerPreference
-        android:key="bg_color"
-        android:title="@string/bg_color_title"
-        android:summary="@string/bg_color_summary" />
+    <com.evolution.settings.preference.colorpicker.SecureSettingColorPickerPreference
+        android:key="monet_engine_color_override"
+        android:title="@string/monet_engine_color_override_title"
+        android:dependency="monet_engine_custom_color"
+        android:defaultValue="0xFF1b6ef3" />
 
-    <com.evolution.settings.preference.CustomSeekBarPreference
-        android:key="luminance_factor"
-        android:title="@string/luminance_factor_title"
-        android:summary="@string/luminance_factor_summary"
-        android:max="100"
-        settings:min="-95"
-        settings:interval="5"
-        settings:defaultValue="0"
-        settings:units="%" />
+    <com.evolution.settings.preference.SecureSettingSwitchPreference
+        android:key="monet_engine_custom_bgcolor"
+        android:title="@string/monet_engine_custom_bgcolor_title"
+        android:summary="@string/monet_engine_custom_bgcolor_summary"
+        android:defaultValue="false" />
 
-    <com.evolution.settings.preference.CustomSeekBarPreference
-        android:key="chroma_factor"
-        android:title="@string/chroma_factor_title"
-        android:summary="@string/chroma_factor_summary"
-        android:max="100"
-        settings:min="-95"
-        settings:interval="5"
-        settings:defaultValue="0"
-        settings:units="%" />
+    <com.evolution.settings.preference.colorpicker.SecureSettingColorPickerPreference
+        android:key="monet_engine_bgcolor_override"
+        android:title="@string/monet_engine_color_override_title"
+        android:dependency="monet_engine_custom_bgcolor"
+        android:defaultValue="0xFF1b6ef3" />
 
-    <com.evolution.settings.preference.SwitchPreference
-        android:key="tint_background"
-        android:title="@string/tint_background_title"
-        android:summary="@string/tint_background_summary"
+    <com.evolution.settings.preference.SecureSettingSeekBarPreference
+        android:key="monet_engine_luminance_factor"
+        android:title="@string/monet_engine_luminance_factor_title"
+        android:summary="@string/monet_engine_luminance_factor_summary"
+        android:defaultValue="100"
+        android:max="225"
+        settings:min="25"
+        settings:interval="5"/>
+
+    <com.evolution.settings.preference.SecureSettingSeekBarPreference
+        android:key="monet_engine_chroma_factor"
+        android:title="@string/monet_engine_chroma_factor_title"
+        android:summary="@string/monet_engine_chroma_factor_summary"
+        android:defaultValue="100"
+        android:max="225"
+        settings:min="25"
+        settings:interval="5"/>
+
+    <com.evolution.settings.preference.SecureSettingSwitchPreference
+        android:key="monet_engine_tint_background"
+        android:title="@string/monet_engine_tint_background_title"
+        android:summary="@string/monet_engine_tint_background_summary"
         android:defaultValue="false" />
 
 </PreferenceScreen>

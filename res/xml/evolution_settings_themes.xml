@@ -11,8 +11,8 @@
     <!-- Monet Theme Engine -->
     <Preference
         android:key="monet_settings"
-        android:title="@string/monet_settings_title"
-        android:summary="@string/monet_settings_sammary"
+        android:title="@string/monet_title"
+        android:summary="@string/monet_summary"
         android:fragment="com.evolution.settings.fragments.MonetSettings" />
 
     <Preference
@@ -54,6 +54,13 @@
             android:summary="@string/theme_customization_icon_shape_summary"
             android:fragment="com.evolution.settings.fragments.IconShapes" />
 
+        <!-- Brightness slider -->
+        <Preference
+            android:key="android.theme.customization.brightness_slider"
+            android:title="@string/theme_customization_brightness_slider_title"
+            android:summary="@string/theme_customization_brightness_slider_summary"
+            android:fragment="com.evolution.settings.fragments.BrightnessSlider" />
+
         <!-- Navbar Style -->
         <Preference
             android:key="android.theme.customization.navbar"
@@ -74,7 +81,7 @@
             android:summary="@string/theme_customization_signal_icon_summary"
             android:fragment="com.evolution.settings.fragments.SignalIcons" />
 
-        <!-- Data icon style -->  
+        <!-- Data icon style -->
         <Preference
             android:key="android.customization.sb_data"
             android:title="@string/theme_customization_data_title"
