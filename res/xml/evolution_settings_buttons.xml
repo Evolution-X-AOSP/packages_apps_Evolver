@@ -8,6 +8,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/button_pref_title">
 
+    <!--
     <com.evolution.settings.preference.ButtonBacklightBrightness
         android:key="button_backlight"
         android:title="@string/button_backlight_title"
@@ -18,11 +19,11 @@
         android:key="navbar_visibility"
         android:title="@string/navbar_visibility_title"
         android:summary="@string/navbar_visibility_summary" />
+    -->
 
     <PreferenceCategory
         android:key="navbar_layout_category"
-        android:title="@string/navbar_layout_category_title"
-        android:dependency="navbar_visibility">
+        android:title="@string/navbar_layout_category_title">
 
         <Preference
             android:key="gesture_system_navigation_input_summary"
@@ -43,11 +44,11 @@
             android:summary="@string/navbar_compact_layout_summary"
             android:defaultValue="false" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="navigation_bar_inverse"
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="sysui_nav_bar_inverse"
             android:title="@string/navbar_invert_layout_title"
             android:summary="@string/navbar_invert_layout_summary"
-            android:defaultValue="0" />
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
@@ -56,12 +57,13 @@
         android:title="@string/volume_category">
 
         <!-- Volume panel to left -->
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="volume_panel_on_left"
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="left_volume_dialog"
             android:title="@string/volume_panel_on_left_title"
             android:summary="@string/volume_panel_on_left_summary"
             android:defaultValue="false" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="volume_dialog_timeout"
             android:title="@string/volume_dialog_timeout_title"
@@ -69,6 +71,7 @@
             android:max="10"
             settings:min="1"
             settings:units="@string/unit_seconds" />
+        -->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="show_app_volume"
@@ -76,11 +79,13 @@
             android:summary="@string/app_volume_summary"
             android:defaultValue="false" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="swap_volume_buttons"
             android:title="@string/swap_volume_buttons_title"
             android:summary="@string/swap_volume_buttons_summary"
             android:defaultValue="false" />
+        -->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="volume_rocker_wake"
@@ -88,6 +93,7 @@
             android:title="@string/volume_rocker_wake_title"
             android:defaultValue="false" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="volume_key_cursor_control"
             android:summary="%s"
@@ -96,15 +102,25 @@
             android:entries="@array/volume_key_cursor_control_entries"
             android:entryValues="@array/volume_key_cursor_control_values"
             android:defaultValue="0" />
+        -->
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="volume_button_music_control"
+            android:summary="@string/volume_rocker_music_controls_summary"
+            android:title="@string/volume_rocker_music_controls_title"
+            android:defaultValue="false" />
+
+        <!--
         <Preference
             android:key="vol_steps"
             android:title="@string/volume_steps_fragment_title"
             android:summary="@string/volume_steps_summary"
             android:fragment="com.evolution.settings.fragments.VolumeStepsFragment" />
+        -->
 
     </PreferenceCategory>
 
+    <!--
     <PreferenceCategory
         android:key="hardware_keys"
         android:title="@string/hardware_keys_category">
@@ -171,7 +187,7 @@
 
     <PreferenceCategory
         android:key="app_switch_key"
-        android:title="@string/hardware_keys_appswitch_key_title">        
+        android:title="@string/hardware_keys_appswitch_key_title">
 
         <com.evolution.settings.preference.ActionPreference
             android:key="hwkeys_button_overview_single_tap"
@@ -195,7 +211,7 @@
 
     <PreferenceCategory
         android:key="menu_key"
-        android:title="@string/hardware_keys_menu_key_title">        
+        android:title="@string/hardware_keys_menu_key_title">
 
         <com.evolution.settings.preference.ActionPreference
             android:key="hwkeys_button_menu_single_tap"
@@ -265,5 +281,6 @@
            android:defaultValue="true" />
 
     </PreferenceCategory>
+    -->
 
 </PreferenceScreen>

@@ -6,27 +6,32 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/network_traffic_title">
+    android:title="@string/network_traffic_settings_title">
 
     <com.android.settingslib.widget.TopIntroPreference
         android:key="network_traffic_intro"
         android:title="@string/network_traffic_intro_text" />
 
     <com.evolution.settings.preference.SystemSettingMainSwitchPreference
-        android:key="network_traffic_state"
+        android:key="network_traffic_enabled"
         android:title="@string/network_traffic_main_switch_title"
+        android:summary="@string/network_traffic_settings_summary"
         android:defaultValue="false" />
 
-    <PreferenceCategory
-        android:title="@string/network_options_title">
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="network_traffic_autohide"
+        android:title="@string/network_traffic_autohide"
+        android:summary="@string/network_traffic_autohide_summary"
+        android:defaultValue="false"
+        android:dependency="network_traffic_enabled" />
 
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="network_traffic_autohide_threshold"
-            android:title="@string/network_traffic_autohide_title"
-            android:summary="@string/network_traffic_autohide_summary"
-            android:dependency="network_traffic_state"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
+    <DropDownPreference
+        android:key="network_traffic_unit_type"
+        android:title="@string/network_traffic_units_title"
+        android:entries="@array/network_traffic_units_entries"
+        android:entryValues="@array/network_traffic_units_values"
+        android:summary="%s"
+        android:persistent="false" 
+        android:dependency="network_traffic_enabled"/>
 
 </PreferenceScreen>

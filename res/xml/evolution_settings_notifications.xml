@@ -12,13 +12,11 @@
         android:key="headsup_notifications_category"
         android:title="@string/headsup_category">
 
-        <com.evolution.settings.preference.GlobalSettingPrimarySwitchPreference
+        <com.evolution.settings.preference.GlobalSettingSwitchPreference
             android:key="heads_up_notifications_enabled"
             android:summary="@string/notification_heads_up_summary"
             android:title="@string/notification_heads_up_title"
-            android:defaultValue="true"
-            android:fragment="com.evolution.settings.fragments.HeadsUpSettings"
-            settings:observe="true" />
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
@@ -26,6 +24,7 @@
         android:key="notifications_general_category"
         android:title="@string/general_title">
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="reticker_status"
             android:title="@string/reticker_title"
@@ -45,6 +44,7 @@
             android:title="@string/reticker_colored_title"
             android:summary="@string/reticker_colored_summary"
             android:defaultValue="false" />
+        -->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="notification_sound_vib_screen_on"
@@ -52,13 +52,13 @@
             android:summary="@string/notification_sound_vib_screen_on_summary"
             android:defaultValue="true" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="notification_guts_kill_app_button"
             android:title="@string/notification_guts_kill_app_button_title"
             android:summary="@string/notification_guts_kill_app_button_summary"
             android:defaultValue="false" />
 
-        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="media_artwork_blur_enabled"
             android:title="@string/artwork_media_background_enable_blur_title"
@@ -95,14 +95,17 @@
                 android:value="com.android.settings.Settings$NotificationAppListActivity" />
         </Preference>
 
+        <!--
         <Preference
             android:key="charging_light"
             android:title="@string/battery_light_settings"
             android:summary="@string/battery_light_summary"
             android:fragment="com.evolution.settings.fragments.BatteryLight" />
+        -->
 
     </PreferenceCategory>
 
+    <!--
     <PreferenceCategory
         android:key="on_call_flashlight_category"
         android:title="@string/on_call_flashlight_category">
@@ -118,7 +121,7 @@
             android:key="flashlight_on_call_ignore_dnd"
             android:title="@string/flashlight_on_call_ignore_dnd_title"
             android:summary="@string/flashlight_on_call_ignore_dnd_summary"
-            android:defaultValue="false" /> 
+            android:defaultValue="false" />
 
         <com.evolution.settings.preference.CustomSeekBarPreference
             android:key="flashlight_on_call_rate"
@@ -131,7 +134,6 @@
 
     </PreferenceCategory>
 
-    <!-- Flashlight blinking for notifications -->
     <PreferenceCategory
         android:key="notification_flashlight_category"
         android:title="@string/notification_flashlight_category">
@@ -142,7 +144,6 @@
             android:summary="@string/notification_torch_summary"
             android:defaultValue="false" />
 
-        <!-- Flashlight blinking times -->
         <com.evolution.settings.preference.CustomSeekBarPreference
             android:key="default_notification_torch1"
             android:title="@string/notification_torch_slider1"
@@ -152,7 +153,6 @@
             settings:defaultValue="2"
             settings:units="@string/unit_times" />
 
-        <!-- Flashlight blinking rate -->
         <com.evolution.settings.preference.CustomSeekBarPreference
             android:key="default_notification_torch2"
             android:title="@string/notification_torch_slider2"
@@ -163,6 +163,7 @@
             settings:units="@string/unit_hz" />
 
     </PreferenceCategory>
+    -->
 
     <PreferenceCategory
         android:key="incall_vib_options"
