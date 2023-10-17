@@ -23,6 +23,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="alert_slider_cat"
+        android:title="@string/alert_slider_cat_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="alert_slider_notifications"
+            android:title="@string/alert_slider_notifications_title"
+            android:summary="@string/alert_slider_notifications_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="notifications_general_category"
         android:title="@string/general_title">
 
@@ -30,21 +42,14 @@
             android:key="reticker_status"
             android:title="@string/reticker_title"
             android:summary="@string/reticker_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:dependency="reticker_status"
-            android:key="reticker_landscape_only"
-            android:title="@string/reticker_landscape_only_title"
-            android:summary="@string/reticker_landscape_only_summary"
             android:defaultValue="false" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:dependency="reticker_status"
             android:key="reticker_colored"
             android:title="@string/reticker_colored_title"
             android:summary="@string/reticker_colored_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            android:dependency="reticker_status" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="notification_sound_vib_screen_on"
@@ -95,14 +100,17 @@
                 android:value="com.android.settings.Settings$NotificationAppListActivity" />
         </Preference>
 
+        <!--
         <Preference
             android:key="charging_light"
             android:title="@string/battery_light_settings"
             android:summary="@string/battery_light_summary"
             android:fragment="com.evolution.settings.fragments.BatteryLight" />
+        -->
 
     </PreferenceCategory>
 
+    <!--
     <PreferenceCategory
         android:key="on_call_flashlight_category"
         android:title="@string/on_call_flashlight_category">
@@ -118,7 +126,7 @@
             android:key="flashlight_on_call_ignore_dnd"
             android:title="@string/flashlight_on_call_ignore_dnd_title"
             android:summary="@string/flashlight_on_call_ignore_dnd_summary"
-            android:defaultValue="false" /> 
+            android:defaultValue="false" />
 
         <com.evolution.settings.preference.CustomSeekBarPreference
             android:key="flashlight_on_call_rate"
@@ -131,7 +139,6 @@
 
     </PreferenceCategory>
 
-    <!-- Flashlight blinking for notifications -->
     <PreferenceCategory
         android:key="notification_flashlight_category"
         android:title="@string/notification_flashlight_category">
@@ -142,7 +149,6 @@
             android:summary="@string/notification_torch_summary"
             android:defaultValue="false" />
 
-        <!-- Flashlight blinking times -->
         <com.evolution.settings.preference.CustomSeekBarPreference
             android:key="default_notification_torch1"
             android:title="@string/notification_torch_slider1"
@@ -152,7 +158,6 @@
             settings:defaultValue="2"
             settings:units="@string/unit_times" />
 
-        <!-- Flashlight blinking rate -->
         <com.evolution.settings.preference.CustomSeekBarPreference
             android:key="default_notification_torch2"
             android:title="@string/notification_torch_slider2"
@@ -163,6 +168,7 @@
             settings:units="@string/unit_hz" />
 
     </PreferenceCategory>
+    -->
 
     <PreferenceCategory
         android:key="incall_vib_options"
