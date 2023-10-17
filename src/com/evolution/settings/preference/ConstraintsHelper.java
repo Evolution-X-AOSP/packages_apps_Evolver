@@ -42,7 +42,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-import com.android.internal.lineage.hardware.LineageHardwareManager;
+import com.android.internal.custom.hardware.LineageHardwareManager;
 
 import com.android.settings.R;
 
