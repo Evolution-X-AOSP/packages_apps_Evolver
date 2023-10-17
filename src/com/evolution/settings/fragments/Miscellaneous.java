@@ -54,10 +54,8 @@ public class Miscellaneous extends DashboardFragment implements
     private static final String TAG = "Miscellaneous";
 
     private static final String KEY_VIBRATION_CATEGORY = "vibration_category";
-    private static final String POCKET_JUDGE = "pocket_judge";
     private static final String SMART_PIXELS = "smart_pixels";
 
-    private Preference mPocketJudge;
     private Preference mSmartPixels;
     private PreferenceCategory mVibrationCategory;
     private Vibrator mVibrator;
@@ -75,13 +73,6 @@ public class Miscellaneous extends DashboardFragment implements
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
-
-        mPocketJudge = (Preference) findPreference(POCKET_JUDGE);
-        boolean mPocketJudgeSupported = res.getBoolean(
-                com.android.internal.R.bool.config_pocketModeSupported);
-        if (!mPocketJudgeSupported) {
-            prefScreen.removePreference(mPocketJudge);
-        }
 
         mSmartPixels = (Preference) findPreference(SMART_PIXELS);
         boolean mSmartPixelsSupported = res.getBoolean(
@@ -118,11 +109,6 @@ public class Miscellaneous extends DashboardFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
-
-                    boolean mPocketJudgeSupported = res.getBoolean(
-                            com.android.internal.R.bool.config_pocketModeSupported);
-                    if (!mPocketJudgeSupported)
-                        keys.add(POCKET_JUDGE);
 
                     boolean mSmartPixelsSupported = res.getBoolean(
                             com.android.internal.R.bool.config_supportSmartPixels);
