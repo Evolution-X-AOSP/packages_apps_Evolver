@@ -58,7 +58,6 @@ public class StatusBar extends DashboardFragment implements
 
     private static final String TAG = "StatusBar";
 
-    private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
@@ -69,7 +68,6 @@ public class StatusBar extends DashboardFragment implements
     private static final int BATTERY_STYLE_TEXT = 4;
     private static final int BATTERY_STYLE_HIDDEN = 5;
 
-    private Preference mCombinedSignalIcons;
     private PreferenceCategory mSignalCategory;
     private SwitchPreference mBatteryTextCharging;
     private SystemSettingListPreference mBatteryPercent;
@@ -123,22 +121,6 @@ public class StatusBar extends DashboardFragment implements
             mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
         }
 
-        // Get config_statusBarShowNumber from SystemUI
-        Context sysUiContext;
-        try {
-            sysUiContext = getActivity().createPackageContext(SYSTEMUI_PACKAGE,
-                    Context.CONTEXT_IGNORE_SECURITY | Context.CONTEXT_INCLUDE_CODE);
-        } catch (NameNotFoundException e) {
-            // Nothing to do, If SystemUI was not found you have bigger issues :)
-            sysUiContext = getActivity();
-        }
-        Resources sysUiRes = sysUiContext.getResources();
-        final int resId = sysUiRes.getIdentifier("config_statusBarShowNumber", "bool", SYSTEMUI_PACKAGE);
-        final boolean isDefaultEnabled = sysUiRes.getBoolean(resId);
-
-        mCombinedSignalIcons = findPreference("persist.sys.flags.combined_signal_icons");
-        mCombinedSignalIcons.setOnPreferenceChangeListener(this);
-
         mSignalCategory = (PreferenceCategory) findPreference(STATUS_BAR_SIGNAL_CATEGORY);
         if (EvolutionUtils.isWifiOnly(mContext)) {
             prefScreen.removePreference(mSignalCategory);
@@ -163,11 +145,6 @@ public class StatusBar extends DashboardFragment implements
                     Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
             mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
                     (batterystyle != BATTERY_STYLE_TEXT && value != 2));
-            return true;
-        } else if (preference == mCombinedSignalIcons) {
-            boolean value = (Boolean) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
-                Settings.Secure.ENABLE_COMBINED_SIGNAL_ICONS, value ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
