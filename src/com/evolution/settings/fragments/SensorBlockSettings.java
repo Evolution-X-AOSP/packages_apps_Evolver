@@ -52,7 +52,6 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.widget.FooterPreference;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.preference.AppListPreference;
 import com.evolution.settings.preference.PackageListAdapter;
 import com.evolution.settings.preference.PackageListAdapter.PackageItem;
 
@@ -65,9 +64,9 @@ import java.util.Map;
 public class SensorBlockSettings extends DashboardFragment implements
         Preference.OnPreferenceClickListener {
 
-    private static final int DIALOG_BLOCKED_APPS = 1;
-
     private static final String TAG = "SensorBlockSettings";
+
+    private static final int DIALOG_BLOCKED_APPS = 1;
     private static final String SENSOR_BLOCK = "sensor_block";
     private static final String SENSOR_BLOCK_FOOTER = "sensor_block_footer";
 
@@ -124,8 +123,9 @@ public class SensorBlockSettings extends DashboardFragment implements
         final Dialog dialog;
         final ListView list = new ListView(getActivity());
         list.setAdapter(mPackageAdapter);
+        list.setDivider(null);
 
-        builder.setTitle(R.string.profile_choose_app);
+        builder.setTitle(R.string.choose_app);
         builder.setView(list);
         dialog = builder.create();
 
@@ -142,14 +142,6 @@ public class SensorBlockSettings extends DashboardFragment implements
                 });
         }
         return dialog;
-    }
-
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SENSOR_BLOCK, 0, UserHandle.USER_CURRENT);
-        Settings.System.putString(resolver,
-                Settings.System.SENSOR_BLOCKED_APP, null);
     }
 
     /**
@@ -217,8 +209,8 @@ public class SensorBlockSettings extends DashboardFragment implements
             showDialog(DIALOG_BLOCKED_APPS);
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.dialog_delete_title)
-                    .setMessage(R.string.dialog_delete_message)
+                    .setTitle(R.string.delete)
+                    .setMessage(R.string.delete_message)
                     .setIconAttribute(android.R.attr.alertDialogIcon)
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
@@ -250,7 +242,7 @@ public class SensorBlockSettings extends DashboardFragment implements
         PackageInfo info = mPackageManager.getPackageInfo(pkg.name,
                 PackageManager.GET_META_DATA);
         Preference pref =
-                new AppListPreference(getActivity());
+                new Preference(getActivity());
 
         pref.setKey(pkg.name);
         pref.setTitle(info.applicationInfo.loadLabel(mPackageManager));
@@ -300,9 +292,7 @@ public class SensorBlockSettings extends DashboardFragment implements
     }
 
     private void savePackageList(boolean preferencesUpdated, Map<String,Package> map) {
-        String setting = map == mBlockedPackages
-                ? Settings.System.SENSOR_BLOCKED_APP
-                : Settings.System.SENSOR_BLOCKED_APP_DUMMY;
+        String setting = map == mBlockedPackages ? Settings.System.SENSOR_BLOCKED_APP : Settings.System.SENSOR_BLOCKED_APP_DUMMY;
 
         List<String> settings = new ArrayList<String>();
         for (Package app : map.values()) {

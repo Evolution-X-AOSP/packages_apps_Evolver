@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2023 Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/island_notification_title">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="island_notification_intro"
+        android:title="@string/island_notification_intro_title" />
+
+    <com.evolution.settings.preference.SystemSettingMainSwitchPreference
+        android:key="island_notification"
+        android:title="@string/island_notification_title"
+        android:summary="@string/island_notification_summary"
+        android:defaultValue="true" />
+
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="island_notification_now_playing"
+        android:title="@string/island_notification_now_playing_title"
+        android:summary="@string/island_notification_now_playing_summary"
+        android:defaultValue="true" />
+
+</PreferenceScreen>

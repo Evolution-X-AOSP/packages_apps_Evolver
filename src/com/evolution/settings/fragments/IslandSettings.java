@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2022 The Project-Xtended
+ * Copyright (C) 2017 AospExtended ROM
  *               2023 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,73 +16,48 @@
  */
 package com.evolution.settings.fragments;
 
-import android.app.Activity;
-import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.database.ContentObserver;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.ParcelFileDescriptor;
-import android.os.SystemProperties;
-import android.os.UserHandle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.text.TextUtils;
-import android.view.View;
 
 import androidx.preference.ListPreference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.evolution.EvolutionUtils;
-
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import java.io.FileDescriptor;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @SearchIndexable
-public class Udfps extends DashboardFragment implements
+public class IslandSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "Udfps";
+    private static final String TAG = "IslandSettings";
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.evolution_settings_udfps;
+        return R.xml.evolution_settings_island;
     }
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        Resources resources = getResources();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
         return false;
     }
 
@@ -97,5 +72,5 @@ public class Udfps extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_udfps);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_island);
 }

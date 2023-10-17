@@ -12,6 +12,7 @@
         android:key="qs_layout_category"
         android:title="@string/qs_layout_category_title">
 
+        <!--
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="qs_panel_style"
             android:title="@string/qs_styles_title"
@@ -19,6 +20,7 @@
             android:entryValues="@array/qs_styles_values"
             android:summary="%s"
             android:defaultValue="0" />
+        -->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
@@ -59,6 +61,7 @@
 
     </PreferenceCategory>
 
+    <!--
     <PreferenceCategory
         android:title="@string/qs_header_category_title">
 
@@ -70,7 +73,6 @@
             android:max="75"
             android:min="0" />
 
-        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference 
             android:key="show_qs_clock"
             android:title="@string/qs_clock_title"
@@ -92,9 +94,9 @@
             android:title="@string/qs_date_title"
             android:summary="@string/qs_date_summary"
             android:defaultValue="true" />
-        -->
 
     </PreferenceCategory>
+    -->
 
     <PreferenceCategory
         android:title="@string/battery_title">
@@ -134,34 +136,32 @@
             android:defaultValue="false" />
         -->
 
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="secure_lockscreen_qs_disabled"
             android:title="@string/disable_qs_title"
             android:summary="@string/disable_qs_summary"
-            android:defaultValue="false"
-            android:disableDependentsState="true" />
+            android:defaultValue="false" />
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="qstile_requires_unlocking"
             android:title="@string/qstile_requires_unlocking_title"
             android:summary="@string/qstile_requires_unlocking_summary"
-            android:dependency="secure_lockscreen_qs_disabled"
             android:defaultValue="true" />
 
-        <ListPreference
-            android:key="status_bar_quick_qs_pulldown"
-            android:title="@string/status_bar_quick_qs_pulldown"
-            android:entries="@array/quick_pulldown_entries"
-            android:entryValues="@array/quick_pulldown_values"
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="qs_quick_pulldown"
+            android:title="@string/status_bar_quick_qs_pulldown_title"
+            android:entries="@array/status_bar_quick_qs_pulldown_entries"
+            android:entryValues="@array/status_bar_quick_qs_pulldown_values"
             android:defaultValue="0" />
 
     </PreferenceCategory>
 
+    <!-- Brightness slider -->
     <PreferenceCategory
         android:key="quick_settings_brighness_category"
         android:title="@string/qs_show_brightness_slider_title">
 
-        <!-- Brightness slider -->
         <Preference
             android:key="android.theme.customization.brightness_slider"
             android:title="@string/theme_customization_brightness_slider_title"
@@ -193,28 +193,27 @@
     <PreferenceCategory
         android:title="@string/qs_tile_animation_title">
 
-        <com.evolution.settings.preference.SecureSettingIntListPreference
-            android:key="quick_settings_tiles_anim_style"
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="qs_tile_animation_style"
             android:title="@string/qs_tile_animation_style_title"
             android:entries="@array/qs_tile_animation_style_entries"
             android:entryValues="@array/qs_tile_animation_style_values"
-            android:summary="%s"
             android:defaultValue="0" />
 
-        <com.evolution.settings.preference.SecureSettingIntListPreference
-            android:key="quick_settings_tiles_anim_duration"
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="qs_tile_animation_duration"
             android:title="@string/qs_tile_animation_duration_title"
-            android:entries="@array/qs_tile_animation_duration_entries"
-            android:entryValues="@array/qs_tile_animation_duration_values"
-            android:summary="%s"
-            android:defaultValue="2000" />
+            android:defaultValue="1"
+            settings:interval="1"
+            settings:units="@string/unit_seconds"
+            android:max="5"
+            android:min="1" />
 
-        <com.evolution.settings.preference.SecureSettingIntListPreference
-            android:key="quick_settings_tiles_anim_interpolator"
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="qs_tile_animation_interpolator"
             android:title="@string/qs_tile_animation_interpolator_title"
             android:entries="@array/qs_tile_animation_interpolator_entries"
             android:entryValues="@array/qs_tile_animation_interpolator_values"
-            android:summary="%s"
             android:defaultValue="0" />
 
     </PreferenceCategory>
@@ -222,13 +221,13 @@
     <PreferenceCategory
         android:title="@string/qs_footer_category">
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_text_show"
             android:title="@string/qs_footer_text_title"
             android:summary="@string/qs_footer_text_summary"
             android:defaultValue="false"/>
 
-        <!-- QS footer text string -->
         <com.evolution.settings.preference.SystemSettingEditTextPreference
             android:key="qs_footer_text_string"
             android:title="@string/qs_footer_text_string_title"
@@ -236,19 +235,20 @@
             android:dependency="qs_footer_text_show"
             android:defaultValue="#KeepEvolving" />
 
-        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true" />
+        -->
 
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="qs_show_data_usage"
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_footer_data_usage"
             android:title="@string/qs_show_data_usage_title"
             android:summary="@string/qs_show_data_usage_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_show_user"
             android:title="@string/qs_footer_users_icon_title"
@@ -278,7 +278,6 @@
 
     </PreferenceCategory>
 
-    <!--
     <PreferenceCategory
         android:title="@string/notification_material_dismiss_title">
 
@@ -288,6 +287,7 @@
             android:summary="@string/notification_material_dismiss_summary"
             android:defaultValue="false" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="notification_material_dismiss_style"
             android:title="@string/notification_material_dismiss_style_title"
@@ -303,8 +303,8 @@
             android:defaultValue="0"
             android:max="4"
             settings:min="0" />
+        -->
 
     </PreferenceCategory>
-    -->
 
 </PreferenceScreen>

@@ -40,18 +40,32 @@
         <item>2</item>
     </string-array>
 
-    <!-- Quick QS pulldown -->
-    <string-array name="quick_pulldown_entries">
-        <item>@string/quick_pulldown_none</item>
-        <item>@string/quick_pulldown_right</item>
-        <item>@string/quick_pulldown_left</item>
-        <item>@string/quick_pulldown_always</item>
+    <!-- Status bar - Quick pulldown -->
+    <string-array name="status_bar_quick_qs_pulldown_entries" translatable="false">
+        <item>@string/status_bar_quick_qs_pulldown_off</item>
+        <item>@string/status_bar_quick_qs_pulldown_right</item>
+        <item>@string/status_bar_quick_qs_pulldown_left</item>
+        <item>@string/status_bar_quick_qs_pulldown_always</item>
     </string-array>
 
-    <string-array name="quick_pulldown_values" translatable="false">
+    <string-array name="status_bar_quick_qs_pulldown_entries_rtl" translatable="false">
+        <item>@string/status_bar_quick_qs_pulldown_off</item>
+        <item>@string/status_bar_quick_qs_pulldown_left</item>
+        <item>@string/status_bar_quick_qs_pulldown_right</item>
+        <item>@string/status_bar_quick_qs_pulldown_always</item>
+    </string-array>
+
+    <string-array name="status_bar_quick_qs_pulldown_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="status_bar_quick_qs_pulldown_values_rtl" translatable="false">
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
         <item>3</item>
     </string-array>
 
@@ -217,19 +231,6 @@
         <item>2</item>
     </string-array>
 
-    <!-- Tiles animation duration -->
-    <string-array name="qs_tile_animation_duration_entries" translatable="false">
-        <item>@string/qs_tile_animation_duration_low</item>
-        <item>@string/qs_tile_animation_duration_default</item>
-        <item>@string/qs_tile_animation_duration_fast</item>
-    </string-array>
-
-    <string-array name="qs_tile_animation_duration_values" translatable="false">
-        <item>2500</item>
-        <item>2000</item>
-        <item>1500</item>
-    </string-array>
-
     <!-- QS Tiles animation interpolator -->
     <string-array name="qs_tile_animation_interpolator_entries" translatable="false">
         <item>@string/qs_tile_animation_interpolator_linearInterpolator</item>
@@ -253,7 +254,7 @@
         <item>7</item>
     </string-array>
 
-    <!-- Smart pulldown -->
+    <!-- Status bar - Smart pulldown-->
     <string-array name="smart_pulldown_entries" translatable="false">
         <item>@string/smart_pulldown_off</item>
         <item>@string/smart_pulldown_dismissable</item>
@@ -320,33 +321,17 @@
         <item>@string/hardware_keys_action_app_switch</item>
         <item>@string/hardware_keys_action_search</item>
         <item>@string/hardware_keys_action_voice_search</item>
+        <item>@string/hardware_keys_action_in_app_search</item>
         <item>@string/hardware_keys_action_launch_camera</item>
         <item>@string/hardware_keys_action_sleep</item>
-        <item>@string/hardware_keys_action_split_screen</item>
+        <item>@string/hardware_keys_action_last_app</item>
         <item>@string/hardware_keys_action_close_app</item>
         <item>@string/hardware_keys_action_torch</item>
-        <item>@string/hardware_keys_action_screenshot</item>
         <item>@string/hardware_keys_action_volume_panel</item>
         <item>@string/hardware_keys_action_clear_all_notifications</item>
         <item>@string/hardware_keys_action_notifications_panel</item>
-        <item>@string/hardware_keys_action_toggle_qs_panel</item>
+        <item>@string/hardware_keys_action_expand_qs_panel</item>
         <item>@string/hardware_keys_action_ringer_modes</item>
-    </string-array>
-
-    <!-- Hardware key rebinding for Go enabled devices -->
-    <string-array name="hardware_keys_action_entries_go" translatable="false">
-        <item>@string/hardware_keys_action_nothing</item>
-        <item>@string/hardware_keys_action_menu</item>
-        <item>@string/hardware_keys_action_app_switch</item>
-        <item>@string/hardware_keys_action_search</item>
-        <item>@string/hardware_keys_action_voice_search</item>
-        <item>@string/hardware_keys_action_launch_camera</item>
-        <item>@string/hardware_keys_action_sleep</item>
-        <!--
-        split-screen is not supported on Android Go devices
-        <item>@string/hardware_keys_action_split_screen</item>
-        -->
-        <item>@*android:string/global_action_screenshot</item>
     </string-array>
 
     <string-array name="hardware_keys_action_values" translatable="false">
@@ -366,51 +351,6 @@
         <item>13</item>
         <item>14</item>
         <item>15</item>
-    </string-array>
-
-    <string-array name="hardware_keys_action_values_go" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <!--
-        split-screen is not supported on Android Go devices
-        <item>7</item>
-        -->
-        <item>8</item>
-    </string-array>
-
-    <!-- Blink flashlight for incoming calls -->
-    <string-array name="flashlight_on_call_entries">
-        <item>@string/flashlight_on_call_disabled</item>
-        <item>@string/flashlight_on_call_ringer</item>
-        <item>@string/flashlight_on_call_no_ringer</item>
-        <item>@string/flashlight_on_call_silent</item>
-        <item>@string/flashlight_on_call_always</item>
-    </string-array>
-
-    <string-array name="flashlight_on_call_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
-    <!-- Torch Power button gestures -->
-    <string-array name="torch_power_button_gesture_entries">
-        <item>@string/torch_power_button_gesture_none</item>
-        <item>@string/torch_power_button_gesture_dt</item>
-        <item>@string/torch_power_button_gesture_lp</item>
-    </string-array>
-
-    <string-array name="torch_power_button_gesture_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
     </string-array>
 
     <!-- HW Keys customization -->
@@ -591,10 +531,9 @@
     <!-- Status bar logo style -->
     <string-array name="status_bar_logo_style_entries" translatable="false">
         <item>@string/status_bar_logo_style_evolution</item>
+        <item>@string/status_bar_logo_style_android</item>
         <item>@string/status_bar_logo_style_adidas</item>
-        <item>@string/status_bar_logo_style_airjordan</item>
         <item>@string/status_bar_logo_style_alien</item>
-        <item>@string/status_bar_logo_style_amogus</item>
         <item>@string/status_bar_logo_style_apple</item>
         <item>@string/status_bar_logo_style_avengers</item>
         <item>@string/status_bar_logo_style_batman</item>
@@ -603,25 +542,28 @@
         <item>@string/status_bar_logo_style_biohazard</item>
         <item>@string/status_bar_logo_style_blackberry</item>
         <item>@string/status_bar_logo_style_cannabis</item>
-        <item>@string/status_bar_logo_style_captain_america</item>
+        <item>@string/status_bar_logo_style_emoticon_cool</item>
+        <item>@string/status_bar_logo_style_emoticon_devil</item>
         <item>@string/status_bar_logo_style_fire</item>
-        <item>@string/status_bar_logo_style_flash</item>
-        <item>@string/status_bar_logo_style_ghost</item>
         <item>@string/status_bar_logo_style_heart</item>
-        <item>@string/status_bar_logo_style_ironman</item>
-        <item>@string/status_bar_logo_style_mint</item>
         <item>@string/status_bar_logo_style_nike</item>
-        <item>@string/status_bar_logo_style_ninja</item>
-        <item>@string/status_bar_logo_style_pac_man</item>
+        <item>@string/status_bar_logo_style_pacman</item>
         <item>@string/status_bar_logo_style_puma</item>
-        <item>@string/status_bar_logo_style_robot</item>
         <item>@string/status_bar_logo_style_rog</item>
         <item>@string/status_bar_logo_style_spiderman</item>
         <item>@string/status_bar_logo_style_superman</item>
-        <item>@string/status_bar_logo_style_tux</item>
-        <item>@string/status_bar_logo_style_ubuntu</item>
         <item>@string/status_bar_logo_style_windows</item>
         <item>@string/status_bar_logo_style_xbox</item>
+        <item>@string/status_bar_logo_style_ghost</item>
+        <item>@string/status_bar_logo_style_ninja</item>
+        <item>@string/status_bar_logo_style_robot</item>
+        <item>@string/status_bar_logo_style_ironman</item>
+        <item>@string/status_bar_logo_style_captain_america</item>
+        <item>@string/status_bar_logo_style_flash</item>
+        <item>@string/status_bar_logo_style_tux</item>
+        <item>@string/status_bar_logo_style_ubuntu</item>
+        <item>@string/status_bar_logo_style_mint</item>
+        <item>@string/status_bar_logo_style_amogus</item>
     </string-array>
 
     <string-array name="status_bar_logo_style_values" translatable="false">
@@ -657,18 +599,20 @@
         <item>29</item>
         <item>30</item>
         <item>31</item>
+        <item>32</item>
+        <item>33</item>
     </string-array>
 
     <!-- Status bar - Battery -->
     <string-array name="status_bar_battery_style_entries" translatable="false">
-        <item>@string/status_bar_battery_style_icon_portrait</item> 
+        <item>@string/status_bar_battery_style_icon_portrait</item>
+        <item>@string/status_bar_battery_style_icon_rlandscape</item>
+        <item>@string/status_bar_battery_style_icon_landscape</item>
         <item>@string/status_bar_battery_style_circle</item>
         <item>@string/status_bar_battery_style_dotted_circle</item>
         <item>@string/status_bar_battery_style_filled_circle</item>
         <item>@string/status_bar_battery_style_big_circle</item>
         <item>@string/status_bar_battery_style_big_dotted_circle</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape</item> 
-        <item>@string/status_bar_battery_style_icon_landscape</item> 
         <item>@string/status_bar_battery_style_icon_landscape_buddy</item>
         <item>@string/status_bar_battery_style_icon_landscape_line</item>
         <item>@string/status_bar_battery_style_icon_landscape_musku</item>
@@ -687,13 +631,13 @@
 
     <string-array name="status_bar_battery_style_values" translatable="false">
         <item>0</item>
+        <item>6</item>
+        <item>7</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>8</item>
         <item>9</item>
-        <item>6</item>
-        <item>7</item>
         <item>10</item>
         <item>11</item>
         <item>12</item>
@@ -713,26 +657,28 @@
     <string-array name="status_bar_battery_percent_entries">
         <item>@string/status_bar_battery_percent_hidden</item>
         <item>@string/status_bar_battery_percent_text_inside</item>
-        <item>@string/status_bar_battery_percent_text_next</item>
+        <item>@string/status_bar_battery_percent_text_next_right</item>
+        <item>@string/status_bar_battery_percent_text_next_left</item>
     </string-array>
 
     <string-array name="status_bar_battery_percent_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <!-- QS battery style  -->
     <string-array name="qs_battery_style_entries" translatable="false">
         <item>@string/qs_use_status_bar_battery_style</item>
         <item>@string/status_bar_battery_style_icon_portrait</item>
+        <item>@string/status_bar_battery_style_icon_rlandscape</item>
+        <item>@string/status_bar_battery_style_icon_landscape</item>
         <item>@string/status_bar_battery_style_circle</item>
         <item>@string/status_bar_battery_style_dotted_circle</item>
         <item>@string/status_bar_battery_style_filled_circle</item>
         <item>@string/status_bar_battery_style_big_circle</item>
         <item>@string/status_bar_battery_style_big_dotted_circle</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape</item>
-        <item>@string/status_bar_battery_style_icon_landscape</item>
         <item>@string/status_bar_battery_style_icon_landscape_buddy</item>
         <item>@string/status_bar_battery_style_icon_landscape_line</item>
         <item>@string/status_bar_battery_style_icon_landscape_musku</item>
@@ -752,13 +698,13 @@
     <string-array name="qs_battery_style_values" translatable="false">
         <item>-1</item>
         <item>0</item>
+        <item>6</item>
+        <item>7</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>8</item>
         <item>9</item>
-        <item>6</item>
-        <item>7</item>
         <item>10</item>
         <item>11</item>
         <item>12</item>
@@ -773,6 +719,17 @@
         <item>21</item>
         <item>4</item>
         <item>5</item>
+    </string-array>
+
+    <!-- QS battery location  -->
+    <string-array name="qs_battery_location_entries" translatable="false">
+        <item>@string/qs_battery_location_qs_panel</item>
+        <item>@string/qs_battery_location_qs_statusbar</item>
+    </string-array>
+
+    <string-array name="qs_battery_location_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
     </string-array>
 
     <!-- Power menu Animations  -->
@@ -826,6 +783,7 @@
         <item>@string/theme_style_fruit_salad</item>
         <item>@string/theme_style_muted</item>
         <item>@string/theme_style_content</item>
+        <item>@string/theme_style_monochromatic</item>
     </string-array>
 
     <string-array name="theme_style_values" translatable="false">
@@ -837,6 +795,7 @@
         <item>FRUIT_SALAD</item>
         <item>MUTED</item>
         <item>CONTENT</item>
+        <item>MONOCHROMATIC</item>
     </string-array>
 
     <!-- Monet color sources  -->
@@ -852,27 +811,6 @@
         <item>home_wallpaper</item>
         <item>lock_wallpaper</item>
         <item>preset</item>
-    </string-array>
-
-    <!-- Lockscreen bottom shortcuts -->
-    <string-array name="lockscreen_shortcut_entries">
-        <item>@string/lockscreen_shortcut_wallet</item>
-        <item>@string/lockscreen_shortcut_home</item>
-        <item>@string/lockscreen_shortcut_flashlight</item>
-        <item>@string/lockscreen_shortcut_qr</item>
-        <item>@string/lockscreen_shortcut_camera</item>
-        <item>@string/lockscreen_shortcut_remote</item>
-        <item>@string/lockscreen_shortcut_none</item>
-    </string-array>
-
-    <string-array name="lockscreen_shortcut_values" translatable="false">
-        <item>wallet</item>
-        <item>home</item>
-        <item>flashlight</item>
-        <item>qr</item>
-        <item>camera</item>
-        <item>remote</item>
-        <item>none</item>
     </string-array>
     
    <string-array name="clock_use_single_line_entries" translatable="false">
@@ -912,5 +850,42 @@
         <item>11</item>
         <item>7</item>
         <item>5</item>
+    </string-array>
+
+    <!-- Network Traffic -->
+    <string-array name="network_traffic_location_entries" translatable="false">
+        <item>@string/network_traffic_location_disable</item>
+        <item>@string/network_traffic_location_statusbar</item>
+        <!--<item>@string/network_traffic_location_quick_statusbar</item>-->
+    </string-array>
+
+    <string-array name="network_traffic_location_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <!--<item>2</item>-->
+    </string-array>
+
+    <string-array name="network_traffic_mode_entries" translatable="false">
+        <item>@string/network_traffic_mode_all</item>
+        <item>@string/network_traffic_mode_up</item>
+        <item>@string/network_traffic_mode_down</item>
+    </string-array>
+
+    <string-array name="network_traffic_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="network_traffic_units_entries" translatable="false">
+        <item>@string/network_traffic_units_bits</item>
+        <item>@string/network_traffic_units_bytes</item>
+    </string-array>
+
+    <string-array name="network_traffic_units_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 </resources>

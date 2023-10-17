@@ -24,6 +24,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.dashboard.DashboardFragment;
@@ -32,7 +33,6 @@ import com.android.settings.R;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.CustomSeekBarPreference;
-import com.evolution.settings.preference.SwitchPreference;
 import com.evolution.settings.preference.colorpicker.ColorPickerPreference;
 
 import java.lang.CharSequence;

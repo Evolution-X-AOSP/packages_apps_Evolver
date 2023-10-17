@@ -15,16 +15,6 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
-    <!-- Parallel Space -->
-    <Preference
-        android:key="parallel_space"
-        android:title="@string/laboratory_parallel_space_title"
-        android:summary="@string/laboratory_parallel_space_summary">
-        <intent
-            android:targetPackage="ink.kscope.parallelspace"
-            android:targetClass="ink.kscope.parallelspace.MainActivity" />
-    </Preference>
-
     <!-- Game Space -->
     <Preference
         android:key="game_settings"
@@ -39,15 +29,17 @@
     <Preference
         android:key="smart_pixels"
         android:title="@string/smart_pixels_title" 
-        android:summary="@string/smart_pixels_summary" 
+        android:summary="@string/smart_pixels_summary"
         android:fragment="com.evolution.settings.fragments.SmartPixels" />
 
     <!-- Launch music player when headset is connected -->
+    <!--
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="headset_connect_player"
         android:title="@string/headset_connect_player_title"
         android:summary="@string/headset_connect_player_summary"
         android:defaultValue="false" />
+    -->
 
     <PreferenceCategory
         android:key="vibration_category"
@@ -65,17 +57,8 @@
             android:summary="@string/quick_settings_vibrate_summary"
             android:defaultValue="false" />
 
-        <com.evolution.settings.preference.SecureSettingSeekBarPreference
-            android:key="quick_settings_vibrate_duration"
-            android:title="@string/quick_settings_vibrate_duration_title"
-            android:summary="@string/quick_settings_vibrate_duration_summary"
-            android:max="200"
-            android:min="10"
-            android:defaultValue="45"
-            android:dependency="quick_settings_vibrate" />
-
         <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="volume_panel_haptic_feedback"
+            android:key="volume_slider_haptic"
             android:title="@string/volume_panel_haptic_feedback_title"
             android:summary="@string/volume_panel_haptic_feedback_summary"
             android:defaultValue="false" />
@@ -138,7 +121,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/dev_options_title" />
+        android:title="@string/dev_options_title">
 
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="window_ignore_secure"
@@ -146,17 +129,25 @@
             android:summary="@string/ignore_window_secure_summary"
             android:defaultValue="false" />
 
+        <com.evolution.settings.preference.GlobalSettingSwitchPreference
+            android:key="pm_downgrade_allowed"
+            android:title="@string/app_downgrade_title"
+            android:summary="@string/app_downgrade_summary"
+            android:defaultValue="false"/>
+
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="show_cpu_overlay"
             android:title="@string/show_cpu_info"
             android:summary="@string/show_cpu_info_summary" 
             android:defaultValue="false" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="toast_icon"
             android:title="@string/toast_icon_title"
             android:summary="@string/toast_icon_summary"
             android:defaultValue="true" />
+        -->
 
         <!-- Sensor Block -->
         <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
@@ -167,6 +158,7 @@
             android:fragment="com.evolution.settings.fragments.SensorBlockSettings"
             settings:observe="true" />
 
+        <!--
         <Preference
             android:key="wakelock_blocker"
             android:title="@string/wakelock_blocker_title"
@@ -178,11 +170,14 @@
             android:title="@string/alarm_blocker_title"
             android:summary="@string/alarm_blocker_summary"
             android:fragment="com.evolution.settings.fragments.AlarmBlocker" />
+        -->
 
         <Preference
             android:key="default_usb_configuration"
             android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
             android:title="@string/usb_default_config_title"
             android:summary="@string/usb_default_config_summary" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
