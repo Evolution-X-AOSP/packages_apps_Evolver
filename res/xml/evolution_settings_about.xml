@@ -9,14 +9,11 @@
     android:title="@string/evolution_about_title">
 
     <!-- Evolution X logo -->
-    <PreferenceScreen
+    <com.android.settingslib.widget.LayoutPreference
         android:key="evolution_logo"
+        android:layout="@layout/evolution_logo"
         android:clickable="true"
-        android:layout="@layout/evolution_logo">
-        <intent
-            android:targetPackage="org.evolution.easteregg"
-            android:targetClass="org.evolution.easteregg.EasterEgg" />
-    </PreferenceScreen>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EvolutionXLogoPreferenceController"/>
 
     <!-- About Evolution X -->
     <PreferenceCategory
