@@ -22,11 +22,13 @@
         android:summary="@string/status_bar_brightness_control_summary"
         android:defaultValue="false" />
 
+    <!--
     <ListPreference
         android:key="torch_power_button_gesture"
         android:title="@string/torch_power_button_gesture_title"
         android:entries="@array/torch_power_button_gesture_entries"
         android:entryValues="@array/torch_power_button_gesture_values" />
+    -->
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="click_partial_screenshot"
@@ -34,16 +36,18 @@
         android:summary="@string/click_partial_screenshot_summary"
         android:defaultValue="false" />
 
+    <!--
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"
-        android:title="@string/double_tap_to_sleep_lockscreen_title"
-        android:summary="@string/double_tap_to_sleep_lockscreen_summary"
+        android:title="@string/lockscreen_doubletap_sleep_title"
+        android:summary="@string/lockscreen_doubletap_sleep_summary"
         android:defaultValue="true" />
+    -->
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_gesture"
-        android:title="@string/double_tap_to_sleep_title"
-        android:summary="@string/double_tap_to_sleep_summary"
+        android:title="@string/status_bar_double_tap_to_sleep_title"
+        android:summary="@string/status_bar_double_tap_to_sleep_summary"
         android:defaultValue="true" />
 
 </PreferenceScreen>

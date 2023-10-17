@@ -40,18 +40,32 @@
         <item>2</item>
     </string-array>
 
-    <!-- Quick QS pulldown -->
-    <string-array name="quick_pulldown_entries">
-        <item>@string/quick_pulldown_none</item>
-        <item>@string/quick_pulldown_right</item>
-        <item>@string/quick_pulldown_left</item>
-        <item>@string/quick_pulldown_always</item>
+    <!-- Status bar - Quick pulldown -->
+    <string-array name="status_bar_quick_qs_pulldown_entries" translatable="false">
+        <item>@string/status_bar_quick_qs_pulldown_off</item>
+        <item>@string/status_bar_quick_qs_pulldown_right</item>
+        <item>@string/status_bar_quick_qs_pulldown_left</item>
+        <item>@string/status_bar_quick_qs_pulldown_always</item>
     </string-array>
 
-    <string-array name="quick_pulldown_values" translatable="false">
+    <string-array name="status_bar_quick_qs_pulldown_entries_rtl" translatable="false">
+        <item>@string/status_bar_quick_qs_pulldown_off</item>
+        <item>@string/status_bar_quick_qs_pulldown_left</item>
+        <item>@string/status_bar_quick_qs_pulldown_right</item>
+        <item>@string/status_bar_quick_qs_pulldown_always</item>
+    </string-array>
+
+    <string-array name="status_bar_quick_qs_pulldown_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="status_bar_quick_qs_pulldown_values_rtl" translatable="false">
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
         <item>3</item>
     </string-array>
 
@@ -217,19 +231,6 @@
         <item>2</item>
     </string-array>
 
-    <!-- Tiles animation duration -->
-    <string-array name="qs_tile_animation_duration_entries" translatable="false">
-        <item>@string/qs_tile_animation_duration_low</item>
-        <item>@string/qs_tile_animation_duration_default</item>
-        <item>@string/qs_tile_animation_duration_fast</item>
-    </string-array>
-
-    <string-array name="qs_tile_animation_duration_values" translatable="false">
-        <item>2500</item>
-        <item>2000</item>
-        <item>1500</item>
-    </string-array>
-
     <!-- QS Tiles animation interpolator -->
     <string-array name="qs_tile_animation_interpolator_entries" translatable="false">
         <item>@string/qs_tile_animation_interpolator_linearInterpolator</item>
@@ -253,7 +254,7 @@
         <item>7</item>
     </string-array>
 
-    <!-- Smart pulldown -->
+    <!-- Status bar - Smart pulldown-->
     <string-array name="smart_pulldown_entries" translatable="false">
         <item>@string/smart_pulldown_off</item>
         <item>@string/smart_pulldown_dismissable</item>
@@ -662,50 +663,22 @@
     <!-- Status bar - Battery -->
     <string-array name="status_bar_battery_style_entries" translatable="false">
         <item>@string/status_bar_battery_style_icon_portrait</item> 
+        <item>@string/status_bar_battery_style_icon_rlandscape</item> 
+        <item>@string/status_bar_battery_style_icon_landscape</item> 
         <item>@string/status_bar_battery_style_circle</item>
         <item>@string/status_bar_battery_style_dotted_circle</item>
         <item>@string/status_bar_battery_style_filled_circle</item>
-        <item>@string/status_bar_battery_style_big_circle</item>
-        <item>@string/status_bar_battery_style_big_dotted_circle</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape</item> 
-        <item>@string/status_bar_battery_style_icon_landscape</item> 
-        <item>@string/status_bar_battery_style_icon_landscape_buddy</item>
-        <item>@string/status_bar_battery_style_icon_landscape_line</item>
-        <item>@string/status_bar_battery_style_icon_landscape_musku</item>
-        <item>@string/status_bar_battery_style_icon_landscape_pill</item>
-        <item>@string/status_bar_battery_style_icon_landscape_signal</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape_style_a</item>
-        <item>@string/status_bar_battery_style_icon_landscape_style_a</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape_style_b</item>
-        <item>@string/status_bar_battery_style_icon_landscape_style_b</item>
-        <item>@string/status_bar_battery_style_icon_landscape_ios15</item>
-        <item>@string/status_bar_battery_style_icon_landscape_ios16</item>
-        <item>@string/status_bar_battery_style_icon_landscape_origami</item>
         <item>@string/status_bar_battery_style_text</item>
         <item>@string/status_bar_battery_style_hidden</item>
     </string-array>
 
     <string-array name="status_bar_battery_style_values" translatable="false">
         <item>0</item>
+        <item>6</item>
+        <item>7</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>8</item>
-        <item>9</item>
-        <item>6</item>
-        <item>7</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>21</item>
         <item>4</item>
         <item>5</item>
     </string-array>
@@ -713,38 +686,26 @@
     <string-array name="status_bar_battery_percent_entries">
         <item>@string/status_bar_battery_percent_hidden</item>
         <item>@string/status_bar_battery_percent_text_inside</item>
-        <item>@string/status_bar_battery_percent_text_next</item>
+        <item>@string/status_bar_battery_percent_text_next_right</item>
+        <item>@string/status_bar_battery_percent_text_next_left</item>
     </string-array>
 
     <string-array name="status_bar_battery_percent_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </string-array>
 
     <!-- QS battery style  -->
     <string-array name="qs_battery_style_entries" translatable="false">
         <item>@string/qs_use_status_bar_battery_style</item>
-        <item>@string/status_bar_battery_style_icon_portrait</item>
+        <item>@string/status_bar_battery_style_icon_portrait</item> 
+        <item>@string/status_bar_battery_style_icon_rlandscape</item> 
+        <item>@string/status_bar_battery_style_icon_landscape</item> 
         <item>@string/status_bar_battery_style_circle</item>
         <item>@string/status_bar_battery_style_dotted_circle</item>
         <item>@string/status_bar_battery_style_filled_circle</item>
-        <item>@string/status_bar_battery_style_big_circle</item>
-        <item>@string/status_bar_battery_style_big_dotted_circle</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape</item>
-        <item>@string/status_bar_battery_style_icon_landscape</item>
-        <item>@string/status_bar_battery_style_icon_landscape_buddy</item>
-        <item>@string/status_bar_battery_style_icon_landscape_line</item>
-        <item>@string/status_bar_battery_style_icon_landscape_musku</item>
-        <item>@string/status_bar_battery_style_icon_landscape_pill</item>
-        <item>@string/status_bar_battery_style_icon_landscape_signal</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape_style_a</item>
-        <item>@string/status_bar_battery_style_icon_landscape_style_a</item>
-        <item>@string/status_bar_battery_style_icon_rlandscape_style_b</item>
-        <item>@string/status_bar_battery_style_icon_landscape_style_b</item>
-        <item>@string/status_bar_battery_style_icon_landscape_ios15</item>
-        <item>@string/status_bar_battery_style_icon_landscape_ios16</item>
-        <item>@string/status_bar_battery_style_icon_landscape_origami</item>
         <item>@string/status_bar_battery_style_text</item>
         <item>@string/status_bar_battery_style_hidden</item>
     </string-array>
@@ -752,27 +713,24 @@
     <string-array name="qs_battery_style_values" translatable="false">
         <item>-1</item>
         <item>0</item>
+        <item>6</item>
+        <item>7</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>8</item>
-        <item>9</item>
-        <item>6</item>
-        <item>7</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
-        <item>21</item>
         <item>4</item>
         <item>5</item>
+    </string-array>
+
+    <!-- QS battery location  -->
+    <string-array name="qs_battery_location_entries" translatable="false">
+        <item>@string/qs_battery_location_qs_panel</item>
+        <item>@string/qs_battery_location_qs_statusbar</item>
+    </string-array>
+
+    <string-array name="qs_battery_location_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
     </string-array>
 
     <!-- Power menu Animations  -->
@@ -912,5 +870,42 @@
         <item>11</item>
         <item>7</item>
         <item>5</item>
+    </string-array>
+
+    <!-- Network Traffic -->
+    <string-array name="network_traffic_location_entries" translatable="false">
+        <item>@string/network_traffic_location_disable</item>
+        <item>@string/network_traffic_location_statusbar</item>
+        <!--<item>@string/network_traffic_location_quick_statusbar</item>-->
+    </string-array>
+
+    <string-array name="network_traffic_location_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <!--<item>2</item>-->
+    </string-array>
+
+    <string-array name="network_traffic_mode_entries" translatable="false">
+        <item>@string/network_traffic_mode_all</item>
+        <item>@string/network_traffic_mode_up</item>
+        <item>@string/network_traffic_mode_down</item>
+    </string-array>
+
+    <string-array name="network_traffic_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="network_traffic_units_entries" translatable="false">
+        <item>@string/network_traffic_units_bits</item>
+        <item>@string/network_traffic_units_bytes</item>
+    </string-array>
+
+    <string-array name="network_traffic_units_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 </resources>
