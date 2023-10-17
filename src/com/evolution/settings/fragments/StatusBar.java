@@ -45,7 +45,6 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.development.SystemPropPoker;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.fragments.Clock;
 import com.evolution.settings.preference.SystemSettingListPreference;
 import com.evolution.settings.utils.DeviceUtils;
 
@@ -58,23 +57,15 @@ public class StatusBar extends DashboardFragment implements
 
     private static final String TAG = "StatusBar";
 
-    private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
-    private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-    private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-    private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
+    private static final String SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SIGNAL_CATEGORY = "status_bar_signal_category";
-    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
 
-    private static final int BATTERY_STYLE_PORTRAIT = 0;
-    private static final int BATTERY_STYLE_TEXT = 4;
-    private static final int BATTERY_STYLE_HIDDEN = 5;
+    private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 3;
 
-    private Preference mCombinedSignalIcons;
+    private ListPreference mStatusBarBattery;
+    private ListPreference mStatusBarBatteryShowPercent;
     private PreferenceCategory mSignalCategory;
-    private SwitchPreference mBatteryTextCharging;
-    private SystemSettingListPreference mBatteryPercent;
-    private SystemSettingListPreference mBatteryStyle;
-    private SystemSettingListPreference mStatusBarClock;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -89,55 +80,22 @@ public class StatusBar extends DashboardFragment implements
         final Context mContext = getActivity().getApplicationContext();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        int batterystyle = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
-        int batterypercent = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
+        mStatusBarBatteryShowPercent =
+                (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
 
-        mBatteryStyle = (SystemSettingListPreference) findPreference(KEY_STATUS_BAR_BATTERY_STYLE);
-        mBatteryStyle.setOnPreferenceChangeListener(this);
+        int batteryShowPercent = Settings.System.getInt(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT, 0);
+        mStatusBarBatteryShowPercent.setValue(String.valueOf(batteryShowPercent));
+        mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
+        mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
 
-        mBatteryPercent = (SystemSettingListPreference) findPreference(KEY_STATUS_BAR_SHOW_BATTERY_PERCENT);
-        mBatteryPercent.setEnabled(
-                batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
-        mBatteryPercent.setOnPreferenceChangeListener(this);
-
-        mBatteryTextCharging = (SwitchPreference) findPreference(KEY_STATUS_BAR_BATTERY_TEXT_CHARGING);
-        mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
-                (batterystyle != BATTERY_STYLE_TEXT && batterypercent != 2));
-
-        mStatusBarClock =
-                (SystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
-
-        // Adjust status bar preferences for RTL
-        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-            if (DeviceUtils.hasCenteredCutout(mContext)) {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch_rtl);
-            } else {
-                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
-            }
-        } else if (DeviceUtils.hasCenteredCutout(mContext)) {
-            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
-            mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
-        }
-
-        // Get config_statusBarShowNumber from SystemUI
-        Context sysUiContext;
-        try {
-            sysUiContext = getActivity().createPackageContext(SYSTEMUI_PACKAGE,
-                    Context.CONTEXT_IGNORE_SECURITY | Context.CONTEXT_INCLUDE_CODE);
-        } catch (NameNotFoundException e) {
-            // Nothing to do, If SystemUI was not found you have bigger issues :)
-            sysUiContext = getActivity();
-        }
-        Resources sysUiRes = sysUiContext.getResources();
-        final int resId = sysUiRes.getIdentifier("config_statusBarShowNumber", "bool", SYSTEMUI_PACKAGE);
-        final boolean isDefaultEnabled = sysUiRes.getBoolean(resId);
-
-        mCombinedSignalIcons = findPreference("persist.sys.flags.combined_signal_icons");
-        mCombinedSignalIcons.setOnPreferenceChangeListener(this);
+        mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+         int batteryStyle = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
+        mStatusBarBattery.setValue(String.valueOf(batteryStyle));
+        mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+        enableStatusBarBatteryDependents(batteryStyle);
+        mStatusBarBattery.setOnPreferenceChangeListener(this);
 
         mSignalCategory = (PreferenceCategory) findPreference(STATUS_BAR_SIGNAL_CATEGORY);
         if (EvolutionUtils.isWifiOnly(mContext)) {
@@ -148,29 +106,32 @@ public class StatusBar extends DashboardFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mBatteryStyle) {
-            int value = Integer.parseInt((String) newValue);
-            int batterypercent = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
-            mBatteryPercent.setEnabled(
-                    value != BATTERY_STYLE_TEXT && value != BATTERY_STYLE_HIDDEN);
-            mBatteryTextCharging.setEnabled(value == BATTERY_STYLE_HIDDEN ||
-                    (value != BATTERY_STYLE_TEXT && batterypercent != 2));
+        if (preference == mStatusBarBatteryShowPercent) {
+            int batteryShowPercent = Integer.valueOf((String) newValue);
+            int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
+            Settings.System.putInt(
+                    resolver, Settings.System.SHOW_BATTERY_PERCENT, batteryShowPercent);
+            mStatusBarBatteryShowPercent.setSummary(
+                    mStatusBarBatteryShowPercent.getEntries()[index]);
             return true;
-        } else if (preference == mBatteryPercent) {
-            int value = Integer.parseInt((String) newValue);
-            int batterystyle = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
-            mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
-                    (batterystyle != BATTERY_STYLE_TEXT && value != 2));
-            return true;
-        } else if (preference == mCombinedSignalIcons) {
-            boolean value = (Boolean) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
-                Settings.Secure.ENABLE_COMBINED_SIGNAL_ICONS, value ? 1 : 0, UserHandle.USER_CURRENT);
+        } else if (preference == mStatusBarBattery) {
+            int batteryStyle = Integer.valueOf((String) newValue);
+            int index = mStatusBarBattery.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_BATTERY_STYLE, batteryStyle);
+            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
+            enableStatusBarBatteryDependents(batteryStyle);
             return true;
         }
         return false;
+    }
+
+    private void enableStatusBarBatteryDependents(int batteryIconStyle) {
+        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+            mStatusBarBatteryShowPercent.setEnabled(false);
+        } else {
+            mStatusBarBatteryShowPercent.setEnabled(true);
+        }
     }
 
     @Override

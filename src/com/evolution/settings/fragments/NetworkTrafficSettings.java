@@ -27,6 +27,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.View;
 
+import androidx.preference.DropDownPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -53,8 +54,7 @@ public class NetworkTrafficSettings extends DashboardFragment implements
 
     private static final String TAG = "NetworkTrafficSettings";
 
-    private SystemSettingSwitchPreference mThreshold;
-    private SystemSettingMainSwitchPreference mNetMonitor;
+    private DropDownPreference mNetTrafficUnitType;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -67,35 +67,20 @@ public class NetworkTrafficSettings extends DashboardFragment implements
 
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
-        mNetMonitor = (SystemSettingMainSwitchPreference) findPreference("network_traffic_state");
-        mNetMonitor.setChecked(isNetMonitorEnabled);
-        mNetMonitor.setOnPreferenceChangeListener(this);
-
-        boolean isThresholdEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 0, UserHandle.USER_CURRENT) == 1;
-        mThreshold = (SystemSettingSwitchPreference) findPreference("network_traffic_autohide_threshold");
-        mThreshold.setChecked(isThresholdEnabled);
-        mThreshold.setOnPreferenceChangeListener(this);
+        mNetTrafficUnitType = findPreference(Settings.System.NETWORK_TRAFFIC_UNIT_TYPE);
+        mNetTrafficUnitType.setOnPreferenceChangeListener(this);
+        int units = Settings.System.getInt(resolver,
+                Settings.System.NETWORK_TRAFFIC_UNIT_TYPE, /* Bytes */ 0);
+        mNetTrafficUnitType.setValue(String.valueOf(units));
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mNetMonitor) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
-            mNetMonitor.setChecked(value);
-            mThreshold.setChecked(value);
-            return true;
-        } else if (preference == mThreshold) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, value ? 1 : 0,
-                    UserHandle.USER_CURRENT);
+        if (preference == mNetTrafficUnitType) {
+            int unitType = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_UNIT_TYPE, unitType);
             return true;
         }
         return false;

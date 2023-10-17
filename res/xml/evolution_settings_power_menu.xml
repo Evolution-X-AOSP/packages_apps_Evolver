@@ -16,6 +16,13 @@
         settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="advanced_reboot"
+        android:title="@string/global_actions_advanced_reboot_title"
+        android:summary="@string/global_actions_advanced_reboot_summary"
+        android:defaultValue="false" />
+
+    <!--
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="lockscreen_power_menu_disabled"
         android:title="@string/lockscreen_power_menu_disabled_title"
         android:summary="@string/lockscreen_power_menu_disabled_summary"
@@ -85,5 +92,6 @@
             android:defaultValue="false" />
 
     </PreferenceCategory>
+    -->
 
 </PreferenceScreen>
