@@ -13,27 +13,30 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.evolution.settings.utils;
+package com.evolution.settings.buttons;
 
 import android.content.Context;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 
+import com.android.settings.Utils;
+
+import static com.android.internal.util.custom.hwkeys.DeviceKeysConstants.*;
+
 public class ButtonSettingsUtils {
-
-    // Masks for checking presence of hardware keys.
-    // Must match values in frameworks/base/core/res/res/values/config.xml
-    public static final int KEY_MASK_HOME = 0x01;
-    public static final int KEY_MASK_BACK = 0x02;
-    public static final int KEY_MASK_MENU = 0x04;
-    public static final int KEY_MASK_ASSIST = 0x08;
-    public static final int KEY_MASK_APP_SWITCH = 0x10;
-    public static final int KEY_MASK_CAMERA = 0x20;
-    public static final int KEY_MASK_VOLUME = 0x40;
-
     public static int getDeviceKeys(Context context) {
         return context.getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
+    }
+
+    public static int getDeviceWakeKeys(Context context) {
+        return context.getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareWakeKeys);
+    }
+
+    /* returns whether the device has power key or not. */
+    public static boolean hasPowerKey() {
+        return KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_POWER);
     }
 
     /* returns whether the device has home key or not. */
@@ -59,6 +62,41 @@ public class ButtonSettingsUtils {
     /* returns whether the device has app switch key or not. */
     public static boolean hasAppSwitchKey(Context context) {
         return (getDeviceKeys(context) & KEY_MASK_APP_SWITCH) != 0;
+    }
+
+    /* returns whether the device has camera key or not. */
+    public static boolean hasCameraKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_CAMERA) != 0;
+    }
+
+    /* returns whether the device can be waken using the home key or not. */
+    public static boolean canWakeUsingHomeKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_HOME) != 0;
+    }
+
+    /* returns whether the device can be waken using the back key or not. */
+    public static boolean canWakeUsingBackKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_BACK) != 0;
+    }
+
+    /* returns whether the device can be waken using the menu key or not. */
+    public static boolean canWakeUsingMenuKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_MENU) != 0;
+    }
+
+    /* returns whether the device can be waken using the assist key or not. */
+    public static boolean canWakeUsingAssistKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_ASSIST) != 0;
+    }
+
+    /* returns whether the device can be waken using the app switch key or not. */
+    public static boolean canWakeUsingAppSwitchKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_APP_SWITCH) != 0;
+    }
+
+    /* returns whether the device can be waken using the camera key or not. */
+    public static boolean canWakeUsingCameraKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_CAMERA) != 0;
     }
 
     /* returns whether the device supports button backlight adjusment or not. */

@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2023 Evolution X
+ * Copyright (C) 2017 AospExtended ROM
+ *               2023 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,20 +18,15 @@ package com.evolution.settings.fragments;
 
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.res.Resources;
-import android.database.ContentObserver;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.os.Vibrator;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.view.View;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
@@ -42,28 +38,22 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class Miscellaneous extends DashboardFragment implements
+public class IslandSettings extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "Miscellaneous";
+    private static final String TAG = "IslandSettings";
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.evolution_settings_miscellaneous;
+        return R.xml.evolution_settings_island;
     }
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-
-        final Context mContext = getActivity().getApplicationContext();
-        final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        final Resources res = getResources();
     }
 
     @Override
@@ -82,5 +72,5 @@ public class Miscellaneous extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_miscellaneous);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_island);
 }
