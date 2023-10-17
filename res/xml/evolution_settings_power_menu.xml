@@ -16,9 +16,9 @@
         settings:controller="com.android.settings.gestures.PowerMenuPreferenceController" />
 
     <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_power_menu_disabled"
-        android:title="@string/lockscreen_power_menu_disabled_title"
-        android:summary="@string/lockscreen_power_menu_disabled_summary"
+        android:key="lockscreen_enable_power_menu"
+        android:title="@string/lockscreen_enable_power_menu_title"
+        android:summary="@string/lockscreen_enable_power_menu_summary"
         android:defaultValue="true" />
 
     <PreferenceCategory
@@ -44,10 +44,12 @@
             android:title="@string/global_actions_screenshot"
             android:defaultValue="true" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="global_actions_on_the_go"
             android:title="@string/global_actions_on_the_go"
             android:defaultValue="false" />
+        -->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="global_actions_settings"
@@ -79,10 +81,12 @@
             android:title="@string/global_actions_logout"
             android:defaultValue="false" />
 
+        <!--
         <com.evolution.settings.preference.GlobalSettingSwitchPreference
             android:key="bugreport_in_power_menu"
             android:title="@string/global_actions_bugreport"
             android:defaultValue="false" />
+        -->
 
     </PreferenceCategory>
 
