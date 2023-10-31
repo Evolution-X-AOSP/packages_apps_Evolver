@@ -28,6 +28,8 @@
     <string name="notification_flashlight_category">LED-Blitz bei Benachrichtigungen</string>
     <string name="ambient_display_category">Ambient-Display</string>
     <string name="lockscreen_clock_category">Sperrbildschirm-Uhr</string>
+    <string name="signal_icons_category_title">Mobilfunksignalsymbol</string>
+    <string name="vibration_category_title">Vibration</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">In Stock-Android enthaltene Optionen</string>
     <string name="dark_ui_mode_summary">Durchsuchen der dunklen Design-Optionen</string>
@@ -56,6 +58,11 @@
     <string name="seek_value_edit_label">Wert setzen</string>
     <string name="search">Suche</string>
     <string name="search_apps">Anwendungen suchen</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">Aktiviert</string>
+    <string name="string_disabled">Deaktiviert</string>
+    <string name="string_on">Ein</string>
+    <string name="string_off">Aus</string>
     <!-- Units -->
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">Sekunden</string>
@@ -159,17 +166,17 @@
     <string name="profile_choose_app">Anwendung auswählen</string>
     <string name="dialog_delete_title">Löschen</string>
     <string name="dialog_delete_message">Ausgewähltes Element löschen?</string>
-    <!-- Network traffic -->
+    <!-- Status bar - Network Traffic -->
     <string name="network_traffic_intro_text">        Zeigt die aktuelle Netzwerkgeschwindigkeit in der Statusleiste.
         Der Monitor zeigt die Geschwindigkeit dynamisch an, so dass er jede Sekunde zwischen
         Upload- und Downloadgeschwindigkeit wechselt
     </string>
-    <string name="network_traffic_title">Netzwerkverkehrsanzeige</string>
-    <string name="network_traffic_summary">Netzwerkverkehrsanzeige aktivieren oder deaktivieren</string>
     <string name="network_traffic_main_switch_title">Netzwerkverkehrsanzeige verwenden</string>
-    <string name="network_options_title">Optionen</string>
-    <string name="network_traffic_autohide_title">Netzwerkverkehrsanzeige ausblenden, wenn inaktiv</string>
+    <string name="network_traffic_settings_title">Netzwerkverkehrsanzeige</string>
+    <string name="network_traffic_settings_summary">Aktuellen Datenverkehr in der Statusleiste anzeigen</string>
+    <string name="network_traffic_autohide">Automatisch ausblenden</string>
     <string name="network_traffic_autohide_summary">Ausblenden, wenn die Netzwerkverkehrsanzeige unter 1 KB/s liegt</string>
+    <string name="network_traffic_units_title">Einheiten der Datenübertragungsraten</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibration bei Fingerabdruck-Authentifizierung</string>
     <string name="fp_success_vibrate_summary">Vibration bei erfolgreicher Fingerabdruck-Authentifizierung</string>
@@ -198,12 +205,18 @@
     <string name="qs_brightness_slider_position_title">Position</string>
     <string name="qs_brightness_slider_position_top">Oben</string>
     <string name="qs_brightness_slider_position_bottom">Unten</string>
+    <!-- Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_title">Haptisches Feedback des Helligkeitreglers</string>
+    <string name="qs_brightness_slider_haptic_summary">Haptisches Feedback bei Helligkeitsregelung aktivieren</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Automatische Helligkeit Symbol</string>
     <string name="qs_show_auto_brightness_summary">Schalter für adaptive Helligkeit neben dem Schieberegler anzeigen</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Mit den Lautstärketasten aufwecken</string>
     <string name="volume_rocker_wake_summary">Das drücken der Lautstärketasten weckt das Gerät</string>
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Wiedergabesteuerung</string>
+    <string name="volume_rocker_music_controls_summary">Bei ausgeschaltetem Bildschirm wird durch langes Drücken der Lautstärketaste der Musiktitel gewechselt</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Ausschaltanimation</string>
     <string name="screen_off_animation_crt">Röhrenbildschirm (CRT)</string>
@@ -278,7 +291,6 @@
     <string name="qs_date_title">Datum</string>
     <string name="qs_date_summary">Datum im Benachrichtigungsbereich anzeigen</string>
     <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">Vibration</string>
     <string name="quick_settings_vibrate_title">Bei Berührung vibrieren</string>
     <string name="quick_settings_vibrate_summary">Beim Berühren von Schnelleinstellungs-Kacheln vibrieren</string>
     <string name="quick_settings_vibrate_duration_title">Vibrationsdauer</string>
@@ -420,6 +432,9 @@
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">Stil des Helligkeitsreglers</string>
     <string name="theme_customization_brightness_slider_summary">Benutzerdefinierten Helligkeitsreglerstil festlegen</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Datensymbol-Stil</string>
+    <string name="theme_customization_data_summary">Benutzerdefiniertes Datensymbol-Stil festlegen</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Statusleiste</string>
     <string name="lockscreen_status_bar_summary">Statusleiste auf dem Sperrbildschirm anzeigen</string>
@@ -616,7 +631,6 @@
     <string name="torch_power_button_gesture_title">Taschenlampe bei ausgeschaltetem Bildschirm Ein-/Ausschalten</string>
     <string name="torch_power_button_gesture_none">Deaktiviert</string>
     <string name="torch_power_button_gesture_dt">Zweimal die Einschalttaste drücken (langsamere Reaktion auf Einzeltipp), deaktiviert doppeltes Antippen der Kamera.</string>
-    <string name="torch_power_button_gesture_dt_toast">Die Geste \'Zur Kamera springen\' ist nun deaktiviert</string>
     <string name="torch_power_button_gesture_lp">Ein/Aus-Taste lange drücken</string>
     <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Startmenü auf dem Sperrbildschirm deaktivieren</string>
@@ -798,6 +812,8 @@ ein Entsperren des Gerätes</string>
     <string name="reticker_summary">Benachrichtigungen durch eine neu gestaltete Version von Tickern ersetzen. \nSchlank und weniger invasiv als eine Standardbenachrichtigung</string>
     <string name="reticker_colored_title">Farbigen Hintergrund der Anwendung verwenden</string>
     <string name="reticker_colored_summary">Hintergrundfarbe von reTicker durch die Hauptfarbe der Benachrichtigungs-App ersetzen</string>
+    <string name="reticker_landscape_only_title">Nur Querformat</string>
+    <string name="reticker_landscape_only_summary">ReTicker nur aktivieren, wenn das Gerät im Querformat ist</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">„Smart Pixels“ ist eine Energiesparfunktion. Je nachdem, wie viele Pixel abgeschaltet werden, wird die Akkulaufzeit verlängert. Achtung: Dies kann dazu führen, dass der Touchscreen teilweise schlecht auf Berührungen reagiert</string>
     <string name="smart_pixels_title">Smart Pixels</string>
@@ -859,6 +875,9 @@ ein Entsperren des Gerätes</string>
     <string name="status_bar_battery_style_icon_landscape_style_a">Querformat L Stil A</string>
     <string name="status_bar_battery_style_icon_rlandscape_style_b">Querformat R Stil B</string>
     <string name="status_bar_battery_style_icon_landscape_style_b">Querformat L Stil B</string>
+    <string name="status_bar_battery_style_icon_landscape_ios15">Querformat iOS 15</string>
+    <string name="status_bar_battery_style_icon_landscape_ios16">Querformat iOS 16</string>
+    <string name="status_bar_battery_style_icon_landscape_origami">Querformat Origami</string>
     <string name="status_bar_battery_style_icon_landscape_pill">Hochformat Mx</string>
     <string name="status_bar_battery_style_icon_landscape_line">Querformat Lorn</string>
     <string name="status_bar_battery_style_icon_landscape_musku">iOS Hochformat</string>
@@ -955,11 +974,11 @@ ein Entsperren des Gerätes</string>
     <string name="power_menu_animation_xylon">Fliegen</string>
     <string name="power_menu_animation_slide">Gleiten</string>
     <string name="power_menu_animation_turn">Drehen</string>
-    <string name="power_menu_animation_fly">Leuchten</string>
     <string name="power_menu_animation_card">3D</string>
-    <string name="power_menu_animation_translucent_top">Durchsichtig (oben)</string>
-    <string name="power_menu_animation_translucent_bottom">Durchsichtig (unten)</string>
     <string name="power_menu_animation_rotate">Rotieren</string>
+    <!-- Changelog -->
+    <string name="changelog_evolution_title">Aktuelles Änderungsprotokoll</string>
+    <string name="changelog_evolution_summary">Zeige die letzten Änderungen im ROM</string>
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Zweites Profil</string>
     <string name="laboratory_parallel_space_summary">Ermöglicht parallele Ausführung mehrerer Instanzen derselben App</string>
@@ -999,6 +1018,11 @@ ein Entsperren des Gerätes</string>
     <string name="qs_color_pop">Auffällige Farbe</string>
     <string name="qs_shaded">Schattiert</string>
     <string name="qs_cyberpunk">Cyberpunk</string>
+    <string name="qs_neumorph">Neomorph</string>
+    <string name="qs_reflected">Reflected</string>
+    <string name="qs_surround">Surround</string>
+    <string name="qs_thin">ThinLine</string>
+    <string name="qs_two_tone_trans">Two-tone translucent</string>
     <!-- Media artwork -->
     <string name="artwork_media_background_enable_blur_title">Unschärfe Medien-Benachrichtigungs-Grafik im Hintergrund</string>
     <string name="artwork_media_background_blur_radius_title">Unschärfe für Medien-Benachrichtigungs-Artwork</string>
@@ -1020,4 +1044,27 @@ ein Entsperren des Gerätes</string>
     <string name="qs_header_image_title">Bild in Kopfzeile</string>
     <string name="qs_header_random_image_title">Zufälliges  Bild in der Kopfzeile</string>
     <string name="qs_header_random_image_summary">Zufälliges Bild in der Kopfzeile aktivieren</string>
+    <!-- Pulse on music track change -->
+    <string name="pulse_on_new_tracks_title">Musiktitelanzeige im Inaktivitätsdisplay</string>
+    <string name="pulse_on_new_tracks_summary">Inaktivitätsdisplay aktivieren, wenn ein neuer Musiktitel abgespielt wird</string>
+    <!-- Ambient Wake gesture -->
+    <string name="ambient_wake_gestures_title">Inaktivitätsaufwach-Gesten</string>
+    <string name="ambient_wake_gestures_summary">Anzeige der Umgebungsanzeige anstelle des normalen Sperrbildschirms bei Aktivierungsgesten</string>
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Taschenerkennung</string>
+    <string name="pocket_judge_summary">Bildschirm- und Tasteneingaben sperren, wenn sich das Gerät in der Tasche befindet</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">Schnelleinstellungen-Fußzeilen Text</string>
+    <string name="qs_footer_text_summary">Text am unteren Rand der Schnelleinstellungen anzeigen</string>
+    <string name="qs_footer_text_string_title">Text der Fußzeile anpassen</string>
+    <string name="qs_footer_text_string_summary">Standardmäßig leer setzen</string>
+    <!-- Volume haptic feedback -->
+    <string name="volume_panel_haptic_feedback_title">Haptischer Feedback des Lautstärkereglers</string>
+    <string name="volume_panel_haptic_feedback_summary">Hörbare haptische Rückmeldung bei Lautstärkeregelung aktivieren</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Downgrade von Anwendungen zulassen</string>
+    <string name="app_downgrade_summary">Dies ermöglicht das Downgrade von Anwendungen. Beachten Sie, dass dies zu Abstürzen und Datenbeschädigung führen kann</string>
+    <!-- Global Actions -->
+    <string name="global_actions_advanced_reboot_title">Erweiterter Neustart</string>
+    <string name="global_actions_advanced_reboot_summary">Optionen für Recovery und Bootloader im Ein/Aus-Menü anzeigen</string>
 </resources>
