@@ -28,6 +28,8 @@
     <string name="notification_flashlight_category">Senter pada notifikasi</string>
     <string name="ambient_display_category">Tampilan Ambien</string>
     <string name="lockscreen_clock_category">Jam layar kunci</string>
+    <string name="signal_icons_category_title">Ikon sinyal</string>
+    <string name="vibration_category_title">Getaran</string>
     <!-- Summaries -->
     <string name="aosp_options_summary">Opsi bawaan sudah tersedia di Android</string>
     <string name="dark_ui_mode_summary">Jelajahi opsi tema gelap</string>
@@ -56,6 +58,11 @@
     <string name="seek_value_edit_label">Tetapkan nilai</string>
     <string name="search">Cari</string>
     <string name="search_apps">Cari aplikasi</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">Diaktifkan</string>
+    <string name="string_disabled">Dinonaktifkan</string>
+    <string name="string_on">Aktif</string>
+    <string name="string_off">Nonaktif</string>
     <!-- Units -->
     <string name="unit_ms">md</string>
     <string name="unit_seconds">detik</string>
@@ -159,17 +166,17 @@
     <string name="profile_choose_app">Pilih aplikasi</string>
     <string name="dialog_delete_title">Hapus</string>
     <string name="dialog_delete_message">Hapus item yang dipilih?</string>
-    <!-- Network traffic -->
+    <!-- Status bar - Network Traffic -->
     <string name="network_traffic_intro_text">        Menampilkan kecepatan lalu lintas jaringan saat ini di bilah status.
         Monitor menampilkan kecepatan secara dinamis sehingga bergantian antara
         unggah dan unduh kecepatan setiap detik
     </string>
-    <string name="network_traffic_title">Indikator lalu lintas jaringan</string>
-    <string name="network_traffic_summary">Mengaktifkan atau menonaktifkan indikator kecepatan jaringan di bilah status</string>
     <string name="network_traffic_main_switch_title">Gunakan indikator lalu lintas jaringan</string>
-    <string name="network_options_title">Opsi</string>
-    <string name="network_traffic_autohide_title">Sembunyikan indikator lalu lintas jaringan jika tidak aktif</string>
-    <string name="network_traffic_autohide_summary">Sembunyikan saat indikator lalu lintas jaringan di bawah 1 KB/d</string>
+    <string name="network_traffic_settings_title">Monitor lalu lintas jaringan</string>
+    <string name="network_traffic_settings_summary">Tampilkan tingkat lalu lintas jaringan saat ini di bilah status</string>
+    <string name="network_traffic_autohide">Sembunyikan otomatis</string>
+    <string name="network_traffic_autohide_summary">Sembunyikan monitor lalu lintas saat tidak ada aktivitas</string>
+    <string name="network_traffic_units_title">Unit pengukuran lalu lintas</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Getaran autentikasi sidik jari</string>
     <string name="fp_success_vibrate_summary">Bergetar saat autentikasi sidik jari berhasil</string>
@@ -207,6 +214,9 @@
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Bangun dengan tombol volume</string>
     <string name="volume_rocker_wake_summary">Menekan tombol volume akan membangunkan perangkat Anda</string>
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Kontrol Pemutaran</string>
+    <string name="volume_rocker_music_controls_summary">Saat layar mati, menekan lama tombol volume akan mencari trek musik</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Animasi layar mati</string>
     <string name="screen_off_animation_crt">CRT</string>
@@ -281,7 +291,6 @@
     <string name="qs_date_title">Tanggal</string>
     <string name="qs_date_summary">Tampilkan tanggal pada bagian atas bilah status cepat</string>
     <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">Getaran</string>
     <string name="quick_settings_vibrate_title">Bergetar saat disentuh</string>
     <string name="quick_settings_vibrate_summary">Bergetar saat menyentuh ubin QS</string>
     <string name="quick_settings_vibrate_duration_title">Durasi getaran</string>
@@ -423,6 +432,9 @@
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">Gaya slider kecerahan</string>
     <string name="theme_customization_brightness_slider_summary">Setel gaya slider kecerahan kustom</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Gaya ikon data</string>
+    <string name="theme_customization_data_summary">Setel gaya ikon data kustom</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Bilah Status</string>
     <string name="lockscreen_status_bar_summary">Tampilkan bilah status di layar kunci</string>
@@ -613,13 +625,12 @@
     <string name="double_tap_to_sleep_lockscreen_title">Ketuk di layar kunci</string>
     <string name="double_tap_to_sleep_lockscreen_summary">Ketuk dua kali pada area pintasan sepertiga atas atau bawah layar kunci untuk mengalihkan perangkat ke mode tidur</string>
     <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Ketuk di bilah status</string>
-    <string name="double_tap_to_sleep_summary">Ketuk dua kali bilah status untuk mengalihkan perangkat ke mode tidur</string>
+    <string name="double_tap_to_sleep_title">Ketuk untuk tidur</string>
+    <string name="double_tap_to_sleep_summary">Ketuk dua kali pada bilah status atau layar kunci untuk mematikan layar</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Tombol senter saat layar mati</string>
     <string name="torch_power_button_gesture_none">Dinonaktifkan</string>
     <string name="torch_power_button_gesture_dt">Tombol daya ketuk dua kali (respon ketukan tunggal lebih lambat), Menonaktifkan ketukan daya ganda untuk kamera.</string>
-    <string name="torch_power_button_gesture_dt_toast">Gestur jalan pintas ke kamera telah dinonaktifkan</string>
     <string name="torch_power_button_gesture_lp">Tekan lama tombol daya</string>
     <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Menonaktifkan menu daya saat layar terkunci</string>
@@ -1036,6 +1047,9 @@ karya seni media layar kunci</string>
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">Ticker musik ambien</string>
     <string name="pulse_on_new_tracks_summary">Tampilkan Tampilan Ambien saat trek musik baru diputar</string>
+    <!-- Ambient Wake gesture -->
+    <string name="ambient_wake_gestures_title">Gestur bangun ambien</string>
+    <string name="ambient_wake_gestures_summary">Tampilkan Tampilan Ambien sebagai ganti dari layar kunci normal pada gestur bangun</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Deteksi Saku</string>
     <string name="pocket_judge_summary">Blokir sentuh tombol dan layar saat perangkat berada dalam saku</string>
@@ -1044,4 +1058,13 @@ karya seni media layar kunci</string>
     <string name="qs_footer_text_summary">Tampilkan teks di bagian bawah panel Setelan Cepat</string>
     <string name="qs_footer_text_string_title">Kustomisasi teks footer</string>
     <string name="qs_footer_text_string_summary">Setel ke kosong sebagai default</string>
+    <!-- Volume haptic feedback -->
+    <string name="volume_panel_haptic_feedback_title">Umpan balik haptik volume</string>
+    <string name="volume_panel_haptic_feedback_summary">Aktifkan umpan balik haptik volume saat menyesuaikan volume</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Izinkan penurunan versi aplikasi</string>
+    <string name="app_downgrade_summary">Ini memungkinkan Anda untuk menurunkan versi aplikasi. Perhatikan bahwa ini dapat menyebabkan crash dan kerusakan data</string>
+    <!-- Global Actions -->
+    <string name="global_actions_advanced_reboot_title">Mulai ulang lanjutan</string>
+    <string name="global_actions_advanced_reboot_summary">Tampilkan opsi untuk mode recovery dan bootloader di menu daya</string>
 </resources>
