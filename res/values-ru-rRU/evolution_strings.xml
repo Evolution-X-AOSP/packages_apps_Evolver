@@ -64,6 +64,7 @@
     <string name="string_on">Вкл</string>
     <string name="string_off">Выкл.</string>
     <!-- Units -->
+    <string name="unit_milliseconds">миллисекунд</string>
     <string name="unit_ms">мсек</string>
     <string name="unit_seconds">секунд</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -166,17 +167,17 @@
     <string name="profile_choose_app">Выберите приложение</string>
     <string name="dialog_delete_title">Удалить</string>
     <string name="dialog_delete_message">Удалить выбранный элемент?</string>
-    <!-- Network traffic -->
+    <!-- Status bar - Network Traffic -->
     <string name="network_traffic_intro_text">        Показывает текущую скорость сетевого трафика в строке состояния.
         Скорость монитора динамически меняется между
         скоростью раздачи и скоростью загрузки
     </string>
-    <string name="network_traffic_title">Индикатор сетевого трафика</string>
-    <string name="network_traffic_summary">Включить или отключить индикатор скорости сети в строке состояния</string>
     <string name="network_traffic_main_switch_title">Использовать индикатор сетевого трафика</string>
-    <string name="network_options_title">Настройки</string>
-    <string name="network_traffic_autohide_title">Скрыть индикатор сетевого трафика, если он неактивен</string>
+    <string name="network_traffic_settings_title">Индикатор сетевого трафика</string>
+    <string name="network_traffic_settings_summary">Отображать текущую скорость соединения в строке состояния</string>
+    <string name="network_traffic_autohide">Автоматическое скрытие</string>
     <string name="network_traffic_autohide_summary">Скрывать, когда индикатор сетевого трафика ниже 1 КБ/с</string>
+    <string name="network_traffic_units_title">Единицы измерения трафика</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Вибрация при авторизации отпечатком пальца</string>
     <string name="fp_success_vibrate_summary">Вибрировать при успешной авторизации по отпечатку пальца</string>
@@ -214,6 +215,9 @@
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Пробуждение кнопками громкости</string>
     <string name="volume_rocker_wake_summary">Нажатие кнопок громкости разбудит ваше устройство</string>
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Управление воспроизведением</string>
+    <string name="volume_rocker_music_controls_summary">Когда экран выключен, долгое нажатие кнопок громкости переключает музыкальные треки</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Анимация выключения экрана</string>
     <string name="screen_off_animation_crt">ЭЛТ</string>
@@ -228,15 +232,20 @@
     <string name="qs_footer_category">Нижняя часть панели быстрых настроек</string>
     <string name="qs_header_category_title">Настройки заголовка панели быстрых настроек</string>
     <string name="qs_panel_category_title">Панель быстрых настроек</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Быстрый доступ к панели быстрых настроек</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s строки состояния открывает быстрые настройки</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Слева</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Справа</string>
+    <string name="status_bar_quick_qs_pulldown_off">Выкл.</string>
+    <string name="status_bar_quick_qs_pulldown_left">Слева</string>
+    <string name="status_bar_quick_qs_pulldown_right">Справа</string>
+    <string name="status_bar_quick_qs_pulldown_always">Всегда показывать быстрые настройки во время смахивания шторки вниз</string>
     <string name="status_bar_quick_qs_pulldown">Быстрый доступ к панели быстрых настроек</string>
-    <string name="quick_pulldown_none">Отключено</string>
-    <string name="quick_pulldown_right">Потянуть строку состояния с правой стороны</string>
-    <string name="quick_pulldown_left">Потянуть строку состояния с левой стороны</string>
-    <string name="quick_pulldown_always">Всегда показывать быстрые настройки во время смахивания шторки вниз</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Откуда воспроизводить рингтоны</string>
     <string name="ringtone_focus_mode_dynamic">Из гарнитуры при подключении и воспроизведении музыки</string>
-    <string name="ringtone_focus_mode_stock">Из динамика (по умолч. AOSP)</string>
+    <string name="ringtone_focus_mode_stock">Из динамика (по умолчанию)</string>
     <!-- Lock screen album art filter -->
     <string name="lockscreen_albumart_filter_title">Фильтр обложек медиафайлов</string>
     <string name="lockscreen_albumart_filter_grayscale">Оттенки серого</string>
@@ -618,12 +627,12 @@
     <string name="status_bar_icons_summary">Выберите значки, которые будут отображаться в строке состояния</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Ярлыки на экране блокировки</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Касание на экране блокировки</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Дважды нажмите на верхней трети или в нижней зоне области ярлыков блокировки экрана, чтобы перевести устройство в режим сна</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Двойное касание по строке состояния для перевода в режим сна</string>
-    <string name="double_tap_to_sleep_summary">Дважды коснитесь строки состояния, чтобы перевести устройство в спящий режим</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="lockscreen_doubletap_sleep_title">Двойное нажатие по строке состояния для входа в режим спокоя</string>
+    <string name="lockscreen_doubletap_sleep_summary">Двойное касание на заблокированном экране для перехода в режим покоя</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">Двойное касание по строке состояния для перевода в режим сна</string>
+    <string name="statusbar_doubletap_sleep_summary">Двойное нажатие по строке состояния переводит устройство в спящий режим</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Включение фонарика при выключенном экране</string>
     <string name="torch_power_button_gesture_none">Отключено</string>
@@ -1054,4 +1063,13 @@
     <!-- Volume haptic feedback -->
     <string name="volume_panel_haptic_feedback_title">Виброотклик при регулировке громкости</string>
     <string name="volume_panel_haptic_feedback_summary">Включить виброотклик при регулировке громкости</string>
+    <!-- Ambient Wake gesture -->
+    <string name="ambient_wake_gestures_title">Жесты пробуждения</string>
+    <string name="ambient_wake_gestures_summary">Показывать Ambient Display вместо обычного экрана блокировки при жестах пробуждения</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Разрешить понижение версии приложения</string>
+    <string name="app_downgrade_summary">Это позволит вам понизить версию приложений. Обратите внимание, что это может привести к сбоям и повреждению данных</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Показывать окно буфера обмена</string>
+    <string name="show_clipboard_overlay_summary">Показывать содержимое буфера обмена в левом нижнем углу экрана, когда что-то копируется в буфер</string>
 </resources>
