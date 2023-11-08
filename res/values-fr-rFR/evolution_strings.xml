@@ -64,6 +64,7 @@
     <string name="string_on">Activé</string>
     <string name="string_off">Désactivé</string>
     <!-- Units -->
+    <string name="unit_milliseconds">millisecondes</string>
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">secondes</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -166,17 +167,17 @@
     <string name="profile_choose_app">Choisir une application</string>
     <string name="dialog_delete_title">Supprimer</string>
     <string name="dialog_delete_message">Retirer l\'élément sélectionné ?</string>
-    <!-- Network traffic -->
+    <!-- Status bar - Network Traffic -->
     <string name="network_traffic_intro_text">        Affiche la vitesse actuelle du trafic réseau dans la barre d\'état.
         Le moniteur affiche la vitesse dynamiquement de sortes qu\'il alterne entre
         la vitesse d\'envoi et de téléchargement chaque seconde
     </string>
-    <string name="network_traffic_title">Indicateur de trafic réseau</string>
-    <string name="network_traffic_summary">Activer ou désactiver l\'indicateur de vitesse du réseau dans la barre d\'état</string>
     <string name="network_traffic_main_switch_title">Utiliser l\'indicateur de trafic réseau</string>
-    <string name="network_options_title">Paramètres</string>
-    <string name="network_traffic_autohide_title">Masquer l\'indicateur de trafic réseau si inactif</string>
+    <string name="network_traffic_settings_title">Indicateur du débit réseau</string>
+    <string name="network_traffic_settings_summary">Afficher les débits réseau actuels dans la barre d\'état</string>
+    <string name="network_traffic_autohide">Masquer automatiquement</string>
     <string name="network_traffic_autohide_summary">Masquer lorsque l\'indicateur de trafic réseau est inférieur à 1 Ko/s</string>
+    <string name="network_traffic_units_title">Unités de mesure du trafic</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibrations lors de l\'authentification par l\'empreinte digitale</string>
     <string name="fp_success_vibrate_summary">Vibrer quand l\'authentification de l\'empreinte est vérifiée</string>
@@ -214,6 +215,9 @@
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Réveil par les boutons de volume</string>
     <string name="volume_rocker_wake_summary">L\'appui sur les touches de volumes réveillera votre appareil</string>
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Contrôle de lecture</string>
+    <string name="volume_rocker_music_controls_summary">Sur écran éteint, un appui prolongé sur les touches volume change la chanson</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Animation d\'extinction d\'écran</string>
     <string name="screen_off_animation_crt">Tube cathodique</string>
@@ -228,11 +232,16 @@
     <string name="qs_footer_category">Pied du panneau des réglages rapide</string>
     <string name="qs_header_category_title">En-tête du panneau des réglages rapide</string>
     <string name="qs_panel_category_title">Panneau des réglages rapide</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Déroulement rapide</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Le côté %1$s de la barre d\'état déroule totalement les paramètres rapides</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">gauche</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">droit</string>
+    <string name="status_bar_quick_qs_pulldown_off">Désactivé</string>
+    <string name="status_bar_quick_qs_pulldown_left">gauche</string>
+    <string name="status_bar_quick_qs_pulldown_right">droit</string>
+    <string name="status_bar_quick_qs_pulldown_always">Toujours afficher les réglages rapides quand la barre d\'état est déroulée</string>
     <string name="status_bar_quick_qs_pulldown">Déroulement rapide du panneau des réglages rapide</string>
-    <string name="quick_pulldown_none">Désactivé</string>
-    <string name="quick_pulldown_right">Tirer la barre d\'état vers le bas depuis la partie droite</string>
-    <string name="quick_pulldown_left">Tirer la barre d\'état vers le bas depuis la partie gauche</string>
-    <string name="quick_pulldown_always">Toujours afficher les réglages rapides quand la barre d\'état est déroulée</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Jouer les sonneries à partir de</string>
     <string name="ringtone_focus_mode_dynamic">Depuis le casque si connecté et musique en cours</string>
@@ -618,12 +627,12 @@
     <string name="status_bar_icons_summary">Choisir les icônes affichées dans la barre d\'état</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Raccourcis de l\'écran de verrouillage</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Appui sur l\'écran de verrouillage</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Appuyer deux fois sur le tiers supérieur ou inférieur de l\'écran de verrouillage afin de mettre l\'appareil en veille</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Appui sur la barre d\'état</string>
-    <string name="double_tap_to_sleep_summary">Appuyer deux fois sur la barre d\'état pour mettre l\'appareil en veille</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="lockscreen_doubletap_sleep_title">Appuyer pour mettre en veille</string>
+    <string name="lockscreen_doubletap_sleep_summary">Tapotez deux fois sur l\'écran de verrouillage pour mettre l\'appareil en veille</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">Appuyer pour mettre en veille</string>
+    <string name="statusbar_doubletap_sleep_summary">Appuyez deux fois sur la barre d\'état pour mettre l\'appareil en veille</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Activer/désactiver la lampe de poche lorsque l\'écran est éteint</string>
     <string name="torch_power_button_gesture_none">Désactivé</string>
@@ -1054,4 +1063,13 @@
     <!-- Volume haptic feedback -->
     <string name="volume_panel_haptic_feedback_title">Retour haptique du volume</string>
     <string name="volume_panel_haptic_feedback_summary">Activer le retour tactile du volume lors de l\'ajustement du volume</string>
+    <!-- Ambient Wake gesture -->
+    <string name="ambient_wake_gestures_title">Gestes de l\'affichage ambiant</string>
+    <string name="ambient_wake_gestures_summary">Afficher l\'affichage ambiant au lieu de l\'écran de verrouillage normal lors des gestes de réveil</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Autoriser le downgrade de l\'application</string>
+    <string name="app_downgrade_summary">Cela vous permet de rétrograder les applications. Notez que cela peut conduire à des plantages et à une corruption des données.</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Afficher l\'IU du presse-papiers</string>
+    <string name="show_clipboard_overlay_summary">Afficher une IU dans le coin inférieur gauche de l\'écran lorsque quelque chose est copié dans le presse-papiers</string>
 </resources>
