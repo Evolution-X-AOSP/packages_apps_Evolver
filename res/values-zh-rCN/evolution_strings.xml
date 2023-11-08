@@ -28,8 +28,10 @@
     <string name="notification_flashlight_category">通知时闪烁闪光灯</string>
     <string name="ambient_display_category">环境显示</string>
     <string name="lockscreen_clock_category">锁屏时钟</string>
+    <string name="signal_icons_category_title">信号图标</string>
+    <string name="vibration_category_title">振动</string>
     <!-- Summaries -->
-    <string name="aosp_options_summary">包含安卓系统的库存选项</string>
+    <string name="aosp_options_summary">安卓随附的出厂选项</string>
     <string name="dark_ui_mode_summary">浏览黑暗主题选项</string>
     <string name="unsupported_gestures">启用两个按钮或三个按钮导航来使用此功能</string>
     <!-- General strings -->
@@ -56,7 +58,13 @@
     <string name="seek_value_edit_label">设置数值</string>
     <string name="search">搜索</string>
     <string name="search_apps">搜索应用</string>
+    <!-- Generic support strings -->
+    <string name="string_enabled">已启用</string>
+    <string name="string_disabled">已禁用</string>
+    <string name="string_on">开启</string>
+    <string name="string_off">关闭</string>
     <!-- Units -->
+    <string name="unit_milliseconds">毫秒</string>
     <string name="unit_ms">毫秒</string>
     <string name="unit_seconds">秒</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -159,17 +167,17 @@
     <string name="profile_choose_app">选择应用程序</string>
     <string name="dialog_delete_title">删除</string>
     <string name="dialog_delete_message">删除所选中的项目？</string>
-    <!-- Network traffic -->
+    <!-- Status bar - Network Traffic -->
     <string name="network_traffic_intro_text">        在状态栏中显示当前网络流速。
         监视器动态显示了它在
         上传和下载速度之间的速度。
     </string>
-    <string name="network_traffic_title">网络流量监视器</string>
-    <string name="network_traffic_summary">在状态栏中启用或禁用网络流量监视器</string>
     <string name="network_traffic_main_switch_title">使用网络流量监视器</string>
-    <string name="network_options_title">选项</string>
-    <string name="network_traffic_autohide_title">当网络处于非活动状态时隐藏网络流量监视器</string>
+    <string name="network_traffic_settings_title">网络流量监视器</string>
+    <string name="network_traffic_settings_summary">在状态栏中显示当前的网络流量级别</string>
+    <string name="network_traffic_autohide">自动隐藏</string>
     <string name="network_traffic_autohide_summary">当网络流量监视小于 1 KB/s 时隐藏</string>
+    <string name="network_traffic_units_title">网络流量单位</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">指纹验证振动</string>
     <string name="fp_success_vibrate_summary">指纹识别成功时振动</string>
@@ -198,12 +206,18 @@
     <string name="qs_brightness_slider_position_title">位置</string>
     <string name="qs_brightness_slider_position_top">顶部</string>
     <string name="qs_brightness_slider_position_bottom">底部</string>
+    <!-- Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_title">亮度滑块触感反馈</string>
+    <string name="qs_brightness_slider_haptic_summary">在使用滑块改变亮度时提供震动反馈</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">自动亮度图标</string>
     <string name="qs_show_auto_brightness_summary">在亮度滑块旁显示自动亮度开关</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">音量键唤醒</string>
     <string name="volume_rocker_wake_summary">按下音量键唤醒设备</string>
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">播放控制</string>
+    <string name="volume_rocker_music_controls_summary">屏幕关闭时，长按音量键切换音乐曲目</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">锁屏动画</string>
     <string name="screen_off_animation_crt">CRT</string>
@@ -218,11 +232,16 @@
     <string name="qs_footer_category">快速设置页脚</string>
     <string name="qs_header_category_title">控制中心顶部</string>
     <string name="qs_panel_category_title">控制中心</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">快速下拉</string>
+    <string name="status_bar_quick_qs_pulldown_summary">沿状态栏的 %1$s 边缘下拉开启快捷设置面板</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">从左侧下拉状态栏</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">从右侧下拉状态栏</string>
+    <string name="status_bar_quick_qs_pulldown_off">关闭</string>
+    <string name="status_bar_quick_qs_pulldown_left">左侧</string>
+    <string name="status_bar_quick_qs_pulldown_right">右侧</string>
+    <string name="status_bar_quick_qs_pulldown_always">状态栏下拉时始终显示快捷设置</string>
     <string name="status_bar_quick_qs_pulldown">快速下拉控制中心</string>
-    <string name="quick_pulldown_none">已禁用</string>
-    <string name="quick_pulldown_right">从右侧下拉状态栏</string>
-    <string name="quick_pulldown_left">从左侧下拉状态栏</string>
-    <string name="quick_pulldown_always">拉下状态栏时始终显示控制中心</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">铃声从何处播放</string>
     <string name="ringtone_focus_mode_dynamic">从耳机 (如果已连接耳机且在播放音乐) </string>
@@ -278,7 +297,6 @@
     <string name="qs_date_title">日期</string>
     <string name="qs_date_summary">在快速状态栏顶部显示日期</string>
     <!-- QuickSettings haptic feedback -->
-    <string name="qs_tile_vibration_title">振动</string>
     <string name="quick_settings_vibrate_title">触摸时振动</string>
     <string name="quick_settings_vibrate_summary">触摸快速设置磁贴时振动</string>
     <string name="quick_settings_vibrate_duration_title">振动持续时间</string>
@@ -420,6 +438,9 @@
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">亮度滑块样式</string>
     <string name="theme_customization_brightness_slider_summary">设置自定义亮度滑块样式</string>
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">数据流量图标样式</string>
+    <string name="theme_customization_data_summary">设置自定义数据流量图标样式</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">状态栏</string>
     <string name="lockscreen_status_bar_summary">锁屏界面显示状态栏</string>
@@ -606,17 +627,16 @@
     <string name="status_bar_icons_summary">选择在状态栏显示的图标</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">锁屏界面快捷方式</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">点按锁定屏幕</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">双击锁屏界面顶部或底部快捷键区域使设备休眠</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">点击状态栏</string>
-    <string name="double_tap_to_sleep_summary">双击状态栏锁屏</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="lockscreen_doubletap_sleep_title">点按休眠</string>
+    <string name="lockscreen_doubletap_sleep_summary">在锁屏界面点按两次即可使设备休眠</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">点按休眠</string>
+    <string name="statusbar_doubletap_sleep_summary">在状态栏上点按两次即可使设备休眠</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">关闭屏幕时开启手电筒</string>
     <string name="torch_power_button_gesture_none">已禁用</string>
     <string name="torch_power_button_gesture_dt">双击电源按钮 (较慢的单击响应)，禁用相机的双击电源</string>
-    <string name="torch_power_button_gesture_dt_toast">快速打开相机手势已禁用</string>
     <string name="torch_power_button_gesture_lp">长按电源键</string>
     <!-- Power menu on lock screen -->
     <string name="lockscreen_power_menu_disabled_title">禁用锁屏时的电源菜单</string>
@@ -797,6 +817,8 @@
     <string name="reticker_summary">用重新设计的tickers版本替换您的通知，\n苗条且不像标准通知那样具有侵入性</string>
     <string name="reticker_colored_title">使用应用程序色彩背景</string>
     <string name="reticker_colored_summary">使用通知应用主颜色替换 reTicker 背景颜色</string>
+    <string name="reticker_landscape_only_title">仅限横屏</string>
+    <string name="reticker_landscape_only_summary">仅在设备横屏时启用reTicker</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">智能像素是一种节电功能。根据你决定关闭多少像素，你可以看到电池寿命的改善。注意，在某些情况下，它可能会导致触摸屏上的无响应区域</string>
     <string name="smart_pixels_title">智能像素</string>
@@ -860,6 +882,7 @@
     <string name="status_bar_battery_style_icon_landscape_style_b">左侧横向图标 (风格 B)</string>
     <string name="status_bar_battery_style_icon_landscape_ios15">横屏iOS 15</string>
     <string name="status_bar_battery_style_icon_landscape_ios16">横屏iOS 16</string>
+    <string name="status_bar_battery_style_icon_landscape_origami">横向折纸</string>
     <string name="status_bar_battery_style_icon_landscape_pill">纵向 (Mx)</string>
     <string name="status_bar_battery_style_icon_landscape_line">横向 (Lorn)</string>
     <string name="status_bar_battery_style_icon_landscape_musku">纵向 (IOS)</string>
@@ -956,10 +979,7 @@
     <string name="power_menu_animation_xylon">飞行</string>
     <string name="power_menu_animation_slide">滑动</string>
     <string name="power_menu_animation_turn">旋转</string>
-    <string name="power_menu_animation_fly">渐变</string>
     <string name="power_menu_animation_card">3D</string>
-    <string name="power_menu_animation_translucent_top">半透明 (顶部)</string>
-    <string name="power_menu_animation_translucent_bottom">半透明 (底部)</string>
     <string name="power_menu_animation_rotate">旋转</string>
     <!-- Changelog -->
     <string name="changelog_evolution_title">当前更新日志</string>
@@ -1003,6 +1023,11 @@
     <string name="qs_color_pop">色彩提示</string>
     <string name="qs_shaded">着色</string>
     <string name="qs_cyberpunk">赛博朋克</string>
+    <string name="qs_neumorph">霓虹色</string>
+    <string name="qs_reflected">反射</string>
+    <string name="qs_surround">环绕</string>
+    <string name="qs_thin">细线</string>
+    <string name="qs_two_tone_trans">双色透明</string>
     <!-- Media artwork -->
     <string name="artwork_media_background_enable_blur_title">模糊媒体艺术背景</string>
     <string name="artwork_media_background_blur_radius_title">媒体通知中封面的模糊程度</string>
@@ -1027,4 +1052,24 @@
     <!-- Pulse on music track change -->
     <string name="pulse_on_new_tracks_title">音乐息屏显示</string>
     <string name="pulse_on_new_tracks_summary">播放新曲目时点亮环境显示</string>
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">口袋检测</string>
+    <string name="pocket_judge_summary">当设备在口袋中时屏蔽屏幕和按键操作</string>
+    <!-- QS Footer Text -->
+    <string name="qs_footer_text_title">快速设置中的页脚文字</string>
+    <string name="qs_footer_text_summary">快速设置面板底部显示文本</string>
+    <string name="qs_footer_text_string_title">自定义页脚文本</string>
+    <string name="qs_footer_text_string_summary">默认为空</string>
+    <!-- Volume haptic feedback -->
+    <string name="volume_panel_haptic_feedback_title">音量触感反馈</string>
+    <string name="volume_panel_haptic_feedback_summary">调整音量时启用音量触感反馈</string>
+    <!-- Ambient Wake gesture -->
+    <string name="ambient_wake_gestures_title">环境显示手势</string>
+    <string name="ambient_wake_gestures_summary">唤醒手势后显示环境显示，而不是平常的锁定屏幕</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">允许应用程序降级</string>
+    <string name="app_downgrade_summary">该功能将允许您降级应用程序。请注意，这可能导致崩溃和数据损坏。</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">显示悬浮剪贴板</string>
+    <string name="show_clipboard_overlay_summary">当复制某些内容时，在屏幕的左下角显示悬浮剪贴板</string>
 </resources>
