@@ -64,6 +64,7 @@
     <string name="string_on">Açık</string>
     <string name="string_off">Kapalı</string>
     <!-- Units -->
+    <string name="unit_milliseconds">milisaniye</string>
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">saniye</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -166,15 +167,15 @@
     <string name="profile_choose_app">Uygulama seç</string>
     <string name="dialog_delete_title">Sil</string>
     <string name="dialog_delete_message">Seçili öge silinsin mi?</string>
-    <!-- Network traffic -->
+    <!-- Status bar - Network Traffic -->
     <string name="network_traffic_intro_text">Durum çubuğunda mevcut ağ trafiği hızını gösterir.
 Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme hızı arasında geçiş yapar</string>
-    <string name="network_traffic_title">Ağ trafik göstergesi</string>
-    <string name="network_traffic_summary">Durum çubuğunda ağ hızı göstergesini etkinleştirin veya devre dışı bırakın</string>
-    <string name="network_traffic_main_switch_title">Ağ trafik göstergesi</string>
-    <string name="network_options_title">Seçenekler</string>
-    <string name="network_traffic_autohide_title">Ağ trafiği göstergesi etkin olmadığında gizle</string>
-    <string name="network_traffic_autohide_summary">Ağ trafiği göstergesi 1 KB/s\'nin altında olduğunda gizle</string>
+    <string name="network_traffic_main_switch_title">Ağ trafik göstergesini kullan</string>
+    <string name="network_traffic_settings_title">Ağ trafiği monitörü</string>
+    <string name="network_traffic_settings_summary">Mevcut ağ trafiği seviyelerini durum çubuğunda göster</string>
+    <string name="network_traffic_autohide">Otomatik gizle</string>
+    <string name="network_traffic_autohide_summary">Etkinlik olmadığında trafik monitörünü gizle</string>
+    <string name="network_traffic_units_title">Ağ ölçü birimi</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Parmak izi kimlik doğrulama titreşimi</string>
     <string name="fp_success_vibrate_summary">Başarılı parmak izi kimlik doğrulanmasında titret</string>
@@ -212,6 +213,9 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Ses tuşlarıyla uyandır</string>
     <string name="volume_rocker_wake_summary">Ses tuşlarına basıldığında cihazı uyandır</string>
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Oynatma kontrolü</string>
+    <string name="volume_rocker_music_controls_summary">Ekran kapalıyken ses tuşlarına uzun basmak şarkıyı değiştirir</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Ekran kapanma animasyonu</string>
     <string name="screen_off_animation_crt">CRT</string>
@@ -226,11 +230,16 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="qs_footer_category">Hızlı ayarlar alt bilgisi</string>
     <string name="qs_header_category_title">Hızlı ayarlar başlığı</string>
     <string name="qs_panel_category_title">Hızlı ayarlar paneli</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Hızlı aşağı çekme</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s durum çubuğunun kenarı hızlı ayarları aşağı çeker</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Sol</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Sağ</string>
+    <string name="status_bar_quick_qs_pulldown_off">Kapalı</string>
+    <string name="status_bar_quick_qs_pulldown_left">Sol</string>
+    <string name="status_bar_quick_qs_pulldown_right">Sağ</string>
+    <string name="status_bar_quick_qs_pulldown_always">Durum çubuğunu aşağı çekince her zaman hızlı ayarları göster</string>
     <string name="status_bar_quick_qs_pulldown">Hızlı aşağı çekme</string>
-    <string name="quick_pulldown_none">Devre dışı</string>
-    <string name="quick_pulldown_right">Durum çubuğunu sağ taraftan aşağı çekin</string>
-    <string name="quick_pulldown_left">Durum çubuğunu sol taraftan aşağı çekin</string>
-    <string name="quick_pulldown_always">Durum çubuğunu aşağı çekince her zaman hızlı ayarları göster</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Zil sesini buradan çal</string>
     <string name="ringtone_focus_mode_dynamic">Kulaklık bağlıysa ve müzik çalıyorsa</string>
@@ -616,12 +625,12 @@ Monitör, hızı dinamik olarak gösterir yani her saniye yükleme ve indirme h�
     <string name="status_bar_icons_summary">Hangi durum çubuğu simgelerinin gösterilebileceğini seçin</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Kilit ekranı kısayolları</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Uyutmak için dokun</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Cihazı uyutmak için kilit ekranının boş bir alanına iki kez dokunun</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Durum çubuğuna dokun</string>
-    <string name="double_tap_to_sleep_summary">Cihazı uyutmak için durum çubuğuna iki kez dokunun</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="lockscreen_doubletap_sleep_title">Uyutmak için dokun</string>
+    <string name="lockscreen_doubletap_sleep_summary">Cihazı uyutmak için kilit ekranının boş bir alanına iki kez dokunun</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">Uyutmak için dokun</string>
+    <string name="statusbar_doubletap_sleep_summary">Cihazı uyutmak için durum çubuğuna iki kez dokunun</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Güç tuşu ile fener aç</string>
     <string name="torch_power_button_gesture_none">Devre dışı</string>
@@ -1050,4 +1059,13 @@ Mevcut bildirimler ve yeni bildirimler yayına hazırlanacak.    </string>
     <!-- Volume haptic feedback -->
     <string name="volume_panel_haptic_feedback_title">Hacimsel dokunsal geri bildirim</string>
     <string name="volume_panel_haptic_feedback_summary">Ses seviyesini ayarlarken ses seviyesi dokunsal geri bildirimini etkinleştirin</string>
+    <!-- Ambient Wake gesture -->
+    <string name="ambient_wake_gestures_title">Ortam ekranı uyandırma hareketleri</string>
+    <string name="ambient_wake_gestures_summary">Uyandırma hareketlerinde normal kilit ekranı yerine Ortam Ekranını göster</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Uygulamanın eski sürüme geçirilmesine izin ver</string>
+    <string name="app_downgrade_summary">Uygulamaların eski sürümüne geri dönmenizi sağlar. Veri kaybına ve çökmelere neden olabilir</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Pano yer paylaşımını göster</string>
+    <string name="show_clipboard_overlay_summary">Panoya bir şey kopyalandığında ekranın sol alt köşesinde bir kaplama göster</string>
 </resources>
