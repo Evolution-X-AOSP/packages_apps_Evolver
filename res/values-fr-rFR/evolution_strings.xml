@@ -64,6 +64,7 @@
     <string name="string_on">Activé</string>
     <string name="string_off">Désactivé</string>
     <!-- Units -->
+    <string name="unit_milliseconds">millisecondes</string>
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">secondes</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -167,16 +168,32 @@
     <string name="dialog_delete_title">Supprimer</string>
     <string name="dialog_delete_message">Retirer l\'élément sélectionné ?</string>
     <!-- Network traffic -->
-    <string name="network_traffic_intro_text">        Affiche la vitesse actuelle du trafic réseau dans la barre d\'état.
-        Le moniteur affiche la vitesse dynamiquement de sortes qu\'il alterne entre
-        la vitesse d\'envoi et de téléchargement chaque seconde
-    </string>
-    <string name="network_traffic_title">Indicateur de trafic réseau</string>
-    <string name="network_traffic_summary">Activer ou désactiver l\'indicateur de vitesse du réseau dans la barre d\'état</string>
-    <string name="network_traffic_main_switch_title">Utiliser l\'indicateur de trafic réseau</string>
-    <string name="network_options_title">Paramètres</string>
-    <string name="network_traffic_autohide_title">Masquer l\'indicateur de trafic réseau si inactif</string>
-    <string name="network_traffic_autohide_summary">Masquer lorsque l\'indicateur de trafic réseau est inférieur à 1 Ko/s</string>
+    <string name="network_traffic_settings_title">Indicateur du débit réseau</string>
+    <string name="network_traffic_settings_summary">Afficher et personnaliser les niveaux de trafic réseau actuel</string>
+    <string name="network_traffic_location_title">Localisation</string>
+    <string name="network_traffic_location_disable">Désactivé</string>
+    <string name="network_traffic_location_statusbar">Barre d\'état</string>
+    <string name="network_traffic_location_quick_statusbar">Barre d\'état rapide</string>
+    <string name="network_traffic_mode_title">Mode d\'affichage</string>
+    <string name="network_traffic_mode_up">Upload seulement</string>
+    <string name="network_traffic_mode_down">Download seulement</string>
+    <string name="network_traffic_mode_all">Upload et download</string>
+    <string name="network_traffic_autohide">Masquer automatiquement</string>
+    <string name="network_traffic_autohide_summary">Masquer le moniteur de trafic réseau lorsqu\'il n\'y a pas d\'activité</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_threshold">Seuil d\'inactivité</string>
+    <string name="network_traffic_refresh_interval_title">Fréquence d\'actualisation</string>
+    <string name="network_traffic_refresh_interval_summary">Durée entre 2 mesures</string>
+    <string name="network_traffic_units_title">Unités de mesure du trafic</string>
+    <string name="network_traffic_units_bits">Bits par seconde (b/s)</string>
+    <string name="network_traffic_units_kilobits">Kilobits par seconde (kb/s)</string>
+    <string name="network_traffic_units_megabits">Mégabits par seconde (Mb/s)</string>
+    <string name="network_traffic_units_bytes">Bits par seconde (b/s)</string>
+    <string name="network_traffic_units_kilobytes">Kilobits par seconde (kb/s)</string>
+    <string name="network_traffic_units_megabytes">Mégabits par seconde (Mb/s)</string>
+    <string name="network_traffic_hidearrow">Masquer les flèches</string>
+    <string name="network_traffic_hidearrow_summary">Masquer les flèches du moniteur de trafic réseau</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibrations lors de l\'authentification par l\'empreinte digitale</string>
     <string name="fp_success_vibrate_summary">Vibrer quand l\'authentification de l\'empreinte est vérifiée</string>
@@ -228,11 +245,16 @@
     <string name="qs_footer_category">Pied du panneau des réglages rapide</string>
     <string name="qs_header_category_title">En-tête du panneau des réglages rapide</string>
     <string name="qs_panel_category_title">Panneau des réglages rapide</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Déroulement rapide</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Le côté %1$s de la barre d\'état déroule totalement les paramètres rapides</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">gauche</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">droit</string>
+    <string name="status_bar_quick_qs_pulldown_off">Désactivé</string>
+    <string name="status_bar_quick_qs_pulldown_left">gauche</string>
+    <string name="status_bar_quick_qs_pulldown_right">droit</string>
+    <string name="status_bar_quick_qs_pulldown_always">Toujours afficher les réglages rapides quand la barre d\'état est déroulée</string>
     <string name="status_bar_quick_qs_pulldown">Déroulement rapide du panneau des réglages rapide</string>
-    <string name="quick_pulldown_none">Désactivé</string>
-    <string name="quick_pulldown_right">Tirer la barre d\'état vers le bas depuis la partie droite</string>
-    <string name="quick_pulldown_left">Tirer la barre d\'état vers le bas depuis la partie gauche</string>
-    <string name="quick_pulldown_always">Toujours afficher les réglages rapides quand la barre d\'état est déroulée</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Jouer les sonneries à partir de</string>
     <string name="ringtone_focus_mode_dynamic">Depuis le casque si connecté et musique en cours</string>
@@ -618,12 +640,12 @@
     <string name="status_bar_icons_summary">Choisir les icônes affichées dans la barre d\'état</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Raccourcis de l\'écran de verrouillage</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Appui sur l\'écran de verrouillage</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Appuyer deux fois sur le tiers supérieur ou inférieur de l\'écran de verrouillage afin de mettre l\'appareil en veille</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Appui sur la barre d\'état</string>
-    <string name="double_tap_to_sleep_summary">Appuyer deux fois sur la barre d\'état pour mettre l\'appareil en veille</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="lockscreen_doubletap_sleep_title">Appuyer pour mettre en veille</string>
+    <string name="lockscreen_doubletap_sleep_summary">Tapotez deux fois sur l\'écran de verrouillage pour mettre l\'appareil en veille</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">Appuyer pour mettre en veille</string>
+    <string name="statusbar_doubletap_sleep_summary">Appuyez deux fois sur la barre d\'état pour mettre l\'appareil en veille</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Activer/désactiver la lampe de poche lorsque l\'écran est éteint</string>
     <string name="torch_power_button_gesture_none">Désactivé</string>
@@ -802,7 +824,7 @@
     <string name="notification_material_dismiss_bgstyle_title">Arrière-plan du bouton</string>
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Ignorer les drapeaux sécurisés des fenêtres</string>
-    <string name="ignore_window_secure_summary">Cela supprime les limites de capture d\'écran et d\'enregistrement d\'écran pour toutes les applications. Cela peut être pratique dans certains cas, mais peut entraîner des fuites de confidentialité. Après la modification, vous devrez redémarrer les applications pour que le changement prenne effet.</string>
+    <string name="ignore_window_secure_summary">Retirer les limites des captures d\'écran et des enregistrements d\'écran pour toutes les applications. Peut être pratique dans certains cas, mais peut entraîner des fuites de confidentialité. Un redémarrage des applications est nécessaire pour que le changement prenne effet.</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">Remplacer la notification flottante par une version moins invasive</string>
@@ -867,32 +889,22 @@
     <string name="status_bar_battery_style_icon_portrait">Icône portrait</string>
     <string name="status_bar_battery_style_icon_rlandscape">Icône paysage (droite)</string>
     <string name="status_bar_battery_style_icon_landscape">Icône paysage (gauche)</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_a">Paysage D Style A</string>
-    <string name="status_bar_battery_style_icon_landscape_style_a">Paysage G Style A</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_b">Paysage D Style B</string>
-    <string name="status_bar_battery_style_icon_landscape_style_b">Paysage G Style B</string>
-    <string name="status_bar_battery_style_icon_landscape_ios15">Paysage iOS 15</string>
-    <string name="status_bar_battery_style_icon_landscape_ios16">Paysage iOS 16</string>
-    <string name="status_bar_battery_style_icon_landscape_origami">Origami (en mode paysage)</string>
-    <string name="status_bar_battery_style_icon_landscape_pill">Mx en portrait</string>
-    <string name="status_bar_battery_style_icon_landscape_line">Lorn en paysage</string>
-    <string name="status_bar_battery_style_icon_landscape_musku">IOS en portrait</string>
-    <string name="status_bar_battery_style_icon_landscape_signal">Airoo en paysage</string>
-    <string name="status_bar_battery_style_icon_landscape_buddy">Capsule en paysage</string>
     <string name="status_bar_battery_style_circle">Cercle</string>
     <string name="status_bar_battery_style_dotted_circle">Cercle en pointillés</string>
-    <string name="status_bar_battery_style_big_circle">Grand cercle</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Grand cercle en pointillés</string>
     <string name="status_bar_battery_style_filled_circle">Cercle plein</string>
     <string name="status_bar_battery_style_text">Texte</string>
     <string name="status_bar_battery_style_hidden">Cachée</string>
     <string name="status_bar_battery_percent_title">Pourcentage de la batterie</string>
     <string name="status_bar_battery_percent_hidden">Cachée</string>
     <string name="status_bar_battery_percent_text_inside">À l\'intérieur de l\'icône</string>
-    <string name="status_bar_battery_percent_text_next">À côté de l\'icône</string>
+    <string name="status_bar_battery_percent_text_next_right">À côté de l\'icône (à droite)</string>
+    <string name="status_bar_battery_percent_text_next_left">À côté de l\'icône (à gauche)</string>
     <string name="status_bar_battery_text_charging_title">Pourcentage de la batterie lors de la charge</string>
     <string name="status_bar_battery_text_charging_summary">Toujours afficher le pourcentage de la batterie lors de la charge</string>
     <!-- QS battery -->
+    <string name="qs_battery_location_title">Emplacement de la batterie</string>
+    <string name="qs_battery_location_qs_panel">Panneau des réglages rapides</string>
+    <string name="qs_battery_location_qs_statusbar">Barre d\'état rapide</string>
     <string name="qs_use_status_bar_battery_style">Même style que la barre d\'état</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Estimation de la batterie</string>
@@ -1054,4 +1066,16 @@
     <!-- Volume haptic feedback -->
     <string name="volume_panel_haptic_feedback_title">Retour haptique du volume</string>
     <string name="volume_panel_haptic_feedback_summary">Activer le retour tactile du volume lors de l\'ajustement du volume</string>
+    <!-- Volume rocker music control -->
+    <string name="volbtn_music_controls_title">Contrôle de la lecture</string>
+    <string name="volbtn_music_controls_summary">Changer de pistes musicales lors d\'un appui long sur les boutons de volume lorsque l\'écran est éteint</string>
+    <!-- Ambient Wake gesture -->
+    <string name="ambient_wake_gestures_title">Gestes de l\'affichage ambiant</string>
+    <string name="ambient_wake_gestures_summary">Afficher l\'affichage ambiant au lieu de l\'écran de verrouillage normal lors des gestes de réveil</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Autoriser le downgrade de l\'application</string>
+    <string name="app_downgrade_summary">Permettre de rétrograder les applications. Peut entraîner des plantages et une corruption des données.</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Afficher l\'IU du presse-papiers</string>
+    <string name="show_clipboard_overlay_summary">Afficher une IU dans le coin inférieur gauche de l\'écran lorsque quelque chose est copié dans le presse-papiers</string>
 </resources>
