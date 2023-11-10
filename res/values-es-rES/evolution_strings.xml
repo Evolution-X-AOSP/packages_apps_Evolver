@@ -64,6 +64,7 @@
     <string name="string_on">Activado</string>
     <string name="string_off">Desactivado</string>
     <!-- Units -->
+    <string name="unit_milliseconds">milisegundos</string>
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">segundos</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -167,16 +168,32 @@
     <string name="dialog_delete_title">Eliminar</string>
     <string name="dialog_delete_message">¿Eliminar el elemento seleccionado?</string>
     <!-- Network traffic -->
-    <string name="network_traffic_intro_text">        Muestra la velocidad de tráfico de red en la barra de estado.
-        El monitor muestra la velocidad dinámicamente alternando entre
-        subida y descarga cada segundo
-    </string>
-    <string name="network_traffic_title">Indicador de tráfico de red</string>
-    <string name="network_traffic_summary">Activar o desactivar el indicador de velocidad de red en la barra de estado</string>
-    <string name="network_traffic_main_switch_title">Usar indicador de tráfico de red</string>
-    <string name="network_options_title">Opciones</string>
-    <string name="network_traffic_autohide_title">Ocultar indicador de tráfico de red si está inactivo</string>
+    <string name="network_traffic_settings_title">Indicadores de tráfico de red</string>
+    <string name="network_traffic_settings_summary">Muestra y configura el monitor actual de tráfico de red</string>
+    <string name="network_traffic_location_title">Ubicación</string>
+    <string name="network_traffic_location_disable">Desactivado</string>
+    <string name="network_traffic_location_statusbar">Barra de estado</string>
+    <string name="network_traffic_location_quick_statusbar">Barra de estado rápida</string>
+    <string name="network_traffic_mode_title">Modo de visualización</string>
+    <string name="network_traffic_mode_up">Solo subidas</string>
+    <string name="network_traffic_mode_down">Solo descargas</string>
+    <string name="network_traffic_mode_all">Subidas y descargas</string>
+    <string name="network_traffic_autohide">Ocultar automáticamente</string>
     <string name="network_traffic_autohide_summary">Ocultar cuando el tráfico de red es menor de 1 Kb/s</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_threshold">Límite de inactividad</string>
+    <string name="network_traffic_refresh_interval_title">Intervalo de actualización</string>
+    <string name="network_traffic_refresh_interval_summary">Tiempo tras el cual se vuelve a medir la velocidad</string>
+    <string name="network_traffic_units_title">Unidades de medida del tráfico de red</string>
+    <string name="network_traffic_units_bits">Bits por segundo (b/s)</string>
+    <string name="network_traffic_units_kilobits">Kilobits por segundo (kb/s)</string>
+    <string name="network_traffic_units_megabits">Megabits por segundo (Mb/s)</string>
+    <string name="network_traffic_units_bytes">Bytes por segundo (B/s)</string>
+    <string name="network_traffic_units_kilobytes">Kilobytes por segundo (kB/s)</string>
+    <string name="network_traffic_units_megabytes">Megabytes por segundo (MB/s)</string>
+    <string name="network_traffic_hidearrow">Ocultar flechas</string>
+    <string name="network_traffic_hidearrow_summary">Ocultar las flechas del indicador de tráfico de red</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibración al autentificar la huella</string>
     <string name="fp_success_vibrate_summary">Vibrar con la autenticación exitosa de la huella</string>
@@ -228,11 +245,16 @@
     <string name="qs_footer_category">Pie de Ajustes Rápidos</string>
     <string name="qs_header_category_title">Cabecera de Ajustes Rápidos</string>
     <string name="qs_panel_category_title">Panel de Ajustes Rápidos</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Despliegue rápido de ajustes rápidos</string>
+    <string name="status_bar_quick_qs_pulldown_summary">El borde %1$s de la barra de estado desplegará los ajustes Rápidos</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Izquierda</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Derecha</string>
+    <string name="status_bar_quick_qs_pulldown_off">Desactivado</string>
+    <string name="status_bar_quick_qs_pulldown_left">Izquierda</string>
+    <string name="status_bar_quick_qs_pulldown_right">Derecha</string>
+    <string name="status_bar_quick_qs_pulldown_always">Mostrar siempre los Ajustes Rápidos al desplegar la barra de estado</string>
     <string name="status_bar_quick_qs_pulldown">Despliegue rápido de Ajustes Rápidos</string>
-    <string name="quick_pulldown_none">Desactivado</string>
-    <string name="quick_pulldown_right">Desplegar barra de estado desde el lado derecho</string>
-    <string name="quick_pulldown_left">Desplegar barra de estado desde el lado izquierdo</string>
-    <string name="quick_pulldown_always">Mostrar siempre los Ajustes Rápidos al desplegar la barra de estado</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Donde reproducir los tonos de llamadas</string>
     <string name="ringtone_focus_mode_dynamic">Desde auricular si está conectado y reproduciendo música</string>
@@ -618,12 +640,9 @@
     <string name="status_bar_icons_summary">Elija que iconos de la barra de estado se mostrarán</string>
     <!-- Lock screen icons -->
     <string name="lockscreen_tuner_title">Atajos en pantalla de bloqueo</string>
-    <!-- Double Tap Lock screen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Toque en pantalla de bloqueo</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Doble toque en la parte superior o inferior del área de atajos para bloquear la pantalla del dispositivo</string>
-    <!-- Double tap status bar to sleep -->
-    <string name="double_tap_to_sleep_title">Toque en barra de estado</string>
-    <string name="double_tap_to_sleep_summary">Doble toque en la barra de estado para apagar/bloquear la pantalla</string>
+    <!-- Double tap to sleep on status bar or lockscreen -->
+    <string name="status_bar_double_tap_to_sleep_title">Doble toque para suspender</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Doble toque en la barra de estado para apagar la pantalla</string>
     <!-- Flashlight Power button gestures -->
     <string name="torch_power_button_gesture_title">Alternar linterna con pantalla apagada</string>
     <string name="torch_power_button_gesture_none">Desactivado</string>
@@ -867,32 +886,22 @@
     <string name="status_bar_battery_style_icon_portrait">Icono vertical</string>
     <string name="status_bar_battery_style_icon_rlandscape">Ícono horizontal (Derecha)</string>
     <string name="status_bar_battery_style_icon_landscape">Ícono horizontal (Izquierda)</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_a">Apaisado D Estilo A</string>
-    <string name="status_bar_battery_style_icon_landscape_style_a">Apaisado I Estilo A</string>
-    <string name="status_bar_battery_style_icon_rlandscape_style_b">Apaisado D Estilo B</string>
-    <string name="status_bar_battery_style_icon_landscape_style_b">Apaisado I Estilo B</string>
-    <string name="status_bar_battery_style_icon_landscape_ios15">iOS 15 horizontal</string>
-    <string name="status_bar_battery_style_icon_landscape_ios16">iOS 16 horizontal</string>
-    <string name="status_bar_battery_style_icon_landscape_origami">Origami horizontal</string>
-    <string name="status_bar_battery_style_icon_landscape_pill">Vertical Mx</string>
-    <string name="status_bar_battery_style_icon_landscape_line">Apaisado Lorn</string>
-    <string name="status_bar_battery_style_icon_landscape_musku">Vertical iOS</string>
-    <string name="status_bar_battery_style_icon_landscape_signal">Apaisado Airoo</string>
-    <string name="status_bar_battery_style_icon_landscape_buddy">Apaisado Cápsula</string>
     <string name="status_bar_battery_style_circle">Círculo</string>
     <string name="status_bar_battery_style_dotted_circle">Círculo punteado</string>
-    <string name="status_bar_battery_style_big_circle">Círculo (Grande)</string>
-    <string name="status_bar_battery_style_big_dotted_circle">Círculo (Punteado)</string>
     <string name="status_bar_battery_style_filled_circle">Círculo (lleno)</string>
     <string name="status_bar_battery_style_text">Texto</string>
     <string name="status_bar_battery_style_hidden">Oculto</string>
     <string name="status_bar_battery_percent_title">Porcentaje de batería</string>
     <string name="status_bar_battery_percent_hidden">Oculto</string>
     <string name="status_bar_battery_percent_text_inside">Dentro del icono</string>
-    <string name="status_bar_battery_percent_text_next">Al lado del icono</string>
+    <string name="status_bar_battery_percent_text_next_right">Junto al icono (derecha)</string>
+    <string name="status_bar_battery_percent_text_next_left">Junto al icono (izquierda)</string>
     <string name="status_bar_battery_text_charging_title">Porcentaje de batería al cargar</string>
     <string name="status_bar_battery_text_charging_summary">Mostrar siempre porcentaje de batería al cargar</string>
     <!-- QS battery -->
+    <string name="qs_battery_location_title">Ubicación de la barra de batería</string>
+    <string name="qs_battery_location_qs_panel">Panel de Ajustes Rápidos</string>
+    <string name="qs_battery_location_qs_statusbar">Barra de estado rápida</string>
     <string name="qs_use_status_bar_battery_style">Seguir estilo de la barra de estado</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Estimación de batería</string>
@@ -1054,4 +1063,16 @@
     <!-- Volume haptic feedback -->
     <string name="volume_panel_haptic_feedback_title">Respuesta háptica del panel de volumen</string>
     <string name="volume_panel_haptic_feedback_summary">Activar la respuesta háptica del panel de volumen al ajustarlo</string>
+    <!-- Volume rocker music control -->
+    <string name="volbtn_music_controls_title">Control de la reproducción de música</string>
+    <string name="volbtn_music_controls_summary">Cambia entre pistas de música manteniendo pulsadas las teclas de volumen cuando la pantalla esté apagada</string>
+    <!-- Ambient Wake gesture -->
+    <string name="ambient_wake_gestures_title">Gestos de activación de pantalla ambiente</string>
+    <string name="ambient_wake_gestures_summary">Muestra la pantalla ambiente en lugar de la pantalla de bloqueo al despertar con gestos</string>
+    <!-- Application downgrade -->
+    <string name="app_downgrade_title">Permitir instalar versiones inferiores de las aplicaciones</string>
+    <string name="app_downgrade_summary">Permitir instalar versiones anteriores de las aplicaciones. Puede provocar fallos y corrupción de datos.</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Mostrar portapapeles</string>
+    <string name="show_clipboard_overlay_summary">Muestra lo que copiaste en la esquina inferior izquierda de la pantalla</string>
 </resources>
