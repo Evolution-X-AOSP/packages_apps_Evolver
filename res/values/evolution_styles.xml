@@ -72,4 +72,18 @@
         <item name="android:imeOptions">actionDone</item>
         <item name="android:singleLine">true</item>
     </style>
+
+    <style name="mtx_text_style_base">
+        <item name="android:breakStrategy">simple</item>
+    </style>
+
+    <style name="mtx_text_style_body1" parent="@style/mtx_text_style_base">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:fontFamily">@*android:string/config_bodyFontFamily</item>
+    </style>
+    
+    <style name="mtx_text_style_h6" parent="@style/mtx_text_style_base">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamilyMedium</item>
+    </style>
 </resources>
