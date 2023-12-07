@@ -8,6 +8,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
+    <!-- Play integrity fix -->
+    <Preference
+        android:key="pif"
+        android:title="@string/pif_title"
+        android:summary="@string/pif_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.goolag.pif"
+            android:targetClass="com.goolag.pif.PifActivity" />
+    </Preference>
+
     <!-- Pocket Judge -->
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="pocket_judge"
