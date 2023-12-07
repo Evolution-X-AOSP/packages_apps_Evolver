@@ -98,6 +98,16 @@
         android:key="spoof_category"
         android:title="@string/spoof_title">
 
+        <!-- Play integrity fix -->
+        <Preference
+            android:key="pif"
+            android:title="@string/pif_title"
+            android:summary="@string/pif_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.goolag.pif"
+                android:targetClass="com.goolag.pif.PifActivity" />
+        </Preference>
+
         <!-- Unlimited Photos storage -->
         <com.evolution.settings.preference.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.gphotos"
