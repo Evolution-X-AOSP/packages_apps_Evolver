@@ -8,40 +8,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/misc_title">
 
-    <!-- Play integrity fix -->
-    <Preference
-        android:key="pif"
-        android:title="@string/pif_title"
-        android:summary="@string/pif_summary">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="com.goolag.pif"
-            android:targetClass="com.goolag.pif.PifActivity" />
-    </Preference>
-
-    <!-- Pocket Judge -->
-    <com.evolution.settings.preference.SystemSettingSwitchPreference
-        android:key="pocket_judge"
-        android:title="@string/pocket_judge_title"
-        android:summary="@string/pocket_judge_summary"
-        android:defaultValue="false" />
-
-    <!-- Game Space -->
-    <Preference
-        android:key="game_settings"
-        android:title="@string/game_space_title"
-        android:summary="@string/game_space_summary">
-        <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="io.chaldeaprjkt.gamespace"
-            android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
-    </Preference>
-
-    <!-- Smart Pixels -->
-    <Preference
-        android:key="smart_pixels"
-        android:title="@string/smart_pixels_title" 
-        android:summary="@string/smart_pixels_summary"
-        android:fragment="com.evolution.settings.fragments.SmartPixels" />
-
     <!-- Launch music player when headset is connected -->
     <!--
     <com.evolution.settings.preference.SystemSettingSwitchPreference
@@ -52,44 +18,18 @@
     -->
 
     <PreferenceCategory
-        android:key="vibration_category"
-        android:title="@string/vibration_category_title">
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_brightness_slider_haptic"
-            android:title="@string/qs_brightness_slider_haptic_title"
-            android:summary="@string/qs_brightness_slider_haptic_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="quick_settings_vibrate"
-            android:title="@string/quick_settings_vibrate_title"
-            android:summary="@string/quick_settings_vibrate_summary"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="volume_slider_haptic"
-            android:title="@string/volume_panel_haptic_feedback_title"
-            android:summary="@string/volume_panel_haptic_feedback_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="pulse_category"
-        android:title="@string/pulse_category">
-
-        <Preference
-            android:key="pulse_settings"
-            android:title="@string/pulse_settings"
-            android:summary="@string/pulse_settings_summary"
-            android:fragment="com.evolution.settings.fragments.Pulse" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="spoof_category"
         android:title="@string/spoof_title">
+
+        <!-- Play integrity fix -->
+        <Preference
+            android:key="pif"
+            android:title="@string/pif_title"
+            android:summary="@string/pif_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.goolag.pif"
+                android:targetClass="com.goolag.pif.PifActivity" />
+        </Preference>
 
         <!-- Unlimited Photos storage -->
         <com.evolution.settings.preference.SystemPropertySwitchPreference
