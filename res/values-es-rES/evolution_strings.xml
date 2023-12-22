@@ -23,9 +23,6 @@
     <string name="swipe_gestures_title">Navegación por gestos</string>
     <string name="system_settings_title">Opciones del sistema</string>
     <string name="themes_title">Temas</string>
-    <string name="torch_gestures_title">Gestos de linterna</string>
-    <string name="on_call_flashlight_category">Linterna en llamada</string>
-    <string name="notification_flashlight_category">Linterna en notificaciones</string>
     <string name="ambient_display_category">Pantalla ambiente</string>
     <string name="lockscreen_clock_category">Reloj de pantalla de bloqueo</string>
     <string name="signal_icons_category_title">Iconos de señal</string>
@@ -164,9 +161,9 @@
     <string name="add_heads_up_blocklist_summary">Deshabilitar notificaciones flotantes de estas aplicaciones</string>
     <string name="heads_up_stoplist_title">Lista de detenidas</string>
     <string name="heads_up_blocklist_title">Lista de bloqueadas</string>
-    <string name="profile_choose_app">Elegir aplicación</string>
-    <string name="dialog_delete_title">Eliminar</string>
-    <string name="dialog_delete_message">¿Eliminar el elemento seleccionado?</string>
+    <string name="choose_app">Elije aplicación</string>
+    <string name="delete">Eliminar</string>
+    <string name="delete_message">¿Borrar selección?</string>
     <!-- Network traffic -->
     <string name="network_traffic_settings_title">Indicadores de tráfico de red</string>
     <string name="network_traffic_settings_summary">Muestra y configura el monitor actual de tráfico de red</string>
@@ -358,6 +355,7 @@
     <string name="notification_guts_kill_app_button_summary">Mostrar un botón para detener la aplicación en el menú de pulsación larga de la notificación</string>
     <!-- Status bar - Battery Bar -->
     <string name="battery_bar_title">Barra de la batería</string>
+    <string name="battery_bar_main_switch_title">Usar barra de batería</string>
     <string name="battery_bar_summary">Muestra y personaliza la barra de batería junto a la de estado o la de navegación</string>
     <string name="battery_bar_color">Color de la barra de batería</string>
     <string name="battery_bar_charging_color">Color de la barra de batería mientras carga</string>
@@ -478,16 +476,13 @@
     <string name="always_on_display_schedule_sunrise">Amanecer</string>
     <string name="always_on_display_schedule_mixed_sunset">Activar desde el anochecer hasta una hora concreta</string>
     <string name="always_on_display_schedule_mixed_sunrise">Activar desde una hora concreta hasta el amanecer</string>
-    <!-- HW keys -->
-    <string name="hardware_keys_title">Botones físicos</string>
-    <string name="hardware_keys_category">Botones físicos de navegación</string>
-    <string name="hardware_keys_disable_title">Desactivar los botones físicos</string>
-    <string name="hardware_keys_disable_summary">Usar los botones físicos para la navegación</string>
-    <string name="hardware_keys_volume_keys_title">Teclas de volumen</string>
     <!-- ANBI -->
     <string name="anbi_title">Toque accidental</string>
     <string name="anbi_summary">Prevenir interacción de los botones de navegación cuando se esté pulsando la pantalla</string>
-    <!-- Button settings -->
+    <!-- Buttons -->
+    <string name="navigation_bar_title">Barra de navegación</string>
+    <string name="hardware_keys_power_key_title">Botón de encendido</string>
+    <string name="hardware_keys_volume_keys_title">Teclas de volumen</string>
     <string name="button_pref_title">Botones</string>
     <!-- Hardware button navigation -->
     <string name="picker_activities">Actividades</string>
@@ -505,10 +500,6 @@
     <string name="hardware_keys_appswitch_key_title">Bóton de aplicaciones recientes</string>
     <string name="hardware_keys_camera_key_title">Botón de cámara</string>
     <string name="hardware_keys_short_press_title">Acción de pulsación corta</string>
-    <string name="hardware_keys_double_tap_summary">Establecer acción de doble toque</string>
-    <string name="hardware_keys_single_tap_summary">Establecer acción de un toque</string>
-    <string name="hardware_keys_long_press_summary">Establecer acción de pulsación larga</string>
-    <string name="hardware_keys_single_tap_title">Acción de un toque</string>
     <string name="hardware_keys_long_press_title">Acción de pulsación larga</string>
     <string name="hardware_keys_double_tap_title">Acción de doble toque</string>
     <string name="hardware_keys_action_nothing">Sin acción</string>
@@ -519,14 +510,14 @@
     <string name="hardware_keys_action_in_app_search">Búsqueda en la aplicación</string>
     <string name="hardware_keys_action_launch_camera">Abrir cámara</string>
     <string name="hardware_keys_action_sleep">Apagar la pantalla</string>
+    <string name="hardware_keys_action_last_app">Última aplicación</string>
     <string name="hardware_keys_action_split_screen">Pantalla dividida</string>
     <string name="hardware_keys_action_close_app">Detener aplicación</string>
     <string name="hardware_keys_action_torch">Linterna</string>
-    <string name="hardware_keys_action_screenshot">Captura de pantalla</string>
     <string name="hardware_keys_action_volume_panel">Alternar panel de volumen</string>
     <string name="hardware_keys_action_clear_all_notifications">Limpiar todas las notificaciones</string>
     <string name="hardware_keys_action_notifications_panel">Alternar panel de notificaciones</string>
-    <string name="hardware_keys_action_toggle_qs_panel">Alternar panel de Ajustes Rápidos</string>
+    <string name="hardware_keys_action_expand_qs_panel">Expandir Ajustes Rápidos</string>
     <string name="hardware_keys_action_ringer_modes">Modos de timbre</string>
     <string name="hardware_keys_swipe_right_key_title">Deslizar a la derecha</string>
     <string name="hardware_keys_swipe_left_key_title">Deslizar a la izquierda</string>
@@ -546,11 +537,25 @@
     <string name="volume_key_cursor_control_on_reverse">Volumen Arriba/Abajo - Cursor Derecha/Izquierda</string>
     <string name="swap_volume_buttons_title">Reorientar</string>
     <string name="swap_volume_buttons_summary">Intercambiar los botones de control de volumen al girar la pantalla</string>
+    <!-- Volume keys customization -->
+    <string name="volbtn_music_controls_title">Control de la reproducción de música</string>
+    <string name="volbtn_music_controls_summary">Cambia entre pistas de música manteniendo pulsadas las teclas de volumen cuando la pantalla esté apagada</string>
+    <string name="volume_answer_call_title">Responder llamada</string>
+    <string name="volume_answer_call_summary">Responder las llamadas con los botones de volumen</string>
+    <!-- Home key customization -->
+    <string name="home_answer_call_title">Responder llamada</string>
+    <string name="home_answer_call_summary">Responder las llamadas con el botón de inicio</string>
+    <!-- Power menu key customization -->
+    <string name="power_end_call_title">Terminar llamada</string>
+    <string name="power_end_call_summary">Finalizar llamada con el botón de encendido</string>
     <string name="volume_panel_on_left_title">Panel de volumen en el lado izquierdo</string>
     <string name="volume_panel_on_left_summary">Mostrar panel de volumen en el lado izquierdo de la pantalla</string>
     <string name="extras_title">Extras</string>
+    <!-- Partial screenshot -->
     <string name="click_partial_screenshot_title">Toque para hacer una captura de pantalla parcial</string>
     <string name="click_partial_screenshot_summary">Pulse brevemente Bajar-Volumen y Encender para tomar una captura de pantalla parcial</string>
+    <!-- Edge gesture -->
+    <string name="navigation_bar_edge_long_swipe_title">Acción de deslizamiento largo del borde</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Panel de volumen</string>
     <string name="volume_dialog_timeout_title">Tiempo de espera del panel de volumen</string>
@@ -606,22 +611,6 @@
     <string name="alarm_blocker_summary">Bloquear alarmas mientras la pantalla está apagada para ahorrar batería</string>
     <string name="alarm_blocker_warning">Bloquear alarmas puede causar inestabilidad, cierres forzados o pérdida de datos.</string>
     <string name="alarm_blocker_display_text">Para ver y bloquear las alarmas, activa el bloqueador de alarmas.</string>
-    <!-- Blink flashlight for incoming calls -->
-    <string name="flashlight_on_call_title">Parpadear la linterna en llamada entrante</string>
-    <string name="flashlight_on_call_disabled">Desactivado</string>
-    <string name="flashlight_on_call_ringer">Al sonar</string>
-    <string name="flashlight_on_call_no_ringer">Cuando el timbre está silenciado</string>
-    <string name="flashlight_on_call_silent">Cuando está completamente silenciado (sin timbre ni vibración)</string>
-    <string name="flashlight_on_call_always">Siempre</string>
-    <string name="flashlight_on_call_ignore_dnd_title">Ignorar No molestar</string>
-    <string name="flashlight_on_call_ignore_dnd_summary">Parpadear cuando esté en modo No molestar</string>
-    <string name="flashlight_on_call_rate_title">Frecuencia</string>
-    <string name="flashlight_on_call_rate_summary">Parpadeo de linterna en llamada</string>
-    <!-- Blink flashlight for notifications -->
-    <string name="notification_torch_title">Parpadear linterna para las notificaciones</string>
-    <string name="notification_torch_summary">Por defecto. Por ajustes de canal existente</string>
-    <string name="notification_torch_slider1">Tiempo de parpadeo</string>
-    <string name="notification_torch_slider2">Tasa de parpadeo</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Letras en la barra de estado</string>
     <string name="status_bar_lyric_summary">Mostrar letras en la barra de estado (necesita soporte de la app)</string>
@@ -643,14 +632,9 @@
     <!-- Double tap to sleep on status bar or lockscreen -->
     <string name="status_bar_double_tap_to_sleep_title">Doble toque para suspender</string>
     <string name="status_bar_double_tap_to_sleep_summary">Doble toque en la barra de estado para apagar la pantalla</string>
-    <!-- Flashlight Power button gestures -->
-    <string name="torch_power_button_gesture_title">Alternar linterna con pantalla apagada</string>
-    <string name="torch_power_button_gesture_none">Desactivado</string>
-    <string name="torch_power_button_gesture_dt">Doble toque del botón de encendido (más lento que un solo toque). Desactiva doble toque para la cámara.</string>
-    <string name="torch_power_button_gesture_lp">Pulsación larga del botón de encendido</string>
-    <!-- Power menu on lock screen -->
-    <string name="lockscreen_power_menu_disabled_title">Deshabilitar el menú de apagado en la pantalla de bloqueo</string>
-    <string name="lockscreen_power_menu_disabled_summary">Esto solo desactivará el menú de apagado en la pantalla de bloqueo con seguridad establecida</string>
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Menú de apagado</string>
+    <string name="lockscreen_enable_power_menu_summary">Permitir el acceso al menú de encendido en la pantalla de bloqueo</string>
     <!-- Toast app icon -->
     <string name="toast_icon_title">Icono de la aplicación en aviso emergente</string>
     <string name="toast_icon_summary">Mostrar el icono de la aplicación correspondiente en el aviso emergente</string>
@@ -692,7 +676,7 @@
     <string name="show_carrier_enabled">Ambas</string>
     <!-- Monet settings -->
     <string name="monet_settings_title">Configuración de temas</string>
-    <string name="monet_settings_sammary">Unos pocos ajustes adicionales para personalizar el motor de monet</string>
+    <string name="monet_settings_summary">Unos pocos ajustes adicionales para personalizar el motor de monet</string>
     <string name="theme_style_title">Estilo del tema</string>
     <string name="theme_style_tonal_spot">Tonal Spot (por defecto)</string>
     <string name="theme_style_vibrant">Vibrante</string>
@@ -702,6 +686,7 @@
     <string name="theme_style_fruit_salad">Ensalada de frutas</string>
     <string name="theme_style_muted">Silenciado</string>
     <string name="theme_style_content">Contenido</string>
+    <string name="theme_style_monochromatic">Monocromático</string>
     <string name="color_source_title">Color de origen</string>
     <string name="color_source_both">Ambos (por defecto)</string>
     <string name="color_source_home">Fondo de pantalla</string>
@@ -822,13 +807,12 @@
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Ignorar limitadores de ventanas seguras</string>
     <string name="ignore_window_secure_summary">Esto elimina los límites de captura y grabación de pantalla en todas las aplicaciones. Normalmente, determinadas aplicaciones son reemplazadas por áreas negras en los registros. Esto puede ser conveniente en algunos casos pero puede conducir a filtraciones de datos. Tras cambiar esta opción, quizás necesite reiniciar las aplicaciones para que el cambio tenga efecto.</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Reemplace la notificación de advertencia con una versión delgada y menos invasiva del teletipo rediseñado</string>
-    <string name="reticker_colored_title">Usar fondo coloreado de la aplicación</string>
-    <string name="reticker_colored_summary">Reemplazar el color de fondo del reTicker usando el color principal de la aplicación que notifica</string>
-    <string name="reticker_landscape_only_title">Solo apaisado</string>
-    <string name="reticker_landscape_only_summary">Activar reTicker solo con el dispositivo en modo apaisado</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">Notificación de isla</string>
+    <string name="island_notification_summary">Mostrar notificaciones en estilo de Isla Dinámica</string>
+    <string name="island_notification_now_playing_title">Reproducción actual en isla</string>
+    <string name="island_notification_now_playing_summary">Mostrar la canción actual como notificación de Isla Dinámica</string>
+    <string name="island_notification_intro_title">        La función de notificación de Isla Dinámica, inspirada en iOS, transforma las notificaciones emergentes de Android en una utilidad de notificación rápida y compacta.\n\nLos controles de acceso rápido de la Isla Dinámica incluyen las siguientes características:\n1. Toca la notificación de la isla para responder rápidamente a las llamadas telefónicas.\n2. Mantén pulsada la notificación de la Isla para rechazar llamadas telefónicas.\n3. Mantén pulsada la notificación de la isla para expandir la vista previa de la notificación de la isla.    </string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Los píxeles inteligentes son una opción de ahorro de batería. Dependiendo de cuantos pixeles decidas apagar, tal vez veas mejoras en la duración de la batería</string>
     <string name="smart_pixels_title">Píxeles Inteligentes</string>
@@ -850,10 +834,9 @@
     <string name="status_bar_logo_position_left">Izquierda</string>
     <string name="status_bar_logo_style_title">Estilo</string>
     <string name="status_bar_logo_style_evolution">Evolution X</string>
+    <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
-    <string name="status_bar_logo_style_airjordan">Air Jordan</string>
     <string name="status_bar_logo_style_alien">Alien</string>
-    <string name="status_bar_logo_style_amogus">Amogus</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">Vengadores</string>
     <string name="status_bar_logo_style_batman">Batman</string>
@@ -861,26 +844,29 @@
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Riesgo biológico</string>
     <string name="status_bar_logo_style_blackberry">Blackberry</string>
-    <string name="status_bar_logo_style_captain_america">Capitán América</string>
     <string name="status_bar_logo_style_cannabis">Cannabis</string>
-    <string name="status_bar_logo_style_flash">Flash</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticono fresco</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticono diablo</string>
     <string name="status_bar_logo_style_fire">Fuego</string>
-    <string name="status_bar_logo_style_ghost">Ghost</string>
     <string name="status_bar_logo_style_heart">Corazón</string>
-    <string name="status_bar_logo_style_ironman">Iron Man</string>
-    <string name="status_bar_logo_style_mint">Linux Mint</string>
     <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_ninja">Ninja</string>
-    <string name="status_bar_logo_style_pac_man">Pac-man</string>
+    <string name="status_bar_logo_style_pacman">Pac-man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
-    <string name="status_bar_logo_style_robot">Robot</string>
     <string name="status_bar_logo_style_rog">ROG</string>
     <string name="status_bar_logo_style_spiderman">El hombre araña</string>
     <string name="status_bar_logo_style_superman">Superman</string>
-    <string name="status_bar_logo_style_tux">Tux</string>
-    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">XBOX</string>
+    <string name="status_bar_logo_style_ghost">Ghost</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
+    <string name="status_bar_logo_style_ironman">Iron Man</string>
+    <string name="status_bar_logo_style_captain_america">Capitán América</string>
+    <string name="status_bar_logo_style_flash">Flash</string>
+    <string name="status_bar_logo_style_tux">Tux</string>
+    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
+    <string name="status_bar_logo_style_mint">Linux Mint</string>
+    <string name="status_bar_logo_style_amogus">Amogus</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Estilo de la batería</string>
     <string name="status_bar_battery_style_icon_portrait">Icono vertical</string>
@@ -936,9 +922,9 @@
     <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">Iconos coloreados</string>
     <string name="statusbar_colored_icons_summary">Usar iconos de aplicación para las notificaciones en la barra de estado</string>
-    <!-- Wi-Fi Standard icon -->
-    <string name="show_wifi_standard_icon_title">Mostrar icono de tipo de Wi-Fi</string>
-    <string name="show_wifi_standard_icon_summary">Mostrar tipo Wi-Fi en el indicador de señal Wi-Fi</string>
+    <!-- WiFi Standard icon -->
+    <string name="wifi_standard_icon_title">Estándar WiFi</string>
+    <string name="wifi_standard_icon_summary">Mostrar el estándar WiFi junto a la señal WiFi</string>
     <!-- Summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Nunca</string>
     <string name="custom_timeout_summary_5secs">5 segundos</string>
@@ -998,22 +984,6 @@
     <!-- Changelog -->
     <string name="changelog_evolution_title">Registro de cambios</string>
     <string name="changelog_evolution_summary">Ver los cambios recientes de la ROM</string>
-    <!-- Parallel space -->
-    <string name="laboratory_parallel_space_title">Espacio paralelo</string>
-    <string name="laboratory_parallel_space_summary">Permite ejecutar múltiples instancias de la misma aplicación en paralelo</string>
-    <!-- Lock screen bottom shortcuts -->
-    <string name="lockscreen_shortcut_category">Atajos inferiores</string>
-    <string name="lockscreen_shortcut_start_title">Atajo izquierdo</string>
-    <string name="lockscreen_shortcut_end_title">Atajo derecho</string>
-    <string name="lockscreen_shortcut_wallet">Billetera</string>
-    <string name="lockscreen_shortcut_home">Inicio</string>
-    <string name="lockscreen_shortcut_flashlight">Linterna</string>
-    <string name="lockscreen_shortcut_qr">Escanear QR</string>
-    <string name="lockscreen_shortcut_camera">Cámara</string>
-    <string name="lockscreen_shortcut_remote">Controles remotos de Google TV</string>
-    <string name="lockscreen_shortcut_none">Ninguno</string>
-    <string name="lockscreen_shortcut_enforce_title">Atajo</string>
-    <string name="lockscreen_shortcut_enforce_summary">Forzar que el atajo elegido sea la única prioridad existente\nNo mostrará nada hasta que el atajo elegido esté disponible</string>
     <!-- QS tiles layout -->
     <string name="qs_layout_category_title">Distribución de ajustes rápidos</string>
     <string name="qs_tile_label_hide_title">Ocultar etiqueta</string>
@@ -1077,13 +1047,16 @@
     <!-- Volume haptic feedback -->
     <string name="volume_panel_haptic_feedback_title">Respuesta háptica del panel de volumen</string>
     <string name="volume_panel_haptic_feedback_summary">Activar la respuesta háptica del panel de volumen al ajustarlo</string>
-    <!-- Volume rocker music control -->
-    <string name="volbtn_music_controls_title">Control de la reproducción de música</string>
-    <string name="volbtn_music_controls_summary">Cambia entre pistas de música manteniendo pulsadas las teclas de volumen cuando la pantalla esté apagada</string>
+    <!-- Pif -->
+    <string name="pif_title">Arreglar integridad de GPlay</string>
+    <string name="pif_summary">Ver valores usados para suplantar GMS</string>
     <!-- Application downgrade -->
     <string name="app_downgrade_title">Permitir instalar versiones inferiores de las aplicaciones</string>
     <string name="app_downgrade_summary">Permitir instalar versiones anteriores de las aplicaciones. Puede provocar fallos y corrupción de datos.</string>
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">Mostrar portapapeles</string>
     <string name="show_clipboard_overlay_summary">Muestra lo que copiaste en la esquina inferior izquierda de la pantalla</string>
+    <!-- Weather -->
+    <string name="lockscreen_weather_title">Mostrar estado del clima</string>
+    <string name="lockscreen_weather_summary">Mostrar estado del clima y temperatura</string>
 </resources>
