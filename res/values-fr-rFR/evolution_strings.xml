@@ -23,9 +23,6 @@
     <string name="swipe_gestures_title">Gestes de navigation</string>
     <string name="system_settings_title">Options du système</string>
     <string name="themes_title">Thèmes</string>
-    <string name="torch_gestures_title">Gestes de torche</string>
-    <string name="on_call_flashlight_category">Lampe torche lors d\'un appel</string>
-    <string name="notification_flashlight_category">Lampe torche pour les notifications</string>
     <string name="ambient_display_category">Affichage ambiant</string>
     <string name="lockscreen_clock_category">Horloge de l\'écran de verrouillage</string>
     <string name="signal_icons_category_title">Style de l\'indicateur de signal réseau</string>
@@ -164,9 +161,9 @@
     <string name="add_heads_up_blocklist_summary">Désactiver les notifications flottantes de ces applications</string>
     <string name="heads_up_stoplist_title">Liste d\'arrêt</string>
     <string name="heads_up_blocklist_title">Liste de blocage</string>
-    <string name="profile_choose_app">Choisir une application</string>
-    <string name="dialog_delete_title">Supprimer</string>
-    <string name="dialog_delete_message">Retirer l\'élément sélectionné ?</string>
+    <string name="choose_app">Choisir une application</string>
+    <string name="delete">Supprimer</string>
+    <string name="delete_message">Retirer l\'élément sélectionné ?</string>
     <!-- Network traffic -->
     <string name="network_traffic_settings_title">Indicateur du débit réseau</string>
     <string name="network_traffic_settings_summary">Afficher et personnaliser les niveaux de trafic réseau actuel</string>
@@ -479,16 +476,13 @@
     <string name="always_on_display_schedule_sunrise">Lever du soleil</string>
     <string name="always_on_display_schedule_mixed_sunset">Allumé du coucher du soleil jusqu\'à une heure précise</string>
     <string name="always_on_display_schedule_mixed_sunrise">S\'allume à une certaine heure jusqu\'au lever du soleil</string>
-    <!-- HW keys -->
-    <string name="hardware_keys_title">Boutons</string>
-    <string name="hardware_keys_category">Boutons de navigation physiques</string>
-    <string name="hardware_keys_disable_title">Désactiver les boutons physiques</string>
-    <string name="hardware_keys_disable_summary">Utiliser les touches physiques de l\'appareil pour la navigation</string>
-    <string name="hardware_keys_volume_keys_title">Boutons de volume</string>
     <!-- ANBI -->
     <string name="anbi_title">Appui accidentel</string>
     <string name="anbi_summary">Empêcher l\'interaction avec les boutons physiques lorsque l\'écran est utilisé</string>
-    <!-- Button settings -->
+    <!-- Buttons -->
+    <string name="navigation_bar_title">Barre de navigation</string>
+    <string name="hardware_keys_power_key_title">Bouton marche/arrêt</string>
+    <string name="hardware_keys_volume_keys_title">Boutons de volume</string>
     <string name="button_pref_title">Boutons</string>
     <!-- Hardware button navigation -->
     <string name="picker_activities">Activités</string>
@@ -506,10 +500,6 @@
     <string name="hardware_keys_appswitch_key_title">Bouton applications récentes</string>
     <string name="hardware_keys_camera_key_title">Bouton appareil photo</string>
     <string name="hardware_keys_short_press_title">Action lors d\'un appui court</string>
-    <string name="hardware_keys_double_tap_summary">Définir une action lors d\'un double appui</string>
-    <string name="hardware_keys_single_tap_summary">Définir une action lors d\'un appui simple</string>
-    <string name="hardware_keys_long_press_summary">Définir une action lors d\'un appui long</string>
-    <string name="hardware_keys_single_tap_title">Action lors d\'un appui simple</string>
     <string name="hardware_keys_long_press_title">Action lors d\'un appui long</string>
     <string name="hardware_keys_double_tap_title">Action lors d\'un double appui</string>
     <string name="hardware_keys_action_nothing">Aucune action</string>
@@ -520,14 +510,14 @@
     <string name="hardware_keys_action_in_app_search">Recherche dans l\'application</string>
     <string name="hardware_keys_action_launch_camera">Démarrer l\'appareil photo</string>
     <string name="hardware_keys_action_sleep">Éteindre l\'écran</string>
+    <string name="hardware_keys_action_last_app">Dernière application</string>
     <string name="hardware_keys_action_split_screen">Diviser l\'écran</string>
     <string name="hardware_keys_action_close_app">Forcer l\'arrêt de l\'application</string>
     <string name="hardware_keys_action_torch">Lampe-torche</string>
-    <string name="hardware_keys_action_screenshot">Capture d\'écran</string>
     <string name="hardware_keys_action_volume_panel">Ouvrir/fermer le panneau de volume</string>
     <string name="hardware_keys_action_clear_all_notifications">Effacer toutes les notifications</string>
     <string name="hardware_keys_action_notifications_panel">Ouvrir/Fermer le panneau de notifications</string>
-    <string name="hardware_keys_action_toggle_qs_panel">Afficher/Masquer le panneau des réglages rapides</string>
+    <string name="hardware_keys_action_expand_qs_panel">Étendre le panneau de paramètres rapides</string>
     <string name="hardware_keys_action_ringer_modes">Modes de sonnerie</string>
     <string name="hardware_keys_swipe_right_key_title">Balayer vers la droite</string>
     <string name="hardware_keys_swipe_left_key_title">Balayage à gauche</string>
@@ -547,11 +537,25 @@
     <string name="volume_key_cursor_control_on_reverse">Volume haut/bas déplace le curseur vers la droite/gauche</string>
     <string name="swap_volume_buttons_title">Réorienter</string>
     <string name="swap_volume_buttons_summary">Permute les boutons de volume lorsque l\'écran pivote</string>
+    <!-- Volume keys customization -->
+    <string name="volbtn_music_controls_title">Contrôle de la lecture</string>
+    <string name="volbtn_music_controls_summary">Changer de pistes musicales lors d\'un appui long sur les boutons de volume lorsque l\'écran est éteint</string>
+    <string name="volume_answer_call_title">Répondre à l’appel</string>
+    <string name="volume_answer_call_summary">Accepter les appels entrants en appuyant sur les touches de volume</string>
+    <!-- Home key customization -->
+    <string name="home_answer_call_title">Répondre à l’appel</string>
+    <string name="home_answer_call_summary">Répondre aux appels entrants en appuyant sur le bouton Accueil</string>
+    <!-- Power menu key customization -->
+    <string name="power_end_call_title">Raccrocher</string>
+    <string name="power_end_call_summary">Mettre fin à l’appel en cours en appuyant sur le bouton marche/arrêt</string>
     <string name="volume_panel_on_left_title">Afficher le panneau de volume à gauche</string>
     <string name="volume_panel_on_left_summary">Afficher le panneau de volume sur le côté gauche de l\'écran</string>
     <string name="extras_title">Extras</string>
+    <!-- Partial screenshot -->
     <string name="click_partial_screenshot_title">Cliquer pour une capture d\'écran partielle</string>
     <string name="click_partial_screenshot_summary">Presser brièvement Volume Bas et Marche/Arrêt pour effectuer une capture d\'écran partielle</string>
+    <!-- Edge gesture -->
+    <string name="navigation_bar_edge_long_swipe_title">Action d\'un balayage long sur le bord</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Panneau de volume</string>
     <string name="volume_dialog_timeout_title">Temps d\'affichage du panneau de volume</string>
@@ -607,22 +611,6 @@
     <string name="alarm_blocker_summary">Bloquer les alarmes lorsque l\'écran est éteint pour économiser de la batterie</string>
     <string name="alarm_blocker_warning">Le blocage des alarmes peut entraîner des instabilités, plantages ou perte de données.</string>
     <string name="alarm_blocker_display_text">Pour voir et bloquer les alarmes, activez le bloqueur d\'alarme.</string>
-    <!-- Blink flashlight for incoming calls -->
-    <string name="flashlight_on_call_title">Faire clignoter le flash lors d\'un appel entrant</string>
-    <string name="flashlight_on_call_disabled">Désactivé</string>
-    <string name="flashlight_on_call_ringer">En mode sonnerie</string>
-    <string name="flashlight_on_call_no_ringer">Lorsque la sonnerie est silencieuse</string>
-    <string name="flashlight_on_call_silent">Lorsque l\'appareil est entièrement silencieux (pas de sonnerie ou de vibration)</string>
-    <string name="flashlight_on_call_always">Toujours</string>
-    <string name="flashlight_on_call_ignore_dnd_title">Ignorer le mode Ne pas déranger</string>
-    <string name="flashlight_on_call_ignore_dnd_summary">Activer le flash en mode Ne pas déranger</string>
-    <string name="flashlight_on_call_rate_title">Taux</string>
-    <string name="flashlight_on_call_rate_summary">Taux de clignotement du flash pendant l\'appel</string>
-    <!-- Blink flashlight for notifications -->
-    <string name="notification_torch_title">Faire clignoter la lampe torche pour les notifications</string>
-    <string name="notification_torch_summary">Par défaut. Les paramètres par canal existent</string>
-    <string name="notification_torch_slider1">Nombre de clignotements</string>
-    <string name="notification_torch_slider2">Taux de clignotement</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Paroles dans la barre d\'état</string>
     <string name="status_bar_lyric_summary">Afficher les paroles dans la barre d\'état (nécessite le support de l\'application)</string>
@@ -644,14 +632,9 @@
     <!-- Double tap to sleep on status bar or lockscreen -->
     <string name="status_bar_double_tap_to_sleep_title">Appuyer pour mettre en veille</string>
     <string name="status_bar_double_tap_to_sleep_summary">Appuyer deux fois sur la barre d\'état ou sur l\'écran de verrouillage pour éteindre l\'écran</string>
-    <!-- Flashlight Power button gestures -->
-    <string name="torch_power_button_gesture_title">Activer/désactiver la lampe de poche lorsque l\'écran est éteint</string>
-    <string name="torch_power_button_gesture_none">Désactivé</string>
-    <string name="torch_power_button_gesture_dt">Presser deux fois le bouton power (réduit le temps de réponse de l\'appui simple), Désactive l\'appui double pour la caméra.</string>
-    <string name="torch_power_button_gesture_lp">Appui prolongé sur le bouton Marche/Arrêt</string>
-    <!-- Power menu on lock screen -->
-    <string name="lockscreen_power_menu_disabled_title">Désactiver le menu Marche/Arrêt sur l’écran de verrouillage</string>
-    <string name="lockscreen_power_menu_disabled_summary">Cela désactivera le menu Marche/Arrêt seulement sur un écran de verrouillage sécurisé</string>
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Menu marche/arrêt</string>
+    <string name="lockscreen_enable_power_menu_summary">Autoriser l\'accès au menu Marche/Arrêt sur l\'écran de verrouillage   </string>
     <!-- Toast app icon -->
     <string name="toast_icon_title">Icône des notifications contextuelles</string>
     <string name="toast_icon_summary">Afficher l\'icône de l\'application correspondante dans la notification contextuelle</string>
@@ -691,21 +674,36 @@
     <string name="show_carrier_keyguard">Écran de verrouillage</string>
     <string name="show_carrier_statusbar">Barre d\'état</string>
     <string name="show_carrier_enabled">Les deux</string>
-    <!-- UI settings -->
-    <string name="monet_title">Paramètres Monet</string>
-    <string name="monet_summary">Personnaliser le moteur de thème Monet</string>
-    <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Couleur d\'accentuation</string>
-    <string name="monet_engine_custom_color_summary">Choisir une couleur personnalisée pour l\'accentuation</string>
-    <string name="monet_engine_custom_bgcolor_title">Couleur d\'arrière-plan</string>
-    <string name="monet_engine_custom_bgcolor_summary">Choisir une couleur personnalisée pour l\'arrière-plan</string>
-    <string name="monet_engine_color_override_title">Couleur personnalisée</string>
-    <string name="monet_engine_luminance_factor_title">Luminosité</string>
-    <string name="monet_engine_luminance_factor_summary">Des valeurs plus élevées produisent des couleurs plus brillantes</string>
-    <string name="monet_engine_chroma_factor_title">Facteur chromatique</string>
-    <string name="monet_engine_chroma_factor_summary">Des valeurs plus élevées produisent des couleurs plus fortes</string>
-    <string name="monet_engine_tint_background_title">Teinte de l\'arrière-plan</string>
-    <string name="monet_engine_tint_background_summary">Faire que la luminosité et la sélection de chroma affectent aussi les couleurs d\'arrière-plan</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Paramètres du thème</string>
+    <string name="monet_settings_summary">Quelques réglages supplémentaires pour personnaliser le moteur Monet</string>
+    <string name="theme_style_title">Style du thème</string>
+    <string name="theme_style_tonal_spot">Tonal Spot (par défaut)</string>
+    <string name="theme_style_vibrant">Éclatant</string>
+    <string name="theme_style_expressive">Expressif</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Arc-en-ciel</string>
+    <string name="theme_style_fruit_salad">Salade de fruits</string>
+    <string name="theme_style_muted">Muet</string>
+    <string name="theme_style_content">Contenu</string>
+    <string name="theme_style_monochromatic">Monochromatique</string>
+    <string name="color_source_title">Source de couleur</string>
+    <string name="color_source_both">Les deux (par défaut)</string>
+    <string name="color_source_home">Fond d\'écran d\'accueil</string>
+    <string name="color_source_lock">Fond d\'écran de verrouillage</string>
+    <string name="color_source_preset">Préréglage</string>
+    <string name="accent_color_title">Couleur d\'accentuation</string>
+    <string name="accent_color_summary">Remplacer la couleur d\'accentuation par défaut</string>
+    <string name="accent_background_title">Accentuation de l\'arrière-plan</string>
+    <string name="accent_background_summary">Choisir une couleur d\'accentuation différente pour l\'arrière-plan</string>
+    <string name="bg_color_title">Couleur de fond</string>
+    <string name="bg_color_summary">Remplacer la couleur d\'accentuation de fond par défaut</string>
+    <string name="luminance_factor_title">Luminosité</string>
+    <string name="luminance_factor_summary">Des valeurs plus élevées produisent des couleurs plus brillantes</string>
+    <string name="chroma_factor_title">Couleurs</string>
+    <string name="chroma_factor_summary">Des valeurs plus élevées produisent des couleurs plus fortes</string>
+    <string name="tint_background_title">Teindre l\'arrière-plan</string>
+    <string name="tint_background_summary">Faire en sorte que la Luminance et la sélection Chroma affectent aussi les couleurs d\'arrière-plan</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Utiliser un thème personnalisé</string>
     <string name="custom_theme_black">Noir</string>
@@ -809,13 +807,12 @@
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Ignorer les drapeaux sécurisés des fenêtres</string>
     <string name="ignore_window_secure_summary">Retirer les limites des captures d\'écran et des enregistrements d\'écran pour toutes les applications. Peut être pratique dans certains cas, mais peut entraîner des fuites de confidentialité. Un redémarrage des applications est nécessaire pour que le changement prenne effet.</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Remplacer la notification flottante par une version moins invasive</string>
-    <string name="reticker_colored_title">Utiliser l\'arrière-plan coloré de l\'application</string>
-    <string name="reticker_colored_summary">Remplacer la couleur d\'arrière-plan de reTicker par la couleur principale de la notification de l\'application</string>
-    <string name="reticker_landscape_only_title">Mode paysage uniquement</string>
-    <string name="reticker_landscape_only_summary">Activer reTicker uniquement lorsque l\'appareil est en mode paysage</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">Notification de l\'île</string>
+    <string name="island_notification_summary">Afficher les notifications flottantes dans le style de dynamic island </string>
+    <string name="island_notification_now_playing_title">Île en train de jouer</string>
+    <string name="island_notification_now_playing_summary">Afficher la chanson en cours de lecture sous forme de notification dynamic island </string>
+    <string name="island_notification_intro_title">La fonctionnalité de notification dynamic island, inspirée par iOS, transforme les notifications Android en notifications compactes et accès rapides.\n\nLes accès rapides dynamic island inclues les fonctionnalités suivantes:\n1. Appuyez sur la notification dynamic island pour répondre à un appel.\n2. Appuyez longtemps sur la notification dynamic island pour rejeter un appel.\n3. Appuyez longtemps sur la notification dynamic island pour étendre la notification dynamic island.</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Smart Pixels est une fonction d\'économie d\'énergie. Selon le nombre de pixels que vous décidez de désactiver, vous pourriez voir une amélioration de la durée de vie de la batterie. Notez que dans certains cas, cela peut entraîner des zones non réactives sur l\'écran tactile</string>
     <string name="smart_pixels_title">Smart Pixels</string>
@@ -925,9 +922,9 @@
     <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">Icônes colorées</string>
     <string name="statusbar_colored_icons_summary">Utiliser les icônes des applications comme icônes de notification dans la barre d\'état</string>
-    <!-- Wi-Fi Standard icon -->
-    <string name="show_wifi_standard_icon_title">Afficher l\'icône du standard Wi-Fi</string>
-    <string name="show_wifi_standard_icon_summary">Afficher le type de Wi-Fi dans l\'indicateur de signal Wi-Fi</string>
+    <!-- WiFi Standard icon -->
+    <string name="wifi_standard_icon_title">Norme Wi-Fi</string>
+    <string name="wifi_standard_icon_summary">Afficher la norme Wi-Fi à côté du signal Wi-Fi</string>
     <!-- Summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Jamais</string>
     <string name="custom_timeout_summary_5secs">5 secondes</string>
@@ -987,22 +984,6 @@
     <!-- Changelog -->
     <string name="changelog_evolution_title">Derniers changements</string>
     <string name="changelog_evolution_summary">Afficher les modifications récentes du système</string>
-    <!-- Parallel space -->
-    <string name="laboratory_parallel_space_title">Espace parallèle</string>
-    <string name="laboratory_parallel_space_summary">Autoriser l\'exécution de plusieurs instances de la même application en simultané</string>
-    <!-- Lock screen bottom shortcuts -->
-    <string name="lockscreen_shortcut_category">Raccourcis du bas</string>
-    <string name="lockscreen_shortcut_start_title">Raccourci de gauche</string>
-    <string name="lockscreen_shortcut_end_title">Raccourci de droite</string>
-    <string name="lockscreen_shortcut_wallet">Portefeuille</string>
-    <string name="lockscreen_shortcut_home">Maison connectée</string>
-    <string name="lockscreen_shortcut_flashlight">Lampe torche</string>
-    <string name="lockscreen_shortcut_qr">Scanner de QR codes</string>
-    <string name="lockscreen_shortcut_camera">Appareil photo</string>
-    <string name="lockscreen_shortcut_remote">Télécommande Google TV</string>
-    <string name="lockscreen_shortcut_none">Aucun</string>
-    <string name="lockscreen_shortcut_enforce_title">Raccourci unique</string>
-    <string name="lockscreen_shortcut_enforce_summary">Forcer le raccourci choisi à être la seule priorité existante\nN\'affichera rien tant que le raccourci spécifique choisi n\'est pas disponible</string>
     <!-- QS tiles layout -->
     <string name="qs_layout_category_title">Disposition des tuiles</string>
     <string name="qs_tile_label_hide_title">Masquer le libellé</string>
@@ -1066,13 +1047,16 @@
     <!-- Volume haptic feedback -->
     <string name="volume_panel_haptic_feedback_title">Retour haptique du volume</string>
     <string name="volume_panel_haptic_feedback_summary">Activer le retour tactile du volume lors de l\'ajustement du volume</string>
-    <!-- Volume rocker music control -->
-    <string name="volbtn_music_controls_title">Contrôle de la lecture</string>
-    <string name="volbtn_music_controls_summary">Changer de pistes musicales lors d\'un appui long sur les boutons de volume lorsque l\'écran est éteint</string>
+    <!-- Pif -->
+    <string name="pif_title">Correction Play integrity</string>
+    <string name="pif_summary">Voir les valeurs courantes utilisées pour spoof GMS</string>
     <!-- Application downgrade -->
     <string name="app_downgrade_title">Autoriser le downgrade de l\'application</string>
     <string name="app_downgrade_summary">Permettre de rétrograder les applications. Peut entraîner des plantages et une corruption des données.</string>
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">Afficher l\'IU du presse-papiers</string>
     <string name="show_clipboard_overlay_summary">Afficher une IU dans le coin inférieur gauche de l\'écran lorsque quelque chose est copié dans le presse-papiers</string>
+    <!-- Weather -->
+    <string name="lockscreen_weather_title">Afficher les conditions météo</string>
+    <string name="lockscreen_weather_summary">Afficher les conditions météo actuelles et la température</string>
 </resources>
