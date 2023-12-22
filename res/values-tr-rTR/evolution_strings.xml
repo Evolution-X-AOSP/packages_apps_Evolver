@@ -23,9 +23,6 @@
     <string name="swipe_gestures_title">Kaydırma hareketleri</string>
     <string name="system_settings_title">Sistem seçenekleri</string>
     <string name="themes_title">Temalar</string>
-    <string name="torch_gestures_title">El feneri hareketleri</string>
-    <string name="on_call_flashlight_category">Aramada flash</string>
-    <string name="notification_flashlight_category">Fener bildirimi</string>
     <string name="ambient_display_category">Ortam ekranı</string>
     <string name="lockscreen_clock_category">Kilit ekranı saati stili</string>
     <string name="signal_icons_category_title">Sinyal simgesi</string>
@@ -164,9 +161,9 @@
     <string name="add_heads_up_blocklist_summary">Bu uygulamalardan bildirim pencerelerini devre dışı bırak</string>
     <string name="heads_up_stoplist_title">Durdurma listesi</string>
     <string name="heads_up_blocklist_title">Engelli listesi</string>
-    <string name="profile_choose_app">Uygulama seç</string>
-    <string name="dialog_delete_title">Sil</string>
-    <string name="dialog_delete_message">Seçili öge silinsin mi?</string>
+    <string name="choose_app">Uygulama seç</string>
+    <string name="delete">Sil</string>
+    <string name="delete_message">Seçili öge kaldırılsın mı?</string>
     <!-- Network traffic -->
     <string name="network_traffic_settings_title">Ağ trafiği monitörü</string>
     <string name="network_traffic_settings_summary">Geçerli ağ trafiği düzeylerini görüntüleyin ve özelleştirin</string>
@@ -479,16 +476,13 @@
     <string name="always_on_display_schedule_sunrise">Gün doğumu</string>
     <string name="always_on_display_schedule_mixed_sunset">Gün batımından bir zamana kadar açılıyor</string>
     <string name="always_on_display_schedule_mixed_sunrise">Bir zamandan gün doğumuna kadar açılıyor</string>
-    <!-- HW keys -->
-    <string name="hardware_keys_title">Tuşlar</string>
-    <string name="hardware_keys_category">Donanım gezinme tuşları</string>
-    <string name="hardware_keys_disable_title">Donanım tuşlarını devre dışı bırak</string>
-    <string name="hardware_keys_disable_summary">Gezinme için cihazın donanımsal tuşlarını kullanın</string>
-    <string name="hardware_keys_volume_keys_title">Ses tuşlarıyla uyandır</string>
     <!-- ANBI -->
     <string name="anbi_title">Yanlışlıkla dokunma</string>
     <string name="anbi_summary">Ekran kullanılırken donanım tuşlarıyla etkileşimi önler</string>
-    <!-- Button settings -->
+    <!-- Buttons -->
+    <string name="navigation_bar_title">Gezinme çubuğu</string>
+    <string name="hardware_keys_power_key_title">Güç tuşu</string>
+    <string name="hardware_keys_volume_keys_title">Ses tuşları</string>
     <string name="button_pref_title">Tuşlar</string>
     <!-- Hardware button navigation -->
     <string name="picker_activities">Etkinlikler</string>
@@ -506,10 +500,6 @@
     <string name="hardware_keys_appswitch_key_title">Son uygulamalar tuşu</string>
     <string name="hardware_keys_camera_key_title">Kamera tuşu</string>
     <string name="hardware_keys_short_press_title">Kısa dokunma eylemi</string>
-    <string name="hardware_keys_double_tap_summary">Çift dokunma eylemi ayarlayın</string>
-    <string name="hardware_keys_single_tap_summary">Tek dokunma eylemi ayarlayın</string>
-    <string name="hardware_keys_long_press_summary">Uzun basma eylemi ayarlayın</string>
-    <string name="hardware_keys_single_tap_title">Tek dokunma eylemi</string>
     <string name="hardware_keys_long_press_title">Uzun basma eylemi</string>
     <string name="hardware_keys_double_tap_title">Çift dokunma eylemi</string>
     <string name="hardware_keys_action_nothing">Eylem yok</string>
@@ -520,15 +510,15 @@
     <string name="hardware_keys_action_in_app_search">Uygulama içi arama</string>
     <string name="hardware_keys_action_launch_camera">Kamerayı başlat</string>
     <string name="hardware_keys_action_sleep">Ekranı kapat</string>
+    <string name="hardware_keys_action_last_app">Son uygulama</string>
     <string name="hardware_keys_action_split_screen">Bölünmüş ekran</string>
     <string name="hardware_keys_action_close_app">Uygulamayı sonlandır</string>
     <string name="hardware_keys_action_torch">El feneri</string>
-    <string name="hardware_keys_action_screenshot">Ekran görüntüsü</string>
     <string name="hardware_keys_action_volume_panel">Ses panelini aç/kapat</string>
     <string name="hardware_keys_action_clear_all_notifications">Tüm bildirimleri temizle</string>
     <string name="hardware_keys_action_notifications_panel">Bildirim panelini aç/kapat</string>
-    <string name="hardware_keys_action_toggle_qs_panel">Hızlı ayarlar panelini aç/kapat</string>
-    <string name="hardware_keys_action_ringer_modes">Zil modları</string>
+    <string name="hardware_keys_action_expand_qs_panel">Hızlı ayarlar paneli genişlet</string>
+    <string name="hardware_keys_action_ringer_modes">Zil sesi modunu değiştir</string>
     <string name="hardware_keys_swipe_right_key_title">Sağa kaydır</string>
     <string name="hardware_keys_swipe_left_key_title">Sola kaydır</string>
     <string name="hardware_keys_long_tap_key_title">Uzun basma</string>
@@ -547,11 +537,25 @@
     <string name="volume_key_cursor_control_on_reverse">Ses arttırma/azaltma imleci sağa/sola kaydırır</string>
     <string name="swap_volume_buttons_title">Yerini değiştir</string>
     <string name="swap_volume_buttons_summary">Ekran döndürüldüğünde ses tuşlarının yerini değiştir</string>
+    <!-- Volume keys customization -->
+    <string name="volbtn_music_controls_title">Oynatma kontrolü</string>
+    <string name="volbtn_music_controls_summary">Ekran kapalıyken ses tuşlarına uzun basarak müziği değiştirin</string>
+    <string name="volume_answer_call_title">Çağrıyı cevapla</string>
+    <string name="volume_answer_call_summary">Ses tuşlarına basarak gelen çağrıları cevapla</string>
+    <!-- Home key customization -->
+    <string name="home_answer_call_title">Çağrıyı cevapla</string>
+    <string name="home_answer_call_summary">Ana ekran tuşuna basarak gelen çağrıları cevapla</string>
+    <!-- Power menu key customization -->
+    <string name="power_end_call_title">Aramayı sonlandır</string>
+    <string name="power_end_call_summary">Güç tuşuna basarak mevcut aramayı sonlandır</string>
     <string name="volume_panel_on_left_title">Ses panelini solda göster</string>
     <string name="volume_panel_on_left_summary">Ses panelini ekranın sol tarafında görüntüle</string>
     <string name="extras_title">Ekstralar</string>
+    <!-- Partial screenshot -->
     <string name="click_partial_screenshot_title">Kısmi ekran görüntüsü için tıklayın</string>
     <string name="click_partial_screenshot_summary">Kısmi ekran görüntüsü almak için Sesi Kısma ve Güç tuşuna kısa basın</string>
+    <!-- Edge gesture -->
+    <string name="navigation_bar_edge_long_swipe_title">Kenar boyunca kaydırma eylemi</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Ses paneli</string>
     <string name="volume_dialog_timeout_title">Ses paneli zaman aşımı</string>
@@ -607,22 +611,6 @@
     <string name="alarm_blocker_summary">Pilden tasarruf etmek için ekran kapalıyken alarmları engelleyin</string>
     <string name="alarm_blocker_warning">Alarmları engellemek, kararsızlığa, çökmelere veya veri kaybına neden olma potansiyeline sahiptir.</string>
     <string name="alarm_blocker_display_text">Alarmları görmek ve engellemek için alarm engelleyiciyi açın.</string>
-    <!-- Blink flashlight for incoming calls -->
-    <string name="flashlight_on_call_title">Gelen aramada bildirim flaşı</string>
-    <string name="flashlight_on_call_disabled">Devre dışı</string>
-    <string name="flashlight_on_call_ringer">Zil sesi çalarken</string>
-    <string name="flashlight_on_call_no_ringer">Zil sesi kapalıyken</string>
-    <string name="flashlight_on_call_silent">Tamamen sessizken (zil sesi veya titreşim yok)</string>
-    <string name="flashlight_on_call_always">Her zaman</string>
-    <string name="flashlight_on_call_ignore_dnd_title">Rahatsız etmeyini yoksay</string>
-    <string name="flashlight_on_call_ignore_dnd_summary">Rahatsız etmeyin modundayken yanıp yanmayacağı</string>
-    <string name="flashlight_on_call_rate_title">Hız</string>
-    <string name="flashlight_on_call_rate_summary">Çağrı sırasında flaş yanıp sönme hızı</string>
-    <!-- Blink flashlight for notifications -->
-    <string name="notification_torch_title">Flaşı bildirimler için yanıp söndür</string>
-    <string name="notification_torch_summary">Varsayılan olarak. Kanal başına ayarlar mevcuttur</string>
-    <string name="notification_torch_slider1">Yanıp sönme zamanı</string>
-    <string name="notification_torch_slider2">Yanıp sönme hızı</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Durum çubuğunda şarkı sözü</string>
     <string name="status_bar_lyric_summary">Durum çubuğunda şarkı sözlerini göster (uygulama desteği gerekli)</string>
@@ -644,14 +632,9 @@
     <!-- Double tap to sleep on status bar or lockscreen -->
     <string name="status_bar_double_tap_to_sleep_title">Çift dokunuşla uyutma</string>
     <string name="status_bar_double_tap_to_sleep_summary">Ekranı kapatmak için durum çubuğuna veya kilit ekranına çift dokunun</string>
-    <!-- Flashlight Power button gestures -->
-    <string name="torch_power_button_gesture_title">Güç tuşu ile fener aç</string>
-    <string name="torch_power_button_gesture_none">Devre dışı</string>
-    <string name="torch_power_button_gesture_dt">Güç tuşuna çift tıklayarak fener açma (daha yavaş tek dokunma tepkisi), çift tıklama ile kamera açmayı devre dışı bırakır.</string>
-    <string name="torch_power_button_gesture_lp">Güç tuşuna uzun bas</string>
-    <!-- Power menu on lock screen -->
-    <string name="lockscreen_power_menu_disabled_title">Kilit ekranında güç menüsünü devre dışı bırak</string>
-    <string name="lockscreen_power_menu_disabled_summary">Bu seçenek sadece güvenli kilit ekranlarında güç menüsünü devre dışı bırakır</string>
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Güç menüsü</string>
+    <string name="lockscreen_enable_power_menu_summary">Güvenli kilit ekranında güç menüsüne erişime izin ver</string>
     <!-- Toast app icon -->
     <string name="toast_icon_title">Bildirim simgesi</string>
     <string name="toast_icon_summary">Bildirim ile uyumlu uygulama simgesini görüntüle</string>
@@ -691,21 +674,36 @@
     <string name="show_carrier_keyguard">Kilit ekranı</string>
     <string name="show_carrier_statusbar">Durum çubuğu</string>
     <string name="show_carrier_enabled">Her ikisi</string>
-    <!-- UI settings -->
-    <string name="monet_title">Monet ayarları</string>
-    <string name="monet_summary">Monet temalarını özelleştirin</string>
-    <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Vurgu rengi</string>
-    <string name="monet_engine_custom_color_summary">Vurgu rengi için özel renk seçin</string>
-    <string name="monet_engine_custom_bgcolor_title">Arka plan rengi</string>
-    <string name="monet_engine_custom_bgcolor_summary">Arka plan için özel renk seçin</string>
-    <string name="monet_engine_color_override_title">Özel renk</string>
-    <string name="monet_engine_luminance_factor_title">Parlak</string>
-    <string name="monet_engine_luminance_factor_summary">Daha yüksek değerler daha parlak renkler üretir</string>
-    <string name="monet_engine_chroma_factor_title">Netlik faktörü</string>
-    <string name="monet_engine_chroma_factor_summary">Daha yüksek değerler daha güçlü renkler üretir</string>
-    <string name="monet_engine_tint_background_title">Renk tonu arka planı</string>
-    <string name="monet_engine_tint_background_summary">Parlaklık ve renk seçiminin arka plan renklerini de etkilemesini sağlayın</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Tema ayarları</string>
+    <string name="monet_settings_summary">Monet motorunu özelleştirmek için birkaç ekstra ayar</string>
+    <string name="theme_style_title">Tema stili</string>
+    <string name="theme_style_tonal_spot">Ton Noktası (Varsayılan)</string>
+    <string name="theme_style_vibrant">Canlı</string>
+    <string name="theme_style_expressive">Etkileyici</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Gökkuşağı</string>
+    <string name="theme_style_fruit_salad">Meyve Salatası</string>
+    <string name="theme_style_muted">Susturuldu</string>
+    <string name="theme_style_content">İçerik</string>
+    <string name="theme_style_monochromatic">Tek renkli</string>
+    <string name="color_source_title">Renk kaynağı</string>
+    <string name="color_source_both">Her ikisi (Varsayılan)</string>
+    <string name="color_source_home">Ana ekran duvar kağıdı</string>
+    <string name="color_source_lock">Kilit ekranı duvar kağıdı</string>
+    <string name="color_source_preset">Hazır ayar</string>
+    <string name="accent_color_title">Vurgu Rengi</string>
+    <string name="accent_color_summary">Varsayılan vurgu rengini geçersiz kıl</string>
+    <string name="accent_background_title">Arka plan rengi</string>
+    <string name="accent_background_summary">Arka plan için farklı bir vurgu rengi seçin</string>
+    <string name="bg_color_title">Arka Plan Rengi</string>
+    <string name="bg_color_summary">Varsayılan arka plan vurgu rengini geçersiz kıl</string>
+    <string name="luminance_factor_title">Parlaklık</string>
+    <string name="luminance_factor_summary">Daha yüksek değerler daha parlak renkler üretir</string>
+    <string name="chroma_factor_title">Renklilik</string>
+    <string name="chroma_factor_summary">Daha yüksek değerler daha güçlü renkler üretir</string>
+    <string name="tint_background_title">Arka Planı Renklendir</string>
+    <string name="tint_background_summary">Parlaklık ve Renklilik seçiminin arka plan renklerini de etkilemesini sağlayın</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Özel tema kullan</string>
     <string name="custom_theme_black">Siyah</string>
@@ -809,13 +807,12 @@
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Pencere güvenli işaretlerini yok say</string>
     <string name="ignore_window_secure_summary">Tüm uygulamalar için ekran görüntüleri ve ekran kayıtları sınırlarını kaldırın. Bazı durumlarda kullanışlı olabilir ancak gizlilik sızıntılarına yol açabilir. Değişikliğin etkili olması için uygulamaları yeniden başlatmanız gerekir.</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Bildirim pencerelerini, bildirim çubuğu yazılarının yeniden tasarlanmış haliyle değiştirin</string>
-    <string name="reticker_colored_title">Uygulama rengine göre arkaplan</string>
-    <string name="reticker_colored_summary">reTicker arkaplan rengini uygulamanın ana rengine göre değiştir</string>
-    <string name="reticker_landscape_only_title">Sadece yatay</string>
-    <string name="reticker_landscape_only_summary">ReTicker\'i yalnızca cihaz yatay moddayken etkinleştirin</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">Ada bildirimi</string>
+    <string name="island_notification_summary">Dinamik Ada stilinde baş üstü bildirimini görüntüle</string>
+    <string name="island_notification_now_playing_title">Ada Şimdi Oynatılıyor</string>
+    <string name="island_notification_now_playing_summary">Çalmakta olan şarkıyı Dinamik Ada bildirimi olarak göster</string>
+    <string name="island_notification_intro_title">Ios\'un Dinamik Ada\'sından ilham alan Ada bildirim özelliği, Android\'in baş üstü bildirimlerini hızlı erişimli ve kompakt bildirim yardımcı programına dönüştürür.\n\nAda Hızlı Erişim Kontrolleri aşağıdaki özellikleri içerir:\n1. Telefon aramalarını hızlı yanıtlamak için ada bildirimine dokunun.\n\n2. Telefon aramalarını reddetmek için ada bildirimine uzun basın.\n3. Ada bildirimi önizlemesini genişletmek için ada bildirimine uzun basın.    </string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Akıllı pikseller bir güç tasarrufu özelliğidir. Kaç piksele karar verdiğinize bağlı olarak pil ömründe iyileşme görebilirsiniz</string>
     <string name="smart_pixels_title">Akıllı Pikseller</string>
@@ -925,9 +922,9 @@
     <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">Renkli simgeler</string>
     <string name="statusbar_colored_icons_summary">Durum çubuğundaki bildirim simgeleri için uygun uygulama simgelerini kullanın</string>
-    <!-- Wi-Fi Standard icon -->
-    <string name="show_wifi_standard_icon_title">Standart Wi-Fi simgesini göster</string>
-    <string name="show_wifi_standard_icon_summary">Wi-Fi türünü sinyal göstergesinde göster</string>
+    <!-- WiFi Standard icon -->
+    <string name="wifi_standard_icon_title">WiFi standardı</string>
+    <string name="wifi_standard_icon_summary">WiFi sinyalinin yanında WiFi standardını göster</string>
     <!-- Summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Asla</string>
     <string name="custom_timeout_summary_5secs">5 saniye</string>
@@ -985,22 +982,6 @@ Mevcut bildirimler ve yeni bildirimler yayına hazırlanacak.    </string>
     <!-- Changelog -->
     <string name="changelog_evolution_title">Mevcut değişiklikler</string>
     <string name="changelog_evolution_summary">ROM\'da ki son değişiklikleri görüntüle</string>
-    <!-- Parallel space -->
-    <string name="laboratory_parallel_space_title">Paralel alan</string>
-    <string name="laboratory_parallel_space_summary">Aynı uygulamanın birden çok örneğini paralel olarak çalıştırmaya izin ver</string>
-    <!-- Lock screen bottom shortcuts -->
-    <string name="lockscreen_shortcut_category">Alt kısayollar</string>
-    <string name="lockscreen_shortcut_start_title">Sol kısayol</string>
-    <string name="lockscreen_shortcut_end_title">Sağ kısayol</string>
-    <string name="lockscreen_shortcut_wallet">Cüzdan</string>
-    <string name="lockscreen_shortcut_home">Ana ekran</string>
-    <string name="lockscreen_shortcut_flashlight">Fener</string>
-    <string name="lockscreen_shortcut_qr">QR</string>
-    <string name="lockscreen_shortcut_camera">Kamera</string>
-    <string name="lockscreen_shortcut_remote">Google TV uzaktan kontrol</string>
-    <string name="lockscreen_shortcut_none">Hiçbiri</string>
-    <string name="lockscreen_shortcut_enforce_title">Tek kısayol</string>
-    <string name="lockscreen_shortcut_enforce_summary">Seçilen kısayolu öncelikli kısayol olarak kullan\nÖzel seçilen kısayol ayarlanana kadar hiçbir şey gösterilmeyecek</string>
     <!-- QS tiles layout -->
     <string name="qs_layout_category_title">Kare düzeni</string>
     <string name="qs_tile_label_hide_title">Etiketi gizle</string>
@@ -1064,13 +1045,16 @@ Mevcut bildirimler ve yeni bildirimler yayına hazırlanacak.    </string>
     <!-- Volume haptic feedback -->
     <string name="volume_panel_haptic_feedback_title">Hacimsel dokunsal geri bildirim</string>
     <string name="volume_panel_haptic_feedback_summary">Ses seviyesini ayarlarken ses seviyesi dokunsal geri bildirimini etkinleştirin</string>
-    <!-- Volume rocker music control -->
-    <string name="volbtn_music_controls_title">Oynatma kontrolü</string>
-    <string name="volbtn_music_controls_summary">Ekran kapalıyken ses tuşlarına uzun basarak müziği değiştirin</string>
+    <!-- Pif -->
+    <string name="pif_title">Play bütünlüğü düzeltici</string>
+    <string name="pif_summary">GMS\'yi yanıltmak için kullanılan mevcut değerleri görüntüle</string>
     <!-- Application downgrade -->
     <string name="app_downgrade_title">Uygulamanın eski sürüme geçirilmesine izin ver</string>
     <string name="app_downgrade_summary">Uygulamaların sürümünü düşürmeye izin verir. Çökmelere ve veri bozulmasına yol açabilir.</string>
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">Pano yer paylaşımını göster</string>
     <string name="show_clipboard_overlay_summary">Panoya bir şey kopyalandığında ekranın sol alt köşesinde bir kaplama göster</string>
+    <!-- Weather -->
+    <string name="lockscreen_weather_title">Hava durumunu göster</string>
+    <string name="lockscreen_weather_summary">Şu anki hava durumunu ve sıcaklığı göster</string>
 </resources>
