@@ -99,6 +99,12 @@
         android:title="@string/spoof_title">
 
         <!-- Play integrity fix -->
+        <com.evolution.settings.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pif"
+            android:title="@string/pif_spoof_title"
+            android:summary="@string/pif_spoof_summary"
+            android:defaultValue="true" />
+
         <Preference
             android:key="pif"
             android:title="@string/pif_title"
@@ -107,6 +113,20 @@
                 android:targetPackage="com.goolag.pif"
                 android:targetClass="com.goolag.pif.PifActivity" />
         </Preference>
+
+        <!-- Pixel Props (spoof gapps as Pixel 5) -->
+        <com.evolution.settings.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops"
+            android:title="@string/spoof_as_pixel_title"
+            android:summary="@string/spoof_as_pixel_summary"
+            android:defaultValue="true" />
+
+        <!-- Spoof only some gapps as recent Pixel -->
+        <com.evolution.settings.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.recent"
+            android:title="@string/spoof_recent_pixel_title"
+            android:summary="@string/spoof_recent_pixel_summary"
+            android:defaultValue="true" />
 
         <!-- Unlimited Photos storage -->
         <com.evolution.settings.preference.SystemPropertySwitchPreference
