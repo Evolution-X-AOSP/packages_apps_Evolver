@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2023 Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/navigation_title">
+
+    <PreferenceCategory
+        android:key="navbar_key"
+        android:title="@string/navigation_bar_title">
+
+        <SwitchPreference
+            android:key="disable_nav_keys"
+            android:title="@string/disable_navkeys_title"
+            android:summary="@string/disable_navkeys_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="navbar_gestures"
+            android:title="@string/system_navigation_title"
+            android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="navbar_layout_category"
+        android:title="@string/navbar_layout_category_title">
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="navigation_bar_menu_arrow_keys"
+            android:title="@string/navbar_arrow_keys_title"
+            android:summary="@string/navbar_arrow_keys_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="navigation_bar_compact_layout"
+            android:title="@string/navbar_compact_layout_title"
+            android:summary="@string/navbar_compact_layout_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="sysui_nav_bar_inverse"
+            android:title="@string/navbar_invert_layout_title"
+            android:summary="@string/navbar_invert_layout_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="navbar_actions_category"
+        android:title="@string/navbar_actions_category_title">
+
+         <ListPreference
+            android:key="navigation_back_long_press"
+            android:dialogTitle="@string/navbar_back_long_press_title"
+            android:title="@string/navbar_back_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+         <!--<ListPreference
+            android:key="navigation_back_double_tap"
+            android:icon="@drawable/ic_double_tap"
+            android:dialogTitle="@string/navbar_back_double_tap_title"
+            android:title="@string/navbar_back_double_tap_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />-->
+
+        <ListPreference
+            android:key="navigation_home_long_press"
+            android:dialogTitle="@string/navbar_home_long_press_title"
+            android:title="@string/navbar_home_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+         <ListPreference
+            android:key="navigation_home_double_tap"
+            android:dialogTitle="@string/navbar_home_double_tap_title"
+            android:title="@string/navbar_home_double_tap_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+         <ListPreference
+            android:key="navigation_app_switch_long_press"
+            android:dialogTitle="@string/navbar_app_switch_long_press_title"
+            android:title="@string/navbar_app_switch_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+         <!--<ListPreference
+            android:key="navigation_app_switch_double_tap"
+            android:icon="@drawable/ic_double_tap"
+            android:dialogTitle="@string/navbar_app_switch_double_tap_title"
+            android:title="@string/navbar_app_switch_double_tap_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />-->
+
+        <ListPreference
+            android:key="navigation_bar_edge_long_swipe"
+            android:dialogTitle="@string/navigation_bar_edge_long_swipe_title"
+            android:title="@string/navigation_bar_edge_long_swipe_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

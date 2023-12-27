@@ -15,8 +15,6 @@
  */
 package com.evolution.settings.fragments;
 
-import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_2BUTTON_OVERLAY;
-import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON_OVERLAY;
 import static com.android.internal.util.custom.hwkeys.DeviceKeysConstants.*;
 
 import android.app.ActivityManager;
@@ -46,7 +44,6 @@ import androidx.preference.SwitchPreference;
 
 import com.android.internal.custom.hardware.LineageHardwareManager;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.custom.NavbarUtils;
 
 import com.android.settings.R;
 import com.android.settings.Utils;
@@ -79,7 +76,6 @@ public class Buttons extends DashboardFragment implements
     private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
-    private static final String DISABLE_NAV_KEYS = "disable_nav_keys";
     private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
 
     private static final String CATEGORY_HOME = "home_key";
@@ -98,36 +94,23 @@ public class Buttons extends DashboardFragment implements
     private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
-    private ListPreference mEdgeLongSwipeAction;
     private SwitchPreference mCameraWakeScreen;
     private SwitchPreference mCameraSleepOnRelease;
     private SwitchPreference mCameraLaunch;
-    private SwitchPreference mDisableNavigationKeys;
     private SecureSettingSwitchPreference mSwapCapacitiveKeys;
 
     private Handler mHandler;
 
     // Plus
-    private static final String KEY_NAV_MENU_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
-    private static final String KEY_NAV_INVERSE = "sysui_nav_bar_inverse";
-    private static final String KEY_NAV_GESTURES = "navbar_gestures";
-    private static final String KEY_NAV_COMPACT_LAYOUT = "navigation_bar_compact_layout";
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
-    private static final String KEY_EDGE_LONG_SWIPE = "navigation_bar_edge_long_swipe";
 
     private static final String CATEGORY_BACKLIGHT = "button_backlight_cat";
     private static final String CATEGORY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys_cat";
-    private static final String CATEGORY_NAVBAR = "navbar_key";
     private static final String CATEGORY_POWER = "power_key";
 
-    private SystemSettingSwitchPreference mNavigationMenuArrowKeys;
-    private SecureSettingSwitchPreference mNavigationInverse;
-    private Preference mNavigationGestures;
-    private SystemSettingSwitchPreference mNavigationCompactLayout;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
-    private PreferenceCategory mNavbarCategory;
 
     private IOverlayManager mOverlayManager;
 
@@ -180,14 +163,6 @@ public class Buttons extends DashboardFragment implements
 
         mHandler = new Handler();
 
-        // Force Navigation bar related options
-        mDisableNavigationKeys = findPreference(DISABLE_NAV_KEYS);
-        mNavbarCategory = prefScreen.findPreference(CATEGORY_NAVBAR);
-        mNavigationMenuArrowKeys = findPreference(KEY_NAV_MENU_ARROW_KEYS);
-        mNavigationInverse = findPreference(KEY_NAV_INVERSE);
-        mNavigationGestures = findPreference(KEY_NAV_GESTURES);
-        mNavigationCompactLayout = findPreference(KEY_NAV_COMPACT_LAYOUT);
-
         Action defaultBackLongPressAction = Action.fromIntSafe(res.getInteger(
                 com.android.internal.R.integer.config_longPressOnBackBehavior));
         Action defaultHomeLongPressAction = Action.fromIntSafe(res.getInteger(
@@ -214,27 +189,6 @@ public class Buttons extends DashboardFragment implements
         Action appSwitchLongPressAction = Action.fromSettings(resolver,
                 Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
                 defaultAppSwitchLongPressAction);
-        Action edgeLongSwipeAction = Action.fromSettings(resolver,
-                Settings.System.KEY_EDGE_LONG_SWIPE_ACTION,
-                Action.NOTHING);
-
-        // Edge long swipe gesture
-        mEdgeLongSwipeAction = initList(KEY_EDGE_LONG_SWIPE, edgeLongSwipeAction);
-
-        // Only visible on devices that does not have a navigation bar already
-        if (NavbarUtils.canDisable(getActivity())) {
-            // Remove keys that can be provided by the navbar
-            updateDisableNavkeysOption();
-            updateDisableNavkeysCategories(mDisableNavigationKeys.isChecked());
-            mNavigationMenuArrowKeys.setDependency(DISABLE_NAV_KEYS);
-            mNavigationInverse.setDependency(DISABLE_NAV_KEYS);
-            mNavigationGestures.setDependency(DISABLE_NAV_KEYS);
-            mNavigationCompactLayout.setDependency(DISABLE_NAV_KEYS);
-            mEdgeLongSwipeAction.setDependency(DISABLE_NAV_KEYS);
-        } else {
-            mNavbarCategory.removePreference(mDisableNavigationKeys);
-            mDisableNavigationKeys = null;
-        }
 
         if (hasHomeKey) {
             if (!showHomeWake) {
@@ -261,9 +215,6 @@ public class Buttons extends DashboardFragment implements
             }
 
             mBackLongPressAction = initList(KEY_BACK_LONG_PRESS, backLongPressAction);
-            if (mDisableNavigationKeys.isChecked()) {
-                mBackLongPressAction.setEnabled(false);
-            }
 
             hasAnyBindableKey = true;
         }
@@ -369,57 +320,11 @@ public class Buttons extends DashboardFragment implements
         } else {
             prefScreen.removePreference(powerCategory);
         }
-
-        // Navigation bar modes
-        updateNavigationBarModeState();
-
-        // Edge swipe gesture
-        updateEdgeSwipeGesturePreference();
     }
 
     private static boolean isKeySwapperSupported(Context context) {
         final LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
         return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_SWAP);
-    }
-
-    private void updateNavigationBarModeState(){
-        final ContentResolver resolver = getActivity().getContentResolver();
-        String mode = NavbarUtils.getNavigationBarModeOverlay(getActivity(), mOverlayManager);
-        if (!mode.equals(NAV_BAR_MODE_3BUTTON_OVERLAY) && !mode.equals(NAV_BAR_MODE_2BUTTON_OVERLAY)){
-            if (mNavigationMenuArrowKeys != null){
-                mNavbarCategory.removePreference(mNavigationMenuArrowKeys);
-                mNavigationMenuArrowKeys = null;
-            }
-            if (mNavigationInverse != null){
-                mNavbarCategory.removePreference(mNavigationInverse);
-                mNavigationInverse = null;
-            }
-            if (mNavigationCompactLayout != null){
-                mNavbarCategory.removePreference(mNavigationCompactLayout);
-                mNavigationCompactLayout = null;
-            }
-        }else{
-            if (mEdgeLongSwipeAction != null){
-                mNavbarCategory.removePreference(mEdgeLongSwipeAction);
-                mEdgeLongSwipeAction = null;
-            }
-        }
-        if (mNavbarCategory != null && mNavbarCategory.getPreferenceCount() == 0){
-            getPreferenceScreen().removePreference(mNavbarCategory);
-            mNavbarCategory = null;
-        }
-        if (mNavigationMenuArrowKeys != null){
-            mNavigationMenuArrowKeys.setChecked(
-                Settings.System.getInt(resolver, Settings.System.NAVIGATION_BAR_MENU_ARROW_KEYS, 0) != 0);
-        }
-        if (mNavigationInverse != null){
-            mNavigationInverse.setChecked(
-                Settings.Secure.getInt(resolver, KEY_NAV_INVERSE, 0) != 0);
-        }
-        if (mNavigationCompactLayout != null){
-            mNavigationCompactLayout.setChecked(
-                Settings.System.getInt(resolver, Settings.System.NAV_BAR_COMPACT_LAYOUT, 0) != 0);
-        }
     }
 
     @Override
@@ -444,22 +349,6 @@ public class Buttons extends DashboardFragment implements
             final boolean homeButtonAnswersCall =
                 (incallHomeBehavior == Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER);
             mHomeAnswerCall.setChecked(homeButtonAnswersCall);
-        }
-
-        // Navigation bar modes
-        updateNavigationBarModeState();
-
-        // Edge swipe gesture
-        updateEdgeSwipeGesturePreference();
-    }
-
-    private void updateEdgeSwipeGesturePreference(){
-        final ContentResolver resolver = getActivity().getContentResolver();
-        if (mEdgeLongSwipeAction != null){
-            mEdgeLongSwipeAction.setValue(Integer.toString(Action.fromSettings(resolver,
-                Settings.System.KEY_EDGE_LONG_SWIPE_ACTION,
-                Action.NOTHING).ordinal()));
-            mEdgeLongSwipeAction.setSummary(mEdgeLongSwipeAction.getEntry());
         }
     }
 
@@ -542,106 +431,13 @@ public class Buttons extends DashboardFragment implements
             handleListChange((ListPreference) preference, newValue,
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
             return true;
-        } else if (preference == mEdgeLongSwipeAction) {
-            handleListChange(mEdgeLongSwipeAction, newValue,
-                    Settings.System.KEY_EDGE_LONG_SWIPE_ACTION);
-            return true;
         }
         return false;
     }
 
-    private void writeDisableNavkeysOption(boolean enabled) {
-        NavbarUtils.setEnabled(getActivity(), enabled);
-    }
-
-    private void updateDisableNavkeysOption() {
-        mDisableNavigationKeys.setChecked(NavbarUtils.isEnabled(getActivity()));
-    }
-
-    private void updateDisableNavkeysCategories(boolean navbarEnabled) {
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        /* Disable hw-key options if they're disabled */
-        final PreferenceCategory homeCategory = prefScreen.findPreference(CATEGORY_HOME);
-        final PreferenceCategory backCategory = prefScreen.findPreference(CATEGORY_BACK);
-        final PreferenceCategory menuCategory = prefScreen.findPreference(CATEGORY_MENU);
-        final PreferenceCategory assistCategory = prefScreen.findPreference(CATEGORY_ASSIST);
-        final PreferenceCategory appSwitchCategory = prefScreen.findPreference(CATEGORY_APPSWITCH);
-        final ButtonBacklightBrightness backlight = prefScreen.findPreference(KEY_BUTTON_BACKLIGHT);
-
-        /* Toggle backlight control depending on navbar state, force it to
-           off if enabling */
-        if (backlight != null) {
-            backlight.setEnabled(!navbarEnabled);
-            backlight.updateSummary();
-        }
-
-        if (backCategory != null) {
-            if (mBackLongPressAction != null) {
-                mBackLongPressAction.setEnabled(!navbarEnabled);
-            }
-        }
-        if (homeCategory != null) {
-            if (mHomeAnswerCall != null) {
-                mHomeAnswerCall.setEnabled(!navbarEnabled);
-            }
-            if (mHomeLongPressAction != null) {
-                mHomeLongPressAction.setEnabled(!navbarEnabled);
-            }
-            if (mHomeDoubleTapAction != null) {
-                mHomeDoubleTapAction.setEnabled(!navbarEnabled);
-            }
-        }
-        if (backCategory != null) {
-            backCategory.setEnabled(!navbarEnabled);
-        }
-        if (menuCategory != null) {
-            if (mMenuPressAction != null) {
-                mMenuPressAction.setEnabled(!navbarEnabled);
-            }
-            if (mMenuLongPressAction != null) {
-                mMenuLongPressAction.setEnabled(!navbarEnabled);
-            }
-        }
-        if (assistCategory != null) {
-            if (mAssistPressAction != null) {
-                mAssistPressAction.setEnabled(!navbarEnabled);
-            }
-            if (mAssistLongPressAction != null) {
-                mAssistLongPressAction.setEnabled(!navbarEnabled);
-            }
-        }
-        if (appSwitchCategory != null) {
-            if (mAppSwitchPressAction != null) {
-                mAppSwitchPressAction.setEnabled(!navbarEnabled);
-            }
-            if (mAppSwitchLongPressAction != null) {
-                mAppSwitchLongPressAction.setEnabled(!navbarEnabled);
-            }
-        }
-        if (mSwapCapacitiveKeys != null){
-            mSwapCapacitiveKeys.setEnabled(!navbarEnabled);
-        }
-    }
-
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mDisableNavigationKeys) {
-            mDisableNavigationKeys.setEnabled(false);
-            writeDisableNavkeysOption(mDisableNavigationKeys.isChecked());
-            updateDisableNavkeysOption();
-            updateDisableNavkeysCategories(true);
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        mDisableNavigationKeys.setEnabled(true);
-                        updateDisableNavkeysCategories(mDisableNavigationKeys.isChecked());
-                    }catch(Exception e){
-                    }
-                }
-            }, 1000);
-        } else if (preference == mPowerEndCall) {
+        if (preference == mPowerEndCall) {
             handleTogglePowerButtonEndsCallPreferenceClick();
             return true;
         } else if (preference == mHomeAnswerCall) {
