@@ -72,6 +72,15 @@
         android:key="volume_keys"
         android:title="@string/hardware_keys_volume_keys_title">
 
+        <!-- Volume Styles -->
+        <com.evolution.settings.preference.SystemSettingListPreference
+             android:key="custom_volume_styles"
+             android:title="@string/volume_style_title"
+             android:entries="@array/volume_styles_entries"
+             android:entryValues="@array/volume_styles_values"
+             android:summary="%s"
+             android:defaultValue="0" />
+
         <!-- Volume panel to left -->
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="volume_panel_on_left"
