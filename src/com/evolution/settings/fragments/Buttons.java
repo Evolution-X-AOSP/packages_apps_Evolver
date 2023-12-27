@@ -98,6 +98,10 @@ public class Buttons extends DashboardFragment implements
     private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
+    private ListPreference mNavigationBackLongPressAction;
+    private ListPreference mNavigationHomeLongPressAction;
+    private ListPreference mNavigationHomeDoubleTapAction;
+    private ListPreference mNavigationAppSwitchLongPressAction;
     private ListPreference mEdgeLongSwipeAction;
     private SwitchPreference mCameraWakeScreen;
     private SwitchPreference mCameraSleepOnRelease;
@@ -107,18 +111,27 @@ public class Buttons extends DashboardFragment implements
 
     private Handler mHandler;
 
-    // Plus
+    // Nav
     private static final String KEY_NAV_MENU_ARROW_KEYS = "navigation_bar_menu_arrow_keys";
     private static final String KEY_NAV_INVERSE = "sysui_nav_bar_inverse";
     private static final String KEY_NAV_GESTURES = "navbar_gestures";
     private static final String KEY_NAV_COMPACT_LAYOUT = "navigation_bar_compact_layout";
+    private static final String KEY_NAVIGATION_BACK_LONG_PRESS =
+            "navigation_back_long_press";
+    private static final String KEY_NAVIGATION_HOME_LONG_PRESS = "navigation_home_long_press";
+    private static final String KEY_NAVIGATION_HOME_DOUBLE_TAP = "navigation_home_double_tap";
+    private static final String KEY_NAVIGATION_APP_SWITCH_LONG_PRESS =
+            "navigation_app_switch_long_press";
+    private static final String KEY_EDGE_LONG_SWIPE = "navigation_bar_edge_long_swipe";
+
+    // Plus
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
-    private static final String KEY_EDGE_LONG_SWIPE = "navigation_bar_edge_long_swipe";
 
     private static final String CATEGORY_BACKLIGHT = "button_backlight_cat";
     private static final String CATEGORY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys_cat";
     private static final String CATEGORY_NAVBAR = "navbar_key";
+    private static final String CATEGORY_NAVBAR_ACTIONS = "navbar_actions_category";
     private static final String CATEGORY_POWER = "power_key";
 
     private SystemSettingSwitchPreference mNavigationMenuArrowKeys;
@@ -128,6 +141,7 @@ public class Buttons extends DashboardFragment implements
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
     private PreferenceCategory mNavbarCategory;
+    private PreferenceCategory mNavbarActionsCategory;
 
     private IOverlayManager mOverlayManager;
 
@@ -183,6 +197,7 @@ public class Buttons extends DashboardFragment implements
         // Force Navigation bar related options
         mDisableNavigationKeys = findPreference(DISABLE_NAV_KEYS);
         mNavbarCategory = prefScreen.findPreference(CATEGORY_NAVBAR);
+        mNavbarActionsCategory = prefScreen.findPreference(CATEGORY_NAVBAR_ACTIONS);
         mNavigationMenuArrowKeys = findPreference(KEY_NAV_MENU_ARROW_KEYS);
         mNavigationInverse = findPreference(KEY_NAV_INVERSE);
         mNavigationGestures = findPreference(KEY_NAV_GESTURES);
@@ -218,6 +233,22 @@ public class Buttons extends DashboardFragment implements
                 Settings.System.KEY_EDGE_LONG_SWIPE_ACTION,
                 Action.NOTHING);
 
+        // Navigation bar back long press
+        mNavigationBackLongPressAction = initList(KEY_NAVIGATION_BACK_LONG_PRESS,
+                backLongPressAction);
+
+        // Navigation bar home long press
+        mNavigationHomeLongPressAction = initList(KEY_NAVIGATION_HOME_LONG_PRESS,
+                homeLongPressAction);
+
+        // Navigation bar home double tap
+        mNavigationHomeDoubleTapAction = initList(KEY_NAVIGATION_HOME_DOUBLE_TAP,
+                homeDoubleTapAction);
+
+        // Navigation bar app switch long press
+        mNavigationAppSwitchLongPressAction = initList(KEY_NAVIGATION_APP_SWITCH_LONG_PRESS,
+                appSwitchLongPressAction);
+
         // Edge long swipe gesture
         mEdgeLongSwipeAction = initList(KEY_EDGE_LONG_SWIPE, edgeLongSwipeAction);
 
@@ -230,9 +261,14 @@ public class Buttons extends DashboardFragment implements
             mNavigationInverse.setDependency(DISABLE_NAV_KEYS);
             mNavigationGestures.setDependency(DISABLE_NAV_KEYS);
             mNavigationCompactLayout.setDependency(DISABLE_NAV_KEYS);
+            mNavigationBackLongPressAction.setDependency(DISABLE_NAV_KEYS);
+            mNavigationHomeLongPressAction.setDependency(DISABLE_NAV_KEYS);
+            mNavigationHomeDoubleTapAction.setDependency(DISABLE_NAV_KEYS);
+            mNavigationAppSwitchLongPressAction.setDependency(DISABLE_NAV_KEYS);
             mEdgeLongSwipeAction.setDependency(DISABLE_NAV_KEYS);
         } else {
             mNavbarCategory.removePreference(mDisableNavigationKeys);
+            mNavbarActionsCategory.removePreference(mDisableNavigationKeys);
             mDisableNavigationKeys = null;
         }
 
@@ -398,15 +434,35 @@ public class Buttons extends DashboardFragment implements
                 mNavbarCategory.removePreference(mNavigationCompactLayout);
                 mNavigationCompactLayout = null;
             }
+            if (mNavigationBackLongPressAction != null){
+                mNavbarActionsCategory.removePreference(mNavigationBackLongPressAction);
+                mNavigationBackLongPressAction = null;
+            }
+            if (mNavigationHomeLongPressAction != null){
+                mNavbarActionsCategory.removePreference(mNavigationHomeLongPressAction);
+                mNavigationHomeLongPressAction = null;
+            }
+            if (mNavigationHomeDoubleTapAction != null){
+                mNavbarActionsCategory.removePreference(mNavigationHomeDoubleTapAction);
+                mNavigationHomeDoubleTapAction = null;
+            }
+            if (mNavigationAppSwitchLongPressAction != null){
+                mNavbarActionsCategory.removePreference(mNavigationAppSwitchLongPressAction);
+                mNavigationAppSwitchLongPressAction = null;
+            }
         }else{
             if (mEdgeLongSwipeAction != null){
-                mNavbarCategory.removePreference(mEdgeLongSwipeAction);
+                mNavbarActionsCategory.removePreference(mEdgeLongSwipeAction);
                 mEdgeLongSwipeAction = null;
             }
         }
         if (mNavbarCategory != null && mNavbarCategory.getPreferenceCount() == 0){
             getPreferenceScreen().removePreference(mNavbarCategory);
             mNavbarCategory = null;
+        }
+        if (mNavbarActionsCategory != null && mNavbarActionsCategory.getPreferenceCount() == 0){
+            getPreferenceScreen().removePreference(mNavbarActionsCategory);
+            mNavbarActionsCategory = null;
         }
         if (mNavigationMenuArrowKeys != null){
             mNavigationMenuArrowKeys.setChecked(
@@ -539,6 +595,22 @@ public class Buttons extends DashboardFragment implements
                     Settings.System.KEY_APP_SWITCH_ACTION);
             return true;
         } else if (preference == mAppSwitchLongPressAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
+            return true;
+        } else if (preference == mNavigationBackLongPressAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    Settings.System.KEY_BACK_LONG_PRESS_ACTION);
+            return true;
+        } else if (preference == mNavigationHomeLongPressAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    Settings.System.KEY_HOME_LONG_PRESS_ACTION);
+            return true;
+        } else if (preference == mNavigationHomeDoubleTapAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    Settings.System.KEY_HOME_DOUBLE_TAP_ACTION);
+            return true;
+        } else if (preference == mNavigationAppSwitchLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
             return true;
