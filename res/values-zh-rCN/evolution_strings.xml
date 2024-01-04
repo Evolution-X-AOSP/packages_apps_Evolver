@@ -23,14 +23,14 @@
     <string name="swipe_gestures_title">滑动手势</string>
     <string name="system_settings_title">系统选项</string>
     <string name="themes_title">主题</string>
-    <string name="ambient_display_category">环境显示</string>
+    <string name="ambient_display_category">息屏显示</string>
     <string name="lockscreen_clock_category">锁屏时钟</string>
-    <string name="signal_icons_category_title">信号图标</string>
+    <string name="signal_icons_category_title">信号强度图标</string>
     <string name="vibration_category_title">振动</string>
     <!-- Summaries -->
-    <string name="aosp_options_summary">安卓随附的出厂选项</string>
+    <string name="aosp_options_summary">原生 Android 系统选项</string>
     <string name="dark_ui_mode_summary">浏览黑暗主题选项</string>
-    <string name="unsupported_gestures">启用两个按钮或三个按钮导航来使用此功能</string>
+    <string name="unsupported_gestures">要使用此功能，请启用两键或三键导航</string>
     <!-- General strings -->
     <string name="ok">确定</string>
     <string name="reset">重置</string>
@@ -143,8 +143,8 @@
     <string name="udfps_icon_picker_title">屏下指纹图标选择器</string>
     <string name="udfps_icon_picker_summary">选择您最喜欢的指纹图标</string>
     <!-- Custom UDFPS icon -->
-    <string name="custom_fp_icon_title">自定义屏幕指纹图标</string>
-    <string name="custom_fp_icon_summary">选择自定义屏幕指纹图标</string>
+    <string name="custom_fp_icon_title">自定义屏下指纹识别图标</string>
+    <string name="custom_fp_icon_summary">选择自定义屏下指纹识别图标</string>
     <string name="custom_fp_select_title">从存储中选择自定义的屏幕指纹图标</string>
     <string name="custom_fp_select_summary">从您保存的文件或图库中选择自定义图像</string>
     <!-- Notification light -->
@@ -176,7 +176,7 @@
     <string name="network_traffic_mode_down">仅下载</string>
     <string name="network_traffic_mode_all">上传和下载</string>
     <string name="network_traffic_autohide">自动隐藏</string>
-    <string name="network_traffic_autohide_summary">当网络流量监视小于 1 KB/s 时隐藏</string>
+    <string name="network_traffic_autohide_summary">在无网络活动时隐藏流量监视器</string>
     <string name="network_traffic_autohide_kilobits">Kb/s</string>
     <string name="network_traffic_autohide_kilobytes">KB/s</string>
     <string name="network_traffic_autohide_threshold">网络流量指示器隐藏阈值</string>
@@ -220,7 +220,7 @@
     <string name="qs_brightness_slider_position_top">顶部</string>
     <string name="qs_brightness_slider_position_bottom">底部</string>
     <!-- Brightness slider haptic feedback -->
-    <string name="qs_brightness_slider_haptic_title">亮度滑块触感反馈</string>
+    <string name="qs_brightness_slider_haptic_title">亮度滑块触觉反馈</string>
     <string name="qs_brightness_slider_haptic_summary">在使用滑块改变亮度时提供震动反馈</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">自动亮度图标</string>
@@ -229,19 +229,19 @@
     <string name="volume_rocker_wake_title">音量键唤醒</string>
     <string name="volume_rocker_wake_summary">按下音量键唤醒设备</string>
     <!-- Screen off animation -->
-    <string name="screen_off_animation_title">锁屏动画</string>
+    <string name="screen_off_animation_title">屏幕关闭动画</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">缩放</string>
     <!-- Power menu on lock screen -->
-    <string name="power_menu_hide_on_secure_title">在锁屏界面隐藏</string>
+    <string name="power_menu_hide_on_secure_title">锁屏时隐藏</string>
     <string name="power_menu_hide_on_secure_summary">在安全锁屏界面隐藏全局动作菜单</string>
     <!-- QS advanced settings -->
-    <string name="qs_column_rows_settings_title">控制中心</string>
+    <string name="qs_column_rows_settings_title">快速设置</string>
     <string name="qs_edit_title">编辑图标</string>
-    <string name="qs_edit_summary">启用控制中心底部的磁贴编辑图标</string>
-    <string name="qs_footer_category">快速设置页脚</string>
-    <string name="qs_header_category_title">控制中心顶部</string>
-    <string name="qs_panel_category_title">控制中心</string>
+    <string name="qs_edit_summary">启用快速设置底部的磁贴编辑图标</string>
+    <string name="qs_footer_category">快速设置底部</string>
+    <string name="qs_header_category_title">快速设置顶部</string>
+    <string name="qs_panel_category_title">快速设置面板</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">快速下拉</string>
     <string name="status_bar_quick_qs_pulldown_summary">沿状态栏的 %1$s 边缘下拉开启快捷设置面板</string>
@@ -386,15 +386,15 @@
     <string name="notification_sound_vib_screen_on_title">启用通知提示音</string>
     <string name="notification_sound_vib_screen_on_summary">屏幕开启时播放声音和振动通知</string>
     <!-- Edge light -->
-    <string name="edge_light_title">边缘闪光</string>
-    <string name="edge_light_main_switch_title">开启边缘闪光</string>
+    <string name="edge_light_title">边缘灯效</string>
+    <string name="edge_light_main_switch_title">开启边缘灯效</string>
     <string name="edge_light_intro_text">拉取时沿屏幕边缘显示动画</string>
     <string name="edge_light_always_trigger_on_pulse_title">总是在脉冲上触发</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">是否在显示环境显示时显示边缘光线，而不仅仅是为了通知</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">是否在显示息屏显示时显示边缘灯效，而不仅仅是为了通知</string>
     <string name="edge_light_repeat_animation_title">重复动画</string>
     <string name="edge_light_repeat_animation_summary_on">重复直到超时</string>
     <string name="edge_light_repeat_animation_summary_off">只显示一次</string>
-    <string name="edge_light_color_mode_title">边缘闪光颜色</string>
+    <string name="edge_light_color_mode_title">边缘灯效颜色</string>
     <string name="accent_color">首选颜色 (默认)</string>
     <string name="notification_color">通知颜色</string>
     <string name="wallpaper_color">壁纸颜色</string>
@@ -402,7 +402,7 @@
     <string name="edge_light_custom_color_title">自定义颜色</string>
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">显示数据使用情况</string>
-    <string name="qs_show_data_usage_summary">在快速设置页脚中显示每日流量/Wi-Fi数据使用量</string>
+    <string name="qs_show_data_usage_summary">在快速设置底部显示每日流量 / Wi-Fi 数据使用量</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">耳机连接时启动音乐应用</string>
     <string name="headset_connect_player_summary">当耳机连接时启动默认音乐应用</string>
@@ -436,7 +436,7 @@
     <string name="theme_customization_icon_pack_title">图标包</string>
     <string name="theme_customization_icon_pack_summary">设置自定义图标包样式</string>
     <!-- Custom Signal bar icons -->
-    <string name="theme_customization_signal_icon_title">信号图标样式</string>
+    <string name="theme_customization_signal_icon_title">信号强度图标样式</string>
     <string name="theme_customization_signal_icon_summary">设置自定义信号图标样式</string>
     <!-- Custom Wi-Fi bar icons -->
     <string name="theme_customization_wifi_icon_title">WiFi 图标样式</string>
@@ -456,7 +456,7 @@
     <string name="lockscreen_status_bar_title">状态栏</string>
     <string name="lockscreen_status_bar_summary">锁屏界面显示状态栏</string>
     <!-- Notification Vibration -->
-    <string name="vibrate_on_notifications_title">通知振动</string>
+    <string name="vibrate_on_notifications_title">通知时振动</string>
     <string name="vibrate_on_notifications_summary">切换以禁用通知振动</string>
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_art_options_title">锁屏专辑封面</string>
@@ -465,20 +465,20 @@
     <string name="media_art_summary">可用时显示媒体封面</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">阻止某些应用访问传感器</string>
-    <string name="sensor_block_summary">阻止某些应用访问特定的传感器以节省电池电量。</string>
+    <string name="sensor_block_summary">为节省电池电量阻止特定应用访问某些传感器</string>
     <string name="sensor_block_main_switch_title">阻止个別应用使用传感器</string>
     <string name="sensor_block_app_picker_title">屏蔽这些应用的传感器</string>
     <string name="add_sensor_block_package_title">添加将被屏蔽传感器的应用</string>
     <string name="add_sensor_block_package_summary">这些应用程序将阻止重大运动，加速计，线性加速度传感器</string>
     <!-- AOD Schedule -->
-    <string name="always_on_display_schedule_title">总是显示时间表</string>
+    <string name="always_on_display_schedule_title">始终显示屏幕时间表</string>
     <string name="always_on_display_schedule_sunset">日落</string>
     <string name="always_on_display_schedule_sunrise">日出</string>
-    <string name="always_on_display_schedule_mixed_sunset">从日落开启直到一段时间</string>
-    <string name="always_on_display_schedule_mixed_sunrise">从某个时间打开直到日出</string>
+    <string name="always_on_display_schedule_mixed_sunset">从日落开始到设定时间</string>
+    <string name="always_on_display_schedule_mixed_sunrise">从设定时间到日出</string>
     <!-- ANBI -->
     <string name="anbi_title">误触</string>
-    <string name="anbi_summary">在触摸屏幕时防止与导航按钮的互动</string>
+    <string name="anbi_summary">防止在触摸屏幕时意外按到实体键</string>
     <!-- Buttons -->
     <string name="navigation_bar_title">导航栏</string>
     <string name="hardware_keys_power_key_title">电源键</string>
@@ -517,7 +517,7 @@
     <string name="hardware_keys_action_volume_panel">切换音量面板</string>
     <string name="hardware_keys_action_clear_all_notifications">清除所有通知</string>
     <string name="hardware_keys_action_notifications_panel">开关通知面板</string>
-    <string name="hardware_keys_action_expand_qs_panel">展开快捷设置面板</string>
+    <string name="hardware_keys_action_expand_qs_panel">展开快速设置面板</string>
     <string name="hardware_keys_action_ringer_modes">响铃模式</string>
     <string name="hardware_keys_swipe_right_key_title">右滑</string>
     <string name="hardware_keys_swipe_left_key_title">左滑</string>
@@ -548,17 +548,17 @@
     <!-- Power menu key customization -->
     <string name="power_end_call_title">结束通话</string>
     <string name="power_end_call_summary">按电源键结束当前通话</string>
-    <string name="volume_panel_on_left_title">音量面板居左</string>
+    <string name="volume_panel_on_left_title">音量控制面板显示在左侧</string>
     <string name="volume_panel_on_left_summary">在屏幕左侧显示音量面板</string>
     <string name="extras_title">附加功能</string>
     <!-- Partial screenshot -->
-    <string name="click_partial_screenshot_title">点击部分截图</string>
+    <string name="click_partial_screenshot_title">点击进行部分屏幕截图</string>
     <string name="click_partial_screenshot_summary">短击音量和电源以截取局部截图</string>
     <!-- Edge gesture -->
     <string name="navigation_bar_edge_long_swipe_title">边缘长滑行为</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">声音面板</string>
-    <string name="volume_dialog_timeout_title">音量面板超时</string>
+    <string name="volume_dialog_timeout_title">音量面板显示超时</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">背光</string>
     <string name="button_backlight_enabled">点亮按钮</string>
@@ -566,7 +566,7 @@
     <string name="keyboard_backlight_enabled">背光键盘</string>
     <string name="button_backlight_seekbar_title">按钮亮度</string>
     <string name="keyboard_backlight_seekbar_title">键盘亮度</string>
-    <string name="backlight_timeout_title">背光超时</string>
+    <string name="backlight_timeout_title">按钮背光超时</string>
     <string name="backlight_timeout_unlimited">永不关闭</string>
     <string name="backlight_summary_disabled">已禁用</string>
     <string name="backlight_summary_enabled_with_timeout">保持背光灯 <xliff:g id="timeout">%s</xliff:g></string>
@@ -578,7 +578,7 @@
     <string name="swap_capacitive_keys_title">交换电容按钮</string>
     <string name="swap_capacitive_keys_summary">交换最近使用与后退按钮的顺序</string>
     <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_title">频谱</string>
+    <string name="lockscreen_visualizer_title">显示音乐可视化器</string>
     <string name="lockscreen_visualizer_summary">可用时显示音乐可视化</string>
     <string name="lockscreen_visualizer_enable">音乐频谱</string>
     <string name="lockscreen_visualizer_enable_summary">播放音乐时启用音乐频谱</string>
@@ -650,8 +650,8 @@
     <string name="data_disabled_icon_title">显示数据连接停用图标</string>
     <string name="data_disabled_icon_summary">禁用数据连接时，显示信号图标旁边的 “×“ 图标</string>
     <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">控制中心面板页脚警告</string>
-    <string name="qs_footer_warnings_summary">当网络被 VPN 或者应用程序监测时，在控制中心底部显示一个警告</string>
+    <string name="qs_footer_warnings_title">快速设置底部警告</string>
+    <string name="qs_footer_warnings_summary">当网络被 VPN 或者应用程序监测时，在快速设置面板底部显示一个警告</string>
     <!-- QS footer icons -->
     <string name="qs_footer_users_icon_title">用户账户图标</string>
     <string name="qs_footer_users_icon_summary">在可用时显示多用户辅助功能图标</string>
@@ -669,7 +669,7 @@
     <string name="custom_carrier_label_title">自定义运营商名称</string>
     <string name="custom_carrier_label_explain">输入自定义标签，留空则使用您的运营商名称。</string>
     <string name="custom_carrier_label_notset">未设置自定义运营商标签</string>
-    <string name="show_carrier_title">运营商名称位置</string>
+    <string name="show_carrier_title">运营商名称显示位置</string>
     <string name="show_carrier_disabled">已禁用</string>
     <string name="show_carrier_keyguard">锁屏界面</string>
     <string name="show_carrier_statusbar">状态栏</string>
@@ -680,7 +680,7 @@
     <string name="theme_style_title">主题风格</string>
     <string name="theme_style_tonal_spot">色调点 (默认)</string>
     <string name="theme_style_vibrant">鲜艳</string>
-    <string name="theme_style_expressive">扩展性</string>
+    <string name="theme_style_expressive">丰富多彩</string>
     <string name="theme_style_spritz">喷雾</string>
     <string name="theme_style_rainbow">彩虹</string>
     <string name="theme_style_fruit_salad">水果沙拉</string>
@@ -702,7 +702,7 @@
     <string name="luminance_factor_summary">更高的值生成更亮的颜色</string>
     <string name="chroma_factor_title">饱和度</string>
     <string name="chroma_factor_summary">更高的值生成更亮的颜色</string>
-    <string name="tint_background_title">强调背景</string>
+    <string name="tint_background_title">着色背景</string>
     <string name="tint_background_summary">让亮度和色彩选择也会影响背景颜色</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">使用自定义主题</string>
@@ -719,7 +719,7 @@
     <!-- Summary text for screen off UDFPS [CHAR LIMIT=NONE]-->
     <string name="ambient_display_screen_off_udfps_summary">允许锁定屏幕关闭。\n启用可能会导致意外唤醒</string>
     <!-- QSTile requires unlocking before being accessible -->
-    <string name="qstile_requires_unlocking_title">控制中心设置磁贴需要解锁</string>
+    <string name="qstile_requires_unlocking_title">快速设置磁贴需要解锁才能访问</string>
     <string name="qstile_requires_unlocking_summary">以下的控制中心磁贴需要解锁，然后您可以从锁定屏幕中启用：\n飞行模式，移动数据，NFC，热点，USB 网络共享和位置</string>
     <!-- UDFPS Haptic Feedback -->
     <string name="udfps_haptic_feedback_title">屏下指纹触觉反馈</string>
@@ -825,7 +825,7 @@
     <string name="smart_pixels_shift_title">烧屏保护</string>
     <string name="smart_pixels_shift_summary">通过经常移动像素来防止 OLED 屏幕的设备发生烧屏</string>
     <!-- Status bar logo -->
-    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_title">状态栏 Logo</string>
     <string name="status_bar_logo_summary">启用在状态栏中显示 logo</string>
     <string name="status_bar_logo_main_switch_title">使用状态栏标志</string>
     <string name="status_bar_logo_position_title">位置</string>
@@ -900,14 +900,14 @@
     <string name="status_bar_battery_text_charging_summary">充电时总是显示电池百分比</string>
     <!-- QS battery -->
     <string name="qs_battery_location_title">电池图标位置</string>
-    <string name="qs_battery_location_qs_panel">QS 面板</string>
+    <string name="qs_battery_location_qs_panel">快速设置面板</string>
     <string name="qs_battery_location_qs_statusbar">Qs状态栏</string>
     <string name="qs_use_status_bar_battery_style">跟随状态栏样式</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">电量预估</string>
-    <string name="battery_estimate_summary">显示电量可用时间</string>
+    <string name="battery_estimate_summary">显示剩余电量估计时间</string>
     <!-- UiBench -->
-    <string name="category_uibench">UiBech</string>
+    <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">抖动</string>
     <string name="jitter_test_summary">计算渲染抖动</string>
     <!-- Lock screen battery info indicator -->
@@ -966,17 +966,17 @@
     <string name="alert_slider_cat_title">三段式滑块</string>
     <!-- Alert Slider Pulse (OnePlus devices) -->
     <string name="alert_slider_pulse_title">三段式滑块脉冲</string>
-    <string name="alert_slider_pulse_summary">改变三段式滑块位置时脉冲环境显示</string>
+    <string name="alert_slider_pulse_summary">改变三段式滑块位置时脉冲息屏显示</string>
     <!-- Alert Slider block -->
     <string name="block_alert_title">屏蔽三段式滑块</string>
-    <string name="block_alert_summary">口袋模式将屏蔽三段式滑块</string>
+    <string name="block_alert_summary">口袋模式下禁用三段式滑块</string>
     <!-- Power menu Animations -->
     <string name="power_menu_animation_title">电源菜单动画</string>
     <string name="power_menu_animation_dialog_title">选择电源菜单动画</string>
     <string name="power_menu_animation_aosp">AOSP (默认)</string>
     <string name="power_menu_animation_bottom">底部</string>
     <string name="power_menu_animation_top">顶部</string>
-    <string name="power_menu_animation_xylon">飞行</string>
+    <string name="power_menu_animation_xylon">从左侧滑入，向底部退出</string>
     <string name="power_menu_animation_slide">滑动</string>
     <string name="power_menu_animation_turn">旋转</string>
     <string name="power_menu_animation_card">3D</string>
@@ -998,7 +998,7 @@
     <string name="single_line">单线</string>
     <string name="double_line">双线条</string>
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">组合信号图标</string>
+    <string name="combined_status_bar_signal_icons_title">合并信号强度图标</string>
     <string name="combined_status_bar_signal_icons_summary">显示 WiFi 和移动信号的单个组合图标</string>
     <!-- Quick settings styles -->
     <string name="qs_styles_title">快速连接元素样式</string>
@@ -1030,12 +1030,12 @@
     <string name="volume_steps_voice_call_title">音量调整级别: 通话</string>
     <string name="volume_steps_reset">重置</string>
     <!-- QS Header image -->
-    <string name="qs_header_image_title">QS 横幅图像</string>
+    <string name="qs_header_image_title">快速设置横幅图像</string>
     <string name="qs_header_image_summary">选择 QS 背景横幅图像</string>
-    <string name="qs_header_image_enabled_title">QS 横幅图像自定义</string>
-    <string name="qs_header_image_enabled_summary">启用 QS 横幅图像自定义</string>
+    <string name="qs_header_image_enabled_title">快速设置横幅图像自定义</string>
+    <string name="qs_header_image_enabled_summary">启用快速设置横幅图像自定义</string>
     <string name="qs_header_image_landscape_enabled_title">在横屏模式下显示</string>
-    <string name="qs_header_image_landscape_enabled_summary">在横屏模式下显示 QS 横幅图像</string>
+    <string name="qs_header_image_landscape_enabled_summary">在横屏模式下显示快速设置横幅图像</string>
     <string name="qs_header_image_tint_title">着色</string>
     <string name="qs_header_image_tint_none">无着色</string>
     <string name="qs_header_image_tint_accent">强调色</string>
@@ -1051,15 +1051,15 @@
     <string name="file_header_select_title">选择本地图像</string>
     <string name="file_header_select_summary">从存储中选择图像</string>
     <!-- Pulse on music track change -->
-    <string name="pulse_on_new_tracks_title">音乐息屏显示</string>
-    <string name="pulse_on_new_tracks_summary">播放新曲目时点亮环境显示</string>
+    <string name="pulse_on_new_tracks_title">播放音乐时的息屏显示</string>
+    <string name="pulse_on_new_tracks_summary">播放新曲目时点亮息屏显示</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">口袋检测</string>
     <string name="pocket_judge_summary">当设备在口袋中时屏蔽屏幕和按键操作</string>
     <!-- QS Footer Text -->
-    <string name="qs_footer_text_title">快速设置中的页脚文字</string>
+    <string name="qs_footer_text_title">快速设置底部文本</string>
     <string name="qs_footer_text_summary">快速设置面板底部显示文本</string>
-    <string name="qs_footer_text_string_title">自定义页脚文本</string>
+    <string name="qs_footer_text_string_title">自定义底部文本</string>
     <string name="qs_footer_text_string_summary">默认为空</string>
     <!-- Volume haptic feedback -->
     <string name="volume_panel_haptic_feedback_title">音量触感反馈</string>
