@@ -44,6 +44,17 @@
     <PreferenceCategory
         android:title="@string/lockscreen_clock_category">
 
+        <Preference
+            android:key="lockscreen_preview"
+            settings:layout="@layout/lockscreen_preview" />
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:entries="@array/clock_style_entries"
+            android:title="Custom Clock style"
+            android:key="clock_style"
+            android:defaultValue="0"
+            android:entryValues="@array/clock_style_values" />
+
         <!-- Lockscreen Clock Font style -->
         <Preference
             android:key="android.theme.customization.lockscreen_clock_font"
