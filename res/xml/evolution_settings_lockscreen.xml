@@ -8,6 +8,50 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_title">
 
+    <Preference
+        android:key="lockscreen_preview"
+        settings:layout="@layout/lockscreen_preview" />
+
+    <PreferenceCategory
+        android:title="@string/lockscreen_clock_category">
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:title="@string/theme_customization_lock_clock_style_title"
+            android:key="clock_style"
+            android:entries="@array/clock_style_entries"
+            android:entryValues="@array/clock_style_values"
+            android:defaultValue="0" />
+
+        <!-- Lockscreen Clock Font style -->
+        <Preference
+            android:key="android.theme.customization.lockscreen_clock_font"
+            android:title="@string/theme_customization_lock_clock_title"
+            android:summary="@string/theme_customization_lock_clock_summary"
+            android:fragment="com.evolution.settings.fragments.LockClockFonts" />
+
+        <!--
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="kg_custom_clock_color_enabled"
+            android:title="@string/kg_custom_clock_color_enabled_title"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.colorpicker.SecureSettingColorPickerPreference
+            android:key="kg_custom_clock_color"
+            android:title="@string/kg_custom_clock_color_title"
+            android:dependency="kg_custom_clock_color_enabled"
+            android:defaultValue="0xFFFFFFFF" />
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="clock_use_custom_format"
+            android:title="@string/clock_use_single_line_title"
+            android:entries="@array/clock_use_single_line_entries"
+            android:entryValues="@array/clock_use_single_line_values"
+            android:summary="%s"
+            android:defaultValue="0" />
+        -->
+
+    </PreferenceCategory>
+
     <!-- Udfps options -->
     <PreferenceCategory
         android:key="udfps_category"
@@ -38,39 +82,6 @@
             android:defaultValue="false"
             android:fragment="com.evolution.settings.fragments.EdgeLightSettings"
             settings:observe="true" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/lockscreen_clock_category">
-
-        <!-- Lockscreen Clock Font style -->
-        <Preference
-            android:key="android.theme.customization.lockscreen_clock_font"
-            android:title="@string/theme_customization_lock_clock_title"
-            android:summary="@string/theme_customization_lock_clock_summary"
-            android:fragment="com.evolution.settings.fragments.LockClockFonts" />
-
-        <!--
-        <com.evolution.settings.preference.SecureSettingSwitchPreference
-            android:key="kg_custom_clock_color_enabled"
-            android:title="@string/kg_custom_clock_color_enabled_title"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.colorpicker.SecureSettingColorPickerPreference
-            android:key="kg_custom_clock_color"
-            android:title="@string/kg_custom_clock_color_title"
-            android:dependency="kg_custom_clock_color_enabled"
-            android:defaultValue="0xFFFFFFFF" />
-
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="clock_use_custom_format"
-            android:title="@string/clock_use_single_line_title"
-            android:entries="@array/clock_use_single_line_entries"
-            android:entryValues="@array/clock_use_single_line_values"
-            android:summary="%s"
-            android:defaultValue="0" />
-        -->
 
     </PreferenceCategory>
 
