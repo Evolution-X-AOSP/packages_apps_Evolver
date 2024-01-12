@@ -37,7 +37,6 @@ import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -69,7 +68,6 @@ public class AmbientCustomizations extends SettingsPreferenceFragment implements
     private static final String FILE_AMBIENT_SELECT = "file_ambient_select";
 
     private static final int REQUEST_PICK_IMAGE = 0;
-    private static final String IMAGE_PICKER = "com.android.gallery3d";
 
     private SystemSettingEditTextPreference mAmbientText;
     private ListPreference mAmbientTextAlign;
@@ -115,19 +113,12 @@ public class AmbientCustomizations extends SettingsPreferenceFragment implements
         mAmbientTextColor.setNewPreviewColor(ambientTextColor);
 
         mAmbientImage = findPreference(FILE_AMBIENT_SELECT);
-        // disable file picker if gallery3d is not enabled
-        if (!EvolutionUtils.isPackageEnabled(getContext(), IMAGE_PICKER)) {
-            mAmbientImage.setEnabled(false);
-        }
-
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mAmbientImage) {
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.addCategory(Intent.CATEGORY_OPENABLE);
-            intent.setPackage("com.android.gallery3d");
+            Intent intent = new Intent(Intent.ACTION_PICK);
             intent.setType("image/*");
             startActivityForResult(intent, REQUEST_PICK_IMAGE);
             return true;
@@ -180,10 +171,9 @@ public class AmbientCustomizations extends SettingsPreferenceFragment implements
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent result) {
-        if (requestCode == REQUEST_PICK_IMAGE) {
-            if (resultCode != Activity.RESULT_OK) {
-                return;
-            }
+        super.onActivityResult(requestCode, resultCode, result);
+
+        if (requestCode == REQUEST_PICK_IMAGE && resultCode == Activity.RESULT_OK) {
             final Uri imageUri = result.getData();
             Settings.System.putString(getContentResolver(), Settings.System.AMBIENT_CUSTOM_IMAGE, imageUri.toString());
         }
