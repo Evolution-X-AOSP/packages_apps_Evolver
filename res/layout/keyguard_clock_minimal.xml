@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="20.0dip"
+    android:gravity="center_horizontal">
+
+    <TextClock
+        android:id="@+id/curvedText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:fontFamily="@font/BebasNeue_Bold"
+        android:textColor="#FFFF39EA"
+        android:layout_marginTop="20dp"
+        android:format12Hour="EEEE"
+        android:format24Hour="EEEE"/>
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="20dp">
+
+    <TextView
+        android:id="@+id/ofText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:fontFamily="@font/BebasNeue_Bold"
+        android:textColor="#FF56C1FF"
+        android:text="of "/>
+
+    <TextClock
+        android:id="@+id/monthNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:format12Hour="MMMM"
+        android:fontFamily="@font/BebasNeue_Bold"
+        android:textColor="#FF56C1FF"/>
+    </LinearLayout>
+
+    <TextClock
+        android:id="@+id/curvedText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35sp"
+        android:fontFamily="@font/BebasNeue_Bold"
+        android:textColor="#FFFFD700"
+        android:layout_marginTop="20dp"
+        android:format12Hour="dd, yyyy"
+        android:format24Hour="dd, yyyy"/>
+
+    <TextClock
+        android:id="@+id/curvedText4_12hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:fontFamily="@font/BebasNeue_Bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:format12Hour="h:mm a"/>
+</LinearLayout>
