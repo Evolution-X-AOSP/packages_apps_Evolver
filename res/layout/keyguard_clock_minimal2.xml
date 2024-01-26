@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <!-- Month and Date -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="-35dp"
+        android:gravity="center">
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/Futurist-Fixed-width-Bold"
+            android:format12Hour="MMMM"
+            android:format24Hour="MMMM" />
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/Futurist-Fixed-width-Bold"
+            android:format12Hour="dd, yyyy"
+            android:format24Hour="dd, yyyy" />
+
+    </LinearLayout>
+    
+    <!-- Divider Shape -->
+    <View
+        android:layout_width="18dp"
+        android:layout_height="6dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginTop="2dp"
+        android:background="#FFFFFF"
+        android:rotation="180"/>
+
+    <!-- Day and Time -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#FFFFFF"
+            android:format12Hour="EEEE"
+            android:format24Hour="EEEE"
+            android:fontFamily="@font/Futurist-Fixed-width-Bold" />
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:format12Hour="h:mm"
+            android:format24Hour="H:mm"
+            android:fontFamily="@font/Futurist-Fixed-width-Bold" />
+
+    </LinearLayout>
+
+    <!-- Divider Shape -->
+    <View
+        android:layout_width="18dp"
+        android:layout_height="6dp"
+        android:background="#FFFFFF"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="2dp"
+        android:rotation="180.0"/>
+
+</LinearLayout>

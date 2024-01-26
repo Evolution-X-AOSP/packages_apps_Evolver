@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="start|center"
+    android:layout_gravity="start|center"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10.0dip"
+        android:layout_marginStart="13dp">
+        <TextClock
+            android:textSize="140.0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:singleLine="true"
+            android:fontFamily="@font/filled1"
+            android:format12Hour="hh"/>
+        <TextClock
+            android:textSize="140.0dp"
+            android:textColor="@android:color/system_accent1_100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:fontFamily="@font/hollow1"
+            android:format12Hour="mm"/>
+    </LinearLayout>
+    <TextClock
+        android:textSize="20.0dp"
+        android:textColor="@android:color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hollow1"
+        android:textAllCaps="true"
+        android:layout_marginStart="26dp"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        android:layout_marginTop="-15dp"
+        android:format12Hour="EEEE"
+        android:format24Hour="EEEE"/>
+</LinearLayout>
