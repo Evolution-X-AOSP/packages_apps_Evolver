@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
@@ -17,69 +17,11 @@
         android:defaultValue="false" />
     -->
 
-    <PreferenceCategory
-        android:key="spoof_category"
-        android:title="@string/spoof_title">
-
-        <!-- Play integrity fix -->
-        <com.evolution.settings.preference.SystemPropertySwitchPreference
-            android:key="persist.sys.pif"
-            android:title="@string/pif_spoof_title"
-            android:summary="@string/pif_spoof_summary"
-            android:defaultValue="true" />
-
-        <Preference
-            android:key="pif"
-            android:title="@string/pif_title"
-            android:summary="@string/pif_summary">
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.goolag.pif"
-                android:targetClass="com.goolag.pif.PifActivity" />
-        </Preference>
-
-        <!-- Pixel Props (spoof gapps as Pixel 5) -->
-        <com.evolution.settings.preference.SystemPropertySwitchPreference
-            android:key="persist.sys.pixelprops"
-            android:title="@string/spoof_as_pixel_title"
-            android:summary="@string/spoof_as_pixel_summary"
-            android:defaultValue="true" />
-
-        <!-- Spoof only some gapps as recent Pixel -->
-        <com.evolution.settings.preference.SystemPropertySwitchPreference
-            android:key="persist.sys.pixelprops.recent"
-            android:title="@string/spoof_recent_pixel_title"
-            android:summary="@string/spoof_recent_pixel_summary"
-            android:defaultValue="true" />
-
-        <!-- Spoof all gapps as recent Pixel -->
-        <com.evolution.settings.preference.SystemPropertySwitchPreference
-            android:key="persist.sys.pixelprops.recent.all"
-            android:title="@string/spoof_recent_pixel_all_title"
-            android:summary="@string/spoof_recent_pixel_all_summary"
-            android:defaultValue="false" />
-
-        <!-- Unlimited Photos storage -->
-        <com.evolution.settings.preference.SystemPropertySwitchPreference
-            android:key="persist.sys.pixelprops.gphotos"
-            android:title="@string/photos_spoof_title"
-            android:summary="@string/photos_spoof_summary"
-            android:defaultValue="true" />
-
-        <!-- Unlock FPS for specific games -->
-        <com.evolution.settings.preference.SystemPropertySwitchPreference
-            android:key="persist.sys.pixelprops.games"
-            android:title="@string/games_spoof_title"
-            android:summary="@string/games_spoof_summary"
-            android:defaultValue="false" />
-
-        <!-- Netflix -->
-        <com.evolution.settings.preference.SystemPropertySwitchPreference
-            android:key="persist.sys.pixelprops.netflix"
-            android:title="@string/netflix_spoof_title"
-            android:summary="@string/netflix_spoof_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
+    <Preference
+        android:key="spoof_settings"
+        android:title="@string/spoof_title"
+        android:summary="@string/spoof_summary"
+        android:fragment="com.evolution.settings.fragments.SpoofSettings" />
 
     <PreferenceCategory
         android:key="uibench"
