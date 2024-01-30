@@ -23,7 +23,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.os.Vibrator;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.View;
@@ -36,7 +35,6 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
-import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.dashboard.DashboardFragment;
@@ -53,9 +51,6 @@ public class Notifications extends DashboardFragment implements
     private static final String TAG = "Notifications";
 
     private static final String ALERT_SLIDER_CAT = "alert_slider_cat";
-    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
-
-    private boolean mHasVibrator;
 
     private PreferenceCategory mAlertSliderCat;
 
@@ -78,13 +73,6 @@ public class Notifications extends DashboardFragment implements
                 com.android.internal.R.bool.config_hasAlertSlider);
         if (!mAlertSliderAvailable) {
             prefScreen.removePreference(mAlertSliderCat);
-        }
-
-        mHasVibrator = mContext.getSystemService(Vibrator.class).hasVibrator();
-
-        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
-        if (!mHasVibrator) {
-            prefScreen.removePreference(incallVibCategory);
         }
     }
 
