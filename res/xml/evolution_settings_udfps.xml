@@ -22,11 +22,13 @@
         android:title="@string/udfps_haptic_feedback_title"
         android:summary="@string/udfps_haptic_feedback_summary"
         android:defaultValue="true" />
+    -->
 
     <PreferenceCategory
         android:key="udfps_customization"
         android:title="@string/udfps_customization">
 
+        <!--
         <Preference
             android:key="udfps_icon_picker"
             android:title="@string/udfps_icon_picker_title"
@@ -46,6 +48,7 @@
             android:dependency="custom_fp_icon_enabled"
             android:persistent="false">
         </Preference>
+        -->
 
         <Preference
             android:key="udfps_recognizing_animation_preview"
@@ -54,6 +57,5 @@
             android:fragment="com.evolution.settings.fragments.UdfpsAnimation" />
 
     </PreferenceCategory>
-    -->
 
 </PreferenceScreen>

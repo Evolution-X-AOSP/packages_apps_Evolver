@@ -67,6 +67,10 @@ public class Udfps extends DashboardFragment implements
 
     private static final String TAG = "Udfps";
 
+    private static final String UDFPS_CUSTOMIZATION = "udfps_customization";
+
+    private PreferenceCategory mUdfpsCustomization;
+
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.evolution_settings_udfps;
@@ -78,6 +82,13 @@ public class Udfps extends DashboardFragment implements
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
+
+        final boolean udfpsResPkgInstalled = EvolutionUtils.isPackageInstalled(getContext(),
+                "com.evolution.udfps.resources");
+        mUdfpsCustomization = (PreferenceCategory) findPreference(UDFPS_CUSTOMIZATION);
+        if (!udfpsResPkgInstalled) {
+            prefScreen.removePreference(mUdfpsCustomization);
+        }
     }
 
     @Override
