@@ -35,7 +35,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,9 +56,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsActivity;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.widget.SettingsMainSwitchBar;
 import com.android.settingslib.search.Indexable;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,10 +65,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class UdfpsAnimation extends SettingsPreferenceFragment implements
-        OnMainSwitchChangeListener {
-
-    private Switch mSwitch;
+public class UdfpsAnimation extends SettingsPreferenceFragment {
 
     private RecyclerView mRecyclerView;
     private String mPkg = "com.evolution.udfps.resources";
@@ -83,7 +77,6 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
     private String[] mAnimPreviews;
     private String[] mTitles;
 
-    private boolean mEnabled;
     private UdfpsAnimAdapter mUdfpsAnimAdapter;
 
     @Override
@@ -128,31 +121,7 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
     public void onActivityCreated(Bundle icicle) {
         super.onActivityCreated(icicle);
         final SettingsActivity activity = (SettingsActivity) getActivity();
-        final SettingsMainSwitchBar switchBar = activity.getSwitchBar();
-        mSwitch = switchBar.getSwitch();
-        mEnabled = Settings.System.getInt(getActivity().getContentResolver(),
-                       Settings.System.UDFPS_ANIM, 0) == 1;
-        mSwitch.setChecked(mEnabled);
-        setEnabled(mEnabled);
-        switchBar.setTitle(getActivity().getString(R.string.udfps_recog_animation));
-        switchBar.addOnSwitchChangeListener(this);
-        switchBar.show();
-    }
-
-    @Override
-    public void onSwitchChanged(Switch switchView, boolean isChecked) {
-        Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.UDFPS_ANIM, isChecked ? 1 : 0);
-        mSwitch.setChecked(isChecked);
-        setEnabled(isChecked);
-    }
-
-    public void setEnabled(boolean enabled) {
-        if (enabled) {
-            mRecyclerView.setAdapter(mUdfpsAnimAdapter);
-        } else {
-            mRecyclerView.setAdapter(null);
-        }
+        mRecyclerView.setAdapter(mUdfpsAnimAdapter);
     }
 
     @Override
