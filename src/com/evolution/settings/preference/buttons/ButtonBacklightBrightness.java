@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.evolution.settings.buttons.preference;
+package com.evolution.settings.preference.buttons;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -40,8 +40,8 @@ import androidx.preference.PreferenceManager;
 
 import com.android.settings.R;
 
-import com.evolution.settings.buttons.ButtonSettingsUtils;
 import com.evolution.settings.preference.CustomDialogPreference;
+import com.evolution.settings.utils.ButtonSettingsUtils;
 
 public class ButtonBacklightBrightness extends CustomDialogPreference<AlertDialog> implements
         SeekBar.OnSeekBarChangeListener {

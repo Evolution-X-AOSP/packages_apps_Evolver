@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.evolution.settings.about;
+package com.evolution.settings.fragments.about;
 
 import android.os.Bundle;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;

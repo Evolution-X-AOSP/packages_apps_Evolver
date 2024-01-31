@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.evolution.settings.ui;
+package com.evolution.settings.preference.colorpicker;
 
 import android.content.Context;
 import android.graphics.Canvas;
