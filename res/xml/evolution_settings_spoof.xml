@@ -27,8 +27,8 @@
     <!-- Pixel Props (spoof gapps as Pixel 5) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops"
-        android:title="@string/spoof_as_pixel_title"
-        android:summary="@string/spoof_as_pixel_summary"
+        android:title="@string/spoof_pixel_title"
+        android:summary="@string/spoof_pixel_summary"
         android:defaultValue="true" />
 
     <!-- Spoof only some gapps as recent Pixel -->
@@ -43,6 +43,13 @@
         android:key="persist.sys.pixelprops.recent.all"
         android:title="@string/spoof_recent_pixel_all_title"
         android:summary="@string/spoof_recent_pixel_all_summary"
+        android:defaultValue="false" />
+
+    <!-- Spoof Google app as recent Pixel -->
+    <com.evolution.settings.preference.SystemPropertySwitchPreference
+        android:key="persist.sys.velvet.cts"
+        android:title="@string/spoof_recent_pixel_cts_title"
+        android:summary="@string/spoof_recent_pixel_cts_summary"
         android:defaultValue="false" />
 
     <!-- Unlimited Photos storage -->
