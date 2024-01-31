@@ -42,13 +42,11 @@
             android:summary="@string/navbar_invert_layout_summary"
             android:defaultValue="false" />
 
-        <ListPreference
-            android:key="navigation_bar_edge_long_swipe"
-            android:dialogTitle="@string/navigation_bar_edge_long_swipe_title"
-            android:title="@string/navigation_bar_edge_long_swipe_title"
-            android:entries="@array/hardware_keys_action_entries"
-            android:entryValues="@array/hardware_keys_action_values"
-            android:persistent="false" />
+        <Preference
+            android:key="gesture_nav_custom_options"
+            android:title="@string/navbar_gesture_tweaks_pref_title"
+            android:summary="@string/navbar_gesture_tweaks_pref_summary"
+            android:fragment="com.android.settings.gestures.GestureTweaksSettings" />
 
     </PreferenceCategory>
 
