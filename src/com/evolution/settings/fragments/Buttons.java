@@ -54,11 +54,11 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.buttons.preference.*;
-import com.evolution.settings.buttons.ButtonSettingsUtils;
 import com.evolution.settings.preference.CustomDialogPreference;
 import com.evolution.settings.preference.SecureSettingSwitchPreference;
 import com.evolution.settings.preference.SystemSettingSwitchPreference;
+import com.evolution.settings.preference.buttons.*;
+import com.evolution.settings.utils.ButtonSettingsUtils;
 
 import java.util.List;
 import java.util.UUID;

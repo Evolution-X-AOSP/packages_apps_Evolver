@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.evolution.settings;
+package com.evolution.settings.fragments.about;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;

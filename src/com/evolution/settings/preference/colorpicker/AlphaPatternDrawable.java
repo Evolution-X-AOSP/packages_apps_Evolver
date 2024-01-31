@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2010 Daniel Nilsson
+ * Copyright (C) 2012 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,17 +18,18 @@
 package com.evolution.settings.preference.colorpicker;
 
 import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Bitmap.Config;
 import android.graphics.drawable.Drawable;
 
 /**
- * This drawable that draws a simple white and gray chessboard pattern.
- * It's pattern you will often see as a background behind a
- * partly transparent image in many applications.
+ * This drawable that draws a simple white and gray chess board pattern. It's
+ * pattern you will often see as a background behind a partly transparent image
+ * in many applications.
+ *
  * @author Daniel Nilsson
  */
 public class AlphaPatternDrawable extends Drawable {
@@ -42,9 +44,9 @@ public class AlphaPatternDrawable extends Drawable {
     private int numRectanglesVertical;
 
     /**
-     * Bitmap in which the pattern will be cahched.
+     * Bitmap in which the pattern will be cached.
      */
-    private Bitmap        mBitmap;
+    private Bitmap mBitmap;
 
     public AlphaPatternDrawable(int rectangleSize) {
         mRectangleSize = rectangleSize;
@@ -85,19 +87,17 @@ public class AlphaPatternDrawable extends Drawable {
         numRectanglesVertical = (int) Math.ceil(height / mRectangleSize);
 
         generatePatternBitmap();
-
     }
 
     /**
-     * This will generate a bitmap with the pattern
-     * as big as the rectangle we were allow to draw on.
-     * We do this to chache the bitmap so we don't need to
-     * recreate it each time draw() is called since it
-     * takes a few milliseconds.
+     * This will generate a bitmap with the pattern as big as the rectangle we
+     * were allow to draw on. We do this to cache the bitmap so we don't need
+     * to recreate it each time draw() is called since it takes a few
+     * milliseconds.
      */
-    private void generatePatternBitmap(){
+    private void generatePatternBitmap() {
 
-        if(getBounds().width() <= 0 || getBounds().height() <= 0){
+        if (getBounds().width() <= 0 || getBounds().height() <= 0) {
             return;
         }
 
@@ -107,10 +107,8 @@ public class AlphaPatternDrawable extends Drawable {
         Rect r = new Rect();
         boolean verticalStartWhite = true;
         for (int i = 0; i <= numRectanglesVertical; i++) {
-
             boolean isWhite = verticalStartWhite;
             for (int j = 0; j <= numRectanglesHorizontal; j++) {
-
                 r.top = i * mRectangleSize;
                 r.left = j * mRectangleSize;
                 r.bottom = r.top + mRectangleSize;
@@ -122,9 +120,6 @@ public class AlphaPatternDrawable extends Drawable {
             }
 
             verticalStartWhite = !verticalStartWhite;
-
         }
-
     }
-
 }
