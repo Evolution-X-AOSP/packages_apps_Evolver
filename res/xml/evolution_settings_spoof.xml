@@ -24,26 +24,12 @@
             android:targetClass="com.goolag.pif.PifActivity" />
     </Preference>
 
-    <!-- Pixel Props (spoof gapps as Pixel 5) -->
+    <!-- Pixel Props (spoof gapps as Pixel 6 Pro) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops"
-        android:title="@string/spoof_as_pixel_title"
-        android:summary="@string/spoof_as_pixel_summary"
+        android:title="@string/spoof_pixel_title"
+        android:summary="@string/spoof_pixel_summary"
         android:defaultValue="true" />
-
-    <!-- Spoof only some gapps as recent Pixel -->
-    <com.evolution.settings.preference.SystemPropertySwitchPreference
-        android:key="persist.sys.pixelprops.recent"
-        android:title="@string/spoof_recent_pixel_title"
-        android:summary="@string/spoof_recent_pixel_summary"
-        android:defaultValue="true" />
-
-    <!-- Spoof all gapps as recent Pixel -->
-    <com.evolution.settings.preference.SystemPropertySwitchPreference
-        android:key="persist.sys.pixelprops.recent.all"
-        android:title="@string/spoof_recent_pixel_all_title"
-        android:summary="@string/spoof_recent_pixel_all_summary"
-        android:defaultValue="false" />
 
     <!-- Unlimited Photos storage -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
@@ -57,12 +43,5 @@
         android:key="persist.sys.pixelprops.games"
         android:title="@string/games_spoof_title"
         android:summary="@string/games_spoof_summary"
-        android:defaultValue="false" />
-
-    <!-- Netflix -->
-    <com.evolution.settings.preference.SystemPropertySwitchPreference
-        android:key="persist.sys.pixelprops.netflix"
-        android:title="@string/netflix_spoof_title"
-        android:summary="@string/netflix_spoof_summary"
         android:defaultValue="false" />
 </PreferenceScreen>
