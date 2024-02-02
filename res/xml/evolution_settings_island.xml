@@ -6,7 +6,12 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/island_notification_title">
+
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="island_illustration"
+        app:lottie_rawRes="@raw/island_animation" />
 
     <com.android.settingslib.widget.TopIntroPreference
         android:key="island_notification_intro"
@@ -16,14 +21,13 @@
         android:key="island_notification"
         android:title="@string/island_notification_title"
         android:summary="@string/island_notification_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
-    <!--
     <com.evolution.settings.preference.SystemSettingSwitchPreference
         android:key="island_notification_now_playing"
         android:title="@string/island_notification_now_playing_title"
         android:summary="@string/island_notification_now_playing_summary"
+        android:dependency="island_notification"
         android:defaultValue="true" />
-    -->
 
 </PreferenceScreen>
