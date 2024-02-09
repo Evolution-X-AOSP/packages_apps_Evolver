@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Evolution X
+ * Copyright (C) 2024 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.fragments.Clock;
 import com.evolution.settings.preference.SystemSettingListPreference;
+import com.evolution.settings.preference.SystemSettingPrimarySwitchPreference;
 import com.evolution.settings.utils.DeviceUtils;
 
 import java.util.ArrayList;
@@ -61,6 +62,7 @@ public class StatusBar extends DashboardFragment implements
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
+    private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
     private static final String STATUS_BAR_SIGNAL_CATEGORY = "status_bar_signal_category";
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
 
@@ -73,6 +75,7 @@ public class StatusBar extends DashboardFragment implements
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingListPreference mStatusBarClock;
+    private SystemSettingPrimarySwitchPreference mNetTrafficState;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -86,6 +89,13 @@ public class StatusBar extends DashboardFragment implements
         final ContentResolver resolver = getActivity().getContentResolver();
         final Context mContext = getActivity().getApplicationContext();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mNetTrafficState = findPreference(NETWORK_TRAFFIC_STATE);
+        mNetTrafficState.setOnPreferenceChangeListener(this);
+        boolean enabled = Settings.System.getInt(resolver,
+                NETWORK_TRAFFIC_STATE, 0) == 1;
+        mNetTrafficState.setChecked(enabled);
+        updateNetTrafficSummary(enabled);
 
         int batterystyle = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
@@ -128,9 +138,20 @@ public class StatusBar extends DashboardFragment implements
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        updateNetTrafficSummary();
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mBatteryStyle) {
+        if (preference == mNetTrafficState) {
+            boolean enabled = (boolean) newValue;
+            Settings.System.putInt(resolver, NETWORK_TRAFFIC_STATE, enabled ? 1 : 0);
+            updateNetTrafficSummary(enabled);
+            return true;
+        } else if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
             int batterypercent = Settings.System.getIntForUser(getContentResolver(),
                     Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
@@ -148,6 +169,29 @@ public class StatusBar extends DashboardFragment implements
             return true;
         }
         return false;
+    }
+
+    private void updateNetTrafficSummary() {
+        final boolean enabled = Settings.System.getInt(
+                getActivity().getContentResolver(),
+                NETWORK_TRAFFIC_STATE, 0) == 1;
+        updateNetTrafficSummary(enabled);
+    }
+
+    private void updateNetTrafficSummary(boolean enabled) {
+        if (mNetTrafficState == null) return;
+        String summary = getActivity().getString(R.string.switch_off_text);
+        if (enabled) {
+            final int status = Settings.System.getInt(
+                    getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 0);
+            int resid = R.string.traffic_statusbar;
+            if (status == 1) resid = R.string.traffic_expanded_statusbar;
+            else if (status == 2) resid = R.string.show_network_traffic_all;
+            summary = getActivity().getString(R.string.network_traffic_state_summary)
+                    + " " + getActivity().getString(resid);
+        }
+        mNetTrafficState.setSummary(summary);
     }
 
     @Override

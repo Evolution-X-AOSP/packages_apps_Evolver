@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
@@ -40,12 +40,13 @@
         android:fragment="com.evolution.settings.fragments.StatusBarLogo"
         settings:observe="true" />
 
-    <!-- Network traffic -->
-    <Preference
-        android:key="network_traffic_settings"
-        android:title="@string/network_traffic_settings_title"
-        android:summary="@string/network_traffic_settings_summary"
-        android:fragment="com.evolution.settings.fragments.NetworkTrafficSettings" />
+    <!-- Network Traffic Monitor -->
+    <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
+        android:key="network_traffic_state"
+        android:title="@string/network_traffic_state_title"
+        android:defaultValue="false"
+        android:fragment="com.evolution.settings.fragments.NetworkTrafficSettings"
+        settings:observe="true" />
 
     <!-- Status bar battery customizations -->
     <PreferenceCategory
