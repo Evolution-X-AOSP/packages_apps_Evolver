@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Evolution X
+ * Copyright (C) 2024 Evolution X
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.evolution.settings.preference.CustomSeekBarPreference;
+import com.evolution.settings.preference.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,13 +53,16 @@ public class NetworkTrafficSettings extends DashboardFragment implements
 
     private static final String TAG = "NetworkTrafficSettings";
 
-    private CustomSeekBarPreference mNetTrafficAutohideThreshold;
-    private CustomSeekBarPreference mNetTrafficRefreshInterval;
+    private static final String NETWORK_TRAFFIC_FONT_SIZE  = "network_traffic_font_size";
+    private static final String NETWORK_TRAFFIC_LOCATION = "network_traffic_location";
+    private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
+    private static final String NETWORK_TRAFFIC_ARROW = "network_traffic_arrow";
+
+    private CustomSeekBarPreference mNetTrafficSize;
+    private CustomSeekBarPreference mThreshold;
     private ListPreference mNetTrafficLocation;
-    private ListPreference mNetTrafficMode;
-    private ListPreference mNetTrafficUnits;
-    private SwitchPreference mNetTrafficAutohide;
-    private SwitchPreference mNetTrafficHideArrow;
+    private ListPreference mNetTrafficType;
+    private SystemSettingSwitchPreference mShowArrows;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -69,27 +73,35 @@ public class NetworkTrafficSettings extends DashboardFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
+        PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mNetTrafficAutohideThreshold = (CustomSeekBarPreference)
-                findPreference(Settings.Secure.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
-        mNetTrafficRefreshInterval = (CustomSeekBarPreference)
-                findPreference(Settings.Secure.NETWORK_TRAFFIC_REFRESH_INTERVAL);
-        mNetTrafficLocation = (ListPreference)
-                findPreference(Settings.Secure.NETWORK_TRAFFIC_LOCATION);
-        mNetTrafficLocation.setOnPreferenceChangeListener(this);
-        mNetTrafficMode = (ListPreference)
-                findPreference(Settings.Secure.NETWORK_TRAFFIC_MODE);
-        mNetTrafficAutohide = (SwitchPreference)
-                findPreference(Settings.Secure.NETWORK_TRAFFIC_AUTOHIDE);
-        mNetTrafficUnits = (ListPreference)
-                findPreference(Settings.Secure.NETWORK_TRAFFIC_UNITS);
-        mNetTrafficHideArrow = (SwitchPreference)
-                findPreference(Settings.Secure.NETWORK_TRAFFIC_HIDEARROW);
+        int type = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_TYPE, 0, UserHandle.USER_CURRENT);
+        mNetTrafficType = (ListPreference) findPreference("network_traffic_type");
+        mNetTrafficType.setValue(String.valueOf(type));
+        mNetTrafficType.setSummary(mNetTrafficType.getEntry());
+        mNetTrafficType.setOnPreferenceChangeListener(this);
 
-        int location = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.NETWORK_TRAFFIC_LOCATION, 0, UserHandle.USER_CURRENT);
-        updateEnabledStates(location);
+        int NetTrafficSize = Settings.System.getInt(resolver,
+                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 36);
+        mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
+        mNetTrafficSize.setValue(NetTrafficSize);
+        mNetTrafficSize.setOnPreferenceChangeListener(this);
+
+        mNetTrafficLocation = (ListPreference) findPreference(NETWORK_TRAFFIC_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 0, UserHandle.USER_CURRENT);
+        mNetTrafficLocation.setOnPreferenceChangeListener(this);
+        mNetTrafficLocation.setValue(String.valueOf(location));
+        mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
+
+        mThreshold = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
+        int value = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
+        mThreshold.setValue(value);
+        mThreshold.setOnPreferenceChangeListener(this);
+        mShowArrows = (SystemSettingSwitchPreference) findPreference(NETWORK_TRAFFIC_ARROW);
     }
 
     @Override
@@ -97,20 +109,34 @@ public class NetworkTrafficSettings extends DashboardFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mNetTrafficLocation) {
             int location = Integer.valueOf((String) newValue);
-            updateEnabledStates(location);
+            // 0=sb; 1=expanded sb; 2 = both
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, location, UserHandle.USER_CURRENT);
+            int index = mNetTrafficLocation.findIndexOfValue((String) newValue);
+            mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntries()[index]);
+            mNetTrafficLocation.setValue(String.valueOf(location));
+            return true;
+        } else if (preference == mThreshold) {
+            int val = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
+                    UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mNetTrafficType) {
+            int val = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_TYPE, val,
+                    UserHandle.USER_CURRENT);
+            int index = mNetTrafficType.findIndexOfValue((String) newValue);
+            mNetTrafficType.setSummary(mNetTrafficType.getEntries()[index]);
+            return true;
+        }  else if (preference == mNetTrafficSize) {
+            int width = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_FONT_SIZE, width);
             return true;
         }
         return false;
-    }
-
-    private void updateEnabledStates(int location) {
-        final boolean enabled = location != 0;
-        mNetTrafficMode.setEnabled(enabled);
-        mNetTrafficAutohide.setEnabled(enabled);
-        mNetTrafficAutohideThreshold.setEnabled(enabled);
-        mNetTrafficHideArrow.setEnabled(enabled);
-        mNetTrafficRefreshInterval.setEnabled(enabled);
-        mNetTrafficUnits.setEnabled(enabled);
     }
 
     @Override
