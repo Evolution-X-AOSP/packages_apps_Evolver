@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -154,33 +154,23 @@
     <string name="choose_app">Выберите приложение</string>
     <string name="delete">Удалить</string>
     <string name="delete_message">Удалить выбранный элемент?</string>
-    <!-- Network traffic -->
-    <string name="network_traffic_settings_title">Индикатор сетевого трафика</string>
-    <string name="network_traffic_settings_summary">Отображать текущую скорость соединения в строке состояния</string>
-    <string name="network_traffic_location_title">Расположение</string>
-    <string name="network_traffic_location_disable">Отключено</string>
-    <string name="network_traffic_location_statusbar">Строка состояния</string>
-    <string name="network_traffic_location_quick_statusbar">В развернутой строке состояния</string>
-    <string name="network_traffic_mode_title">Режим отображения</string>
-    <string name="network_traffic_mode_up">Только исходящая</string>
-    <string name="network_traffic_mode_down">Только входящая</string>
-    <string name="network_traffic_mode_all">Входящая и исходящая</string>
-    <string name="network_traffic_autohide">Автоматическое скрытие</string>
-    <string name="network_traffic_autohide_summary">Скрывать монитор трафика при неактивности</string>
-    <string name="network_traffic_autohide_kilobits">Кб/с</string>
-    <string name="network_traffic_autohide_kilobytes">КБ/с</string>
-    <string name="network_traffic_autohide_threshold">Порог неактивности</string>
-    <string name="network_traffic_refresh_interval_title">Интервал обновления</string>
-    <string name="network_traffic_refresh_interval_summary">Время, спустя которое скорость будет измеряться повторно</string>
-    <string name="network_traffic_units_title">Единицы измерения трафика</string>
-    <string name="network_traffic_units_bits">Бит в секунду (бит/с)</string>
-    <string name="network_traffic_units_kilobits">Килобит в секунду (кб/с)</string>
-    <string name="network_traffic_units_megabits">Мегабит в секунду (Мбит/с)</string>
-    <string name="network_traffic_units_bytes">Байт в секунду (B/s)</string>
-    <string name="network_traffic_units_kilobytes">Килобайт в секунду (кБ/с)</string>
-    <string name="network_traffic_units_megabytes">Мегабит в секунду (Мбит/с)</string>
-    <string name="network_traffic_hidearrow">Скрыть стрелки</string>
-    <string name="network_traffic_hidearrow_summary">Скрыть стрелки индикатора сетевого трафика</string>
+    <!-- Statusbar network traffic monitor -->
+    <string name="network_traffic_state_title">Индикатор сетевого трафика</string>
+    <string name="network_traffic_state_summary">Отображать</string>
+    <string name="network_traffic_state_main_switch_title">Использовать индикатор сетевого трафика</string>
+    <string name="network_traffic_location_title">Расположение индикатора сетевого трафика</string>
+    <string name="traffic_statusbar">Строка состояния</string>
+    <string name="traffic_expanded_statusbar">Раскрытый заголовок быстрых настроек</string>
+    <string name="network_traffic_autohide_threshold_title">Порог автоскрытия индикатора сетевого трафика</string>
+    <string name="network_traffic_arrow_title">Показывать стрелки</string>
+    <string name="network_traffic_arrow_summary">Показывать направление сетевого трафика</string>
+    <string name="network_traffic_type">Выберите тип сетевой активности</string>
+    <string name="show_network_traffic_combined">Комбинированный (Исходящий + Входящий)</string>
+    <string name="show_network_traffic_dynamic">Динамичный</string>
+    <string name="show_network_traffic_up">Исходящий</string>
+    <string name="show_network_traffic_down">Входящий</string>
+    <string name="show_network_traffic_all">Оба</string>
+    <string name="network_traffic_font_size_title">Размер шрифта</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Вибрация при авторизации отпечатком пальца</string>
     <string name="fp_success_vibrate_summary">Вибрировать при успешной авторизации по отпечатку пальца</string>
@@ -895,9 +885,6 @@
     <!-- Lock screen battery info indicator -->
     <string name="lockscreen_battery_info_title">Информация о зарядке на экране блокировки</string>
     <string name="lockscreen_battery_info_summary">Отображать максимальный ток зарядного устройства, напряжение и температуру батареи на экране блокировки во время зарядки</string>
-    <!-- Lock screen charging info indicator -->
-    <string name="lockscreen_charging_info_title">Информация о зарядке на экране блокировки</string>
-    <string name="lockscreen_charging_info_summary">Отображение оценки зарядки на экране блокировки во время зарядки</string>
     <!-- Charging animation -->
     <string name="charging_animation_title">Анимация зарядки</string>
     <string name="charging_animation_summary">Показывать анимацию при подключении зарядного устройства</string>
@@ -1057,4 +1044,7 @@
     <!-- Spoof storage encryption status -->
     <string name="spoof_storage_encryption_status_title">Маскировка шифрования</string>
     <string name="spoof_storage_encryption_status_summary">Подменить статус шифрования хранилища на «Зашифровано»</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Показывать значок стандарта Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Показывать значок стандарта Wi-Fi в индикаторе сигнала</string>
 </resources>
