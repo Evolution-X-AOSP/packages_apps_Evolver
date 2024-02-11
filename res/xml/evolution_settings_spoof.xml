@@ -24,12 +24,20 @@
             android:targetClass="com.goolag.pif.PifActivity" />
     </Preference>
 
-    <!-- Pixel Props (spoof gapps as Pixel 6 Pro) -->
+    <!-- Pixel Props (spoof gapps as Pixel 5a) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops"
         android:title="@string/spoof_pixel_title"
         android:summary="@string/spoof_pixel_summary"
         android:defaultValue="true" />
+
+    <!-- Force spoof most gapps as Pixel 8 Pro) -->
+    <com.evolution.settings.preference.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.p8p"
+        android:title="@string/spoof_recent_pixel_title"
+        android:summary="@string/spoof_recent_pixel_summary"
+        android:dependency="persist.sys.pixelprops"
+        android:defaultValue="false" />
 
     <!-- Unlimited Photos storage -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
