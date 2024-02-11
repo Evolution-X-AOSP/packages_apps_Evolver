@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -154,33 +154,23 @@
     <string name="choose_app">Choisir une application</string>
     <string name="delete">Supprimer</string>
     <string name="delete_message">Retirer l\'élément sélectionné ?</string>
-    <!-- Network traffic -->
-    <string name="network_traffic_settings_title">Indicateur du débit réseau</string>
-    <string name="network_traffic_settings_summary">Afficher et personnaliser les niveaux de trafic réseau actuel</string>
-    <string name="network_traffic_location_title">Localisation</string>
-    <string name="network_traffic_location_disable">Désactivé</string>
-    <string name="network_traffic_location_statusbar">Barre d\'état</string>
-    <string name="network_traffic_location_quick_statusbar">Barre d\'état rapide</string>
-    <string name="network_traffic_mode_title">Mode d\'affichage</string>
-    <string name="network_traffic_mode_up">Upload seulement</string>
-    <string name="network_traffic_mode_down">Download seulement</string>
-    <string name="network_traffic_mode_all">Upload et download</string>
-    <string name="network_traffic_autohide">Masquer automatiquement</string>
-    <string name="network_traffic_autohide_summary">Masquer le moniteur de trafic réseau lorsqu\'il n\'y a pas d\'activité</string>
-    <string name="network_traffic_autohide_kilobits">Kb/s</string>
-    <string name="network_traffic_autohide_kilobytes">KB/s</string>
-    <string name="network_traffic_autohide_threshold">Seuil d\'inactivité</string>
-    <string name="network_traffic_refresh_interval_title">Fréquence d\'actualisation</string>
-    <string name="network_traffic_refresh_interval_summary">Durée entre 2 mesures</string>
-    <string name="network_traffic_units_title">Unités de mesure du trafic</string>
-    <string name="network_traffic_units_bits">Bits par seconde (b/s)</string>
-    <string name="network_traffic_units_kilobits">Kilobits par seconde (kb/s)</string>
-    <string name="network_traffic_units_megabits">Mégabits par seconde (Mb/s)</string>
-    <string name="network_traffic_units_bytes">Bits par seconde (b/s)</string>
-    <string name="network_traffic_units_kilobytes">Kilobits par seconde (kb/s)</string>
-    <string name="network_traffic_units_megabytes">Mégabits par seconde (Mb/s)</string>
-    <string name="network_traffic_hidearrow">Masquer les flèches</string>
-    <string name="network_traffic_hidearrow_summary">Masquer les flèches du moniteur de trafic réseau</string>
+    <!-- Statusbar network traffic monitor -->
+    <string name="network_traffic_state_title">Affichage du trafic réseau</string>
+    <string name="network_traffic_state_summary">Affichage sur</string>
+    <string name="network_traffic_state_main_switch_title">Utiliser l\'indicateur de trafic réseau</string>
+    <string name="network_traffic_location_title">Emplacement du trafic réseau</string>
+    <string name="traffic_statusbar">Barre d\'état</string>
+    <string name="traffic_expanded_statusbar">En-tête des réglages rapides étendus</string>
+    <string name="network_traffic_autohide_threshold_title">Seuil de masquage automatique de l\'activité réseau</string>
+    <string name="network_traffic_arrow_title">Afficher les flèches</string>
+    <string name="network_traffic_arrow_summary">Afficher les flèches de l\'indicateur d\'activité réseau</string>
+    <string name="network_traffic_type">Sélectionner le type d\'activité</string>
+    <string name="show_network_traffic_combined">Combiné (Envoi + Téléchargement)</string>
+    <string name="show_network_traffic_dynamic">Dynamique</string>
+    <string name="show_network_traffic_up">Envoi</string>
+    <string name="show_network_traffic_down">Téléchargement</string>
+    <string name="show_network_traffic_all">Les deux</string>
+    <string name="network_traffic_font_size_title">Taille de police réseau unique</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibrations lors de l\'authentification par l\'empreinte digitale</string>
     <string name="fp_success_vibrate_summary">Vibrer quand l\'authentification de l\'empreinte est vérifiée</string>
@@ -894,9 +884,6 @@
     <!-- Lock screen battery info indicator -->
     <string name="lockscreen_battery_info_title">Informations de charge sur l\'écran de verrouillage</string>
     <string name="lockscreen_battery_info_summary">Afficher la tension de charge actuelle et la température de la batterie sur l\'écran de verrouillage pendant le chargement</string>
-    <!-- Lock screen charging info indicator -->
-    <string name="lockscreen_charging_info_title">Informations de charge sur l\'écran de verrouillage</string>
-    <string name="lockscreen_charging_info_summary">Afficher les estimations de charge sur l\'écran de verrouillage pendant le chargement</string>
     <!-- Charging animation -->
     <string name="charging_animation_title">Animation de charge</string>
     <string name="charging_animation_summary">Afficher une animation lorsque l\'appareil est branché</string>
@@ -906,9 +893,9 @@
     <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">Icônes colorées</string>
     <string name="statusbar_colored_icons_summary">Utiliser les icônes des applications comme icônes de notification dans la barre d\'état</string>
-    <!-- WiFi Standard icon -->
-    <string name="wifi_standard_icon_title">Norme Wi-Fi</string>
-    <string name="wifi_standard_icon_summary">Afficher la norme Wi-Fi à côté du signal Wi-Fi</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">Afficher l\'icône du standard Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Afficher le type de Wi-Fi dans l\'indicateur de signal Wi-Fi</string>
     <!-- Summary to change custom timeout -->
     <string name="custom_timeout_summary_never">Jamais</string>
     <string name="custom_timeout_summary_5secs">5 secondes</string>
@@ -1044,6 +1031,8 @@
     <!-- PixelProps -->
     <string name="spoof_pixel_title">Activer Pixel Props</string>
     <string name="spoof_pixel_summary">Faire passer votre appareil pour un Pixel 5 pour les applications Google. Garder activé sur les appareils non-Pixel</string>
+    <string name="spoof_recent_pixel_title">Faites passer votre appareil pour un Pixel 8 Pro pour toutes les applications Google</string>
+    <string name="spoof_recent_pixel_summary">Faites passer votre appareil pour un Pixel 8 Pro pour toutes les applications Google. Désactivez lorsque vous utilisez un vrai appareil Pixel. Peut entrainer une surchauffe ou une utilisation accrue de la batterie</string>
     <!-- Application downgrade -->
     <string name="app_downgrade_title">Autoriser le downgrade de l\'application</string>
     <string name="app_downgrade_summary">Permettre de rétrograder les applications. Peut entraîner des plantages et une corruption des données.</string>
