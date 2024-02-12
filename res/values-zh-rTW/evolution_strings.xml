@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2024 Evolution X
+     Copyright (C) 2019-2023 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -154,23 +154,33 @@
     <string name="choose_app">選取應用程式</string>
     <string name="delete">刪除</string>
     <string name="delete_message">移除選取的項目？</string>
-    <!-- Statusbar network traffic monitor -->
-    <string name="network_traffic_state_title">網路流量指示</string>
-    <string name="network_traffic_state_summary">顯示於</string>
-    <string name="network_traffic_state_main_switch_title">使用網路流量</string>
-    <string name="network_traffic_location_title">網路流量指示器位置</string>
-    <string name="traffic_statusbar">狀態列</string>
-    <string name="traffic_expanded_statusbar">快速設定頂部</string>
-    <string name="network_traffic_autohide_threshold_title">網路活動自動隱藏閥值</string>
-    <string name="network_traffic_arrow_title">顯示箭頭</string>
-    <string name="network_traffic_arrow_summary">顯示網路速度指示器箭頭</string>
-    <string name="network_traffic_type">選擇網路活動類型</string>
-    <string name="show_network_traffic_combined">組合（上傳 + 下載）</string>
-    <string name="show_network_traffic_dynamic">動態</string>
-    <string name="show_network_traffic_up">上傳</string>
-    <string name="show_network_traffic_down">下載</string>
-    <string name="show_network_traffic_all">全部</string>
-    <string name="network_traffic_font_size_title">網路流量指示器字體大小</string>
+    <!-- Network traffic -->
+    <string name="network_traffic_settings_title">網路流量指示器</string>
+    <string name="network_traffic_settings_summary">顯示並自訂目前網路流量狀態</string>
+    <string name="network_traffic_location_title">位置</string>
+    <string name="network_traffic_location_disable">停用</string>
+    <string name="network_traffic_location_statusbar">狀態列</string>
+    <string name="network_traffic_location_quick_statusbar">快速設定狀態列</string>
+    <string name="network_traffic_mode_title">顯示模式</string>
+    <string name="network_traffic_mode_up">只顯示上傳</string>
+    <string name="network_traffic_mode_down">只顯示下載</string>
+    <string name="network_traffic_mode_all">上傳和下載</string>
+    <string name="network_traffic_autohide">自動隱藏</string>
+    <string name="network_traffic_autohide_summary">沒有網路活動時隱藏網路流量指示器</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_threshold">自動隱藏閥值</string>
+    <string name="network_traffic_refresh_interval_title">重新整理間隔</string>
+    <string name="network_traffic_refresh_interval_summary">重新測量網速的間隔時間</string>
+    <string name="network_traffic_units_title">網路流量單位</string>
+    <string name="network_traffic_units_bits">每秒位元 (b/s)</string>
+    <string name="network_traffic_units_kilobits">每秒千位元 (kb/s)</string>
+    <string name="network_traffic_units_megabits">每秒百萬位元 (Mb/s)</string>
+    <string name="network_traffic_units_bytes">每秒位元組 (B/s)</string>
+    <string name="network_traffic_units_kilobytes">每秒千位元組 (kB/s)</string>
+    <string name="network_traffic_units_megabytes">每秒百萬位元組 (MB/s)</string>
+    <string name="network_traffic_hidearrow">隱藏箭頭</string>
+    <string name="network_traffic_hidearrow_summary">隱藏網路流量指示器箭頭</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">指紋辨識震動</string>
     <string name="fp_success_vibrate_summary">指紋驗證成功時震動</string>
@@ -444,7 +454,7 @@
     <string name="sensor_block_summary">為某些應用程式停用偵測器以延長使用時間</string>
     <string name="sensor_block_main_switch_title">阻止個別應用程式存取感測器</string>
     <string name="sensor_block_app_picker_title">使這些應用程式無法使用感應器</string>
-    <string name="add_sensor_block_package_title">增加屏蔽感應器的應用程式</string>
+    <string name="add_sensor_block_package_title">增加禁止存取感測器的應用程式</string>
     <string name="add_sensor_block_package_summary">這些應用程式將無法使用動作感應器、加速度感應器以及線性加速感應器</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">AOD開啟時間</string>
@@ -752,7 +762,7 @@
     <string name="enable_fingerprint_ripple_effect_summary">指紋解鎖時顯示漣波效果</string>
     <!-- Unlimited Photos storage -->
     <string name="photos_spoof_title">Google相簿無限儲存空間</string>
-    <string name="photos_spoof_summary">針對 Google 相簿將您的裝置偽裝成 Pixel XL 來取得無限相簿儲存空間</string>
+    <string name="photos_spoof_summary">針對 Google 相簿將您的裝置偽裝成 Google Pixel XL 來取得無限相簿儲存空間。如果停用 Google 相簿將偽裝成 Google Pixel 8 Pro。</string>
     <!-- Unlock FPS for specific games -->
     <string name="games_spoof_title">解鎖遊戲中更高的螢幕更新率</string>
     <string name="games_spoof_summary">針對部分特定的遊戲將您的裝置偽裝成其他機型來解鎖更高的更新率</string>
@@ -911,7 +921,7 @@
     <string name="app_lock_packages_summary">選擇要使用生物辨識或裝置憑證保護的應用程式</string>
     <string name="app_lock_timeout_title">自動鎖定時間</string>
     <string name="app_lock_timeout_summary">後台已解鎖的應用程式在一段時間後會被重新鎖定</string>
-    <string name="app_lock_notifications_title">屏蔽通知</string>
+    <string name="app_lock_notifications_title">隱藏通知</string>
     <string name="app_lock_notifications_summary">          鎖定時，將為所選應用程式隱藏並折疊通知内容。
           浮動通知將被自動禁用。
     </string>
@@ -928,8 +938,8 @@
     <string name="alert_slider_pulse_title">警報滑塊脈衝</string>
     <string name="alert_slider_pulse_summary">改變警報滑塊位置時脈衝環境顯示</string>
     <!-- Alert Slider block -->
-    <string name="block_alert_title">屏蔽警報滑塊</string>
-    <string name="block_alert_summary">口袋模式將屏蔽警報滑塊</string>
+    <string name="block_alert_title">封鎖警報滑桿</string>
+    <string name="block_alert_summary">口袋模式將封鎖警報滑桿</string>
     <!-- Power menu Animations -->
     <string name="power_menu_animation_title">電源選單動畫</string>
     <string name="power_menu_animation_dialog_title">選擇電源選單動畫</string>
@@ -1019,7 +1029,7 @@
     <string name="pif_spoof_summary">停用已允許模組使用自訂的指紋參數</string>
     <!-- PixelProps -->
     <string name="spoof_pixel_title">啟用偽裝 Pixel 專屬功能</string>
-    <string name="spoof_pixel_summary">在非 Pixel 裝置，將裝置中的所有 Google 應用程式偽裝成 Google Pixel 6 Pro</string>
+    <string name="spoof_pixel_summary">將裝置中的所有 Google 應用程式偽裝成 Google Pixel 6 Pro。非 Pixel 裝置保持啟用。</string>
     <!-- Application downgrade -->
     <string name="app_downgrade_title">允許應用程式降版</string>
     <string name="app_downgrade_summary">允許應用程式降低版本。這可能導致應用程式崩潰和資料損壞。</string>
