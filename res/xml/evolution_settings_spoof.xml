@@ -25,7 +25,7 @@
             android:targetClass="com.goolag.pif.PifActivity" />
     </Preference>
 
-    <!-- Pixel Props (spoof gapps as Pixel 6 Pro) -->
+    <!-- Pixel Props (spoof gapps as Pixel 5a) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops"
         android:title="@string/spoof_pixel_title"
@@ -44,6 +44,13 @@
         android:key="persist.sys.pixelprops.games"
         android:title="@string/games_spoof_title"
         android:summary="@string/games_spoof_summary"
+        android:defaultValue="false" />
+
+    <!-- Netflix -->
+    <com.evolution.settings.preference.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.netflix"
+        android:title="@string/netflix_spoof_title"
+        android:summary="@string/netflix_spoof_summary"
         android:defaultValue="false" />
 
     <com.evolution.settings.preference.SecureSettingSwitchPreference
