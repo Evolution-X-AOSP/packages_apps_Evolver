@@ -30,6 +30,7 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">原生 Android 系统选项</string>
     <string name="dark_ui_mode_summary">浏览黑暗主题选项</string>
+    <string name="spoof_summary">在 ROM 内启用特定功能的伪装功能</string>
     <string name="unsupported_gestures">要使用此功能，请启用两键或三键导航</string>
     <!-- General strings -->
     <string name="ok">确定</string>
@@ -119,17 +120,6 @@
     <string name="evolution_about_team">贡献者</string>
     <!-- Battery light -->
     <string name="light_settings_header">指示灯设置</string>
-    <string name="battery_light_settings">电量指示灯设置</string>
-    <string name="battery_light_summary">在勿扰模式、低电量时启用或禁用电池指示灯</string>
-    <string name="battery_light_enable">电量指示灯</string>
-    <string name="battery_full_light_enabled">充电完成后启用指示灯</string>
-    <string name="battery_light_allow_on_dnd_title">勿扰模式启用充电指示灯</string>
-    <string name="battery_light_low_blinking_title">低电量时指示灯闪烁</string>
-    <string name="battery_light_cat">充电时电量指示灯颜色</string>
-    <string name="battery_light_low_color">低电量</string>
-    <string name="battery_light_medium_color">中等电量</string>
-    <string name="battery_light_full_color">接近满电</string>
-    <string name="battery_light_reallyfull_color">满电 (100%)</string>
     <!-- UDFPS settings -->
     <string name="udfps_category">屏下指纹识别</string>
     <string name="udfps_customization">屏下指纹识别自定义</string>
@@ -168,20 +158,20 @@
     <string name="network_traffic_settings_title">网络流量监视器</string>
     <string name="network_traffic_settings_summary">显示和自定义当前网络流量级别</string>
     <string name="network_traffic_location_title">位置信息</string>
-    <string name="network_traffic_location_disable">已禁用</string>
+    <string name="network_traffic_location_disable">禁用</string>
     <string name="network_traffic_location_statusbar">状态栏</string>
-    <string name="network_traffic_location_quick_statusbar">Qs状态栏</string>
+    <string name="network_traffic_location_quick_statusbar">快速状态栏</string>
     <string name="network_traffic_mode_title">显示模式</string>
     <string name="network_traffic_mode_up">仅上传</string>
     <string name="network_traffic_mode_down">仅下载</string>
     <string name="network_traffic_mode_all">上传和下载</string>
     <string name="network_traffic_autohide">自动隐藏</string>
-    <string name="network_traffic_autohide_summary">在无网络活动时隐藏流量监视器</string>
+    <string name="network_traffic_autohide_summary">在网络不活跃时隐藏状态栏网速指示</string>
     <string name="network_traffic_autohide_kilobits">Kb/s</string>
     <string name="network_traffic_autohide_kilobytes">KB/s</string>
-    <string name="network_traffic_autohide_threshold">网络流量指示器隐藏阈值</string>
+    <string name="network_traffic_autohide_threshold">隐藏阈值</string>
     <string name="network_traffic_refresh_interval_title">刷新间隔</string>
-    <string name="network_traffic_refresh_interval_summary">重新测量网速的间隔时间</string>
+    <string name="network_traffic_refresh_interval_summary">网速显示持续时间</string>
     <string name="network_traffic_units_title">网络流量单位</string>
     <string name="network_traffic_units_bits">比特每秒 (b/s)</string>
     <string name="network_traffic_units_kilobits">千比特每秒 (kb/s)</string>
@@ -219,9 +209,8 @@
     <string name="qs_brightness_slider_position_title">位置</string>
     <string name="qs_brightness_slider_position_top">顶部</string>
     <string name="qs_brightness_slider_position_bottom">底部</string>
-    <!-- Brightness slider haptic feedback -->
-    <string name="qs_brightness_slider_haptic_title">亮度滑块触觉反馈</string>
-    <string name="qs_brightness_slider_haptic_summary">在使用滑块改变亮度时提供震动反馈</string>
+    <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">亮度滑块变化时振动</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">自动亮度图标</string>
     <string name="qs_show_auto_brightness_summary">在亮度滑块旁显示自动亮度开关</string>
@@ -306,11 +295,8 @@
     <!-- QS date -->
     <string name="qs_date_title">日期</string>
     <string name="qs_date_summary">在快速状态栏顶部显示日期</string>
-    <!-- QuickSettings haptic feedback -->
-    <string name="quick_settings_vibrate_title">触摸时振动</string>
-    <string name="quick_settings_vibrate_summary">触摸快速设置磁贴时振动</string>
-    <string name="quick_settings_vibrate_duration_title">振动时长</string>
-    <string name="quick_settings_vibrate_duration_summary">振动多少毫秒</string>
+    <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">触摸快速设置磁贴时振动</string>
     <!-- QS Tiles animation -->
     <string name="qs_tile_animation_title">磁贴动画</string>
     <string name="qs_tile_animation_style_title">动画样式</string>
@@ -395,11 +381,9 @@
     <string name="edge_light_repeat_animation_summary_on">重复直到超时</string>
     <string name="edge_light_repeat_animation_summary_off">只显示一次</string>
     <string name="edge_light_color_mode_title">边缘灯效颜色模式</string>
-    <string name="accent_color">首选颜色 (默认)</string>
+    <string name="theme_color">主题颜色 (默认)</string>
     <string name="notification_color">通知颜色</string>
-    <string name="wallpaper_color">壁纸颜色</string>
     <string name="custom_color">自定义颜色</string>
-    <string name="edge_light_custom_color_title">自定义颜色</string>
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">显示数据使用情况</string>
     <string name="qs_show_data_usage_summary">在快速设置页脚显示每日流量 / Wi-Fi 数据使用量</string>
@@ -463,6 +447,8 @@
     <!-- Media art -->
     <string name="media_art_title">媒体封面</string>
     <string name="media_art_summary">可用时显示媒体封面</string>
+    <!-- Lock screen cover art -->
+    <string name="lockscreen_media_blur_title">媒体封面模糊等级</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">阻止某些应用访问传感器</string>
     <string name="sensor_block_summary">为节省电池电量阻止特定应用访问某些传感器</string>
@@ -684,8 +670,6 @@
     <string name="theme_style_spritz">喷雾</string>
     <string name="theme_style_rainbow">彩虹</string>
     <string name="theme_style_fruit_salad">水果沙拉</string>
-    <string name="theme_style_muted">柔和</string>
-    <string name="theme_style_content">内容</string>
     <string name="theme_style_monochromatic">单色</string>
     <string name="color_source_title">颜色来源</string>
     <string name="color_source_both">两者 (默认)</string>
@@ -795,7 +779,7 @@
     <string name="games_spoof_summary">在特定游戏中将您的设备伪装成不同机型以解锁更高的帧数</string>
     <!-- Netflix Spoof -->
     <string name="netflix_spoof_title">Netflix 伪装</string>
-    <string name="netflix_spoof_summary">将您的设备伪装为其他机型以获得 Netflix 认证</string>
+    <string name="netflix_spoof_summary">将您的设备伪装为 Pixel 8 Pro 以获得 Netflix 认证</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">隐藏状态栏</string>
     <string name="hide_lockscreen_status_bar_summary">触摸状态栏以切换可见性</string>
@@ -922,9 +906,9 @@
     <!-- Status bar colored icons -->
     <string name="statusbar_colored_icons_title">彩色图标</string>
     <string name="statusbar_colored_icons_summary">使用适当的应用程序图标作为状态栏中的通知图标</string>
-    <!-- WiFi Standard icon -->
-    <string name="wifi_standard_icon_title">无线网络标准</string>
-    <string name="wifi_standard_icon_summary">在 WiFi 信号旁显示 WiFi 标准</string>
+    <!-- Wi-Fi Standard icon -->
+    <string name="show_wifi_standard_icon_title">显示 Wi-Fi 标准图标</string>
+    <string name="show_wifi_standard_icon_summary">在 Wi-Fi 信号指示器中显示 Wi-Fi 类型</string>
     <!-- Summary to change custom timeout -->
     <string name="custom_timeout_summary_never">永不</string>
     <string name="custom_timeout_summary_5secs">5 秒</string>
@@ -1018,17 +1002,6 @@
     <string name="media_artwork_fade_percent_title">媒体通知中封面的模糊程度</string>
     <string name="lockscreen_albumart_filter_blur_radius_title">媒体封面的模糊程度</string>
     <string name="ls_media_artwork_fade_percent_title">媒体封面的模糊程度</string>
-    <!-- Volume Steps Fragment -->
-    <string name="volume_steps_fragment_title">音量调整级别</string>
-    <string name="volume_steps_summary">自定义音量阶数</string>
-    <string name="volume_steps_alarm_title">音量调整级别: 闹钟</string>
-    <string name="volume_steps_dtmf_title">音量调整级别: 双音多频</string>
-    <string name="volume_steps_music_title">音量级别: 媒体</string>
-    <string name="volume_steps_notification_title">音量调整级别: 通知音量</string>
-    <string name="volume_steps_ring_title">音量调整级别: 铃声</string>
-    <string name="volume_steps_system_title">音量调整级别: 系统</string>
-    <string name="volume_steps_voice_call_title">音量调整级别: 通话</string>
-    <string name="volume_steps_reset">重置</string>
     <!-- QS Header image -->
     <string name="qs_header_image_title">快速设置页眉图像</string>
     <string name="qs_header_image_summary">选择快速设置背景页眉图像</string>
@@ -1061,19 +1034,16 @@
     <string name="qs_footer_text_summary">快速设置面板页脚显示文本</string>
     <string name="qs_footer_text_string_title">自定义页脚文本</string>
     <string name="qs_footer_text_string_summary">默认为空</string>
-    <!-- Volume haptic feedback -->
-    <string name="volume_panel_haptic_feedback_title">音量触感反馈</string>
-    <string name="volume_panel_haptic_feedback_summary">调整音量时启用音量触感反馈</string>
+    <!-- Volume slider haptic feedback -->
+    <string name="volume_slider_haptic_feedback_title">亮度滑块变化时振动</string>
     <!-- Pif -->
     <string name="pif_title">Play 完整性修复</string>
     <string name="pif_summary">查看当前用于伪装 GMS 的值</string>
     <string name="pif_spoof_title">启用 ROM 端 Play 完整性修复</string>
     <string name="pif_spoof_summary">禁用以允许使用带有自定义指纹值的模块</string>
     <!-- PixelProps -->
-    <string name="spoof_as_pixel_title">启用 Pixel 属性模拟</string>
-    <string name="spoof_as_pixel_summary">将您的设备伪装为 Pixel 5 以用于 Google 应用。在非 Pixel 设备上保持启用</string>
-    <string name="spoof_recent_pixel_title">伪装为 Pixel 8 Pro</string>
-    <string name="spoof_recent_pixel_summary">将您的设备伪装为 Pixel 8 Pro，用于我们选定的 Google 应用。在使用真正的 Pixel 设备时关闭</string>
+    <string name="spoof_pixel_title">启用 Pixel 属性模拟</string>
+    <string name="spoof_pixel_summary">将您的设备伪装为 Pixel 8 Pro 以获得 Google 应用</string>
     <!-- Application downgrade -->
     <string name="app_downgrade_title">允许应用程序降级</string>
     <string name="app_downgrade_summary">允许降级应用程序。可能导致崩溃和数据损坏。</string>
@@ -1083,4 +1053,7 @@
     <!-- Weather -->
     <string name="lockscreen_weather_title">显示天气状况</string>
     <string name="lockscreen_weather_summary">显示当前天气状况和温度</string>
+    <!-- Spoof storage encryption status -->
+    <string name="spoof_storage_encryption_status_title">使用存储加密伪装</string>
+    <string name="spoof_storage_encryption_status_summary">伪装存储加密状态为加密</string>
 </resources>
