@@ -25,14 +25,22 @@
             android:targetClass="com.goolag.pif.PifActivity" />
     </Preference>
 
-    <!-- Pixel Props (spoof gapps as Pixel 5a) -->
+    <!-- Pixel Props -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops"
         android:title="@string/spoof_pixel_title"
         android:summary="@string/spoof_pixel_summary"
         android:defaultValue="true" />
 
-    <!-- Unlimited Photos storage -->
+    <!-- Pixel Props (for Pixel devices) -->
+    <com.evolution.settings.preference.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.force"
+        android:title="@string/spoof_pixel_device_title"
+        android:summary="@string/spoof_pixel_device_summary"
+        android:dependency="persist.sys.pixelprops"
+        android:defaultValue="false" />
+
+    <!-- Unlimited Photos storage (spoof Photos app as Pixel XL) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops.gphotos"
         android:title="@string/photos_spoof_title"
@@ -46,7 +54,7 @@
         android:summary="@string/games_spoof_summary"
         android:defaultValue="false" />
 
-    <!-- Netflix -->
+    <!-- Netflix (spoof Netflix app as Pixel 8 Pro) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops.netflix"
         android:title="@string/netflix_spoof_title"
