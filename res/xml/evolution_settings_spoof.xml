@@ -40,6 +40,13 @@
         android:dependency="persist.sys.pixelprops"
         android:defaultValue="false" />
 
+    <!-- Tensor features -->
+    <com.evolution.settings.preference.SystemPropertySwitchPreference
+        android:key="persist.sys.tensor.features"
+        android:title="@string/spoof_tensor_features_title"
+        android:summary="@string/spoof_tensor_features_summary"
+        android:defaultValue="false" />
+
     <!-- Unlimited Photos storage (spoof Photos app as Pixel XL) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops.gphotos"
