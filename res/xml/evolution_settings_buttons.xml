@@ -79,6 +79,22 @@
             android:summary="@string/volume_panel_on_left_summary"
             android:defaultValue="false" />
 
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="volume_textview"
+            android:title="@string/volume_percent_switch_title"
+            android:summary="@string/volume_percent_switch_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+            android:key="volume_textview_style"
+            android:title="@string/volume_percent_style_title"
+            android:summary="%s"
+            android:dialogTitle="@string/volume_percent_style_title"
+            android:entries="@array/volume_percent_style_entries"
+            android:dependency="volume_textview"
+            android:entryValues="@array/volume_percent_style_values"
+            android:defaultValue="0" />
+
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="volume_dialog_timeout"
             android:title="@string/volume_dialog_timeout_title"
