@@ -25,14 +25,14 @@
             android:targetClass="com.goolag.pif.PifActivity" />
     </Preference>
 
-    <!-- Pixel Props -->
+    <!-- Pixel Props (for non-Pixel devices) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops"
         android:title="@string/spoof_pixel_title"
         android:summary="@string/spoof_pixel_summary"
         android:defaultValue="true" />
 
-    <!-- Pixel Props (for Pixel devices) -->
+    <!-- Pixel Props (force enable for Pixel devices) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops.force"
         android:title="@string/spoof_pixel_device_title"
@@ -40,14 +40,14 @@
         android:dependency="persist.sys.pixelprops"
         android:defaultValue="false" />
 
-    <!-- Tensor features -->
+    <!-- Tensor features (for non-Pixel devices) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.tensor.features"
         android:title="@string/spoof_tensor_features_title"
         android:summary="@string/spoof_tensor_features_summary"
         android:defaultValue="false" />
 
-    <!-- Unlimited Photos storage (spoof Photos app as Pixel XL) -->
+    <!-- Google Photos (spoof app as Pixel XL for unlimited storage) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops.gphotos"
         android:title="@string/photos_spoof_title"
@@ -61,11 +61,18 @@
         android:summary="@string/games_spoof_summary"
         android:defaultValue="false" />
 
-    <!-- Netflix (spoof Netflix app as Pixel 8 Pro) -->
+    <!-- Netflix (spoof as Pixel 8 Pro) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops.netflix"
         android:title="@string/netflix_spoof_title"
         android:summary="@string/netflix_spoof_summary"
+        android:defaultValue="false" />
+
+    <!-- Snapchat (spoof as Pixel 2) -->
+    <com.evolution.settings.preference.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.snapchat"
+        android:title="@string/snapchat_spoof_title"
+        android:summary="@string/snapchat_spoof_summary"
         android:defaultValue="false" />
 
     <com.evolution.settings.preference.SecureSettingSwitchPreference
