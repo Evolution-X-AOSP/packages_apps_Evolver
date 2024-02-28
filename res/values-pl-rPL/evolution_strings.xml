@@ -23,6 +23,8 @@
     <string name="swipe_gestures_title">Gesty przeciągania</string>
     <string name="system_settings_title">Opcje systemowe</string>
     <string name="themes_title">Motywy</string>
+    <string name="on_call_flashlight_category">Migaj latarką podczas połączenia</string>
+    <string name="notification_flashlight_category">Migaj latarką przy powiadomieniach</string>
     <string name="ambient_display_category">Ekran Ambient</string>
     <string name="lockscreen_clock_category">Zegar ekranu blokady</string>
     <string name="signal_icons_category_title">Ikony sygnału</string>
@@ -62,9 +64,11 @@
     <string name="string_on">Włącz</string>
     <string name="string_off">Wyłącz</string>
     <!-- Units -->
+    <string name="unit_hz">Hz</string>
     <string name="unit_milliseconds">milisekundy</string>
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">sekundy</string>
+    <string name="unit_times">Czasy</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Włącz</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -597,6 +601,22 @@
     <string name="alarm_blocker_summary">Blokuj alarmy gdy ekran jest wyłączony, aby zaoszczędzić baterię</string>
     <string name="alarm_blocker_warning">Blokowanie alarmów może w znacznym stopniu prowadzić do niestabilności, błędów lub utraty danych.</string>
     <string name="alarm_blocker_display_text">Aby zobaczyć i zablokować wybudzanie, włącz blokowanie alarmów.</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Migaj latarką podczas połączenia przychodzącego</string>
+    <string name="flashlight_on_call_disabled">Wyłączone</string>
+    <string name="flashlight_on_call_ringer">Podczas dzwonienia</string>
+    <string name="flashlight_on_call_no_ringer">Gdy dzownek jest wyciszony</string>
+    <string name="flashlight_on_call_silent">Gdy brak wibracji i dźwięku podczas połączenia przychodzącego</string>
+    <string name="flashlight_on_call_always">Zawsze</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Ignoruj DND</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Informacja, czy lampa błyskowa ma migać w trybie nie przeszkadzać</string>
+    <string name="flashlight_on_call_rate_title">Częstotliwość</string>
+    <string name="flashlight_on_call_rate_summary">Częstotliwość migania podczas połączenia</string>
+    <!-- Blink flashlight for notifications -->
+    <string name="notification_torch_title">Migaj latarką przy powiadomieniach</string>
+    <string name="notification_torch_summary">Domyślnie. Istnieją ustawienia dla każdego kanału</string>
+    <string name="notification_torch_slider1">Liczba mignięć</string>
+    <string name="notification_torch_slider2">Szybkość migania</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Tekst piosenki na pasku stanu</string>
     <string name="status_bar_lyric_summary">Pokaż tekst piosenki na pasku stanu (wymaga wsparcia aplikacji)</string>
@@ -780,6 +800,9 @@
     <!-- Netflix Spoof -->
     <string name="netflix_spoof_title">Netflix spoof</string>
     <string name="netflix_spoof_summary">Podszycie się pod Pixel 8 Pro dla Netflixa</string>
+    <!-- Snapchat Spoof -->
+    <string name="snapchat_spoof_title">Podszycie pod Snapchat</string>
+    <string name="snapchat_spoof_summary">Podszycie się pod Pixel 2 Pro dla Snapchat</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Ukryj pasek stanu</string>
     <string name="hide_lockscreen_status_bar_summary">Kliknij pasek stanu, aby przełączyć jego widoczność</string>
@@ -1044,6 +1067,11 @@
     <!-- PixelProps -->
     <string name="spoof_pixel_title">Pixel Props włączone</string>
     <string name="spoof_pixel_summary">Podszycie się pod Pixel 8 Pro dla aplikacji Google</string>
+    <string name="spoof_pixel_device_title">Włącz Wsparcie Pixel na Pixelach</string>
+    <string name="spoof_pixel_device_summary">Wymuś fałszowanie Pixela jako Pixela 8 Pro w aplikacjach Google. Dotyczy to tylko urządzeń Pixel.</string>
+    <!-- Tensor features -->
+    <string name="spoof_tensor_features_title">Włącz funkcję Tensor XML</string>
+    <string name="spoof_tensor_features_summary">Wymuś włączenie funkcji Pixel Tensor. Może to mieć niezamierzone efekty. Używaj ostrożnie.</string>
     <!-- Application downgrade -->
     <string name="app_downgrade_title">Zezwalaj na powrót do poprzedniej wersji aplikacji</string>
     <string name="app_downgrade_summary">Zezwalaj na powrót do poprzedniej wersji aplikacji. Może prowadzić do awarii i utraty danych.</string>
@@ -1056,4 +1084,21 @@
     <!-- Spoof storage encryption status -->
     <string name="spoof_storage_encryption_status_title">Użyj szyfrowania pamięci masowej</string>
     <string name="spoof_storage_encryption_status_summary">Status szyfrowanego przechowywania danych</string>
+    <!-- Volume panel styles -->
+    <string name="volume_style_title">Styl panelu głośności</string>
+    <string name="revamped_aosp_style">Przerobiony styl interfejsu użytkownika AOSP</string>
+    <string name="rui_style">Styl Realme UI</string>
+    <string name="stock_style">Domyślny styl interfejsu użytkownika</string>
+    <string name="double_layer_style">Dwuwarstwowy styl</string>
+    <string name="gradient_style">Gradient styl</string>
+    <string name="neumorph_style">Styl Neumorf</string>
+    <string name="neumorph_outline_style">Styl obrysu Neumorf</string>
+    <string name="outline_style">Styl obrysu</string>
+    <string name="shaded_layer_style">Styl zacieniowanej warstwy</string>
+    <!-- Volume TextView -->
+    <string name="volume_percent_switch_title">Procent głośności</string>
+    <string name="volume_percent_switch_summary">Pokaż procentowy panel głośności</string>
+    <string name="volume_percent_style_title">Lokalizacja procentów</string>
+    <string name="volume_percent_style_top">Góra</string>
+    <string name="volume_percent_style_bottom">Dół</string>
 </resources>
