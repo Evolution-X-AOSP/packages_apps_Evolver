@@ -23,6 +23,8 @@
     <string name="swipe_gestures_title">Vezérlés csúsztatással</string>
     <string name="system_settings_title">Rendszerbeállítások</string>
     <string name="themes_title">Témák</string>
+    <string name="on_call_flashlight_category">Jelzőfény híváskor</string>
+    <string name="notification_flashlight_category">Jelzőfény értesítéskor</string>
     <string name="ambient_display_category">Környezeti kijelző</string>
     <string name="lockscreen_clock_category">A záróképernyő órája</string>
     <string name="signal_icons_category_title">Térerőjelzési-ikon</string>
@@ -62,9 +64,11 @@
     <string name="string_on">Be</string>
     <string name="string_off">Ki</string>
     <!-- Units -->
+    <string name="unit_hz">Hz</string>
     <string name="unit_milliseconds">ezredmásodperc</string>
     <string name="unit_ms">ms</string>
     <string name="unit_seconds">másodperc</string>
+    <string name="unit_times">alkalommal</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Be</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -597,6 +601,22 @@
     <string name="alarm_blocker_summary">Akkukímélés érdekében blokkolja az ébresztéseket kikapcsolt képernyőnél</string>
     <string name="alarm_blocker_warning">Az ébresztések blokkolása instabilitáshoz, összeomláshoz vagy adatvesztéshez vezethet.</string>
     <string name="alarm_blocker_display_text">Az ébresztések megtekintéséhez és letiltásához kapcsolja be az ébresztésblokkolót.</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Bejövő hívások jelzése villogó LED-fénnyel</string>
+    <string name="flashlight_on_call_disabled">Letiltva</string>
+    <string name="flashlight_on_call_ringer">Csörgés közben is</string>
+    <string name="flashlight_on_call_no_ringer">Csak lenémított készüléken</string>
+    <string name="flashlight_on_call_silent">Teljes némításkor (se csengés, se rezgés)</string>
+    <string name="flashlight_on_call_always">Mindig</string>
+    <string name="flashlight_on_call_ignore_dnd_title">A \'Ne zavarjanak\' figyelmen kívül hagyása</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Villogjon-e \'Ne zavarjanak\' üzemmódban</string>
+    <string name="flashlight_on_call_rate_title">Villogási sebesség</string>
+    <string name="flashlight_on_call_rate_summary">Milyen hevesen villogjon híváskor</string>
+    <!-- Blink flashlight for notifications -->
+    <string name="notification_torch_title">Villogó jelzőfény értesítéskor</string>
+    <string name="notification_torch_summary">Alapértelmezett - Csatornánkénti beállítás</string>
+    <string name="notification_torch_slider1">Villogási idő</string>
+    <string name="notification_torch_slider2">Villogási mérték</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Dalszöveg az állapotsávon</string>
     <string name="status_bar_lyric_summary">Megjelenik a dalszöveg a felső sávban (StatusBarLyricExt alkalmazás szükséges hozzá)</string>
@@ -780,6 +800,9 @@
     <!-- Netflix Spoof -->
     <string name="netflix_spoof_title">Netflix kamu</string>
     <string name="netflix_spoof_summary">A Netflixhez Pixel 8 Pro-nak álcázza az Ön telefonját</string>
+    <!-- Snapchat Spoof -->
+    <string name="snapchat_spoof_title">Snapchat álcázás</string>
+    <string name="snapchat_spoof_summary">Pixel 2-nek álcázza készülékét a Snapchat-hez</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Állapotsáv-elrejtés</string>
     <string name="hide_lockscreen_status_bar_summary">Érintse meg az állapotsávot a láthatóság kapcsolásához</string>
@@ -1047,6 +1070,9 @@
     <string name="spoof_pixel_summary">A Google alkalmazásokhoz Pixel 8 Pro-nak álcázza az Ön telefonját</string>
     <string name="spoof_pixel_device_title">Pixel trükközés Pixeleken</string>
     <string name="spoof_pixel_device_summary">Kényszerítetten Pixel 8 Pro-nak álcáz minden Pixel készüléket. Értelemszerűen csak Pixel készüléken használja ezt a funkciót.</string>
+    <!-- Tensor features -->
+    <string name="spoof_tensor_features_title">Tensor-funkció XML-ek bekapcsolása</string>
+    <string name="spoof_tensor_features_summary">Óvatosan használja! Kényszeríti a Pixel Tensor-funkciókat, aminek nem kívánt hatásai lehetnek.</string>
     <!-- Application downgrade -->
     <string name="app_downgrade_title">Alkalmazások downgrade-jének lehetővé tétele</string>
     <string name="app_downgrade_summary">Lehetővé teszi a visszafelé frissítést (downgrade). Összeomláshoz és adatsérüléshez vezethet.</string>
@@ -1059,4 +1085,21 @@
     <!-- Spoof storage encryption status -->
     <string name="spoof_storage_encryption_status_title">Tárhelytitkosítás-hamisítás</string>
     <string name="spoof_storage_encryption_status_summary">A tárhely állapotának hamisítása titkosítottra.</string>
+    <!-- Volume panel styles -->
+    <string name="volume_style_title">Hangerőpanel-stílusok</string>
+    <string name="revamped_aosp_style">Újragondolt AOSP stílus</string>
+    <string name="rui_style">Realme stylus</string>
+    <string name="stock_style">Gyári stílus</string>
+    <string name="double_layer_style">Kétrétegű stílus</string>
+    <string name="gradient_style">Átmenetes stílus</string>
+    <string name="neumorph_style">Neumorph stílus</string>
+    <string name="neumorph_outline_style">Körvonalas Neumorph stílus</string>
+    <string name="outline_style">Körvonalas stílus</string>
+    <string name="shaded_layer_style">Árnyékolt stílus</string>
+    <!-- Volume TextView -->
+    <string name="volume_percent_switch_title">A hangerő százaléka</string>
+    <string name="volume_percent_switch_summary">Megjeleníti a hangerőszázalékot</string>
+    <string name="volume_percent_style_title">A kijelzés elhelyezése</string>
+    <string name="volume_percent_style_top">Felül</string>
+    <string name="volume_percent_style_bottom">Alul</string>
 </resources>
