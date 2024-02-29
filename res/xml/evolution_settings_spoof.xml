@@ -32,21 +32,6 @@
         android:summary="@string/spoof_pixel_summary"
         android:defaultValue="true" />
 
-    <!-- Pixel Props (force enable for Pixel devices) -->
-    <com.evolution.settings.preference.SystemPropertySwitchPreference
-        android:key="persist.sys.pixelprops.force"
-        android:title="@string/spoof_pixel_device_title"
-        android:summary="@string/spoof_pixel_device_summary"
-        android:dependency="persist.sys.pixelprops"
-        android:defaultValue="false" />
-
-    <!-- Tensor features (for non-Pixel devices) -->
-    <com.evolution.settings.preference.SystemPropertySwitchPreference
-        android:key="persist.sys.tensor.features"
-        android:title="@string/spoof_tensor_features_title"
-        android:summary="@string/spoof_tensor_features_summary"
-        android:defaultValue="false" />
-
     <!-- Google Photos (spoof app as Pixel XL for unlimited storage) -->
     <com.evolution.settings.preference.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops.gphotos"
