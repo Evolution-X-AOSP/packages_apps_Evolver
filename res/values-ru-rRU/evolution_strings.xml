@@ -23,6 +23,8 @@
     <string name="swipe_gestures_title">Жесты смахивания</string>
     <string name="system_settings_title">Системные настройки</string>
     <string name="themes_title">Темы</string>
+    <string name="on_call_flashlight_category">Мигание фонарика при звонке</string>
+    <string name="notification_flashlight_category">Мигание фонарика при уведомлении</string>
     <string name="ambient_display_category">Активный экран</string>
     <string name="lockscreen_clock_category">Часы на экране блокировки</string>
     <string name="signal_icons_category_title">Стиль значков сети</string>
@@ -62,9 +64,11 @@
     <string name="string_on">Вкл</string>
     <string name="string_off">Выкл.</string>
     <!-- Units -->
+    <string name="unit_hz">Гц</string>
     <string name="unit_milliseconds">миллисекунд</string>
     <string name="unit_ms">мсек</string>
     <string name="unit_seconds">секунд</string>
+    <string name="unit_times">Раз</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Вкл.</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -171,7 +175,7 @@
     <string name="network_traffic_autohide_kilobytes">КБ/с</string>
     <string name="network_traffic_autohide_threshold">Порог неактивности</string>
     <string name="network_traffic_refresh_interval_title">Интервал обновления</string>
-    <string name="network_traffic_refresh_interval_summary">Время, спустя которое скорость будет измеряться повторно</string>
+    <string name="network_traffic_refresh_interval_summary">Время, через которое скорость будет измеряться повторно</string>
     <string name="network_traffic_units_title">Единицы измерения</string>
     <string name="network_traffic_units_bits">Бит в секунду (б/с)</string>
     <string name="network_traffic_units_kilobits">Килобит в секунду (кб/с)</string>
@@ -180,7 +184,7 @@
     <string name="network_traffic_units_kilobytes">Килобайт в секунду (кБ/с)</string>
     <string name="network_traffic_units_megabytes">Мегабит в секунду (МБ/с)</string>
     <string name="network_traffic_hidearrow">Скрыть стрелки</string>
-    <string name="network_traffic_hidearrow_summary">Скрыть стрелки индикатора</string>
+    <string name="network_traffic_hidearrow_summary">Скрыть стрелки индикатора трафика</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Вибрация при авторизации отпечатком пальца</string>
     <string name="fp_success_vibrate_summary">Вибрировать при успешной авторизации по отпечатку пальца</string>
@@ -597,6 +601,22 @@
     <string name="alarm_blocker_summary">Блокировать сигналы при выключенном экране для экономии заряда батареи</string>
     <string name="alarm_blocker_warning">Блокирование сигналов тревоги может привести к нестабильности, сбоям или потере данных</string>
     <string name="alarm_blocker_display_text">Чтобы увидеть и заблокировать сигналы - включите блокировщик сигналов.</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Мигать фонариком при входящем звонке</string>
+    <string name="flashlight_on_call_disabled">Отключен</string>
+    <string name="flashlight_on_call_ringer">При звонке</string>
+    <string name="flashlight_on_call_no_ringer">Когда звонок выключен</string>
+    <string name="flashlight_on_call_silent">Когда полная тишина (без звонков или вибрации)</string>
+    <string name="flashlight_on_call_always">Всегда</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Игнорировать \"Не беспокоить\"</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Мигать ли в режиме \"Не беспокоить\"</string>
+    <string name="flashlight_on_call_rate_title">Частота</string>
+    <string name="flashlight_on_call_rate_summary">Частота мигания фонарика при вызове</string>
+    <!-- Blink flashlight for notifications -->
+    <string name="notification_torch_title">Мигать фонариком для уведомлений</string>
+    <string name="notification_torch_summary">По умолчанию. Существуют настройки для каждого канала</string>
+    <string name="notification_torch_slider1">Время мигания</string>
+    <string name="notification_torch_slider2">Частота мигания</string>
     <!-- Status bar lyric -->
     <string name="status_bar_lyric_title">Текст в строке состояния</string>
     <string name="status_bar_lyric_summary">Показывать текст песни в строке состояния (требуется поддержка приложения)</string>
@@ -776,10 +796,13 @@
     <string name="photos_spoof_summary">Подмена вашего устройства на Pixel XL для «Google Фото», чтобы предоставить неограниченное хранилище для резервного копирования фотографий. При выключении будет замаскирован под Pixel 8 Pro</string>
     <!-- Unlock FPS for specific games -->
     <string name="games_spoof_title">Разблокировка высокого FPS в играх</string>
-    <string name="games_spoof_summary">Маскировка устройства под другую модель для определенных игр, чтобы разблокировать более высокий FPS</string>
+    <string name="games_spoof_summary">Подмена вашего устройства на другую модель для определенных игр, чтобы разблокировать более высокий FPS</string>
     <!-- Netflix Spoof -->
     <string name="netflix_spoof_title">Маскировка для Netflix</string>
     <string name="netflix_spoof_summary">Подмена вашего устройства на Pixel 8 Pro для использования Netflix</string>
+    <!-- Snapchat Spoof -->
+    <string name="snapchat_spoof_title">Маскировка для Snapchat</string>
+    <string name="snapchat_spoof_summary">Подмена вашего устройства на Pixel 2 для повышения качества снимков в Snapchat</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Скрыть строку состояния</string>
     <string name="hide_lockscreen_status_bar_summary">Коснитесь строки состояния для переключения видимости</string>
@@ -1045,8 +1068,6 @@
     <!-- PixelProps -->
     <string name="spoof_pixel_title">Включить свойства Pixel</string>
     <string name="spoof_pixel_summary">Подмена вашего устройства на Pixel 8 Pro для приложений Google</string>
-    <string name="spoof_pixel_device_title">Включить свойства Pixel на пикселях</string>
-    <string name="spoof_pixel_device_summary">Принудительная подмена вашего устройства на Pixel 8 Pro для приложений Google. Только для настоящих устройств Pixel.</string>
     <!-- Application downgrade -->
     <string name="app_downgrade_title">Разрешить понижение версии приложения</string>
     <string name="app_downgrade_summary">Разрешение на понижение версии приложений. Может привести к сбоям и повреждению данных.</string>
