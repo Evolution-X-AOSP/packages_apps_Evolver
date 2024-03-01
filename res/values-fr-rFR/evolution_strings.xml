@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -375,19 +375,22 @@
     <!-- Suppress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Son de notification si l\'écran est allumé</string>
     <string name="notification_sound_vib_screen_on_summary">Jouer un son avec vibrations pour les notifications lorsque l\'écran est allumé</string>
-    <!-- Edge light -->
-    <string name="edge_light_title">Éclairage des bords</string>
-    <string name="edge_light_main_switch_title">Utiliser l\'éclairage des bords</string>
-    <string name="edge_light_intro_text">Afficher une animation le long des bords de l\'écran lors de la pulsation</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Toujours déclencher lors de l\'impulsion</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Afficher/Masquer la lumière des bords chaque fois que l\'affichage ambiant est affiché et pas seulement pour les notifications</string>
-    <string name="edge_light_repeat_animation_title">Répéter l\'animation</string>
-    <string name="edge_light_repeat_animation_summary_on">Répéter jusqu\'à expiration</string>
-    <string name="edge_light_repeat_animation_summary_off">Afficher une seule fois</string>
-    <string name="edge_light_color_mode_title">Mode de couleur</string>
-    <string name="theme_color">Couleur du thème (par défaut)</string>
-    <string name="notification_color">Couleur de la notification</string>
-    <string name="custom_color">Couleur personnalisée</string>
+    <!-- Ambient edge lighting -->
+    <string name="ambient_edge_light_action_title">Éclairage des bords en mode veille</string>
+    <string name="ambient_edge_light_title">Éclairage des bords</string>
+    <string name="ambient_edge_light_enable_title">Activer l\'éclairage des bords</string>
+    <string name="ambient_edge_light_summary">Allumer les bords de l\'écran lorsqu\'une notification est reçue</string>
+    <string name="ambient_edge_light_color_mode_category_title">Couleur</string>
+    <string name="ambient_edge_light_color_mode_auto">Auto</string>
+    <string name="ambient_edge_light_color_mode_app">Couleur de l\'application</string>
+    <string name="ambient_edge_light_color_mode_manual">Manuel</string>
+    <string name="ambient_edge_light_color_mode_auto_summary">Définir la couleur de la lumière du bord à la couleur du système</string>
+    <string name="ambient_edge_light_color_mode_app_summary">Définir la couleur de la lumière du bord sur la couleur de l\'application</string>
+    <string name="ambient_edge_light_color_mode_manual_summary">Choisir une couleur manuellement</string>
+    <string name="ambient_edge_light_advanced_category_title">Avancé</string>
+    <string name="ambient_edge_light_duration_title">Durée de la lumière</string>
+    <string name="ambient_edge_light_repeat_count_title">Nombre de répétitions</string>
+    <string name="ambient_edge_light_width_title">Largeur de la lumière</string>
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">Afficher l\'utilisation des données</string>
     <string name="qs_show_data_usage_summary">Afficher l\'utilisation quotidienne des données cellulaires/Wi-Fi au bas des réglages rapides</string>
@@ -1079,4 +1082,46 @@
     <!-- Spoof storage encryption status -->
     <string name="spoof_storage_encryption_status_title">Utiliser l\'usurpation du chiffrement de stockage</string>
     <string name="spoof_storage_encryption_status_summary">L\'état du chiffrement du stockage est falsifié en mode crypté</string>
+    <!-- Font styles -->
+    <string name="font_styles_title">Styles de police</string>
+    <string name="font_styles_summary">Changer le style de police du système</string>
+    <string name="font_preview_text">Le rapide brun\nrenard saute au-dessus du\nchien paresseux\n\nABCDEFGHIJKLM\nNOPQRSTUVWXYZ\nabcdefghijkl\nmnopqrstuvwxyz\n1234567890</string>
+    <string name="apply_button_text">Appliquer</string>
+    <!-- Ambient Customization -->
+    <string name="ambient_text_category">Personnalisation du texte</string>
+    <string name="ambient_image_category">Personnalisation de l\'image</string>
+    <string name="ambient_text_category_title">Personnalisation en mode Veille</string>
+    <string name="ambient_text_category_summary">Personnalisation de l\'apparence de l\'affichage en mode veille</string>
+    <string name="ambient_text_title">Texte de l\'affichage en veille</string>
+    <string name="ambient_text_summary">Afficher le texte sur l\'affichage en mode veille</string>
+    <string name="ambient_text_animation_title">Animation du texte en mode veille</string>
+    <string name="ambient_text_animation_summary">Afficher une animation lorsque le mode affichage en veille est activé</string>
+    <string name="ambient_text_size_title">Taille du texte de l\'affichage en veille</string>
+    <string name="ambient_text_font_title">Police du texte de l\'affichage en veille</string>
+    <string name="ambient_text_string_title">Définir le texte en mode veille</string>
+    <string name="ambient_text_align_title">Alignement du texte en mode veille</string>
+    <string name="ambient_text_align_start_top">En haut à droite</string>
+    <string name="ambient_text_align_start_center">Au centre à droite</string>
+    <string name="ambient_text_align_start_bottom">En bas à droite</string>
+    <string name="ambient_text_align_center">Au centre</string>
+    <string name="ambient_text_align_end_top">En haut à gauche</string>
+    <string name="ambient_text_align_end_center">Au centre à gauche</string>
+    <string name="ambient_text_align_end_bottom">En bas à gauche</string>
+    <string name="ambient_text_type_color_title">Couleur du type de texte en mode veille</string>
+    <string name="ambient_text_color_title">Couleur du texte en mode veille</string>
+    <string name="ambient_notification_light_color_mode_accent">Couleur d\'accentuation système</string>
+    <string name="ambient_notification_light_color_mode_custom">Couleur personalisée</string>
+    <string name="ambient_notification_light_color_mode_wall">Couleur de fond d\'écran</string>
+    <string name="ambient_image_title">Image en mode veille</string>
+    <!-- Volume Styles -->
+    <string name="volume_style_title">Styles du panneau de volume</string>
+    <string name="revamped_aosp_style">Style de l\'interface AOSP amélioré</string>
+    <string name="rui_style">Style Realme UI</string>
+    <string name="stock_style">Style Stock AOSP</string>
+    <string name="double_layer_style">Style double couches</string>
+    <string name="gradient_style">Style dégradé</string>
+    <string name="neumorph_style">Style Neumorph</string>
+    <string name="neumorph_outline_style">Style Neumorph Contour</string>
+    <string name="outline_style">Style contour</string>
+    <string name="shaded_layer_style">Style de couche ombragée</string>
 </resources>
