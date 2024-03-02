@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -210,6 +210,8 @@
     <string name="qs_show_brightness_slider_expanded">Показать при раскрытии</string>
     <string name="qs_show_brightness_slider_always">Всегда показывать</string>
     <string name="qs_show_brightness_slider_not_expanded">Показывать в свёрнутом виде</string>
+    <string name="qs_show_brightness_textview_title">Проценты яркости</string>
+    <string name="qs_show_brightness_textview_summary">Показывать текущую яркость текстом в процентах</string>
     <string name="qs_brightness_slider_position_title">Расположение</string>
     <string name="qs_brightness_slider_position_top">Сверху</string>
     <string name="qs_brightness_slider_position_bottom">Внизу</string>
@@ -375,19 +377,22 @@
     <!-- Suppress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Звук уведомления при включённом экране</string>
     <string name="notification_sound_vib_screen_on_summary">Воспроизводить звук и вибрацию при получении уведомлений когда экран включен</string>
-    <!-- Edge light -->
-    <string name="edge_light_title">Подсветка краёв экрана</string>
-    <string name="edge_light_main_switch_title">Включить подсветку краев экрана</string>
-    <string name="edge_light_intro_text">Отображение анимации по краям экрана при уведомлении</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Всегда запускать при уведомлениях</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Воспроизводить анимацию даже когда Всегда включенный экран включён и не только для уведомлений</string>
-    <string name="edge_light_repeat_animation_title">Повтор анимации</string>
-    <string name="edge_light_repeat_animation_summary_on">Повторить несколько раз</string>
-    <string name="edge_light_repeat_animation_summary_off">Показать только один раз</string>
-    <string name="edge_light_color_mode_title">Цветовой режим</string>
-    <string name="theme_color">Цвет темы (по умолчанию)</string>
-    <string name="notification_color">Цвет уведомлений</string>
-    <string name="custom_color">Пользовательский цвет</string>
+    <!-- Ambient edge lighting -->
+    <string name="ambient_edge_light_action_title">Свечение по краям экрана на AoD</string>
+    <string name="ambient_edge_light_title">Свечение по бокам экрана</string>
+    <string name="ambient_edge_light_enable_title">Включить подсветку краёв экрана</string>
+    <string name="ambient_edge_light_summary">Подсвечивать края экрана при получении уведомления</string>
+    <string name="ambient_edge_light_color_mode_category_title">Цвет</string>
+    <string name="ambient_edge_light_color_mode_auto">Автоматически</string>
+    <string name="ambient_edge_light_color_mode_app">Цвет приложения</string>
+    <string name="ambient_edge_light_color_mode_manual">Свой</string>
+    <string name="ambient_edge_light_color_mode_auto_summary">Использовать системный акцентный цвет</string>
+    <string name="ambient_edge_light_color_mode_app_summary">Использовать цвет иконки приложения</string>
+    <string name="ambient_edge_light_color_mode_manual_summary">Использовать пользовательский цвет</string>
+    <string name="ambient_edge_light_advanced_category_title">Дополнительно</string>
+    <string name="ambient_edge_light_duration_title">Длительность свечения</string>
+    <string name="ambient_edge_light_repeat_count_title">Количество повторов</string>
+    <string name="ambient_edge_light_width_title">Ширина свечения</string>
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">Отображать использование данных</string>
     <string name="qs_show_data_usage_summary">Показывать ежедневное использование данных мобильного/Wi-Fi в колонтитуле быстрых настроек</string>
@@ -1080,4 +1085,68 @@
     <!-- Spoof storage encryption status -->
     <string name="spoof_storage_encryption_status_title">Маскировка шифрования</string>
     <string name="spoof_storage_encryption_status_summary">Подменить статус шифрования хранилища на «Зашифровано»</string>
+    <!-- Font styles -->
+    <string name="font_styles_title">Стиль шрифта</string>
+    <string name="font_styles_summary">Выберите системный шрифт</string>
+    <string name="font_preview_text">Съешь ещё\nэтих мягких\nфранцузских булок\nда выпей чаю\n\nАБВГДЕЖЗИЙКЛМНО\nПРСТУФХЦЧШЩЪЫЬЭЮЯ\nабвгдежзийклмно\nпрстуфхцчшщъыьэюя\n1234567890</string>
+    <string name="apply_button_text">Применить</string>
+    <!-- Ambient Customization -->
+    <string name="ambient_text_category">Настройка надписи</string>
+    <string name="ambient_image_category">Настройки фона</string>
+    <string name="ambient_text_category_title">Персонализация Always On Display</string>
+    <string name="ambient_text_category_summary">Настройка внешнего вида AoD</string>
+    <string name="ambient_text_title">Активный текст</string>
+    <string name="ambient_text_summary">Показывать ваше сообщение на AoD</string>
+    <string name="ambient_text_animation_title">Анимация текста</string>
+    <string name="ambient_text_animation_summary">Показывать анимацию при включении AoD</string>
+    <string name="ambient_text_size_title">Размер текста</string>
+    <string name="ambient_text_font_title">Шрифт</string>
+    <string name="ambient_text_string_title">Заданный текст</string>
+    <string name="ambient_text_align_title">Расположение надписи</string>
+    <string name="ambient_text_align_start_top">Справа сверху</string>
+    <string name="ambient_text_align_start_center">Справа по центру</string>
+    <string name="ambient_text_align_start_bottom">Справа снизу</string>
+    <string name="ambient_text_align_center">По центру</string>
+    <string name="ambient_text_align_end_top">Слева сверху</string>
+    <string name="ambient_text_align_end_center">Слева по центру</string>
+    <string name="ambient_text_align_end_bottom">Слева снизу</string>
+    <string name="ambient_text_type_color_title">Цвет надписи</string>
+    <string name="ambient_text_color_title">Цвет текста</string>
+    <string name="ambient_notification_light_color_mode_accent">Системный акцентный цвет</string>
+    <string name="ambient_notification_light_color_mode_custom">Пользовательский цвет</string>
+    <string name="ambient_notification_light_color_mode_wall">Цвет обоев</string>
+    <string name="ambient_image_title">Фоновое изображение</string>
+    <!-- Volume Styles -->
+    <string name="volume_style_title">Стили панели громкости</string>
+    <string name="revamped_aosp_style">Обновлённый AOSP</string>
+    <string name="rui_style">Realme UI</string>
+    <string name="stock_style">Стандартный AOSP</string>
+    <string name="double_layer_style">Двойной</string>
+    <string name="gradient_style">Градиент</string>
+    <string name="neumorph_style">Neumorph</string>
+    <string name="neumorph_outline_style">Контурный Neumorph</string>
+    <string name="outline_style">Контурный</string>
+    <string name="shaded_layer_style">Двойной с тенью</string>
+    <!-- Volume TextView -->
+    <string name="volume_percent_switch_title">Проценты громкости</string>
+    <string name="volume_percent_switch_summary">Показывать текущую громкость в процентах на панели громкости</string>
+    <string name="volume_percent_style_title">Расположение процентов</string>
+    <string name="volume_percent_style_top">Сверху</string>
+    <string name="volume_percent_style_bottom">Снизу</string>
+    <!-- Status bar - Battery custom charging symbol -->
+    <string name="text_charging_symbol_title">Пользовательский значок зарядки для стиля «Текст»</string>
+    <string name="text_charging_symbol_dialog">Показывать пользовательский символ рядом с процентами во время зарядки</string>
+    <string name="text_charging_symbol_default">Отключено</string>
+    <string name="text_charging_symbol_flash">Молния</string>
+    <string name="text_charging_symbol_tilde">Тильда</string>
+    <string name="text_charging_symbol_plus">Плюс</string>
+    <string name="text_charging_symbol_star">Звезда</string>
+    <string name="text_charging_symbol_rupee">Рупий</string>
+    <string name="text_charging_symbol_dollar">Доллар</string>
+    <string name="text_charging_symbol_euro">Евро</string>
+    <string name="text_charging_symbol_cent">Цент</string>
+    <string name="text_charging_symbol_timer">Песочные часы</string>
+    <string name="text_charging_symbol_rocket">Ракета</string>
+    <string name="text_charging_symbol_milk">Бутылка молока</string>
+    <string name="text_charging_symbol_flamingo">Фламинго</string>
 </resources>
