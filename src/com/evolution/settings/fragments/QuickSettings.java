@@ -61,6 +61,7 @@ public class QuickSettings extends DashboardFragment implements
     private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String QS_UI_STYLE = "qs_tile_ui_style";
     private static final String QUICK_PULLDOWN = "qs_quick_pulldown";
 
     private static final int PULLDOWN_DIR_NONE = 0;
@@ -75,6 +76,9 @@ public class QuickSettings extends DashboardFragment implements
     private ListPreference mTileAnimationStyle;
     private SystemSettingSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private ListPreference mQsUI;
+
+    private static ThemeUtils mThemeUtils;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -84,6 +88,8 @@ public class QuickSettings extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        mThemeUtils = new ThemeUtils(getActivity());
 
         final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = mContext.getContentResolver();
@@ -125,6 +131,15 @@ public class QuickSettings extends DashboardFragment implements
             mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
             mQuickPulldown.setEntryValues(R.array.status_bar_quick_qs_pulldown_values_rtl);
         }
+
+        String isA11Style = Integer.toString(Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT));
+
+        mQsUI = (ListPreference) findPreference(QS_UI_STYLE);
+        int index = mQsUI.findIndexOfValue(isA11Style);
+        mQsUI.setValue(isA11Style);
+        mQsUI.setSummary(mQsUI.getEntries()[index]);
+        mQsUI.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -143,6 +158,15 @@ public class QuickSettings extends DashboardFragment implements
         } else if (preference == mTileAnimationStyle) {
             int value = Integer.parseInt((String) newValue);
             updateAnimTileStyle(value);
+            return true;
+        } else if (preference == mQsUI) {
+            int qsUiValue = Integer.parseInt((String) newValue);
+            int qsUiIndex = mQsUI.findIndexOfValue((String) newValue);
+            mQsUI.setValue((String) newValue);
+            mQsUI.setSummary(mQsUI.getEntries()[qsUiIndex]);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_TILE_UI_STYLE, qsUiValue, UserHandle.USER_CURRENT);
+            updateQsStyle(getActivity());
             return true;
         }
         return false;
@@ -174,6 +198,28 @@ public class QuickSettings extends DashboardFragment implements
     private void updateAnimTileStyle(int tileAnimationStyle) {
         mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
         mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
+    }
+
+    private static void updateQsStyle(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+
+        boolean isA11Style = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT) != 0;
+
+        String qsUIStyleCategory = "android.theme.customization.qs_ui";
+        String overlayThemeTarget  = "com.android.systemui";
+        String overlayThemePackage  = "com.android.system.qs.ui.A11";
+
+        if (mThemeUtils == null) {
+            mThemeUtils = new ThemeUtils(context);
+        }
+
+        // reset all overlays before applying
+        mThemeUtils.setOverlayEnabled(qsUIStyleCategory, overlayThemeTarget, overlayThemeTarget);
+
+        if (isA11Style) {
+            mThemeUtils.setOverlayEnabled(qsUIStyleCategory, overlayThemePackage, overlayThemeTarget);
+        }
     }
 
     @Override
