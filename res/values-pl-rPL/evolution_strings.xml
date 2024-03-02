@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -210,6 +210,8 @@
     <string name="qs_show_brightness_slider_expanded">Pokaż po rozwinięciu</string>
     <string name="qs_show_brightness_slider_always">Zawsze pokazuj</string>
     <string name="qs_show_brightness_slider_not_expanded">Pokaż, gdy nie rozwinięto</string>
+    <string name="qs_show_brightness_textview_title">Procent jasności</string>
+    <string name="qs_show_brightness_textview_summary">Pokaż procent jasności tekstowo</string>
     <string name="qs_brightness_slider_position_title">Pozycja</string>
     <string name="qs_brightness_slider_position_top">U góry</string>
     <string name="qs_brightness_slider_position_bottom">Dolny</string>
@@ -375,19 +377,22 @@
     <!-- Suppress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Dźwięk powiadomienia, jeśli aktywny</string>
     <string name="notification_sound_vib_screen_on_summary">Odtwarzaj dźwięk i wibracje dla powiadomień, gdy ekran jest włączony</string>
-    <!-- Edge light -->
-    <string name="edge_light_title">Podświetlenie krawędzi</string>
-    <string name="edge_light_main_switch_title">Użyj światła krawędzi</string>
-    <string name="edge_light_intro_text">Wyświetlaj animację wzdłuż krawędzi ekranu podczas pulsowania</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Zawsze wyzwalaj przy pulsowaniu</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Pokaż oświetlenie krawędzi za każdym razem, gdy ekran ambient jest wyświetlany, ale nie tylko dla powiadomień</string>
-    <string name="edge_light_repeat_animation_title">Powtórz animację</string>
-    <string name="edge_light_repeat_animation_summary_on">Powtarzaj do limitu czasu</string>
-    <string name="edge_light_repeat_animation_summary_off">Pokaż tylko raz</string>
-    <string name="edge_light_color_mode_title">Tryb kolorów</string>
-    <string name="theme_color">Kolor motywu (domyślny)</string>
-    <string name="notification_color">Kolor powiadomień</string>
-    <string name="custom_color">Własny kolor</string>
+    <!-- Ambient edge lighting -->
+    <string name="ambient_edge_light_action_title">Podświetlenie krawędzi ekranu</string>
+    <string name="ambient_edge_light_title">Oświetlenie krawędzi</string>
+    <string name="ambient_edge_light_enable_title">Włącz oświetlenie krawędzi ekranu</string>
+    <string name="ambient_edge_light_summary">Podświetl boczne krawędzie ekranu podczas powiadomienia</string>
+    <string name="ambient_edge_light_color_mode_category_title">Kolor</string>
+    <string name="ambient_edge_light_color_mode_auto">Automatycznie</string>
+    <string name="ambient_edge_light_color_mode_app">Kolor aplikacji</string>
+    <string name="ambient_edge_light_color_mode_manual">Ręcznie</string>
+    <string name="ambient_edge_light_color_mode_auto_summary">Ustaw kolor światła krawędzi na kolor systemowy</string>
+    <string name="ambient_edge_light_color_mode_app_summary">Ustaw kolor światła krawędzi na kolor aplikacji</string>
+    <string name="ambient_edge_light_color_mode_manual_summary">Wybierz kolor ręcznie</string>
+    <string name="ambient_edge_light_advanced_category_title">Zaawansowane</string>
+    <string name="ambient_edge_light_duration_title">Czas trwania podśwetlenia</string>
+    <string name="ambient_edge_light_repeat_count_title">Liczba powtórzeń</string>
+    <string name="ambient_edge_light_width_title">Szerokość podświetlenia</string>
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">Pokaż zużycie danych</string>
     <string name="qs_show_data_usage_summary">Pokaż dziennie użycie danych dla sieci komórkowej/Wi-Fi w stopce panela Szybkich włączników</string>
@@ -1079,4 +1084,68 @@
     <!-- Spoof storage encryption status -->
     <string name="spoof_storage_encryption_status_title">Użyj szyfrowania pamięci masowej</string>
     <string name="spoof_storage_encryption_status_summary">Status szyfrowanego przechowywania danych</string>
+    <!-- Font styles -->
+    <string name="font_styles_title">Styl czcionki</string>
+    <string name="font_styles_summary">Zmień styl czcionki systemowej</string>
+    <string name="font_preview_text">Szybki brązowy\nlis przeskakuje przez\nleniwego psa\n\nABCDEFGHIJKLM\nNOPQRSTUVWXYZ\nabcdefghijkl\nmnopqrstuvwxyz\n1234567890</string>
+    <string name="apply_button_text">Zastosuj</string>
+    <!-- Ambient Customization -->
+    <string name="ambient_text_category">Dostosowanie tekstu</string>
+    <string name="ambient_image_category">Dostosowanie obrazu</string>
+    <string name="ambient_text_category_title">Dostosowanie ekranu Ambient</string>
+    <string name="ambient_text_category_summary">Dostosowywanie wyglądu ekranu otoczenia</string>
+    <string name="ambient_text_title">Tekst Ambient</string>
+    <string name="ambient_text_summary">Pokazuj tekst na ekranie AoD</string>
+    <string name="ambient_text_animation_title">Animacja tekstu Ambient</string>
+    <string name="ambient_text_animation_summary">Pokaż animację po wyświetleniu AoD</string>
+    <string name="ambient_text_size_title">Rozmiar tekstu Ambient</string>
+    <string name="ambient_text_font_title">Czcionka tekstu Ambient</string>
+    <string name="ambient_text_string_title">Ustaw tekst Ambient</string>
+    <string name="ambient_text_align_title">Rozmiar tekstu ambient</string>
+    <string name="ambient_text_align_start_top">Prawy górny róg</string>
+    <string name="ambient_text_align_start_center">Prawy środek</string>
+    <string name="ambient_text_align_start_bottom">Prawy dolny róg</string>
+    <string name="ambient_text_align_center">Środek</string>
+    <string name="ambient_text_align_end_top">Lewy górny róg</string>
+    <string name="ambient_text_align_end_center">Lewy n środek</string>
+    <string name="ambient_text_align_end_bottom">Lewy dolny róg</string>
+    <string name="ambient_text_type_color_title">Kolor tekstu Ambient</string>
+    <string name="ambient_text_color_title">Kolor tekstu Ambient</string>
+    <string name="ambient_notification_light_color_mode_accent">Kolor akcentu systemowego</string>
+    <string name="ambient_notification_light_color_mode_custom">Własny kolor</string>
+    <string name="ambient_notification_light_color_mode_wall">Kolor tapety</string>
+    <string name="ambient_image_title">Zdjęcie Ambient</string>
+    <!-- Volume Styles -->
+    <string name="volume_style_title">Styl panelu głośności</string>
+    <string name="revamped_aosp_style">Przerobiony styl interfejsu użytkownika AOSP</string>
+    <string name="rui_style">Styl Realme UI</string>
+    <string name="stock_style">Domyślny styl AOSP</string>
+    <string name="double_layer_style">Dwuwarstwowy styl</string>
+    <string name="gradient_style">Gradient styl</string>
+    <string name="neumorph_style">Styl Neumorf</string>
+    <string name="neumorph_outline_style">Styl obrysu Neumorf</string>
+    <string name="outline_style">Styl konturu</string>
+    <string name="shaded_layer_style">Styl zacieniowanej warstwy</string>
+    <!-- Volume TextView -->
+    <string name="volume_percent_switch_title">Procentowy panel głośności</string>
+    <string name="volume_percent_switch_summary">Pokaż procentowy panel głośności</string>
+    <string name="volume_percent_style_title">Lokalizacja procentów</string>
+    <string name="volume_percent_style_top">U góry</string>
+    <string name="volume_percent_style_bottom">U dołu</string>
+    <!-- Status bar - Battery custom charging symbol -->
+    <string name="text_charging_symbol_title">Własny symbol ładowania podczas wyboru stylu tekstowego</string>
+    <string name="text_charging_symbol_dialog">Własny symbol ładowania obok tekstu procentu</string>
+    <string name="text_charging_symbol_default">Wyłączony</string>
+    <string name="text_charging_symbol_flash">Błysk</string>
+    <string name="text_charging_symbol_tilde">Tylda</string>
+    <string name="text_charging_symbol_plus">Plus</string>
+    <string name="text_charging_symbol_star">Gwiazdka</string>
+    <string name="text_charging_symbol_rupee">Rupia</string>
+    <string name="text_charging_symbol_dollar">Dolar</string>
+    <string name="text_charging_symbol_euro">Euro</string>
+    <string name="text_charging_symbol_cent">Cent</string>
+    <string name="text_charging_symbol_timer">Licznik piasku</string>
+    <string name="text_charging_symbol_rocket">Rakieta</string>
+    <string name="text_charging_symbol_milk">Butelka mleka</string>
+    <string name="text_charging_symbol_flamingo">Flaming</string>
 </resources>
