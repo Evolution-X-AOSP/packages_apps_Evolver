@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -210,6 +210,8 @@
     <string name="qs_show_brightness_slider_expanded">Genişletildiğinde göster</string>
     <string name="qs_show_brightness_slider_always">Her zaman göster</string>
     <string name="qs_show_brightness_slider_not_expanded">Genişletilmediğinde göster</string>
+    <string name="qs_show_brightness_textview_title">Parlaklık yüzdesi</string>
+    <string name="qs_show_brightness_textview_summary">Parlaklık yüzdesi metnini göster</string>
     <string name="qs_brightness_slider_position_title">Konum</string>
     <string name="qs_brightness_slider_position_top">Üst</string>
     <string name="qs_brightness_slider_position_bottom">Alt</string>
@@ -375,19 +377,22 @@
     <!-- Suppress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Ekran açıkken bildirim sesi</string>
     <string name="notification_sound_vib_screen_on_summary">Ekran açıkken bildirimler için ses ve titreşim</string>
-    <!-- Edge light -->
-    <string name="edge_light_title">Kenar aydınlatması</string>
-    <string name="edge_light_main_switch_title">Kenar Aydınlatmasını Etkinleştir</string>
-    <string name="edge_light_intro_text">Ekran kenarlarında yanıp sönen bir animasyon gösterir</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Pulse sırasında daima tetikle</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Kenar aydınlatmasının ortam ekranında veya sadece bildirimlerde gösterilip gösterilmeyeceği</string>
-    <string name="edge_light_repeat_animation_title">Animasyonu tekrarla</string>
-    <string name="edge_light_repeat_animation_summary_on">Zaman aşımına kadar tekrarla</string>
-    <string name="edge_light_repeat_animation_summary_off">Yalnızca bir kez göster</string>
-    <string name="edge_light_color_mode_title">Renk modu</string>
-    <string name="theme_color">Tema rengi (Varsayılan)</string>
-    <string name="notification_color">Bildirim rengi</string>
-    <string name="custom_color">Özel renk</string>
+    <!-- Ambient edge lighting -->
+    <string name="ambient_edge_light_action_title">Ortam kenarı aydınlatması</string>
+    <string name="ambient_edge_light_title">Ortam kenarı aydınlatması</string>
+    <string name="ambient_edge_light_enable_title">Kenar aydınlatmasını etkinleştir</string>
+    <string name="ambient_edge_light_summary">Bildirimler için ortam ekranı kenarlarını aydınlat</string>
+    <string name="ambient_edge_light_color_mode_category_title">Renk</string>
+    <string name="ambient_edge_light_color_mode_auto">Otomatik</string>
+    <string name="ambient_edge_light_color_mode_app">Uygulama rengi</string>
+    <string name="ambient_edge_light_color_mode_manual">Elle</string>
+    <string name="ambient_edge_light_color_mode_auto_summary">Kenar ışık rengini sistem rengine ayarlayın</string>
+    <string name="ambient_edge_light_color_mode_app_summary">Kenar ışık rengini uygulama rengine ayarlama</string>
+    <string name="ambient_edge_light_color_mode_manual_summary">Manuel olarak bir renk seçin</string>
+    <string name="ambient_edge_light_advanced_category_title">Gelişmiş</string>
+    <string name="ambient_edge_light_duration_title">Işık süresi</string>
+    <string name="ambient_edge_light_repeat_count_title">Tekrar sayısı</string>
+    <string name="ambient_edge_light_width_title">Işık genişliği</string>
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">Veri kullanımını göster</string>
     <string name="qs_show_data_usage_summary">Hızlı ayarlar alt bilgisinde günlük hücresel/Wi-Fi veri kullanımını göster</string>
@@ -1077,4 +1082,68 @@ Mevcut bildirimler ve yeni bildirimler yayına hazırlanacak.    </string>
     <!-- Spoof storage encryption status -->
     <string name="spoof_storage_encryption_status_title">Depolama şifreleme sahtekarlığını kullan</string>
     <string name="spoof_storage_encryption_status_summary">Depolama şifreleme durumunu şifreli olarak değiştirin</string>
+    <!-- Font styles -->
+    <string name="font_styles_title">Yazı tipi stilleri</string>
+    <string name="font_styles_summary">Sistem yazı tipi stilini değiştir</string>
+    <string name="font_preview_text">Pijamalı\nhasta\nyağız\nşoföre\nçabucak\ngüvendi\n\nABCÇDEFGĞHIİJKLM\nNOÖPRSŞTUÜVYZXQW\nabcçdefgğhıijkl\nmnoöprsştuüvyzxqw\n1234567890</string>
+    <string name="apply_button_text">Uygula</string>
+    <!-- Ambient Customization -->
+    <string name="ambient_text_category">Metin özelleştirmesi</string>
+    <string name="ambient_image_category">Görüntü özelleştirmesi</string>
+    <string name="ambient_text_category_title">Ortam ekranı özelleştirme</string>
+    <string name="ambient_text_category_summary">Ortam ekranı görünümünü özelleştirin</string>
+    <string name="ambient_text_title">Ortam ekranı metni</string>
+    <string name="ambient_text_summary">Ortam ekranı metnini AoD\'de göster</string>
+    <string name="ambient_text_animation_title">Ortam ekranı metni animasyonu</string>
+    <string name="ambient_text_animation_summary">AoD\'yi gösterirken bir animasyon göster</string>
+    <string name="ambient_text_size_title">Ortam ekranı metin boyutu</string>
+    <string name="ambient_text_font_title">Ortam ekranı metin yazı tipi</string>
+    <string name="ambient_text_string_title">Ortam ekranı metnini ayarla</string>
+    <string name="ambient_text_align_title">Ortam ekranı metnini hizala</string>
+    <string name="ambient_text_align_start_top">Sağ n üst</string>
+    <string name="ambient_text_align_start_center">Sağ n orta</string>
+    <string name="ambient_text_align_start_bottom">Sağ n alt</string>
+    <string name="ambient_text_align_center">Orta</string>
+    <string name="ambient_text_align_end_top">Sol n üst</string>
+    <string name="ambient_text_align_end_center">Sol n orta</string>
+    <string name="ambient_text_align_end_bottom">Sol n alt</string>
+    <string name="ambient_text_type_color_title">Ortam ekranı metin türü rengi</string>
+    <string name="ambient_text_color_title">Ortam ekranı metin rengi</string>
+    <string name="ambient_notification_light_color_mode_accent">Sistem vurgu rengi</string>
+    <string name="ambient_notification_light_color_mode_custom">Özel renk</string>
+    <string name="ambient_notification_light_color_mode_wall">Duvar kağıdı rengi</string>
+    <string name="ambient_image_title">Ortam ekranı görüntüsü</string>
+    <!-- Volume Styles -->
+    <string name="volume_style_title">Ses paneli stilleri</string>
+    <string name="revamped_aosp_style">Yenilenmiş AOSP kullanıcı arayüzü stili</string>
+    <string name="rui_style">Realme arayüzü stili</string>
+    <string name="stock_style">Stok AOSP stili</string>
+    <string name="double_layer_style">Çift katman stili</string>
+    <string name="gradient_style">Graydan stili</string>
+    <string name="neumorph_style">Neumorf stili</string>
+    <string name="neumorph_outline_style">Neumorph Anahat stili</string>
+    <string name="outline_style">Anahat stili</string>
+    <string name="shaded_layer_style">Gölgeli Katman stili</string>
+    <!-- Volume TextView -->
+    <string name="volume_percent_switch_title">Ses paneli yüzdesi</string>
+    <string name="volume_percent_switch_summary">Ses paneli yüzdesini göster</string>
+    <string name="volume_percent_style_title">Yüzde konumu</string>
+    <string name="volume_percent_style_top">Üst</string>
+    <string name="volume_percent_style_bottom">Alt</string>
+    <!-- Status bar - Battery custom charging symbol -->
+    <string name="text_charging_symbol_title">Metin stili için özel şarj sembolü</string>
+    <string name="text_charging_symbol_dialog">Pil yüzdesi metninin yanında özel şarj simgesi</string>
+    <string name="text_charging_symbol_default">Devre dışı</string>
+    <string name="text_charging_symbol_flash">Flaş</string>
+    <string name="text_charging_symbol_tilde">Yaklaşık</string>
+    <string name="text_charging_symbol_plus">Artı</string>
+    <string name="text_charging_symbol_star">Yıldız</string>
+    <string name="text_charging_symbol_rupee">Rupi</string>
+    <string name="text_charging_symbol_dollar">Dolar</string>
+    <string name="text_charging_symbol_euro">Avro</string>
+    <string name="text_charging_symbol_cent">Orta</string>
+    <string name="text_charging_symbol_timer">Kum Zamanlayıcısı</string>
+    <string name="text_charging_symbol_rocket">Roket</string>
+    <string name="text_charging_symbol_milk">Süt Şişesi</string>
+    <string name="text_charging_symbol_flamingo">Flamingo</string>
 </resources>
