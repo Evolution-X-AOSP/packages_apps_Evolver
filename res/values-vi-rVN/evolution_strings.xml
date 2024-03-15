@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -210,6 +210,8 @@
     <string name="qs_show_brightness_slider_expanded">Hiển thị khi mở rộng</string>
     <string name="qs_show_brightness_slider_always">Luôn hiển thị</string>
     <string name="qs_show_brightness_slider_not_expanded">Hiển thị khi không mở rộng</string>
+    <string name="qs_show_brightness_textview_title">Phần trăm độ sáng</string>
+    <string name="qs_show_brightness_textview_summary">Hiển thị văn bản phần trăm độ sáng</string>
     <string name="qs_brightness_slider_position_title">Vị trí</string>
     <string name="qs_brightness_slider_position_top">Đầu trang</string>
     <string name="qs_brightness_slider_position_bottom">Dưới cùng</string>
@@ -375,19 +377,22 @@
     <!-- Suppress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Âm thanh thông báo nếu đang hoạt động</string>
     <string name="notification_sound_vib_screen_on_summary">Phát âm thanh và rung cho thông báo khi màn hình đang bật</string>
-    <!-- Edge light -->
-    <string name="edge_light_title">Ánh sáng cạnh</string>
-    <string name="edge_light_main_switch_title">Sử dụng ánh sáng cạnh</string>
-    <string name="edge_light_intro_text">Hiển thị hoạt ảnh trên các cạnh của màn hình khi có thông báo</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Luôn kích hoạt khi có thông báo</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Cho phép hiển thị màn hình cạnh khi màn hình xem nhanh được hiển thị, ngay cả khi không có thông báo</string>
-    <string name="edge_light_repeat_animation_title">Lặp lại hoạt ảnh</string>
-    <string name="edge_light_repeat_animation_summary_on">Lặp lại cho đến khi hết thời gian</string>
-    <string name="edge_light_repeat_animation_summary_off">Chỉ hiển thị một lần</string>
-    <string name="edge_light_color_mode_title">Chế độ màu</string>
-    <string name="theme_color">Màu chủ đề (Mặc định)</string>
-    <string name="notification_color">Màu thông báo</string>
-    <string name="custom_color">Màu tùy chỉnh</string>
+    <!-- Ambient edge lighting -->
+    <string name="ambient_edge_light_action_title">Hiển thị thông báo ánh sáng cạnh</string>
+    <string name="ambient_edge_light_title">Ánh sáng cạnh</string>
+    <string name="ambient_edge_light_enable_title">Bật ánh sáng cạnh</string>
+    <string name="ambient_edge_light_summary">Làm sáng các cạnh bên của màn hình khi có thông báo đẩy</string>
+    <string name="ambient_edge_light_color_mode_category_title">Màu sắc</string>
+    <string name="ambient_edge_light_color_mode_auto">Tự động</string>
+    <string name="ambient_edge_light_color_mode_app">Màu ứng dụng</string>
+    <string name="ambient_edge_light_color_mode_manual">Thủ công</string>
+    <string name="ambient_edge_light_color_mode_auto_summary">Đặt màu ánh sáng cạnh thành màu của hệ thống</string>
+    <string name="ambient_edge_light_color_mode_app_summary">Đặt màu ánh sáng cạnh thành màu của ứng dụng</string>
+    <string name="ambient_edge_light_color_mode_manual_summary">Chọn màu thủ công</string>
+    <string name="ambient_edge_light_advanced_category_title">Nâng cao</string>
+    <string name="ambient_edge_light_duration_title">Thời gian sáng</string>
+    <string name="ambient_edge_light_repeat_count_title">Số lần lặp lại</string>
+    <string name="ambient_edge_light_width_title">Chiều rộng ánh sáng</string>
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">Hiện mức sử dụng dữ liệu</string>
     <string name="qs_show_data_usage_summary">Hiện mức sử dụng dữ liệu di động/Wi-Fi hàng ngày ở cuối bảng cài đặt nhanh</string>
@@ -740,30 +745,30 @@
     <string name="projection_privacy_indicator_summary">Hiển thị chỉ báo quyền riêng tư khi trình chiếu màn hình</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_category">Hiển thị trình trực quan âm nhạc</string>
-    <string name="pulse_help_policy_notice_title">Về Pulse</string>
+    <string name="pulse_help_policy_notice_title">Về Sóng Nhạc</string>
     <string name="pulse_help_policy_notice_summary">Sóng nhạc là một bộ cân bằng đồ họa âm thanh tuyệt vời khi nhạc phát trên thiết bị</string>
     <string name="pulse_settings">Sóng nhạc</string>
     <string name="pulse_settings_summary">Bộ cân bằng đồ họa âm thanh cho thanh điều hướng và màn hình khoá</string>
-    <string name="show_navbar_pulse_title">Thanh điều hướng Pulse</string>
-    <string name="show_navbar_pulse_summary">Sóng nhạc trên thanh điều hướng</string>
-    <string name="show_lockscreen_pulse_title">Chỉ màn hình khoá</string>
-    <string name="show_lockscreen_pulse_summary">Sóng nhạc trên màn hình khoá</string>
+    <string name="show_navbar_pulse_title">Thanh điều hướng sóng nhạc</string>
+    <string name="show_navbar_pulse_summary">Bộ cân bằng đồ họa âm thanh trên thanh điều hướng</string>
+    <string name="show_lockscreen_pulse_title">Sóng nhạc màn hình khoá</string>
+    <string name="show_lockscreen_pulse_summary">Bộ cân bằng đồ họa âm thanh trên màn hình khóa</string>
     <string name="show_ambient_pulse_title">Hiển thị tương tác sóng nhạc</string>
-    <string name="show_ambient_pulse_summary">Trình trực quan đồ họa âm thanh trên thanh điều hướng</string>
-    <string name="pulse_render_mode_title">Chế độ hiển thị</string>
+    <string name="show_ambient_pulse_summary">Bộ cân bằng đồ họa âm thanh trên thanh điều hướng</string>
+    <string name="pulse_render_mode_title">Chế độ kết xuất</string>
     <string name="pulse_render_mode_fading_bars">Khối mờ dần</string>
-    <string name="pulse_render_mode_solid_lines">Vuốt bên trái ở chiều dọc</string>
+    <string name="pulse_render_mode_solid_lines">Đường liền nét</string>
     <string name="pulse_legacy_mode_advanced_category">Cài đặt chế độ khối mờ dần</string>
     <string name="pulse_custom_fudge_factor">Mức độ mạnh</string>
     <string name="pulse_lavalamp_speed_title">Tốc độ đèn dung nham</string>
     <string name="pulse_solid_units_count">Số đường liền nét</string>
     <string name="pulse_solid_units_opacity">Độ đậm đường liền nét</string>
     <string name="pulse_solid_units_rounded_title">Bo tròn góc</string>
-    <string name="pulse_solid_units_rounded_summary">Đường nét chắc chắn với đầu bo tròn</string>
+    <string name="pulse_solid_units_rounded_summary">Đường liền nét với đầu bo tròn</string>
     <string name="pulse_solid_dimen_category">Cài đặt chế độ đường liền nét</string>
     <string name="pulse_color_mode_title">Màu</string>
-    <string name="pulse_color_accent">Màu nhấn (Accent)</string>
-    <string name="pulse_color_custom">Tùy chọn</string>
+    <string name="pulse_color_accent">Màu nhấn</string>
+    <string name="pulse_color_custom">Tùy chỉnh</string>
     <string name="pulse_color_lava_lamp">Đèn lava</string>
     <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Chọn màu sắc</string>
@@ -774,8 +779,8 @@
     <string name="pulse_filled_block_size">Kích thước khối</string>
     <string name="pulse_empty_block_size">Khoảng cách khối</string>
     <!-- QS Pulse -->
-    <string name="show_qs_pulse_title">Cài đặt nhanh Pulse</string>
-    <string name="show_qs_pulse_summary">Sóng nhạc trên bảng cài đặt nhanh</string>
+    <string name="show_qs_pulse_title">Cài đặt nhanh Sóng nhạc</string>
+    <string name="show_qs_pulse_summary">Trình hiển thị âm thanh trên cài đặt nhanh</string>
     <!-- Pulse Gravity and mirror options -->
     <string name="pulse_custom_gravity_title">Trọng lực</string>
     <string name="pulse_custom_gravity_bottom">Dưới cùng</string>
@@ -786,7 +791,7 @@
     <string name="pulse_vertical_mirror_title">Gương dọc</string>
     <string name="pulse_vertical_mirror_summary">Tạo xung khác và lật theo chiều dọc</string>
     <!-- Game space -->
-    <string name="game_space_title">Game Mode</string>
+    <string name="game_space_title">Không gian trò chơi</string>
     <string name="game_space_summary">Cải thiện trải nghiệm chơi game</string>
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Hiệu ứng gợn sóng</string>
@@ -805,7 +810,7 @@
     <string name="snapchat_spoof_summary">Giả mạo thiết bị của bạn là Pixel 2 cho Snapchat để cho phép chụp ảnh chất lượng gốc</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Ẩn thanh trạng thái</string>
-    <string name="hide_lockscreen_status_bar_summary">Chạm vào thanh trạng thái để hiển thị</string>
+    <string name="hide_lockscreen_status_bar_summary">Chạm vào thanh trạng thái để chuyển đổi chế độ hiển thị</string>
     <!-- Material dismiss all button for notifications -->
     <string name="notification_material_dismiss_title">Xóa tất cả thông báo</string>
     <string name="notification_material_dismiss_summary">Thay thế xóa tất cả thông báo bằng nút nổi</string>
@@ -813,12 +818,12 @@
     <string name="notification_material_dismiss_bgstyle_title">Nền phím</string>
     <!-- Ignore window secure -->
     <string name="ignore_window_secure_title">Bỏ qua cửa sổ bảo mật</string>
-    <string name="ignore_window_secure_summary">Điều này loại bỏ các giới hạn chụp và ghi màn hình cho tất cả các ứng dụng. Thông thường, các ứng dụng đặc biệt sẽ bị chặn hiển thị bằng mảng đen trong các bản ghi. Nó có thể thuận tiện trong một số trường hợp nhưng có thể làm rò rỉ thông tin. Sau khi bật hoặc tắt tính năng này, bạn có thể phải khởi động lại ứng dụng để thay đổi có hiệu lực.</string>
+    <string name="ignore_window_secure_summary">Loại bỏ giới hạn ảnh chụp màn hình và ghi lại màn hình cho tất cả các ứng dụng. Có thể tiện lợi trong một số trường hợp nhưng có thể dẫn đến rò rỉ thông tin riêng tư. Cần khởi động lại các ứng dụng để thay đổi có hiệu lực.</string>
     <!-- Island Notification -->
     <string name="island_notification_title">Thông báo Island</string>
-    <string name="island_notification_summary">Hiển thị thông báo nổi theo phong cách Dynamic Island</string>
-    <string name="island_notification_now_playing_title">Đang phát kiểu Island</string>
-    <string name="island_notification_now_playing_summary">Hiện thị bài hát đang phát trên Island</string>
+    <string name="island_notification_summary">Hiển thị thông báo nổi theo kiểu iOS Dynamic Island</string>
+    <string name="island_notification_now_playing_title">Đang phát</string>
+    <string name="island_notification_now_playing_summary">Hiện thị phương tiện đang phát trên Island</string>
     <string name="island_notification_intro_title">        Tính năng thông báo Island, lấy cảm hứng từ Dynamic Island của iOS, biến thông báo nổi của Android thành kiểu thông báo gọn gàng và dễ dàng truy cập.\n\nTruy cập nhanh bao gồm các tính năng sau:\n1. Nhấn vào Island để trả lời nhanh các cuộc gọi.\n2. Nhấn và giữ Island để từ chối cuộc gọi.\n3. Nhấn và giữ Island để mở rộng bản xem trước thông báo.
     </string>
     <!-- Smart Pixels -->
@@ -833,8 +838,8 @@
     <string name="smart_pixels_shift_title">Bảo vệ lưu ảnh</string>
     <string name="smart_pixels_shift_summary">Tránh lưu ảnh trên màn hình OLED bằng cách di chuyển các điểm ảnh thường xuyên</string>
     <!-- Status bar logo -->
-    <string name="status_bar_logo_title">Biểu tượng</string>
-    <string name="status_bar_logo_summary">Hiển thị biểu tượng trên thanh trạng thái</string>
+    <string name="status_bar_logo_title">Biểu tượng thanh trạng thái</string>
+    <string name="status_bar_logo_summary">Cho phép hiển thị biểu tượng trên thanh trạng thái</string>
     <string name="status_bar_logo_main_switch_title">Sử dụng Biểu tượng thanh trạng thái</string>
     <string name="status_bar_logo_position_title">Vị trí</string>
     <string name="status_bar_logo_position_summary">Chọn vị trí hiển thị biểu tượng trên thanh trạng thái, trái hoặc phải</string>
@@ -848,7 +853,7 @@
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">Avengers</string>
     <string name="status_bar_logo_style_batman">Batman</string>
-    <string name="status_bar_logo_style_batman_tdk">Batman The Dark Knight</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman Kỵ sĩ bóng đêm</string>
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Nguy hiểm</string>
     <string name="status_bar_logo_style_blackberry">Blackberry</string>
@@ -861,17 +866,17 @@
     <string name="status_bar_logo_style_pacman">Pac-man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
     <string name="status_bar_logo_style_rog">ROG</string>
-    <string name="status_bar_logo_style_spiderman">Người nhện</string>
+    <string name="status_bar_logo_style_spiderman">Spider-Man</string>
     <string name="status_bar_logo_style_superman">Superman</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">XBOX</string>
     <string name="status_bar_logo_style_ghost">Bóng ma</string>
     <string name="status_bar_logo_style_ninja">Ninja</string>
     <string name="status_bar_logo_style_robot">Người máy</string>
-    <string name="status_bar_logo_style_ironman">Người sắt</string>
-    <string name="status_bar_logo_style_captain_america">Đội trưởng Mỹ</string>
+    <string name="status_bar_logo_style_ironman">Iron Man</string>
+    <string name="status_bar_logo_style_captain_america">Captain America</string>
     <string name="status_bar_logo_style_flash">Hình sấm sét</string>
-    <string name="status_bar_logo_style_tux">Lễ phục</string>
+    <string name="status_bar_logo_style_tux">Tux (Linux)</string>
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_mint">Linux Mint</string>
     <string name="status_bar_logo_style_amogus">Sú (Amogus)</string>
@@ -897,22 +902,22 @@
     <string name="status_bar_battery_style_big_circle">Tròn (To)</string>
     <string name="status_bar_battery_style_big_dotted_circle">Vòng tròn (Chấm lớn)</string>
     <string name="status_bar_battery_style_filled_circle">Vòng tròn đầy</string>
-    <string name="status_bar_battery_style_text">Chỉ hiển thị dung lượng</string>
+    <string name="status_bar_battery_style_text">Văn bản</string>
     <string name="status_bar_battery_style_hidden">Ẩn</string>
     <string name="status_bar_battery_percent_title">Phần trăm pin</string>
     <string name="status_bar_battery_percent_hidden">Ẩn</string>
-    <string name="status_bar_battery_percent_text_inside">Bên trong biểu tượng pin</string>
+    <string name="status_bar_battery_percent_text_inside">Bên trong biểu tượng</string>
     <string name="status_bar_battery_percent_text_next_right">Bên cạnh biểu tượng (bên phải)</string>
     <string name="status_bar_battery_percent_text_next_left">Bên cạnh biểu tượng (bên trái)</string>
     <string name="status_bar_battery_text_charging_title">Hiển thị phần trăm pin khi sạc</string>
     <string name="status_bar_battery_text_charging_summary">Luôn hiển thị phần trăm pin khi sạc</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Vị trí hiển thị thanh pin</string>
+    <string name="qs_battery_location_title">Vị trí thanh pin</string>
     <string name="qs_battery_location_qs_panel">Bảng cài đặt nhanh</string>
     <string name="qs_battery_location_qs_statusbar">Thanh trạng thái nhanh</string>
     <string name="qs_use_status_bar_battery_style">Theo kiểu thanh trạng thái</string>
     <!-- Battery estimate -->
-    <string name="battery_estimate_title">Ước lượng pin</string>
+    <string name="battery_estimate_title">Ước tính thời lượng pin</string>
     <string name="battery_estimate_summary">Hiển thị thời lượng pin ước tính khi khả dụng</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
@@ -1001,6 +1006,8 @@
     <string name="qs_tile_layout_summary">Hiển thị nhãn bên dưới biểu tượng thay vì bên cạnh biểu tượng</string>
     <string name="qs_columns_portrait_title">Cột (dọc)</string>
     <string name="qs_columns_landscape_title">Cột (ngang)</string>
+    <string name="qqs_rows_portrait_title">Hàng cài đặt nhanh (dọc)</string>
+    <string name="qqs_rows_landscape_title">Hàng cài đặt nhanh (ngang)</string>
     <!-- Lock screen clock format -->
     <string name="clock_use_single_line_title">Định dạng đồng hồ Màn hình khóa</string>
     <string name="single_line">Dòng-đơn</string>
@@ -1080,4 +1087,37 @@
     <!-- Spoof storage encryption status -->
     <string name="spoof_storage_encryption_status_title">Sử dụng giả mạo mã hóa lưu trữ</string>
     <string name="spoof_storage_encryption_status_summary">Giả mạo trạng thái mã hóa bộ nhớ thành đã mã hóa</string>
+    <!-- Volume Styles -->
+    <string name="volume_style_title">Kiểu bảng điều khiển âm lượng</string>
+    <string name="revamped_aosp_style">Giao diện AOSP kiểu mới</string>
+    <string name="rui_style">Kiểu giao diện Realme</string>
+    <string name="stock_style">Kiểu giao diện AOSP gốc</string>
+    <string name="double_layer_style">Kiểu hai lớp</string>
+    <string name="gradient_style">Kiểu mờ dần</string>
+    <string name="neumorph_style">Kiểu Neumorph</string>
+    <string name="neumorph_outline_style">Kiểu Neumorph có viền</string>
+    <string name="outline_style">Kiểu có viền</string>
+    <string name="shaded_layer_style">Kiểu lớp bóng mờ</string>
+    <!-- Volume TextView -->
+    <string name="volume_percent_switch_title">Phần trăm bảng điều chỉnh âm lượng</string>
+    <string name="volume_percent_switch_summary">Hiển thị phần trăm bảng điều chỉnh âm lượng</string>
+    <string name="volume_percent_style_title">Vị trí phần trăm</string>
+    <string name="volume_percent_style_top">Trên</string>
+    <string name="volume_percent_style_bottom">Dưới</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_ui_style_title">Kiểu ô cài đặt nhanh</string>
+    <string name="qs_tile_ui_style_a11_circle">Hình tròn</string>
+    <string name="qs_tile_ui_style_a11_square">Hình vuông</string>
+    <string name="qs_tile_ui_style_a11_mix">Hình tròn &amp; hình vuông</string>
+    <!-- QS Panel Style -->
+    <string name="qs_panel_style_title">Kiểu bảng cài đặt nhanh</string>
+    <string name="qs_panel_style_outline">Đường nét</string>
+    <string name="qs_panel_style_two_tone">Hai tông màu</string>
+    <string name="qs_panel_style_color_pop">Màu Sắc Nổi Bật</string>
+    <string name="qs_panel_style_shaded">Sắc thái</string>
+    <string name="qs_panel_style_cyberpunk">Cyberpunk</string>
+    <string name="qs_panel_style_neumorph">Neumorph</string>
+    <string name="qs_panel_style_reflected">Phản chiếu</string>
+    <string name="qs_panel_style_surround">Bao quanh</string>
+    <string name="qs_panel_style_thin">Dòng kẻ mảnh</string>
 </resources>
