@@ -14,25 +14,21 @@
         android:summary="@string/show_clipboard_overlay_summary"
         android:defaultValue="true" />
 
-    <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
+    <Preference
         android:key="island_notification"
         android:title="@string/island_notification_title"
         android:summary="@string/island_notification_summary"
-        android:defaultValue="false"
-        android:fragment="com.evolution.settings.fragments.IslandSettings"
-        settings:observe="true" />
+        android:fragment="com.evolution.settings.fragments.IslandSettings" />
 
     <PreferenceCategory
         android:key="headsup_notifications_category"
         android:title="@string/headsup_category">
 
-        <com.evolution.settings.preference.GlobalSettingPrimarySwitchPreference
-            android:key="heads_up_notifications_enabled"
+        <Preference
+            android:key="heads_up_notifications"
             android:summary="@string/notification_heads_up_summary"
             android:title="@string/notification_heads_up_title"
-            android:defaultValue="true"
-            android:fragment="com.evolution.settings.fragments.HeadsUpSettings"
-            settings:observe="true" />
+            android:fragment="com.evolution.settings.fragments.HeadsUpSettings" />
 
     </PreferenceCategory>
 
@@ -138,7 +134,7 @@
         android:key="notification_flashlight_category"
         android:title="@string/notification_flashlight_category">
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="default_notification_torch"
             android:title="@string/notification_torch_title"
             android:summary="@string/notification_torch_summary"

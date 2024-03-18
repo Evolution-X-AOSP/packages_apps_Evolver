@@ -32,7 +32,8 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.TwoStatePreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
@@ -69,7 +70,7 @@ public class Notifications extends DashboardFragment implements
     private CustomSeekBarPreference mFlashOnNotifyRate;
     private CustomSeekBarPreference mFlashOnNotifyTimes;
     private PreferenceCategory mAlertSliderCat;
-    private SwitchPreference mFlashOnNotify;
+    private TwoStatePreference mFlashOnNotify;
     private SystemSettingListPreference mFlashOnCall;
     private SystemSettingSwitchPreference mFlashOnCallIgnoreDND;
 
@@ -125,7 +126,7 @@ public class Notifications extends DashboardFragment implements
                     findPreference(PREF_FLASH_ON_NOTIFY_TIMES);
             mFlashOnNotifyRate = (CustomSeekBarPreference)
                     findPreference(PREF_FLASH_ON_NOTIFY_RATE);
-            mFlashOnNotify = (SwitchPreference)
+            mFlashOnNotify = (TwoStatePreference)
                     findPreference(PREF_FLASH_ON_NOTIFY);
             String strVal = Settings.System.getStringForUser(resolver,
                     PREF_FLASH_ON_NOTIFY, UserHandle.USER_CURRENT);
