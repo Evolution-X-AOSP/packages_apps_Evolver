@@ -36,7 +36,8 @@ import android.view.View;
 
 import androidx.preference.Preference;
 import androidx.preference.ListPreference;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.TwoStatePreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -75,7 +76,7 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment
 
     private ListPreference mTintOptions;
     private ColorPickerPreference mColorPicker;
-    private SwitchPreference mMasterSwitch;
+    private TwoStatePreference mMasterSwitch;
     private Preference mQsHeaderImagePicker;
 
     private boolean mQsHeaderImageEnabled;

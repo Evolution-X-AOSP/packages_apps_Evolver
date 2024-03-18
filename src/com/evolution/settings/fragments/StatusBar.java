@@ -33,7 +33,8 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.TwoStatePreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
@@ -69,7 +70,7 @@ public class StatusBar extends DashboardFragment implements
     private static final int BATTERY_STYLE_HIDDEN = 5;
 
     private PreferenceCategory mSignalCategory;
-    private SwitchPreference mBatteryTextCharging;
+    private TwoStatePreference mBatteryTextCharging;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingListPreference mStatusBarClock;
@@ -100,7 +101,7 @@ public class StatusBar extends DashboardFragment implements
                 batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
         mBatteryPercent.setOnPreferenceChangeListener(this);
 
-        mBatteryTextCharging = (SwitchPreference) findPreference(KEY_STATUS_BAR_BATTERY_TEXT_CHARGING);
+        mBatteryTextCharging = (TwoStatePreference) findPreference(KEY_STATUS_BAR_BATTERY_TEXT_CHARGING);
         mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
                 (batterystyle != BATTERY_STYLE_TEXT && batterypercent != 2));
 

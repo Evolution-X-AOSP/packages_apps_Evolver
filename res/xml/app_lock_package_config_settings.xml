@@ -25,13 +25,13 @@
         android:key="main_switch"
         android:title="@string/enable_protection" />
     
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="redact_notifications"
         android:title="@string/app_lock_notifications_title"
         android:summary="@string/app_lock_notifications_summary"
         android:dependency="main_switch" />
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="hide_from_launcher"
         android:title="@string/hide_from_launcher_title"
         android:summary="@string/hide_from_launcher_summary" />

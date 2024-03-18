@@ -13,7 +13,7 @@
         android:key="navbar_key"
         android:title="@string/navigation_bar_title">
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="disable_nav_keys"
             android:title="@string/disable_navkeys_title"
             android:summary="@string/disable_navkeys_summary"
@@ -60,7 +60,7 @@
             android:summary="@string/aosp_options_summary"
             android:fragment="com.android.settings.gestures.PowerMenuSettings" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="power_end_call"
             android:title="@string/power_end_call_title"
             android:summary="@string/power_end_call_summary"
@@ -172,7 +172,7 @@
             android:title="@string/button_wake_title"
             android:defaultValue="true" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="home_answer_call"
             android:title="@string/home_answer_call_title"
             android:summary="@string/home_answer_call_summary"
