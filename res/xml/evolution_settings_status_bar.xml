@@ -8,13 +8,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/status_bar_title">
 
-    <com.evolution.settings.preference.SecureSettingPrimarySwitchPreference
+    <Preference
         android:key="status_bar_show_lyric"
         android:title="@string/status_bar_lyric_title"
         android:summary="@string/status_bar_lyric_summary"
-        android:defaultValue="false"
-        android:fragment="com.evolution.settings.fragments.StatusBarLyricSettings"
-        settings:observe="true" />
+        android:fragment="com.evolution.settings.fragments.StatusBarLyricSettings" />
 
     <com.evolution.settings.preference.SystemSettingListPreference
         android:key="status_bar_clock"
@@ -37,8 +35,7 @@
         android:title="@string/status_bar_logo_title"
         android:summary="@string/status_bar_logo_summary"
         android:defaultValue="false"
-        android:fragment="com.evolution.settings.fragments.StatusBarLogo"
-        settings:observe="true" />
+        android:fragment="com.evolution.settings.fragments.StatusBarLogo" />
 
     <!-- Network traffic -->
     <Preference
@@ -77,8 +74,7 @@
             android:title="@string/battery_bar_title"
             android:summary="@string/battery_bar_summary"
             android:defaultValue="false"
-            android:fragment="com.evolution.settings.fragments.BatteryBar"
-            settings:observe="true" />
+            android:fragment="com.evolution.settings.fragments.BatteryBar" />
 
     </PreferenceCategory>
 

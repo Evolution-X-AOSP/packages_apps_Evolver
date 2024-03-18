@@ -21,7 +21,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
-import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
@@ -34,14 +35,13 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.settingslib.widget.LayoutPreference;
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 import com.android.settingslib.widget.SelectorWithWidgetPreference;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class AmbientEdgeLightSettings extends SettingsPreferenceFragment implements
-        SelectorWithWidgetPreference.OnClickListener, OnMainSwitchChangeListener,
+        SelectorWithWidgetPreference.OnClickListener, OnCheckedChangeListener,
         ColorSelectorAdapter.ColorSelectListener {
 
     private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
@@ -114,7 +114,7 @@ public class AmbientEdgeLightSettings extends SettingsPreferenceFragment impleme
     }
 
     @Override
-    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         enableColorSelector(isChecked);
     }
 
