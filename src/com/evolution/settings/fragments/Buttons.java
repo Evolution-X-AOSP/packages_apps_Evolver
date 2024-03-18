@@ -42,7 +42,8 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.TwoStatePreference;
 
 import com.android.internal.custom.hardware.LineageHardwareManager;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -99,10 +100,10 @@ public class Buttons extends DashboardFragment implements
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
     private Preference mGestureNavOptions;
-    private SwitchPreference mCameraWakeScreen;
-    private SwitchPreference mCameraSleepOnRelease;
-    private SwitchPreference mCameraLaunch;
-    private SwitchPreference mDisableNavigationKeys;
+    private TwoStatePreference mCameraWakeScreen;
+    private TwoStatePreference mCameraSleepOnRelease;
+    private TwoStatePreference mCameraLaunch;
+    private TwoStatePreference mDisableNavigationKeys;
     private SecureSettingSwitchPreference mSwapCapacitiveKeys;
 
     private Handler mHandler;
@@ -125,8 +126,8 @@ public class Buttons extends DashboardFragment implements
     private SecureSettingSwitchPreference mNavigationInverse;
     private Preference mNavigationGestures;
     private SystemSettingSwitchPreference mNavigationCompactLayout;
-    private SwitchPreference mPowerEndCall;
-    private SwitchPreference mHomeAnswerCall;
+    private TwoStatePreference mPowerEndCall;
+    private TwoStatePreference mHomeAnswerCall;
     private PreferenceCategory mNavbarCategory;
 
     private IOverlayManager mOverlayManager;

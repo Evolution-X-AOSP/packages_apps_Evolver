@@ -30,7 +30,8 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.TwoStatePreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
@@ -71,10 +72,10 @@ public class Pulse extends DashboardFragment implements
     private Preference mRenderMode;
     private PreferenceCategory mFadingBarsCat;
     private PreferenceCategory mSolidBarsCat;
-    private SwitchPreference mAmbientPulse;
-    private SwitchPreference mLockscreenPulse;
-    private SwitchPreference mNavbarPulse;
-    private SwitchPreference mPulseSmoothing;
+    private TwoStatePreference mAmbientPulse;
+    private TwoStatePreference mLockscreenPulse;
+    private TwoStatePreference mNavbarPulse;
+    private TwoStatePreference mPulseSmoothing;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -87,19 +88,19 @@ public class Pulse extends DashboardFragment implements
 
         ContentResolver resolver = getContext().getContentResolver();
 
-        mNavbarPulse = (SwitchPreference) findPreference(NAVBAR_PULSE_ENABLED_KEY);
+        mNavbarPulse = (TwoStatePreference) findPreference(NAVBAR_PULSE_ENABLED_KEY);
         boolean navbarPulse = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.NAVBAR_PULSE_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
         mNavbarPulse.setChecked(navbarPulse);
         mNavbarPulse.setOnPreferenceChangeListener(this);
 
-        mLockscreenPulse = (SwitchPreference) findPreference(LOCKSCREEN_PULSE_ENABLED_KEY);
+        mLockscreenPulse = (TwoStatePreference) findPreference(LOCKSCREEN_PULSE_ENABLED_KEY);
         boolean lockscreenPulse = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.LOCKSCREEN_PULSE_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
         mLockscreenPulse.setChecked(lockscreenPulse);
         mLockscreenPulse.setOnPreferenceChangeListener(this);
 
-        mAmbientPulse = (SwitchPreference) findPreference(AMBIENT_PULSE_ENABLED_KEY);
+        mAmbientPulse = (TwoStatePreference) findPreference(AMBIENT_PULSE_ENABLED_KEY);
         boolean ambientPulse = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.AMBIENT_PULSE_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
         mAmbientPulse.setChecked(ambientPulse);
@@ -118,7 +119,7 @@ public class Pulse extends DashboardFragment implements
         mSolidBarsCat = (PreferenceCategory) findPreference(
                 PULSE_RENDER_CATEGORY_SOLID);
 
-        mPulseSmoothing = (SwitchPreference) findPreference(PULSE_SMOOTHING_KEY);
+        mPulseSmoothing = (TwoStatePreference) findPreference(PULSE_SMOOTHING_KEY);
 
         mFooterPref = findPreference(PULSE_SETTINGS_FOOTER);
         mFooterPref.setTitle(R.string.pulse_help_policy_notice_summary);

@@ -33,7 +33,8 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
+import androidx.preference.TwoStatePreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.evolution.EvolutionUtils;
@@ -73,7 +74,7 @@ public class QuickSettings extends DashboardFragment implements
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
     private SystemSettingListPreference mQuickPulldown;
-    private SwitchPreference mShowAutoBrightness;
+    private TwoStatePreference mShowAutoBrightness;
     private ListPreference mTileAnimationStyle;
     private SystemSettingSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;

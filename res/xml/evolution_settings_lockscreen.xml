@@ -31,14 +31,13 @@
             android:summary="@string/pulse_on_new_tracks_summary"
             android:defaultValue="true" />
 
-        <com.evolution.settings.preference.SecureSettingPrimarySwitchPreference
+        <com.evolution.settings.preference.SecureSettingMasterSwitchPreference
             android:key="pulse_ambient_light"
             android:title="@string/ambient_edge_light_title"
             android:summary="@string/ambient_edge_light_summary"
             android:defaultValue="false"
             android:fragment="com.evolution.settings.fragments.AmbientEdgeLightSettings"
             settings:controller="com.evolution.settings.fragments.AmbientEdgeLightPreferenceController"
-            settings:observe="true"
             settings:requiresConfig="@bool/config_show_ambient_edge_light" />
 
     </PreferenceCategory>
@@ -203,7 +202,7 @@
             android:entryValues="@array/lockscreen_shortcut_values"
             android:defaultValue="0" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="lockscreen_shortcut_enforce"
             android:title="@string/lockscreen_shortcut_enforce_title"
             android:summary="@string/lockscreen_shortcut_enforce_summary"
