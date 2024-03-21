@@ -54,8 +54,6 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.preference.SystemSettingSeekBarPreference;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -67,10 +65,6 @@ public class HeadsUpSettings extends DashboardFragment implements
 
     private static final String TAG = "HeadsUpSettings";
 
-    private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
-
-    private SystemSettingSeekBarPreference mHeadsUpTimeOut;
-
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.evolution_settings_heads_up;
@@ -79,32 +73,11 @@ public class HeadsUpSettings extends DashboardFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        final Context mContext = getActivity().getApplicationContext();
-        final ContentResolver resolver = mContext.getContentResolver();
-        final Resources res = mContext.getResources();
-
-        mHeadsUpTimeOut = (SystemSettingSeekBarPreference)
-                            prefScreen.findPreference(HEADS_UP_TIMEOUT_PREF);
-        mHeadsUpTimeOut.setDefaultValue(getDefaultDecay(mContext));
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
-    }
-
-    private static int getDefaultDecay(Context context) {
-        int defaultHeadsUpTimeOut = 5;
-        Resources systemUiResources;
-        try {
-            systemUiResources = context.getPackageManager().getResourcesForApplication("com.android.systemui");
-            defaultHeadsUpTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
-                    "com.android.systemui:integer/heads_up_notification_decay", null, null)) / 1000;
-        } catch (Exception e) {
-        }
-        return defaultHeadsUpTimeOut;
     }
 
     @Override

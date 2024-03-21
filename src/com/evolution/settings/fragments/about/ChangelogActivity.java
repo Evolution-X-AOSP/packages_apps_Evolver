@@ -17,14 +17,18 @@ package com.evolution.settings.fragments.about;
 
 import android.os.Bundle;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
+import com.android.settingslib.collapsingtoolbar.R;
 
 public class ChangelogActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        getFragmentManager().beginTransaction()
-                .replace(R.id.content_frame, new ChangelogFragment())
-                .commit();
+
+        getFragmentManager()
+            .beginTransaction()
+            .replace(
+                R.id.content_frame,
+                new ChangelogFragment()
+            ).commit();
     }
 }
