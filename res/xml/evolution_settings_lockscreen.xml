@@ -29,7 +29,7 @@
             android:key="pulse_on_new_tracks"
             android:title="@string/pulse_on_new_tracks_title"
             android:summary="@string/pulse_on_new_tracks_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <Preference
             android:key="pulse_ambient_light"
@@ -100,14 +100,17 @@
             android:title="@string/always_on_display_schedule_title"
             android:fragment="com.evolution.settings.fragments.AODSchedule" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="lockscreen_hide_status_bar"
             android:title="@string/hide_lockscreen_status_bar_title"
             android:summary="@string/hide_lockscreen_status_bar_summary"
             android:defaultValue="false" />
+        -->
 
     </PreferenceCategory>
 
+    <!--
     <PreferenceCategory
         android:key="lockscreen_media_art_options"
         android:title="@string/lockscreen_media_art_options_title">
@@ -128,7 +131,6 @@
             settings:interval="5"
             android:defaultValue="100" />
 
-        <!--
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="lockscreen_albumart_filter"
             android:title="@string/lockscreen_albumart_filter_title"
@@ -152,9 +154,9 @@
             android:defaultValue="30"
             android:max="80"
             settings:min="1" />
-        -->
 
     </PreferenceCategory>
+    -->
 
     <PreferenceCategory
         android:key="lockscreen_fingerprint_category"
@@ -166,6 +168,7 @@
             android:summary="@string/enable_fingerprint_ripple_effect_summary"
             android:defaultValue="true" />
 
+        <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="fp_success_vibrate"
             android:title="@string/fp_success_vibrate_title"
@@ -177,6 +180,7 @@
             android:title="@string/fp_error_vibrate_title"
             android:summary="@string/fp_error_vibrate_summary"
             android:defaultValue="true" />
+        -->
 
     </PreferenceCategory>
 
