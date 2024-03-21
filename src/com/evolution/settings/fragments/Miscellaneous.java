@@ -52,6 +52,10 @@ public class Miscellaneous extends DashboardFragment implements
 
     private static final String TAG = "Miscellaneous";
 
+    private static final String POCKET_JUDGE = "pocket_judge";
+
+    private Preference mPocketJudge;
+
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.evolution_settings_miscellaneous;
@@ -65,6 +69,12 @@ public class Miscellaneous extends DashboardFragment implements
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+
+        mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
+        boolean mPocketJudgeSupported = res.getBoolean(
+                com.android.internal.R.bool.config_pocketModeSupported);
+        if (!mPocketJudgeSupported)
+            prefScreen.removePreference(mPocketJudge);
     }
 
     @Override
@@ -83,5 +93,18 @@ public class Miscellaneous extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_miscellaneous);
+            new BaseSearchIndexProvider(R.xml.evolution_settings_miscellaneous) {
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+
+                    boolean mPocketJudgeSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_pocketModeSupported);
+                    if (!mPocketJudgeSupported)
+                        keys.add(POCKET_JUDGE);
+
+                    return keys;
+                }
+            };
 }
