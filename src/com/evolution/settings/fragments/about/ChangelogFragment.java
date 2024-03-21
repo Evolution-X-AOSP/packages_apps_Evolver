@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.evolution.settings.fragments.about;
 
 import android.annotation.Nullable;
@@ -54,13 +55,13 @@ public class ChangelogFragment extends PreferenceFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle icicle) {
+            Bundle savedInstanceState) {
         return inflater.inflate(R.layout.changelog, container, false);
     }
 
     @Override
-    public void onViewCreated(final View view, @Nullable Bundle icicle) {
-        super.onViewCreated(view, icicle);
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         textView = view.findViewById(R.id.changelog_text);
 
@@ -123,7 +124,7 @@ public class ChangelogFragment extends PreferenceFragment {
     }
 
     @Override
-    public void onCreatePreferences(Bundle icicle, String rootKey) {
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
     }
 }

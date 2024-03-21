@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <PreferenceScreen
@@ -12,28 +12,11 @@
         android:key="qs_layout_category"
         android:title="@string/qs_layout_category_title">
 
-        <!--
-        <com.evolution.settings.preference.SystemSettingListPreference
-            android:key="qs_panel_style"
-            android:title="@string/qs_styles_title"
-            android:entries="@array/qs_styles_entries"
-            android:entryValues="@array/qs_styles_values"
-            android:summary="%s"
-            android:defaultValue="0" />
-        -->
-
         <ListPreference
             android:key="qs_tile_ui_style"
             android:title="@string/qs_tile_ui_style_title"
             android:entries="@array/qs_tile_ui_style_entries"
             android:entryValues="@array/qs_tile_ui_style_values"
-            android:defaultValue="0" />
-
-        <ListPreference
-            android:key="qs_panel_style"
-            android:title="@string/qs_panel_style_title"
-            android:entries="@array/qs_panel_style_entries"
-            android:entryValues="@array/qs_panel_style_values"
             android:defaultValue="0" />
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
@@ -68,10 +51,10 @@
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="qs_layout_columns_landscape"
             android:title="@string/qs_columns_landscape_title"
-            android:max="6"
+            android:max="5"
             settings:min="2"
             settings:interval="1"
-            android:defaultValue="2" />
+            android:defaultValue="4" />
 
         <com.evolution.settings.preference.SystemSettingSeekBarPreference
             android:key="qqs_layout_rows"
@@ -91,41 +74,18 @@
 
     </PreferenceCategory>
 
+    <!--
     <PreferenceCategory
         android:title="@string/qs_header_category_title">
 
-        <!-- QS Header image -->
         <Preference
             android:key="qs_header_image"
             android:title="@string/qs_header_image_title"
             android:summary="@string/qs_header_image_summary"
-            android:fragment="com.evolution.settings.fragments.qs.QsHeaderImageSettings" />
-
-        <!--
-        <com.evolution.settings.preference.SystemSettingSwitchPreference 
-            android:key="show_qs_clock"
-            android:title="@string/qs_clock_title"
-            android:summary="@string/qs_clock_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSeekBarPreference
-            android:key="qs_header_clock_size"
-            android:title="@string/clock_font_size_title"
-            android:dependency="show_qs_clock"
-            android:max="27"
-            settings:min="10"
-            settings:interval="1"
-            android:defaultValue="14"
-            settings:units="@string/unit_pixels" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="show_qs_date"
-            android:title="@string/qs_date_title"
-            android:summary="@string/qs_date_summary"
-            android:defaultValue="true" />
-        -->
+            android:fragment="com.evolution.settings.fragments.quicksettings.QsHeaderImageSettings" />
 
     </PreferenceCategory>
+    -->
 
     <PreferenceCategory
         android:title="@string/battery_title">
@@ -143,14 +103,6 @@
             android:entries="@array/status_bar_battery_percent_entries"
             android:entryValues="@array/status_bar_battery_percent_values"
             android:defaultValue="2" />
-
-        <!--
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_show_battery_estimate"
-            android:title="@string/battery_estimate_title"
-            android:summary="@string/battery_estimate_summary"
-            android:defaultValue="true" />
-        -->
 
     </PreferenceCategory>
 
@@ -171,27 +123,17 @@
             android:summary="@string/qs_bt_auto_on_summary"
             android:defaultValue="false" />
 
-        <!--
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="music_tile_title"
-            android:title="@string/qs_music_tile_track_optional_title"
-            android:summary="@string/qs_music_tile_track_optional_summary"
-            android:defaultValue="false" />
-        -->
-
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="secure_lockscreen_qs_disabled"
             android:title="@string/disable_qs_title"
             android:summary="@string/disable_qs_summary"
             android:defaultValue="false" />
 
-        <!--
         <com.evolution.settings.preference.SecureSettingSwitchPreference
             android:key="qstile_requires_unlocking"
             android:title="@string/qstile_requires_unlocking_title"
             android:summary="@string/qstile_requires_unlocking_summary"
             android:defaultValue="true" />
-        -->
 
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="qs_quick_pulldown"
@@ -211,7 +153,7 @@
             android:key="android.theme.customization.brightness_slider"
             android:title="@string/theme_customization_brightness_slider_title"
             android:summary="@string/theme_customization_brightness_slider_summary"
-            android:fragment="com.evolution.settings.fragments.BrightnessSlider" />
+            android:fragment="com.evolution.settings.fragments.quicksettings.BrightnessSlider" />
 
         <com.evolution.settings.preference.SecureSettingListPreference
             android:key="qs_show_brightness_slider"
@@ -242,7 +184,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/qs_tile_animation_title">
+        android:title="@string/animation_title">
 
         <com.evolution.settings.preference.SystemSettingListPreference
             android:key="qs_tile_animation_style"
@@ -285,12 +227,6 @@
             android:summary="@string/qs_footer_text_string_summary"
             android:dependency="qs_footer_text_show"
             android:defaultValue="#KeepEvolving" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_warnings"
-            android:title="@string/qs_footer_warnings_title"
-            android:summary="@string/qs_footer_warnings_summary"
-            android:defaultValue="true" />
         -->
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
@@ -298,34 +234,6 @@
             android:title="@string/qs_show_data_usage_title"
             android:summary="@string/qs_show_data_usage_summary"
             android:defaultValue="false" />
-
-        <!--
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_show_user"
-            android:title="@string/qs_footer_users_icon_title"
-            android:summary="@string/qs_footer_users_icon_summary"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_show_edit"
-            android:title="@string/qs_footer_edit_icon_title"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_show_power_menu"
-            android:title="@string/qs_footer_show_power_menu_title"
-            android:defaultValue="true" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_show_services"
-            android:title="@string/qs_footer_services_icon_title"
-            android:defaultValue="false" />
-
-        <com.evolution.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_show_settings"
-            android:title="@string/qs_footer_settings_icon_title"
-            android:defaultValue="true" />
-        -->
 
     </PreferenceCategory>
 
