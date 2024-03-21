@@ -21,15 +21,18 @@
         android:key="spoof_settings"
         android:title="@string/spoof_title"
         android:summary="@string/spoof_summary"
-        android:fragment="com.evolution.settings.fragments.SpoofSettings" />
+        android:fragment="com.evolution.settings.fragments.miscellaneous.SpoofSettings" />
 
-    <!-- Screen Off animation -->
-    <com.evolution.settings.preference.SystemSettingListPreference
-        android:key="screen_off_animation"
-        android:title="@string/screen_off_animation_title"
-        android:entries="@array/screen_off_animation_entries"
-        android:entryValues="@array/screen_off_animation_values"
-        android:defaultValue="0" />
+    <PreferenceCategory
+        android:key="pulse_category"
+        android:title="@string/pulse_category">
+
+        <Preference
+            android:key="pulse_settings"
+            android:title="@string/pulse_settings"
+            android:summary="@string/pulse_settings_summary"
+            android:fragment="com.evolution.settings.fragments.miscellaneous.Pulse" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="uibench"
@@ -82,19 +85,28 @@
             android:title="@string/sensor_block_title"
             android:summary="@string/sensor_block_summary"
             android:defaultValue="false"
-            android:fragment="com.evolution.settings.fragments.SensorBlockSettings" />
+            android:fragment="com.evolution.settings.fragments.miscellaneous.SensorBlockSettings" />
 
+        <!-- Pocket Judge -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="pocket_judge"
+            android:title="@string/pocket_judge_title"
+            android:summary="@string/pocket_judge_summary"
+            android:defaultValue="false" />
+
+        <!--
         <Preference
             android:key="alarm_blocker"
             android:title="@string/alarm_blocker_title"
             android:summary="@string/alarm_blocker_summary"
-            android:fragment="com.evolution.settings.fragments.AlarmBlocker" />
+            android:fragment="com.evolution.settings.fragments.miscellaneous.AlarmBlocker" />
 
         <Preference
             android:key="wakelock_blocker"
             android:title="@string/wakelock_blocker_title"
             android:summary="@string/wakelock_blocker_summary"
-            android:fragment="com.evolution.settings.fragments.WakeLockBlocker" />
+            android:fragment="com.evolution.settings.fragments.miscellaneous.WakeLockBlocker" />
+        -->
 
         <Preference
             android:key="default_usb_configuration"
