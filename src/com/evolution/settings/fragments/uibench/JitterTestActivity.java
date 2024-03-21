@@ -75,8 +75,8 @@ public class JitterTestActivity extends Activity {
     };
 
     @Override
-    protected void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.rendering_jitter);
         View content = findViewById(android.R.id.content);
         content.setBackground(new AnimatedBackgroundDrawable());
