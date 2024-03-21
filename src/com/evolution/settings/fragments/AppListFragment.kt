@@ -98,9 +98,9 @@ abstract class AppListFragment : Fragment(R.layout.app_list_layout),
             setOnListUpdateListener { onListUpdate(it) }
         }
         recyclerView = view.findViewById<RecyclerView>(R.id.apps_list)?.also {
-            it.layoutManager = LinearLayoutManager(context)
-            it.adapter = adapter
-        }
+            it!!.layoutManager = LinearLayoutManager(context)
+            it!!.adapter = adapter
+        } as RecyclerView
         refreshList()
     }
 
@@ -227,8 +227,8 @@ abstract class AppListFragment : Fragment(R.layout.app_list_layout),
                     PackageInfoFlags.of(PackageManager.MATCH_ALL.toLong())
                 ).filter {
                     val categoryMatches = when (displayCategory) {
-                        CATEGORY_SYSTEM_ONLY -> it.applicationInfo.isSystemApp()
-                        CATEGORY_USER_ONLY -> !it.applicationInfo.isSystemApp()
+                        CATEGORY_SYSTEM_ONLY -> it.applicationInfo!!.isSystemApp()
+                        CATEGORY_USER_ONLY -> !it.applicationInfo!!.isSystemApp()
                         else -> true
                     }
                     categoryMatches && packageFilter(it) &&
@@ -239,7 +239,7 @@ abstract class AppListFragment : Fragment(R.layout.app_list_layout),
                 AppInfo(
                     it.packageName,
                     getLabel(it),
-                    it.applicationInfo.loadIcon(pm),
+                    it.applicationInfo!!.loadIcon(pm),
                 )
             }
         }
@@ -248,7 +248,7 @@ abstract class AppListFragment : Fragment(R.layout.app_list_layout),
     }
 
     private fun getLabel(packageInfo: PackageInfo) =
-        packageInfo.applicationInfo.loadLabel(pm).toString()
+        packageInfo.applicationInfo!!.loadLabel(pm).toString()
 
     private class AppListAdapter(
         initialCheckedList: List<String>,
@@ -273,11 +273,11 @@ abstract class AppListFragment : Fragment(R.layout.app_list_layout),
 
         override fun onBindViewHolder(holder: AppListViewHolder, position: Int) {
             val item = getItem(position)
-            holder.label.text = item.label
-            holder.packageName.text = item.packageName
-            holder.icon.setImageDrawable(item.icon)
-            holder.checkBox.isChecked = checkedList.contains(item.packageName)
-            holder.itemView.setOnClickListener {
+            holder.label!!.text = item.label
+            holder.packageName!!.text = item.packageName
+            holder.icon!!.setImageDrawable(item.icon)
+            holder.checkBox!!.isChecked = checkedList.contains(item.packageName)
+            holder.itemView!!.setOnClickListener {
                 if (checkedList.contains(item.packageName)) {
                     checkedList.remove(item.packageName)
                     appDeselectListener(item.packageName)
@@ -317,10 +317,10 @@ abstract class AppListFragment : Fragment(R.layout.app_list_layout),
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
 
-        val icon: ImageView = itemView.findViewById(R.id.icon)
-        val label: TextView = itemView.findViewById(R.id.label)
-        val packageName: TextView = itemView.findViewById(R.id.package_name)
-        val checkBox: CheckBox = itemView.findViewById(R.id.check_box)
+        val icon: ImageView? = itemView.findViewById(R.id.icon)
+        val label: TextView? = itemView.findViewById(R.id.label)
+        val packageName: TextView? = itemView.findViewById(R.id.package_name)
+        val checkBox: CheckBox? = itemView.findViewById(R.id.check_box)
     }
 
     private data class AppInfo(
