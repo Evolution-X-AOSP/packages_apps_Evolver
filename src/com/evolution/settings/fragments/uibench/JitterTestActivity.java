@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2016 The Android Open Source Project
- * Copyright (C) 2022 The Evolution X Project
+ *               2019-2024 The Evolution X Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,8 +75,8 @@ public class JitterTestActivity extends Activity {
     };
 
     @Override
-    protected void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.rendering_jitter);
         View content = findViewById(android.R.id.content);
         content.setBackground(new AnimatedBackgroundDrawable());
