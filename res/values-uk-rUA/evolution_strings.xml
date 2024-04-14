@@ -64,9 +64,11 @@
     <string name="string_on">Увімкнено</string>
     <string name="string_off">Вимкнути</string>
     <!-- Units -->
+    <string name="unit_hz">Гц</string>
     <string name="unit_milliseconds">мілісекунди</string>
     <string name="unit_ms">мс</string>
     <string name="unit_seconds">секунди</string>
+    <string name="unit_times">Разів</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
     <string name="switch_bar_on">Увімкнути</string>
     <!-- Label for feature switch [CHAR LIMIT=30] -->
@@ -208,10 +210,13 @@
     <string name="qs_show_brightness_slider_expanded">Відображати, коли розгорнуто</string>
     <string name="qs_show_brightness_slider_always">Завжди відображати</string>
     <string name="qs_show_brightness_slider_not_expanded">Відображати, коли не розгорнуто</string>
+    <string name="qs_show_brightness_textview_title">Відсоток яскравості</string>
+    <string name="qs_show_brightness_textview_summary">Показати відсоток яскравості тексту</string>
     <string name="qs_brightness_slider_position_title">Положення</string>
     <string name="qs_brightness_slider_position_top">Зверху</string>
     <string name="qs_brightness_slider_position_bottom">Знизу</string>
     <!-- QS Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_feedback_title">Вібрувати при зміні повзунка яскравості</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Значок автояскравості</string>
     <string name="qs_show_auto_brightness_summary">Показувати перемикач для адаптивного регулювання яскравості</string>
@@ -297,6 +302,7 @@
     <string name="qs_date_title">Дата</string>
     <string name="qs_date_summary">Показувати дату в заголовку швидкого рядка стану</string>
     <!-- QS Tiles haptic -->
+    <string name="qs_tiles_haptic_feedback_title">Вібрація при дотику до плитки швидких налаштувань</string>
     <!-- QS Tiles animation -->
     <string name="qs_tile_animation_title">Анімації</string>
     <string name="qs_tile_animation_style_title">Стиль анімації</string>
@@ -372,6 +378,21 @@
     <string name="notification_sound_vib_screen_on_title">Сигнал сповіщень при активності</string>
     <string name="notification_sound_vib_screen_on_summary">Відтворювання звуку та вібрації для сповіщень при увімкненому екрані</string>
     <!-- Ambient edge lighting -->
+    <string name="ambient_edge_light_action_title">Підсвічування країв</string>
+    <string name="ambient_edge_light_title">Підсвічування контуру</string>
+    <string name="ambient_edge_light_enable_title">Увімкнути підсвічування країв</string>
+    <string name="ambient_edge_light_summary">Підсвічувати краї екрана при сповіщеннях</string>
+    <string name="ambient_edge_light_color_mode_category_title">Колір</string>
+    <string name="ambient_edge_light_color_mode_auto">Автоматично</string>
+    <string name="ambient_edge_light_color_mode_app">Колір програми</string>
+    <string name="ambient_edge_light_color_mode_manual">Ручний режим</string>
+    <string name="ambient_edge_light_color_mode_auto_summary">Встановіть колір країв екрана на колір системи</string>
+    <string name="ambient_edge_light_color_mode_app_summary">Встановіть колір краю екрана на колір програми</string>
+    <string name="ambient_edge_light_color_mode_manual_summary">Виберіть колір вручну</string>
+    <string name="ambient_edge_light_advanced_category_title">Додатково</string>
+    <string name="ambient_edge_light_duration_title">Тривалість підсвічування</string>
+    <string name="ambient_edge_light_repeat_count_title">Кількість повторів</string>
+    <string name="ambient_edge_light_width_title">Ширина підсвічування</string>
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">Відображати використання мобільних даних</string>
     <string name="qs_show_data_usage_summary">Показувати щоденне використання стільникових/Wi-Fi даних у нижньому колонтитулі QS</string>
@@ -529,6 +550,7 @@
     <string name="click_partial_screenshot_title">Натисніть для часткового знімку екрану</string>
     <string name="click_partial_screenshot_summary">Коротко натисніть кнопку зменшення гучності та живлення, щоб зробити частковий скріншот</string>
     <!-- Edge gesture -->
+    <string name="navigation_bar_edge_long_swipe_title">Дія по довгому свайпу по краю</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Панель гучності</string>
     <string name="volume_dialog_timeout_title">Час відображення панелі гучності</string>
@@ -652,43 +674,17 @@
     <string name="show_cpu_info">Показати інформацію про процесор</string>
     <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Накладний слой, показуючий поточну інформацію про процесор</string>
-    <!-- Custom carrier label and position -->
-    <string name="carrier_label_settings_title">Ім\'я оператора</string>
-    <string name="carrier_label_settings_summary">Змінити назву оператора</string>
-    <string name="custom_carrier_label_title">Власна назва оператора</string>
-    <string name="custom_carrier_label_explain">Введіть назву оператора. Залиште поле пустим, щоб використати назву мережі</string>
-    <string name="custom_carrier_label_notset">Альтернативне ім`я оператора не встановлено</string>
-    <string name="show_carrier_title">Розташування назви оператора</string>
-    <string name="show_carrier_disabled">Вимкнено</string>
-    <string name="show_carrier_keyguard">Екран блокування</string>
-    <string name="show_carrier_statusbar">Стасус бар</string>
-    <string name="show_carrier_enabled">Обидва</string>
-    <!-- Monet settings -->
-    <string name="monet_settings_title">Налаштування теми</string>
-    <string name="monet_settings_summary">Декілька додаткових параметрів для налаштування двигуна тем</string>
-    <string name="monet_title">Налаштування кольору</string>
-    <string name="monet_summary">Налаштування рушія теми Monet</string>
-    <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Колір акценту</string>
-    <string name="monet_engine_custom_color_summary">Вибрати власний колір для відтінку</string>
-    <string name="monet_engine_custom_bgcolor_title">Колір фону</string>
-    <string name="monet_engine_custom_bgcolor_summary">Вибрати власний колір для фону</string>
-    <string name="monet_engine_color_override_title">Власний колір</string>
-    <string name="monet_engine_luminance_factor_title">Яскравість</string>
-    <string name="monet_engine_luminance_factor_summary">Вищі значення дають яскравіші кольори</string>
-    <string name="monet_engine_chroma_factor_title">Хромовий фактор</string>
-    <string name="monet_engine_chroma_factor_summary">Вищі значення дають більш насичені кольори</string>
-    <string name="monet_engine_tint_background_title">Відтінок фону</string>
-    <string name="monet_engine_tint_background_summary">Зробити так, щоб вибір яскравості та кольоровості також впливав на кольори фону</string>
-    <string name="monet_engine_style_title">Стиль теми</string>
-    <string name="monet_engine_style_tonal_spot">Тональна точка (за замовчуванням)</string>
-    <string name="monet_engine_style_vibrant">Яскрава</string>
-    <string name="monet_engine_style_expressive">Виразний</string>
-    <string name="monet_engine_style_spritz">Шприц</string>
-    <string name="monet_engine_style_rainbow">Веселка</string>
-    <string name="monet_engine_style_fruit_salad">Фруктовий салат</string>
-    <string name="monet_engine_style_muted">Без звуку</string>
-    <string name="monet_engine_style_content">Вміст</string>
+    <!-- Carrier label -->
+    <string name="carrier_label_category">Ім\'я оператора</string>
+    <string name="carrier_label_custom">Власна назва оператора</string>
+    <string name="carrier_label_custom_unset">Торкніться, щоб налаштувати</string>
+    <string name="carrier_label_custom_title">Власна назва оператора</string>
+    <string name="carrier_label_custom_explain">Введіть назву оператора. Залиште поле пустим, щоб використати назву мережі</string>
+    <string name="carrier_label_position">Розташування назви оператора</string>
+    <string name="carrier_label_position_hide">Приховати</string>
+    <string name="carrier_label_position_lockscreen">Екран блокування</string>
+    <string name="carrier_label_position_statusbar">Рядок стану</string>
+    <string name="carrier_label_position_both">На екрані блокування &amp; в рядку стану</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Власна тема</string>
     <string name="custom_theme_black">Чорний</string>
@@ -782,6 +778,8 @@
     <string name="netflix_spoof_title">Маскувати пристрій для Netflix</string>
     <string name="netflix_spoof_summary">Замаскуйте свій пристрій як іншу модель для Netflix</string>
     <!-- Snapchat Spoof -->
+    <string name="snapchat_spoof_title">Підробка Snapchat</string>
+    <string name="snapchat_spoof_summary">Використати пристрій як Pixel 2 для Snapchat щоб отримати оригінальну якість зображення</string>
     <!-- Hide Status bar on lock screen -->
     <string name="hide_lockscreen_status_bar_title">Приховати панель стану</string>
     <string name="hide_lockscreen_status_bar_summary">Торкніться рядка стану для перемикання видимості</string>
@@ -795,7 +793,9 @@
     <string name="ignore_window_secure_summary">Це видаляє ліміти даних з екрану та записи екрану для всіх програм. Зазвичай такі програми замінюються чорними зонами в записах. Це може бути зручним у деяких випадках, але може призвести до витоку конфіденційності. Після зміни цього перемикача, вам може знадобитися перезапуск програм, щоб зміни набрали сили.</string>
     <!-- Island Notification -->
     <string name="island_notification_title">Острівневе сповіщення</string>
+    <string name="island_notification_summary">Відображає спливаюче сповіщення в стилі динамічного острова iOS</string>
     <string name="island_notification_now_playing_title">Відтворюється зараз</string>
+    <string name="island_notification_now_playing_summary">Показувати медіафайли, що відтворюються, як сповіщення на острові</string>
     <string name="island_notification_intro_title">Функція сповіщень Island, натхненна Dynamic Island від iOS, перетворює сповіщення Android на компактну утиліту для швидкого доступу.\n\nКерування швидким доступом Island включає такі функції:\n1. Торкніться сповіщення острова, щоб швидко відповідати на телефонні дзвінки.\n2. Натисніть і утримуйте сповіщення острова, щоб відхилити телефонні дзвінки.\n3. Утримуйте сповіщення про острів, щоб розгорнути попередній перегляд сповіщень про острів.
     </string>
     <!-- Smart Pixels -->
@@ -978,6 +978,8 @@
     <string name="qs_tile_layout_summary">Показувати мітку під значком замість значка</string>
     <string name="qs_columns_portrait_title">Стовпці (портретна орієнтація)</string>
     <string name="qs_columns_landscape_title">Стовпці (ландшафтна орієнтація)</string>
+    <string name="qqs_rows_portrait_title">Швидкі QS Рядки (портрет)</string>
+    <string name="qqs_rows_landscape_title">Швидкі QS рядки (альбомна орієнтація)</string>
     <!-- Lock screen clock format -->
     <string name="clock_use_single_line_title">Стиль годинника на екрані блокування</string>
     <string name="single_line">Однорядковий</string>
@@ -1038,6 +1040,10 @@
     <!-- Volume slider haptic feedback -->
     <string name="volume_slider_haptic_feedback_title">Вібрувати при зміні повзунка гучності</string>
     <!-- Pif -->
+    <string name="pif_title">Відтворення цілісності</string>
+    <string name="pif_summary">Переглянути поточні значення, які використовуються в GMS</string>
+    <string name="pif_spoof_title">Увімкнення виправлення цілісності відтворення з прошивкою</string>
+    <string name="pif_spoof_summary">Вимкнути для дозволу використання модуля за допомогою власних значень відбитків пальців</string>
     <!-- PixelProps -->
     <string name="spoof_pixel_title">Увімкнути Pixel Props</string>
     <string name="spoof_pixel_summary">Замаскуйте свій пристрій як Pixel 8 Pro для додатків Google</string>
@@ -1048,13 +1054,42 @@
     <string name="show_clipboard_overlay_title">Показати накладення буфера обміну</string>
     <string name="show_clipboard_overlay_summary">Показувати накладання в лівому нижньому куті екрана, коли щось копіюється в буфер обміну</string>
     <!-- Weather -->
+    <string name="lockscreen_weather_title">Показувати погодні умови</string>
+    <string name="lockscreen_weather_summary">Показувати поточну погоду і температуру</string>
     <!-- Spoof storage encryption status -->
+    <string name="spoof_storage_encryption_status_title">Використовувати спуфінг шифрування носія</string>
+    <string name="spoof_storage_encryption_status_summary">Імітація стану шифрування сховища</string>
     <!-- Volume Styles -->
+    <string name="volume_style_title">Стиль панелі гучності</string>
+    <string name="revamped_aosp_style">Оновлений стиль інтерфейсу AOSP</string>
+    <string name="rui_style">Стиль Realme UI</string>
+    <string name="stock_style">Стиль AOSP за замовчуванням</string>
+    <string name="double_layer_style">Стиль подвійного шару</string>
+    <string name="gradient_style">Залити градієнтом</string>
+    <string name="neumorph_style">Нейморфний стиль</string>
+    <string name="neumorph_outline_style">Стиль контуру Neumorph</string>
+    <string name="outline_style">Стиль контуру</string>
+    <string name="shaded_layer_style">Стиль затіненого шару</string>
     <!-- Volume TextView -->
+    <string name="volume_percent_switch_title">Відсоток панелі гучності</string>
+    <string name="volume_percent_switch_summary">Показувати відсоток панелі гучності</string>
+    <string name="volume_percent_style_title">Розташування у відсотках</string>
+    <string name="volume_percent_style_top">Зверху</string>
+    <string name="volume_percent_style_bottom">Знизу</string>
     <!-- QS Tiles Style -->
+    <string name="qs_tile_ui_style_title">Стиль плиток швидких налаштувань</string>
+    <string name="qs_tile_ui_style_a11_circle">Круглі плитки</string>
+    <string name="qs_tile_ui_style_a11_square">Квадратні плитки</string>
+    <string name="qs_tile_ui_style_a11_mix">Коло &amp; Квадратні плитки</string>
     <!-- QS Panel Style -->
+    <string name="qs_panel_style_title">Стиль панелі швидких налаштувань</string>
     <string name="qs_panel_style_outline">Контур</string>
+    <string name="qs_panel_style_two_tone">Двотоновий акцент</string>
     <string name="qs_panel_style_color_pop">Колор-поп</string>
     <string name="qs_panel_style_shaded">Затінений</string>
     <string name="qs_panel_style_cyberpunk">Кіберпанк</string>
+    <string name="qs_panel_style_neumorph">Невморф</string>
+    <string name="qs_panel_style_reflected">Відображено</string>
+    <string name="qs_panel_style_surround">Об\'ємний</string>
+    <string name="qs_panel_style_thin">Тінетка</string>
 </resources>
