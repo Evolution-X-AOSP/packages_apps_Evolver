@@ -157,6 +157,20 @@
     <PreferenceCategory
         android:title="@string/general_category">
 
+        <!-- QS WiFi auto on -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_wifi_auto_on"
+            android:title="@string/qs_wifi_auto_on_title"
+            android:summary="@string/qs_wifi_auto_on_summary"
+            android:defaultValue="false" />
+
+        <!-- QS Bluetooth auto on -->
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_bt_auto_on"
+            android:title="@string/qs_bt_auto_on_title"
+            android:summary="@string/qs_bt_auto_on_summary"
+            android:defaultValue="false" />
+
         <!--
         <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="music_tile_title"
