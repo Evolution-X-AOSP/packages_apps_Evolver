@@ -118,7 +118,7 @@
     <string name="evolution_website_title">網站</string>
     <string name="evolution_website_summary">歡迎瀏覽我們的網站</string>
     <string name="evolution_twitter_summary">來看我們的推文</string>
-    <string name="evolution_telegram_summary">造訪我們的討論區</string>
+    <string name="evolution_discord_summary">造訪我們的討論社群</string>
     <string name="evolution_github_summary">查看我們的 GitHub</string>
     <string name="evolution_about_info_summary">Evolution X 是一款擁有豐富自定義功能的 ROM，為您的設備帶來 Pixel 風格，還有許多額外的設定。我們將定期發布包含最新 Android 每月安全性更新。</string>
     <string name="evolution_about_team">貢獻者</string>
@@ -193,17 +193,6 @@
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">顯示 4G 以替代 LTE</string>
     <string name="show_fourg_icon_summary">使用4G圖示替代狀態列中的LTE圖示</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE 圖示</string>
-    <string name="volte_icon_summary">顯示 VoLTE 圖示</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi 圖示</string>
-    <string name="vowifi_icon_summary">可用時顯示 VoWiFi 圖示</string>
-    <string name="volte_vowifi_override_title">覆寫 VoWiFi</string>
-    <string name="volte_vowifi_override_summary">當 VoWiFi 可用時隱藏 VoLTE 圖示</string>
-    <!-- Show old-style mobile data icon -->
-    <string name="use_old_mobiletype_title">使用舊的數據圖示風格</string>
-    <string name="use_old_mobiletype_summary">在訊號指示器頂部顯示行動類型圖示</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_slider_title">亮度控制條</string>
     <string name="qs_show_brightness_slider_never">永不顯示</string>
@@ -294,13 +283,6 @@
     <string name="clock_date_position">日期位置</string>
     <string name="clock_date_right">時間置右</string>
     <string name="clock_date_left">時間置左</string>
-    <string name="clock_font_size_title">時鐘字型大小</string>
-    <!-- QS clock -->
-    <string name="qs_clock_title">時鐘</string>
-    <string name="qs_clock_summary">在快速狀態列標題中顯示時鐘</string>
-    <!-- QS date -->
-    <string name="qs_date_title">日期</string>
-    <string name="qs_date_summary">在快速狀態列標題中顯示時鐘</string>
     <!-- QS Tiles haptic -->
     <string name="qs_tiles_haptic_feedback_title">點擊快速設定圖塊時震動</string>
     <!-- QS Tiles animation -->
@@ -325,9 +307,6 @@
     <!-- Disable QS -->
     <string name="disable_qs_title">在安全鎖定畫面上停用快速設定</string>
     <string name="disable_qs_summary">裝置鎖定時停用快速設定，通知仍然會照常顯示</string>
-    <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">漫遊指示器</string>
-    <string name="roaming_indicator_icon_summary">顯示漫遊圖示</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">智慧下拉</string>
     <string name="smart_pulldown_summary">於通知數達到 %1$s 時開啟快速設定</string>
@@ -423,28 +402,32 @@
     <string name="theme_customization_icon_shape_title">圖示形狀</string>
     <string name="theme_customization_icon_shape_summary">設定系統圖示形狀</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="themes_fonts_category">字型</string>
     <string name="theme_customization_font_title">標題/內文字體</string>
     <string name="theme_customization_font_summary">設定系統字型樣式</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="themes_icons_category">圖示</string>
     <string name="theme_customization_icon_pack_title">圖示風格套件</string>
     <string name="theme_customization_icon_pack_summary">設定自訂圖示套件樣式</string>
     <!-- Custom Signal bar icons -->
+    <string name="themes_statusbar_icons_category">狀態列圖示</string>
     <string name="theme_customization_signal_icon_title">訊號圖示樣式</string>
     <string name="theme_customization_signal_icon_summary">自訂訊號圖示樣式</string>
     <!-- Custom Wi-Fi bar icons -->
     <string name="theme_customization_wifi_icon_title">Wi-Fi 圖示樣式</string>
     <string name="theme_customization_wifi_icon_summary">設定自訂 Wi-Fi 圖示樣式</string>
+    <string name="themes_navbar_category">導覽列</string>
     <string name="theme_customization_navbar_title">導覽列樣式</string>
     <string name="theme_customization_navbar_summary">設定自訂導覽列樣式</string>
     <!-- Custom Fonts -->
-    <string name="theme_customization_lock_clock_title">鎖定畫面時鐘字體</string>
-    <string name="theme_customization_lock_clock_summary">設定鎖定畫面時鐘字體樣式</string>
+    <string name="lockscreen_clock_font_title">鎖定畫面時鐘字體</string>
+    <string name="lockscreen_clock_font_summary">設定鎖定畫面時鐘字體風格</string>
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">亮度控制條樣式</string>
     <string name="theme_customization_brightness_slider_summary">設定亮度控制條樣式</string>
     <!-- Custom Data icons -->
-    <string name="theme_customization_data_title">數據圖示樣式</string>
-    <string name="theme_customization_data_summary">設定數據圖示樣式</string>
+    <string name="theme_customization_data_icon_title">數據圖示</string>
+    <string name="theme_customization_data_icon_summary">設定數據圖示風格</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">狀態欄</string>
     <string name="lockscreen_status_bar_summary">在鎖定畫面顯示狀態欄</string>
@@ -633,9 +616,9 @@
     <string name="fingerprint_category">指紋</string>
     <string name="headsup_category">喚醒設定</string>
     <string name="icons_category">圖示</string>
-    <string name="status_bar_icons_category_title">圖示</string>
     <string name="volume_category">音量按鈕</string>
-    <!-- Status bar - icon blocklist -->
+    <!-- Status bar -->
+    <string name="status_bar_icons_category">圖示</string>
     <string name="status_bar_icons_title">狀態列圖示</string>
     <string name="status_bar_icons_summary">選擇要在狀態列顯示哪些圖示</string>
     <!-- Lock screen icons -->
@@ -660,31 +643,21 @@
     <!-- Data disabled icon -->
     <string name="data_disabled_icon_title">顯示無行動數據圖示</string>
     <string name="data_disabled_icon_summary">在無行動數據網路時在訊號圖示旁顯示「×」圖示</string>
-    <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">快速設定面板底部的提醒</string>
-    <string name="qs_footer_warnings_summary">當使用 VPN 或被應用程式監聽網路時，在快速設定面板底部顯示提醒</string>
-    <!-- QS footer icons -->
-    <string name="qs_footer_users_icon_title">使用者帳戶圖示</string>
-    <string name="qs_footer_users_icon_summary">可用時顯示多使用者協助工具圖示</string>
-    <string name="qs_footer_edit_icon_title">編輯圖塊圖示</string>
-    <string name="qs_footer_show_power_menu_title">電源選單捷徑</string>
-    <string name="qs_footer_services_icon_title">正在執行的服務捷徑</string>
-    <string name="qs_footer_settings_icon_title">設定捷徑</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">顯示CPU資訊</string>
     <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">在螢幕上方顯示目前的 CPU 資訊</string>
-    <!-- Custom carrier label and position -->
-    <string name="carrier_label_settings_title">電信業者名稱</string>
-    <string name="carrier_label_settings_summary">自訂狀態列的電信業者名稱</string>
-    <string name="custom_carrier_label_title">自訂電信業者名稱</string>
-    <string name="custom_carrier_label_explain">輸入自定名稱。若空白則使用預設的電信業者名稱。</string>
-    <string name="custom_carrier_label_notset">尚未設定電信商名稱</string>
-    <string name="show_carrier_title">電信業者名稱位置</string>
-    <string name="show_carrier_disabled">停用</string>
-    <string name="show_carrier_keyguard">鎖定畫面</string>
-    <string name="show_carrier_statusbar">狀態列</string>
-    <string name="show_carrier_enabled">全部</string>
+    <!-- Carrier label -->
+    <string name="carrier_label_category">電信業者名稱</string>
+    <string name="carrier_label_custom">自訂電信業者名稱</string>
+    <string name="carrier_label_custom_unset">輕觸即可設定</string>
+    <string name="carrier_label_custom_title">自訂電信業者名稱</string>
+    <string name="carrier_label_custom_explain">輸入自訂名稱。若空白則使用預設的電信業者名稱。</string>
+    <string name="carrier_label_position">電信業者名稱位置</string>
+    <string name="carrier_label_position_hide">隱藏</string>
+    <string name="carrier_label_position_lockscreen">鎖定螢幕</string>
+    <string name="carrier_label_position_statusbar">狀態列</string>
+    <string name="carrier_label_position_both">鎖定螢幕和狀態列</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">使用自訂主題</string>
     <string name="custom_theme_black">黑色</string>
@@ -887,9 +860,6 @@
     <string name="qs_battery_location_qs_panel">快速設定面板</string>
     <string name="qs_battery_location_qs_statusbar">快速狀態列</string>
     <string name="qs_use_status_bar_battery_style">依照狀態列樣式</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">預計電量可用時間</string>
-    <string name="battery_estimate_summary">可用時顯示預計電量可用時間</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
@@ -983,9 +953,6 @@
     <string name="clock_use_single_line_title">鎖定畫面時鐘格式</string>
     <string name="single_line">單行</string>
     <string name="double_line">雙行</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">合併信號圖示</string>
-    <string name="combined_status_bar_signal_icons_summary">在狀態欄中顯示組合的信號圖示。\n 啟用後需要重新啟動 SystemUI</string>
     <!-- Quick settings styles -->
     <string name="qs_styles_title">組合快速設定元素樣式</string>
     <string name="qs_outline">外框</string>
@@ -1091,4 +1058,9 @@
     <string name="qs_panel_style_reflected">反射</string>
     <string name="qs_panel_style_surround">環繞</string>
     <string name="qs_panel_style_thin">細線</string>
+    <!-- QS WiFi / Bluetooth auto on -->
+    <string name="qs_wifi_auto_on_title">自動開啟 Wi-Fi</string>
+    <string name="qs_wifi_auto_on_summary">點選網路快速設定圖塊時總是自動開啟 Wi-Fi</string>
+    <string name="qs_bt_auto_on_title">自動開啟藍牙</string>
+    <string name="qs_bt_auto_on_summary">點擊藍牙快速設定圖塊時總是自動開啟藍牙</string>
 </resources>
