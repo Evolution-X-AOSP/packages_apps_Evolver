@@ -75,6 +75,29 @@
         android:title="@string/interface_category">
 
         <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="depth_wallpaper_enabled"
+            android:title="@string/dw_wallpaper_enabled_title"
+            android:summary="@string/dw_wallpaper_enabled_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="depth_wallpaper_subject_image_uri"
+            android:title="@string/dw_file_header_select_title"
+            android:summary="@string/dw_file_header_select_summary"
+            android:dependency="depth_wallpaper_enabled"
+            android:persistent="false" />
+
+        <com.evolution.settings.preference.SystemSettingSeekBarPreference
+            android:key="depth_wallpaper_opacity"
+            android:title="@string/dw_wallpaper_opacity_title"
+            android:max="100"
+            settings:min="1"
+            settings:interval="1"
+            settings:units="%"
+            android:dependency="depth_wallpaper_enabled"
+            android:defaultValue="100" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"
