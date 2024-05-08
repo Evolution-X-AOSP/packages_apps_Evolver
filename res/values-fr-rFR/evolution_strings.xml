@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2019-2023 Evolution X
+     Copyright (C) 2019-2024 Evolution X
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -23,6 +23,7 @@
     <string name="swipe_gestures_title">Gestes de navigation</string>
     <string name="system_settings_title">Options du système</string>
     <string name="themes_title">Thèmes</string>
+    <string name="interface_category">Interface</string>
     <string name="on_call_flashlight_category">Lampe torche lors d\'un appel</string>
     <string name="notification_flashlight_category">Lampe torche pour les notifications</string>
     <string name="ambient_display_category">Affichage ambiant</string>
@@ -118,7 +119,7 @@
     <string name="evolution_website_title">Site web</string>
     <string name="evolution_website_summary">N\'hésitez pas à consulter notre site web</string>
     <string name="evolution_twitter_summary">Venez voir nos tweets</string>
-    <string name="evolution_telegram_summary">Visitez notre chat communautaire</string>
+    <string name="evolution_discord_summary">Visitez notre chat communautaire</string>
     <string name="evolution_github_summary">Allez voir notre GitHub</string>
     <string name="evolution_about_info_summary">Evolution X est une ROM personnalisée qui vise à apporter une sensation de Pixel à votre appareil au premier coup d\'œil. Avec des configurations supplémentaires à votre disposition, nous fournissons des versions avec des correctifs de sécurité mensuels à partir des dernières sources Android.</string>
     <string name="evolution_about_team">Contributeurs</string>
@@ -193,23 +194,14 @@
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">Afficher 4G au lieu de LTE</string>
     <string name="show_fourg_icon_summary">Remplacer l\'indicateur LTE de la barre d\'état par 4G</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Icône VoLTE</string>
-    <string name="volte_icon_summary">Afficher l\'icône VoLTE si disponible</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Icône VoWiFi</string>
-    <string name="vowifi_icon_summary">Afficher l\'icône VoWifi si disponible</string>
-    <string name="volte_vowifi_override_title">Priorité au VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Masquer VoLTE lorsque VoWiFi est disponible</string>
-    <!-- Show old-style mobile data icon -->
-    <string name="use_old_mobiletype_title">Utiliser l\'ancien style d\'icône des données mobile</string>
-    <string name="use_old_mobiletype_summary">Afficher l\'icône de type mobile au dessus de l\'indicateur de signal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_slider_title">Curseur de luminosité</string>
     <string name="qs_show_brightness_slider_never">Ne jamais afficher</string>
     <string name="qs_show_brightness_slider_expanded">Afficher quand étendu</string>
     <string name="qs_show_brightness_slider_always">Toujours afficher</string>
     <string name="qs_show_brightness_slider_not_expanded">Afficher quand non étendu</string>
+    <string name="qs_show_brightness_textview_title">Pourcentage de luminosité</string>
+    <string name="qs_show_brightness_textview_summary">Afficher le texte du pourcentage de luminosité</string>
     <string name="qs_brightness_slider_position_title">Position</string>
     <string name="qs_brightness_slider_position_top">Haut</string>
     <string name="qs_brightness_slider_position_bottom">Bas</string>
@@ -292,13 +284,6 @@
     <string name="clock_date_position">Position de la date</string>
     <string name="clock_date_right">À droite de l\'horloge</string>
     <string name="clock_date_left">À gauche de l\'horloge</string>
-    <string name="clock_font_size_title">Taille de police de l\'horloge</string>
-    <!-- QS clock -->
-    <string name="qs_clock_title">Horloge</string>
-    <string name="qs_clock_summary">Afficher l\'heure dans l\'en-tête de la barre d\'état rapide</string>
-    <!-- QS date -->
-    <string name="qs_date_title">Date</string>
-    <string name="qs_date_summary">Afficher la date dans l\'en-tête de la barre d\'état rapide</string>
     <!-- QS Tiles haptic -->
     <string name="qs_tiles_haptic_feedback_title">Vibrer au toucher des tuiles des réglages rapides</string>
     <!-- QS Tiles animation -->
@@ -323,9 +308,6 @@
     <!-- Disable QS -->
     <string name="disable_qs_title">Masquer les réglages rapides sur l\'écran de verrouillage sécurisé</string>
     <string name="disable_qs_summary">Masque les réglages rapides si l\'appareil est verrouillé. Ne désactive pas le volet de notification</string>
-    <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">Indicateur d\'itinérance</string>
-    <string name="roaming_indicator_icon_summary">Afficher l\'indicateur d\'itinérance en mode itinérance</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Déroulement intelligent</string>
     <string name="smart_pulldown_summary">Ouvrir les réglages rapides quand il y a %1$s notifications</string>
@@ -375,19 +357,22 @@
     <!-- Suppress notifications if screen is on -->
     <string name="notification_sound_vib_screen_on_title">Son de notification si l\'écran est allumé</string>
     <string name="notification_sound_vib_screen_on_summary">Jouer un son avec vibrations pour les notifications lorsque l\'écran est allumé</string>
-    <!-- Edge light -->
-    <string name="edge_light_title">Éclairage des bords</string>
-    <string name="edge_light_main_switch_title">Utiliser l\'éclairage des bords</string>
-    <string name="edge_light_intro_text">Afficher une animation le long des bords de l\'écran lors de la pulsation</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Toujours déclencher lors de l\'impulsion</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Afficher/Masquer la lumière des bords chaque fois que l\'affichage ambiant est affiché et pas seulement pour les notifications</string>
-    <string name="edge_light_repeat_animation_title">Répéter l\'animation</string>
-    <string name="edge_light_repeat_animation_summary_on">Répéter jusqu\'à expiration</string>
-    <string name="edge_light_repeat_animation_summary_off">Afficher une seule fois</string>
-    <string name="edge_light_color_mode_title">Mode de couleur</string>
-    <string name="theme_color">Couleur du thème (par défaut)</string>
-    <string name="notification_color">Couleur de la notification</string>
-    <string name="custom_color">Couleur personnalisée</string>
+    <!-- Ambient edge lighting -->
+    <string name="ambient_edge_light_action_title">Éclairage des bords en mode veille</string>
+    <string name="ambient_edge_light_title">Éclairage des bords</string>
+    <string name="ambient_edge_light_enable_title">Activer l\'éclairage des bords</string>
+    <string name="ambient_edge_light_summary">Éclairer les bords de l\'écran lors d\'une notification</string>
+    <string name="ambient_edge_light_color_mode_category_title">Couleur</string>
+    <string name="ambient_edge_light_color_mode_auto">Auto</string>
+    <string name="ambient_edge_light_color_mode_app">Couleur de l\'application</string>
+    <string name="ambient_edge_light_color_mode_manual">Manuel</string>
+    <string name="ambient_edge_light_color_mode_auto_summary">Définir la couleur de la lumière du bord à la couleur du système</string>
+    <string name="ambient_edge_light_color_mode_app_summary">Définir la couleur de la lumière du bord sur la couleur de l\'application</string>
+    <string name="ambient_edge_light_color_mode_manual_summary">Choisir une couleur manuellement</string>
+    <string name="ambient_edge_light_advanced_category_title">Avancé</string>
+    <string name="ambient_edge_light_duration_title">Durée de la lumière</string>
+    <string name="ambient_edge_light_repeat_count_title">Nombre de répétitions</string>
+    <string name="ambient_edge_light_width_title">Largeur de la lumière</string>
     <!-- QS footer data usage -->
     <string name="qs_show_data_usage_title">Afficher l\'utilisation des données</string>
     <string name="qs_show_data_usage_summary">Afficher l\'utilisation quotidienne des données cellulaires/Wi-Fi au bas des réglages rapides</string>
@@ -397,7 +382,6 @@
     <string name="radio_info_title">Infos radio</string>
     <!-- Power Menu -->
     <string name="power_menu_title">Menu marche/arrêt</string>
-    <string name="global_actions_title">Éléments du menu marche/arrêt</string>
     <string name="global_actions_screenshot">Capture d\'écran</string>
     <string name="global_actions_on_the_go">Mode OTG</string>
     <string name="global_actions_power">Marche/Arrêt</string>
@@ -418,28 +402,32 @@
     <string name="theme_customization_icon_shape_title">Forme d\'icône</string>
     <string name="theme_customization_icon_shape_summary">Définir la forme des icônes système</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="themes_fonts_category">Polices</string>
     <string name="theme_customization_font_title">Titre / Police de corps</string>
     <string name="theme_customization_font_summary">Définir le style de police du système</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="themes_icons_category">Icônes</string>
     <string name="theme_customization_icon_pack_title">Pack d\'icônes</string>
     <string name="theme_customization_icon_pack_summary">Définir un pack d\'icônes</string>
     <!-- Custom Signal bar icons -->
+    <string name="themes_statusbar_icons_category">Icônes de la barre d\'état</string>
     <string name="theme_customization_signal_icon_title">Style de l\'indicateur de signal réseau</string>
     <string name="theme_customization_signal_icon_summary">Définir le style de l\'indicateur de signal réseau</string>
     <!-- Custom Wi-Fi bar icons -->
     <string name="theme_customization_wifi_icon_title">Style de l\'icône Wifi</string>
     <string name="theme_customization_wifi_icon_summary">Définir le style de l\'icône du Wifi</string>
+    <string name="themes_navbar_category">Barre de navigation</string>
     <string name="theme_customization_navbar_title">Style de barre de navigation</string>
     <string name="theme_customization_navbar_summary">Définir le style de la barre de navigation</string>
     <!-- Custom Fonts -->
-    <string name="theme_customization_lock_clock_title">Style de l\'horloge de l\'écran de verrouillage</string>
-    <string name="theme_customization_lock_clock_summary">Définir le style de police de l\'horloge de l\'écran de verrouillage</string>
+    <string name="lockscreen_clock_font_title">Police de l\'horloge de l\'écran de verrouillage</string>
+    <string name="lockscreen_clock_font_summary">Définir la police de l\'horloge de l\'écran de verrouillage</string>
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">Style du curseur de luminosité</string>
     <string name="theme_customization_brightness_slider_summary">Définir un style de curseur de luminosité personnalisé</string>
     <!-- Custom Data icons -->
-    <string name="theme_customization_data_title">Style d\'icône de données</string>
-    <string name="theme_customization_data_summary">Définir le style de l\'icône du signal Wifi</string>
+    <string name="theme_customization_data_icon_title">Icône données mobiles </string>
+    <string name="theme_customization_data_icon_summary">Définir le style de l\'icône de données mobiles</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Barre d\'état</string>
     <string name="lockscreen_status_bar_summary">Afficher la barre d\'état sur l\'écran de verrouillage</string>
@@ -628,9 +616,9 @@
     <string name="fingerprint_category">Empreinte digitale</string>
     <string name="headsup_category">Paramètres des notifications flottantes</string>
     <string name="icons_category">Icônes</string>
-    <string name="status_bar_icons_category_title">Icônes</string>
     <string name="volume_category">Boutons de volume</string>
-    <!-- Status bar - icon blocklist -->
+    <!-- Status bar -->
+    <string name="status_bar_icons_category">Icônes</string>
     <string name="status_bar_icons_title">Icônes de la barre d\'état</string>
     <string name="status_bar_icons_summary">Choisir les icônes affichées dans la barre d\'état</string>
     <!-- Lock screen icons -->
@@ -655,59 +643,21 @@
     <!-- Data disabled icon -->
     <string name="data_disabled_icon_title">Afficher l\'icône de données mobiles désactivées</string>
     <string name="data_disabled_icon_summary">Afficher une croix à côté du signal lorsque les données mobiles sont désactivées</string>
-    <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">Avertissements en bas du panneau des réglages rapides</string>
-    <string name="qs_footer_warnings_summary">Afficher une alerte en bas du volet des réglages rapides lorsque le réseau est surveillé par des applications externes ou vpn</string>
-    <!-- QS footer icons -->
-    <string name="qs_footer_users_icon_title">Icône du compte utilisateur</string>
-    <string name="qs_footer_users_icon_summary">Affiche l’icône d’accessibilité multi-utilisateur lorsque disponible</string>
-    <string name="qs_footer_edit_icon_title">Icône d\'édition des tuiles</string>
-    <string name="qs_footer_show_power_menu_title">Raccourci du menu marche/arrêt</string>
-    <string name="qs_footer_services_icon_title">Raccourci vers les services en cours d\'exécution</string>
-    <string name="qs_footer_settings_icon_title">Raccourci vers les paramètres</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Afficher les infos du CPU</string>
     <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Affichage des infos CPU à l\'écran</string>
-    <!-- Custom carrier label and position -->
-    <string name="carrier_label_settings_title">Nom de l\'opérateur</string>
-    <string name="carrier_label_settings_summary">Personnaliser le nom de l\'opérateur</string>
-    <string name="custom_carrier_label_title">Nom personnalisé de l\'opérateur</string>
-    <string name="custom_carrier_label_explain">Saisir un nouveau libellé. Laisser vide pour revenir au libellé du réseau</string>
-    <string name="custom_carrier_label_notset">Libellé personnalisé non défini</string>
-    <string name="show_carrier_title">Emplacement du nom de l\'opérateur</string>
-    <string name="show_carrier_disabled">Désactivé</string>
-    <string name="show_carrier_keyguard">Écran de verrouillage</string>
-    <string name="show_carrier_statusbar">Barre d\'état</string>
-    <string name="show_carrier_enabled">Les deux</string>
-    <!-- Monet settings -->
-    <string name="monet_settings_title">Paramètres du thème</string>
-    <string name="monet_settings_summary">Quelques réglages supplémentaires pour personnaliser le moteur Monet</string>
-    <string name="theme_style_title">Style du thème</string>
-    <string name="theme_style_tonal_spot">Tonal Spot (par défaut)</string>
-    <string name="theme_style_vibrant">Éclatant</string>
-    <string name="theme_style_expressive">Expressif</string>
-    <string name="theme_style_spritz">Spritz</string>
-    <string name="theme_style_rainbow">Arc-en-ciel</string>
-    <string name="theme_style_fruit_salad">Salade de fruits</string>
-    <string name="theme_style_monochromatic">Monochromatique</string>
-    <string name="color_source_title">Source de couleur</string>
-    <string name="color_source_both">Les deux (par défaut)</string>
-    <string name="color_source_home">Fond d\'écran d\'accueil</string>
-    <string name="color_source_lock">Fond d\'écran de verrouillage</string>
-    <string name="color_source_preset">Préréglage</string>
-    <string name="accent_color_title">Couleur d\'accentuation</string>
-    <string name="accent_color_summary">Remplacer la couleur d\'accentuation par défaut</string>
-    <string name="accent_background_title">Accentuation de l\'arrière-plan</string>
-    <string name="accent_background_summary">Choisir une couleur d\'accentuation différente pour l\'arrière-plan</string>
-    <string name="bg_color_title">Couleur de fond</string>
-    <string name="bg_color_summary">Remplacer la couleur d\'accentuation de fond par défaut</string>
-    <string name="luminance_factor_title">Luminosité</string>
-    <string name="luminance_factor_summary">Des valeurs plus élevées produisent des couleurs plus brillantes</string>
-    <string name="chroma_factor_title">Couleurs</string>
-    <string name="chroma_factor_summary">Des valeurs plus élevées produisent des couleurs plus fortes</string>
-    <string name="tint_background_title">Teindre l\'arrière-plan</string>
-    <string name="tint_background_summary">Faire en sorte que la Luminance et la sélection Chroma affectent aussi les couleurs d\'arrière-plan</string>
+    <!-- Carrier label -->
+    <string name="carrier_label_category">Nom de l\'opérateur</string>
+    <string name="carrier_label_custom">Nom de l\'opérateur personnalisé</string>
+    <string name="carrier_label_custom_unset">Appuyez pour configurer.</string>
+    <string name="carrier_label_custom_title">Nom de l\'opérateur personnalisé</string>
+    <string name="carrier_label_custom_explain">Saisir un nouveau libellé. Laisser vide pour revenir au libellé du réseau</string>
+    <string name="carrier_label_position">Emplacement du nom de l\'opérateur</string>
+    <string name="carrier_label_position_hide">Masquer</string>
+    <string name="carrier_label_position_lockscreen">Écran de verrouillage</string>
+    <string name="carrier_label_position_statusbar">Barre d\'état</string>
+    <string name="carrier_label_position_both">Ecran de verrouillage &amp; Barre d\'état</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Utiliser un thème personnalisé</string>
     <string name="custom_theme_black">Noir</string>
@@ -907,12 +857,9 @@
     <string name="status_bar_battery_text_charging_summary">Toujours afficher le pourcentage de la batterie lors de la charge</string>
     <!-- QS battery -->
     <string name="qs_battery_location_title">Emplacement de la batterie</string>
-    <string name="qs_battery_location_qs_panel">Panneau des réglages rapides</string>
+    <string name="qs_battery_location_qs_panel">Panneau des réglages rapide</string>
     <string name="qs_battery_location_qs_statusbar">Barre d\'état rapide</string>
     <string name="qs_use_status_bar_battery_style">Même style que la barre d\'état</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">Estimation de la batterie</string>
-    <string name="battery_estimate_summary">Afficher la durée restante estimée de la batterie si disponible</string>
     <!-- UiBench -->
     <string name="category_uibench">Interface Utilisateur</string>
     <string name="jitter_test_title">Distorsion</string>
@@ -1000,13 +947,12 @@
     <string name="qs_tile_layout_summary">Afficher le libellé sous l\'icône au lieu d\'à côté de l\'icône</string>
     <string name="qs_columns_portrait_title">Colonnes (portrait)</string>
     <string name="qs_columns_landscape_title">Colonnes (paysage)</string>
+    <string name="qqs_rows_portrait_title">Lignes des paramètres rapides (portrait)</string>
+    <string name="qqs_rows_landscape_title">Lignes des paramètres rapides (paysage)</string>
     <!-- Lock screen clock format -->
     <string name="clock_use_single_line_title">Style de l\'horloge de l\'écran de verrouillage</string>
     <string name="single_line">Une seule ligne</string>
     <string name="double_line">Deux lignes</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Icônes de signal combinées</string>
-    <string name="combined_status_bar_signal_icons_summary">Afficher une icône combinée pour les signaux WiFi et mobile</string>
     <!-- Quick settings styles -->
     <string name="qs_styles_title">Style Des éléments des réglages rapides</string>
     <string name="qs_outline">Contour</string>
@@ -1079,4 +1025,48 @@
     <!-- Spoof storage encryption status -->
     <string name="spoof_storage_encryption_status_title">Utiliser l\'usurpation du chiffrement de stockage</string>
     <string name="spoof_storage_encryption_status_summary">L\'état du chiffrement du stockage est falsifié en mode crypté</string>
+    <!-- Volume Styles -->
+    <string name="volume_style_title">Styles du panneau de volume</string>
+    <string name="revamped_aosp_style">Style de l\'interface AOSP amélioré</string>
+    <string name="rui_style">Style Realme UI</string>
+    <string name="stock_style">Style Stock AOSP</string>
+    <string name="double_layer_style">Style double couches</string>
+    <string name="gradient_style">Style dégradé</string>
+    <string name="neumorph_style">Style Neumorph</string>
+    <string name="neumorph_outline_style">Style Neumorph Contour</string>
+    <string name="outline_style">Style contour</string>
+    <string name="shaded_layer_style">Style couche ombragée</string>
+    <!-- Volume TextView -->
+    <string name="volume_percent_switch_title">Pourcentage du panneau de volume</string>
+    <string name="volume_percent_switch_summary">Afficher le pourcentage du panneau de volume</string>
+    <string name="volume_percent_style_title">Position du pourcentage</string>
+    <string name="volume_percent_style_top">Haut</string>
+    <string name="volume_percent_style_bottom">Bas</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_ui_style_title">Style des tuiles des réglages rapides</string>
+    <string name="qs_tile_ui_style_a11_circle">Tuiles circulaires</string>
+    <string name="qs_tile_ui_style_a11_square">Tuiles carrées</string>
+    <string name="qs_tile_ui_style_a11_mix">Tuiles carrées arrondies</string>
+    <!-- QS Panel Style -->
+    <string name="qs_panel_style_title">Style des tuiles des réglages rapides</string>
+    <string name="qs_panel_style_outline">Contour</string>
+    <string name="qs_panel_style_two_tone">Accent duochrome</string>
+    <string name="qs_panel_style_color_pop">Multicolor</string>
+    <string name="qs_panel_style_shaded">Ombré</string>
+    <string name="qs_panel_style_cyberpunk">Cyberpunk</string>
+    <string name="qs_panel_style_neumorph">Neumorph</string>
+    <string name="qs_panel_style_reflected">Réflexion</string>
+    <string name="qs_panel_style_surround">Entouré</string>
+    <string name="qs_panel_style_thin">Ligne fine</string>
+    <!-- QS WiFi / Bluetooth auto on -->
+    <string name="qs_wifi_auto_on_title">WiFi automatique activé</string>
+    <string name="qs_wifi_auto_on_summary">Toujours activer le WiFi lors de l\'appui sur la tuile Internet des réglages rapides</string>
+    <string name="qs_bt_auto_on_title">Bluetooth automatique activé</string>
+    <string name="qs_bt_auto_on_summary">Toujours activer le Bluetooth lorsque vous appuyez sur la tuile Bluetooth des réglages rapides</string>
+    <!-- Depth Wallpaper -->
+    <string name="dw_file_header_select_title">Sélectionner le sujet du fond d\'écran</string>
+    <string name="dw_file_header_select_summary">Sélectionner une image de fond d\'écran à partir du stockage</string>
+    <string name="dw_wallpaper_enabled_title">Fond d\'écran avec profondeur</string>
+    <string name="dw_wallpaper_enabled_summary">Activer le fond d\'écran inspiré par iOS. Nécessite une image de sujet</string>
+    <string name="dw_wallpaper_opacity_title">Opacité du fond d\'écran</string>
 </resources>
