@@ -23,6 +23,7 @@
     <string name="swipe_gestures_title">Navegación por gestos</string>
     <string name="system_settings_title">Opciones del sistema</string>
     <string name="themes_title">Temas</string>
+    <string name="interface_category">Interfaz</string>
     <string name="on_call_flashlight_category">Linterna en llamada</string>
     <string name="notification_flashlight_category">Linterna en notificaciones</string>
     <string name="ambient_display_category">Pantalla ambiente</string>
@@ -59,7 +60,7 @@
     <string name="search">Buscar</string>
     <string name="search_apps">Buscar aplicaciones</string>
     <!-- Generic support strings -->
-    <string name="string_enabled">Habilitado</string>
+    <string name="string_enabled">Activado</string>
     <string name="string_disabled">Desactivado</string>
     <string name="string_on">Activado</string>
     <string name="string_off">Desactivado</string>
@@ -118,7 +119,7 @@
     <string name="evolution_website_title">Sitio web</string>
     <string name="evolution_website_summary">¡Pulsa aquí para visitar nuestro impresionante sitio web!</string>
     <string name="evolution_twitter_summary">¡Pulsa aquí para visitar nuestro Twitter!</string>
-    <string name="evolution_telegram_summary">¡Pulsa aquí para visitar nuestro increíble chat!</string>
+    <string name="evolution_discord_summary">Visita el chat de la comunidad</string>
     <string name="evolution_github_summary">¡Pulsa aquí para abrir nuestro Github!</string>
     <string name="evolution_about_info_summary">Evolution X es una ROM personalizada cuyo objetivo principal es ofrecer la experiencia de Pixel a tu dispositivo Android, con mucha personalización. Nuestro objetivo es proporcionar mensualmente actualizaciones con parches de seguridad de las últimas fuentes de Android.</string>
     <string name="evolution_about_team">Colaboradores</string>
@@ -193,17 +194,6 @@
     <!-- Show LTE/4G switch -->
     <string name="show_fourg_icon_title">Mostrar 4G en lugar de LTE</string>
     <string name="show_fourg_icon_summary">Reemplazar el indicador LTE por 4G</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Icono VoLTE</string>
-    <string name="volte_icon_summary">Mostrar icono VoLTE cuando esté disponible</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Icono VoWiFi</string>
-    <string name="vowifi_icon_summary">Mostrar icono VoWiFi cuando esté disponible</string>
-    <string name="volte_vowifi_override_title">Prioridad VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Ocultar VoLTE cuando VoWiFi está disponible</string>
-    <!-- Show old-style mobile data icon -->
-    <string name="use_old_mobiletype_title">Usar iconos antiguos de datos móviles</string>
-    <string name="use_old_mobiletype_summary">Mostrar icono del tipo de señal en la parte superior del indicador de señal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_slider_title">Control de brillo</string>
     <string name="qs_show_brightness_slider_never">Nunca mostrar</string>
@@ -294,13 +284,6 @@
     <string name="clock_date_position">Posición de la fecha</string>
     <string name="clock_date_right">A la derecha de la hora</string>
     <string name="clock_date_left">A la izquierda de la hora</string>
-    <string name="clock_font_size_title">Tamaño de la fuente del reloj</string>
-    <!-- QS clock -->
-    <string name="qs_clock_title">Reloj</string>
-    <string name="qs_clock_summary">Mostrar reloj en la cabecera de ajustes rápidos</string>
-    <!-- QS date -->
-    <string name="qs_date_title">Fecha</string>
-    <string name="qs_date_summary">Mostrar fecha en la cabecera de ajustes rápidos</string>
     <!-- QS Tiles haptic -->
     <string name="qs_tiles_haptic_feedback_title">Vibrar al tocar los azulejos de configuración rápida</string>
     <!-- QS Tiles animation -->
@@ -325,9 +308,6 @@
     <!-- Disable QS -->
     <string name="disable_qs_title">Ocultar Ajustes Rápidos en la pantalla de bloqueo</string>
     <string name="disable_qs_summary">Oculta los Ajustes Rápidos si el dispositivo está bloqueado. No desactiva la zona de notificaciones</string>
-    <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">Indicador de roaming</string>
-    <string name="roaming_indicator_icon_summary">Mostrar indicador de roaming</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Despliegue Inteligente</string>
     <string name="smart_pulldown_summary">Abrir Ajustes Rápidos cuando hay %1$s notificaciones</string>
@@ -382,7 +362,7 @@
     <string name="ambient_edge_light_title">Iluminación del borde</string>
     <string name="ambient_edge_light_enable_title">Activar iluminación de bordes</string>
     <string name="ambient_edge_light_summary">Ilumina los bordes de la pantalla al recibir una notificación</string>
-    <string name="ambient_edge_light_color_mode_category_title">Color</string>
+    <string name="ambient_edge_light_color_mode_category_title">Color de la barra de batería</string>
     <string name="ambient_edge_light_color_mode_auto">Auto</string>
     <string name="ambient_edge_light_color_mode_app">Color de la aplicación</string>
     <string name="ambient_edge_light_color_mode_manual">Manual</string>
@@ -402,7 +382,6 @@
     <string name="radio_info_title">Información de radio</string>
     <!-- Power Menu -->
     <string name="power_menu_title">Menú de apagado</string>
-    <string name="global_actions_title">Elementos del menú de energía</string>
     <string name="global_actions_screenshot">Captura de pantalla</string>
     <string name="global_actions_on_the_go">Modo sobre la marcha</string>
     <string name="global_actions_power">Energía</string>
@@ -423,28 +402,32 @@
     <string name="theme_customization_icon_shape_title">Forma del icono</string>
     <string name="theme_customization_icon_shape_summary">Establece el estilo de la forma de los iconos del sistema</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="themes_fonts_category">Fuentes</string>
     <string name="theme_customization_font_title">Fuente de encabezado/cuerpo</string>
     <string name="theme_customization_font_summary">Establece el estilo de fuente del sistema</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="themes_icons_category">Iconos</string>
     <string name="theme_customization_icon_pack_title">Paquete de iconos</string>
     <string name="theme_customization_icon_pack_summary">Establece el estilo del conjunto personalizado de iconos</string>
     <!-- Custom Signal bar icons -->
+    <string name="themes_statusbar_icons_category">Iconos de la barra de estado</string>
     <string name="theme_customization_signal_icon_title">Estilo de icono de señal</string>
     <string name="theme_customization_signal_icon_summary">Establece el estilo del icono de señal</string>
     <!-- Custom Wi-Fi bar icons -->
     <string name="theme_customization_wifi_icon_title">Estilo de icono de WiFi</string>
     <string name="theme_customization_wifi_icon_summary">Establece el estilo del icono de WiFi</string>
+    <string name="themes_navbar_category">Barra de navegación</string>
     <string name="theme_customization_navbar_title">Estilo de la barra de navegación</string>
     <string name="theme_customization_navbar_summary">Establecer estilo personalizado de la barra de navegación</string>
     <!-- Custom Fonts -->
-    <string name="theme_customization_lock_clock_title">Fuente del reloj de la pantalla de bloqueo</string>
-    <string name="theme_customization_lock_clock_summary">Establecer estilo de fuente en pantalla de bloqueo</string>
+    <string name="lockscreen_clock_font_title">Fuente del reloj de la pantalla de bloqueo</string>
+    <string name="lockscreen_clock_font_summary">Establece el estilo de fuente del reloj de la pantalla de bloqueo</string>
     <!-- Brightness slider styles -->
     <string name="theme_customization_brightness_slider_title">Estilo de la barra de brillo</string>
     <string name="theme_customization_brightness_slider_summary">Establece un estilo personalizado de la barra de brillo</string>
     <!-- Custom Data icons -->
-    <string name="theme_customization_data_title">Estilo de icono de datos</string>
-    <string name="theme_customization_data_summary">Establecer estilo de icono de datos personalizado</string>
+    <string name="theme_customization_data_icon_title">Icono de datos</string>
+    <string name="theme_customization_data_icon_summary">Establece el estilo del icono de datos</string>
     <!-- Show Status bar on Lock screen -->
     <string name="lockscreen_status_bar_title">Barra de estado</string>
     <string name="lockscreen_status_bar_summary">Muestra la barra de estado en la pantalla de bloqueo</string>
@@ -633,9 +616,9 @@
     <string name="fingerprint_category">Huella dactilar</string>
     <string name="headsup_category">Configuración de notificaciones emergentes</string>
     <string name="icons_category">Iconos</string>
-    <string name="status_bar_icons_category_title">Iconos</string>
     <string name="volume_category">Teclas de volumen</string>
-    <!-- Status bar - icon blocklist -->
+    <!-- Status bar -->
+    <string name="status_bar_icons_category">Iconos</string>
     <string name="status_bar_icons_title">Iconos de la barra de estado</string>
     <string name="status_bar_icons_summary">Elija que iconos de la barra de estado se mostrarán</string>
     <!-- Lock screen icons -->
@@ -660,31 +643,21 @@
     <!-- Data disabled icon -->
     <string name="data_disabled_icon_title">Mostrar icono de datos móviles desactivados</string>
     <string name="data_disabled_icon_summary">Mostrar una \"X\" al lado de la barra de señal cuando los datos móviles están desactivados</string>
-    <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">Advertencias abajo de los Ajustes Rápidos</string>
-    <string name="qs_footer_warnings_summary">Mostrar una advertencia en la parte inferior del panel de Ajustes Rápidos cuando la red es monitoreada por aplicaciones externas o VPN</string>
-    <!-- QS footer icons -->
-    <string name="qs_footer_users_icon_title">Icono de cuenta de usuario</string>
-    <string name="qs_footer_users_icon_summary">Mostrar icono de accesibilidad multiusuario cuando esté disponible</string>
-    <string name="qs_footer_edit_icon_title">Icono de edición de los ajustes rápidos</string>
-    <string name="qs_footer_show_power_menu_title">Acceso directo al menú de apagado</string>
-    <string name="qs_footer_services_icon_title">Acceso directo a servicios en ejecución</string>
-    <string name="qs_footer_settings_icon_title">Acceso directo a Ajustes</string>
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Mostrar información de CPU</string>
     <!-- UI debug setting: show CPU usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Mostrar información de CPU sobre la pantalla</string>
-    <!-- Custom carrier label and position -->
-    <string name="carrier_label_settings_title">Nombre del operador</string>
-    <string name="carrier_label_settings_summary">Personaliza el nombre del operador</string>
-    <string name="custom_carrier_label_title">Nombre de operador personalizado</string>
-    <string name="custom_carrier_label_explain">Introduzca un nombre personalizado. Deje en blanco para utilizar el nombre de red</string>
-    <string name="custom_carrier_label_notset">Nombre personalizado no definido</string>
-    <string name="show_carrier_title">Ubicación de la nombre del operador</string>
-    <string name="show_carrier_disabled">Desactivado</string>
-    <string name="show_carrier_keyguard">Pantalla de bloqueo</string>
-    <string name="show_carrier_statusbar">Barra de estado</string>
-    <string name="show_carrier_enabled">Ambas</string>
+    <!-- Carrier label -->
+    <string name="carrier_label_category">Etiqueta del operador</string>
+    <string name="carrier_label_custom">Nombre del operador personalizado</string>
+    <string name="carrier_label_custom_unset">Toca para configurar</string>
+    <string name="carrier_label_custom_title">Nombre del operador personalizado</string>
+    <string name="carrier_label_custom_explain">Introduce un nombre personalizado. Déjalo en blanco para usar el nombre de la red</string>
+    <string name="carrier_label_position">Posición de etiqueta del nombre del operador</string>
+    <string name="carrier_label_position_hide">Ocultar</string>
+    <string name="carrier_label_position_lockscreen">Pantalla de bloqueo</string>
+    <string name="carrier_label_position_statusbar">Barra de estado</string>
+    <string name="carrier_label_position_both">Pantalla de bloqueo y barra de estado</string>
     <!-- Custom themes -->
     <string name="custom_theme_title">Tema personalizado</string>
     <string name="custom_theme_black">Negro</string>
@@ -820,7 +793,7 @@
     <string name="status_bar_logo_style_evolution">Evolution X</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
-    <string name="status_bar_logo_style_alien">Alien</string>
+    <string name="status_bar_logo_style_alien">Alienígena</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">Vengadores</string>
     <string name="status_bar_logo_style_batman">Batman</string>
@@ -841,7 +814,7 @@
     <string name="status_bar_logo_style_superman">Superman</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">XBOX</string>
-    <string name="status_bar_logo_style_ghost">Ghost</string>
+    <string name="status_bar_logo_style_ghost">Fantasma</string>
     <string name="status_bar_logo_style_ninja">Ninja</string>
     <string name="status_bar_logo_style_robot">Robot</string>
     <string name="status_bar_logo_style_ironman">Iron Man</string>
@@ -887,9 +860,6 @@
     <string name="qs_battery_location_qs_panel">Panel de Ajustes Rápidos</string>
     <string name="qs_battery_location_qs_statusbar">Barra de estado rápida</string>
     <string name="qs_use_status_bar_battery_style">Seguir estilo de la barra de estado</string>
-    <!-- Battery estimate -->
-    <string name="battery_estimate_title">Estimación de batería</string>
-    <string name="battery_estimate_summary">Mostrar la duración estimada de la batería cuando esté disponible</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
@@ -983,9 +953,6 @@
     <string name="clock_use_single_line_title">Formato del reloj de la pantalla de bloqueo</string>
     <string name="single_line">Línea simple</string>
     <string name="double_line">Línea doble</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Combinar iconos de señal</string>
-    <string name="combined_status_bar_signal_icons_summary">Mostrar un único icono para Wi-Fi y señal móvil</string>
     <!-- Quick settings styles -->
     <string name="qs_styles_title">Estilos de elemento QS combinados</string>
     <string name="qs_outline">Contorno</string>
@@ -1074,7 +1041,7 @@
     <string name="volume_percent_switch_summary">Mostrar porcentaje del panel de volumen</string>
     <string name="volume_percent_style_title">Ubicación del porcentaje</string>
     <string name="volume_percent_style_top">Arriba</string>
-    <string name="volume_percent_style_bottom">Abajo</string>
+    <string name="volume_percent_style_bottom">Inferior</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_ui_style_title">Estilo de ajustes rápidos</string>
     <string name="qs_tile_ui_style_a11_circle">Circulares</string>
@@ -1091,4 +1058,15 @@
     <string name="qs_panel_style_reflected">Reflejos</string>
     <string name="qs_panel_style_surround">Envolvente</string>
     <string name="qs_panel_style_thin">Línea delgada</string>
+    <!-- QS WiFi / Bluetooth auto on -->
+    <string name="qs_wifi_auto_on_title">Activar WiFi automático</string>
+    <string name="qs_wifi_auto_on_summary">Activar siempre el WiFi al presionar el ajuste rápido de Internet</string>
+    <string name="qs_bt_auto_on_title">Activar Bluetooth automático</string>
+    <string name="qs_bt_auto_on_summary">Activar siempre el Bluetooth al presionar el ajuste rápido de Bluetooth</string>
+    <!-- Depth Wallpaper -->
+    <string name="dw_file_header_select_title">Seleccionar el sujeto del fondo de pantalla con profundidad</string>
+    <string name="dw_file_header_select_summary">Seleccione la imagen del sujeto para el fondo de pantalla con profundidad del almacenamiento</string>
+    <string name="dw_wallpaper_enabled_title">Fondo de pantalla con profundidad</string>
+    <string name="dw_wallpaper_enabled_summary">Habilita el fondo de pantalla con profundidad inspirado en iOS. Requiere una imagen sujeto</string>
+    <string name="dw_wallpaper_opacity_title">Opacidad del fondo de pantalla con profundidad</string>
 </resources>
