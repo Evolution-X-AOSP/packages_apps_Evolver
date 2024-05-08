@@ -9,20 +9,21 @@
     <!-- Categories -->
     <string name="aosp_options_title">Rendszerbeállítások</string>
     <string name="animation_title">Animációk</string>
-    <string name="dev_options_title">Fejlesztői beállítások</string>
+    <string name="dev_options_title">Fejlesztői lehetőségek</string>
     <string name="general_title">Általános</string>
     <string name="gestures_title">Mozdulatvezérlés</string>
-    <string name="lockscreen_title">Képernyőzár</string>
-    <string name="misc_title">Egyebek</string>
+    <string name="lockscreen_title">Záróképernyő</string>
+    <string name="misc_title">Különlegességek</string>
     <string name="navigation_title">Navigáció</string>
     <string name="notifications_title">Értesítések</string>
     <string name="quicksettings_title">Gyorsbeállítások</string>
-    <string name="spoof_title">Hamisítás</string>
+    <string name="spoof_title">Hamisítás, álcázás</string>
     <string name="status_bar_title">Állapotsor</string>
     <string name="battery_title">Az akkumulátor testreszabása</string>
     <string name="swipe_gestures_title">Vezérlés csúsztatással</string>
     <string name="system_settings_title">Rendszerbeállítások</string>
     <string name="themes_title">Témák</string>
+    <string name="interface_category">Kezelőfelület</string>
     <string name="on_call_flashlight_category">Jelzőfény híváskor</string>
     <string name="notification_flashlight_category">Jelzőfény értesítéskor</string>
     <string name="ambient_display_category">Környezeti kijelző</string>
@@ -32,7 +33,7 @@
     <!-- Summaries -->
     <string name="aosp_options_summary">Az Androidból átvett gyári funkciók</string>
     <string name="dark_ui_mode_summary">Nézze át a sötét témabeállításokat</string>
-    <string name="spoof_summary">Engedélyezze a hamisítást bizonyos funkciókhoz a ROM-on belül</string>
+    <string name="spoof_summary">Engedélyezze az álcázást bizonyos funkciókhoz a ROM-on belül</string>
     <string name="unsupported_gestures">A funkció használatához engedélyezze a két- vagy háromgombos navigációt</string>
     <!-- General strings -->
     <string name="ok">Ok</string>
@@ -116,7 +117,7 @@
     <string name="evolution_about_title">A csapat</string>
     <string name="evolution_about_summary">További információk a ROM-ról</string>
     <string name="evolution_website_title">Honlap</string>
-    <string name="evolution_website_summary">Látogassa meg weboldalunkat</string>
+    <string name="evolution_website_summary">Nyugodtan látogassa meg weboldalunkat</string>
     <string name="evolution_twitter_summary">Nézze meg tweetjeinket</string>
     <string name="evolution_discord_summary">Látogassa meg közösségi csetünket</string>
     <string name="evolution_github_summary">Nézze meg a GitHub-unkat</string>
@@ -357,7 +358,7 @@
     <string name="notification_sound_vib_screen_on_title">Értesítéshangok, ha a kijelző be van kapcsolva</string>
     <string name="notification_sound_vib_screen_on_summary">Értesítésjelzés hanggal és rezgéssel, ha a képernyő be van kapcsolva</string>
     <!-- Ambient edge lighting -->
-    <string name="ambient_edge_light_action_title">Kiterjesztett oldal-megvilágítás</string>
+    <string name="ambient_edge_light_action_title">Kiterjesztett oldalfény</string>
     <string name="ambient_edge_light_title">Oldalfény</string>
     <string name="ambient_edge_light_enable_title">Az \'Oldalfény\' bekapcsolása</string>
     <string name="ambient_edge_light_summary">A képernyő oldalsó széleit világítsa meg az értesítés villogó jelzése</string>
@@ -381,7 +382,6 @@
     <string name="radio_info_title">Rádióinformációk</string>
     <!-- Power Menu -->
     <string name="power_menu_title">Kikapcsolási menü</string>
-    <string name="global_actions_title">Kikapcsolási menüelemek</string>
     <string name="global_actions_screenshot">Képernyőkép</string>
     <string name="global_actions_on_the_go">Menet közben mód (OnTheGo)</string>
     <string name="global_actions_power">Leállítás</string>
@@ -400,11 +400,11 @@
     <string name="theme_customization_category">Témázás</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
     <string name="theme_customization_icon_shape_title">Ikonforma</string>
-    <string name="theme_customization_icon_shape_summary">Beállithatja az ikonok alakját</string>
+    <string name="theme_customization_icon_shape_summary">Itt állíthatja be a rendszerikonok formáját</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="themes_fonts_category">Betűtípusok</string>
     <string name="theme_customization_font_title">Rendszer-betűtípus</string>
-    <string name="theme_customization_font_summary">A rendszer-betűtípus beállitása</string>
+    <string name="theme_customization_font_summary">Itt állíthatja be a rendszer-betűtípusát</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="themes_icons_category">Ikonok</string>
     <string name="theme_customization_icon_pack_title">Rendszerikonok</string>
@@ -490,12 +490,12 @@
     <string name="hardware_keys_action_sleep">Képernyő-kikapcsolás</string>
     <string name="hardware_keys_action_last_app">Legutóbbi alkalmazás</string>
     <string name="hardware_keys_action_split_screen">Osztott képernyő</string>
-    <string name="hardware_keys_action_close_app">Az alkalmazás leállítása</string>
+    <string name="hardware_keys_action_close_app">Az alkalmazás kilövése</string>
     <string name="hardware_keys_action_torch">Zseblámpa</string>
     <string name="hardware_keys_action_volume_panel">Hangerőszabályzó-kapcsoló</string>
     <string name="hardware_keys_action_clear_all_notifications">Minden értesítés törlése</string>
     <string name="hardware_keys_action_notifications_panel">Értesítésipanel-kapcsoló</string>
-    <string name="hardware_keys_action_expand_qs_panel">Bővített Gyorsbeállítások-panel</string>
+    <string name="hardware_keys_action_expand_qs_panel">A Gyorsbeállítások-panel kinyitása</string>
     <string name="hardware_keys_action_ringer_modes">Csengésmódok</string>
     <string name="hardware_keys_swipe_right_key_title">Jobbra csúsztatás</string>
     <string name="hardware_keys_swipe_left_key_title">Balra csúsztatás</string>
@@ -743,7 +743,7 @@
     <string name="enable_fingerprint_ripple_effect_summary">Ujjlenyomatos feloldáskor hullámeffektus</string>
     <!-- Unlimited Photos storage -->
     <string name="photos_spoof_title">Korlátlan fénykép-tárhely</string>
-    <string name="photos_spoof_summary">Eszközinformáció-hamisitás hogy telefonját a Google Fényképek Pixel XL készüléknek lássa és így korlátlan tárhelyhez juthasson. Kikapcsolt állásnál a rendszer a Pixel 8 Pro-ra hamisít</string>
+    <string name="photos_spoof_summary">Eszközinformáció-hamisitás hogy telefonját a Google Fényképek Pixel XL készüléknek lássa és így korlátlan tárhelyhez juthasson</string>
     <!-- Unlock FPS for specific games -->
     <string name="games_spoof_title">Magasabb FPS feloldása játékokhoz</string>
     <string name="games_spoof_summary">Eszközinfó-hamisítás hogy magasabb FPS legyen elérhető a játékokhoz</string>
@@ -818,7 +818,7 @@
     <string name="status_bar_logo_style_ghost">Szellem</string>
     <string name="status_bar_logo_style_ninja">Nindzsa</string>
     <string name="status_bar_logo_style_robot">Robot</string>
-    <string name="status_bar_logo_style_ironman">Iron Man</string>
+    <string name="status_bar_logo_style_ironman">Vasember</string>
     <string name="status_bar_logo_style_captain_america">Amerika Kapitány</string>
     <string name="status_bar_logo_style_flash">Villám</string>
     <string name="status_bar_logo_style_tux">TUX</string>
@@ -867,7 +867,7 @@
     <string name="jitter_test_summary">A renderelési jitter kiszámítása</string>
     <!-- Lock screen battery info indicator -->
     <string name="lockscreen_battery_info_title">Töltési statisztikák</string>
-    <string name="lockscreen_battery_info_summary">Töltés közben megjeleníti a maximális aktuális töltőfeszültséget és az akkumulátor hőmérsékletét a zárképernyőn</string>
+    <string name="lockscreen_battery_info_summary">Töltés közben megjeleníti az aktuális áramerősséget, töltőfeszültséget és az akkumulátor hőmérsékletét a zárképernyőn</string>
     <!-- Charging animation -->
     <string name="charging_animation_title">Töltési animáció</string>
     <string name="charging_animation_summary">Animáció megjelenítése, ha a telefon a töltőhöz csatlakozik</string>
@@ -1010,12 +1010,12 @@
     <string name="pif_title">Gplay integritásjavítás</string>
     <string name="pif_summary">Megtekintheti a hamis GMS aktuális értékeit</string>
     <string name="pif_spoof_title">ROM-oldali Play integritásjavítás engedélyezése</string>
-    <string name="pif_spoof_summary">Letiltás után engedélyezi a modulhasználatot egyéni ujjlenyomat-értékekkel</string>
+    <string name="pif_spoof_summary">Ha letiltja, azzal engedélyezi a modulhasználatot egyéni ujjlenyomat-értékekkel</string>
     <!-- PixelProps -->
-    <string name="spoof_pixel_title">A \'Pixel Props\' engedélyezése</string>
+    <string name="spoof_pixel_title">A \'Pixel-kellékek\' engedélyezése</string>
     <string name="spoof_pixel_summary">A Google alkalmazásokhoz Pixel 8 Pro-nak álcázza az Ön telefonját</string>
     <!-- Application downgrade -->
-    <string name="app_downgrade_title">Alkalmazások downgrade-jének lehetővé tétele</string>
+    <string name="app_downgrade_title">Downgrade lehetősége</string>
     <string name="app_downgrade_summary">Lehetővé teszi a visszafelé frissítést (downgrade). Összeomláshoz és adatsérüléshez vezethet.</string>
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">Vágólap-átfedés</string>
@@ -1064,4 +1064,10 @@
     <string name="qs_wifi_auto_on_summary">Ha az Internet-csempére bök, automatikusan bekapcsol a Wi-Fi</string>
     <string name="qs_bt_auto_on_title">Automatikus BT be</string>
     <string name="qs_bt_auto_on_summary">Ha a Bluetooth-csempére bök, automatikusan bekapcsol a Bluetooth</string>
+    <!-- Depth Wallpaper -->
+    <string name="dw_file_header_select_title">Témaválasztás a térhatású háttérképhez</string>
+    <string name="dw_file_header_select_summary">Válasszon térhatású háttérképtárgyat a tárhelyről</string>
+    <string name="dw_wallpaper_enabled_title">Térhatású Háttérkép</string>
+    <string name="dw_wallpaper_enabled_summary">Itt kapcsolható be az iOS ihlette térhatású háttérkép. Szükséges egy tárgykép</string>
+    <string name="dw_wallpaper_opacity_title">A térhatású háttér átlátszósága</string>
 </resources>
